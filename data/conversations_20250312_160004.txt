@@ -1,0 +1,177 @@
+{
+  "conversations": [
+    {
+      "id": 421522,
+      "start_time": "2025-03-12T15:44:58.006Z",
+      "end_time": null,
+      "device_type": "Bee",
+      "summary": null,
+      "short_summary": null,
+      "state": "CAPTURING",
+      "created_at": "2025-03-12T15:44:58.006Z",
+      "updated_at": "2025-03-12T15:59:59.325Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.1215970470028,
+        "longitude": -77.91253975879064,
+        "created_at": "2025-03-12T15:58:18.456Z"
+      }
+    },
+    {
+      "id": 420652,
+      "start_time": "2025-03-12T14:45:45.661Z",
+      "end_time": "2025-03-12T15:45:00.873Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nBruce had a busy day. It started with a conversation about food and household chores, including a missing red microwave and instructions for using the sour cream cheese. Bruce's mom also called and asked to speak with him. Later, Bruce participated in a discussion about the economic impact of tariffs, arguing that they make it harder for people to purchase vehicles.\n\n## Atmosphere\nThe atmosphere of the interaction is informal and lively, shifting from mundane household topics to a more heated discussion about economics and politics.\n\n## Key Take Aways\n* **Call Mom:** Bruce's mom called and wants him to call her back.\n* **Sour Cream Cheese:** Someone (possibly Bruce) forgot to put the top back on the sour cream cheese. Use the one without the lid.\n* **Tariff Discussion:** Bruce participated in a debate about tariffs, arguing that they negatively impact consumers by making it harder to purchase vehicles. \n",
+      "short_summary": "Bruce discussed family matters, work, and mysterious household occurrences, while also expressing concern about a potential customer losing valuable time due to an interruption.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-12T14:45:45.661Z",
+      "updated_at": "2025-03-12T15:45:00.873Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12136546583464,
+        "longitude": -77.91256524649523,
+        "created_at": "2025-03-12T15:14:18.667Z"
+      }
+    },
+    {
+      "id": 419514,
+      "start_time": "2025-03-12T13:30:29.472Z",
+      "end_time": "2025-03-12T14:29:28.023Z",
+      "device_type": "Bee",
+      "summary": "## Summary: \nYou and your son, Russell, were trying to get a doctor's note for his school due to anxiety he's experiencing. The appointment with his primary care provider, Emily Warden, was unsuccessful as she is out of the office.  After some back and forth, Russell was able to reschedule the appointment but not before the 18th. You also had a conversation with Russell about taking responsibility for his school attendance and how your frustration with the situation doesn't reflect on him.\n\n## Atmosphere: \nThe conversation was tense at times, with some frustration around getting the doctor's note and navigating the situation. You expressed your frustration directly while also trying to reassure Russell that your anger was not directed at him.\n\n## Key Take Aways:\n* Russell needs a doctor's note for school due to anxiety.\n* Emily Warden, his primary care provider, is unavailable.\n* Russell was able to reschedule the appointment for the 18th.\n* You plan to talk to Russell about taking more responsibility for his school attendance.\n* You reassured Russell that your frustration is with the situation, not him. \n",
+      "short_summary": "Bruce helped Russell reschedule a doctor's appointment, address his anxiety and school absences, and discussed strategies for managing Russell's drug use.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-12T13:30:29.472Z",
+      "updated_at": "2025-03-12T14:29:28.023Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12147067693606,
+        "longitude": -77.91260591604176,
+        "created_at": "2025-03-12T14:10:18.534Z"
+      }
+    },
+    {
+      "id": 419151,
+      "start_time": "2025-03-12T13:08:55.189Z",
+      "end_time": "2025-03-12T13:30:57.259Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nYou were talking with Ivette about your son. Ivette is very concerned about your son's behavior and doesn't think he understands the consequences of his actions. You tried to explain to her that you've spoken to him multiple times and that he's still learning. You also shared an anecdote about a TikTok video you saw about repeating yourself to men. \n\n## Atmosphere\nThe conversation seems to be a bit tense, with Ivette feeling frustrated and unheard. \n\n## Key Take Aways\n* **Behavioral Therapy:** Ivette wants to explore behavioral therapy for your son, potentially through his Medicaid. You agreed to look into it. \n* **Consequences:** Ivette feels strongly that your son needs to understand the serious consequences of his actions, especially given his dyslexia.\n* **Communication Breakdown:**  There seems to be a disconnect between you and Ivette in terms of how to address your son's behavior. \n* **Door Removal:** There was a side conversation about removing a door, which you said you would handle. \n",
+      "short_summary": "Bruce discussed removing a door,  investigating behavioral therapy options for his son's dyslexia, and the challenges of communicating consequences to his son, acknowledging the limitations of repeatedly telling him the same thing.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-12T13:08:55.189Z",
+      "updated_at": "2025-03-12T13:30:57.259Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12136546583464,
+        "longitude": -77.91256524649523,
+        "created_at": "2025-03-12T13:16:56.217Z"
+      }
+    },
+    {
+      "id": 418473,
+      "start_time": "2025-03-12T12:24:40.117Z",
+      "end_time": "2025-03-12T13:00:07.846Z",
+      "device_type": "Bee",
+      "summary": "## San Francisco Adventures with the Boys\n\n### Summary\nYou were reminiscing about the good times you had with your sons, Russell and Benetton, exploring San Francisco. You talked about how you would plan weekly outings to art festivals, cultural events, and even simple walks around the city.  You fondly recalled a specific trip where you went to a small art and wine festival that wasn't as impressive as you'd hoped.  Afterward, you tried to find a pizza place but ended up at a small Mexican restaurant. You thought the food was just okay, but Russell loved it and still talks about going back.\n\n### Atmosphere\nThe atmosphere of the conversation is warm and nostalgic. You're clearly drawing on happy memories of spending quality time with your sons. You're also feeling a little wistful, as you acknowledge that your sons are older now and those carefree days are behind you. \n\n### Key Takeaways\n* You made a conscious effort to plan regular outings with your sons in San Francisco, creating lasting memories.\n* Russell has a particularly fond memory of a small Mexican restaurant you visited, even though you didn't think the food was anything special. \n* You enjoyed exploring San Francisco with your sons, finding joy in simple things like walking around the city and taking in the sights. \n",
+      "short_summary": "I documented joyful memories of exploring San Francisco with my sons, Russell and Benetton, to help me remember positive experiences during a difficult time.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-12T12:24:40.117Z",
+      "updated_at": "2025-03-12T13:00:07.846Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12136546583464,
+        "longitude": -77.91256524649523,
+        "created_at": "2025-03-12T12:53:56.141Z"
+      }
+    },
+    {
+      "id": 417370,
+      "start_time": "2025-03-12T11:16:02.139Z",
+      "end_time": "2025-03-12T12:18:52.230Z",
+      "device_type": "Bee",
+      "summary": "## Summary: \n\nThis morning started with a difficult conversation with Ivette about our son, Benetton. We're struggling to find solutions for his recent challenges, which include a possible drug problem and an incident at school where he was physically hurt.  We're trying to support him with love and guidance, but Ivette is understandably stressed and feels like we need to do more.  We're looking into additional resources, like therapy and exploring online information about teenagers and drug use. I'm also planning to spend some quality time with Benetton, reminiscing about happy memories to remind him that he's loved and has a good life. \n\n## Atmosphere:\n\nTense and emotional.  Ivette is clearly at her wit's end and frustrated with the situation.  There's a sense of urgency in her voice as she pushes for solutions. I'm trying to remain calm and supportive, but I also feel the weight of the situation.\n\n## Key Takeaways:\n\n* **Seek professional help:**  We need to find a therapist for Benetton, even though his doctor recommended waiting.\n* **Explore additional resources:**  We're going to research online resources about drug problems in teenagers.\n* **Focus on the positive:** I'm going to spend time with Benetton, focusing on positive memories and reminding him that he's loved. \n* **Control what we can:**  For now, we're monitoring Benetton's phone and car usage. \n* **Stay united:**  We need to work together as parents to support Benetton through this. \n",
+      "short_summary": "Bruce and his family discussed strategies for supporting their son, who is facing challenges at school and may need additional mental health support.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-12T11:16:02.139Z",
+      "updated_at": "2025-03-12T12:18:52.230Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12133969225785,
+        "longitude": -77.91280839021577,
+        "created_at": "2025-03-12T12:05:40.726Z"
+      }
+    },
+    {
+      "id": 406711,
+      "start_time": "2025-03-11T23:53:40.865Z",
+      "end_time": "2025-03-12T00:18:58.003Z",
+      "device_type": "Bee",
+      "summary": "## Summary \nYou had a conversation with a fitness tracking app and a virtual assistant. You told the fitness app about your workout: 25 regular situps, 25 cross situps, and 25 small-muscle situps. You then asked the virtual assistant about the benefits of connecting your Gmail account and whether it could send an email. While it couldn't send an email directly, it offered to help you draft one. \n\n## Atmosphere\nThe atmosphere seemed focused on accomplishing tasks and getting information. You were actively using technology to track your fitness and manage your communication. \n\n## Key Takeaways\n* You successfully completed 3 sets of situps. \n* Connecting your Gmail to the virtual assistant could offer features like email management, notifications, calendar syncing, and advanced search within the app.\n* The virtual assistant cannot connect to the internet for real-time data or send emails directly, but it can help with drafting emails. \n",
+      "short_summary": "Bruce successfully completed a workout and then asked about the app's email and internet capabilities.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-11T23:53:40.865Z",
+      "updated_at": "2025-03-12T00:18:58.003Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12122426558015,
+        "longitude": -77.91261660873415,
+        "created_at": "2025-03-12T00:02:39.116Z"
+      }
+    },
+    {
+      "id": 404144,
+      "start_time": "2025-03-11T20:18:10.581Z",
+      "end_time": "2025-03-11T22:05:08.664Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nYou had a long, somewhat disjointed conversation with your wife and daughter, punctuated by moments of helping out with various tasks and discussing dinner. Your daughter is preparing for college and you offered her some advice based on your experiences. You also discussed potential mental health resources with your wife.\n\n## Atmosphere\nThe atmosphere of the conversation was largely casual and familial, with a mix of lighthearted banter and more serious discussions. There was a sense of busyness throughout, with multiple conversations happening simultaneously.\n\n## Key Take Aways\n* Your wife is looking into different therapists and considering recommendations. \n* Your daughter is doing well in school and thinking about her future college plans.  She's a bit stressed about upcoming exams and coursework.\n* You offered your daughter advice about choosing classes and managing her workload.\n* You had a brief disagreement with your wife about the relevance of family medical history in mental health diagnoses. \n* You helped out with some household tasks, like setting timers and checking on food. \n",
+      "short_summary": "Bruce consulted with others regarding his Tesla purchase details, a website issue, and his children's activities and well-being.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-11T20:18:10.581Z",
+      "updated_at": "2025-03-11T22:05:08.664Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.121461328670264,
+        "longitude": -77.91253558956063,
+        "created_at": "2025-03-11T21:52:37.775Z"
+      }
+    },
+    {
+      "id": 403095,
+      "start_time": "2025-03-11T18:58:23.500Z",
+      "end_time": "2025-03-11T20:18:49.121Z",
+      "device_type": "Bee",
+      "summary": "## Therapy Session Summary - February 8th \n\nToday's session focused on my son, Russell, and the challenges he's facing. He's a good kid, but struggles with social interaction and has been feeling lonely and unsure of himself.  We talked about how he recently overdosed on marijuana, which was a major reason why we moved from California to Wilmington in the first place. I'm worried about him, especially since he's graduating next January and I want him to feel prepared for the future. \n\nWe discussed his recent interest in religion and how he's found some solace in Catholicism and Young Life, a Christian youth group.  While I don't share his beliefs, I'm glad he's found something positive.  He's also been working out regularly, which is great, although he did experiment with steroids for a while. Thankfully, he's stopped using them. \n\nWe also talked about my own struggles with anxiety and how my father's parenting has influenced my own self-criticism.  We agreed to focus more on anxiety management techniques in our upcoming sessions.\n\n## Atmosphere\n\nThe session felt productive and supportive. I appreciated the opportunity to discuss my concerns about Russell and explore potential solutions.  I'm grateful for the therapist's insights and guidance.\n\n## Key Takeaways\n\n* **Psychiatrist Appointment:** I'm going to make an appointment for Russell with Dr. Scott Crowder, a child and adolescent psychiatrist.\n* **Therapy:** I'll also contact Holly Anne Barr, a psychotherapist, to see if she's a good fit for Russell.\n* **Anxiety Management:** I'm going to focus on managing my own anxiety so I can be a better support system for Russell. \n* **Open Communication:**  I'll continue to encourage Russell to communicate openly and honestly with me about his feelings and experiences. \n",
+      "short_summary": "I discussed my son's struggles with substance abuse, social difficulties, and academic challenges, and we developed a plan involving professional help and increased family support.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-11T18:58:23.500Z",
+      "updated_at": "2025-03-11T20:18:49.121Z",
+      "primary_location": {
+        "address": "1901 Oleander Dr, Wilmington, NC, New Hanover County, 28403, United States",
+        "latitude": 34.22575081229787,
+        "longitude": -77.92298857337313,
+        "created_at": "2025-03-11T19:28:23.844Z"
+      }
+    },
+    {
+      "id": 402226,
+      "start_time": "2025-03-11T17:57:10.200Z",
+      "end_time": "2025-03-11T18:59:21.500Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nYou met with your peer mentor, Crystal, and then your counselor, Justin. Crystal asked about your support system and you discussed your work and your family. You then met with Justin to complete your intake paperwork. You discussed your medical history, emergency contacts, and signed consent forms. You scheduled your next appointment with Justin for the following week at 2pm. \n\n## Atmosphere\nBoth meetings were friendly and conversational. Crystal was warm and empathetic, and you felt comfortable discussing your anxiety with her. Justin was thorough and efficient in explaining the intake process. \n\n## Key Takeaways\n* You are receiving support from a peer mentor and a counselor. \n* You are connected with resources like Medicaid and a food bank. \n* You are working on a Wellness Recovery Action Plan (WRAP) to manage your bipolar disorder. \n* You are looking for a higher-paying job. \n* You have an appointment with your counselor next week to continue working on your career profile. \n",
+      "short_summary": "Bruce completed intake paperwork for peer mentorship services, clarifying his existing support systems and healthcare needs while discussing his employment situation and anxiety management.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-11T17:57:10.201Z",
+      "updated_at": "2025-03-11T18:59:21.500Z",
+      "primary_location": {
+        "address": "1890 Dawson St, Wilmington, NC, New Hanover County, 28403, United States",
+        "latitude": 34.226124638291886,
+        "longitude": -77.92181783696353,
+        "created_at": "2025-03-11T18:36:39.220Z"
+      }
+    }
+  ],
+  "currentPage": 1,
+  "totalPages": 6,
+  "totalCount": 55
+}

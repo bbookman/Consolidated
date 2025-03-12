@@ -1,0 +1,118 @@
+import asyncio
+from beeai import Bee
+
+async def main():
+    # Create an instance of the Bee SDK with your API key
+    bee = Bee("your_api_key")
+
+    # Conversation methods
+    conversations = await bee.get_conversations("me")
+    print("Conversations:", conversations["conversations"])
+
+    if conversations.get("conversations"):
+        conversation_id = conversations["conversations"][0].get("id")
+        if conversation_id:
+            full_conversation = await bee.get_conversation("me", conversation_id)
+            print("Full conversation:", full_conversation)
+
+            await bee.end_conversation("me", conversation_id)
+            print("Conversation ended")
+
+            await bee.retry_conversation("me", conversation_id)
+            print("Conversation retried")
+
+            await bee.delete_conversation("me", conversation_id)
+            print("Conversation deleted")
+        else:
+            print("Conversation ID not found in the response.")
+    else:
+        print("No conversations found in the response.")
+
+    # Fact methods
+    facts = await bee.get_facts("me")
+    print("Facts:", facts["facts"])
+
+    if facts.get("facts"):
+        fact_id = facts["facts"][0].get("id")
+        if fact_id:
+            fact = await bee.get_fact("me", fact_id)
+            print("Fact:", fact)
+
+            updated_fact = await bee.update_fact("me", fact_id, {"text": "Updated fact", "confirmed": True})
+            print("Updated fact:", updated_fact)
+
+            await bee.delete_fact("me", fact_id)
+            print("Fact deleted")
+        else:
+            print("Fact ID not found in the response.")
+    else:
+        print("No facts found in the response.")
+
+    new_fact = await bee.create_fact("me", {"text": "New fact", "confirmed": True})
+    print("New fact:", new_fact)
+
+    # Todo methods
+    todos = await bee.get_todos("me")
+    print("Todos:", todos["todos"])
+
+    if todos.get("todos"):
+        todo_id = todos["todos"][0].get("id")
+        if todo_id:
+            todo = await bee.get_todo("me", todo_id)
+            print("Todo:", todo)
+
+            updated_todo = await bee.update_todo("me", todo_id, {"text": "Updated todo", "completed": True})
+            print("Updated todo:", updated_todo)
+
+            await bee.delete_todo("me", todo_id)
+            print("Todo deleted")
+        else:
+            print("Todo ID not found in the response.")
+    else:
+        print("No todos found in the response.")
+
+    new_todo = await bee.create_todo("me", {"text": "New todo", "completed": False})
+    print("New todo:", new_todo)
+
+    # Location methods
+    locations = await bee.get_locations("me")
+    print("Locations:", locations["locations"])
+
+    # Define event listeners
+    @bee.on("connect")
+    def on_connect():
+        print("Connected to the socket")
+        print("Waiting for events...")
+
+    @bee.on("disconnect")
+    def on_disconnect():
+        print("Disconnected from the socket")
+
+    @bee.on("new_conversation")
+    def on_new_conversation(data):
+        print("New conversation:", data)
+
+    @bee.on("process_conversation")
+    def on_process_conversation(data):
+        print("Conversation begun processing:", data)
+
+    @bee.on("processed_conversation")
+    def on_processed_utterance(data):
+        print("Conversation processed:", data)
+
+    @bee.on("interim_conversation_summary")
+    def on_interim_conversation_summary(data):
+        print("Interim summary updated:", data)
+
+    @bee.on("new_utterance")
+    def on_new_utterance(data):
+        print("New utterance:", data)
+
+    # Connect for real-time events
+    bee.connect()
+
+    # Keep listening for events
+    while True:
+        await asyncio.sleep(1)
+
+asyncio.run(main())

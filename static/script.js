@@ -14,11 +14,17 @@ const runButton = document.getElementById('run-button');
 const clearButton = document.getElementById('clear-button');
 const outputElement = document.getElementById('output');
 const errorElement = document.getElementById('error');
+const apiResponseElement = document.getElementById('api-response');
+
+// API-related buttons
+const fetchConversationsButton = document.getElementById('fetch-conversations');
+const fetchFactsButton = document.getElementById('fetch-facts');
+const fetchTodosButton = document.getElementById('fetch-todos');
 
 // Run code function
 async function runCode() {
     const code = editor.getValue();
-    
+
     try {
         const response = await fetch('/execute', {
             method: 'POST',
@@ -29,7 +35,7 @@ async function runCode() {
         });
 
         const data = await response.json();
-        
+
         if (data.success) {
             outputElement.textContent = data.output || 'No output';
             errorElement.textContent = data.error || '';
@@ -46,11 +52,26 @@ async function runCode() {
 function clearOutput() {
     outputElement.textContent = '';
     errorElement.textContent = '';
+    apiResponseElement.textContent = '';
+}
+
+// API functions
+async function fetchApiData(endpoint) {
+    try {
+        const response = await fetch(`/api/${endpoint}`);
+        const data = await response.json();
+        apiResponseElement.textContent = JSON.stringify(data, null, 2);
+    } catch (error) {
+        apiResponseElement.textContent = `Error fetching ${endpoint}: ${error.message}`;
+    }
 }
 
 // Event listeners
 runButton.addEventListener('click', runCode);
 clearButton.addEventListener('click', clearOutput);
+fetchConversationsButton.addEventListener('click', () => fetchApiData('conversations'));
+fetchFactsButton.addEventListener('click', () => fetchApiData('facts'));
+fetchTodosButton.addEventListener('click', () => fetchApiData('todos'));
 
 // Add keyboard shortcut (Ctrl/Cmd + Enter) to run code
 editor.setOption('extraKeys', {

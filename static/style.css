@@ -81,3 +81,38 @@ h3 {
     color: #333;
     margin-bottom: 10px;
 }
+
+.api-container {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.api-buttons {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.api-buttons button {
+    background-color: #2196F3;
+}
+
+.api-buttons button:hover {
+    background-color: #1976D2;
+}
+
+.api-output {
+    background-color: #f8f8f8;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+#api-response {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0;
+    font-family: monospace;
+}

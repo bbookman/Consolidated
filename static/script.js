@@ -21,6 +21,13 @@ const fetchConversationsButton = document.getElementById('fetch-conversations');
 const fetchFactsButton = document.getElementById('fetch-facts');
 const fetchTodosButton = document.getElementById('fetch-todos');
 
+// Pagination state
+let currentPages = {
+    conversations: 1,
+    facts: 1,
+    todos: 1
+};
+
 // Run code function
 async function runCode() {
     const code = editor.getValue();
@@ -55,12 +62,58 @@ function clearOutput() {
     apiResponseElement.textContent = '';
 }
 
+// Create pagination controls
+function createPaginationControls(data, endpoint) {
+    const controls = document.createElement('div');
+    controls.className = 'pagination-controls';
+
+    // Previous button
+    const prevButton = document.createElement('button');
+    prevButton.textContent = '← Previous';
+    prevButton.disabled = data.page <= 1;
+    prevButton.onclick = () => {
+        currentPages[endpoint]--;
+        fetchApiData(endpoint);
+    };
+
+    // Page info
+    const pageInfo = document.createElement('span');
+    pageInfo.textContent = `Page ${data.page} of ${data.total_pages}`;
+    pageInfo.className = 'page-info';
+
+    // Next button
+    const nextButton = document.createElement('button');
+    nextButton.textContent = 'Next →';
+    nextButton.disabled = data.page >= data.total_pages;
+    nextButton.onclick = () => {
+        currentPages[endpoint]++;
+        fetchApiData(endpoint);
+    };
+
+    controls.appendChild(prevButton);
+    controls.appendChild(pageInfo);
+    controls.appendChild(nextButton);
+
+    return controls;
+}
+
 // API functions
 async function fetchApiData(endpoint) {
     try {
-        const response = await fetch(`/api/${endpoint}`);
+        const page = currentPages[endpoint];
+        const response = await fetch(`/api/${endpoint}?page=${page}&per_page=10`);
         const data = await response.json();
-        apiResponseElement.textContent = JSON.stringify(data, null, 2);
+
+        // Clear previous content
+        apiResponseElement.innerHTML = '';
+
+        // Add pagination controls
+        apiResponseElement.appendChild(createPaginationControls(data, endpoint));
+
+        // Add data display
+        const dataDisplay = document.createElement('pre');
+        dataDisplay.textContent = JSON.stringify(data, null, 2);
+        apiResponseElement.appendChild(dataDisplay);
     } catch (error) {
         apiResponseElement.textContent = `Error fetching ${endpoint}: ${error.message}`;
     }

@@ -97,6 +97,65 @@ function createPaginationControls(data, endpoint) {
     return controls;
 }
 
+
+// Function to format date
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    return date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+}
+
+// Function to create a card element
+function createCard(item, type) {
+    const card = document.createElement('div');
+    card.className = 'card';
+
+    let content = '';
+    switch(type) {
+        case 'conversations':
+            content = `
+                <h4>${item.title || 'Conversation'}</h4>
+                <p>${item.summary || 'No summary available'}</p>
+                <div class="timestamp">Created: ${formatDate(item.created_at)}</div>
+            `;
+            break;
+        case 'facts':
+            content = `
+                <h4>Fact</h4>
+                <p>${item.text}</p>
+                <div class="status ${item.confirmed ? 'completed' : 'pending'}">
+                    ${item.confirmed ? 'Confirmed' : 'Pending'}
+                </div>
+            `;
+            break;
+        case 'todos':
+            content = `
+                <h4>${item.text}</h4>
+                <div class="status ${item.completed ? 'completed' : 'pending'}">
+                    ${item.completed ? 'Completed' : 'Pending'}
+                </div>
+            `;
+            break;
+    }
+
+    card.innerHTML = content;
+    return card;
+}
+
+// Function to display data as cards
+function displayDataAsCards(data, type) {
+    const cardsContainer = document.getElementById(`${type}-cards`);
+    cardsContainer.innerHTML = '';
+
+    const items = data[type] || [];
+    items.forEach(item => {
+        cardsContainer.appendChild(createCard(item, type));
+    });
+
+    // Show/hide sections based on data
+    document.getElementById(`${type}-section`).style.display = 
+        items.length > 0 ? 'block' : 'none';
+}
+
 // API functions
 async function fetchApiData(endpoint) {
     try {
@@ -104,18 +163,19 @@ async function fetchApiData(endpoint) {
         const response = await fetch(`/api/${endpoint}?page=${page}&per_page=10`);
         const data = await response.json();
 
-        // Clear previous content
-        apiResponseElement.innerHTML = '';
+        // Clear previous pagination controls
+        const paginationContainer = document.getElementById('pagination-controls');
+        paginationContainer.innerHTML = '';
 
         // Add pagination controls
-        apiResponseElement.appendChild(createPaginationControls(data, endpoint));
+        paginationContainer.appendChild(createPaginationControls(data, endpoint));
 
-        // Add data display
-        const dataDisplay = document.createElement('pre');
-        dataDisplay.textContent = JSON.stringify(data, null, 2);
-        apiResponseElement.appendChild(dataDisplay);
+        // Display data as cards
+        displayDataAsCards(data, endpoint);
     } catch (error) {
-        apiResponseElement.textContent = `Error fetching ${endpoint}: ${error.message}`;
+        console.error(`Error fetching ${endpoint}:`, error);
+        document.getElementById(`${endpoint}-cards`).innerHTML = 
+            `<div class="error-card">Error fetching ${endpoint}: ${error.message}</div>`;
     }
 }
 

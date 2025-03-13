@@ -1,0 +1,64 @@
+=== FACTS ===
+Retrieved at: 2025-03-13 13:09:50
+Total items: 10
+
+--- Item 1 ---
+Text: Bruce finds Tasty Science enjoyable.
+Status: Pending
+Created At: 2025-03-12T20:22:10.300Z
+ID: 527246
+
+--- Item 2 ---
+Text: Bruce has been a part of the Boy Scouts.
+Status: Pending
+Created At: 2025-03-12T20:22:10.300Z
+ID: 527249
+
+--- Item 3 ---
+Text: Bruce has done science experiments multiple times.
+Status: Pending
+Created At: 2025-03-12T20:22:10.300Z
+ID: 527247
+
+--- Item 4 ---
+Text: Bruce has visited a place where they fly gas-powered model airplanes.
+Status: Pending
+Created At: 2025-03-12T20:22:10.300Z
+ID: 527250
+
+--- Item 5 ---
+Text: Bruce has played the game Exploding Kittens.
+Status: Pending
+Created At: 2025-03-12T20:22:10.300Z
+ID: 527244
+
+--- Item 6 ---
+Text: Bruce has played a game involving throwing burritos.
+Status: Pending
+Created At: 2025-03-12T20:22:10.300Z
+ID: 527245
+
+--- Item 7 ---
+Text: Bruce has built or launched a water rocket.
+Status: Pending
+Created At: 2025-03-12T20:22:10.300Z
+ID: 527248
+
+--- Item 8 ---
+Text: Bruce has visited Rancho San Antonio Park.
+Status: Pending
+Created At: 2025-03-12T17:34:54.473Z
+ID: 523100
+
+--- Item 9 ---
+Text: Bruce has visited Emma Prusch Farm Park.
+Status: Pending
+Created At: 2025-03-12T17:34:54.473Z
+ID: 523101
+
+--- Item 10 ---
+Text: Bruce has visited San Jose History Park.
+Status: Pending
+Created At: 2025-03-12T17:34:54.473Z
+ID: 523102
+

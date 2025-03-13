@@ -23,14 +23,13 @@ def format_conversation(conv):
         "Title": conv.get("title", "Untitled Conversation"),
         "Summary": conv.get("summary", "No summary available"),
         "Created At": conv.get("created_at", "Unknown"),
-        "Status": conv.get("status", "Unknown"),
         "ID": conv.get("id", "Unknown")
     }
 
 def format_fact(fact):
     return {
         "Text": fact.get("text", "No text available"),
-        "Status": "Confirmed" if fact.get("confirmed") else "Pending",
+        "Confirmed": "Yes" if fact.get("confirmed") else "No",
         "Created At": fact.get("created_at", "Unknown"),
         "ID": fact.get("id", "Unknown")
     }
@@ -38,7 +37,7 @@ def format_fact(fact):
 def format_todo(todo):
     return {
         "Task": todo.get("text", "No task description"),
-        "Status": "Completed" if todo.get("completed") else "Pending",
+        "Completed": "Yes" if todo.get("completed") else "No",
         "Created At": todo.get("created_at", "Unknown"),
         "ID": todo.get("id", "Unknown")
     }

@@ -113,25 +113,25 @@ function createCard(item, type) {
     switch(type) {
         case 'conversations':
             content = `
-                <h4>${item.title || 'Conversation'}</h4>
-                <p>${item.summary || 'No summary available'}</p>
-                <div class="timestamp">Created: ${formatDate(item.created_at)}</div>
+                <h4>${item.Title || 'Conversation'}</h4>
+                <p>${item.Summary || 'No summary available'}</p>
+                <div class="timestamp">Created: ${formatDate(item['Created At'])}</div>
             `;
             break;
         case 'facts':
             content = `
                 <h4>Fact</h4>
-                <p>${item.text}</p>
-                <div class="status ${item.confirmed ? 'completed' : 'pending'}">
-                    ${item.confirmed ? 'Confirmed' : 'Pending'}
+                <p>${item.Text}</p>
+                <div class="status ${item.Confirmed === 'Yes' ? 'completed' : 'pending'}">
+                    ${item.Confirmed === 'Yes' ? 'Confirmed' : 'Pending'}
                 </div>
             `;
             break;
         case 'todos':
             content = `
-                <h4>${item.text}</h4>
-                <div class="status ${item.completed ? 'completed' : 'pending'}">
-                    ${item.completed ? 'Completed' : 'Pending'}
+                <h4>${item.Task}</h4>
+                <div class="status ${item.Completed === 'Yes' ? 'completed' : 'pending'}">
+                    ${item.Completed === 'Yes' ? 'Completed' : 'Pending'}
                 </div>
             `;
             break;

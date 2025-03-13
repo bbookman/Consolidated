@@ -42,6 +42,40 @@ def format_todo(todo):
         "ID": todo.get("id", "Unknown")
     }
 
+async def fetch_all_pages(fetch_func, user_id):
+    all_items = []
+    page = 1
+
+    while True:
+        response = await fetch_func(user_id)
+
+        # Extract items based on the response structure
+        items_key = None
+        for key in ['conversations', 'facts', 'todos']:
+            if key in response:
+                items_key = key
+                break
+
+        if not items_key:
+            break
+
+        items = response[items_key]
+        if not items:
+            break
+
+        all_items.extend(items)
+
+        # Check if we've reached the last page
+        current_page = response.get('currentPage', 1)
+        total_pages = response.get('totalPages', 1)
+
+        if current_page >= total_pages:
+            break
+
+        page += 1
+
+    return all_items
+
 def save_to_file(data, data_type, original_data):
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
 
@@ -113,6 +147,14 @@ async def get_conversations():
         page = int(request.args.get('page', 1))
         per_page = int(request.args.get('per_page', 10))
 
+        # Fetch all pages for saving
+        all_conversations = await fetch_all_pages(bee.get_conversations, "me")
+        formatted_all_conversations = [format_conversation(conv) for conv in all_conversations]
+
+        # Save complete dataset
+        save_to_file(formatted_all_conversations, 'conversations', {'conversations': all_conversations})
+
+        # Get current page data for display
         conversations = await bee.get_conversations("me")
         formatted_conversations = [format_conversation(conv) for conv in conversations.get('conversations', [])]
 
@@ -128,9 +170,6 @@ async def get_conversations():
             'total_pages': (len(formatted_conversations) + per_page - 1) // per_page
         }
 
-        # Save both formatted and raw data
-        save_to_file(formatted_conversations, 'conversations', conversations)
-
         return paginated_data
 
     except Exception as e:
@@ -144,6 +183,14 @@ async def get_facts():
         page = int(request.args.get('page', 1))
         per_page = int(request.args.get('per_page', 10))
 
+        # Fetch all pages for saving
+        all_facts = await fetch_all_pages(bee.get_facts, "me")
+        formatted_all_facts = [format_fact(fact) for fact in all_facts]
+
+        # Save complete dataset
+        save_to_file(formatted_all_facts, 'facts', {'facts': all_facts})
+
+        # Get current page data for display
         facts = await bee.get_facts("me")
         formatted_facts = [format_fact(fact) for fact in facts.get('facts', [])]
 
@@ -159,9 +206,6 @@ async def get_facts():
             'total_pages': (len(formatted_facts) + per_page - 1) // per_page
         }
 
-        # Save both formatted and raw data
-        save_to_file(formatted_facts, 'facts', facts)
-
         return paginated_data
 
     except Exception as e:
@@ -175,6 +219,14 @@ async def get_todos():
         page = int(request.args.get('page', 1))
         per_page = int(request.args.get('per_page', 10))
 
+        # Fetch all pages for saving
+        all_todos = await fetch_all_pages(bee.get_todos, "me")
+        formatted_all_todos = [format_todo(todo) for todo in all_todos]
+
+        # Save complete dataset
+        save_to_file(formatted_all_todos, 'todos', {'todos': all_todos})
+
+        # Get current page data for display
         todos = await bee.get_todos("me")
         formatted_todos = [format_todo(todo) for todo in todos.get('todos', [])]
 
@@ -189,9 +241,6 @@ async def get_todos():
             'per_page': per_page,
             'total_pages': (len(formatted_todos) + per_page - 1) // per_page
         }
-
-        # Save both formatted and raw data
-        save_to_file(formatted_todos, 'todos', todos)
 
         return paginated_data
 

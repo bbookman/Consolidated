@@ -18,6 +18,53 @@ def async_route(f):
         return asyncio.run(f(*args, **kwargs))
     return wrapped
 
+def format_conversation(conv):
+    return {
+        "Title": conv.get("title", "Untitled Conversation"),
+        "Summary": conv.get("summary", "No summary available"),
+        "Created At": conv.get("created_at", "Unknown"),
+        "Status": conv.get("status", "Unknown"),
+        "ID": conv.get("id", "Unknown")
+    }
+
+def format_fact(fact):
+    return {
+        "Text": fact.get("text", "No text available"),
+        "Status": "Confirmed" if fact.get("confirmed") else "Pending",
+        "Created At": fact.get("created_at", "Unknown"),
+        "ID": fact.get("id", "Unknown")
+    }
+
+def format_todo(todo):
+    return {
+        "Task": todo.get("text", "No task description"),
+        "Status": "Completed" if todo.get("completed") else "Pending",
+        "Created At": todo.get("created_at", "Unknown"),
+        "ID": todo.get("id", "Unknown")
+    }
+
+def save_to_file(data, data_type, original_data):
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    os.makedirs('data', exist_ok=True)
+
+    # Save formatted data
+    formatted_file = f'data/{data_type}_{timestamp}_formatted.txt'
+    with open(formatted_file, 'w') as f:
+        f.write(f"=== {data_type.upper()} ===\n")
+        f.write(f"Retrieved at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+        f.write(f"Total items: {len(data)}\n\n")
+
+        for idx, item in enumerate(data, 1):
+            f.write(f"--- Item {idx} ---\n")
+            for key, value in item.items():
+                f.write(f"{key}: {value}\n")
+            f.write("\n")
+
+    # Save raw JSON for reference
+    json_file = f'data/{data_type}_{timestamp}_raw.json'
+    with open(json_file, 'w') as f:
+        json.dump(original_data, f, indent=2)
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -65,24 +112,22 @@ async def get_conversations():
         per_page = int(request.args.get('per_page', 10))
 
         conversations = await bee.get_conversations("me")
+        formatted_conversations = [format_conversation(conv) for conv in conversations.get('conversations', [])]
 
-        # Manual pagination since the API doesn't support it directly
+        # Manual pagination
         start_idx = (page - 1) * per_page
         end_idx = start_idx + per_page
 
         paginated_data = {
-            'conversations': conversations.get('conversations', [])[start_idx:end_idx],
-            'total': len(conversations.get('conversations', [])),
+            'conversations': formatted_conversations[start_idx:end_idx],
+            'total': len(formatted_conversations),
             'page': page,
             'per_page': per_page,
-            'total_pages': (len(conversations.get('conversations', [])) + per_page - 1) // per_page
+            'total_pages': (len(formatted_conversations) + per_page - 1) // per_page
         }
 
-        # Store the data in a text file
-        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        os.makedirs('data', exist_ok=True)
-        with open(f'data/conversations_{timestamp}.txt', 'w') as f:
-            json.dump(conversations, f, indent=2)
+        # Save both formatted and raw data
+        save_to_file(formatted_conversations, 'conversations', conversations)
 
         return paginated_data
 
@@ -98,24 +143,22 @@ async def get_facts():
         per_page = int(request.args.get('per_page', 10))
 
         facts = await bee.get_facts("me")
+        formatted_facts = [format_fact(fact) for fact in facts.get('facts', [])]
 
         # Manual pagination
         start_idx = (page - 1) * per_page
         end_idx = start_idx + per_page
 
         paginated_data = {
-            'facts': facts.get('facts', [])[start_idx:end_idx],
-            'total': len(facts.get('facts', [])),
+            'facts': formatted_facts[start_idx:end_idx],
+            'total': len(formatted_facts),
             'page': page,
             'per_page': per_page,
-            'total_pages': (len(facts.get('facts', [])) + per_page - 1) // per_page
+            'total_pages': (len(formatted_facts) + per_page - 1) // per_page
         }
 
-        # Store the data in a text file
-        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        os.makedirs('data', exist_ok=True)
-        with open(f'data/facts_{timestamp}.txt', 'w') as f:
-            json.dump(facts, f, indent=2)
+        # Save both formatted and raw data
+        save_to_file(formatted_facts, 'facts', facts)
 
         return paginated_data
 
@@ -131,24 +174,22 @@ async def get_todos():
         per_page = int(request.args.get('per_page', 10))
 
         todos = await bee.get_todos("me")
+        formatted_todos = [format_todo(todo) for todo in todos.get('todos', [])]
 
         # Manual pagination
         start_idx = (page - 1) * per_page
         end_idx = start_idx + per_page
 
         paginated_data = {
-            'todos': todos.get('todos', [])[start_idx:end_idx],
-            'total': len(todos.get('todos', [])),
+            'todos': formatted_todos[start_idx:end_idx],
+            'total': len(formatted_todos),
             'page': page,
             'per_page': per_page,
-            'total_pages': (len(todos.get('todos', [])) + per_page - 1) // per_page
+            'total_pages': (len(formatted_todos) + per_page - 1) // per_page
         }
 
-        # Store the data in a text file
-        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        os.makedirs('data', exist_ok=True)
-        with open(f'data/todos_{timestamp}.txt', 'w') as f:
-            json.dump(todos, f, indent=2)
+        # Save both formatted and raw data
+        save_to_file(formatted_todos, 'todos', todos)
 
         return paginated_data
 

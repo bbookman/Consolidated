@@ -45,10 +45,13 @@ def format_todo(todo):
 
 def save_to_file(data, data_type, original_data):
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-    os.makedirs('data', exist_ok=True)
 
-    # Save formatted data
-    formatted_file = f'data/{data_type}_{timestamp}_formatted.txt'
+    # Create main data directory and subfolders
+    os.makedirs('data/text', exist_ok=True)
+    os.makedirs('data/json', exist_ok=True)
+
+    # Save formatted data as text
+    formatted_file = f'data/text/{data_type}_{timestamp}.txt'
     with open(formatted_file, 'w') as f:
         f.write(f"=== {data_type.upper()} ===\n")
         f.write(f"Retrieved at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
@@ -61,7 +64,7 @@ def save_to_file(data, data_type, original_data):
             f.write("\n")
 
     # Save raw JSON for reference
-    json_file = f'data/{data_type}_{timestamp}_raw.json'
+    json_file = f'data/json/{data_type}_{timestamp}.json'
     with open(json_file, 'w') as f:
         json.dump(original_data, f, indent=2)
 

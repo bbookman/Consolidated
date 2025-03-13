@@ -44,35 +44,30 @@ def format_todo(todo):
 
 async def fetch_all_pages(fetch_func, user_id):
     all_items = []
-    page = 1
+    first_response = await fetch_func(user_id)
 
-    while True:
-        response = await fetch_func(user_id)
+    # Get total pages from first response
+    total_pages = first_response.get('totalPages', 1)
 
-        # Extract items based on the response structure
-        items_key = None
-        for key in ['conversations', 'facts', 'todos']:
-            if key in response:
-                items_key = key
-                break
-
-        if not items_key:
+    # Add items from first page
+    items_key = None
+    for key in ['conversations', 'facts', 'todos']:
+        if key in first_response:
+            items_key = key
             break
 
-        items = response[items_key]
-        if not items:
+    if items_key:
+        all_items.extend(first_response[items_key])
+
+    # Fetch remaining pages
+    for page in range(2, total_pages + 1):
+        try:
+            response = await fetch_func(user_id, page=page)
+            if items_key in response and response[items_key]:
+                all_items.extend(response[items_key])
+        except Exception as e:
+            app.logger.error(f"Error fetching page {page}: {str(e)}")
             break
-
-        all_items.extend(items)
-
-        # Check if we've reached the last page
-        current_page = response.get('currentPage', 1)
-        total_pages = response.get('totalPages', 1)
-
-        if current_page >= total_pages:
-            break
-
-        page += 1
 
     return all_items
 
@@ -145,7 +140,6 @@ def execute_code():
 async def get_conversations():
     try:
         page = int(request.args.get('page', 1))
-        per_page = int(request.args.get('per_page', 10))
 
         # Fetch all pages for saving
         all_conversations = await fetch_all_pages(bee.get_conversations, "me")
@@ -155,19 +149,15 @@ async def get_conversations():
         save_to_file(formatted_all_conversations, 'conversations', {'conversations': all_conversations})
 
         # Get current page data for display
-        conversations = await bee.get_conversations("me")
+        conversations = await bee.get_conversations("me", page=page)
         formatted_conversations = [format_conversation(conv) for conv in conversations.get('conversations', [])]
 
-        # Manual pagination
-        start_idx = (page - 1) * per_page
-        end_idx = start_idx + per_page
-
         paginated_data = {
-            'conversations': formatted_conversations[start_idx:end_idx],
-            'total': len(formatted_conversations),
+            'conversations': formatted_conversations,
+            'total': conversations.get('totalCount', 0),
             'page': page,
-            'per_page': per_page,
-            'total_pages': (len(formatted_conversations) + per_page - 1) // per_page
+            'per_page': len(formatted_conversations),
+            'total_pages': conversations.get('totalPages', 1)
         }
 
         return paginated_data
@@ -181,7 +171,6 @@ async def get_conversations():
 async def get_facts():
     try:
         page = int(request.args.get('page', 1))
-        per_page = int(request.args.get('per_page', 10))
 
         # Fetch all pages for saving
         all_facts = await fetch_all_pages(bee.get_facts, "me")
@@ -191,19 +180,15 @@ async def get_facts():
         save_to_file(formatted_all_facts, 'facts', {'facts': all_facts})
 
         # Get current page data for display
-        facts = await bee.get_facts("me")
+        facts = await bee.get_facts("me", page=page)
         formatted_facts = [format_fact(fact) for fact in facts.get('facts', [])]
 
-        # Manual pagination
-        start_idx = (page - 1) * per_page
-        end_idx = start_idx + per_page
-
         paginated_data = {
-            'facts': formatted_facts[start_idx:end_idx],
-            'total': len(formatted_facts),
+            'facts': formatted_facts,
+            'total': facts.get('totalCount', 0),
             'page': page,
-            'per_page': per_page,
-            'total_pages': (len(formatted_facts) + per_page - 1) // per_page
+            'per_page': len(formatted_facts),
+            'total_pages': facts.get('totalPages', 1)
         }
 
         return paginated_data
@@ -217,7 +202,6 @@ async def get_facts():
 async def get_todos():
     try:
         page = int(request.args.get('page', 1))
-        per_page = int(request.args.get('per_page', 10))
 
         # Fetch all pages for saving
         all_todos = await fetch_all_pages(bee.get_todos, "me")
@@ -227,19 +211,15 @@ async def get_todos():
         save_to_file(formatted_all_todos, 'todos', {'todos': all_todos})
 
         # Get current page data for display
-        todos = await bee.get_todos("me")
+        todos = await bee.get_todos("me", page=page)
         formatted_todos = [format_todo(todo) for todo in todos.get('todos', [])]
 
-        # Manual pagination
-        start_idx = (page - 1) * per_page
-        end_idx = start_idx + per_page
-
         paginated_data = {
-            'todos': formatted_todos[start_idx:end_idx],
-            'total': len(formatted_todos),
+            'todos': formatted_todos,
+            'total': todos.get('totalCount', 0),
             'page': page,
-            'per_page': per_page,
-            'total_pages': (len(formatted_todos) + per_page - 1) // per_page
+            'per_page': len(formatted_todos),
+            'total_pages': todos.get('totalPages', 1)
         }
 
         return paginated_data

@@ -160,7 +160,7 @@ function displayDataAsCards(data, type) {
 async function fetchApiData(endpoint) {
     try {
         const page = currentPages[endpoint];
-        const response = await fetch(`/api/${endpoint}?page=${page}&per_page=10`);
+        const response = await fetch(`/api/${endpoint}?page=${page}`);
         const data = await response.json();
 
         // Clear previous pagination controls

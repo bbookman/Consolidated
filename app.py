@@ -25,6 +25,8 @@ def format_conversation(conv):
         summary = summary[len("## Summary\n"):]
     if summary.startswith("Summary: "):
         summary = summary[len("Summary: "):]
+    if summary.startswith("Summary\n"):
+        summary = summary[len("Summary\n"):]
     
     # Get address from primary_location if it exists
     address = "No address"

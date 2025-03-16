@@ -21,24 +21,21 @@ def async_route(f):
 def format_conversation(conv):
     return {
         "Summary": conv.get("summary", "No summary available"),
-        "Created At": conv.get("created_at", "Unknown"),
-        "ID": conv.get("id", "Unknown")
+        "Created At": conv.get("created_at", "Unknown")
     }
 
 def format_fact(fact):
     return {
         "Text": fact.get("text", "No text available"),
         "Confirmed": "Yes" if fact.get("confirmed") else "No",
-        "Created At": fact.get("created_at", "Unknown"),
-        "ID": fact.get("id", "Unknown")
+        "Created At": fact.get("created_at", "Unknown")
     }
 
 def format_todo(todo):
     return {
         "Task": todo.get("text", "No task description"),
         "Completed": "Yes" if todo.get("completed") else "No",
-        "Created At": todo.get("created_at", "Unknown"),
-        "ID": todo.get("id", "Unknown")
+        "Created At": todo.get("created_at", "Unknown")
     }
 
 async def fetch_all_pages(fetch_func, user_id):

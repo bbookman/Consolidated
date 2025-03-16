@@ -20,7 +20,6 @@ def async_route(f):
 
 def format_conversation(conv):
     return {
-        "Title": conv.get("title", "Untitled Conversation"),
         "Summary": conv.get("summary", "No summary available"),
         "Created At": conv.get("created_at", "Unknown"),
         "ID": conv.get("id", "Unknown")

@@ -1,0 +1,107 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "Locations API",
+      "version": "1.0.0",
+      "description": "API for managing locations"
+    },
+    "host": "api.bee.computer",
+    "basePath": "/",
+    "schemes": [
+      "https"
+    ],
+    "paths": {
+      "/v1/{userId}/locations": {
+        "get": {
+          "summary": "Get locations for a user with paging and optional filtering by conversation ID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "userId",
+              "schema": {
+                "type": "string",
+                "example": "me"
+              },
+              "required": true,
+              "description": "ID of the user (currently only supports 'me')"
+            },
+            {
+              "in": "query",
+              "name": "page",
+              "schema": {
+                "type": "integer"
+              },
+              "description": "Page number"
+            },
+            {
+              "in": "query",
+              "name": "limit",
+              "schema": {
+                "type": "integer"
+              },
+              "description": "Number of items per page"
+            },
+            {
+              "in": "query",
+              "name": "conversationId",
+              "schema": {
+                "type": "integer"
+              },
+              "description": "Filter locations by conversation ID"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "A paginated list of locations",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "locations": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "latitude": {
+                          "type": "number",
+                          "format": "float"
+                        },
+                        "longitude": {
+                          "type": "number",
+                          "format": "float"
+                        },
+                        "address": {
+                          "type": "string"
+                        },
+                        "created_at": {
+                          "type": "string",
+                          "format": "date-time"
+                        }
+                      }
+                    }
+                  },
+                  "currentPage": {
+                    "type": "integer"
+                  },
+                  "totalPages": {
+                    "type": "integer"
+                  },
+                  "totalCount": {
+                    "type": "integer"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "404": {
+              "description": "Conversation not found"
+            }
+          }
+        }
+      }
+    }
+  }

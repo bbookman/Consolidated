@@ -3,28 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Development Environment</title>
+    <title>API Data Display</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>Python Development Environment</h1>
-        <div class="editor-container">
-            <textarea id="code-editor">print("Hello, World!")</textarea>
-        </div>
-        <div class="button-container">
-            <button id="run-button">Run Code</button>
-            <button id="clear-button">Clear Output</button>
-        </div>
-        <div class="output-container">
-            <h3>Output:</h3>
-            <pre id="output"></pre>
-            <h3>Errors:</h3>
-            <pre id="error" class="error"></pre>
-        </div>
-
+        <h1>API Data Display</h1>
         <div class="api-container">
             <h2>API Data</h2>
             <div class="api-buttons">
@@ -51,9 +35,6 @@
             </div>
         </div>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

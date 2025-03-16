@@ -26,10 +26,15 @@ def format_conversation(conv):
     if summary.startswith("Summary: "):
         summary = summary[len("Summary: "):]
     
+    # Get address from primary_location if it exists
+    address = "No address"
+    if conv.get("primary_location") and conv["primary_location"].get("address"):
+        address = conv["primary_location"]["address"]
+    
     return {
         "Summary": summary,
         "Created At": conv.get("created_at", "Unknown"),
-        "Address": conv.get("address", "No address")
+        "Address": address
     }
 
 def format_fact(fact):

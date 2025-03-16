@@ -110,12 +110,13 @@ async function fetchApiData(endpoint) {
         const response = await fetch(`/api/${endpoint}?page=${page}`);
         const data = await response.json();
 
-        // Clear previous pagination controls
-        const paginationContainer = document.getElementById('pagination-controls');
-        paginationContainer.innerHTML = '';
+        if (data.error) {
+            throw new Error(data.error);
+        }
 
-        // Add pagination controls
-        paginationContainer.appendChild(createPaginationControls(data, endpoint));
+        // Update pagination display
+        const paginationContainer = document.getElementById('pagination-controls');
+        paginationContainer.innerHTML = `Page ${data.page} of ${data.total_pages}`;
 
         // Display data as cards
         displayDataAsCards(data, endpoint);

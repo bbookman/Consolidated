@@ -19,8 +19,15 @@ def async_route(f):
     return wrapped
 
 def format_conversation(conv):
+    # Clean up the summary by removing duplicate headers
+    summary = conv.get("summary", "No summary available")
+    if summary.startswith("## Summary\n"):
+        summary = summary[len("## Summary\n"):]
+    if summary.startswith("Summary: "):
+        summary = summary[len("Summary: "):]
+    
     return {
-        "Summary": conv.get("summary", "No summary available"),
+        "Summary": summary,
         "Created At": conv.get("created_at", "Unknown"),
         "Address": conv.get("address", "Unknown")
     }

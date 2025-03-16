@@ -43,8 +43,7 @@ def format_fact(fact):
     return {
         "Text": fact.get("text", "No text available"),
         "Confirmed": "Yes" if fact.get("confirmed") else "No",
-        "Created At": fact.get("created_at", "Unknown"),
-        "Address": fact.get("address", "No address")
+        "Created At": fact.get("created_at", "Unknown")
     }
 
 def format_todo(todo):

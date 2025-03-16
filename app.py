@@ -29,7 +29,7 @@ def format_conversation(conv):
     return {
         "Summary": summary,
         "Created At": conv.get("created_at", "Unknown"),
-        "Address": conv["address"]
+        "Address": conv.get("address", "No address")
     }
 
 def format_fact(fact):
@@ -37,7 +37,7 @@ def format_fact(fact):
         "Text": fact.get("text", "No text available"),
         "Confirmed": "Yes" if fact.get("confirmed") else "No",
         "Created At": fact.get("created_at", "Unknown"),
-        "Address": fact["address"]
+        "Address": fact.get("address", "No address")
     }
 
 def format_todo(todo):
@@ -45,7 +45,7 @@ def format_todo(todo):
         "Task": todo.get("text", "No task description"),
         "Completed": "Yes" if todo.get("completed") else "No",
         "Created At": todo.get("created_at", "Unknown"),
-        "Address": todo["address"]
+        "Address": todo.get("address", "No address")
     }
 
 async def fetch_all_pages(fetch_func, user_id):

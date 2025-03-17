@@ -204,11 +204,6 @@ h3 {
     color: #2e7d32;
 }
 
-.status.pending {
-    background-color: #fff3e0;
-    color: #f57c00;
-}
-
 #data-display {
     margin-bottom: 2rem;
 }

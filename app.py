@@ -49,8 +49,7 @@ def format_todo(todo):
     return {
         "Task": todo.get("text", "No task description"),
         "Completed": "Yes" if todo.get("completed") else "No",
-        "Created At": todo.get("created_at", "Unknown"),
-        "Address": todo.get("address", "No address")
+        "Created At": todo.get("created_at", "Unknown")
     }
 
 async def fetch_all_pages(fetch_func, user_id):

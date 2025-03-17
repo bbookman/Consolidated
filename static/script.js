@@ -69,9 +69,6 @@ function createCard(item, type) {
             content = `
                 <h4>Fact</h4>
                 <p>${item.Text}</p>
-                <div class="status ${item.Confirmed === 'Yes' ? 'completed' : 'pending'}">
-                    ${item.Confirmed === 'Yes' ? 'Confirmed' : 'Pending'}
-                </div>
             `;
             break;
         case 'todos':

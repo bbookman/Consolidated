@@ -1,10 +1,3 @@
-// Pagination state
-let currentPages = {
-    conversations: 1,
-    facts: 1,
-    todos: 1
-};
-
 // API-related buttons
 const fetchConversationsButton = document.getElementById('fetch-conversations');
 const fetchFactsButton = document.getElementById('fetch-facts');
@@ -16,40 +9,7 @@ function formatDate(dateString) {
     return date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
 }
 
-// Create pagination controls
-function createPaginationControls(data, endpoint) {
-    const controls = document.createElement('div');
-    controls.className = 'pagination-controls';
 
-    // Previous button
-    const prevButton = document.createElement('button');
-    prevButton.textContent = '← Previous';
-    prevButton.disabled = data.page <= 1;
-    prevButton.onclick = () => {
-        currentPages[endpoint]--;
-        fetchApiData(endpoint);
-    };
-
-    // Page info
-    const pageInfo = document.createElement('span');
-    pageInfo.textContent = `Page ${data.page} of ${data.total_pages}`;
-    pageInfo.className = 'page-info';
-
-    // Next button
-    const nextButton = document.createElement('button');
-    nextButton.textContent = 'Next →';
-    nextButton.disabled = data.page >= data.total_pages;
-    nextButton.onclick = () => {
-        currentPages[endpoint]++;
-        fetchApiData(endpoint);
-    };
-
-    controls.appendChild(prevButton);
-    controls.appendChild(pageInfo);
-    controls.appendChild(nextButton);
-
-    return controls;
-}
 
 // Function to create a card element
 function createCard(item, type) {
@@ -103,17 +63,12 @@ function displayDataAsCards(data, type) {
 // API functions
 async function fetchApiData(endpoint) {
     try {
-        const page = currentPages[endpoint];
-        const response = await fetch(`/api/${endpoint}?page=${page}`);
+        const response = await fetch(`/api/${endpoint}`);
         const data = await response.json();
 
         if (data.error) {
             throw new Error(data.error);
         }
-
-        // Update pagination display
-        const paginationContainer = document.getElementById('pagination-controls');
-        paginationContainer.innerHTML = `Page ${data.page} of ${data.total_pages}`;
 
         // Display data as cards
         displayDataAsCards(data, endpoint);

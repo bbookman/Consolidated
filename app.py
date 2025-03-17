@@ -181,28 +181,14 @@ async def get_conversations():
 @async_route
 async def get_facts():
     try:
-        page = int(request.args.get('page', 1))
-
-        # Fetch all pages for saving
+        # Fetch all facts
         all_facts = await fetch_all_pages(bee.get_facts, "me")
-        formatted_all_facts = [format_fact(fact) for fact in all_facts]
+        formatted_facts = [format_fact(fact) for fact in all_facts]
 
         # Save complete dataset
-        save_to_file(formatted_all_facts, 'facts', {'facts': all_facts})
+        save_to_file(formatted_facts, 'facts', {'facts': all_facts})
 
-        # Get current page data for display
-        facts = await bee.get_facts("me", page=page)
-        formatted_facts = [format_fact(fact) for fact in facts.get('facts', [])]
-
-        paginated_data = {
-            'facts': formatted_facts,
-            'total': facts.get('totalCount', 0),
-            'page': page,
-            'per_page': len(formatted_facts),
-            'total_pages': facts.get('totalPages', 1)
-        }
-
-        return paginated_data
+        return {'facts': formatted_facts}
 
     except Exception as e:
         app.logger.error(f"Error in get_facts: {str(e)}")

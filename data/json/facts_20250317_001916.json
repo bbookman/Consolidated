@@ -1,6 +1,54 @@
 {
   "facts": [
     {
+      "id": 595325,
+      "text": "Bruce feels he has less free time as he has gotten older.",
+      "tags": [
+        "hobbies"
+      ],
+      "created_at": "2025-03-16T19:33:29.370Z",
+      "visibility": "private"
+    },
+    {
+      "id": 595327,
+      "text": "Bruce has hosted events at his house.",
+      "tags": [
+        "hobbies"
+      ],
+      "created_at": "2025-03-16T19:33:29.370Z",
+      "visibility": "private"
+    },
+    {
+      "id": 595329,
+      "text": "Bruce has played the role of Santa Claus and Peppa Pig in costume.",
+      "tags": [
+        "entertainment",
+        "hobbies"
+      ],
+      "created_at": "2025-03-16T19:33:29.370Z",
+      "visibility": "private"
+    },
+    {
+      "id": 595332,
+      "text": "Bruce enjoys 80s metal rock music.",
+      "tags": [
+        "entertainment",
+        "hobbies"
+      ],
+      "created_at": "2025-03-16T19:33:29.370Z",
+      "visibility": "private"
+    },
+    {
+      "id": 595333,
+      "text": "Bruce likes Ozzy Osbourne, Journey, and Def Leppard.",
+      "tags": [
+        "entertainment",
+        "hobbies"
+      ],
+      "created_at": "2025-03-16T19:33:29.370Z",
+      "visibility": "private"
+    },
+    {
       "id": 592965,
       "text": "Bruce has two dogs named Peach and Grape.",
       "tags": [

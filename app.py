@@ -99,29 +99,63 @@ async def fetch_all_pages(fetch_func, user_id):
     return all_items
 
 def save_to_file(data, data_type, original_data):
+    """
+    Save data to files in data/text and data/json directories
+    
+    Args:
+        data: List of formatted data items
+        data_type: Type of data (conversations, facts, todos)
+        original_data: Raw data from API
+    """
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-
-    # Create main data directory and subfolders
-    os.makedirs('data/text', exist_ok=True)
-    os.makedirs('data/json', exist_ok=True)
-
-    # Save formatted data as text
-    formatted_file = f'data/text/{data_type}_{timestamp}.txt'
-    with open(formatted_file, 'w') as f:
-        f.write(f"=== {data_type.upper()} ===\n")
-        f.write(f"Retrieved at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-        f.write(f"Total items: {len(data)}\n\n")
-
-        for idx, item in enumerate(data, 1):
-            f.write(f"--- Item {idx} ---\n")
-            for key, value in item.items():
-                f.write(f"{key}: {value}\n")
-            f.write("\n")
-
-    # Save raw JSON for reference
-    json_file = f'data/json/{data_type}_{timestamp}.json'
-    with open(json_file, 'w') as f:
-        json.dump(original_data, f, indent=2)
+    app.logger.info(f"Saving {data_type} to file with timestamp {timestamp}")
+    
+    try:
+        # Get absolute path for data directory
+        current_dir = os.getcwd()
+        data_dir = os.path.join(current_dir, 'data')
+        text_dir = os.path.join(data_dir, 'text')
+        json_dir = os.path.join(data_dir, 'json')
+        
+        # Create main data directory and subfolders
+        os.makedirs(data_dir, exist_ok=True)
+        os.makedirs(text_dir, exist_ok=True)
+        os.makedirs(json_dir, exist_ok=True)
+        
+        app.logger.info(f"Created directories at {data_dir}")
+        
+        # Save formatted data as text
+        formatted_file = os.path.join(text_dir, f"{data_type}_{timestamp}.txt")
+        app.logger.info(f"Saving formatted data to {formatted_file}")
+        
+        with open(formatted_file, 'w') as f:
+            f.write(f"=== {data_type.upper()} ===\n")
+            f.write(f"Retrieved at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+            f.write(f"Total items: {len(data)}\n\n")
+            
+            for idx, item in enumerate(data, 1):
+                f.write(f"--- Item {idx} ---\n")
+                for key, value in item.items():
+                    f.write(f"{key}: {value}\n")
+                f.write("\n")
+                
+        app.logger.info(f"Successfully wrote text file to {formatted_file}")
+        
+        # Save raw JSON for reference
+        json_file = os.path.join(json_dir, f"{data_type}_{timestamp}.json")
+        app.logger.info(f"Saving JSON data to {json_file}")
+        
+        with open(json_file, 'w') as f:
+            json.dump(original_data, f, indent=2)
+            
+        app.logger.info(f"Successfully wrote JSON file to {json_file}")
+        
+        return True
+        
+    except Exception as e:
+        app.logger.error(f"Error saving data to file: {str(e)}")
+        app.logger.error(traceback.format_exc())
+        return False
 
 @app.route('/')
 def index():

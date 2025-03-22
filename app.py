@@ -8,6 +8,7 @@ from beeai import Bee
 import json
 from datetime import datetime
 from functools import wraps
+import database_handler as db
 
 app = Flask(__name__)
 bee = Bee(os.environ.get('BEE_API_KEY'))
@@ -190,8 +191,12 @@ async def get_conversations():
         app.logger.info(f"All conversations count: {len(all_conversations)}")
         formatted_all_conversations = [format_conversation(conv) for conv in all_conversations]
 
-        # Save complete dataset
+        # Save complete dataset to file
         save_to_file(formatted_all_conversations, 'conversations', {'conversations': all_conversations})
+        
+        # Store conversations in database with deduplication
+        db_result = db.store_conversations(all_conversations)
+        app.logger.info(f"Database storage result: {db_result}")
 
         # Get current page data for display
         conversations = await bee.get_conversations("me", page=page)
@@ -220,8 +225,12 @@ async def get_facts():
         all_facts = await fetch_all_pages(bee.get_facts, "me")
         formatted_facts = [format_fact(fact) for fact in all_facts]
 
-        # Save complete dataset
+        # Save complete dataset to file
         save_to_file(formatted_facts, 'facts', {'facts': all_facts})
+        
+        # Store facts in database with deduplication
+        db_result = db.store_facts(all_facts)
+        app.logger.info(f"Database facts storage result: {db_result}")
 
         return {'facts': formatted_facts}
 
@@ -239,8 +248,12 @@ async def get_todos():
         all_todos = await fetch_all_pages(bee.get_todos, "me")
         formatted_all_todos = [format_todo(todo) for todo in all_todos]
 
-        # Save complete dataset
+        # Save complete dataset to file
         save_to_file(formatted_all_todos, 'todos', {'todos': all_todos})
+        
+        # Store todos in database with deduplication
+        db_result = db.store_todos(all_todos)
+        app.logger.info(f"Database todos storage result: {db_result}")
 
         # Get current page data for display
         todos = await bee.get_todos("me", page=page)

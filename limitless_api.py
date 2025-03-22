@@ -45,26 +45,70 @@ class LimitlessAPI:
             "limit": limit
         }
         
+        # Initialize empty result
+        result = {"lifelogs": [], "page": page, "perPage": limit, "totalItems": 0, "totalPages": 1}
+        
         try:
             async with aiohttp.ClientSession() as session:
                 async with session.get(url, headers=self.headers, params=params) as response:
-                    if response.status == 200:
-                        data = await response.json()
-                        # Convert to expected format with pagination info
-                        return {
-                            "lifelogs": data.get("data", []),
-                            "page": page,
-                            "perPage": limit,
-                            "totalItems": data.get("meta", {}).get("total", 0),
-                            "totalPages": data.get("meta", {}).get("last_page", 1)
-                        }
-                    else:
+                    # Check if response is successful
+                    if response.status != 200:
                         error_text = await response.text()
                         logger.error(f"Error fetching lifelogs: {response.status} - {error_text}")
-                        return {"lifelogs": [], "error": f"API Error: {response.status}"}
+                        result["error"] = f"API Error: {response.status}"
+                        return result
+                    
+                    # Parse JSON response
+                    data = await response.json()
+                    logger.info(f"Limitless API response data type: {type(data)}")
+                    
+                    # Log response structure for debugging
+                    if isinstance(data, dict):
+                        logger.info(f"Response keys: {data.keys()}")
+                        logger.info(f"Raw response snippet: {json.dumps(data)[:300]}...")
+                    
+                    # Extract lifelogs from response
+                    lifelogs = []
+                    
+                    # Handle different response formats
+                    if isinstance(data, dict) and "data" in data:
+                        data_field = data["data"]
+                        
+                        # Format 1: data.data.lifelogs array
+                        if isinstance(data_field, dict) and "lifelogs" in data_field and isinstance(data_field["lifelogs"], list):
+                            lifelogs = data_field["lifelogs"]
+                            logger.info(f"Found {len(lifelogs)} lifelogs in data.data.lifelogs format")
+                        
+                        # Format 2: data.data is a list of lifelogs
+                        elif isinstance(data_field, list):
+                            lifelogs = data_field
+                            logger.info(f"Found {len(lifelogs)} lifelogs in data.data list format")
+                        
+                        # Format 3: data.data is a single lifelog object
+                        elif isinstance(data_field, dict) and "contents" in data_field:
+                            lifelogs = [data_field]
+                            logger.info("Found single lifelog object")
+                    
+                    # Log sample data if available
+                    if lifelogs and len(lifelogs) > 0:
+                        if isinstance(lifelogs[0], dict):
+                            logger.info(f"Sample lifelog: {json.dumps(lifelogs[0])[:200]}...")
+                    
+                    # Update result with found lifelogs
+                    if lifelogs:
+                        result["lifelogs"] = lifelogs
+                        result["totalItems"] = data.get("meta", {}).get("total", len(lifelogs))
+                        result["totalPages"] = data.get("meta", {}).get("last_page", 1)
+                    else:
+                        logger.warning(f"No lifelogs found in response: {str(data)[:200]}")
+                        result["error"] = "No lifelogs found in response"
+                    
+                    return result
+                    
         except Exception as e:
             logger.error(f"Exception while fetching lifelogs: {str(e)}")
-            return {"lifelogs": [], "error": f"Exception: {str(e)}"}
+            result["error"] = f"Exception: {str(e)}"
+            return result
 
 # Create a singleton instance if API key is available,
 # otherwise set to None and initialize later

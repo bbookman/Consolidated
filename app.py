@@ -186,27 +186,32 @@ async def fetch_all_pages(fetch_func, user_id):
 
 def save_to_file(data, data_type, original_data):
     """
-    Save data to JSON files in the data/json directory, only if there's new data
+    Save data to JSON files in the appropriate API-specific directory
     
     Args:
         data: List of formatted data items (not used - kept for backward compatibility)
-        data_type: Type of data (conversations, facts, todos)
+        data_type: Type of data (conversations, facts, todos, lifelogs)
         original_data: Raw data from API
     """
     try:
         # Get absolute path for data directory
         current_dir = os.getcwd()
         data_dir = os.path.join(current_dir, 'data')
-        json_dir = os.path.join(data_dir, 'json')
         
-        # Create main data directory and JSON subfolder
-        os.makedirs(data_dir, exist_ok=True)
-        os.makedirs(json_dir, exist_ok=True)
+        # Determine which API subdirectory to use
+        if data_type == 'lifelogs':
+            api_subdir = 'limitless'
+        else:
+            api_subdir = 'bee'
+            
+        # Create API-specific directory
+        api_dir = os.path.join(data_dir, api_subdir)
+        os.makedirs(api_dir, exist_ok=True)
         
-        app.logger.info(f"Created directories at {data_dir}")
+        app.logger.info(f"Using API directory: {api_dir}")
         
         # Check for existing files of this data type
-        existing_files = [f for f in os.listdir(json_dir) if f.startswith(data_type) and f.endswith('.json')]
+        existing_files = [f for f in os.listdir(api_dir) if f.startswith(data_type) and f.endswith('.json')]
         
         # Extract the actual data from the response dict
         key_map = {
@@ -231,7 +236,7 @@ def save_to_file(data, data_type, original_data):
         if existing_files:
             # Sort by timestamp to get the latest file
             latest_file = sorted(existing_files)[-1]
-            latest_file_path = os.path.join(json_dir, latest_file)
+            latest_file_path = os.path.join(api_dir, latest_file)
             
             try:
                 with open(latest_file_path, 'r') as f:
@@ -255,7 +260,7 @@ def save_to_file(data, data_type, original_data):
         # Only save if there's new data
         if new_data_to_save:
             timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-            json_file = os.path.join(json_dir, f"{data_type}_{timestamp}.json")
+            json_file = os.path.join(api_dir, f"{data_type}_{timestamp}.json")
             app.logger.info(f"Saving new JSON data to {json_file}")
             
             with open(json_file, 'w') as f:
@@ -662,10 +667,27 @@ def run_cli():
                     return await limitless.get_lifelogs(page=page)
                 
                 lifelogs = loop.run_until_complete(fetch_all_pages(get_lifelogs_wrapper, "dummy"))
-                if isinstance(lifelogs, dict):
+                print(f"Debug - lifelogs type: {type(lifelogs)}")
+                
+                # Fix case where lifelogs_list is a list with a string like ['lifelogs']
+                if isinstance(lifelogs, list) and len(lifelogs) == 1 and isinstance(lifelogs[0], str) and lifelogs[0] == 'lifelogs':
+                    print("Detected invalid lifelog list format, replacing with empty list")
+                    lifelogs_list = []
+                # Normal processing for dictionary response with 'lifelogs' key
+                elif isinstance(lifelogs, dict):
                     lifelogs_list = lifelogs.get('lifelogs', [])
+                    print(f"Debug - lifelogs_list type: {type(lifelogs_list)}")
+                    print(f"Debug - lifelogs_list content sample: {str(lifelogs_list)[:100]}")
+                # Fallback for direct list
                 else:
-                    lifelogs_list = lifelogs
+                    # Only use direct list if it contains dictionaries/objects, not strings
+                    if isinstance(lifelogs, list) and (not lifelogs or isinstance(lifelogs[0], dict)):
+                        lifelogs_list = lifelogs
+                    else:
+                        lifelogs_list = []
+                        print("Unexpected lifelogs format, using empty list")
+                    print(f"Debug - lifelogs_list (direct) type: {type(lifelogs_list)}")
+                    print(f"Debug - lifelogs_list (direct) content sample: {str(lifelogs_list)[:100]}")
                 print(f"Fetched {len(lifelogs_list)} lifelogs")
             except Exception as e:
                 print(f"Error fetching lifelogs: {str(e)}")

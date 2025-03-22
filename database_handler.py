@@ -3,7 +3,12 @@ from sqlalchemy.orm import sessionmaker
 from models import Base, Bee_Conversation, Bee_Fact, Bee_Todo, Limitless_Lifelog
 import os
 import json
+import logging
 from datetime import datetime
+
+# Set up logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # Get database URL from environment variables
 DATABASE_URL = os.environ.get('DATABASE_URL')
@@ -214,45 +219,99 @@ def store_lifelogs(lifelogs):
     """
     session = Session()
     try:
+        # Initialize result with 0 processed in case we have an empty list or error
         result = {
-            "processed": len(lifelogs),
+            "processed": 0,
             "added": 0,
             "skipped": 0
         }
         
+        # Skip processing if we get an empty list or a list with a single string 'lifelogs'
+        if not lifelogs or (isinstance(lifelogs, list) and len(lifelogs) == 1 and isinstance(lifelogs[0], str) and lifelogs[0] == 'lifelogs'):
+            logger.warning("Received empty or invalid lifelogs list, skipping")
+            return result
+            
+        # Update processed count for valid list
+        result["processed"] = len(lifelogs)
+        
         for log in lifelogs:
+            # Skip if it's a string that's just "lifelogs"
+            if isinstance(log, str) and log == "lifelogs":
+                logger.warning("Skipping string entry 'lifelogs'")
+                result["skipped"] += 1
+                continue
+                
+            # Handle both string and dictionary format for actual lifelog data
+            if isinstance(log, str) and log != "lifelogs":
+                # Try to parse the string as JSON
+                try:
+                    log_data = json.loads(log)
+                except json.JSONDecodeError:
+                    logger.warning(f"Could not parse lifelog string as JSON: {log[:30]}...")
+                    result["skipped"] += 1
+                    continue
+            else:
+                log_data = log
+                
+            # Skip if log_data is not a dictionary (e.g., it might be None or another type)
+            if not isinstance(log_data, dict):
+                logger.warning(f"Skipping non-dictionary lifelog data: {type(log_data)}")
+                result["skipped"] += 1
+                continue
+                
             # Check if this lifelog already exists in the database
-            log_id = str(log.get('id', ''))
+            log_id = str(log_data.get('id', ''))
+            if not log_id:
+                logger.warning("Skipping lifelog with no ID")
+                result["skipped"] += 1
+                continue
+                
             existing = session.query(Limitless_Lifelog).filter_by(log_id=log_id).first()
             
             if existing:
+                logger.info(f"Lifelog ID {log_id} already exists, skipping")
                 result["skipped"] += 1
                 continue
             
-            # Extract tags if they exist
-            tags_json = json.dumps(log.get('tags', [])) if log.get('tags') else None
-            
-            # Create new lifelog record
-            new_log = Limitless_Lifelog(
-                log_id=log_id,
-                title=log.get('title'),
-                description=log.get('description'),
-                created_at=parse_date(log.get('created_at')),
-                updated_at=parse_date(log.get('updated_at')),
-                log_type=log.get('type'),
-                tags=tags_json,
-                raw_data=json.dumps(log)
-            )
-            
-            session.add(new_log)
-            result["added"] += 1
+            try:
+                # Extract tags if they exist
+                tags = log_data.get('tags')
+                if tags and isinstance(tags, list):
+                    tags_json = json.dumps(tags)
+                else:
+                    tags_json = None
+                
+                # Create new lifelog record
+                new_log = Limitless_Lifelog(
+                    log_id=log_id,
+                    title=log_data.get('title'),
+                    description=log_data.get('description'),
+                    created_at=parse_date(log_data.get('created_at')),
+                    updated_at=parse_date(log_data.get('updated_at')),
+                    log_type=log_data.get('type'),
+                    tags=tags_json,
+                    raw_data=json.dumps(log_data)
+                )
+                
+                session.add(new_log)
+                result["added"] += 1
+                logger.info(f"Added lifelog with ID {log_id}")
+            except Exception as e:
+                logger.error(f"Error adding lifelog {log_id}: {str(e)}")
+                result["skipped"] += 1
         
         session.commit()
         return result
         
     except Exception as e:
         session.rollback()
-        raise e
+        logger.error(f"Error in store_lifelogs: {str(e)}")
+        # Return empty result if exception happens before result is initialized
+        return {
+            "processed": 0,
+            "added": 0,
+            "skipped": 0
+        }
     finally:
         session.close()
 

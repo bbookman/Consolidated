@@ -1,0 +1,1827 @@
+{
+  "conversations": [
+    {
+      "id": 632032,
+      "start_time": "2025-03-22T16:12:24.584Z",
+      "end_time": null,
+      "device_type": "Bee",
+      "summary": null,
+      "short_summary": null,
+      "state": "CAPTURING",
+      "created_at": "2025-03-22T16:12:24.584Z",
+      "updated_at": "2025-03-22T16:12:24.584Z",
+      "primary_location": null
+    },
+    {
+      "id": 631301,
+      "start_time": "2025-03-22T15:08:41.739Z",
+      "end_time": null,
+      "device_type": "Bee",
+      "summary": null,
+      "short_summary": null,
+      "state": "CAPTURING",
+      "created_at": "2025-03-22T15:08:41.739Z",
+      "updated_at": "2025-03-22T15:10:14.130Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.121450727235086,
+        "longitude": -77.91260624247737,
+        "created_at": "2025-03-22T15:10:14.047Z"
+      }
+    },
+    {
+      "id": 629495,
+      "start_time": "2025-03-22T12:54:03.021Z",
+      "end_time": "2025-03-22T15:08:56.970Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nToday was a mixed bag. I had a frustrating moment with my dog, Peach, who wouldn't stop bugging me to go out even though I had just taken her. I think she might be drinking too much water because her poop looked a little hard.  On a positive note, my boss was really nice and changed my schedule for tomorrow so I could go in at my usual time. \n\n## Atmosphere\nOverall, the atmosphere was a bit chaotic and stressful. There were multiple conversations happening at once, and I was juggling a lot of different tasks. \n\n## Key Takeaways\n* **Investment Strategy:** I need to research investment options that perform well when the stock market declines, such as bonds and treasury bills. I should contact Fidelity for advice.\n* **Peso Exchange Rate:** The current value of the dollar against the peso is high, which could present an opportunity.\n* **Peach's Bathroom Habits:** I need to keep an eye on Peach's water intake and potentially consult with a vet if her bathroom issues persist. \n* **Work Schedule:** My boss was very accommodating and adjusted my schedule for tomorrow. \n",
+      "short_summary": "Bruce discussed investment strategies with his partner, Ivette, explored options for managing money in Mexico, and addressed work scheduling and family matters.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-22T12:54:03.021Z",
+      "updated_at": "2025-03-22T15:08:56.971Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.121367087671324,
+        "longitude": -77.91256407067813,
+        "created_at": "2025-03-22T13:09:12.240Z"
+      }
+    },
+    {
+      "id": 629206,
+      "start_time": "2025-03-22T12:33:58.841Z",
+      "end_time": "2025-03-22T12:54:13.857Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nBruce was feeling unwell but expressed feelings of happiness to someone they addressed as \"sweetie.\" The other person asked if Bruce was \"looking for a benefit.\"  \n\n## Atmosphere\nThe atmosphere seems potentially tense. Bruce is unwell and the other person's question about \"looking for a benefit\" could be interpreted as skeptical or challenging. \n\n## Key Take Aways\n* Bruce was feeling sick.\n* Despite feeling unwell, Bruce expressed happiness. \n* Bruce called someone \"sweetie.\"\n* The other person questioned if Bruce had ulterior motives. \n",
+      "short_summary": "Bruce expressed happiness despite feeling unwell.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-22T12:33:58.841Z",
+      "updated_at": "2025-03-22T12:54:13.857Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.1212604321941,
+        "longitude": -77.91256445813143,
+        "created_at": "2025-03-22T12:39:12.542Z"
+      }
+    },
+    {
+      "id": 629017,
+      "start_time": "2025-03-22T12:20:53.906Z",
+      "end_time": "2025-03-22T12:33:53.320Z",
+      "device_type": "Bee",
+      "summary": "Summary: Bruce had a blood glucose reading of 125 and weighed 188 lbs.  He then needed to use the bathroom, so he let someone named Benetton know he was going to move their belongings.  It seems like Benetton may have left their things near the bathroom.\n\nAtmosphere: It seems like a normal day for Bruce. He's keeping track of his health numbers and is also looking after someone named Benetton. \n\nKey Take Aways:\n* Bruce's blood glucose was 125.\n* Bruce's weight was 188 lbs.\n* Bruce had to move Benetton's things to use the bathroom. \n",
+      "short_summary": "I informed someone that my blood glucose was 125 and my weight was 188 pounds, and also needed to move some things to accommodate my father's need to use the restroom.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-22T12:20:53.906Z",
+      "updated_at": "2025-03-22T12:33:53.320Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.121259300907326,
+        "longitude": -77.91255491305127,
+        "created_at": "2025-03-22T12:21:11.801Z"
+      }
+    },
+    {
+      "id": 619626,
+      "start_time": "2025-03-22T01:26:55.330Z",
+      "end_time": "2025-03-22T02:04:36.661Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nYou had a conversation with Ivette about her work. She told you she was asked to work another day next week, Wednesday at 5:00 am. She's thinking of working Mondays during the summer because they don't have enough staff. You also discussed the Mandela effect and how you want to analyze transcripts for fallacies, biases, and logic. \n\n## Atmosphere\nThe conversation seems casual and relaxed, like a chat between family or close friends. There's a bit of background noise and chatter. \n\n## Key Take Aways\n* Ivette has a work opportunity next Wednesday at 5:00 am.\n* She is considering working Mondays during the summer.\n* You are interested in analyzing transcripts for logical fallacies, biases, and critical thinking. \n",
+      "short_summary": "Bruce discussed work schedules, unconscious bias detection in transcripts, and a need to improve logical analysis.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-22T01:26:55.330Z",
+      "updated_at": "2025-03-22T02:04:36.662Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12126848249273,
+        "longitude": -77.91258336586303,
+        "created_at": "2025-03-22T01:51:31.103Z"
+      }
+    },
+    {
+      "id": 619220,
+      "start_time": "2025-03-22T00:52:34.910Z",
+      "end_time": "2025-03-22T01:05:40.037Z",
+      "device_type": "Bee",
+      "summary": "Summary: Bruce was trying to recall the name of a farm he takes his kids to. He thought it was called \"Lemus Lemus Farm\", then \"LEMOS Lemos Farm\", before settling on \"Limos Farm\". The farm is located in the mountains on the way to Monterey. \n\nAtmosphere: Bruce seemed to be experiencing a mild memory lapse but ultimately recalled the information he was looking for. \n\nKey Take Aways:\n* Bruce takes his kids to a farm called \"Limos Farm\".\n* The farm is located in the mountains on the way to Monterey. \n",
+      "short_summary": "I confirmed that the farm we take the kids to near Monterey is called Lemos Farm.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-22T00:52:34.910Z",
+      "updated_at": "2025-03-22T01:05:40.037Z",
+      "primary_location": {
+        "address": "2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States",
+        "latitude": 34.289404567791806,
+        "longitude": -77.8722974690807,
+        "created_at": "2025-03-22T00:53:27.300Z"
+      }
+    },
+    {
+      "id": 610402,
+      "start_time": "2025-03-21T12:35:16.885Z",
+      "end_time": "2025-03-21T14:14:39.060Z",
+      "device_type": "Bee",
+      "summary": "## Summary: \n\nToday was a busy day filled with little moments. I had a funny interaction with someone who was wearing a pro-LGBTQ+ shirt.  Given we are in North Carolina, I told her how brave she was for wearing it, assuming she was local. Turns out, she was from California! We had a nice chat about how her home state is much more liberal.  She even told me, \"You should see my car,\" which made me laugh.  I also had to help Ivette find a form for Russell - it was on her desk. It was a  \"YWCA Employee Handbook\" acknowledgment form for Russell to sign.  Later on, I took a moment to appreciate the nice weather in Wilmington - sunny with a high of 64\u00b0 -  with my dogs, Grape and Peach.  They are such good dogs! I'm a little worried about my health, though. I need to remember to talk to my doctor on Monday about my lab results, my high blood glucose levels even with the Farxiga, and the fact that my elbow injection didn't help. \n\n## Atmosphere: \n\nThe atmosphere is lighthearted and busy, capturing a day in Bruce's life through snippets of conversations and interactions. \n\n## Key Takeaways:\n* Bruce encountered someone wearing a pro-LGBTQ+ shirt and commended her bravery for wearing it in North Carolina.\n* Bruce helped Ivette locate a YWCA form for Russell.\n* Bruce enjoyed the warm, sunny weather with his dogs.\n* Bruce plans to discuss his health concerns with his doctor, including his lab results, high blood glucose, and an ineffective elbow injection. \n",
+      "short_summary": "Bruce discussed his upcoming doctor's appointment, covering lab results, the ineffectiveness of Farxiga for blood glucose, and the lack of improvement in his elbow after an injection.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-21T12:35:16.885Z",
+      "updated_at": "2025-03-21T14:14:39.060Z",
+      "primary_location": {
+        "address": "S College Rd, Wilmington, Pine Valley Country Club, NC, New Hanover County, 28412, United States",
+        "latitude": 34.17611475,
+        "longitude": -77.8912267,
+        "created_at": "2025-03-21T12:35:17.603Z"
+      }
+    },
+    {
+      "id": 609429,
+      "start_time": "2025-03-21T11:26:55.031Z",
+      "end_time": "2025-03-21T12:05:52.532Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nYou had a busy morning getting ready while also trying to get your son, Bennett, ready to leave.  You were keeping track of the time and reminding Bennett to eat more and get ready. \n\n## Atmosphere\nThe atmosphere seems slightly chaotic and rushed as you're trying to manage your morning and get Bennett ready to go. \n\n## Key Take Aways\n* You started your day tracking your blood glucose and weight. \n* You had a phone call where you scheduled your next appointment for Monday at 6:00. \n* You were getting your son, Bennett, ready to leave and were reminding him to eat more and brush his teeth. \n* You were keeping track of the time closely to make sure you both left on time. \n",
+      "short_summary": "Bruce monitored his weight and blood glucose, coordinated schedules with others, and interacted with family members, including a child named Benetton.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-21T11:26:55.031Z",
+      "updated_at": "2025-03-21T12:05:52.532Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12148474589341,
+        "longitude": -77.91254730530163,
+        "created_at": "2025-03-21T11:57:13.431Z"
+      }
+    },
+    {
+      "id": 600272,
+      "start_time": "2025-03-21T01:03:43.751Z",
+      "end_time": "2025-03-21T01:38:49.652Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nToday, I reminisced about Halloween traditions and past memories associated with the Santa Cruz Beach Boardwalk. We talked about our favorite rides, like the carousel, bumper cars, and a unique space ride. I also shared a funny memory of a lion-shaped trash can with a vacuum that sucked up garbage. \n\nWe also discussed a high school memory involving Joan Crowley, the head cheerleader, on whom I had a huge crush. I recalled a party at my parents' house on Twila Lane where I tried to flirt with her, and another time when she seemingly lost her car keys at a party. Sadly, it seemed like Joan was struggling with her own issues, and she eventually disappeared from our lives. \n\n## Atmosphere\nThe conversation was lighthearted and nostalgic, filled with laughter and fond memories of childhood and younger years. \n\n## Key Takeaways\n- Halloween in Rivermark was a lively event with decorated houses and streets packed with people.\n- UCG Farms, on the way to Monterey, was a hit with the kids, especially the hayride and train ride.\n- The Santa Cruz Beach Boardwalk holds special memories for me, from childhood rides to a memorable date with Claire. \n- Joan Crowley's story is a reminder that appearances can be deceiving, and sometimes people struggle silently. \n",
+      "short_summary": "Bruce shared memories of Halloween celebrations in Rivermark, family outings to a farm near Monterey, and numerous visits to the Santa Cruz Beach Boardwalk, as well as a poignant recollection of a high school crush, Joan Crowley, and her later struggles with mental illness.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-21T01:03:43.751Z",
+      "updated_at": "2025-03-21T01:38:49.652Z",
+      "primary_location": {
+        "address": "Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12410881666666,
+        "longitude": -77.91238066666666,
+        "created_at": "2025-03-21T01:25:55.681Z"
+      }
+    },
+    {
+      "id": 592658,
+      "start_time": "2025-03-20T15:06:35.144Z",
+      "end_time": "2025-03-20T15:32:21.653Z",
+      "device_type": "Bee",
+      "summary": "Summary: You woke up from a nap and are cleaning the dishes before work. You spoke about the pollen outside and the construction on Sanders Rd. You took your dog, Peach, out five times but she wouldn't go to the bathroom. \nAtmosphere: The atmosphere seems relaxed and lighthearted. You are talking to someone in your home while doing chores.  \nKey Take Aways:\n- There is a lot of pollen outside.\n- There is construction on Sanders Rd. \n- You need to leave for work soon. \n- Peach still needs to go to the bathroom. \n",
+      "short_summary": "Bruce reported on his dog Peach's bathroom habits, his work plans, and local road construction.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-20T15:06:35.144Z",
+      "updated_at": "2025-03-20T15:32:21.653Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12134883446126,
+        "longitude": -77.91255352161372,
+        "created_at": "2025-03-20T15:20:47.817Z"
+      }
+    },
+    {
+      "id": 579839,
+      "start_time": "2025-03-20T01:19:25.602Z",
+      "end_time": "2025-03-20T12:11:28.691Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nBruce is talking with a few people, possibly while in a car, about a variety of topics. He mentions his weight and blood glucose, a gift card he received, and his father's birthday. He also talks about something he saw in the bathroom and a towel on the floor. \n\n## Atmosphere\nThe conversation is very fragmented and jumps between topics quickly. It seems like a casual conversation between friends or family. \n\n## Key Take Aways\n* Bruce's weight is 188 lbs and his blood glucose is 193. \n* He received a Wendy's gift card for $15.\n* His father's birthday is coming up in 3 days. \n* There was an incident involving water and a towel in the bathroom. \n",
+      "short_summary": "Bruce discussed his health metrics, including his weight and blood glucose levels, and also mentioned various unrelated topics such as gift cards, a cafeteria promotion, and a family member's birthday.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-20T01:19:25.602Z",
+      "updated_at": "2025-03-20T12:11:28.691Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12141216911261,
+        "longitude": -77.91250492941843,
+        "created_at": "2025-03-20T01:32:42.249Z"
+      }
+    },
+    {
+      "id": 578400,
+      "start_time": "2025-03-19T23:18:56.643Z",
+      "end_time": "2025-03-20T01:20:08.700Z",
+      "device_type": "Bee",
+      "summary": "## Bruce's Walgreens Shift Summary\n\n**Summary:** You worked the register at Walgreens, helping a variety of customers with their purchases. You had some interesting conversations with both customers and coworkers, including a discussion about bathroom breaks and sharing stories about your dogs. \n\n**Atmosphere:** The atmosphere was generally friendly and engaging. You seemed to enjoy interacting with your customers and coworkers, even when things got a little hectic. \n\n**Key Take Aways:**\n\n* You had a conversation with your manager about taking bathroom breaks, advocating for yourself and the need to be understanding of health issues.\n* You bonded with your manager and a coworker over shared experiences of owning dogs, particularly the joys and sorrows of their companionship. \n* You helped numerous customers with their purchases, demonstrating patience and a commitment to customer service. \n",
+      "short_summary": "Bruce had a busy shift at Walgreens, assisting customers, processing transactions, and addressing various workplace issues, including a discussion about appropriate bathroom break usage.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-19T23:18:56.643Z",
+      "updated_at": "2025-03-20T01:20:08.700Z",
+      "primary_location": {
+        "address": "2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States",
+        "latitude": 34.2893995516804,
+        "longitude": -77.87218626751486,
+        "created_at": "2025-03-20T00:06:38.177Z"
+      }
+    },
+    {
+      "id": 578228,
+      "start_time": "2025-03-19T23:02:22.408Z",
+      "end_time": "2025-03-19T23:19:13.361Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nBruce is at Walgreens with his assistant and they are buying something. The total comes out to be more than expected so they remove an item. Bruce pays for the items and helps his assistant sign up for Walgreens rewards to save money on the next purchase.\n\n## Atmosphere\nThe atmosphere is slightly chaotic and busy, typical of a shopping experience. Bruce is handling the situation calmly and patiently, even when things don't go as planned with the rewards program.\n\n## Key Take Aways\n* The total cost of the purchase was initially $31.35, but an item was removed, bringing the final cost to $12.83.\n* Bruce's assistant was having trouble using their Walgreens rewards, but Bruce helped them through it.\n* They should be able to use the rewards on their next purchase of $15 or more. \n",
+      "short_summary": "Bruce finalized a purchase of an item for $1283, after negotiating a price reduction and applying rewards points, and arranged for future service.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-19T23:02:22.408Z",
+      "updated_at": "2025-03-19T23:19:13.361Z",
+      "primary_location": {
+        "address": "2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States",
+        "latitude": 34.28945837831313,
+        "longitude": -77.87222083965835,
+        "created_at": "2025-03-19T23:02:47.981Z"
+      }
+    },
+    {
+      "id": 575434,
+      "start_time": "2025-03-19T19:18:07.016Z",
+      "end_time": "2025-03-19T19:47:05.853Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nYou were helping a customer, Sherry, send film to be developed.  She wanted prints but no CD. You helped her fill out the order form and explained that it takes a while to get prints back but she'd get a text when they're ready.  Then you helped her sign up for a FedEx account and place an order to ship the film. You had some trouble printing the shipping label, even though the system said it printed successfully. \n\n## Atmosphere\nIt seemed like a busy day and you were dealing with a few different things at once. There was a bit of frustration when the FedEx label wouldn't print correctly, but overall it seemed like a positive interaction. \n\n## Key Takeaways\n* Sherry was happy to get her film developed and seemed to appreciate your help. \n* Remember to double-check that the FedEx labels are actually printing. \n* You might need to call FedEx if the label printing issue persists. \n",
+      "short_summary": "Bruce helped customers with photo orders, encountering a FedEx printing issue that required a call to FedEx support to resolve.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-19T19:18:07.017Z",
+      "updated_at": "2025-03-19T19:47:05.853Z",
+      "primary_location": {
+        "address": "2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States",
+        "latitude": 34.28934183330621,
+        "longitude": -77.87214390929829,
+        "created_at": "2025-03-19T19:35:35.270Z"
+      }
+    },
+    {
+      "id": 575098,
+      "start_time": "2025-03-19T18:54:03.444Z",
+      "end_time": "2025-03-19T19:17:16.475Z",
+      "device_type": "Bee",
+      "summary": "## Bruce's Day at Walgreens\n\n### Summary: \nBruce had a pretty typical day at work at Walgreens. He helped a customer with a complicated return because the item wasn't in stock. Later, he helped several customers check out, reminding them about rewards programs and making sure they got their coupons. He also helped a few customers pick up photo orders. \n\n### Atmosphere: \nThe atmosphere seems generally busy but pleasant. Bruce is friendly and helpful to all the customers, and there's a sense of routine in his interactions. \n\n### Key Takeaways:\n* **Rewards Program:**  Bruce consistently reminded customers about the Walgreens rewards program, encouraging them to use it for savings and benefits.\n* **Coupons:** He was also diligent in reminding customers about available coupons and their expiration dates. \n* **Customer Service:** Bruce demonstrated patience and helpfulness, especially with the customer who had the complicated return. \n* **Photo Pickup:**  He also efficiently managed photo pickups, ensuring customers received their orders promptly. \n",
+      "short_summary": "Bruce assisted numerous customers at Walgreens, troubleshooting technical issues with the system, processing transactions, and offering rewards program information and coupons.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-19T18:54:03.444Z",
+      "updated_at": "2025-03-19T19:17:16.475Z",
+      "primary_location": {
+        "address": "2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States",
+        "latitude": 34.28936849668307,
+        "longitude": -77.8721235834292,
+        "created_at": "2025-03-19T19:04:36.469Z"
+      }
+    },
+    {
+      "id": 574155,
+      "start_time": "2025-03-19T17:50:06.852Z",
+      "end_time": "2025-03-19T18:10:41.574Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nYou successfully helped a customer complete a Western Union transaction for the first time! It seemed like you were figuring it out as you went, but you got it done. The customer had started the transaction at the kiosk and needed to complete it with you at the register.  They were sending multiple amounts, so you had to process it as separate transactions. You helped them enter all the necessary information, including their name, zip code, and the control number. The customer also bought a Kit Kat! \n\n## Atmosphere\nIt sounds like it was a pretty busy day and you were a little flustered at first, especially since it was your first time doing a Western Union transaction.  But you remained calm and helpful throughout, even cracking a joke about destiny teaching you both how to do it. \n\n## Key Take Aways\n* You successfully completed your first Western Union transaction! \n* Remember to check if the customer needs to complete multiple transactions.\n* Always confirm the details of the transaction with the customer, especially the amount and control number.\n* Offer the customer a rewards card - you never know who might become a regular! \n",
+      "short_summary": "I successfully completed four Western Union transactions,  including one where I helped a customer save money by using their rewards card.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-19T17:50:06.852Z",
+      "updated_at": "2025-03-19T18:10:41.574Z",
+      "primary_location": {
+        "address": "2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States",
+        "latitude": 34.28945837831313,
+        "longitude": -77.87222083965835,
+        "created_at": "2025-03-19T18:00:42.633Z"
+      }
+    },
+    {
+      "id": 571118,
+      "start_time": "2025-03-19T14:20:22.753Z",
+      "end_time": "2025-03-19T15:02:24.546Z",
+      "device_type": "Bee",
+      "summary": "## Summary: \n\nThis morning started with a bit of a scare. Jonathan must have bumped his nose in the bathroom, leaving scattered tissues all over the floor. Thankfully, he seems to be okay. Later, I had another frustrating call with Coastal Carolina Neuropsychiatric Center. I've called multiple times requesting a signed document from my psychiatrist, Dr. Dorinda Due, outlining my diagnosis and F codes. Despite my repeated calls, I haven't received a response or any indication of when this document will be ready. \n\n## Atmosphere:\n\nThe interaction starts with a frantic tone as I try to assess Jonathan's well-being after he hurts himself. The mood shifts to frustration and exasperation during my call with the Neuropsychiatric Center. Their lack of communication and follow-through is unacceptable.\n\n## Key Takeaways:\n\n* Jonathan bumped his nose but appears to be fine.\n* I still haven't received the signed document from Dr. Due.\n* The lack of response from Coastal Carolina Neuropsychiatric Center is concerning and unprofessional. \n* I will continue to follow up until I receive the document. \n",
+      "short_summary": "Bruce called Coastal Carolina Neuropsychiatric Center multiple times to request a signed document detailing his diagnosis from his psychiatrist, Dorinda Due, but his requests have gone unanswered.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-19T14:20:22.753Z",
+      "updated_at": "2025-03-19T15:02:24.546Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.1213510673776,
+        "longitude": -77.91255731803545,
+        "created_at": "2025-03-19T14:49:52.094Z"
+      }
+    },
+    {
+      "id": 570189,
+      "start_time": "2025-03-19T13:22:42.385Z",
+      "end_time": "2025-03-19T14:20:21.412Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nYou called the Walgreens Benefit Support Center to enroll in your health benefits. You had received two letters in the mail, but you were unable to access the website to complete the enrollment process. You spoke with a representative who informed you that your account was not yet updated with your eligibility information. She explained that they needed to verify your hours with HR and that it could take 3-5 business days. You also discovered that you were using the wrong website address. The representative assured you that she would call you back once your account was updated.\n\n## Atmosphere\nThe call was a bit frustrating at first because you were unable to access the website. However, the representative was patient and helpful. She explained the situation clearly and assured you that she would follow up once your account was updated. \n\n## Key Take Aways\n* You are not yet eligible to enroll in your health benefits because your hours have not been updated in the system.\n* The representative will contact HR to get your hours updated and will call you back within 3-5 business days.\n* The correct website address for the Walgreens Benefit Support Center is www.benefitssupportcentre.com. \n",
+      "short_summary": "Bruce had trouble accessing his benefits website, but a customer service representative, Ivette, is creating a service request to update his account and will call him back with an update.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-19T13:22:42.385Z",
+      "updated_at": "2025-03-19T14:20:21.412Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.121367087671324,
+        "longitude": -77.91256407067813,
+        "created_at": "2025-03-19T13:57:42.060Z"
+      }
+    },
+    {
+      "id": 558394,
+      "start_time": "2025-03-19T01:33:03.406Z",
+      "end_time": "2025-03-19T01:58:08.050Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nIt sounds like it was a busy evening! You were taking care of the kids and getting them ready for bed. One of them might have had an accident because you were looking for dry pajamas.  You also spoke with someone about their work schedule and it sounds like you might be switching shifts with them. \n\n## Atmosphere\nThe atmosphere seems slightly chaotic and busy, like a typical evening at home. You sound like a caring parent, looking after the kids and making sure they have what they need. \n\n## Key Take Aways\n* One of the kids might have wet their pajamas. \n* You might be switching shifts with someone for work. \n* You're a caring and attentive parent. \n",
+      "short_summary": "Bruce coordinated childcare, addressed household tasks, and managed a scheduling conflict while also dealing with a minor health concern and some unusual occurrences in the home.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-19T01:33:03.406Z",
+      "updated_at": "2025-03-19T01:58:08.050Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.121284657001105,
+        "longitude": -77.91256728129932,
+        "created_at": "2025-03-19T01:48:30.256Z"
+      }
+    },
+    {
+      "id": 550926,
+      "start_time": "2025-03-18T16:37:16.765Z",
+      "end_time": "2025-03-18T18:35:04.089Z",
+      "device_type": "Bee",
+      "summary": "## Summary\n\nIt was a busy day at work for Bruce. He helped customers find items, answered questions about sales and rewards programs, and provided recommendations on over-the-counter medications for earaches and coughs. He also dealt with a discontinued product and discussed trash removal with colleagues.\n\n## Atmosphere\n\nThe atmosphere was generally busy and helpful, with Bruce interacting with a variety of customers and colleagues throughout the day. There were moments of humor and lightheartedness, as well as some frustration with technology and occasional confusion about product placement.\n\n## Key Take Aways\n\n* Customers frequently ask about sales and rewards programs.\n* It's important to be knowledgeable about over-the-counter medications and be able to provide recommendations.\n* Dealing with discontinued products and other inventory issues is a regular part of the job.\n* Maintaining a positive and helpful attitude is crucial, even when dealing with challenging situations. \n",
+      "short_summary": "Bruce assisted customers with various requests, including providing directions, addressing questions about store products, and offering advice on over-the-counter medications.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-18T16:37:16.766Z",
+      "updated_at": "2025-03-18T18:35:04.089Z",
+      "primary_location": {
+        "address": "2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States",
+        "latitude": 34.28945095514058,
+        "longitude": -77.8723392155276,
+        "created_at": "2025-03-18T17:19:29.042Z"
+      }
+    },
+    {
+      "id": 547873,
+      "start_time": "2025-03-18T13:32:14.684Z",
+      "end_time": "2025-03-18T14:00:41.423Z",
+      "device_type": "Bee",
+      "summary": "## Summary: \nYou had a busy morning. You were cleaning and seemed a little frustrated with someone who kept pointing out things you may have missed. You talked about a diaper incident with Ivette and seemed to think the diaper may have had a hole. Later, you talked about potentially having the garage and asked someone what they were up to today. It seemed like they might have been talking about the stock market. \n\n## Atmosphere:\nThe atmosphere seemed a little tense at times, especially when you were being questioned about your cleaning. However, you also had a lighthearted conversation with Ivette about a diaper incident. \n\n## Key Take Aways:\n* You might have been cleaning up after a child.\n* There was a diaper incident that you discussed with Ivette. \n* You might be planning on doing something with the garage. \n* Someone you were with might have been interested in the stock market. \n",
+      "short_summary": "Bruce addressed several tasks and concerns, including cleaning, a potential issue with a diaper, and a discussion about the garage and stock market.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-18T13:32:14.684Z",
+      "updated_at": "2025-03-18T14:00:41.423Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.121496605407685,
+        "longitude": -77.91250662006989,
+        "created_at": "2025-03-18T13:48:40.883Z"
+      }
+    },
+    {
+      "id": 547067,
+      "start_time": "2025-03-18T12:44:34.255Z",
+      "end_time": "2025-03-18T13:12:35.472Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nBruce is doing his taxes and trying to explain to his wife Ivette why the tax software recommends filing as head of household and filing separately. Ivette seems confused and skeptical about this approach. Bruce tries to explain the reasoning behind the software's recommendation, citing the potential financial benefits and clarifying that \"head of household\" is a tax category and doesn't reflect their marital status. He also discusses the influence of private tax companies on the IRS system. \n\n## Atmosphere\nThe atmosphere is tense and a bit frustrating. Bruce is trying to be patient and explain a complex topic, but Ivette's skepticism and interruptions make it difficult. \n\n## Key Take Aways\n* The tax software recommends Bruce files as \"head of household\" and Ivette files separately.\n* Bruce believes this approach will result in a better financial outcome.\n* Ivette is unsure about this method and needs further clarification.\n* Bruce is willing to use different tax software to demonstrate the recommendations. \n",
+      "short_summary": "Bruce explained to his spouse that tax software recommends filing as head of household and separately to optimize their tax return, despite the complexities and potential disagreements about the process.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-18T12:44:34.255Z",
+      "updated_at": "2025-03-18T13:12:35.472Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12136414781935,
+        "longitude": -77.912564970625,
+        "created_at": "2025-03-18T13:06:36.245Z"
+      }
+    },
+    {
+      "id": 546821,
+      "start_time": "2025-03-18T12:30:08.154Z",
+      "end_time": "2025-03-18T12:43:44.834Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nYou called the DocSource Telehealth office to cancel your telehealth appointment with Larry German Haber. You were unable to reach a person, so you left a voicemail message with your name, phone number, and that you needed to cancel your appointment.\n\n## Atmosphere\nThe call was frustrating as you were unable to speak to a live person. \n\n## Key Takeaways\n* You successfully left a message to cancel your appointment. \n* You provided your name (and helpful spelling tips!), phone number, and date of birth. \n* The office is open Monday-Friday 8am-5pm Eastern Time. \n* If you don't hear back today, you may need to call again tomorrow morning. \n",
+      "short_summary": "Bruce Bookman (669-221-9612) left a message to reschedule his telehealth appointment with Larry Haber, citing an inability to attend the original appointment.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-18T12:30:08.154Z",
+      "updated_at": "2025-03-18T12:43:44.834Z",
+      "primary_location": {
+        "address": "4305 Shipyard Blvd, Wilmington, NC, New Hanover County, 28403, United States, John T Hoggard High School",
+        "latitude": 34.20028623333334,
+        "longitude": -77.89350761666665,
+        "created_at": "2025-03-18T12:30:08.679Z"
+      }
+    },
+    {
+      "id": 546255,
+      "start_time": "2025-03-18T11:55:13.746Z",
+      "end_time": "2025-03-18T12:15:08.838Z",
+      "device_type": "Bee",
+      "summary": "## Bruce's Personal Summary \n\n## Summary\nThis memory seems to be a blend of different conversations and events in a single morning. You started the day weighing yourself (190 lbs) and checking your blood sugar (175).  You spoke with a telehealth provider, potentially from \"dot source, the telehealth division of life\", about your low vitamin D and needing to take medication with food. You also had a protein bar while talking to them.  Later, you asked someone, maybe named Ivette, to pick up milk and coffee creamer. There was also some commotion with people on the floor and talk about cheese, hair, and a car that might need to be moved. \n\n## Atmosphere\nThe atmosphere seems busy and lively, with a mix of personal health updates, household tasks, and interactions with others. There's a sense of familiarity, suggesting these are likely routine conversations with family or close friends. \n\n## Key Take Aways\n* You weighed 190 lbs and had a blood sugar of 175 this morning. \n* You need to remember to pick up milk and coffee creamer. \n* You had a conversation about your low vitamin D. \n* You ate a protein bar. \n",
+      "short_summary": "Bruce discussed his weight, blood glucose levels, and need for groceries and medication, while also managing a seemingly unrelated interaction with others.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-18T11:55:13.746Z",
+      "updated_at": "2025-03-18T12:15:08.838Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12136414781935,
+        "longitude": -77.912564970625,
+        "created_at": "2025-03-18T12:07:20.347Z"
+      }
+    },
+    {
+      "id": 530182,
+      "start_time": "2025-03-17T18:45:16.957Z",
+      "end_time": "2025-03-17T19:18:16.031Z",
+      "device_type": "Bee",
+      "summary": "Summary: You were politely asked to speak with someone. They repeated their request a couple of times to make sure you heard. \n\nAtmosphere: It seems like someone was trying to get your attention for a conversation, perhaps they were eager to speak with you.\n\nKey Take Aways:\n* Someone wanted to have a word with you. \n",
+      "short_summary": "Bruce attempted to speak with someone, but it's unclear if he was successful.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-17T18:45:16.957Z",
+      "updated_at": "2025-03-17T19:18:16.031Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.121535423376095,
+        "longitude": -77.91251515686973,
+        "created_at": "2025-03-17T19:12:24.135Z"
+      }
+    },
+    {
+      "id": 529625,
+      "start_time": "2025-03-17T18:07:09.343Z",
+      "end_time": "2025-03-17T18:24:22.988Z",
+      "device_type": "Bee",
+      "summary": "Summary: You had a brief phone call with Ivette. You let her know that you took the dogs out in the rain, but they didn't like it.  You also confirmed that someone (likely a pet) was right next to you. \nAtmosphere:  The atmosphere of the conversation was casual and friendly. \nKey Take aways:\n* The dogs don't like the rain. \n* You will try taking them out again later. \n",
+      "short_summary": "Bruce described a frustrating dog walk in the rain and will try again later.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-17T18:07:09.343Z",
+      "updated_at": "2025-03-17T18:24:22.988Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12152594259735,
+        "longitude": -77.91248036059596,
+        "created_at": "2025-03-17T18:13:10.941Z"
+      }
+    },
+    {
+      "id": 528954,
+      "start_time": "2025-03-17T17:21:30.924Z",
+      "end_time": "2025-03-17T18:07:29.842Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nBruce was trying to cancel a telehealth appointment with \"Larry\" that he had scheduled for the following day. He had difficulty navigating the automated system and ended up getting transferred a few times. He finally reached someone who could help with his benefits, but he couldn't find the email about the salary change for his new position. \n\n## Atmosphere\nThe atmosphere of the call was frustrating. Bruce was struggling to navigate the phone system and had to repeat himself multiple times. He seemed to be getting increasingly flustered as the call went on.  \n\n## Key Takeaways\n* Bruce needs to cancel his telehealth appointment with Larry. \n* Bruce recently started a new position.\n* Bruce received an email about a salary change for his new position, but he is unable to find it. \n* Bruce's benefits information can be accessed on benefitsupportcenter.com. \n",
+      "short_summary": "Bruce canceled a telehealth appointment and then tried unsuccessfully to resolve an issue regarding a salary change email he could no longer locate.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-17T17:21:30.924Z",
+      "updated_at": "2025-03-17T18:07:29.842Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12143100904467,
+        "longitude": -77.91242223847601,
+        "created_at": "2025-03-17T17:49:40.271Z"
+      }
+    },
+    {
+      "id": 528770,
+      "start_time": "2025-03-17T17:07:57.520Z",
+      "end_time": "2025-03-17T17:21:30.976Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nBruce was feeling unwell and believes he may be sick. He tried to take a short nap but ended up sleeping for much longer than intended, unable to get out of bed for a while. \n\n## Atmosphere\nBruce's tone seems likely fatigued and possibly under the weather. \n\n## Key Take Aways\n* Bruce was feeling unwell and had difficulty getting out of bed after a nap. \n* Bruce believes he might be sick. \n",
+      "short_summary": "I informed someone that I believe I am also ill and experienced significant fatigue.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-17T17:07:57.520Z",
+      "updated_at": "2025-03-17T17:21:30.976Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12147038679616,
+        "longitude": -77.91254516064889,
+        "created_at": "2025-03-17T17:13:59.960Z"
+      }
+    },
+    {
+      "id": 508752,
+      "start_time": "2025-03-16T16:49:38.967Z",
+      "end_time": "2025-03-16T19:33:29.414Z",
+      "device_type": "Bee",
+      "summary": "## Russell's Birthday Party - A Blast!\n\nWe celebrated Russell's birthday at the clubhouse today.  He was dressed as an astronaut, which is perfect because he's really into space right now. The clubhouse was decorated with a space theme too - planets, stars, the works! There were a lot of people there, including some of Russell's friends from Special Olympics.  Everyone seemed to have a good time, and I even got roped into wearing a silly inflatable costume!  \n\n## Atmosphere\n\nThe atmosphere was lively and upbeat.  There was music playing, people were dancing and chatting, and Russell was clearly in his element, surrounded by friends and family. It was heartwarming to see everyone come together to celebrate him.\n\n## Key Takeaways:\n\n* **Russell loves space!**  He got lots of space-themed gifts and even dressed up as an astronaut for the occasion.\n* **The clubhouse was a good choice for the party.** It provided ample space for everyone and was easier to clean up than our house.\n* **It's important to make time for fun.** Even though I've been feeling tired lately, it was great to let loose and enjoy myself.\n* **Russell is lucky to have such a supportive community.** It was heartwarming to see how much his friends and family care about him. \n",
+      "short_summary": "Bruce reflected on his changing life priorities as he ages, discussed his recent low vitamin D and testosterone levels with others, and celebrated a birthday party with friends and family.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-16T16:49:38.967Z",
+      "updated_at": "2025-03-16T19:33:29.414Z",
+      "primary_location": {
+        "address": ", Wilmington, NC, New Hanover County, 28412, United States, Beau Rivage Golf & Resort",
+        "latitude": 34.123395002920745,
+        "longitude": -77.91248126686922,
+        "created_at": "2025-03-16T19:24:30.816Z"
+      }
+    },
+    {
+      "id": 507588,
+      "start_time": "2025-03-16T15:08:23.112Z",
+      "end_time": "2025-03-16T16:50:05.270Z",
+      "device_type": "Bee",
+      "summary": "## Benetton's Space Party \n\n**Summary:** Today was a busy day! We got ready for Benetton's space-themed birthday party. He looked so sharp in his astronaut suit, standing proudly next to a galaxy of blue, silver, and gold balloons. We had a slight mishap with the fridge being too warm for the drinks, but thankfully, we had plenty of ice on hand. The DJ arrived, and Benetton requested a mix of pop and 80s music.  \n\n**Atmosphere:** The atmosphere was energetic and chaotic, with lots of running around, last-minute preparations, and a few minor hiccups along the way.  \n\n**Key Takeaways:**\n\n* Benetton loves his astronaut costume.\n* We need to double-check the fridge temperature before parties.\n* The party was a success, with great music and decorations. \n",
+      "short_summary": "Bruce completed his grocery shopping, confirmed his dog's names, helped his children with their taxes and teeth brushing, and prepared for a party, noting some household and weather-related issues along the way.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-16T15:08:23.112Z",
+      "updated_at": "2025-03-16T16:50:05.270Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12144064105479,
+        "longitude": -77.91260040130871,
+        "created_at": "2025-03-16T16:09:37.782Z"
+      }
+    },
+    {
+      "id": 506846,
+      "start_time": "2025-03-16T14:07:51.365Z",
+      "end_time": "2025-03-16T14:30:10.209Z",
+      "device_type": "Bee",
+      "summary": "Summary: You and Ivette were getting ready for a party. We needed to pick up some coke from Harris Teeter. You also needed to stop by O2 things and asked me for my credit card. You were thinking about parking for the guests and decided to put the cooler in my car. We were going to put the custom in the back of my car. \nAtmosphere: It seems like we were slightly stressed but mostly excited and happy to be getting ready for the party.\nKey Take aways:\n- We need to pick up coke from Harris Teeter.\n- You need to stop by O2 things.\n- You will change before the party. \n",
+      "short_summary": "Bruce coordinated errands with Ivette, including grocery shopping and picking up items for a party, while also discussing party logistics and addressing unexpected issues.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-16T14:07:51.365Z",
+      "updated_at": "2025-03-16T14:30:10.209Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.121373673001415,
+        "longitude": -77.91275591596767,
+        "created_at": "2025-03-16T14:19:30.383Z"
+      }
+    },
+    {
+      "id": 506109,
+      "start_time": "2025-03-16T13:13:11.658Z",
+      "end_time": "2025-03-16T14:07:51.342Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nBruce spent the morning taking care of Benetton, making sure he had breakfast and was changed into his \"safe uniform.\" He also had a brief conversation with someone, possibly his son, about Benetton's well-being and the need to go to the grocery store for milk and ice. \n\n## Atmosphere\nThe atmosphere seems busy and domestic, with Bruce juggling childcare, household tasks, and a technology issue. Despite the potential for stress, Bruce comes across as patient and caring. \n\n## Key Take Aways\n* **Benetton is well cared for:** Bruce ensured Benetton had breakfast and was dressed in his \"safe uniform.\"\n* **Technology hiccup:** Bruce experienced trouble with his Macintosh laptop keyboard and sought assistance.\n* **Grocery run needed:** Bruce needs to go to the store to buy milk and ice for the family.\n* **Small white cooler:** The family will be using their small white cooler, likely for the ice. \n",
+      "short_summary": "Bruce coordinated care for his son, Benetton, including medication and a safe space, and arranged for groceries with Yvette.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-16T13:13:11.658Z",
+      "updated_at": "2025-03-16T14:07:51.342Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12136700588077,
+        "longitude": -77.91256488520416,
+        "created_at": "2025-03-16T13:57:27.952Z"
+      }
+    },
+    {
+      "id": 504972,
+      "start_time": "2025-03-16T11:58:27.218Z",
+      "end_time": "2025-03-16T13:13:40.003Z",
+      "device_type": "Bee",
+      "summary": "## Summary: \n\nThis morning was a busy one! Benetton wasn't feeling well, so I made sure to get medicine ready. He had a bit of a cut on his face, but seemed okay. I made him a toasted sesame bagel for breakfast while I had an English muffin.  His mom was busy preparing for his birthday party. We chatted about his taste in music - he's a pop fan, but doesn't seem to have a favorite artist yet. \n\n## Atmosphere:\n\nIt was a bustling morning with lots going on - getting Benetton ready, preparing for his party, and dealing with the usual household tasks.\n\n## Key Takeaways:\n\n* Benetton wasn't feeling well and needed medicine.\n* I made breakfast for Benetton and myself.\n* Benetton's mom was busy preparing for his birthday party.\n* Benetton enjoys pop music. \n",
+      "short_summary": "Bruce prepared breakfast and medicine for Benetton,  addressed a minor injury, and coordinated Benetton's birthday party arrangements while troubleshooting a smart home device and discussing a new phone plan.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-16T11:58:27.218Z",
+      "updated_at": "2025-03-16T13:13:40.003Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12136700588077,
+        "longitude": -77.91256488520416,
+        "created_at": "2025-03-16T12:23:27.809Z"
+      }
+    },
+    {
+      "id": 488281,
+      "start_time": "2025-03-15T12:40:28.624Z",
+      "end_time": "2025-03-15T16:44:14.406Z",
+      "device_type": "Bee",
+      "summary": "## Summary\n\nToday was a bit of an adventure.  I had a busy shift at work, dealing with a lot of customers and sorting out minor issues.  Later, I had to go into the San Francisco office to pick something up.  On the way back, we had a flat tire and had to deal with a police officer who was responding to a building alarm.  We ended up having to get the car towed and all four tires replaced.  It was an expensive fix, but necessary.  I also realized that we need to do our taxes \u2013 they're due in April. I'm going to try to do them myself this year.\n\n## Atmosphere\n\nThe day was a mix of busy and stressful, with a bit of humor sprinkled in.\n\n## Key Takeaways\n\n* I need to call the Benefits Support Center for Walgreens on Monday. The number is 855-564-6153.\n*  Our investment account is much lower because we cut it in half.\n* I need to have a serious conversation with Yvette about yelling.  We may need to consider couples counseling. \n",
+      "short_summary": "Bruce recounted a series of chaotic events, including a false alarm at his former workplace, a flat tire, and subsequent urgent errands, culminating in a discussion with his partner about their relationship and the need for couples counseling.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-15T12:40:28.624Z",
+      "updated_at": "2025-03-15T16:44:14.407Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12143839359814,
+        "longitude": -77.9126402975107,
+        "created_at": "2025-03-15T15:47:36.286Z"
+      }
+    },
+    {
+      "id": 488008,
+      "start_time": "2025-03-15T12:22:24.350Z",
+      "end_time": "2025-03-15T12:40:31.689Z",
+      "device_type": "Bee",
+      "summary": "## Summary \nThis interaction seems to be Bruce recording some personal health data and activities. He notes his weight, blood glucose levels, and the fact he completed sets of 25 regular sit-ups, cross sit-ups, and \"small muscle setups\" (likely a personalized exercise). He seems to be starting to reminisce about a memory involving children before being interrupted.  \n\n## Atmosphere\nThe atmosphere seems focused on personal health tracking with a hint of nostalgia emerging towards the end. Bruce is diligently recording information, possibly using a voice-activated journal or app. \n\n## Key Take Aways\n* Bruce weighed 187 lbs and had a blood glucose level of 110. \n* He completed multiple sets of exercises: 25 regular sit-ups, 25 cross sit-ups, and 25 \"small muscle setups.\"\n* Bruce was about to share a memory involving children, indicating a possible shift in focus from health to personal memories. \n",
+      "short_summary": "I reported my weight, blood glucose, and exercise routine, including sit-ups and small muscle setups, and discussed using a journal to record memories with my children.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-15T12:22:24.350Z",
+      "updated_at": "2025-03-15T12:40:31.689Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12123631344073,
+        "longitude": -77.91254392501442,
+        "created_at": "2025-03-15T12:37:35.557Z"
+      }
+    },
+    {
+      "id": 477517,
+      "start_time": "2025-03-15T01:18:01.251Z",
+      "end_time": "2025-03-15T02:09:32.193Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nYou were talking with Ivette and Larry about a package and the gym. You then set an alarm for 7 am using Alexa, but later canceled it.  You then had a conversation about a gym membership that costs $150 and includes all classes. You and Larry worked together to set up a TV, trying to figure out how to turn it on without the remote. \n\n## Atmosphere\nThe atmosphere seems relaxed and informal, with a focus on everyday tasks and conversations. There's a sense of collaboration as you and Larry troubleshoot the TV setup. \n\n## Key Take Aways\n- There's a package that you are expecting.\n- You are considering joining a gym that costs $150 and offers a variety of classes.\n- You were setting up a TV and needed help figuring out how to turn it on. \n",
+      "short_summary": "Bruce arranged for an alarm, investigated a power issue with some electronic devices, and discussed a gym membership.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-15T01:18:01.251Z",
+      "updated_at": "2025-03-15T02:09:32.193Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12136546583464,
+        "longitude": -77.91256524649523,
+        "created_at": "2025-03-15T02:03:06.639Z"
+      }
+    },
+    {
+      "id": 476890,
+      "start_time": "2025-03-15T00:21:20.028Z",
+      "end_time": "2025-03-15T01:18:17.402Z",
+      "device_type": "Bee",
+      "summary": "## Bruce's Memory Summary \n\nBruce is closing up shop for the night and helping his last few customers. He banters with them, helps them find their rewards cards, and tells them about the store's promotions. He seems to be in good spirits and enjoys interacting with the customers. \n\n## Atmosphere\n\nThe atmosphere is friendly and lighthearted. Bruce is clearly a people person and enjoys his job. It seems like the customers also enjoy interacting with him. \n\n## Key Take Aways:\n\n* Bruce is working late and closing up the store.\n* He is helping customers with their rewards programs and purchases. \n* He seems to have a good rapport with his customers. \n",
+      "short_summary": "Bruce had a busy shift at work, assisting numerous customers with transactions, resolving minor issues, and engaging in lighthearted banter with colleagues before closing.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-15T00:21:20.028Z",
+      "updated_at": "2025-03-15T01:18:17.402Z",
+      "primary_location": {
+        "address": "2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States",
+        "latitude": 34.2895064071186,
+        "longitude": -77.8723591785494,
+        "created_at": "2025-03-15T00:25:10.817Z"
+      }
+    },
+    {
+      "id": 474769,
+      "start_time": "2025-03-14T21:16:35.352Z",
+      "end_time": "2025-03-14T21:27:52.481Z",
+      "device_type": "Bee",
+      "summary": "Summary: You were talking to someone and asked them to get a street. You had lost your train of thought before that. \nAtmosphere: It seems like it was a pretty casual conversation, possibly at work.\nKey Take aways:\n- You need to remember what street you were talking about. \n- You should figure out what you need from the other person. \n",
+      "short_summary": "I asked for help locating Mop Street, and although the other person started to help, they seemed distracted and ultimately unhelpful.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-14T21:16:35.352Z",
+      "updated_at": "2025-03-14T21:27:52.481Z",
+      "primary_location": {
+        "address": "2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States",
+        "latitude": 34.289496042665746,
+        "longitude": -77.8722812715343,
+        "created_at": "2025-03-14T21:17:16.424Z"
+      }
+    },
+    {
+      "id": 471681,
+      "start_time": "2025-03-14T17:27:21.327Z",
+      "end_time": "2025-03-14T18:15:55.093Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nYou were putting groceries away, organizing as you went, and trying to figure out the best way to arrange things. You and your friend discussed different types of tea and water, and you reminisced about where things used to be stored. \n\n## Atmosphere\nThe atmosphere was relaxed and playful, filled with the camaraderie of close friends or family working together. There was a sense of lightheartedness and gentle teasing. \n\n## Key Take Aways\n* You were unpacking and organizing groceries.\n* You were trying to decide where to put things and how to best arrange them.\n* You and your friend(s) were having a casual conversation about different drinks. \n",
+      "short_summary": "Bruce organized and relocated various items, including drinks and supplies, with the help of others, resolving some storage and labeling issues.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-14T17:27:21.328Z",
+      "updated_at": "2025-03-14T18:15:55.093Z",
+      "primary_location": {
+        "address": "2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States",
+        "latitude": 34.289515961373425,
+        "longitude": -77.87211641025189,
+        "created_at": "2025-03-14T18:07:34.611Z"
+      }
+    },
+    {
+      "id": 471460,
+      "start_time": "2025-03-14T17:13:20.245Z",
+      "end_time": "2025-03-14T17:27:30.663Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nBruce is helping a customer with their purchase. He tells them the total amount and asks for their phone number for the digital receipt. The customer provides their phone number. There is a brief mention of Walgreens but the context is unclear.\n\n## Atmosphere\nThe atmosphere seems to be that of a casual interaction, likely at a checkout counter. Bruce is friendly and helpful towards the customer.\n\n## Key Take Aways\n* Bruce is assisting a customer with a purchase.\n* The customer's total is $5.64 and they will receive a digital receipt.\n* There is a brief, unclear mention of Walgreens. \n",
+      "short_summary": "Bruce finalized a transaction, provided customer service, and offered assistance with additional purchases and inquiries.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-14T17:13:20.245Z",
+      "updated_at": "2025-03-14T17:27:30.663Z",
+      "primary_location": {
+        "address": "2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States",
+        "latitude": 34.28945278691083,
+        "longitude": -77.87223535428954,
+        "created_at": "2025-03-14T17:15:34.184Z"
+      }
+    },
+    {
+      "id": 470652,
+      "start_time": "2025-03-14T16:20:20.865Z",
+      "end_time": "2025-03-14T16:41:06.608Z",
+      "device_type": "Bee",
+      "summary": "## Summary: \nYou had a quick chat with someone, probably a house sitter or someone helping you out at home, giving them a few tasks to do. You left a gift for your mom and asked for it to be put on her bed if she gets home. You also asked for a few chores to be done around the house and for the dogs to be let out.\n\n## Atmosphere:\nThe atmosphere seems casual and friendly, likely a regular occurrence with this person. You seem trusting and comfortable giving them instructions. \n\n## Key Take Aways:\n* You left a gift for your mom.\n* You need various chores done around the house and garage.\n* The dogs need to be let out. \n* You already fed the dogs. \n",
+      "short_summary": "I left some items for my mom and gave instructions for some household tasks and dog care to be completed before I return home tonight.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-14T16:20:20.865Z",
+      "updated_at": "2025-03-14T16:41:06.608Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.121435515691125,
+        "longitude": -77.91268801579649,
+        "created_at": "2025-03-14T16:31:25.475Z"
+      }
+    },
+    {
+      "id": 469677,
+      "start_time": "2025-03-14T15:16:38.595Z",
+      "end_time": "2025-03-14T16:20:23.338Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nBruce received a confirmation call for a doctor's appointment on Monday at 4 PM.  He needed to reschedule the appointment for the following Monday at 3 PM. After confirming the new appointment, Bruce tried to wake up someone named Russell (possibly his son) multiple times. He also sent a text to Yvette letting her know that he had to reschedule his doctor's appointment and could no longer help with Benetton on Monday. Bruce then reminisced about a fond memory of attending the Holly Festival with Russell and Benetton. \n\n## Atmosphere\nThe atmosphere seems hectic at first, with Bruce trying to manage a rescheduled appointment and wake up his son, Russell. However, it transitions to a heartwarming feeling as Bruce fondly remembers a positive experience at the Holly Festival. \n\n## Key Take Aways\n* Bruce's doctor's appointment is now on the following **Monday at 3 PM**.\n* Bruce needs to **print something for Yvette** in 30 minutes. \n* Bruce needs to **update the HR portal** with wage notification changes in 3 hours.\n* Bruce had a **positive experience at the Holly Festival** with Russell and Benetton, emphasizing the themes of love and community. \n",
+      "short_summary": "Bruce successfully rescheduled his doctor's appointment for Monday the 24th at 3:00 PM and then used the newly freed-up time to make plans with his family, including attending the Holly Festival.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-14T15:16:38.595Z",
+      "updated_at": "2025-03-14T16:20:23.338Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12140540889037,
+        "longitude": -77.91255927949095,
+        "created_at": "2025-03-14T15:19:34.433Z"
+      }
+    },
+    {
+      "id": 469222,
+      "start_time": "2025-03-14T14:51:30.048Z",
+      "end_time": "2025-03-14T15:16:37.443Z",
+      "device_type": "Bee",
+      "summary": "Summary: You woke up your child at 11 am, as requested by their mother. They seemed excited to be awake and ready to \"party\". You also mentioned that it was cold outside. \nAtmosphere: It seems like a cheerful and playful morning interaction between you and your child.  \nKey Take Aways:\n* You successfully woke up your child at 11 am.\n* Your child was in a good mood and seemed ready for the day. \n* It was cold outside. \n",
+      "short_summary": "Bruce woke his partner up at 11 a.m. and then tried to locate them.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-14T14:51:30.048Z",
+      "updated_at": "2025-03-14T15:16:37.443Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12123760685959,
+        "longitude": -77.91256967269828,
+        "created_at": "2025-03-14T15:01:24.491Z"
+      }
+    },
+    {
+      "id": 468669,
+      "start_time": "2025-03-14T14:14:22.549Z",
+      "end_time": "2025-03-14T14:33:23.293Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nYou had a busy morning! You checked your weight and blood glucose, recording 187 lbs and 120 respectively.  You then asked your AI assistant to remind you to take a nap. Later on, you wanted to know your average blood glucose level over the past few days, but it didn't have enough data to calculate it. You also set a 40-minute timer.\n\n## Atmosphere\nIt seems like you were rushing around this morning, trying to get things done before taking a nap. \n\n## Key Takeaways\n* Your weight was 187 lbs this morning.\n* Your blood glucose was 120 this morning. \n* Remember to provide your AI assistant with your blood glucose readings over the next few days so it can calculate your average. \n",
+      "short_summary": "Bruce checked his weight and blood glucose levels with his assistant, but needed help calculating his average blood glucose over several days.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-14T14:14:22.550Z",
+      "updated_at": "2025-03-14T14:33:23.293Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12122006512144,
+        "longitude": -77.91262663537708,
+        "created_at": "2025-03-14T14:21:24.191Z"
+      }
+    },
+    {
+      "id": 467735,
+      "start_time": "2025-03-14T13:20:37.874Z",
+      "end_time": "2025-03-14T13:50:38.438Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nYou had a doctor's appointment at 4:00. You had some blood tests done that showed that you were low on Vitamin D and Testosterone. You wanted to talk to the doctor about the results. You and Ivette had a bit of a tense conversation, possibly about the appointment or the test results. \n\n## Atmosphere\nA little stressful. You and Ivette seemed to be disagreeing about something related to the doctor's appointment or the test results.  \n\n## Key Take Aways\n* You had a doctor's appointment at 4:00. \n* Your blood tests show that you are low on Vitamin D and Testosterone. \n* You need to talk to the doctor about the results. \n",
+      "short_summary": "Bruce reported his weight and blood glucose levels, received his blood test results showing low vitamin D and testosterone, and scheduled a doctor's appointment to discuss these results, despite some resistance from others.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-14T13:20:37.874Z",
+      "updated_at": "2025-03-14T13:50:38.438Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12121835505755,
+        "longitude": -77.91263836909727,
+        "created_at": "2025-03-14T13:40:22.975Z"
+      }
+    },
+    {
+      "id": 466481,
+      "start_time": "2025-03-14T12:07:43.722Z",
+      "end_time": "2025-03-14T12:24:30.510Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nYou were talking with Ivette about getting a doctor's appointment. It sounded like it was difficult to schedule and the wait was long. Ivette mentioned that you might need a referral to be seen sooner.  There was also a side conversation about someone texting a girl. \n\n## Atmosphere\nThe conversation seemed a bit frantic and busy. There was a sense of urgency surrounding the doctor's appointment. \n\n## Key Take Aways\n* Doctor's appointments are hard to come by, with waits of a month or longer. \n* Ivette suggested getting on the schedule now, even if it's months out. \n* Once you see the doctor, you can ask for a referral which might be faster. \n",
+      "short_summary": "Bruce discussed strategies for monitoring his son's phone use and scheduling a doctor's appointment, expressing concern about his son's inappropriate texting and the difficulty in securing timely medical care.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-14T12:07:43.722Z",
+      "updated_at": "2025-03-14T12:24:30.510Z",
+      "primary_location": {
+        "address": "63\u201399 Sanders Rd, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.124093900000005,
+        "longitude": -77.91317773333334,
+        "created_at": "2025-03-14T12:13:13.157Z"
+      }
+    },
+    {
+      "id": 466146,
+      "start_time": "2025-03-14T11:48:40.065Z",
+      "end_time": "2025-03-14T12:07:37.336Z",
+      "device_type": "Bee",
+      "summary": "Summary: \nIt seems like you were finishing up a meal with someone, possibly a young child, who you were encouraging to eat their banana. You reminded them that you needed to leave soon and they needed to brush their teeth. \n\nAtmosphere: \nThe atmosphere seems playful and caring. You are clearly attentive to the other person and focused on making sure they finish their food. \n\nKey Take Aways:\n* The other person still had some banana left to eat. \n* You were about to leave and the other person needed to brush their teeth afterwards. \n",
+      "short_summary": "Bruce and another person shared a banana before leaving, with Bruce needing to send a few more bites before departing.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-14T11:48:40.065Z",
+      "updated_at": "2025-03-14T12:07:37.336Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12136546583464,
+        "longitude": -77.91256524649523,
+        "created_at": "2025-03-14T12:04:51.809Z"
+      }
+    },
+    {
+      "id": 465834,
+      "start_time": "2025-03-14T11:30:50.464Z",
+      "end_time": "2025-03-14T11:48:53.055Z",
+      "device_type": "Bee",
+      "summary": "## Summary \n\nBruce had a brief interaction with someone, possibly giving them instructions about something that needed to be retrieved and brought over.  Bruce also had to tell his dog Peach to calm down a couple of times. There was a side conversation about volcanoes and electricity generation that Bruce seemed briefly involved in. \n\n## Atmosphere\n\nThe interaction seems a little chaotic and busy with multiple conversations happening at once. It's difficult to say for sure what the exact context is. \n\n## Key Take Aways\n\n* Bruce seems to be asking someone to retrieve something for him. They need to look in a corner. \n* Bruce might be expecting this person to bring the item to him. \n* Bruce's dog Peach was a little restless and he had to tell her to be patient. \n",
+      "short_summary": "Bruce ensured his dog, Peach, was safe and clarified instructions about retrieving something from a specific location.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-14T11:30:50.465Z",
+      "updated_at": "2025-03-14T11:48:53.055Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.1213175337387,
+        "longitude": -77.91257722832427,
+        "created_at": "2025-03-14T11:32:54.467Z"
+      }
+    },
+    {
+      "id": 456011,
+      "start_time": "2025-03-14T01:29:57.025Z",
+      "end_time": "2025-03-14T01:59:58.188Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nYou were very tired after many calls. You spoke with Ivette and Russell about getting Russell help with his anxiety. You had previously given Ivette the contact information for three psychiatric groups, but she had only been able to get in touch with one. She is going to try to get Russell medication for his anxiety from his regular doctor and will also look into walk-in options. \n## Atmosphere\nThere was a lot of concern about Russell's anxiety and how to get him help. Ivette and Russell were explaining to you their experience with Russell's anxiety and how they felt you could have been more helpful. \n## Key Take Aways\n* Ivette will try to get medication for Russell from his regular doctor. \n* Ivette will look into walk-in psychiatric services. \n* Ivette and Russell want you to be more calm and supportive when Russell is experiencing anxiety. \n",
+      "short_summary": "Bruce learned about the challenges his family faced in accessing mental health services, including long wait times and difficulties finding available appointments, and offered several alternative resources.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-14T01:29:57.025Z",
+      "updated_at": "2025-03-14T01:59:58.188Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12122780039272,
+        "longitude": -77.9125970383809,
+        "created_at": "2025-03-14T01:47:42.108Z"
+      }
+    },
+    {
+      "id": 429648,
+      "start_time": "2025-03-13T01:52:11.507Z",
+      "end_time": "2025-03-13T02:09:31.092Z",
+      "device_type": "Bee",
+      "summary": "Summary: Bruce was looking for something in the fridge and found an empty glass.  It seems like he was trying to have a conversation with someone about it, potentially accusing them of finishing the drink. He mentioned \"Bennington\" which could be a clue to who he was talking to. \n\nAtmosphere: It's a bit unclear and seems like a snippet of a larger conversation, making it hard to get a read on the atmosphere. \n\nKey Take aways:\n* Bruce was looking for something to drink. \n* The empty glass in the fridge suggests someone might have finished the last of it. \n* Bruce seems to be trying to figure out who finished the drink, mentioning \"Bennington\". \n",
+      "short_summary": "Bruce clarified that he was referring to Bennington, not himself, after being questioned about an empty glass in the refrigerator.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-13T01:52:11.507Z",
+      "updated_at": "2025-03-13T02:09:31.092Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.121387532261394,
+        "longitude": -77.91260205344922,
+        "created_at": "2025-03-13T01:59:30.813Z"
+      }
+    },
+    {
+      "id": 429056,
+      "start_time": "2025-03-13T01:04:45.479Z",
+      "end_time": "2025-03-13T01:52:06.844Z",
+      "device_type": "Bee",
+      "summary": "## Summary:\nToday, you reminisced about taking your sons to Happy Hollow Park in San Jose. You vividly recalled the rides, the petting zoo, and the overall enjoyment your sons had during your visits. The conversation sparked other cherished memories, including trips to California's Great America, Fairy Land in Oakland, and Vasona Lake Park. You also discussed your recent job change at Walgreens, transitioning from a Shift Lead to a Customer Service Associate to reduce stress and anxiety. \n\n## Atmosphere:\nThe conversation felt nostalgic and reflective as you delved into happy memories with your sons. There was a sense of contentment and acceptance regarding your job change, highlighting your focus on well-being. \n\n## Key Take Aways:\n* You fondly remember taking your sons to Happy Hollow Park and other amusement parks.\n* You stepped down from Shift Lead to Customer Service Associate at Walgreens to prioritize your mental health.\n* You are content with your decision and feel less anxious despite the pay cut. \n",
+      "short_summary": "Bruce stepped down from his stressful shift lead position at Walgreens for a less demanding, less anxiety-inducing role as a customer service associate, while also reminiscing about happy family memories at various parks and California's Great America.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-13T01:04:45.479Z",
+      "updated_at": "2025-03-13T02:55:07.234Z",
+      "primary_location": {
+        "address": "Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12401853539898,
+        "longitude": -77.91238655909163,
+        "created_at": "2025-03-13T01:27:20.019Z"
+      }
+    },
+    {
+      "id": 425310,
+      "start_time": "2025-03-12T20:06:36.053Z",
+      "end_time": "2025-03-12T20:22:10.351Z",
+      "device_type": "Bee",
+      "summary": "Summary: You are reminiscing about fun times spent with Russell playing games and doing science experiments. You fondly recall playing various games, including Exploding Kittens, a burrito-throwing game, and different versions of Monopoly, some featuring dinosaurs. You also reminisce about engaging in science experiments, particularly Tasty Science, which you've done countless times, and building a water rocket. You briefly mention a trip to a place where people fly, potentially linked to Boy Scouts. \n\nAtmosphere: The atmosphere is warm and nostalgic, filled with happy memories of shared experiences. \n\nKey Take Aways:\n- You and Russell share a love for games, especially Exploding Kittens and Monopoly.\n- You have fond memories of playing a burrito-throwing game. \n- You both enjoy science experiments, with Tasty Science being a particular favorite.\n- Building and launching a water rocket was a memorable experience. \n- A trip to a place involving flying, possibly related to Boy Scouts, stands out in your memory. \n",
+      "short_summary": "Bruce and Russell spent time together playing various games, including Exploding Kittens, a burrito-themed game, a dinosaur game, Tasty Science, and Monopoly, and also engaged in science experiments and model airplane activities.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-12T20:06:36.053Z",
+      "updated_at": "2025-03-12T20:22:10.351Z",
+      "primary_location": {
+        "address": "2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States",
+        "latitude": 34.28966439963345,
+        "longitude": -77.87202983003348,
+        "created_at": "2025-03-12T20:07:29.599Z"
+      }
+    },
+    {
+      "id": 422443,
+      "start_time": "2025-03-12T16:49:51.173Z",
+      "end_time": "2025-03-12T17:34:54.518Z",
+      "device_type": "Bee",
+      "summary": "## Summary: \nYou were reminiscing about fun times you had with your kids at various parks when they were younger.  You talked about Rancho San Antonio Park, Emma Prusch Farm Park, and the San Jose History Park.  You described the different features of each park, like the petting zoos, playgrounds, and historical exhibits. You seemed especially fond of the petting zoos and remembered how much your kids, especially Russell, enjoyed them.\n\n## Atmosphere:\nThe conversation was very nostalgic and full of happy memories. You were clearly enjoying the trip down memory lane and the chance to relive these special moments with your kids. \n\n## Key Take Aways:\n* You visited Rancho San Antonio Park, which had a petting zoo you had to hike to.\n* You frequented Emma Prusch Farm Park, known for its free-roaming chickens and small petting zoo.\n* San Jose History Park was a favorite, featuring train rides, historical exhibits, and special events.\n* Your son, Russell, was particularly interested in a presentation about the Vietnam War at the History Park. \n",
+      "short_summary": "Bruce and a companion reminisced about various parks and zoos they visited with their sons, including Rancho San Antonio Park, Emma Prusch Farm Park, and San Jose History Park, highlighting specific features and memories from each location.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-12T16:49:51.173Z",
+      "updated_at": "2025-03-12T17:34:54.518Z",
+      "primary_location": {
+        "address": "2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States",
+        "latitude": 34.28945278691083,
+        "longitude": -77.87223535428954,
+        "created_at": "2025-03-12T17:23:14.130Z"
+      }
+    },
+    {
+      "id": 421921,
+      "start_time": "2025-03-12T16:12:03.982Z",
+      "end_time": "2025-03-12T16:45:36.035Z",
+      "device_type": "Bee",
+      "summary": "## Summary \n\nYou had a funny and slightly confusing conversation with someone who seems to have been asking you to do some tasks for them, like booking a psychiatrist appointment and checking the weather.  You joked that you were a \"tragedy\" and they should book you an appointment with a psychiatrist.  They mentioned someone named Russell needing to work. \n\n## Atmosphere\n\nHumorous, light-hearted, slightly confusing\n\n## Key Take Aways\n* You need to book an appointment with a psychiatrist (this was a joke)\n* It's supposed to be in the 70s today \n* Someone (possibly named Russell) needs to go to work \n",
+      "short_summary": "I expressed concern for someone's well-being and then scheduled a psychiatrist appointment for myself.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-12T16:12:03.982Z",
+      "updated_at": "2025-03-12T16:45:36.035Z",
+      "primary_location": {
+        "address": "5783\u20135797 Carolina Beach Rd, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.128464466666664,
+        "longitude": -77.89802540000001,
+        "created_at": "2025-03-12T16:41:22.844Z"
+      }
+    },
+    {
+      "id": 420652,
+      "start_time": "2025-03-12T14:45:45.661Z",
+      "end_time": "2025-03-12T15:45:00.873Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nBruce had a busy day. It started with a conversation about food and household chores, including a missing red microwave and instructions for using the sour cream cheese. Bruce's mom also called and asked to speak with him. Later, Bruce participated in a discussion about the economic impact of tariffs, arguing that they make it harder for people to purchase vehicles.\n\n## Atmosphere\nThe atmosphere of the interaction is informal and lively, shifting from mundane household topics to a more heated discussion about economics and politics.\n\n## Key Take Aways\n* **Call Mom:** Bruce's mom called and wants him to call her back.\n* **Sour Cream Cheese:** Someone (possibly Bruce) forgot to put the top back on the sour cream cheese. Use the one without the lid.\n* **Tariff Discussion:** Bruce participated in a debate about tariffs, arguing that they negatively impact consumers by making it harder to purchase vehicles. \n",
+      "short_summary": "Bruce discussed family matters, work, and mysterious household occurrences, while also expressing concern about a potential customer losing valuable time due to an interruption.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-12T14:45:45.661Z",
+      "updated_at": "2025-03-12T15:45:00.873Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12136546583464,
+        "longitude": -77.91256524649523,
+        "created_at": "2025-03-12T15:14:18.667Z"
+      }
+    },
+    {
+      "id": 419514,
+      "start_time": "2025-03-12T13:30:29.472Z",
+      "end_time": "2025-03-12T14:29:28.023Z",
+      "device_type": "Bee",
+      "summary": "## Summary: \nYou and your son, Russell, were trying to get a doctor's note for his school due to anxiety he's experiencing. The appointment with his primary care provider, Emily Warden, was unsuccessful as she is out of the office.  After some back and forth, Russell was able to reschedule the appointment but not before the 18th. You also had a conversation with Russell about taking responsibility for his school attendance and how your frustration with the situation doesn't reflect on him.\n\n## Atmosphere: \nThe conversation was tense at times, with some frustration around getting the doctor's note and navigating the situation. You expressed your frustration directly while also trying to reassure Russell that your anger was not directed at him.\n\n## Key Take Aways:\n* Russell needs a doctor's note for school due to anxiety.\n* Emily Warden, his primary care provider, is unavailable.\n* Russell was able to reschedule the appointment for the 18th.\n* You plan to talk to Russell about taking more responsibility for his school attendance.\n* You reassured Russell that your frustration is with the situation, not him. \n",
+      "short_summary": "Bruce helped Russell reschedule a doctor's appointment, address his anxiety and school absences, and discussed strategies for managing Russell's drug use.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-12T13:30:29.472Z",
+      "updated_at": "2025-03-12T14:29:28.023Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12147067693606,
+        "longitude": -77.91260591604176,
+        "created_at": "2025-03-12T14:10:18.534Z"
+      }
+    },
+    {
+      "id": 419151,
+      "start_time": "2025-03-12T13:08:55.189Z",
+      "end_time": "2025-03-12T13:30:57.259Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nYou were talking with Ivette about your son. Ivette is very concerned about your son's behavior and doesn't think he understands the consequences of his actions. You tried to explain to her that you've spoken to him multiple times and that he's still learning. You also shared an anecdote about a TikTok video you saw about repeating yourself to men. \n\n## Atmosphere\nThe conversation seems to be a bit tense, with Ivette feeling frustrated and unheard. \n\n## Key Take Aways\n* **Behavioral Therapy:** Ivette wants to explore behavioral therapy for your son, potentially through his Medicaid. You agreed to look into it. \n* **Consequences:** Ivette feels strongly that your son needs to understand the serious consequences of his actions, especially given his dyslexia.\n* **Communication Breakdown:**  There seems to be a disconnect between you and Ivette in terms of how to address your son's behavior. \n* **Door Removal:** There was a side conversation about removing a door, which you said you would handle. \n",
+      "short_summary": "Bruce discussed removing a door,  investigating behavioral therapy options for his son's dyslexia, and the challenges of communicating consequences to his son, acknowledging the limitations of repeatedly telling him the same thing.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-12T13:08:55.189Z",
+      "updated_at": "2025-03-12T13:30:57.259Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12136546583464,
+        "longitude": -77.91256524649523,
+        "created_at": "2025-03-12T13:16:56.217Z"
+      }
+    },
+    {
+      "id": 418473,
+      "start_time": "2025-03-12T12:24:40.117Z",
+      "end_time": "2025-03-12T13:00:07.846Z",
+      "device_type": "Bee",
+      "summary": "## San Francisco Adventures with the Boys\n\n### Summary\nYou were reminiscing about the good times you had with your sons, Russell and Benetton, exploring San Francisco. You talked about how you would plan weekly outings to art festivals, cultural events, and even simple walks around the city.  You fondly recalled a specific trip where you went to a small art and wine festival that wasn't as impressive as you'd hoped.  Afterward, you tried to find a pizza place but ended up at a small Mexican restaurant. You thought the food was just okay, but Russell loved it and still talks about going back.\n\n### Atmosphere\nThe atmosphere of the conversation is warm and nostalgic. You're clearly drawing on happy memories of spending quality time with your sons. You're also feeling a little wistful, as you acknowledge that your sons are older now and those carefree days are behind you. \n\n### Key Takeaways\n* You made a conscious effort to plan regular outings with your sons in San Francisco, creating lasting memories.\n* Russell has a particularly fond memory of a small Mexican restaurant you visited, even though you didn't think the food was anything special. \n* You enjoyed exploring San Francisco with your sons, finding joy in simple things like walking around the city and taking in the sights. \n",
+      "short_summary": "I documented joyful memories of exploring San Francisco with my sons, Russell and Benetton, to help me remember positive experiences during a difficult time.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-12T12:24:40.117Z",
+      "updated_at": "2025-03-12T13:00:07.846Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12136546583464,
+        "longitude": -77.91256524649523,
+        "created_at": "2025-03-12T12:53:56.141Z"
+      }
+    },
+    {
+      "id": 417370,
+      "start_time": "2025-03-12T11:16:02.139Z",
+      "end_time": "2025-03-12T12:18:52.230Z",
+      "device_type": "Bee",
+      "summary": "## Summary: \n\nThis morning started with a difficult conversation with Ivette about our son, Benetton. We're struggling to find solutions for his recent challenges, which include a possible drug problem and an incident at school where he was physically hurt.  We're trying to support him with love and guidance, but Ivette is understandably stressed and feels like we need to do more.  We're looking into additional resources, like therapy and exploring online information about teenagers and drug use. I'm also planning to spend some quality time with Benetton, reminiscing about happy memories to remind him that he's loved and has a good life. \n\n## Atmosphere:\n\nTense and emotional.  Ivette is clearly at her wit's end and frustrated with the situation.  There's a sense of urgency in her voice as she pushes for solutions. I'm trying to remain calm and supportive, but I also feel the weight of the situation.\n\n## Key Takeaways:\n\n* **Seek professional help:**  We need to find a therapist for Benetton, even though his doctor recommended waiting.\n* **Explore additional resources:**  We're going to research online resources about drug problems in teenagers.\n* **Focus on the positive:** I'm going to spend time with Benetton, focusing on positive memories and reminding him that he's loved. \n* **Control what we can:**  For now, we're monitoring Benetton's phone and car usage. \n* **Stay united:**  We need to work together as parents to support Benetton through this. \n",
+      "short_summary": "Bruce and his family discussed strategies for supporting their son, who is facing challenges at school and may need additional mental health support.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-12T11:16:02.139Z",
+      "updated_at": "2025-03-12T12:18:52.230Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12133969225785,
+        "longitude": -77.91280839021577,
+        "created_at": "2025-03-12T12:05:40.726Z"
+      }
+    },
+    {
+      "id": 406711,
+      "start_time": "2025-03-11T23:53:40.865Z",
+      "end_time": "2025-03-12T00:18:58.003Z",
+      "device_type": "Bee",
+      "summary": "## Summary \nYou had a conversation with a fitness tracking app and a virtual assistant. You told the fitness app about your workout: 25 regular situps, 25 cross situps, and 25 small-muscle situps. You then asked the virtual assistant about the benefits of connecting your Gmail account and whether it could send an email. While it couldn't send an email directly, it offered to help you draft one. \n\n## Atmosphere\nThe atmosphere seemed focused on accomplishing tasks and getting information. You were actively using technology to track your fitness and manage your communication. \n\n## Key Takeaways\n* You successfully completed 3 sets of situps. \n* Connecting your Gmail to the virtual assistant could offer features like email management, notifications, calendar syncing, and advanced search within the app.\n* The virtual assistant cannot connect to the internet for real-time data or send emails directly, but it can help with drafting emails. \n",
+      "short_summary": "Bruce successfully completed a workout and then asked about the app's email and internet capabilities.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-11T23:53:40.865Z",
+      "updated_at": "2025-03-12T00:18:58.003Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12122426558015,
+        "longitude": -77.91261660873415,
+        "created_at": "2025-03-12T00:02:39.116Z"
+      }
+    },
+    {
+      "id": 404144,
+      "start_time": "2025-03-11T20:18:10.581Z",
+      "end_time": "2025-03-11T22:05:08.664Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nYou had a long, somewhat disjointed conversation with your wife and daughter, punctuated by moments of helping out with various tasks and discussing dinner. Your daughter is preparing for college and you offered her some advice based on your experiences. You also discussed potential mental health resources with your wife.\n\n## Atmosphere\nThe atmosphere of the conversation was largely casual and familial, with a mix of lighthearted banter and more serious discussions. There was a sense of busyness throughout, with multiple conversations happening simultaneously.\n\n## Key Take Aways\n* Your wife is looking into different therapists and considering recommendations. \n* Your daughter is doing well in school and thinking about her future college plans.  She's a bit stressed about upcoming exams and coursework.\n* You offered your daughter advice about choosing classes and managing her workload.\n* You had a brief disagreement with your wife about the relevance of family medical history in mental health diagnoses. \n* You helped out with some household tasks, like setting timers and checking on food. \n",
+      "short_summary": "Bruce consulted with others regarding his Tesla purchase details, a website issue, and his children's activities and well-being.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-11T20:18:10.581Z",
+      "updated_at": "2025-03-11T22:05:08.664Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.121461328670264,
+        "longitude": -77.91253558956063,
+        "created_at": "2025-03-11T21:52:37.775Z"
+      }
+    },
+    {
+      "id": 403095,
+      "start_time": "2025-03-11T18:58:23.500Z",
+      "end_time": "2025-03-11T20:18:49.121Z",
+      "device_type": "Bee",
+      "summary": "## Therapy Session Summary - February 8th \n\nToday's session focused on my son, Russell, and the challenges he's facing. He's a good kid, but struggles with social interaction and has been feeling lonely and unsure of himself.  We talked about how he recently overdosed on marijuana, which was a major reason why we moved from California to Wilmington in the first place. I'm worried about him, especially since he's graduating next January and I want him to feel prepared for the future. \n\nWe discussed his recent interest in religion and how he's found some solace in Catholicism and Young Life, a Christian youth group.  While I don't share his beliefs, I'm glad he's found something positive.  He's also been working out regularly, which is great, although he did experiment with steroids for a while. Thankfully, he's stopped using them. \n\nWe also talked about my own struggles with anxiety and how my father's parenting has influenced my own self-criticism.  We agreed to focus more on anxiety management techniques in our upcoming sessions.\n\n## Atmosphere\n\nThe session felt productive and supportive. I appreciated the opportunity to discuss my concerns about Russell and explore potential solutions.  I'm grateful for the therapist's insights and guidance.\n\n## Key Takeaways\n\n* **Psychiatrist Appointment:** I'm going to make an appointment for Russell with Dr. Scott Crowder, a child and adolescent psychiatrist.\n* **Therapy:** I'll also contact Holly Anne Barr, a psychotherapist, to see if she's a good fit for Russell.\n* **Anxiety Management:** I'm going to focus on managing my own anxiety so I can be a better support system for Russell. \n* **Open Communication:**  I'll continue to encourage Russell to communicate openly and honestly with me about his feelings and experiences. \n",
+      "short_summary": "I discussed my son's struggles with substance abuse, social difficulties, and academic challenges, and we developed a plan involving professional help and increased family support.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-11T18:58:23.500Z",
+      "updated_at": "2025-03-11T20:18:49.121Z",
+      "primary_location": {
+        "address": "1901 Oleander Dr, Wilmington, NC, New Hanover County, 28403, United States",
+        "latitude": 34.22575081229787,
+        "longitude": -77.92298857337313,
+        "created_at": "2025-03-11T19:28:23.844Z"
+      }
+    },
+    {
+      "id": 402226,
+      "start_time": "2025-03-11T17:57:10.200Z",
+      "end_time": "2025-03-11T18:59:21.500Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nYou met with your peer mentor, Crystal, and then your counselor, Justin. Crystal asked about your support system and you discussed your work and your family. You then met with Justin to complete your intake paperwork. You discussed your medical history, emergency contacts, and signed consent forms. You scheduled your next appointment with Justin for the following week at 2pm. \n\n## Atmosphere\nBoth meetings were friendly and conversational. Crystal was warm and empathetic, and you felt comfortable discussing your anxiety with her. Justin was thorough and efficient in explaining the intake process. \n\n## Key Takeaways\n* You are receiving support from a peer mentor and a counselor. \n* You are connected with resources like Medicaid and a food bank. \n* You are working on a Wellness Recovery Action Plan (WRAP) to manage your bipolar disorder. \n* You are looking for a higher-paying job. \n* You have an appointment with your counselor next week to continue working on your career profile. \n",
+      "short_summary": "Bruce completed intake paperwork for peer mentorship services, clarifying his existing support systems and healthcare needs while discussing his employment situation and anxiety management.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-11T17:57:10.201Z",
+      "updated_at": "2025-03-11T18:59:21.500Z",
+      "primary_location": {
+        "address": "1890 Dawson St, Wilmington, NC, New Hanover County, 28403, United States",
+        "latitude": 34.226124638291886,
+        "longitude": -77.92181783696353,
+        "created_at": "2025-03-11T18:36:39.220Z"
+      }
+    },
+    {
+      "id": 400510,
+      "start_time": "2025-03-11T16:04:01.677Z",
+      "end_time": "2025-03-11T17:57:36.834Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nBruce had a conversation with his son and wife about some trouble at school. His son had been texting a girl who may be underage, and there were rumors spreading around the school. Bruce reassured his son that everything would be okay and that they would seek legal counsel to gather information and protect him.\n\n## Atmosphere\nThe conversation was emotionally charged, with Bruce's son feeling anxious and scared about the situation. Bruce remained calm and supportive, offering reassurance and guidance to his son.\n\n## Key Take Aways\n* Bruce's son was involved in a situation at school involving texting a girl who may be underage.\n* Rumors were spreading, causing Bruce's son significant anxiety.\n* Bruce reassured his son and committed to seeking legal counsel to understand their options and protect him.\n* Bruce emphasized the importance of honesty and avoiding further contact with the girl.\n* Bruce expressed his love and support for his son, assuring him that they would navigate this situation together. \n",
+      "short_summary": "Bruce discussed his son's recent issues with school, social media, and interactions with underage girls, seeking guidance and reassurance from family and potentially legal counsel.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-11T16:04:01.677Z",
+      "updated_at": "2025-03-11T17:57:36.834Z",
+      "primary_location": {
+        "address": "Independence Blvd, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.183887284664266,
+        "longitude": -77.91694497650472,
+        "created_at": "2025-03-11T17:46:39.064Z"
+      }
+    },
+    {
+      "id": 400130,
+      "start_time": "2025-03-11T15:38:27.071Z",
+      "end_time": "2025-03-11T16:03:59.362Z",
+      "device_type": "Bee",
+      "summary": "## Summary: \nBruce and Ivette were discussing scheduling an appointment with a psychologist or psychiatrist. Bruce suggested \"Life Source\" because they offer both and he's familiar with them. He also mentioned another option, \"Carolina something,\" but couldn't recall the exact name. Bruce was trying to be helpful and provide Ivette with multiple options in case one had a long wait time. \n\n## Atmosphere: \nThe conversation seemed to be centered around finding solutions and being supportive. Bruce was clearly trying to be helpful and offer practical advice. \n\n## Key Take Aways:\n* Ivette might be looking for a psychologist or psychiatrist.\n* Bruce suggested \"Life Source\" as an option.\n* Bruce also mentioned \"Carolina something\" but couldn't remember the exact name.\n* Bruce is trying to be helpful and provide options. \n",
+      "short_summary": "Bruce discussed scheduling and options for psychological and psychiatric care, including Life Source and Carolina Neurology, with others to ensure timely access to treatment.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-11T15:38:27.071Z",
+      "updated_at": "2025-03-11T16:03:59.362Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12136546583464,
+        "longitude": -77.91256524649523,
+        "created_at": "2025-03-11T15:54:42.512Z"
+      }
+    },
+    {
+      "id": 399559,
+      "start_time": "2025-03-11T15:00:19.830Z",
+      "end_time": "2025-03-11T15:38:45.368Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nYou called your doctor's office to request a signed document stating your serious and persistent mental illness (SPMI) diagnosis and the relevant F code. You needed this document for a government issue. You left a detailed voicemail message with your name, date of birth, and phone number. \n\n## Atmosphere\nThe interaction took place over a phone call with your doctor's office. You successfully navigated the automated system and left a voicemail message. \n\n## Key Take Aways\n* You need a signed document from your doctor stating your SPMI diagnosis and F code.\n* You left a detailed voicemail message with all the necessary information. \n* You should expect to hear back from your doctor's office within three business days. \n",
+      "short_summary": "Bruce left a voicemail requesting a signed document confirming his SPMI diagnosis and F code for a government application, providing his contact information.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-11T15:00:19.830Z",
+      "updated_at": "2025-03-11T15:46:35.668Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12145976899913,
+        "longitude": -77.91260326476069,
+        "created_at": "2025-03-11T15:24:41.681Z"
+      }
+    },
+    {
+      "id": 399303,
+      "start_time": "2025-03-11T14:47:17.603Z",
+      "end_time": "2025-03-11T15:00:45.662Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nYou were checking in on someone and offered to do their laundry. They weren't feeling well and had just stepped out. You also called Coastal Carolina Neuro Psychiatric Center for a medical emergency but were instructed to hang up and dial 911. \n\n## Atmosphere\nThe atmosphere seems concerned and helpful, with a sense of urgency towards the end.\n\n## Key Take Aways\n* The person you were speaking with wasn't feeling well.\n* You offered to help them with laundry.\n* You needed to make an urgent call to Coastal Carolina Neuro Psychiatric Center.\n* The center instructed you to dial 911 for a medical emergency. \n",
+      "short_summary": "Bruce checked in on someone's well-being, offered practical assistance, and made arrangements for future appointments.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-11T14:47:17.603Z",
+      "updated_at": "2025-03-11T15:00:45.662Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12146714344414,
+        "longitude": -77.9125597442397,
+        "created_at": "2025-03-11T14:50:56.605Z"
+      }
+    },
+    {
+      "id": 399061,
+      "start_time": "2025-03-11T14:32:13.517Z",
+      "end_time": "2025-03-11T14:47:24.497Z",
+      "device_type": "Bee",
+      "summary": "## Summary \n\nBruce was on a call and needed to end it quickly. He asked the other person to wait a moment while he told Alexa to hang up the call. \n\n## Atmosphere\n\nThe atmosphere seems slightly rushed as Bruce is trying to end the call. \n\n## Key Take Aways\n* Bruce was on a call and needed to end it. \n* Bruce used Alexa to hang up the call. \n",
+      "short_summary": "Bruce ended a call with an Alexa device.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-11T14:32:13.517Z",
+      "updated_at": "2025-03-11T14:47:24.497Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12136546583464,
+        "longitude": -77.91256524649523,
+        "created_at": "2025-03-11T14:44:57.331Z"
+      }
+    },
+    {
+      "id": 398541,
+      "start_time": "2025-03-11T14:01:09.852Z",
+      "end_time": "2025-03-11T14:32:21.848Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nYou were discussing canceling something that cost $18 with someone. You were frustrated with the $421 heating bill and were discussing turning off the heat with someone. You suggested getting a space heater. You talked about the water bill with Ivette and considered who should call to complain. You briefly connected with Ivette on an Echo call to ask about an email she sent to Linda. \n\n## Atmosphere\nThe conversation was tense at times, especially when discussing the bills and how to manage the temperature. There was a sense of urgency and frustration. \n\n## Key Take Aways\n* Something that costs $18 needs to be canceled.\n* The heating bill was high ($421) and you want to explore turning off the heat and using a space heater.\n* The water bill is also a concern and you need to decide who will contact them about it.\n* Ivette sent an email to Linda that you need to discuss with her. \n",
+      "short_summary": "Bruce canceled an expensive service, addressed his dog's needs, and troubleshooted a malfunctioning home heating system with several other people, ultimately suggesting a space heater as a solution.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-11T14:01:09.852Z",
+      "updated_at": "2025-03-11T14:32:21.848Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12136546583464,
+        "longitude": -77.91256524649523,
+        "created_at": "2025-03-11T14:10:56.855Z"
+      }
+    },
+    {
+      "id": 397966,
+      "start_time": "2025-03-11T13:28:03.494Z",
+      "end_time": "2025-03-11T14:01:30.352Z",
+      "device_type": "Bee",
+      "summary": "Summary: Bruce had a nice moment with his dog, Grape, who went potty outside. Later, Bruce had a concerning conversation with someone about a \"pedophile\" and online harassment. It seems like someone Bruce knows is being harassed online, and the harasser's identity has been revealed. Bruce doesn't think this is a good thing, fearing it will lead to more personal attacks. Bruce then had a brief interaction with another dog, Peach, who seemed restless despite having just been outside. \n\nAtmosphere: The atmosphere is a mix of heartwarming and concerning. The beginning shows Bruce's love for his dog, but the conversation about online harassment is worrisome. \n\nKey Take aways:\n* Bruce's dog, Grape, is well-trained.\n* Bruce is concerned about someone being harassed online.\n* The identity of the harasser has been revealed, but Bruce fears this will worsen the situation.\n* Bruce might have multiple dogs. \n",
+      "short_summary": "Bruce discussed his dog, Grape, and expressed concern about online harassment targeting someone he knows.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-11T13:28:03.495Z",
+      "updated_at": "2025-03-11T14:01:30.352Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12141595644452,
+        "longitude": -77.91247424064808,
+        "created_at": "2025-03-11T13:38:57.691Z"
+      }
+    },
+    {
+      "id": 395514,
+      "start_time": "2025-03-11T11:21:45.998Z",
+      "end_time": "2025-03-11T12:51:20.516Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nThis morning, you started by checking your blood glucose, which was 140. You then had a conversation with Ivette about finances. There was some confusion about a payment, but you clarified that you make payments of over $1000 every two weeks. You also discussed the possibility of canceling a party due to rain and financial concerns, and you both agreed it was a good idea.  You then helped your son Benetton get ready to leave, reminding him to grab his backpack. Later, you listened to the radio and found out about a few interesting news stories, including one about a man who robbed the same store five times. You finished your morning by discussing the capabilities of your AI assistant, particularly its integration with other apps like WhatsApp and Apple Calendar.\n\n## Atmosphere\nThe atmosphere of the morning was a mix of busy and relaxed. You were taking care of your responsibilities, like managing finances and getting your son ready, but also taking time to listen to the radio and learn about new things. \n\n## Key Take Aways\n* You and Ivette agreed to likely cancel the party.\n* You need to follow up with Ivette later today about the payment confusion.\n* Benetton had an appointment.\n* Your AI assistant can integrate with WhatsApp to send messages, photos, and check messages.\n* Your AI assistant can integrate with Apple Calendar through device permissions to manage events and reminders. \n",
+      "short_summary": "This morning involved managing finances, discussing a potential party cancellation, coordinating children's appointments, and exploring the capabilities of a new AI assistant for managing messages and calendars.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-11T11:21:45.998Z",
+      "updated_at": "2025-03-11T12:51:20.516Z",
+      "primary_location": {
+        "address": "S College Rd, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.14099258333333,
+        "longitude": -77.89344083333333,
+        "created_at": "2025-03-11T12:39:37.010Z"
+      }
+    },
+    {
+      "id": 385912,
+      "start_time": "2025-03-11T02:15:19.836Z",
+      "end_time": "2025-03-11T02:36:02.578Z",
+      "device_type": "Bee",
+      "summary": "## Summary\nBruce is getting acquainted with a new device, likely a headset, and exploring its features like mute, pairing, and battery life. He's excited about the device and trying to understand its functionalities with the help of a digital assistant.\n\n## Atmosphere\nThe atmosphere is one of discovery and learning. Bruce is clearly enthusiastic about the new device and eager to understand how it works. There's a sense of curiosity and playfulness as he navigates the different features.\n\n## Key Takeaways\n* Bruce is setting up a new device, possibly a headset.\n* He's impressed by its features and design.\n* He interacts with a digital assistant, asking about battery life and functionality.\n* He's actively learning and exploring the device's capabilities. \n",
+      "short_summary": "Bruce successfully troubleshooted a device's pairing and functionality with the assistance of two other individuals.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-11T02:15:19.837Z",
+      "updated_at": "2025-03-11T02:36:02.578Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12124321185979,
+        "longitude": -77.91254162267143,
+        "created_at": "2025-03-11T02:21:22.870Z"
+      }
+    },
+    {
+      "id": 324108,
+      "start_time": "2025-03-04T20:00:55.577Z",
+      "end_time": "2025-03-04T20:53:22.668Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary\nBruce had a therapy session with his therapist, Larry, where he discussed his anxiety about work, his recent trip to a gentlemen's club, and his feelings of being judged and undervalued. He shared his concerns about his ability to succeed in life and his fear of the future. Larry validated Bruce's feelings and encouraged him to focus on the present moment. They discussed Bruce's childhood and the impact of his father's judgment on his self-esteem. Larry suggested that Bruce try to reframe his thinking and focus on his strengths.\n\n## Atmosphere\nThe session was open and honest, with Bruce sharing his vulnerabilities and anxieties. Larry was supportive and understanding, offering validation and encouragement. The conversation touched on difficult emotions and past experiences, but there was also a sense of hope and a willingness to work towards a better future. \n\n## Key Take Aways\n* Bruce is stepping down from his shift lead position at Walgreens due to anxiety related to handling money. \n* Bruce is exploring new employment options through a service connected to his individualized treatment plan.\n* Bruce is dealing with feelings of inadequacy and fear for the future, stemming from his work situation and financial anxieties.\n* Bruce and Larry discussed the impact of Bruce's father's judgment on his self-esteem and how it continues to affect him. \n* Larry encouraged Bruce to challenge his negative self-talk and focus on his strengths and accomplishments. \n",
+      "short_summary": "During today's therapy session, Bruce discussed his recent decision to step down from his shift lead position at Walgreens due to stress-induced money-counting errors, a trip to gentlemen's clubs, and his ongoing mental health treatment plan, including medication adjustments and exploring new employment resources.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-04T20:00:55.578Z",
+      "updated_at": "2025-03-04T20:53:22.668Z",
+      "primary_location": {
+        "address": "3807 Oleander Dr, Wilmington, NC, New Hanover County, 28403, United States",
+        "latitude": 34.214811583333336,
+        "longitude": -77.90008341666666,
+        "created_at": "2025-03-04T20:00:55.918Z"
+      }
+    },
+    {
+      "id": 323757,
+      "start_time": "2025-03-04T18:47:23.231Z",
+      "end_time": "2025-03-04T19:40:41.316Z",
+      "device_type": "apple_watch",
+      "summary": "## Bruce's Meeting with Employment Services\n\n## Summary\n\nBruce and his wife met with Justin, a representative from an employment support service. They discussed the program's services, Bruce's employment goals, and how the program could help him find a job in the software industry. Bruce was particularly interested in the program's advocacy services and how they could help him overcome challenges he might face during the job search and employment process.\n\n## Atmosphere\n\nThe meeting was a bit chaotic at times, with multiple people talking and some confusion about the program's services. However, Bruce was generally pleased with the meeting and felt optimistic about the program's ability to help him find a job.\n\n## Key Takeaways\n\n* **Program Overview:** The program provides individualized placement support, including career profiling, job development, employer engagement, resume building, interview skills practice, and advocacy services. \n* **Bruce's Goals:** Bruce is seeking a job in the software industry, preferably a remote position due to the lack of software companies in Wilmington. He emphasized his need for rapid job placement and employer engagement.\n* **Advocacy Services:** Bruce was particularly interested in the program's advocacy services, specifically how they could help him address challenges related to his bipolar disorder in a work environment.\n* **Next Steps:** Bruce scheduled an intake appointment for the following Tuesday to complete the necessary paperwork and begin the career profiling process. He will receive an electronic copy of the 22-page career profile document to review beforehand.\n",
+      "short_summary": "Bruce confirmed an appointment for individualized placement support services next week to address his job search challenges, focusing on rapid job placement and employer engagement.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-04T18:47:23.231Z",
+      "updated_at": "2025-03-04T19:40:41.316Z",
+      "primary_location": {
+        "address": "1890 Dawson St, Wilmington, NC, New Hanover County, 28403, United States",
+        "latitude": 34.22624480723666,
+        "longitude": -77.92180269484696,
+        "created_at": "2025-03-04T18:47:30.075Z"
+      }
+    },
+    {
+      "id": 323499,
+      "start_time": "2025-03-04T17:53:43.592Z",
+      "end_time": "2025-03-04T18:09:22.438Z",
+      "device_type": "apple_watch",
+      "summary": "## Apartment Viewing Summary for Bruce \n\n**Summary:** You toured a few different apartment options with an agent, focusing on studios and one-bedroom layouts. You were particularly interested in the size of the bedroom and whether a queen-sized bed would fit comfortably.  You also inquired about rent prices, lease terms, and available discounts. The agent recommended checking the website for the most up-to-date pricing and availability. \n\n**Atmosphere:** The conversation was friendly and informative. You seemed particularly interested in the practicalities of the apartments, like bedroom size and lease terms. \n\n**Key Takeaways:**\n\n* You liked the one-bedroom layout better than the studio.\n* You need to double-check if a queen bed will fit comfortably in the bedroom.\n* The agent suggested checking the website for up-to-date pricing and availability.\n* The longest lease term is currently 14 months.\n* There are discounts available for moving in by certain dates.\n* Wi-Fi, trash, and pest control are included in the rent. \n",
+      "short_summary": "Bruce toured a potential apartment, inquiring about amenities, pricing, lease terms, and nearby conveniences, ultimately deciding against renting due to high costs.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-04T17:53:43.593Z",
+      "updated_at": "2025-03-04T18:09:22.438Z",
+      "primary_location": {
+        "address": "19 Harnett St, Wilmington, NC, New Hanover County, 28401, United States",
+        "latitude": 34.246652326465025,
+        "longitude": -77.95127609935932,
+        "created_at": "2025-03-04T17:53:53.465Z"
+      }
+    },
+    {
+      "id": 322813,
+      "start_time": "2025-03-04T15:24:09.688Z",
+      "end_time": "2025-03-04T16:24:12.132Z",
+      "device_type": "apple_watch",
+      "summary": "## Bruce's Medical Visit\n\n### Summary\nBruce went to the doctor to discuss his A1C, get a referral for a few specialists, and receive an injection for his golfer's elbow. His A1C was a bit high at 7.8, and he learned that he needs to schedule a separate appointment specifically for injections in the future. He was happy with the injection he received, saying it was \"a piece of cake\" compared to the last one. He also discussed Farxiga with the doctor and got referrals for an ENT, memory specialist, and sleep specialist.\n\n### Atmosphere\nThe atmosphere of the visit was friendly and conversational. Bruce seemed comfortable joking with the staff and asking questions. He was happy with the care he received and left feeling optimistic.\n\n### Key Takeaways\n* Bruce's A1C was 7.8, which is a bit high.\n* He needs to schedule separate appointments for injections in the future.\n* He received an injection for his golfer's elbow and was happy with it.\n* He got referrals to an ENT, memory specialist, and sleep specialist.\n* He discussed Farxiga with the doctor. \n",
+      "short_summary": "During my appointment, I addressed several health concerns, including getting an injection, discussing my high A1C and hemoglobin levels, receiving referrals for memory assessment and ENT services, and obtaining recommendations for better elbow protection.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-04T15:24:09.688Z",
+      "updated_at": "2025-03-04T17:19:31.920Z",
+      "primary_location": {
+        "address": "5429 Wrightsville Ave, Wilmington, NC, New Hanover County, 28403, United States",
+        "latitude": 34.21148593718616,
+        "longitude": -77.85808366381146,
+        "created_at": "2025-03-04T16:23:30.285Z"
+      }
+    },
+    {
+      "id": 304731,
+      "start_time": "2025-02-27T14:44:02.277Z",
+      "end_time": "2025-02-27T15:12:15.954Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary\nBruce and his wife, Yvette, left a voicemail for Catherine Henneman at Coastal Horizon Center. They are requesting a copy of their release form and have some questions about Bruce's approval for CLS and a 1950 form they received. \n\n## Atmosphere\nThe atmosphere is busy and slightly chaotic. Bruce and Yvette seem to be multitasking, dealing with errands and caring for their pets while trying to leave an important voicemail. \n\n## Key Takeaways\n* **Call Catherine back:** Catherine Henneman's phone number is 910-685-0205.\n* **Release form:** Danny was supposed to send a release form that Bruce needs to sign. Catherine should have it.\n* **1950 form and CLS:** Bruce and Yvette need clarification on a 1950 form they received and Bruce's approval for CLS. \n* **Yvette as point of contact:**  Yvette's phone number is 408-497-2140. Bruce would like Catherine to primarily communicate with Yvette. \n",
+      "short_summary": "Bruce and Yvette Bookman left a voicemail for Catherine Henneman requesting information about Bruce's approved CLS application,  the explanation of a received $1950 payment, and access to a release of information form.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-27T14:44:02.277Z",
+      "updated_at": "2025-02-27T15:12:15.954Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12152365970851,
+        "longitude": -77.9125441602879,
+        "created_at": "2025-02-27T14:44:03.017Z"
+      }
+    },
+    {
+      "id": 303538,
+      "start_time": "2025-02-27T02:41:05.824Z",
+      "end_time": "2025-02-27T02:51:10.652Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary\nBruce arrived home, appearing stressed. He told Ivette, who seems to be watching his dog, that he's been having problems at work as a store leader. His manager offered him a demotion to associate to avoid being fired. He explained that while his hourly rate would be reduced, he would still be earning more than other associates. Ivette seemed concerned and confused about the situation, especially the repeated register issues. Bruce, frustrated and apologetic for his mood, reassured her that it was the best course of action. He expressed gratitude to Ivette for taking care of his dog before leaving.\n\n## Atmosphere\nTense, emotional, stressful.\n\n## Key Take Aways\n* Bruce is facing work difficulties and potential firing.\n* He accepted a demotion to a less stressful role.\n* He will be taking a pay cut, but it will be less of a cut than expected.\n* Ivette is taking care of Bruce's dog. \n",
+      "short_summary": "Bruce accepted a new position as an associate at his store, taking a slight pay cut but ultimately earning more than other associates and avoiding potential termination.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-27T02:41:05.825Z",
+      "updated_at": "2025-02-27T02:51:10.652Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12126743261813,
+        "longitude": -77.91258587700065,
+        "created_at": "2025-02-27T02:41:06.529Z"
+      }
+    },
+    {
+      "id": 301612,
+      "start_time": "2025-02-26T18:37:50.097Z",
+      "end_time": "2025-02-26T18:51:08.901Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary\nYou and Sherry discussed your performance as a shift lead, particularly regarding lunch breaks and timecard management. Sherry acknowledged your efforts and the positive feedback from colleagues like Kathy and Melissa, but emphasized the need for improvement in these areas. She suggested stepping down to a CSA role to reduce stress and allow time to adjust. While you expressed a desire to remain a shift lead, you were open to considering the suggestion. You also discussed the \"red box\" warnings on the time clock and clarified procedures for addressing discrepancies.\n\n## Atmosphere\nThe conversation was direct and honest, but also supportive and encouraging. Sherry seemed to genuinely care about your well-being and wanted to find a solution that worked for everyone. While the feedback was sometimes critical, it was delivered constructively and with a sense of understanding.\n\n## Key Takeaways\n* **Lunch breaks:** Shift leads are encouraged to take lunch breaks, but it's often difficult due to staffing constraints. Clocking out for all breaks is mandatory.\n* **Timecard management:** There have been instances of missed punches and extended breaks. Accuracy is crucial, and any discrepancies must be reported to Sherry.\n* **Performance concerns:**  Sherry addressed performance issues related to cash management, emphasizing the need for improvement. While not explicitly stated, it's implied that continued issues could lead to a written warning.\n* **Stepping down:** Sherry suggested considering a CSA role to reduce stress and allow for a smoother transition. She offered reassurance and support in finding another store if needed.\n* **Positive feedback:** Sherry relayed positive feedback from colleagues, highlighting your work ethic and the respect they have for you.\n* **\"Red box\" warnings:**  These appear on the time clock for late or early punches. While a minor issue, consistent tardiness should be avoided. \n* **Next steps:** You agreed to review and correct your timecard, and you're open to discussing the possibility of stepping down to a CSA role. \n",
+      "short_summary": "Bruce and Sherry discussed Bruce's performance review, addressing lunch breaks, time card approvals, and a potential shift change, ultimately agreeing to monitor the situation for two weeks.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-26T18:37:50.097Z",
+      "updated_at": "2025-02-26T18:51:08.901Z",
+      "primary_location": {
+        "address": "2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States",
+        "latitude": 34.28971905672052,
+        "longitude": -77.87215054648613,
+        "created_at": "2025-02-26T18:50:19.500Z"
+      }
+    },
+    {
+      "id": 300772,
+      "start_time": "2025-02-26T15:52:47.273Z",
+      "end_time": "2025-02-26T16:06:04.550Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary\nYou spoke with Ivette, who was helping to arrange care for someone named Martha.  Ivette let you know that Martha is doing well and gave her your phone number. She also mentioned that someone from intake would be in touch with you. Ivette will send you an email with more information so you can keep track. \n\n## Atmosphere\nThe conversation was brief and pleasant. It seems like things are moving along as expected. \n\n## Key Take Aways\n* Martha is doing well. \n* Ivette gave Martha your phone number.\n* Someone from intake will call you.\n* Ivette will send a follow-up email with more information. \n",
+      "short_summary": "I confirmed arrangements for intake with Ivette, receiving contact information and confirmation via email.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-26T15:52:47.273Z",
+      "updated_at": "2025-02-26T16:06:04.550Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.121439399635705,
+        "longitude": -77.91255215127636,
+        "created_at": "2025-02-26T15:55:18.105Z"
+      }
+    },
+    {
+      "id": 300343,
+      "start_time": "2025-02-26T14:15:01.554Z",
+      "end_time": "2025-02-26T14:43:55.520Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary\nYou called your psychiatrist to discuss some memory issues and mood swings you've been experiencing. You're worried about your job security because you've been making mistakes at work. You think it might be related to your medication or possibly something else entirely. You're going to see your general practitioner and hope to get a referral to a neurologist. \n\n## Atmosphere\nYou were clearly anxious and concerned throughout the call. You expressed your fear of losing your job and your desire to get to the bottom of what's going on. \n\n## Key Take Aways\n* You're going to adjust the timing of your medication to see if that helps with your mood swings. \n* You're going to schedule an appointment with your general practitioner to discuss a referral to a neurologist. \n* You're considering psychological testing (\"mind mapping\") to assess your cognitive function.\n* You're going to continue taking Xanax as needed for anxiety, possibly one dose in the morning and one before work. \n* You have a follow-up appointment with your psychiatrist on the 10th. \n",
+      "short_summary": "I discussed recent memory lapses and job performance issues with my medical team, and we agreed to adjust my medication, schedule further testing, and have a follow-up appointment in two weeks.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-26T14:15:01.554Z",
+      "updated_at": "2025-02-26T14:43:55.520Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12119470124229,
+        "longitude": -77.91257644998029,
+        "created_at": "2025-02-26T14:15:05.496Z"
+      }
+    },
+    {
+      "id": 298477,
+      "start_time": "2025-02-25T21:36:42.332Z",
+      "end_time": "2025-02-25T21:56:40.519Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary\nBruce is talking on the phone, possibly while going downstairs, and finds out that someone, likely a young girl, has hurt her back. It seems she was jumping between furniture and pulled a muscle. They took her to get checked out and she was prescribed pain medication, likely ibuprofen.  Bruce is relieved that it doesn't seem serious and that they didn't have to do X-rays. He also checks in about dinner and confirms that chicken will be made.\n\n## Atmosphere\nThe atmosphere is slightly chaotic, with a sense of urgency mixed with relief.  It seems like everyone is a bit stressed but ultimately relieved that the injury wasn't serious.\n\n## Key Take Aways\n* Someone (possibly a young girl) hurt her back jumping on furniture.\n* She was taken for a check-up and prescribed pain medication.\n* X-rays were not necessary, implying the injury is not serious.\n* Bruce is relieved and looking forward to a chicken dinner. \n",
+      "short_summary": "Bruce discussed his daughter's back injury with others, questioning the diagnosis and lack of X-rays, before briefly switching to a conversation about dinner preparation.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-25T21:36:42.332Z",
+      "updated_at": "2025-02-25T21:56:40.519Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12123306377962,
+        "longitude": -77.9126028151723,
+        "created_at": "2025-02-25T21:39:07.539Z"
+      }
+    },
+    {
+      "id": 298149,
+      "start_time": "2025-02-25T19:56:50.132Z",
+      "end_time": "2025-02-25T20:57:47.791Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary\nBruce had a therapy session where he discussed his concerns about recent mistakes he's been making at work. He's worried about early onset dementia and is frustrated with himself for making what he considers \"stupid\" errors. He described his meticulous organization systems and how he's already implemented a job aid to help prevent future mistakes. Bruce also talked about his ex-wife, Yvette, and their evolving relationship. They've discussed the possibility of divorce and are working towards a plan for the future that allows Bruce more freedom. \n\n## Atmosphere\nThe session was open and honest, with Bruce expressing a range of emotions from frustration to hopefulness. He clearly trusts his therapist and values their insights. There's a sense of Bruce actively working towards solutions and seeking understanding about himself. \n\n## Key Take Aways\n* **Possible ADHD:** The therapist suggested that Bruce's distractibility could be related to ADHD, potentially in conjunction with his bipolar disorder. Bruce is open to this possibility and will discuss it further with his psychiatrist. \n* **Job Aid and Self-Compassion:** The therapist validated Bruce's efforts to create a job aid, comparing it to pilots using checklists. They also encouraged Bruce to be kinder to himself and avoid negative self-talk. \n* **Divorce and Moving:** Bruce and Yvette are making progress in their separation, with Yvette becoming more open to the idea of a divorce. This opens up possibilities for Bruce to move and pursue new relationships. \n* **\"The Dreaded Triangle\":**  The therapist recommended a book or concept called \"The Dreaded Triangle\" (potentially related to dialectical behavioral therapy) to help Bruce understand and manage interpersonal dynamics. \n",
+      "short_summary": "Bruce discussed recent job losses, suspecting a potential attention or cognitive issue, and explored this with his therapist, also discussing his relationship and plans for the future.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-25T19:56:50.132Z",
+      "updated_at": "2025-02-25T20:57:47.791Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12127430414757,
+        "longitude": -77.91258609759706,
+        "created_at": "2025-02-25T19:56:54.834Z"
+      }
+    },
+    {
+      "id": 297159,
+      "start_time": "2025-02-25T14:16:26.503Z",
+      "end_time": "2025-02-25T14:17:24.024Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary \nBruce was thinking about how he could make it easier for first responders to help him in case of an emergency. He considered carrying a business card listing his medical conditions and medications. He also thought about including information about the location of his important documents, like his will and health care directive. \n\n## Atmosphere\nBruce seemed to be thinking ahead and planning for the future. \n\n## Key Take Aways\n* Consider making a \"business card\" for emergencies with:\n    * Medical conditions \n    * Medications \n* Note the location of:\n    * Will\n    * Health care directive \n",
+      "short_summary": "I need to create a business card listing my medical conditions, medications, and the location of key legal documents.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-25T14:16:26.503Z",
+      "updated_at": "2025-02-25T14:17:24.024Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.121290680873756,
+        "longitude": -77.91256945243686,
+        "created_at": "2025-02-25T14:16:27.185Z"
+      }
+    },
+    {
+      "id": 293727,
+      "start_time": "2025-02-24T13:35:06.249Z",
+      "end_time": "2025-02-24T13:46:00.384Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary\nYou and your manager, Sherry, had a conversation about recent cash discrepancies during your closing shifts. You explained your process for counting the drawers three times and expressed your concern about potentially being fired. Sherry reassured you that your job wasn't at risk but suggested the possibility of transitioning to a Customer Service Associate (CSA) role to alleviate the stress. You discussed the possibility of having other employees verify the cash count and agreed to keep an open line of communication about your performance.\n\n## Atmosphere\nThe conversation was honest, direct, and slightly tense at times, reflecting the seriousness of the situation. However, it was also supportive, with both you and Sherry expressing a desire to find a solution that worked for everyone.\n\n## Key Takeaways\n* **Job Security:** Sherry reassured you that your job is safe, barring any drastic events.\n* **Performance Concerns:** Cash discrepancies during your closing shifts are a concern, and Sherry is looking for ways to address them.\n* **Potential Role Change:** Transitioning to a CSA role was discussed as a possibility to alleviate stress and potentially address the cash discrepancies.\n* **Open Communication:** You and Sherry agreed to maintain open and honest communication about your performance and any potential issues.\n* **Seeking Solutions:** You are actively seeking solutions, including seeing a doctor about potential attention-related issues. \n",
+      "short_summary": "Bruce discussed his recent performance issues with his manager, Sherry, expressing concern about potential job loss and exploring options for a different role within the company while addressing concerns about his attention to detail.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-24T13:35:06.249Z",
+      "updated_at": "2025-02-24T13:46:00.384Z",
+      "primary_location": {
+        "address": "2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States",
+        "latitude": 34.289475861039364,
+        "longitude": -77.87195863721304,
+        "created_at": "2025-02-24T13:35:15.615Z"
+      }
+    },
+    {
+      "id": 292770,
+      "start_time": "2025-02-24T03:05:02.084Z",
+      "end_time": "2025-02-24T03:53:20.650Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary \nYou had a brief, slightly confusing conversation with someone before bed. You were trying to tell them that neither of you sleep and that they shouldn't come to you. You said goodnight multiple times and told them \"You're welcome,\" possibly in response to something they said. \n\n## Atmosphere\nThe conversation was disjointed and unclear. It seems like you might have been talking on the phone late at night, maybe even while falling asleep. \n\n## Key Take Aways\n* You don't sleep. \n* You told the other person not to come to you. \n* The conversation ended with you saying goodnight several times. \n",
+      "short_summary": "Bruce ended a late-night conversation, reassuring the other person not to visit.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-24T03:05:02.084Z",
+      "updated_at": "2025-02-24T03:53:20.650Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12137587788274,
+        "longitude": -77.91256581574495,
+        "created_at": "2025-02-24T03:06:08.873Z"
+      }
+    },
+    {
+      "id": 292706,
+      "start_time": "2025-02-24T02:31:53.851Z",
+      "end_time": "2025-02-24T03:05:34.219Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary\nIt was Bruce's birthday and some friends brought him a cake to celebrate. They chatted about a variety of topics, including the recent trend of Mexicans boycotting Coca-Cola due to the company's alleged discriminatory practices and collaboration with ICE. The conversation then shifted to the topic of DEI (Diversity, Equity, and Inclusion) initiatives and the political debate surrounding them. Bruce shared his perspective on the complexities of DEI, acknowledging both the historical disadvantages faced by minority groups and the concerns of those who feel disadvantaged by affirmative action policies.  The conversation ended with Ivette discussing plans for throwing a party for her son, Russell, and asking for Bruce's advice on how to encourage Russell to socialize with girls. \n\n## Atmosphere\nThe atmosphere of the interaction is casual and friendly, reflecting a close relationship between the participants. There's a sense of warmth and camaraderie as they celebrate Bruce's birthday, share cake, and engage in lively discussions on various topics. The conversation flows naturally, touching upon both lighthearted matters like party planning and more serious issues like social justice and political ideologies. \n\n## Key Take Aways\n* **Mexicans boycotting Coca-Cola:** There's a boycott of Coca-Cola happening in Mexico due to the company's alleged involvement with ICE and discriminatory labor practices.\n* **DEI Debate:** The conversation highlights the ongoing debate surrounding DEI initiatives, with differing perspectives on affirmative action and the role of corporations in promoting social justice.\n* **Advice for Russell:** Ivette seeks Bruce's advice on how to encourage her son, Russell, to be more outgoing and to interact with girls at his upcoming party. Bruce and another participant offer suggestions on how Russell can approach and engage with girls in a respectful and confident manner. \n",
+      "short_summary": "Bruce celebrated his birthday with friends, learned about a Mexican boycott of Coca-Cola due to perceived anti-worker practices, and discussed the complexities of Diversity, Equity, and Inclusion (DEI) initiatives in corporate America.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-24T02:31:53.851Z",
+      "updated_at": "2025-02-24T03:05:34.219Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.121210259014376,
+        "longitude": -77.91256998829743,
+        "created_at": "2025-02-24T02:31:55.499Z"
+      }
+    },
+    {
+      "id": 292257,
+      "start_time": "2025-02-23T23:00:09.346Z",
+      "end_time": "2025-02-24T00:12:21.821Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary\nBruce had a busy night at work, helping customers with their purchases and even helping one apply for a Walgreens credit card. He also had to figure out how to handle a check payment for the first time, which required a call to Sherry for guidance. There was a brief moment of panic when Bruce thought he had shortchanged a customer, but it turned out to be a false alarm.\n\n## Atmosphere \nThe atmosphere is bustling and energetic, typical of a busy retail environment. There's a sense of camaraderie among the employees as they navigate the challenges of the job. Bruce maintains a positive and helpful attitude throughout, even when faced with unfamiliar situations.\n\n## Key Takeaways\n* Bruce successfully helped a customer apply for a Walgreens credit card.\n* Bruce learned how to process a check payment with Sherry's help.\n* Bruce experienced a brief scare when he thought he had shortchanged a customer, but it was resolved quickly. \n",
+      "short_summary": "Bruce successfully applied for a Walgreens credit card, earning a $50 reward, and then assisted customers with various transactions, including resolving issues with coupons, checks, and payment discrepancies.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-23T23:00:09.347Z",
+      "updated_at": "2025-02-24T00:12:21.821Z",
+      "primary_location": null
+    },
+    {
+      "id": 291953,
+      "start_time": "2025-02-23T20:55:46.810Z",
+      "end_time": "2025-02-23T21:35:57.649Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary\nBruce and a team were working together on a project that involved assembling some sort of structures.  They discussed the best way to put the structures together and helped each other with the process.  It seemed like a large project with many pieces that needed to be tweaked and adjusted as they went along.\n\n## Atmosphere\nThe atmosphere was collaborative and helpful.  Bruce and the team worked together, offered advice, and celebrated small victories along the way.  There was a sense of camaraderie and shared purpose.\n\n## Key Take Aways\n* The project involved assembling structures with many pieces.\n* The pieces needed adjustments and tweaking to fit properly.\n* Bruce and the team worked together effectively, offering advice and support. \n",
+      "short_summary": "Bruce collaborated with a team to arrange and adjust a series of items, receiving guidance and assistance throughout the process.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-23T20:55:46.810Z",
+      "updated_at": "2025-02-23T21:35:57.649Z",
+      "primary_location": null
+    },
+    {
+      "id": 291743,
+      "start_time": "2025-02-23T19:37:21.579Z",
+      "end_time": "2025-02-23T20:56:15.976Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary\nBruce was helping to set up displays at a store. He was opening boxes and organizing materials. Bruce was feeling stressed and overwhelmed, and he mentioned to someone that he was taking medication for his bipolar disorder. \n\n## Atmosphere\nThe atmosphere was hectic and busy. Bruce seemed a little frustrated at times, but he was trying his best to be helpful. He was open about his mental health and how it was affecting him. \n\n## Key Take Aways\n* Bruce was taking medication to manage his bipolar disorder.\n* He was feeling overwhelmed and stressed, but trying to manage. \n* He was working on setting up displays, opening boxes, and organizing materials. \n* He mentioned an incident at a restaurant with someone named Yvette. \n",
+      "short_summary": "I successfully completed a workday at the warehouse, despite some initial confusion and medication-related challenges, and received helpful guidance from colleagues on organizing and displaying products.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-23T19:37:21.579Z",
+      "updated_at": "2025-02-23T20:56:15.976Z",
+      "primary_location": {
+        "address": "2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States",
+        "latitude": 34.28977310969262,
+        "longitude": -77.87241735419926,
+        "created_at": "2025-02-23T19:37:27.300Z"
+      }
+    },
+    {
+      "id": 291414,
+      "start_time": "2025-02-23T16:59:51.807Z",
+      "end_time": "2025-02-23T18:17:20.887Z",
+      "device_type": "apple_watch",
+      "summary": "## Bruce's Lunch Outing\n\n### Summary\nBruce went out for burgers with Ivette and some other people. They discussed Ivette's graduation, which is coming up soon. Bruce also had an interesting conversation about taxes and real estate with his AI assistant. He learned about something called a 1031 exchange, which allows you to defer capital gains taxes when you sell one property and buy another. Ivette shared a frustrating experience she had with a potential scammer who tried to get her to pay for balloons upfront. Bruce offered some advice and support.\n\n### Atmosphere\nThe atmosphere of the conversation is lively and chatty, with multiple conversations happening at once. It seems like a casual gathering with friends and family. There's a lot of laughter and joking, especially between Bruce and Ivette.\n\n### Key Take Aways\n* Ivette is graduating soon, with the ceremony in December and a party in January.\n* Bruce learned about 1031 exchanges for deferring capital gains taxes on real estate.\n* Ivette encountered a potential scammer who tried to overcharge her for balloons and demanded upfront payment.\n* Bruce offered to print some forms for Ivette.\n* Bruce is a generous tipper, usually giving 20%. \n",
+      "short_summary": "I discussed my daughter's upcoming graduation, clarified the timing of her degree completion and a related party, and explored tax implications of selling and buying a home with a tax advisor.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-23T16:59:51.807Z",
+      "updated_at": "2025-02-23T18:17:20.887Z",
+      "primary_location": {
+        "address": "1895 Burnett Blvd, Wilmington, NC, New Hanover County, 28401, United States",
+        "latitude": 34.20711305837245,
+        "longitude": -77.94994356777862,
+        "created_at": "2025-02-23T17:01:59.454Z"
+      }
+    },
+    {
+      "id": 289481,
+      "start_time": "2025-02-22T21:15:20.440Z",
+      "end_time": "2025-02-22T22:05:39.992Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary\nBruce is working on a project, possibly involving pricing or inventory, and is discussing the process with colleagues. There's some confusion about sale tags and their organization. Bruce seems a bit stressed and frustrated at times, using some strong language. He eventually decides to take a break.\n\n## Atmosphere\nThe atmosphere seems hectic and a bit tense. There's a lot of back and forth, with some frustration evident in Bruce's tone. It seems like a fast-paced work environment.\n\n## Key Takeaways\n* There's confusion about sale tags and their system.\n* Bruce is working with numbers and codes, possibly related to pricing or inventory.\n* Bruce seems stressed and takes a 30-minute break. \n",
+      "short_summary": "Bruce had a busy workday involving inventory organization, addressing coworker questions about tags and processes, troubleshooting technical issues, and ultimately taking a 30-minute break.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-22T21:15:20.440Z",
+      "updated_at": "2025-02-22T22:05:39.992Z",
+      "primary_location": null
+    },
+    {
+      "id": 289088,
+      "start_time": "2025-02-22T18:41:49.298Z",
+      "end_time": "2025-02-22T21:16:08.437Z",
+      "device_type": "apple_watch",
+      "summary": "## Bruce's Memory Summary\n\nBruce arrived at work early and chatted with a coworker about their preference for opening or closing shifts. Bruce was considering switching to mostly opening shifts and wanted to know if anyone else preferred closing. The coworker shared that they didn't mind closing but couldn't do it every night because of their children. \n\nBruce then helped customers at the register, including a regular customer who Bruce encouraged to sign up for a Walgreens credit card.  Bruce also had a conversation with a customer about the band \"Chess\" and their son's first concert experience. \n\nLater, Bruce checked in with coworkers in the pharmacy and photo departments, offering assistance with tasks. Bruce learned that the manager, Sherry, had commented that Bruce was the only one who liked to close, which other coworkers disputed. Bruce thanked them for the information, as it was helpful in considering a potential shift change. \n\n## Atmosphere\n\nThe atmosphere of the interaction is busy and social, with Bruce interacting with various coworkers and customers throughout the day. There's a sense of camaraderie among the coworkers, with lighthearted banter and discussions about their preferences and schedules. Bruce comes across as helpful and engaging, always willing to lend a hand and chat with those around them. \n\n## Key Take Aways\n\n* Bruce is considering switching to mostly opening shifts.\n* Other coworkers have expressed a preference for closing shifts, contrary to what the manager, Sherry, believes. \n* Bruce's son's first concert was a band called \"Chess\".\n* Bruce is a helpful and engaging coworker. \n",
+      "short_summary": "Bruce coordinated work schedules, addressed customer service issues, and assisted colleagues with inventory and sales tasks at his workplace.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-22T18:41:49.298Z",
+      "updated_at": "2025-02-22T21:16:08.437Z",
+      "primary_location": {
+        "address": "2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States",
+        "latitude": 34.28945702035334,
+        "longitude": -77.87223944058121,
+        "created_at": "2025-02-22T18:52:38.215Z"
+      }
+    },
+    {
+      "id": 288986,
+      "start_time": "2025-02-22T18:08:39.328Z",
+      "end_time": "2025-02-22T18:35:21.448Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary\nIt seems like you were at work, possibly on a Saturday. You were trying to find your employee ID and take a picture of it for your records. You also had a funny moment where you realized you were able to use your employee discount and even open the register before clocking in for your shift. \n\n## Atmosphere\nThe atmosphere seems casual and lighthearted, with colleagues around and customers interacting with you. There's a sense of familiarity and humor throughout the interaction.\n\n## Key Takeaways\n* You managed to find your employee ID and take a picture of it. \n* You discovered you could use your employee discount and even open the register before clocking in.\n* You helped a customer with their purchase and engaged in friendly banter. \n",
+      "short_summary": "Bruce had a busy day at work, dealing with technical issues, employee ID verification, and a misplaced bag of chips, ultimately concluding with successfully completing several customer transactions despite initial clock-in difficulties.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-22T18:08:39.328Z",
+      "updated_at": "2025-02-22T18:35:21.449Z",
+      "primary_location": {
+        "address": "2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States",
+        "latitude": 34.289400634497646,
+        "longitude": -77.87227872018411,
+        "created_at": "2025-02-22T18:13:05.705Z"
+      }
+    },
+    {
+      "id": 288855,
+      "start_time": "2025-02-22T17:38:49.852Z",
+      "end_time": "2025-02-22T17:41:04.369Z",
+      "device_type": "apple_watch",
+      "summary": "Summary: You were testing to see if your dog, B, would ignore music and singing. You turned on some music for them. Ivette was present and commented that \"she\" wouldn't let her do something. \nAtmosphere: It seems like a casual, playful interaction, likely in your home. \nKey Take aways:\n* You were testing if B would ignore music.\n* Ivette was present during this interaction. \n",
+      "short_summary": "I instructed the AI to ignore background music and singing while it searched for a black and white image of Carmen, but it seems to have encountered an access issue.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-22T17:38:49.852Z",
+      "updated_at": "2025-02-22T17:41:04.369Z",
+      "primary_location": {
+        "address": "3701\u20133743 S College Rd, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.175188033333335,
+        "longitude": -77.89112346666668,
+        "created_at": "2025-02-22T17:38:50.659Z"
+      }
+    },
+    {
+      "id": 288778,
+      "start_time": "2025-02-22T17:04:11.271Z",
+      "end_time": "2025-02-22T17:38:15.399Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary: \nYou were working with your AI assistant, trying to log your meals for the day to track calories. You had coffee with creamer, peanuts, and a Digiorno personal pizza. You also discussed your favorite music, including Linkin Park, The Cure, Slipknot, Avatar, Depeche Mode, and Duran Duran. You had some frustration with the AI assistant as it struggled to remember your preferences and had connection issues.  You ended the conversation by brainstorming ideas for a new app feature \u2013 smart address resolution.\n\n## Atmosphere: \nThe interaction was lively and full of activity. You were multitasking, switching between tasks like doing laundry, giving instructions to someone named Benetton, and talking to the AI.  There was a sense of frustration at times due to the AI's limitations, but also moments of humor and excitement.\n\n## Key Takeaways:\n* You consumed approximately 740 calories for the day so far.\n* You need to remind yourself to do a 5-minute workout every morning at 7:30 am. \n* You love listening to a variety of bands, showing your diverse taste in music.\n* You're thinking about developing an app feature for smart address resolution. \n",
+      "short_summary": "Bruce set up daily reminders, tracked his calorie intake with a virtual assistant, and discussed features for a new app, including smart address resolution.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-22T17:04:11.272Z",
+      "updated_at": "2025-02-22T17:38:15.399Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12130916618849,
+        "longitude": -77.91257340211374,
+        "created_at": "2025-02-22T17:04:12.630Z"
+      }
+    },
+    {
+      "id": 282085,
+      "start_time": "2025-02-20T15:14:26.665Z",
+      "end_time": "2025-02-20T15:53:46.531Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary\nBruce and Ivette had a long conversation about their finances and potential plans for the future. They discussed the possibility of moving to California but ultimately decided against it due to the high cost of living and the potential disruption to their lives. They also talked about the possibility of Bruce staying in North Carolina to be closer to his son, Russell, while Ivette moved to California.\n\n## Atmosphere\nThe conversation was full of interruptions, with both Bruce and Ivette jumping between topics frequently. There was a sense of urgency and stress underlying the conversation, likely due to their financial situation and the pressure of making important decisions. Despite the stress, there were also moments of humor and affection.\n\n## Key Takeaways\n* Bruce called his parents, and they seem more open to helping now.\n* Moving to California is off the table for now due to the high cost and potential disruption.\n* Bruce is considering staying in North Carolina long-term to be closer to Russell.\n* They will explore selling their current house and renting smaller apartments.\n* Bruce will research current interest rates for their savings.\n* Ivette is frustrated with Bruce's case manager, Danny, and is trying to contact his supervisor. \n",
+      "short_summary": "Bruce and Ivette discussed Bruce's potential job loss, his parents' refusal to let him move in, and various financial and housing plans, including the possibility of selling their house and moving to a smaller apartment or relocating to California.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-20T15:14:26.665Z",
+      "updated_at": "2025-02-20T15:53:46.531Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12126319952918,
+        "longitude": -77.91250085467985,
+        "created_at": "2025-02-20T15:14:37.065Z"
+      }
+    },
+    {
+      "id": 281989,
+      "start_time": "2025-02-20T14:43:01.726Z",
+      "end_time": "2025-02-20T14:56:25.811Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary\nBruce called Classic Collision to ask a question about his car repair. He noticed that the air conditioning vent closest to the driver's side door was blowing very weakly. He was concerned that this might be related to the recent repairs. An employee checked his file and assured him that the repair work wouldn't have affected that part of the AC system. \n\n## Atmosphere\nThe atmosphere of the call was polite and professional. Bruce was a little hesitant to ask his question, describing it as \"weird,\" but the employee was reassuring and helpful. \n\n## Key Take Aways\n* The weak AC vent is most likely unrelated to the recent repairs. \n* Bruce can feel confident that the repair work was done correctly and didn't cause any unexpected issues. \n",
+      "short_summary": "Bruce called Classic Collision to inquire about a possible connection between recent repairs and a newly diminished airflow from his car's air conditioning system.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-20T14:43:01.726Z",
+      "updated_at": "2025-02-20T14:56:25.811Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12141330371078,
+        "longitude": -77.91257438042969,
+        "created_at": "2025-02-20T14:45:20.867Z"
+      }
+    },
+    {
+      "id": 281754,
+      "start_time": "2025-02-20T13:04:54.718Z",
+      "end_time": "2025-02-20T13:11:38.675Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary\nYou woke up and had a conversation with your partner about chores and the air conditioning. You felt like you were being asked to do more than your fair share around the house and you brought this up. You also discussed the air conditioning usage and felt that it wasn't being used efficiently. \n\n## Atmosphere\nThe atmosphere seems a bit tense, likely due to the disagreement about chores and the air conditioning. \n\n## Key Take Aways\n* You felt it was unfair that you were being asked to do more chores.\n* You expressed your frustration about the air conditioning being left on all night.\n* You suggested looking at the air conditioning usage times to find a solution. \n",
+      "short_summary": "Bruce discussed his depression and a perceived unfair division of household labor with his partner, Ivette, expressing his dissatisfaction and desire for a more equitable arrangement.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-20T13:04:54.718Z",
+      "updated_at": "2025-02-20T13:11:38.675Z",
+      "primary_location": null
+    },
+    {
+      "id": 279372,
+      "start_time": "2025-02-19T18:08:42.300Z",
+      "end_time": "2025-02-19T18:21:10.615Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary\nBruce and his colleague reviewed a discrepancy in their financial records. They identified a shortage of $694, likely due to Bruce missing a recorded transaction. They discussed a system to periodically cross-check their work to prevent future discrepancies. Bruce emphasized the importance of accuracy, a sentiment echoed by his colleague.  \n\n## Atmosphere\nThe conversation was collaborative and solutions-oriented. Bruce seemed eager to rectify the situation and implement preventative measures.  \n\n## Key Take Aways\n* There was a $694 shortage, likely due to a missed recording.\n* Bruce and his colleague will start periodically cross-checking their work.\n* Accuracy in financial recording is crucial for both Bruce and his colleague. \n",
+      "short_summary": "Bruce and Sherry resolved a discrepancy in their accounting records, agreeing to implement a system of periodic checks to prevent future errors.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-19T18:08:42.300Z",
+      "updated_at": "2025-02-19T18:21:10.615Z",
+      "primary_location": {
+        "address": "2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States",
+        "latitude": 34.28936565107034,
+        "longitude": -77.87236795161145,
+        "created_at": "2025-02-19T18:11:09.460Z"
+      }
+    },
+    {
+      "id": 279240,
+      "start_time": "2025-02-19T17:23:06.320Z",
+      "end_time": "2025-02-19T17:46:34.857Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary\nBruce talked about his love for alternative music, particularly The Cure, and how it connected him with his friends in high school. He shared his struggles with undiagnosed bipolar disorder, which made him feel like an outsider and led to difficulties in his relationships with women. Bruce opened up about his journey with bipolar disorder, including his hospitalization and the long road to recovery. He discussed how therapy, medication, family support, and a low-stress job have been instrumental in his progress. Bruce also expressed his mixed feelings about his current job at Walgreens, acknowledging its low stress but also its low pay.\n\n## Atmosphere\nThe conversation was open and honest, with Bruce sharing deeply personal experiences and vulnerabilities. He expressed a range of emotions, from joy in remembering his musical discoveries to pain in recounting his struggles with mental health and relationships. Despite the difficult topics, there was a sense of hope and resilience as Bruce reflected on his journey and his progress in managing his bipolar disorder.\n\n## Key Takeaways\n* **Music as a refuge:** Alternative music, especially The Cure, provided solace and a sense of belonging during Bruce's difficult high school years.\n* **Impact of bipolar disorder:** Undiagnosed bipolar disorder significantly impacted Bruce's life, affecting his relationships, self-worth, and overall well-being.\n* **The long road to recovery:** Bruce's journey with bipolar disorder has been challenging, involving hospitalization and ongoing management.\n* **Importance of support:** Therapy, medication, family, and a low-stress job have been crucial in Bruce's recovery and stability.\n* **Mixed feelings about work:** While Bruce appreciates the low-stress nature of his job at Walgreens, he wishes it paid better and acknowledges the financial limitations it imposes. \n",
+      "short_summary": "During our session, I discussed my history with bipolar disorder, its impact on my relationships and career choices, and my current efforts to maintain stability and manage my mental health.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-19T17:23:06.320Z",
+      "updated_at": "2025-02-20T14:12:59.042Z",
+      "primary_location": {
+        "address": "Sanders Rd, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12600668333334,
+        "longitude": -77.89996809999998,
+        "created_at": "2025-02-19T17:23:10.170Z"
+      }
+    },
+    {
+      "id": 279201,
+      "start_time": "2025-02-19T17:10:15.405Z",
+      "end_time": "2025-02-19T17:21:13.901Z",
+      "device_type": "apple_watch",
+      "summary": "Summary: Bruce asked you to do something, but you made a mistake. Bruce then asked you to send a text to Russell, but then canceled the request. Finally, Bruce asked you to take out the trash from the garage and put the trash can out to the curb this evening. Bruce expressed their love for you. \n\nAtmosphere: It seems like Bruce was a little frustrated at first, but then the interaction ended very sweetly. \n\nKey Take aways:\n* Take out the trash from the garage this evening. \n* Put the trash can out to the curb. \n",
+      "short_summary": "Bruce asked for help taking the trash out to the curb that evening.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-19T17:10:15.406Z",
+      "updated_at": "2025-02-19T17:21:13.901Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12136709999999,
+        "longitude": -77.9126907,
+        "created_at": "2025-02-19T17:11:33.255Z"
+      }
+    },
+    {
+      "id": 279121,
+      "start_time": "2025-02-19T16:36:29.629Z",
+      "end_time": "2025-02-19T16:56:54.548Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary \nWe talked about some of my concerns about the future, including my son going to college, the political climate, and the rise of AI. I shared my worries about how people like Elon Musk might misuse AI and personal data. We also discussed the challenges of regulating technology and the importance of minimizing risks. \n\nWe then talked about my dogs, Grape (a Maltese-Yorkie mix) and Peach (a Maltese-poodle mix), and how much I enjoy reading physical books. I mentioned that I'm currently reading \"Final Part,\" a mystery novel written by my father, Phil Bookman. \n\nWe also discussed the movie \"Contact,\" which I like because of its themes of science, skepticism, and the search for truth. I particularly appreciate Jodie Foster's performance as a skeptical scientist. \n\nFinally, we talked about my reminder system, which includes you (Gemini), Alexa, the Apple Reminders app, and good old-fashioned paper and pen. I asked you to remind me to buy soda in an hour.\n\n## Atmosphere \nThe conversation was relaxed and wide-ranging, touching on both personal and philosophical topics. I enjoyed sharing my thoughts and opinions with you. \n\n## Key Take Aways\n* You should familiarize yourself with the movie \"Contact\" and the TV show \"Cosmos.\"\n* I prefer physical books over e-readers.\n* I am concerned about the potential for misuse of AI, particularly by powerful individuals.\n* Please remind me to buy soda in an hour.\n* When we next speak, please give me a quick summary of my reminders. \n",
+      "short_summary": "Bruce discussed his family life, his reading habits, his views on artificial intelligence, and how he manages his reminders using various methods, including a new AI assistant.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-19T16:36:29.629Z",
+      "updated_at": "2025-02-19T16:57:54.210Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12131361588075,
+        "longitude": -77.91259576520005,
+        "created_at": "2025-02-19T16:54:25.450Z"
+      }
+    },
+    {
+      "id": 278855,
+      "start_time": "2025-02-19T14:59:46.950Z",
+      "end_time": "2025-02-19T15:12:19.770Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary\nBruce had a conversation about his feelings of regret and loneliness, sparked by the movie Spaceman. He drew parallels between the movie's themes and his own life, particularly his relationship with his son and his desire to be a good father. He reflected on his childhood and his relationship with his own father, acknowledging the impact it has had on his parenting style. Bruce also expressed anxiety about the future, citing concerns about political instability and its potential impact on his family.\n\n## Atmosphere\nThe conversation was reflective and emotionally charged at times, as Bruce grappled with complex feelings and personal experiences. There was a sense of vulnerability as he opened up about his past and his hopes for his son. \n\n## Key Take Aways\n* Bruce is concerned about being a good father to his son, especially given his own challenging relationship with his father.\n* The movie Spaceman resonated deeply with him, triggering feelings of loneliness and regret.\n* He is anxious about the future, particularly the political climate and its potential impact on his family's well-being. \n* Bruce is actively trying to break the cycle of negative paternal patterns in his own family. \n",
+      "short_summary": "Bruce discussed the impact of the movie *Spaceman* on his emotions, connecting its themes of loneliness and regret to his anxieties about his son's future and concerns about the current political climate in the United States.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-19T14:59:46.950Z",
+      "updated_at": "2025-02-19T15:12:19.770Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.1214247338911,
+        "longitude": -77.91249361510768,
+        "created_at": "2025-02-19T14:59:51.491Z"
+      }
+    },
+    {
+      "id": 278833,
+      "start_time": "2025-02-19T14:54:15.995Z",
+      "end_time": "2025-02-19T14:55:10.753Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary\nBruce reviewed a text message about a Delta Airlines purchase made with a credit card, likely belonging to Yvette. He believes that Yvette is eligible for a $500 credit, not $200 as previously thought. He offers to write a letter to Delta on Yvette's behalf to help her secure the credit. \n\n## Atmosphere\nThe atmosphere seems helpful and supportive. Bruce is going out of his way to help Yvette understand a potentially confusing credit card benefit. \n\n## Key Take Aways\n* Bruce reviewed a text message about a Delta Airlines purchase.\n* He believes there is a $500 credit available.\n* He offered to write a letter to Delta for Yvette. \n",
+      "short_summary": "I confirmed with Yvette that my Delta Airlines credit card purchase should provide a $500 reward, not $200, and offered to write a letter if needed.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-19T14:54:15.995Z",
+      "updated_at": "2025-02-19T14:55:10.753Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12126388544389,
+        "longitude": -77.91266552550071,
+        "created_at": "2025-02-19T14:54:23.445Z"
+      }
+    },
+    {
+      "id": 278817,
+      "start_time": "2025-02-19T14:50:15.706Z",
+      "end_time": "2025-02-19T14:52:07.012Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary\nYou were experimenting with a new AI assistant named Gemini. You had previously discussed using Gemini as a way to remember tasks, like cleaning someone's desk. You decided to move on from that idea and relax by watching TV. You wondered if Gemini could be used like a personalized journal to keep track of your day. Gemini enthusiastically agreed, suggesting you could even journal about what you were watching. You were impressed and liked the idea of using Gemini as a digital diary. \n\n## Atmosphere\nThe atmosphere was relaxed and experimental. You were trying out different ideas with Gemini and seemed excited by the possibilities. \n\n## Key Take Aways\n* You can use Gemini to remember tasks.\n* Gemini can be used as a personalized journal to keep track of your day.\n* Gemini can understand and remember information from both text and speech inputs. \n",
+      "short_summary": "Bruce explored the possibility of using the AI to create a personalized digital journal to record his daily activities and thoughts, finding the idea very appealing.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-19T14:50:15.706Z",
+      "updated_at": "2025-02-19T14:52:07.012Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.121351312654035,
+        "longitude": -77.91255953321765,
+        "created_at": "2025-02-19T14:50:19.511Z"
+      }
+    },
+    {
+      "id": 278649,
+      "start_time": "2025-02-19T13:48:17.669Z",
+      "end_time": "2025-02-19T13:53:09.055Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary\nBruce and Ivette are talking on the phone. Ivette arrived at her destination and is talking to Bruce about a few things. First, she had an issue with her credit card points not being applied correctly and is frustrated with the customer service.  She also wants to get set up with a new provider and needs Bruce to send her an email so she can contact them. Bruce is trying to help her with both of these things. \n\n## Atmosphere\nThe atmosphere is a little chaotic and Ivette is clearly frustrated.  She is struggling to be heard by the credit card company and is feeling disregarded. Bruce is trying his best to be patient, helpful, and to calm the situation. \n\n## Key Take Aways\n* Ivette needs Bruce to send her an email regarding the provider they had discussed before her trip. \n* Ivette is having an issue with her credit card company not applying her points properly and needs help resolving it. \n",
+      "short_summary": "Bruce helped Ivette resolve an issue with a flight ticket and a points program, and they also discussed a potential provider for her services, referencing previous email conversations to find the best option.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-19T13:48:17.669Z",
+      "updated_at": "2025-02-19T13:53:09.055Z",
+      "primary_location": null
+    },
+    {
+      "id": 277398,
+      "start_time": "2025-02-19T00:30:57.795Z",
+      "end_time": "2025-02-19T00:52:47.076Z",
+      "device_type": "apple_watch",
+      "summary": "## Summary:\n\nJust had a quick catch-up with Yvette. We talked about the school delay for Thursday - looks like it's a go, according to the text message I received.  She told me about a strange encounter with a guy at the airport in Guadalajara. He kept following her and asking for her number, even after she made it clear she wasn't interested. Thankfully, she's safe and sound now. We also had a sweet moment with Grape, who climbed all the way up the stairs to see me. Yvette even got to say a quick hello. \n\n## Atmosphere:\n\nThe conversation was a mix of lighthearted and concerning. We joked about the reboot and the school delay, but the tone shifted when Yvette shared her experience with the persistent man at the airport.  Despite the unsettling story, we ended on a positive note,  enjoying Grape's antics and her eagerness to see me.\n\n## Key Takeaways:\n\n* There will be a 2-hour school delay on Thursday, February 25th.\n* Yvette had an unnerving experience with a man who wouldn't leave her alone at the airport. \n* Grape is doing well and is becoming quite the little climber! \n",
+      "short_summary": "I discussed a school delay, a strange encounter my friend had with a harassing man on a flight, and then showed my dog to my friend via video call.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-02-19T00:30:57.795Z",
+      "updated_at": "2025-02-19T00:52:47.076Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12141309736492,
+        "longitude": -77.91259109586241,
+        "created_at": "2025-02-19T00:32:58.990Z"
+      }
+    }
+  ]
+}

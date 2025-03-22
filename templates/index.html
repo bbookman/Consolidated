@@ -11,16 +11,33 @@
         <h1>API Data Display</h1>
         <div class="api-container">
             <h2>API Data</h2>
-            <div class="api-buttons">
-                <h3>Fetch from Bee API</h3>
-                <button id="fetch-conversations">Fetch Conversations</button>
-                <button id="fetch-facts">Fetch Facts</button>
-                <button id="fetch-todos">Fetch Todos</button>
+            
+            <div class="button-section api-buttons">
+                <div class="button-header">
+                    <h3>Fetch from Bee API</h3>
+                    <p class="button-description">
+                        These buttons fetch fresh data from the Bee API, save to files in the data/ directory, 
+                        and store in the database with deduplication.
+                    </p>
+                </div>
+                <div class="button-group">
+                    <button id="fetch-conversations">Fetch Conversations</button>
+                    <button id="fetch-facts">Fetch Facts</button>
+                    <button id="fetch-todos">Fetch Todos</button>
+                </div>
                 
-                <h3>Retrieve from Database</h3>
-                <button id="db-conversations">Database Conversations</button>
-                <button id="db-facts">Database Facts</button>
-                <button id="db-todos">Database Todos</button>
+                <div class="button-header">
+                    <h3>Retrieve from Database</h3>
+                    <p class="button-description">
+                        These buttons retrieve previously stored data from the database and save to files
+                        with "db_" prefix in the data/ directory.
+                    </p>
+                </div>
+                <div class="button-group">
+                    <button id="db-conversations">Database Conversations</button>
+                    <button id="db-facts">Database Facts</button>
+                    <button id="db-todos">Database Todos</button>
+                </div>
             </div>
             <div class="api-output">
                 <div id="data-display">

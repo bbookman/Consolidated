@@ -313,9 +313,12 @@ def get_db_conversations():
     try:
         # Retrieve conversations from database
         conversations = db.get_conversations_from_db()
+        app.logger.info(f"Retrieved {len(conversations)} conversations from database")
         
         # Format for display
         formatted_conversations = []
+        raw_data = []
+        
         for conv in conversations:
             # Convert from SQLAlchemy object to dictionary
             formatted_conv = {
@@ -324,6 +327,25 @@ def get_db_conversations():
                 "Address": conv.address if conv.address else "No address"
             }
             formatted_conversations.append(formatted_conv)
+            
+            # Get raw data for file saving
+            if conv.raw_data:
+                try:
+                    raw_data.append(json.loads(conv.raw_data))
+                except:
+                    app.logger.warning(f"Could not parse raw_data for conversation {conv.id}")
+        
+        # Save database data to files
+        if formatted_conversations:
+            saved = save_to_file(
+                formatted_conversations, 
+                'db_conversations', 
+                {'conversations': raw_data}
+            )
+            if saved:
+                app.logger.info("Successfully saved database conversations to files")
+            else:
+                app.logger.warning("Failed to save database conversations to files")
             
         return {'conversations': formatted_conversations, 'count': len(formatted_conversations)}
         
@@ -336,9 +358,12 @@ def get_db_facts():
     try:
         # Retrieve facts from database
         facts = db.get_facts_from_db()
+        app.logger.info(f"Retrieved {len(facts)} facts from database")
         
         # Format for display
         formatted_facts = []
+        raw_data = []
+        
         for fact in facts:
             # Convert from SQLAlchemy object to dictionary
             formatted_fact = {
@@ -346,6 +371,25 @@ def get_db_facts():
                 "Created At": fact.created_at.isoformat() if fact.created_at else "Unknown"
             }
             formatted_facts.append(formatted_fact)
+            
+            # Get raw data for file saving
+            if fact.raw_data:
+                try:
+                    raw_data.append(json.loads(fact.raw_data))
+                except:
+                    app.logger.warning(f"Could not parse raw_data for fact {fact.id}")
+        
+        # Save database data to files
+        if formatted_facts:
+            saved = save_to_file(
+                formatted_facts, 
+                'db_facts', 
+                {'facts': raw_data}
+            )
+            if saved:
+                app.logger.info("Successfully saved database facts to files")
+            else:
+                app.logger.warning("Failed to save database facts to files")
             
         return {'facts': formatted_facts, 'count': len(formatted_facts)}
         
@@ -358,9 +402,12 @@ def get_db_todos():
     try:
         # Retrieve todos from database
         todos = db.get_todos_from_db()
+        app.logger.info(f"Retrieved {len(todos)} todos from database")
         
         # Format for display
         formatted_todos = []
+        raw_data = []
+        
         for todo in todos:
             # Convert from SQLAlchemy object to dictionary
             formatted_todo = {
@@ -369,6 +416,25 @@ def get_db_todos():
                 "Created At": todo.created_at.isoformat() if todo.created_at else "Unknown"
             }
             formatted_todos.append(formatted_todo)
+            
+            # Get raw data for file saving
+            if todo.raw_data:
+                try:
+                    raw_data.append(json.loads(todo.raw_data))
+                except:
+                    app.logger.warning(f"Could not parse raw_data for todo {todo.id}")
+        
+        # Save database data to files
+        if formatted_todos:
+            saved = save_to_file(
+                formatted_todos, 
+                'db_todos', 
+                {'todos': raw_data}
+            )
+            if saved:
+                app.logger.info("Successfully saved database todos to files")
+            else:
+                app.logger.warning("Failed to save database todos to files")
             
         return {'todos': formatted_todos, 'count': len(formatted_todos)}
         

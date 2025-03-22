@@ -1,15 +1,14 @@
-=== DB_CONVERSATIONS ===
-Retrieved at: 2025-03-22 15:16:57
+=== CONVERSATIONS ===
+Retrieved at: 2025-03-22 15:29:06
 Total items: 108
 
 --- Item 1 ---
 Summary: No summary available
-Created At: 2025-03-22T15:08:41.739000
-Address: 6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
+Created At: 2025-03-22T15:08:41.739Z
+Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 2 ---
-Summary: ## Summary
-Today was a mixed bag. I had a frustrating moment with my dog, Peach, who wouldn't stop bugging me to go out even though I had just taken her. I think she might be drinking too much water because her poop looked a little hard.  On a positive note, my boss was really nice and changed my schedule for tomorrow so I could go in at my usual time. 
+Summary: Today was a mixed bag. I had a frustrating moment with my dog, Peach, who wouldn't stop bugging me to go out even though I had just taken her. I think she might be drinking too much water because her poop looked a little hard.  On a positive note, my boss was really nice and changed my schedule for tomorrow so I could go in at my usual time. 
 
 ## Atmosphere
 Overall, the atmosphere was a bit chaotic and stressful. There were multiple conversations happening at once, and I was juggling a lot of different tasks. 
@@ -20,12 +19,11 @@ Overall, the atmosphere was a bit chaotic and stressful. There were multiple con
 * **Peach's Bathroom Habits:** I need to keep an eye on Peach's water intake and potentially consult with a vet if her bathroom issues persist. 
 * **Work Schedule:** My boss was very accommodating and adjusted my schedule for tomorrow. 
 
-Created At: 2025-03-22T12:54:03.021000
+Created At: 2025-03-22T12:54:03.021Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 3 ---
-Summary: ## Summary
-Bruce was feeling unwell but expressed feelings of happiness to someone they addressed as "sweetie." The other person asked if Bruce was "looking for a benefit."  
+Summary: Bruce was feeling unwell but expressed feelings of happiness to someone they addressed as "sweetie." The other person asked if Bruce was "looking for a benefit."  
 
 ## Atmosphere
 The atmosphere seems potentially tense. Bruce is unwell and the other person's question about "looking for a benefit" could be interpreted as skeptical or challenging. 
@@ -36,11 +34,11 @@ The atmosphere seems potentially tense. Bruce is unwell and the other person's q
 * Bruce called someone "sweetie."
 * The other person questioned if Bruce had ulterior motives. 
 
-Created At: 2025-03-22T12:33:58.841000
+Created At: 2025-03-22T12:33:58.841Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 4 ---
-Summary: Summary: Bruce had a blood glucose reading of 125 and weighed 188 lbs.  He then needed to use the bathroom, so he let someone named Benetton know he was going to move their belongings.  It seems like Benetton may have left their things near the bathroom.
+Summary: Bruce had a blood glucose reading of 125 and weighed 188 lbs.  He then needed to use the bathroom, so he let someone named Benetton know he was going to move their belongings.  It seems like Benetton may have left their things near the bathroom.
 
 Atmosphere: It seems like a normal day for Bruce. He's keeping track of his health numbers and is also looking after someone named Benetton. 
 
@@ -49,12 +47,11 @@ Key Take Aways:
 * Bruce's weight was 188 lbs.
 * Bruce had to move Benetton's things to use the bathroom. 
 
-Created At: 2025-03-22T12:20:53.906000
+Created At: 2025-03-22T12:20:53.906Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 5 ---
-Summary: ## Summary
-You had a conversation with Ivette about her work. She told you she was asked to work another day next week, Wednesday at 5:00 am. She's thinking of working Mondays during the summer because they don't have enough staff. You also discussed the Mandela effect and how you want to analyze transcripts for fallacies, biases, and logic. 
+Summary: You had a conversation with Ivette about her work. She told you she was asked to work another day next week, Wednesday at 5:00 am. She's thinking of working Mondays during the summer because they don't have enough staff. You also discussed the Mandela effect and how you want to analyze transcripts for fallacies, biases, and logic. 
 
 ## Atmosphere
 The conversation seems casual and relaxed, like a chat between family or close friends. There's a bit of background noise and chatter. 
@@ -64,11 +61,11 @@ The conversation seems casual and relaxed, like a chat between family or close f
 * She is considering working Mondays during the summer.
 * You are interested in analyzing transcripts for logical fallacies, biases, and critical thinking. 
 
-Created At: 2025-03-22T01:26:55.330000
+Created At: 2025-03-22T01:26:55.330Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 6 ---
-Summary: Summary: Bruce was trying to recall the name of a farm he takes his kids to. He thought it was called "Lemus Lemus Farm", then "LEMOS Lemos Farm", before settling on "Limos Farm". The farm is located in the mountains on the way to Monterey. 
+Summary: Bruce was trying to recall the name of a farm he takes his kids to. He thought it was called "Lemus Lemus Farm", then "LEMOS Lemos Farm", before settling on "Limos Farm". The farm is located in the mountains on the way to Monterey. 
 
 Atmosphere: Bruce seemed to be experiencing a mild memory lapse but ultimately recalled the information he was looking for. 
 
@@ -76,7 +73,7 @@ Key Take Aways:
 * Bruce takes his kids to a farm called "Limos Farm".
 * The farm is located in the mountains on the way to Monterey. 
 
-Created At: 2025-03-22T00:52:34.910000
+Created At: 2025-03-22T00:52:34.910Z
 Address: 2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States
 
 --- Item 7 ---
@@ -94,12 +91,11 @@ The atmosphere is lighthearted and busy, capturing a day in Bruce's life through
 * Bruce enjoyed the warm, sunny weather with his dogs.
 * Bruce plans to discuss his health concerns with his doctor, including his lab results, high blood glucose, and an ineffective elbow injection. 
 
-Created At: 2025-03-21T12:35:16.885000
+Created At: 2025-03-21T12:35:16.885Z
 Address: S College Rd, Wilmington, Pine Valley Country Club, NC, New Hanover County, 28412, United States
 
 --- Item 8 ---
-Summary: ## Summary
-You had a busy morning getting ready while also trying to get your son, Bennett, ready to leave.  You were keeping track of the time and reminding Bennett to eat more and get ready. 
+Summary: You had a busy morning getting ready while also trying to get your son, Bennett, ready to leave.  You were keeping track of the time and reminding Bennett to eat more and get ready. 
 
 ## Atmosphere
 The atmosphere seems slightly chaotic and rushed as you're trying to manage your morning and get Bennett ready to go. 
@@ -110,12 +106,11 @@ The atmosphere seems slightly chaotic and rushed as you're trying to manage your
 * You were getting your son, Bennett, ready to leave and were reminding him to eat more and brush his teeth. 
 * You were keeping track of the time closely to make sure you both left on time. 
 
-Created At: 2025-03-21T11:26:55.031000
+Created At: 2025-03-21T11:26:55.031Z
 Address: 6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 9 ---
-Summary: ## Summary
-Today, I reminisced about Halloween traditions and past memories associated with the Santa Cruz Beach Boardwalk. We talked about our favorite rides, like the carousel, bumper cars, and a unique space ride. I also shared a funny memory of a lion-shaped trash can with a vacuum that sucked up garbage. 
+Summary: Today, I reminisced about Halloween traditions and past memories associated with the Santa Cruz Beach Boardwalk. We talked about our favorite rides, like the carousel, bumper cars, and a unique space ride. I also shared a funny memory of a lion-shaped trash can with a vacuum that sucked up garbage. 
 
 We also discussed a high school memory involving Joan Crowley, the head cheerleader, on whom I had a huge crush. I recalled a party at my parents' house on Twila Lane where I tried to flirt with her, and another time when she seemingly lost her car keys at a party. Sadly, it seemed like Joan was struggling with her own issues, and she eventually disappeared from our lives. 
 
@@ -128,11 +123,11 @@ The conversation was lighthearted and nostalgic, filled with laughter and fond m
 - The Santa Cruz Beach Boardwalk holds special memories for me, from childhood rides to a memorable date with Claire. 
 - Joan Crowley's story is a reminder that appearances can be deceiving, and sometimes people struggle silently. 
 
-Created At: 2025-03-21T01:03:43.751000
+Created At: 2025-03-21T01:03:43.751Z
 Address: Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 10 ---
-Summary: Summary: You woke up from a nap and are cleaning the dishes before work. You spoke about the pollen outside and the construction on Sanders Rd. You took your dog, Peach, out five times but she wouldn't go to the bathroom. 
+Summary: You woke up from a nap and are cleaning the dishes before work. You spoke about the pollen outside and the construction on Sanders Rd. You took your dog, Peach, out five times but she wouldn't go to the bathroom. 
 Atmosphere: The atmosphere seems relaxed and lighthearted. You are talking to someone in your home while doing chores.  
 Key Take Aways:
 - There is a lot of pollen outside.
@@ -140,12 +135,11 @@ Key Take Aways:
 - You need to leave for work soon. 
 - Peach still needs to go to the bathroom. 
 
-Created At: 2025-03-20T15:06:35.144000
+Created At: 2025-03-20T15:06:35.144Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 11 ---
-Summary: ## Summary
-Bruce is talking with a few people, possibly while in a car, about a variety of topics. He mentions his weight and blood glucose, a gift card he received, and his father's birthday. He also talks about something he saw in the bathroom and a towel on the floor. 
+Summary: Bruce is talking with a few people, possibly while in a car, about a variety of topics. He mentions his weight and blood glucose, a gift card he received, and his father's birthday. He also talks about something he saw in the bathroom and a towel on the floor. 
 
 ## Atmosphere
 The conversation is very fragmented and jumps between topics quickly. It seems like a casual conversation between friends or family. 
@@ -156,7 +150,7 @@ The conversation is very fragmented and jumps between topics quickly. It seems l
 * His father's birthday is coming up in 3 days. 
 * There was an incident involving water and a towel in the bathroom. 
 
-Created At: 2025-03-20T01:19:25.602000
+Created At: 2025-03-20T01:19:25.602Z
 Address: 6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 12 ---
@@ -172,12 +166,11 @@ Summary: ## Bruce's Walgreens Shift Summary
 * You bonded with your manager and a coworker over shared experiences of owning dogs, particularly the joys and sorrows of their companionship. 
 * You helped numerous customers with their purchases, demonstrating patience and a commitment to customer service. 
 
-Created At: 2025-03-19T23:18:56.643000
+Created At: 2025-03-19T23:18:56.643Z
 Address: 2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States
 
 --- Item 13 ---
-Summary: ## Summary
-Bruce is at Walgreens with his assistant and they are buying something. The total comes out to be more than expected so they remove an item. Bruce pays for the items and helps his assistant sign up for Walgreens rewards to save money on the next purchase.
+Summary: Bruce is at Walgreens with his assistant and they are buying something. The total comes out to be more than expected so they remove an item. Bruce pays for the items and helps his assistant sign up for Walgreens rewards to save money on the next purchase.
 
 ## Atmosphere
 The atmosphere is slightly chaotic and busy, typical of a shopping experience. Bruce is handling the situation calmly and patiently, even when things don't go as planned with the rewards program.
@@ -187,12 +180,11 @@ The atmosphere is slightly chaotic and busy, typical of a shopping experience. B
 * Bruce's assistant was having trouble using their Walgreens rewards, but Bruce helped them through it.
 * They should be able to use the rewards on their next purchase of $15 or more. 
 
-Created At: 2025-03-19T23:02:22.408000
+Created At: 2025-03-19T23:02:22.408Z
 Address: 2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States
 
 --- Item 14 ---
-Summary: ## Summary
-You were helping a customer, Sherry, send film to be developed.  She wanted prints but no CD. You helped her fill out the order form and explained that it takes a while to get prints back but she'd get a text when they're ready.  Then you helped her sign up for a FedEx account and place an order to ship the film. You had some trouble printing the shipping label, even though the system said it printed successfully. 
+Summary: You were helping a customer, Sherry, send film to be developed.  She wanted prints but no CD. You helped her fill out the order form and explained that it takes a while to get prints back but she'd get a text when they're ready.  Then you helped her sign up for a FedEx account and place an order to ship the film. You had some trouble printing the shipping label, even though the system said it printed successfully. 
 
 ## Atmosphere
 It seemed like a busy day and you were dealing with a few different things at once. There was a bit of frustration when the FedEx label wouldn't print correctly, but overall it seemed like a positive interaction. 
@@ -202,7 +194,7 @@ It seemed like a busy day and you were dealing with a few different things at on
 * Remember to double-check that the FedEx labels are actually printing. 
 * You might need to call FedEx if the label printing issue persists. 
 
-Created At: 2025-03-19T19:18:07.017000
+Created At: 2025-03-19T19:18:07.017Z
 Address: 2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States
 
 --- Item 15 ---
@@ -220,12 +212,11 @@ The atmosphere seems generally busy but pleasant. Bruce is friendly and helpful 
 * **Customer Service:** Bruce demonstrated patience and helpfulness, especially with the customer who had the complicated return. 
 * **Photo Pickup:**  He also efficiently managed photo pickups, ensuring customers received their orders promptly. 
 
-Created At: 2025-03-19T18:54:03.444000
+Created At: 2025-03-19T18:54:03.444Z
 Address: 2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States
 
 --- Item 16 ---
-Summary: ## Summary
-You successfully helped a customer complete a Western Union transaction for the first time! It seemed like you were figuring it out as you went, but you got it done. The customer had started the transaction at the kiosk and needed to complete it with you at the register.  They were sending multiple amounts, so you had to process it as separate transactions. You helped them enter all the necessary information, including their name, zip code, and the control number. The customer also bought a Kit Kat! 
+Summary: You successfully helped a customer complete a Western Union transaction for the first time! It seemed like you were figuring it out as you went, but you got it done. The customer had started the transaction at the kiosk and needed to complete it with you at the register.  They were sending multiple amounts, so you had to process it as separate transactions. You helped them enter all the necessary information, including their name, zip code, and the control number. The customer also bought a Kit Kat! 
 
 ## Atmosphere
 It sounds like it was a pretty busy day and you were a little flustered at first, especially since it was your first time doing a Western Union transaction.  But you remained calm and helpful throughout, even cracking a joke about destiny teaching you both how to do it. 
@@ -236,7 +227,7 @@ It sounds like it was a pretty busy day and you were a little flustered at first
 * Always confirm the details of the transaction with the customer, especially the amount and control number.
 * Offer the customer a rewards card - you never know who might become a regular! 
 
-Created At: 2025-03-19T17:50:06.852000
+Created At: 2025-03-19T17:50:06.852Z
 Address: 2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States
 
 --- Item 17 ---
@@ -255,12 +246,11 @@ The interaction starts with a frantic tone as I try to assess Jonathan's well-be
 * The lack of response from Coastal Carolina Neuropsychiatric Center is concerning and unprofessional. 
 * I will continue to follow up until I receive the document. 
 
-Created At: 2025-03-19T14:20:22.753000
+Created At: 2025-03-19T14:20:22.753Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 18 ---
-Summary: ## Summary
-You called the Walgreens Benefit Support Center to enroll in your health benefits. You had received two letters in the mail, but you were unable to access the website to complete the enrollment process. You spoke with a representative who informed you that your account was not yet updated with your eligibility information. She explained that they needed to verify your hours with HR and that it could take 3-5 business days. You also discovered that you were using the wrong website address. The representative assured you that she would call you back once your account was updated.
+Summary: You called the Walgreens Benefit Support Center to enroll in your health benefits. You had received two letters in the mail, but you were unable to access the website to complete the enrollment process. You spoke with a representative who informed you that your account was not yet updated with your eligibility information. She explained that they needed to verify your hours with HR and that it could take 3-5 business days. You also discovered that you were using the wrong website address. The representative assured you that she would call you back once your account was updated.
 
 ## Atmosphere
 The call was a bit frustrating at first because you were unable to access the website. However, the representative was patient and helpful. She explained the situation clearly and assured you that she would follow up once your account was updated. 
@@ -270,12 +260,11 @@ The call was a bit frustrating at first because you were unable to access the we
 * The representative will contact HR to get your hours updated and will call you back within 3-5 business days.
 * The correct website address for the Walgreens Benefit Support Center is www.benefitssupportcentre.com. 
 
-Created At: 2025-03-19T13:22:42.385000
+Created At: 2025-03-19T13:22:42.385Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 19 ---
-Summary: ## Summary
-It sounds like it was a busy evening! You were taking care of the kids and getting them ready for bed. One of them might have had an accident because you were looking for dry pajamas.  You also spoke with someone about their work schedule and it sounds like you might be switching shifts with them. 
+Summary: It sounds like it was a busy evening! You were taking care of the kids and getting them ready for bed. One of them might have had an accident because you were looking for dry pajamas.  You also spoke with someone about their work schedule and it sounds like you might be switching shifts with them. 
 
 ## Atmosphere
 The atmosphere seems slightly chaotic and busy, like a typical evening at home. You sound like a caring parent, looking after the kids and making sure they have what they need. 
@@ -285,12 +274,11 @@ The atmosphere seems slightly chaotic and busy, like a typical evening at home. 
 * You might be switching shifts with someone for work. 
 * You're a caring and attentive parent. 
 
-Created At: 2025-03-19T01:33:03.406000
+Created At: 2025-03-19T01:33:03.406Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 20 ---
-Summary: ## Summary
-
+Summary: 
 It was a busy day at work for Bruce. He helped customers find items, answered questions about sales and rewards programs, and provided recommendations on over-the-counter medications for earaches and coughs. He also dealt with a discontinued product and discussed trash removal with colleagues.
 
 ## Atmosphere
@@ -304,7 +292,7 @@ The atmosphere was generally busy and helpful, with Bruce interacting with a var
 * Dealing with discontinued products and other inventory issues is a regular part of the job.
 * Maintaining a positive and helpful attitude is crucial, even when dealing with challenging situations. 
 
-Created At: 2025-03-18T16:37:16.766000
+Created At: 2025-03-18T16:37:16.766Z
 Address: 2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States
 
 --- Item 21 ---
@@ -320,12 +308,11 @@ The atmosphere seemed a little tense at times, especially when you were being qu
 * You might be planning on doing something with the garage. 
 * Someone you were with might have been interested in the stock market. 
 
-Created At: 2025-03-18T13:32:14.684000
+Created At: 2025-03-18T13:32:14.684Z
 Address: 6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 22 ---
-Summary: ## Summary
-Bruce is doing his taxes and trying to explain to his wife Ivette why the tax software recommends filing as head of household and filing separately. Ivette seems confused and skeptical about this approach. Bruce tries to explain the reasoning behind the software's recommendation, citing the potential financial benefits and clarifying that "head of household" is a tax category and doesn't reflect their marital status. He also discusses the influence of private tax companies on the IRS system. 
+Summary: Bruce is doing his taxes and trying to explain to his wife Ivette why the tax software recommends filing as head of household and filing separately. Ivette seems confused and skeptical about this approach. Bruce tries to explain the reasoning behind the software's recommendation, citing the potential financial benefits and clarifying that "head of household" is a tax category and doesn't reflect their marital status. He also discusses the influence of private tax companies on the IRS system. 
 
 ## Atmosphere
 The atmosphere is tense and a bit frustrating. Bruce is trying to be patient and explain a complex topic, but Ivette's skepticism and interruptions make it difficult. 
@@ -336,12 +323,11 @@ The atmosphere is tense and a bit frustrating. Bruce is trying to be patient and
 * Ivette is unsure about this method and needs further clarification.
 * Bruce is willing to use different tax software to demonstrate the recommendations. 
 
-Created At: 2025-03-18T12:44:34.255000
+Created At: 2025-03-18T12:44:34.255Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 23 ---
-Summary: ## Summary
-You called the DocSource Telehealth office to cancel your telehealth appointment with Larry German Haber. You were unable to reach a person, so you left a voicemail message with your name, phone number, and that you needed to cancel your appointment.
+Summary: You called the DocSource Telehealth office to cancel your telehealth appointment with Larry German Haber. You were unable to reach a person, so you left a voicemail message with your name, phone number, and that you needed to cancel your appointment.
 
 ## Atmosphere
 The call was frustrating as you were unable to speak to a live person. 
@@ -352,7 +338,7 @@ The call was frustrating as you were unable to speak to a live person.
 * The office is open Monday-Friday 8am-5pm Eastern Time. 
 * If you don't hear back today, you may need to call again tomorrow morning. 
 
-Created At: 2025-03-18T12:30:08.154000
+Created At: 2025-03-18T12:30:08.154Z
 Address: 4305 Shipyard Blvd, Wilmington, NC, New Hanover County, 28403, United States, John T Hoggard High School
 
 --- Item 24 ---
@@ -370,33 +356,32 @@ The atmosphere seems busy and lively, with a mix of personal health updates, hou
 * You had a conversation about your low vitamin D. 
 * You ate a protein bar. 
 
-Created At: 2025-03-18T11:55:13.746000
+Created At: 2025-03-18T11:55:13.746Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 25 ---
-Summary: Summary: You were politely asked to speak with someone. They repeated their request a couple of times to make sure you heard. 
+Summary: You were politely asked to speak with someone. They repeated their request a couple of times to make sure you heard. 
 
 Atmosphere: It seems like someone was trying to get your attention for a conversation, perhaps they were eager to speak with you.
 
 Key Take Aways:
 * Someone wanted to have a word with you. 
 
-Created At: 2025-03-17T18:45:16.957000
+Created At: 2025-03-17T18:45:16.957Z
 Address: 6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 26 ---
-Summary: Summary: You had a brief phone call with Ivette. You let her know that you took the dogs out in the rain, but they didn't like it.  You also confirmed that someone (likely a pet) was right next to you. 
+Summary: You had a brief phone call with Ivette. You let her know that you took the dogs out in the rain, but they didn't like it.  You also confirmed that someone (likely a pet) was right next to you. 
 Atmosphere:  The atmosphere of the conversation was casual and friendly. 
 Key Take aways:
 * The dogs don't like the rain. 
 * You will try taking them out again later. 
 
-Created At: 2025-03-17T18:07:09.343000
+Created At: 2025-03-17T18:07:09.343Z
 Address: 6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 27 ---
-Summary: ## Summary
-Bruce was trying to cancel a telehealth appointment with "Larry" that he had scheduled for the following day. He had difficulty navigating the automated system and ended up getting transferred a few times. He finally reached someone who could help with his benefits, but he couldn't find the email about the salary change for his new position. 
+Summary: Bruce was trying to cancel a telehealth appointment with "Larry" that he had scheduled for the following day. He had difficulty navigating the automated system and ended up getting transferred a few times. He finally reached someone who could help with his benefits, but he couldn't find the email about the salary change for his new position. 
 
 ## Atmosphere
 The atmosphere of the call was frustrating. Bruce was struggling to navigate the phone system and had to repeat himself multiple times. He seemed to be getting increasingly flustered as the call went on.  
@@ -407,12 +392,11 @@ The atmosphere of the call was frustrating. Bruce was struggling to navigate the
 * Bruce received an email about a salary change for his new position, but he is unable to find it. 
 * Bruce's benefits information can be accessed on benefitsupportcenter.com. 
 
-Created At: 2025-03-17T17:21:30.924000
+Created At: 2025-03-17T17:21:30.924Z
 Address: 6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 28 ---
-Summary: ## Summary
-Bruce was feeling unwell and believes he may be sick. He tried to take a short nap but ended up sleeping for much longer than intended, unable to get out of bed for a while. 
+Summary: Bruce was feeling unwell and believes he may be sick. He tried to take a short nap but ended up sleeping for much longer than intended, unable to get out of bed for a while. 
 
 ## Atmosphere
 Bruce's tone seems likely fatigued and possibly under the weather. 
@@ -421,7 +405,7 @@ Bruce's tone seems likely fatigued and possibly under the weather.
 * Bruce was feeling unwell and had difficulty getting out of bed after a nap. 
 * Bruce believes he might be sick. 
 
-Created At: 2025-03-17T17:07:57.520000
+Created At: 2025-03-17T17:07:57.520Z
 Address: 6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 29 ---
@@ -440,7 +424,7 @@ The atmosphere was lively and upbeat.  There was music playing, people were danc
 * **It's important to make time for fun.** Even though I've been feeling tired lately, it was great to let loose and enjoy myself.
 * **Russell is lucky to have such a supportive community.** It was heartwarming to see how much his friends and family care about him. 
 
-Created At: 2025-03-16T16:49:38.967000
+Created At: 2025-03-16T16:49:38.967Z
 Address: , Wilmington, NC, New Hanover County, 28412, United States, Beau Rivage Golf & Resort
 
 --- Item 30 ---
@@ -456,23 +440,22 @@ Summary: ## Benetton's Space Party
 * We need to double-check the fridge temperature before parties.
 * The party was a success, with great music and decorations. 
 
-Created At: 2025-03-16T15:08:23.112000
+Created At: 2025-03-16T15:08:23.112Z
 Address: 6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 31 ---
-Summary: Summary: You and Ivette were getting ready for a party. We needed to pick up some coke from Harris Teeter. You also needed to stop by O2 things and asked me for my credit card. You were thinking about parking for the guests and decided to put the cooler in my car. We were going to put the custom in the back of my car. 
+Summary: You and Ivette were getting ready for a party. We needed to pick up some coke from Harris Teeter. You also needed to stop by O2 things and asked me for my credit card. You were thinking about parking for the guests and decided to put the cooler in my car. We were going to put the custom in the back of my car. 
 Atmosphere: It seems like we were slightly stressed but mostly excited and happy to be getting ready for the party.
 Key Take aways:
 - We need to pick up coke from Harris Teeter.
 - You need to stop by O2 things.
 - You will change before the party. 
 
-Created At: 2025-03-16T14:07:51.365000
+Created At: 2025-03-16T14:07:51.365Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 32 ---
-Summary: ## Summary
-Bruce spent the morning taking care of Benetton, making sure he had breakfast and was changed into his "safe uniform." He also had a brief conversation with someone, possibly his son, about Benetton's well-being and the need to go to the grocery store for milk and ice. 
+Summary: Bruce spent the morning taking care of Benetton, making sure he had breakfast and was changed into his "safe uniform." He also had a brief conversation with someone, possibly his son, about Benetton's well-being and the need to go to the grocery store for milk and ice. 
 
 ## Atmosphere
 The atmosphere seems busy and domestic, with Bruce juggling childcare, household tasks, and a technology issue. Despite the potential for stress, Bruce comes across as patient and caring. 
@@ -483,7 +466,7 @@ The atmosphere seems busy and domestic, with Bruce juggling childcare, household
 * **Grocery run needed:** Bruce needs to go to the store to buy milk and ice for the family.
 * **Small white cooler:** The family will be using their small white cooler, likely for the ice. 
 
-Created At: 2025-03-16T13:13:11.658000
+Created At: 2025-03-16T13:13:11.658Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 33 ---
@@ -502,12 +485,11 @@ It was a bustling morning with lots going on - getting Benetton ready, preparing
 * Benetton's mom was busy preparing for his birthday party.
 * Benetton enjoys pop music. 
 
-Created At: 2025-03-16T11:58:27.218000
+Created At: 2025-03-16T11:58:27.218Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 34 ---
-Summary: ## Summary
-
+Summary: 
 Today was a bit of an adventure.  I had a busy shift at work, dealing with a lot of customers and sorting out minor issues.  Later, I had to go into the San Francisco office to pick something up.  On the way back, we had a flat tire and had to deal with a police officer who was responding to a building alarm.  We ended up having to get the car towed and all four tires replaced.  It was an expensive fix, but necessary.  I also realized that we need to do our taxes – they're due in April. I'm going to try to do them myself this year.
 
 ## Atmosphere
@@ -520,7 +502,7 @@ The day was a mix of busy and stressful, with a bit of humor sprinkled in.
 *  Our investment account is much lower because we cut it in half.
 * I need to have a serious conversation with Yvette about yelling.  We may need to consider couples counseling. 
 
-Created At: 2025-03-15T12:40:28.624000
+Created At: 2025-03-15T12:40:28.624Z
 Address: 6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 35 ---
@@ -535,12 +517,11 @@ The atmosphere seems focused on personal health tracking with a hint of nostalgi
 * He completed multiple sets of exercises: 25 regular sit-ups, 25 cross sit-ups, and 25 "small muscle setups."
 * Bruce was about to share a memory involving children, indicating a possible shift in focus from health to personal memories. 
 
-Created At: 2025-03-15T12:22:24.350000
+Created At: 2025-03-15T12:22:24.350Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 36 ---
-Summary: ## Summary
-You were talking with Ivette and Larry about a package and the gym. You then set an alarm for 7 am using Alexa, but later canceled it.  You then had a conversation about a gym membership that costs $150 and includes all classes. You and Larry worked together to set up a TV, trying to figure out how to turn it on without the remote. 
+Summary: You were talking with Ivette and Larry about a package and the gym. You then set an alarm for 7 am using Alexa, but later canceled it.  You then had a conversation about a gym membership that costs $150 and includes all classes. You and Larry worked together to set up a TV, trying to figure out how to turn it on without the remote. 
 
 ## Atmosphere
 The atmosphere seems relaxed and informal, with a focus on everyday tasks and conversations. There's a sense of collaboration as you and Larry troubleshoot the TV setup. 
@@ -550,7 +531,7 @@ The atmosphere seems relaxed and informal, with a focus on everyday tasks and co
 - You are considering joining a gym that costs $150 and offers a variety of classes.
 - You were setting up a TV and needed help figuring out how to turn it on. 
 
-Created At: 2025-03-15T01:18:01.251000
+Created At: 2025-03-15T01:18:01.251Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 37 ---
@@ -568,22 +549,21 @@ The atmosphere is friendly and lighthearted. Bruce is clearly a people person an
 * He is helping customers with their rewards programs and purchases. 
 * He seems to have a good rapport with his customers. 
 
-Created At: 2025-03-15T00:21:20.028000
+Created At: 2025-03-15T00:21:20.028Z
 Address: 2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States
 
 --- Item 38 ---
-Summary: Summary: You were talking to someone and asked them to get a street. You had lost your train of thought before that. 
+Summary: You were talking to someone and asked them to get a street. You had lost your train of thought before that. 
 Atmosphere: It seems like it was a pretty casual conversation, possibly at work.
 Key Take aways:
 - You need to remember what street you were talking about. 
 - You should figure out what you need from the other person. 
 
-Created At: 2025-03-14T21:16:35.352000
+Created At: 2025-03-14T21:16:35.352Z
 Address: 2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States
 
 --- Item 39 ---
-Summary: ## Summary
-You were putting groceries away, organizing as you went, and trying to figure out the best way to arrange things. You and your friend discussed different types of tea and water, and you reminisced about where things used to be stored. 
+Summary: You were putting groceries away, organizing as you went, and trying to figure out the best way to arrange things. You and your friend discussed different types of tea and water, and you reminisced about where things used to be stored. 
 
 ## Atmosphere
 The atmosphere was relaxed and playful, filled with the camaraderie of close friends or family working together. There was a sense of lightheartedness and gentle teasing. 
@@ -593,12 +573,11 @@ The atmosphere was relaxed and playful, filled with the camaraderie of close fri
 * You were trying to decide where to put things and how to best arrange them.
 * You and your friend(s) were having a casual conversation about different drinks. 
 
-Created At: 2025-03-14T17:27:21.328000
+Created At: 2025-03-14T17:27:21.328Z
 Address: 2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States
 
 --- Item 40 ---
-Summary: ## Summary
-Bruce is helping a customer with their purchase. He tells them the total amount and asks for their phone number for the digital receipt. The customer provides their phone number. There is a brief mention of Walgreens but the context is unclear.
+Summary: Bruce is helping a customer with their purchase. He tells them the total amount and asks for their phone number for the digital receipt. The customer provides their phone number. There is a brief mention of Walgreens but the context is unclear.
 
 ## Atmosphere
 The atmosphere seems to be that of a casual interaction, likely at a checkout counter. Bruce is friendly and helpful towards the customer.
@@ -608,7 +587,7 @@ The atmosphere seems to be that of a casual interaction, likely at a checkout co
 * The customer's total is $5.64 and they will receive a digital receipt.
 * There is a brief, unclear mention of Walgreens. 
 
-Created At: 2025-03-14T17:13:20.245000
+Created At: 2025-03-14T17:13:20.245Z
 Address: 2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States
 
 --- Item 41 ---
@@ -624,12 +603,11 @@ The atmosphere seems casual and friendly, likely a regular occurrence with this 
 * The dogs need to be let out. 
 * You already fed the dogs. 
 
-Created At: 2025-03-14T16:20:20.865000
+Created At: 2025-03-14T16:20:20.865Z
 Address: 6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 42 ---
-Summary: ## Summary
-Bruce received a confirmation call for a doctor's appointment on Monday at 4 PM.  He needed to reschedule the appointment for the following Monday at 3 PM. After confirming the new appointment, Bruce tried to wake up someone named Russell (possibly his son) multiple times. He also sent a text to Yvette letting her know that he had to reschedule his doctor's appointment and could no longer help with Benetton on Monday. Bruce then reminisced about a fond memory of attending the Holly Festival with Russell and Benetton. 
+Summary: Bruce received a confirmation call for a doctor's appointment on Monday at 4 PM.  He needed to reschedule the appointment for the following Monday at 3 PM. After confirming the new appointment, Bruce tried to wake up someone named Russell (possibly his son) multiple times. He also sent a text to Yvette letting her know that he had to reschedule his doctor's appointment and could no longer help with Benetton on Monday. Bruce then reminisced about a fond memory of attending the Holly Festival with Russell and Benetton. 
 
 ## Atmosphere
 The atmosphere seems hectic at first, with Bruce trying to manage a rescheduled appointment and wake up his son, Russell. However, it transitions to a heartwarming feeling as Bruce fondly remembers a positive experience at the Holly Festival. 
@@ -640,23 +618,22 @@ The atmosphere seems hectic at first, with Bruce trying to manage a rescheduled 
 * Bruce needs to **update the HR portal** with wage notification changes in 3 hours.
 * Bruce had a **positive experience at the Holly Festival** with Russell and Benetton, emphasizing the themes of love and community. 
 
-Created At: 2025-03-14T15:16:38.595000
+Created At: 2025-03-14T15:16:38.595Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 43 ---
-Summary: Summary: You woke up your child at 11 am, as requested by their mother. They seemed excited to be awake and ready to "party". You also mentioned that it was cold outside. 
+Summary: You woke up your child at 11 am, as requested by their mother. They seemed excited to be awake and ready to "party". You also mentioned that it was cold outside. 
 Atmosphere: It seems like a cheerful and playful morning interaction between you and your child.  
 Key Take Aways:
 * You successfully woke up your child at 11 am.
 * Your child was in a good mood and seemed ready for the day. 
 * It was cold outside. 
 
-Created At: 2025-03-14T14:51:30.048000
+Created At: 2025-03-14T14:51:30.048Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 44 ---
-Summary: ## Summary
-You had a busy morning! You checked your weight and blood glucose, recording 187 lbs and 120 respectively.  You then asked your AI assistant to remind you to take a nap. Later on, you wanted to know your average blood glucose level over the past few days, but it didn't have enough data to calculate it. You also set a 40-minute timer.
+Summary: You had a busy morning! You checked your weight and blood glucose, recording 187 lbs and 120 respectively.  You then asked your AI assistant to remind you to take a nap. Later on, you wanted to know your average blood glucose level over the past few days, but it didn't have enough data to calculate it. You also set a 40-minute timer.
 
 ## Atmosphere
 It seems like you were rushing around this morning, trying to get things done before taking a nap. 
@@ -666,12 +643,11 @@ It seems like you were rushing around this morning, trying to get things done be
 * Your blood glucose was 120 this morning. 
 * Remember to provide your AI assistant with your blood glucose readings over the next few days so it can calculate your average. 
 
-Created At: 2025-03-14T14:14:22.550000
+Created At: 2025-03-14T14:14:22.550Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 45 ---
-Summary: ## Summary
-You had a doctor's appointment at 4:00. You had some blood tests done that showed that you were low on Vitamin D and Testosterone. You wanted to talk to the doctor about the results. You and Ivette had a bit of a tense conversation, possibly about the appointment or the test results. 
+Summary: You had a doctor's appointment at 4:00. You had some blood tests done that showed that you were low on Vitamin D and Testosterone. You wanted to talk to the doctor about the results. You and Ivette had a bit of a tense conversation, possibly about the appointment or the test results. 
 
 ## Atmosphere
 A little stressful. You and Ivette seemed to be disagreeing about something related to the doctor's appointment or the test results.  
@@ -681,12 +657,11 @@ A little stressful. You and Ivette seemed to be disagreeing about something rela
 * Your blood tests show that you are low on Vitamin D and Testosterone. 
 * You need to talk to the doctor about the results. 
 
-Created At: 2025-03-14T13:20:37.874000
+Created At: 2025-03-14T13:20:37.874Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 46 ---
-Summary: ## Summary
-You were talking with Ivette about getting a doctor's appointment. It sounded like it was difficult to schedule and the wait was long. Ivette mentioned that you might need a referral to be seen sooner.  There was also a side conversation about someone texting a girl. 
+Summary: You were talking with Ivette about getting a doctor's appointment. It sounded like it was difficult to schedule and the wait was long. Ivette mentioned that you might need a referral to be seen sooner.  There was also a side conversation about someone texting a girl. 
 
 ## Atmosphere
 The conversation seemed a bit frantic and busy. There was a sense of urgency surrounding the doctor's appointment. 
@@ -696,11 +671,11 @@ The conversation seemed a bit frantic and busy. There was a sense of urgency sur
 * Ivette suggested getting on the schedule now, even if it's months out. 
 * Once you see the doctor, you can ask for a referral which might be faster. 
 
-Created At: 2025-03-14T12:07:43.722000
+Created At: 2025-03-14T12:07:43.722Z
 Address: 63–99 Sanders Rd, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 47 ---
-Summary: Summary: 
+Summary: 
 It seems like you were finishing up a meal with someone, possibly a young child, who you were encouraging to eat their banana. You reminded them that you needed to leave soon and they needed to brush their teeth. 
 
 Atmosphere: 
@@ -710,7 +685,7 @@ Key Take Aways:
 * The other person still had some banana left to eat. 
 * You were about to leave and the other person needed to brush their teeth afterwards. 
 
-Created At: 2025-03-14T11:48:40.065000
+Created At: 2025-03-14T11:48:40.065Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 48 ---
@@ -728,12 +703,11 @@ The interaction seems a little chaotic and busy with multiple conversations happ
 * Bruce might be expecting this person to bring the item to him. 
 * Bruce's dog Peach was a little restless and he had to tell her to be patient. 
 
-Created At: 2025-03-14T11:30:50.465000
+Created At: 2025-03-14T11:30:50.465Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 49 ---
-Summary: ## Summary
-You were very tired after many calls. You spoke with Ivette and Russell about getting Russell help with his anxiety. You had previously given Ivette the contact information for three psychiatric groups, but she had only been able to get in touch with one. She is going to try to get Russell medication for his anxiety from his regular doctor and will also look into walk-in options. 
+Summary: You were very tired after many calls. You spoke with Ivette and Russell about getting Russell help with his anxiety. You had previously given Ivette the contact information for three psychiatric groups, but she had only been able to get in touch with one. She is going to try to get Russell medication for his anxiety from his regular doctor and will also look into walk-in options. 
 ## Atmosphere
 There was a lot of concern about Russell's anxiety and how to get him help. Ivette and Russell were explaining to you their experience with Russell's anxiety and how they felt you could have been more helpful. 
 ## Key Take Aways
@@ -741,11 +715,11 @@ There was a lot of concern about Russell's anxiety and how to get him help. Ivet
 * Ivette will look into walk-in psychiatric services. 
 * Ivette and Russell want you to be more calm and supportive when Russell is experiencing anxiety. 
 
-Created At: 2025-03-14T01:29:57.025000
+Created At: 2025-03-14T01:29:57.025Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 50 ---
-Summary: Summary: Bruce was looking for something in the fridge and found an empty glass.  It seems like he was trying to have a conversation with someone about it, potentially accusing them of finishing the drink. He mentioned "Bennington" which could be a clue to who he was talking to. 
+Summary: Bruce was looking for something in the fridge and found an empty glass.  It seems like he was trying to have a conversation with someone about it, potentially accusing them of finishing the drink. He mentioned "Bennington" which could be a clue to who he was talking to. 
 
 Atmosphere: It's a bit unclear and seems like a snippet of a larger conversation, making it hard to get a read on the atmosphere. 
 
@@ -754,7 +728,7 @@ Key Take aways:
 * The empty glass in the fridge suggests someone might have finished the last of it. 
 * Bruce seems to be trying to figure out who finished the drink, mentioning "Bennington". 
 
-Created At: 2025-03-13T01:52:11.507000
+Created At: 2025-03-13T01:52:11.507Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 51 ---
@@ -769,11 +743,11 @@ The conversation felt nostalgic and reflective as you delved into happy memories
 * You stepped down from Shift Lead to Customer Service Associate at Walgreens to prioritize your mental health.
 * You are content with your decision and feel less anxious despite the pay cut. 
 
-Created At: 2025-03-13T01:04:45.479000
+Created At: 2025-03-13T01:04:45.479Z
 Address: Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 52 ---
-Summary: Summary: You are reminiscing about fun times spent with Russell playing games and doing science experiments. You fondly recall playing various games, including Exploding Kittens, a burrito-throwing game, and different versions of Monopoly, some featuring dinosaurs. You also reminisce about engaging in science experiments, particularly Tasty Science, which you've done countless times, and building a water rocket. You briefly mention a trip to a place where people fly, potentially linked to Boy Scouts. 
+Summary: You are reminiscing about fun times spent with Russell playing games and doing science experiments. You fondly recall playing various games, including Exploding Kittens, a burrito-throwing game, and different versions of Monopoly, some featuring dinosaurs. You also reminisce about engaging in science experiments, particularly Tasty Science, which you've done countless times, and building a water rocket. You briefly mention a trip to a place where people fly, potentially linked to Boy Scouts. 
 
 Atmosphere: The atmosphere is warm and nostalgic, filled with happy memories of shared experiences. 
 
@@ -784,7 +758,7 @@ Key Take Aways:
 - Building and launching a water rocket was a memorable experience. 
 - A trip to a place involving flying, possibly related to Boy Scouts, stands out in your memory. 
 
-Created At: 2025-03-12T20:06:36.053000
+Created At: 2025-03-12T20:06:36.053Z
 Address: 2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States
 
 --- Item 53 ---
@@ -800,7 +774,7 @@ The conversation was very nostalgic and full of happy memories. You were clearly
 * San Jose History Park was a favorite, featuring train rides, historical exhibits, and special events.
 * Your son, Russell, was particularly interested in a presentation about the Vietnam War at the History Park. 
 
-Created At: 2025-03-12T16:49:51.173000
+Created At: 2025-03-12T16:49:51.173Z
 Address: 2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States
 
 --- Item 54 ---
@@ -817,12 +791,11 @@ Humorous, light-hearted, slightly confusing
 * It's supposed to be in the 70s today 
 * Someone (possibly named Russell) needs to go to work 
 
-Created At: 2025-03-12T16:12:03.982000
+Created At: 2025-03-12T16:12:03.982Z
 Address: 5783–5797 Carolina Beach Rd, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 55 ---
-Summary: ## Summary
-Bruce had a busy day. It started with a conversation about food and household chores, including a missing red microwave and instructions for using the sour cream cheese. Bruce's mom also called and asked to speak with him. Later, Bruce participated in a discussion about the economic impact of tariffs, arguing that they make it harder for people to purchase vehicles.
+Summary: Bruce had a busy day. It started with a conversation about food and household chores, including a missing red microwave and instructions for using the sour cream cheese. Bruce's mom also called and asked to speak with him. Later, Bruce participated in a discussion about the economic impact of tariffs, arguing that they make it harder for people to purchase vehicles.
 
 ## Atmosphere
 The atmosphere of the interaction is informal and lively, shifting from mundane household topics to a more heated discussion about economics and politics.
@@ -832,7 +805,7 @@ The atmosphere of the interaction is informal and lively, shifting from mundane 
 * **Sour Cream Cheese:** Someone (possibly Bruce) forgot to put the top back on the sour cream cheese. Use the one without the lid.
 * **Tariff Discussion:** Bruce participated in a debate about tariffs, arguing that they negatively impact consumers by making it harder to purchase vehicles. 
 
-Created At: 2025-03-12T14:45:45.661000
+Created At: 2025-03-12T14:45:45.661Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 56 ---
@@ -849,12 +822,11 @@ The conversation was tense at times, with some frustration around getting the do
 * You plan to talk to Russell about taking more responsibility for his school attendance.
 * You reassured Russell that your frustration is with the situation, not him. 
 
-Created At: 2025-03-12T13:30:29.472000
+Created At: 2025-03-12T13:30:29.472Z
 Address: 6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 57 ---
-Summary: ## Summary
-You were talking with Ivette about your son. Ivette is very concerned about your son's behavior and doesn't think he understands the consequences of his actions. You tried to explain to her that you've spoken to him multiple times and that he's still learning. You also shared an anecdote about a TikTok video you saw about repeating yourself to men. 
+Summary: You were talking with Ivette about your son. Ivette is very concerned about your son's behavior and doesn't think he understands the consequences of his actions. You tried to explain to her that you've spoken to him multiple times and that he's still learning. You also shared an anecdote about a TikTok video you saw about repeating yourself to men. 
 
 ## Atmosphere
 The conversation seems to be a bit tense, with Ivette feeling frustrated and unheard. 
@@ -865,7 +837,7 @@ The conversation seems to be a bit tense, with Ivette feeling frustrated and unh
 * **Communication Breakdown:**  There seems to be a disconnect between you and Ivette in terms of how to address your son's behavior. 
 * **Door Removal:** There was a side conversation about removing a door, which you said you would handle. 
 
-Created At: 2025-03-12T13:08:55.189000
+Created At: 2025-03-12T13:08:55.189Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 58 ---
@@ -882,7 +854,7 @@ The atmosphere of the conversation is warm and nostalgic. You're clearly drawing
 * Russell has a particularly fond memory of a small Mexican restaurant you visited, even though you didn't think the food was anything special. 
 * You enjoyed exploring San Francisco with your sons, finding joy in simple things like walking around the city and taking in the sights. 
 
-Created At: 2025-03-12T12:24:40.117000
+Created At: 2025-03-12T12:24:40.117Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 59 ---
@@ -902,7 +874,7 @@ Tense and emotional.  Ivette is clearly at her wit's end and frustrated with the
 * **Control what we can:**  For now, we're monitoring Benetton's phone and car usage. 
 * **Stay united:**  We need to work together as parents to support Benetton through this. 
 
-Created At: 2025-03-12T11:16:02.139000
+Created At: 2025-03-12T11:16:02.139Z
 Address: 6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 60 ---
@@ -917,12 +889,11 @@ The atmosphere seemed focused on accomplishing tasks and getting information. Yo
 * Connecting your Gmail to the virtual assistant could offer features like email management, notifications, calendar syncing, and advanced search within the app.
 * The virtual assistant cannot connect to the internet for real-time data or send emails directly, but it can help with drafting emails. 
 
-Created At: 2025-03-11T23:53:40.865000
+Created At: 2025-03-11T23:53:40.865Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 61 ---
-Summary: ## Summary
-You had a long, somewhat disjointed conversation with your wife and daughter, punctuated by moments of helping out with various tasks and discussing dinner. Your daughter is preparing for college and you offered her some advice based on your experiences. You also discussed potential mental health resources with your wife.
+Summary: You had a long, somewhat disjointed conversation with your wife and daughter, punctuated by moments of helping out with various tasks and discussing dinner. Your daughter is preparing for college and you offered her some advice based on your experiences. You also discussed potential mental health resources with your wife.
 
 ## Atmosphere
 The atmosphere of the conversation was largely casual and familial, with a mix of lighthearted banter and more serious discussions. There was a sense of busyness throughout, with multiple conversations happening simultaneously.
@@ -934,7 +905,7 @@ The atmosphere of the conversation was largely casual and familial, with a mix o
 * You had a brief disagreement with your wife about the relevance of family medical history in mental health diagnoses. 
 * You helped out with some household tasks, like setting timers and checking on food. 
 
-Created At: 2025-03-11T20:18:10.581000
+Created At: 2025-03-11T20:18:10.581Z
 Address: 6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 62 ---
@@ -957,12 +928,11 @@ The session felt productive and supportive. I appreciated the opportunity to dis
 * **Anxiety Management:** I'm going to focus on managing my own anxiety so I can be a better support system for Russell. 
 * **Open Communication:**  I'll continue to encourage Russell to communicate openly and honestly with me about his feelings and experiences. 
 
-Created At: 2025-03-11T18:58:23.500000
+Created At: 2025-03-11T18:58:23.500Z
 Address: 1901 Oleander Dr, Wilmington, NC, New Hanover County, 28403, United States
 
 --- Item 63 ---
-Summary: ## Summary
-You met with your peer mentor, Crystal, and then your counselor, Justin. Crystal asked about your support system and you discussed your work and your family. You then met with Justin to complete your intake paperwork. You discussed your medical history, emergency contacts, and signed consent forms. You scheduled your next appointment with Justin for the following week at 2pm. 
+Summary: You met with your peer mentor, Crystal, and then your counselor, Justin. Crystal asked about your support system and you discussed your work and your family. You then met with Justin to complete your intake paperwork. You discussed your medical history, emergency contacts, and signed consent forms. You scheduled your next appointment with Justin for the following week at 2pm. 
 
 ## Atmosphere
 Both meetings were friendly and conversational. Crystal was warm and empathetic, and you felt comfortable discussing your anxiety with her. Justin was thorough and efficient in explaining the intake process. 
@@ -974,12 +944,11 @@ Both meetings were friendly and conversational. Crystal was warm and empathetic,
 * You are looking for a higher-paying job. 
 * You have an appointment with your counselor next week to continue working on your career profile. 
 
-Created At: 2025-03-11T17:57:10.201000
+Created At: 2025-03-11T17:57:10.201Z
 Address: 1890 Dawson St, Wilmington, NC, New Hanover County, 28403, United States
 
 --- Item 64 ---
-Summary: ## Summary
-Bruce had a conversation with his son and wife about some trouble at school. His son had been texting a girl who may be underage, and there were rumors spreading around the school. Bruce reassured his son that everything would be okay and that they would seek legal counsel to gather information and protect him.
+Summary: Bruce had a conversation with his son and wife about some trouble at school. His son had been texting a girl who may be underage, and there were rumors spreading around the school. Bruce reassured his son that everything would be okay and that they would seek legal counsel to gather information and protect him.
 
 ## Atmosphere
 The conversation was emotionally charged, with Bruce's son feeling anxious and scared about the situation. Bruce remained calm and supportive, offering reassurance and guidance to his son.
@@ -991,7 +960,7 @@ The conversation was emotionally charged, with Bruce's son feeling anxious and s
 * Bruce emphasized the importance of honesty and avoiding further contact with the girl.
 * Bruce expressed his love and support for his son, assuring him that they would navigate this situation together. 
 
-Created At: 2025-03-11T16:04:01.677000
+Created At: 2025-03-11T16:04:01.677Z
 Address: Independence Blvd, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 65 ---
@@ -1007,12 +976,11 @@ The conversation seemed to be centered around finding solutions and being suppor
 * Bruce also mentioned "Carolina something" but couldn't remember the exact name.
 * Bruce is trying to be helpful and provide options. 
 
-Created At: 2025-03-11T15:38:27.071000
+Created At: 2025-03-11T15:38:27.071Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 66 ---
-Summary: ## Summary
-You called your doctor's office to request a signed document stating your serious and persistent mental illness (SPMI) diagnosis and the relevant F code. You needed this document for a government issue. You left a detailed voicemail message with your name, date of birth, and phone number. 
+Summary: You called your doctor's office to request a signed document stating your serious and persistent mental illness (SPMI) diagnosis and the relevant F code. You needed this document for a government issue. You left a detailed voicemail message with your name, date of birth, and phone number. 
 
 ## Atmosphere
 The interaction took place over a phone call with your doctor's office. You successfully navigated the automated system and left a voicemail message. 
@@ -1022,12 +990,11 @@ The interaction took place over a phone call with your doctor's office. You succ
 * You left a detailed voicemail message with all the necessary information. 
 * You should expect to hear back from your doctor's office within three business days. 
 
-Created At: 2025-03-11T15:00:19.830000
+Created At: 2025-03-11T15:00:19.830Z
 Address: 6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 67 ---
-Summary: ## Summary
-You were checking in on someone and offered to do their laundry. They weren't feeling well and had just stepped out. You also called Coastal Carolina Neuro Psychiatric Center for a medical emergency but were instructed to hang up and dial 911. 
+Summary: You were checking in on someone and offered to do their laundry. They weren't feeling well and had just stepped out. You also called Coastal Carolina Neuro Psychiatric Center for a medical emergency but were instructed to hang up and dial 911. 
 
 ## Atmosphere
 The atmosphere seems concerned and helpful, with a sense of urgency towards the end.
@@ -1038,7 +1005,7 @@ The atmosphere seems concerned and helpful, with a sense of urgency towards the 
 * You needed to make an urgent call to Coastal Carolina Neuro Psychiatric Center.
 * The center instructed you to dial 911 for a medical emergency. 
 
-Created At: 2025-03-11T14:47:17.603000
+Created At: 2025-03-11T14:47:17.603Z
 Address: 6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 68 ---
@@ -1054,12 +1021,11 @@ The atmosphere seems slightly rushed as Bruce is trying to end the call.
 * Bruce was on a call and needed to end it. 
 * Bruce used Alexa to hang up the call. 
 
-Created At: 2025-03-11T14:32:13.517000
+Created At: 2025-03-11T14:32:13.517Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 69 ---
-Summary: ## Summary
-You were discussing canceling something that cost $18 with someone. You were frustrated with the $421 heating bill and were discussing turning off the heat with someone. You suggested getting a space heater. You talked about the water bill with Ivette and considered who should call to complain. You briefly connected with Ivette on an Echo call to ask about an email she sent to Linda. 
+Summary: You were discussing canceling something that cost $18 with someone. You were frustrated with the $421 heating bill and were discussing turning off the heat with someone. You suggested getting a space heater. You talked about the water bill with Ivette and considered who should call to complain. You briefly connected with Ivette on an Echo call to ask about an email she sent to Linda. 
 
 ## Atmosphere
 The conversation was tense at times, especially when discussing the bills and how to manage the temperature. There was a sense of urgency and frustration. 
@@ -1070,11 +1036,11 @@ The conversation was tense at times, especially when discussing the bills and ho
 * The water bill is also a concern and you need to decide who will contact them about it.
 * Ivette sent an email to Linda that you need to discuss with her. 
 
-Created At: 2025-03-11T14:01:09.852000
+Created At: 2025-03-11T14:01:09.852Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 70 ---
-Summary: Summary: Bruce had a nice moment with his dog, Grape, who went potty outside. Later, Bruce had a concerning conversation with someone about a "pedophile" and online harassment. It seems like someone Bruce knows is being harassed online, and the harasser's identity has been revealed. Bruce doesn't think this is a good thing, fearing it will lead to more personal attacks. Bruce then had a brief interaction with another dog, Peach, who seemed restless despite having just been outside. 
+Summary: Bruce had a nice moment with his dog, Grape, who went potty outside. Later, Bruce had a concerning conversation with someone about a "pedophile" and online harassment. It seems like someone Bruce knows is being harassed online, and the harasser's identity has been revealed. Bruce doesn't think this is a good thing, fearing it will lead to more personal attacks. Bruce then had a brief interaction with another dog, Peach, who seemed restless despite having just been outside. 
 
 Atmosphere: The atmosphere is a mix of heartwarming and concerning. The beginning shows Bruce's love for his dog, but the conversation about online harassment is worrisome. 
 
@@ -1084,12 +1050,11 @@ Key Take aways:
 * The identity of the harasser has been revealed, but Bruce fears this will worsen the situation.
 * Bruce might have multiple dogs. 
 
-Created At: 2025-03-11T13:28:03.495000
+Created At: 2025-03-11T13:28:03.495Z
 Address: 6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 71 ---
-Summary: ## Summary
-This morning, you started by checking your blood glucose, which was 140. You then had a conversation with Ivette about finances. There was some confusion about a payment, but you clarified that you make payments of over $1000 every two weeks. You also discussed the possibility of canceling a party due to rain and financial concerns, and you both agreed it was a good idea.  You then helped your son Benetton get ready to leave, reminding him to grab his backpack. Later, you listened to the radio and found out about a few interesting news stories, including one about a man who robbed the same store five times. You finished your morning by discussing the capabilities of your AI assistant, particularly its integration with other apps like WhatsApp and Apple Calendar.
+Summary: This morning, you started by checking your blood glucose, which was 140. You then had a conversation with Ivette about finances. There was some confusion about a payment, but you clarified that you make payments of over $1000 every two weeks. You also discussed the possibility of canceling a party due to rain and financial concerns, and you both agreed it was a good idea.  You then helped your son Benetton get ready to leave, reminding him to grab his backpack. Later, you listened to the radio and found out about a few interesting news stories, including one about a man who robbed the same store five times. You finished your morning by discussing the capabilities of your AI assistant, particularly its integration with other apps like WhatsApp and Apple Calendar.
 
 ## Atmosphere
 The atmosphere of the morning was a mix of busy and relaxed. You were taking care of your responsibilities, like managing finances and getting your son ready, but also taking time to listen to the radio and learn about new things. 
@@ -1101,12 +1066,11 @@ The atmosphere of the morning was a mix of busy and relaxed. You were taking car
 * Your AI assistant can integrate with WhatsApp to send messages, photos, and check messages.
 * Your AI assistant can integrate with Apple Calendar through device permissions to manage events and reminders. 
 
-Created At: 2025-03-11T11:21:45.998000
+Created At: 2025-03-11T11:21:45.998Z
 Address: S College Rd, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 72 ---
-Summary: ## Summary
-Bruce is getting acquainted with a new device, likely a headset, and exploring its features like mute, pairing, and battery life. He's excited about the device and trying to understand its functionalities with the help of a digital assistant.
+Summary: Bruce is getting acquainted with a new device, likely a headset, and exploring its features like mute, pairing, and battery life. He's excited about the device and trying to understand its functionalities with the help of a digital assistant.
 
 ## Atmosphere
 The atmosphere is one of discovery and learning. Bruce is clearly enthusiastic about the new device and eager to understand how it works. There's a sense of curiosity and playfulness as he navigates the different features.
@@ -1117,12 +1081,11 @@ The atmosphere is one of discovery and learning. Bruce is clearly enthusiastic a
 * He interacts with a digital assistant, asking about battery life and functionality.
 * He's actively learning and exploring the device's capabilities. 
 
-Created At: 2025-03-11T02:15:19.837000
+Created At: 2025-03-11T02:15:19.837Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 73 ---
-Summary: ## Summary
-Bruce had a therapy session with his therapist, Larry, where he discussed his anxiety about work, his recent trip to a gentlemen's club, and his feelings of being judged and undervalued. He shared his concerns about his ability to succeed in life and his fear of the future. Larry validated Bruce's feelings and encouraged him to focus on the present moment. They discussed Bruce's childhood and the impact of his father's judgment on his self-esteem. Larry suggested that Bruce try to reframe his thinking and focus on his strengths.
+Summary: Bruce had a therapy session with his therapist, Larry, where he discussed his anxiety about work, his recent trip to a gentlemen's club, and his feelings of being judged and undervalued. He shared his concerns about his ability to succeed in life and his fear of the future. Larry validated Bruce's feelings and encouraged him to focus on the present moment. They discussed Bruce's childhood and the impact of his father's judgment on his self-esteem. Larry suggested that Bruce try to reframe his thinking and focus on his strengths.
 
 ## Atmosphere
 The session was open and honest, with Bruce sharing his vulnerabilities and anxieties. Larry was supportive and understanding, offering validation and encouragement. The conversation touched on difficult emotions and past experiences, but there was also a sense of hope and a willingness to work towards a better future. 
@@ -1134,7 +1097,7 @@ The session was open and honest, with Bruce sharing his vulnerabilities and anxi
 * Bruce and Larry discussed the impact of Bruce's father's judgment on his self-esteem and how it continues to affect him. 
 * Larry encouraged Bruce to challenge his negative self-talk and focus on his strengths and accomplishments. 
 
-Created At: 2025-03-04T20:00:55.578000
+Created At: 2025-03-04T20:00:55.578Z
 Address: 3807 Oleander Dr, Wilmington, NC, New Hanover County, 28403, United States
 
 --- Item 74 ---
@@ -1155,7 +1118,7 @@ The meeting was a bit chaotic at times, with multiple people talking and some co
 * **Advocacy Services:** Bruce was particularly interested in the program's advocacy services, specifically how they could help him address challenges related to his bipolar disorder in a work environment.
 * **Next Steps:** Bruce scheduled an intake appointment for the following Tuesday to complete the necessary paperwork and begin the career profiling process. He will receive an electronic copy of the 22-page career profile document to review beforehand.
 
-Created At: 2025-03-04T18:47:23.231000
+Created At: 2025-03-04T18:47:23.231Z
 Address: 1890 Dawson St, Wilmington, NC, New Hanover County, 28403, United States
 
 --- Item 75 ---
@@ -1174,7 +1137,7 @@ Summary: ## Apartment Viewing Summary for Bruce
 * There are discounts available for moving in by certain dates.
 * Wi-Fi, trash, and pest control are included in the rent. 
 
-Created At: 2025-03-04T17:53:43.593000
+Created At: 2025-03-04T17:53:43.593Z
 Address: 19 Harnett St, Wilmington, NC, New Hanover County, 28401, United States
 
 --- Item 76 ---
@@ -1193,12 +1156,11 @@ The atmosphere of the visit was friendly and conversational. Bruce seemed comfor
 * He got referrals to an ENT, memory specialist, and sleep specialist.
 * He discussed Farxiga with the doctor. 
 
-Created At: 2025-03-04T15:24:09.688000
+Created At: 2025-03-04T15:24:09.688Z
 Address: 5429 Wrightsville Ave, Wilmington, NC, New Hanover County, 28403, United States
 
 --- Item 77 ---
-Summary: ## Summary
-Bruce and his wife, Yvette, left a voicemail for Catherine Henneman at Coastal Horizon Center. They are requesting a copy of their release form and have some questions about Bruce's approval for CLS and a 1950 form they received. 
+Summary: Bruce and his wife, Yvette, left a voicemail for Catherine Henneman at Coastal Horizon Center. They are requesting a copy of their release form and have some questions about Bruce's approval for CLS and a 1950 form they received. 
 
 ## Atmosphere
 The atmosphere is busy and slightly chaotic. Bruce and Yvette seem to be multitasking, dealing with errands and caring for their pets while trying to leave an important voicemail. 
@@ -1209,12 +1171,11 @@ The atmosphere is busy and slightly chaotic. Bruce and Yvette seem to be multita
 * **1950 form and CLS:** Bruce and Yvette need clarification on a 1950 form they received and Bruce's approval for CLS. 
 * **Yvette as point of contact:**  Yvette's phone number is 408-497-2140. Bruce would like Catherine to primarily communicate with Yvette. 
 
-Created At: 2025-02-27T14:44:02.277000
+Created At: 2025-02-27T14:44:02.277Z
 Address: 6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 78 ---
-Summary: ## Summary
-Bruce arrived home, appearing stressed. He told Ivette, who seems to be watching his dog, that he's been having problems at work as a store leader. His manager offered him a demotion to associate to avoid being fired. He explained that while his hourly rate would be reduced, he would still be earning more than other associates. Ivette seemed concerned and confused about the situation, especially the repeated register issues. Bruce, frustrated and apologetic for his mood, reassured her that it was the best course of action. He expressed gratitude to Ivette for taking care of his dog before leaving.
+Summary: Bruce arrived home, appearing stressed. He told Ivette, who seems to be watching his dog, that he's been having problems at work as a store leader. His manager offered him a demotion to associate to avoid being fired. He explained that while his hourly rate would be reduced, he would still be earning more than other associates. Ivette seemed concerned and confused about the situation, especially the repeated register issues. Bruce, frustrated and apologetic for his mood, reassured her that it was the best course of action. He expressed gratitude to Ivette for taking care of his dog before leaving.
 
 ## Atmosphere
 Tense, emotional, stressful.
@@ -1225,12 +1186,11 @@ Tense, emotional, stressful.
 * He will be taking a pay cut, but it will be less of a cut than expected.
 * Ivette is taking care of Bruce's dog. 
 
-Created At: 2025-02-27T02:41:05.825000
+Created At: 2025-02-27T02:41:05.825Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 79 ---
-Summary: ## Summary
-You and Sherry discussed your performance as a shift lead, particularly regarding lunch breaks and timecard management. Sherry acknowledged your efforts and the positive feedback from colleagues like Kathy and Melissa, but emphasized the need for improvement in these areas. She suggested stepping down to a CSA role to reduce stress and allow time to adjust. While you expressed a desire to remain a shift lead, you were open to considering the suggestion. You also discussed the "red box" warnings on the time clock and clarified procedures for addressing discrepancies.
+Summary: You and Sherry discussed your performance as a shift lead, particularly regarding lunch breaks and timecard management. Sherry acknowledged your efforts and the positive feedback from colleagues like Kathy and Melissa, but emphasized the need for improvement in these areas. She suggested stepping down to a CSA role to reduce stress and allow time to adjust. While you expressed a desire to remain a shift lead, you were open to considering the suggestion. You also discussed the "red box" warnings on the time clock and clarified procedures for addressing discrepancies.
 
 ## Atmosphere
 The conversation was direct and honest, but also supportive and encouraging. Sherry seemed to genuinely care about your well-being and wanted to find a solution that worked for everyone. While the feedback was sometimes critical, it was delivered constructively and with a sense of understanding.
@@ -1244,12 +1204,11 @@ The conversation was direct and honest, but also supportive and encouraging. She
 * **"Red box" warnings:**  These appear on the time clock for late or early punches. While a minor issue, consistent tardiness should be avoided. 
 * **Next steps:** You agreed to review and correct your timecard, and you're open to discussing the possibility of stepping down to a CSA role. 
 
-Created At: 2025-02-26T18:37:50.097000
+Created At: 2025-02-26T18:37:50.097Z
 Address: 2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States
 
 --- Item 80 ---
-Summary: ## Summary
-You spoke with Ivette, who was helping to arrange care for someone named Martha.  Ivette let you know that Martha is doing well and gave her your phone number. She also mentioned that someone from intake would be in touch with you. Ivette will send you an email with more information so you can keep track. 
+Summary: You spoke with Ivette, who was helping to arrange care for someone named Martha.  Ivette let you know that Martha is doing well and gave her your phone number. She also mentioned that someone from intake would be in touch with you. Ivette will send you an email with more information so you can keep track. 
 
 ## Atmosphere
 The conversation was brief and pleasant. It seems like things are moving along as expected. 
@@ -1260,12 +1219,11 @@ The conversation was brief and pleasant. It seems like things are moving along a
 * Someone from intake will call you.
 * Ivette will send a follow-up email with more information. 
 
-Created At: 2025-02-26T15:52:47.273000
+Created At: 2025-02-26T15:52:47.273Z
 Address: 6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 81 ---
-Summary: ## Summary
-You called your psychiatrist to discuss some memory issues and mood swings you've been experiencing. You're worried about your job security because you've been making mistakes at work. You think it might be related to your medication or possibly something else entirely. You're going to see your general practitioner and hope to get a referral to a neurologist. 
+Summary: You called your psychiatrist to discuss some memory issues and mood swings you've been experiencing. You're worried about your job security because you've been making mistakes at work. You think it might be related to your medication or possibly something else entirely. You're going to see your general practitioner and hope to get a referral to a neurologist. 
 
 ## Atmosphere
 You were clearly anxious and concerned throughout the call. You expressed your fear of losing your job and your desire to get to the bottom of what's going on. 
@@ -1277,12 +1235,11 @@ You were clearly anxious and concerned throughout the call. You expressed your f
 * You're going to continue taking Xanax as needed for anxiety, possibly one dose in the morning and one before work. 
 * You have a follow-up appointment with your psychiatrist on the 10th. 
 
-Created At: 2025-02-26T14:15:01.554000
+Created At: 2025-02-26T14:15:01.554Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 82 ---
-Summary: ## Summary
-Bruce is talking on the phone, possibly while going downstairs, and finds out that someone, likely a young girl, has hurt her back. It seems she was jumping between furniture and pulled a muscle. They took her to get checked out and she was prescribed pain medication, likely ibuprofen.  Bruce is relieved that it doesn't seem serious and that they didn't have to do X-rays. He also checks in about dinner and confirms that chicken will be made.
+Summary: Bruce is talking on the phone, possibly while going downstairs, and finds out that someone, likely a young girl, has hurt her back. It seems she was jumping between furniture and pulled a muscle. They took her to get checked out and she was prescribed pain medication, likely ibuprofen.  Bruce is relieved that it doesn't seem serious and that they didn't have to do X-rays. He also checks in about dinner and confirms that chicken will be made.
 
 ## Atmosphere
 The atmosphere is slightly chaotic, with a sense of urgency mixed with relief.  It seems like everyone is a bit stressed but ultimately relieved that the injury wasn't serious.
@@ -1293,12 +1250,11 @@ The atmosphere is slightly chaotic, with a sense of urgency mixed with relief.  
 * X-rays were not necessary, implying the injury is not serious.
 * Bruce is relieved and looking forward to a chicken dinner. 
 
-Created At: 2025-02-25T21:36:42.332000
+Created At: 2025-02-25T21:36:42.332Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 83 ---
-Summary: ## Summary
-Bruce had a therapy session where he discussed his concerns about recent mistakes he's been making at work. He's worried about early onset dementia and is frustrated with himself for making what he considers "stupid" errors. He described his meticulous organization systems and how he's already implemented a job aid to help prevent future mistakes. Bruce also talked about his ex-wife, Yvette, and their evolving relationship. They've discussed the possibility of divorce and are working towards a plan for the future that allows Bruce more freedom. 
+Summary: Bruce had a therapy session where he discussed his concerns about recent mistakes he's been making at work. He's worried about early onset dementia and is frustrated with himself for making what he considers "stupid" errors. He described his meticulous organization systems and how he's already implemented a job aid to help prevent future mistakes. Bruce also talked about his ex-wife, Yvette, and their evolving relationship. They've discussed the possibility of divorce and are working towards a plan for the future that allows Bruce more freedom. 
 
 ## Atmosphere
 The session was open and honest, with Bruce expressing a range of emotions from frustration to hopefulness. He clearly trusts his therapist and values their insights. There's a sense of Bruce actively working towards solutions and seeking understanding about himself. 
@@ -1309,7 +1265,7 @@ The session was open and honest, with Bruce expressing a range of emotions from 
 * **Divorce and Moving:** Bruce and Yvette are making progress in their separation, with Yvette becoming more open to the idea of a divorce. This opens up possibilities for Bruce to move and pursue new relationships. 
 * **"The Dreaded Triangle":**  The therapist recommended a book or concept called "The Dreaded Triangle" (potentially related to dialectical behavioral therapy) to help Bruce understand and manage interpersonal dynamics. 
 
-Created At: 2025-02-25T19:56:50.132000
+Created At: 2025-02-25T19:56:50.132Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 84 ---
@@ -1327,12 +1283,11 @@ Bruce seemed to be thinking ahead and planning for the future.
     * Will
     * Health care directive 
 
-Created At: 2025-02-25T14:16:26.503000
+Created At: 2025-02-25T14:16:26.503Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 85 ---
-Summary: ## Summary
-You and your manager, Sherry, had a conversation about recent cash discrepancies during your closing shifts. You explained your process for counting the drawers three times and expressed your concern about potentially being fired. Sherry reassured you that your job wasn't at risk but suggested the possibility of transitioning to a Customer Service Associate (CSA) role to alleviate the stress. You discussed the possibility of having other employees verify the cash count and agreed to keep an open line of communication about your performance.
+Summary: You and your manager, Sherry, had a conversation about recent cash discrepancies during your closing shifts. You explained your process for counting the drawers three times and expressed your concern about potentially being fired. Sherry reassured you that your job wasn't at risk but suggested the possibility of transitioning to a Customer Service Associate (CSA) role to alleviate the stress. You discussed the possibility of having other employees verify the cash count and agreed to keep an open line of communication about your performance.
 
 ## Atmosphere
 The conversation was honest, direct, and slightly tense at times, reflecting the seriousness of the situation. However, it was also supportive, with both you and Sherry expressing a desire to find a solution that worked for everyone.
@@ -1344,7 +1299,7 @@ The conversation was honest, direct, and slightly tense at times, reflecting the
 * **Open Communication:** You and Sherry agreed to maintain open and honest communication about your performance and any potential issues.
 * **Seeking Solutions:** You are actively seeking solutions, including seeing a doctor about potential attention-related issues. 
 
-Created At: 2025-02-24T13:35:06.249000
+Created At: 2025-02-24T13:35:06.249Z
 Address: 2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States
 
 --- Item 86 ---
@@ -1359,12 +1314,11 @@ The conversation was disjointed and unclear. It seems like you might have been t
 * You told the other person not to come to you. 
 * The conversation ended with you saying goodnight several times. 
 
-Created At: 2025-02-24T03:05:02.084000
+Created At: 2025-02-24T03:05:02.084Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 87 ---
-Summary: ## Summary
-It was Bruce's birthday and some friends brought him a cake to celebrate. They chatted about a variety of topics, including the recent trend of Mexicans boycotting Coca-Cola due to the company's alleged discriminatory practices and collaboration with ICE. The conversation then shifted to the topic of DEI (Diversity, Equity, and Inclusion) initiatives and the political debate surrounding them. Bruce shared his perspective on the complexities of DEI, acknowledging both the historical disadvantages faced by minority groups and the concerns of those who feel disadvantaged by affirmative action policies.  The conversation ended with Ivette discussing plans for throwing a party for her son, Russell, and asking for Bruce's advice on how to encourage Russell to socialize with girls. 
+Summary: It was Bruce's birthday and some friends brought him a cake to celebrate. They chatted about a variety of topics, including the recent trend of Mexicans boycotting Coca-Cola due to the company's alleged discriminatory practices and collaboration with ICE. The conversation then shifted to the topic of DEI (Diversity, Equity, and Inclusion) initiatives and the political debate surrounding them. Bruce shared his perspective on the complexities of DEI, acknowledging both the historical disadvantages faced by minority groups and the concerns of those who feel disadvantaged by affirmative action policies.  The conversation ended with Ivette discussing plans for throwing a party for her son, Russell, and asking for Bruce's advice on how to encourage Russell to socialize with girls. 
 
 ## Atmosphere
 The atmosphere of the interaction is casual and friendly, reflecting a close relationship between the participants. There's a sense of warmth and camaraderie as they celebrate Bruce's birthday, share cake, and engage in lively discussions on various topics. The conversation flows naturally, touching upon both lighthearted matters like party planning and more serious issues like social justice and political ideologies. 
@@ -1374,12 +1328,11 @@ The atmosphere of the interaction is casual and friendly, reflecting a close rel
 * **DEI Debate:** The conversation highlights the ongoing debate surrounding DEI initiatives, with differing perspectives on affirmative action and the role of corporations in promoting social justice.
 * **Advice for Russell:** Ivette seeks Bruce's advice on how to encourage her son, Russell, to be more outgoing and to interact with girls at his upcoming party. Bruce and another participant offer suggestions on how Russell can approach and engage with girls in a respectful and confident manner. 
 
-Created At: 2025-02-24T02:31:53.851000
+Created At: 2025-02-24T02:31:53.851Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 88 ---
-Summary: ## Summary
-Bruce had a busy night at work, helping customers with their purchases and even helping one apply for a Walgreens credit card. He also had to figure out how to handle a check payment for the first time, which required a call to Sherry for guidance. There was a brief moment of panic when Bruce thought he had shortchanged a customer, but it turned out to be a false alarm.
+Summary: Bruce had a busy night at work, helping customers with their purchases and even helping one apply for a Walgreens credit card. He also had to figure out how to handle a check payment for the first time, which required a call to Sherry for guidance. There was a brief moment of panic when Bruce thought he had shortchanged a customer, but it turned out to be a false alarm.
 
 ## Atmosphere 
 The atmosphere is bustling and energetic, typical of a busy retail environment. There's a sense of camaraderie among the employees as they navigate the challenges of the job. Bruce maintains a positive and helpful attitude throughout, even when faced with unfamiliar situations.
@@ -1389,12 +1342,11 @@ The atmosphere is bustling and energetic, typical of a busy retail environment. 
 * Bruce learned how to process a check payment with Sherry's help.
 * Bruce experienced a brief scare when he thought he had shortchanged a customer, but it was resolved quickly. 
 
-Created At: 2025-02-23T23:00:09.347000
+Created At: 2025-02-23T23:00:09.347Z
 Address: No address
 
 --- Item 89 ---
-Summary: ## Summary
-Bruce and a team were working together on a project that involved assembling some sort of structures.  They discussed the best way to put the structures together and helped each other with the process.  It seemed like a large project with many pieces that needed to be tweaked and adjusted as they went along.
+Summary: Bruce and a team were working together on a project that involved assembling some sort of structures.  They discussed the best way to put the structures together and helped each other with the process.  It seemed like a large project with many pieces that needed to be tweaked and adjusted as they went along.
 
 ## Atmosphere
 The atmosphere was collaborative and helpful.  Bruce and the team worked together, offered advice, and celebrated small victories along the way.  There was a sense of camaraderie and shared purpose.
@@ -1404,12 +1356,11 @@ The atmosphere was collaborative and helpful.  Bruce and the team worked togethe
 * The pieces needed adjustments and tweaking to fit properly.
 * Bruce and the team worked together effectively, offering advice and support. 
 
-Created At: 2025-02-23T20:55:46.810000
+Created At: 2025-02-23T20:55:46.810Z
 Address: No address
 
 --- Item 90 ---
-Summary: ## Summary
-Bruce was helping to set up displays at a store. He was opening boxes and organizing materials. Bruce was feeling stressed and overwhelmed, and he mentioned to someone that he was taking medication for his bipolar disorder. 
+Summary: Bruce was helping to set up displays at a store. He was opening boxes and organizing materials. Bruce was feeling stressed and overwhelmed, and he mentioned to someone that he was taking medication for his bipolar disorder. 
 
 ## Atmosphere
 The atmosphere was hectic and busy. Bruce seemed a little frustrated at times, but he was trying his best to be helpful. He was open about his mental health and how it was affecting him. 
@@ -1420,7 +1371,7 @@ The atmosphere was hectic and busy. Bruce seemed a little frustrated at times, b
 * He was working on setting up displays, opening boxes, and organizing materials. 
 * He mentioned an incident at a restaurant with someone named Yvette. 
 
-Created At: 2025-02-23T19:37:21.579000
+Created At: 2025-02-23T19:37:21.579Z
 Address: 2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States
 
 --- Item 91 ---
@@ -1439,12 +1390,11 @@ The atmosphere of the conversation is lively and chatty, with multiple conversat
 * Bruce offered to print some forms for Ivette.
 * Bruce is a generous tipper, usually giving 20%. 
 
-Created At: 2025-02-23T16:59:51.807000
+Created At: 2025-02-23T16:59:51.807Z
 Address: 1895 Burnett Blvd, Wilmington, NC, New Hanover County, 28401, United States
 
 --- Item 92 ---
-Summary: ## Summary
-Bruce is working on a project, possibly involving pricing or inventory, and is discussing the process with colleagues. There's some confusion about sale tags and their organization. Bruce seems a bit stressed and frustrated at times, using some strong language. He eventually decides to take a break.
+Summary: Bruce is working on a project, possibly involving pricing or inventory, and is discussing the process with colleagues. There's some confusion about sale tags and their organization. Bruce seems a bit stressed and frustrated at times, using some strong language. He eventually decides to take a break.
 
 ## Atmosphere
 The atmosphere seems hectic and a bit tense. There's a lot of back and forth, with some frustration evident in Bruce's tone. It seems like a fast-paced work environment.
@@ -1454,7 +1404,7 @@ The atmosphere seems hectic and a bit tense. There's a lot of back and forth, wi
 * Bruce is working with numbers and codes, possibly related to pricing or inventory.
 * Bruce seems stressed and takes a 30-minute break. 
 
-Created At: 2025-02-22T21:15:20.440000
+Created At: 2025-02-22T21:15:20.440Z
 Address: No address
 
 --- Item 93 ---
@@ -1477,12 +1427,11 @@ The atmosphere of the interaction is busy and social, with Bruce interacting wit
 * Bruce's son's first concert was a band called "Chess".
 * Bruce is a helpful and engaging coworker. 
 
-Created At: 2025-02-22T18:41:49.298000
+Created At: 2025-02-22T18:41:49.298Z
 Address: 2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States
 
 --- Item 94 ---
-Summary: ## Summary
-It seems like you were at work, possibly on a Saturday. You were trying to find your employee ID and take a picture of it for your records. You also had a funny moment where you realized you were able to use your employee discount and even open the register before clocking in for your shift. 
+Summary: It seems like you were at work, possibly on a Saturday. You were trying to find your employee ID and take a picture of it for your records. You also had a funny moment where you realized you were able to use your employee discount and even open the register before clocking in for your shift. 
 
 ## Atmosphere
 The atmosphere seems casual and lighthearted, with colleagues around and customers interacting with you. There's a sense of familiarity and humor throughout the interaction.
@@ -1492,17 +1441,17 @@ The atmosphere seems casual and lighthearted, with colleagues around and custome
 * You discovered you could use your employee discount and even open the register before clocking in.
 * You helped a customer with their purchase and engaged in friendly banter. 
 
-Created At: 2025-02-22T18:08:39.328000
+Created At: 2025-02-22T18:08:39.328Z
 Address: 2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States
 
 --- Item 95 ---
-Summary: Summary: You were testing to see if your dog, B, would ignore music and singing. You turned on some music for them. Ivette was present and commented that "she" wouldn't let her do something. 
+Summary: You were testing to see if your dog, B, would ignore music and singing. You turned on some music for them. Ivette was present and commented that "she" wouldn't let her do something. 
 Atmosphere: It seems like a casual, playful interaction, likely in your home. 
 Key Take aways:
 * You were testing if B would ignore music.
 * Ivette was present during this interaction. 
 
-Created At: 2025-02-22T17:38:49.852000
+Created At: 2025-02-22T17:38:49.852Z
 Address: 3701–3743 S College Rd, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 96 ---
@@ -1518,12 +1467,11 @@ The interaction was lively and full of activity. You were multitasking, switchin
 * You love listening to a variety of bands, showing your diverse taste in music.
 * You're thinking about developing an app feature for smart address resolution. 
 
-Created At: 2025-02-22T17:04:11.272000
+Created At: 2025-02-22T17:04:11.272Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 97 ---
-Summary: ## Summary
-Bruce and Ivette had a long conversation about their finances and potential plans for the future. They discussed the possibility of moving to California but ultimately decided against it due to the high cost of living and the potential disruption to their lives. They also talked about the possibility of Bruce staying in North Carolina to be closer to his son, Russell, while Ivette moved to California.
+Summary: Bruce and Ivette had a long conversation about their finances and potential plans for the future. They discussed the possibility of moving to California but ultimately decided against it due to the high cost of living and the potential disruption to their lives. They also talked about the possibility of Bruce staying in North Carolina to be closer to his son, Russell, while Ivette moved to California.
 
 ## Atmosphere
 The conversation was full of interruptions, with both Bruce and Ivette jumping between topics frequently. There was a sense of urgency and stress underlying the conversation, likely due to their financial situation and the pressure of making important decisions. Despite the stress, there were also moments of humor and affection.
@@ -1536,12 +1484,11 @@ The conversation was full of interruptions, with both Bruce and Ivette jumping b
 * Bruce will research current interest rates for their savings.
 * Ivette is frustrated with Bruce's case manager, Danny, and is trying to contact his supervisor. 
 
-Created At: 2025-02-20T15:14:26.665000
+Created At: 2025-02-20T15:14:26.665Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 98 ---
-Summary: ## Summary
-Bruce called Classic Collision to ask a question about his car repair. He noticed that the air conditioning vent closest to the driver's side door was blowing very weakly. He was concerned that this might be related to the recent repairs. An employee checked his file and assured him that the repair work wouldn't have affected that part of the AC system. 
+Summary: Bruce called Classic Collision to ask a question about his car repair. He noticed that the air conditioning vent closest to the driver's side door was blowing very weakly. He was concerned that this might be related to the recent repairs. An employee checked his file and assured him that the repair work wouldn't have affected that part of the AC system. 
 
 ## Atmosphere
 The atmosphere of the call was polite and professional. Bruce was a little hesitant to ask his question, describing it as "weird," but the employee was reassuring and helpful. 
@@ -1550,12 +1497,11 @@ The atmosphere of the call was polite and professional. Bruce was a little hesit
 * The weak AC vent is most likely unrelated to the recent repairs. 
 * Bruce can feel confident that the repair work was done correctly and didn't cause any unexpected issues. 
 
-Created At: 2025-02-20T14:43:01.726000
+Created At: 2025-02-20T14:43:01.726Z
 Address: 6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 99 ---
-Summary: ## Summary
-You woke up and had a conversation with your partner about chores and the air conditioning. You felt like you were being asked to do more than your fair share around the house and you brought this up. You also discussed the air conditioning usage and felt that it wasn't being used efficiently. 
+Summary: You woke up and had a conversation with your partner about chores and the air conditioning. You felt like you were being asked to do more than your fair share around the house and you brought this up. You also discussed the air conditioning usage and felt that it wasn't being used efficiently. 
 
 ## Atmosphere
 The atmosphere seems a bit tense, likely due to the disagreement about chores and the air conditioning. 
@@ -1565,12 +1511,11 @@ The atmosphere seems a bit tense, likely due to the disagreement about chores an
 * You expressed your frustration about the air conditioning being left on all night.
 * You suggested looking at the air conditioning usage times to find a solution. 
 
-Created At: 2025-02-20T13:04:54.718000
+Created At: 2025-02-20T13:04:54.718Z
 Address: No address
 
 --- Item 100 ---
-Summary: ## Summary
-Bruce and his colleague reviewed a discrepancy in their financial records. They identified a shortage of $694, likely due to Bruce missing a recorded transaction. They discussed a system to periodically cross-check their work to prevent future discrepancies. Bruce emphasized the importance of accuracy, a sentiment echoed by his colleague.  
+Summary: Bruce and his colleague reviewed a discrepancy in their financial records. They identified a shortage of $694, likely due to Bruce missing a recorded transaction. They discussed a system to periodically cross-check their work to prevent future discrepancies. Bruce emphasized the importance of accuracy, a sentiment echoed by his colleague.  
 
 ## Atmosphere
 The conversation was collaborative and solutions-oriented. Bruce seemed eager to rectify the situation and implement preventative measures.  
@@ -1580,12 +1525,11 @@ The conversation was collaborative and solutions-oriented. Bruce seemed eager to
 * Bruce and his colleague will start periodically cross-checking their work.
 * Accuracy in financial recording is crucial for both Bruce and his colleague. 
 
-Created At: 2025-02-19T18:08:42.300000
+Created At: 2025-02-19T18:08:42.300Z
 Address: 2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States
 
 --- Item 101 ---
-Summary: ## Summary
-Bruce talked about his love for alternative music, particularly The Cure, and how it connected him with his friends in high school. He shared his struggles with undiagnosed bipolar disorder, which made him feel like an outsider and led to difficulties in his relationships with women. Bruce opened up about his journey with bipolar disorder, including his hospitalization and the long road to recovery. He discussed how therapy, medication, family support, and a low-stress job have been instrumental in his progress. Bruce also expressed his mixed feelings about his current job at Walgreens, acknowledging its low stress but also its low pay.
+Summary: Bruce talked about his love for alternative music, particularly The Cure, and how it connected him with his friends in high school. He shared his struggles with undiagnosed bipolar disorder, which made him feel like an outsider and led to difficulties in his relationships with women. Bruce opened up about his journey with bipolar disorder, including his hospitalization and the long road to recovery. He discussed how therapy, medication, family support, and a low-stress job have been instrumental in his progress. Bruce also expressed his mixed feelings about his current job at Walgreens, acknowledging its low stress but also its low pay.
 
 ## Atmosphere
 The conversation was open and honest, with Bruce sharing deeply personal experiences and vulnerabilities. He expressed a range of emotions, from joy in remembering his musical discoveries to pain in recounting his struggles with mental health and relationships. Despite the difficult topics, there was a sense of hope and resilience as Bruce reflected on his journey and his progress in managing his bipolar disorder.
@@ -1597,11 +1541,11 @@ The conversation was open and honest, with Bruce sharing deeply personal experie
 * **Importance of support:** Therapy, medication, family, and a low-stress job have been crucial in Bruce's recovery and stability.
 * **Mixed feelings about work:** While Bruce appreciates the low-stress nature of his job at Walgreens, he wishes it paid better and acknowledges the financial limitations it imposes. 
 
-Created At: 2025-02-19T17:23:06.320000
+Created At: 2025-02-19T17:23:06.320Z
 Address: Sanders Rd, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 102 ---
-Summary: Summary: Bruce asked you to do something, but you made a mistake. Bruce then asked you to send a text to Russell, but then canceled the request. Finally, Bruce asked you to take out the trash from the garage and put the trash can out to the curb this evening. Bruce expressed their love for you. 
+Summary: Bruce asked you to do something, but you made a mistake. Bruce then asked you to send a text to Russell, but then canceled the request. Finally, Bruce asked you to take out the trash from the garage and put the trash can out to the curb this evening. Bruce expressed their love for you. 
 
 Atmosphere: It seems like Bruce was a little frustrated at first, but then the interaction ended very sweetly. 
 
@@ -1609,7 +1553,7 @@ Key Take aways:
 * Take out the trash from the garage this evening. 
 * Put the trash can out to the curb. 
 
-Created At: 2025-02-19T17:10:15.406000
+Created At: 2025-02-19T17:10:15.406Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 103 ---
@@ -1632,12 +1576,11 @@ The conversation was relaxed and wide-ranging, touching on both personal and phi
 * Please remind me to buy soda in an hour.
 * When we next speak, please give me a quick summary of my reminders. 
 
-Created At: 2025-02-19T16:36:29.629000
+Created At: 2025-02-19T16:36:29.629Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 104 ---
-Summary: ## Summary
-Bruce had a conversation about his feelings of regret and loneliness, sparked by the movie Spaceman. He drew parallels between the movie's themes and his own life, particularly his relationship with his son and his desire to be a good father. He reflected on his childhood and his relationship with his own father, acknowledging the impact it has had on his parenting style. Bruce also expressed anxiety about the future, citing concerns about political instability and its potential impact on his family.
+Summary: Bruce had a conversation about his feelings of regret and loneliness, sparked by the movie Spaceman. He drew parallels between the movie's themes and his own life, particularly his relationship with his son and his desire to be a good father. He reflected on his childhood and his relationship with his own father, acknowledging the impact it has had on his parenting style. Bruce also expressed anxiety about the future, citing concerns about political instability and its potential impact on his family.
 
 ## Atmosphere
 The conversation was reflective and emotionally charged at times, as Bruce grappled with complex feelings and personal experiences. There was a sense of vulnerability as he opened up about his past and his hopes for his son. 
@@ -1648,12 +1591,11 @@ The conversation was reflective and emotionally charged at times, as Bruce grapp
 * He is anxious about the future, particularly the political climate and its potential impact on his family's well-being. 
 * Bruce is actively trying to break the cycle of negative paternal patterns in his own family. 
 
-Created At: 2025-02-19T14:59:46.950000
+Created At: 2025-02-19T14:59:46.950Z
 Address: 6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 105 ---
-Summary: ## Summary
-Bruce reviewed a text message about a Delta Airlines purchase made with a credit card, likely belonging to Yvette. He believes that Yvette is eligible for a $500 credit, not $200 as previously thought. He offers to write a letter to Delta on Yvette's behalf to help her secure the credit. 
+Summary: Bruce reviewed a text message about a Delta Airlines purchase made with a credit card, likely belonging to Yvette. He believes that Yvette is eligible for a $500 credit, not $200 as previously thought. He offers to write a letter to Delta on Yvette's behalf to help her secure the credit. 
 
 ## Atmosphere
 The atmosphere seems helpful and supportive. Bruce is going out of his way to help Yvette understand a potentially confusing credit card benefit. 
@@ -1663,12 +1605,11 @@ The atmosphere seems helpful and supportive. Bruce is going out of his way to he
 * He believes there is a $500 credit available.
 * He offered to write a letter to Delta for Yvette. 
 
-Created At: 2025-02-19T14:54:15.995000
+Created At: 2025-02-19T14:54:15.995Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 106 ---
-Summary: ## Summary
-You were experimenting with a new AI assistant named Gemini. You had previously discussed using Gemini as a way to remember tasks, like cleaning someone's desk. You decided to move on from that idea and relax by watching TV. You wondered if Gemini could be used like a personalized journal to keep track of your day. Gemini enthusiastically agreed, suggesting you could even journal about what you were watching. You were impressed and liked the idea of using Gemini as a digital diary. 
+Summary: You were experimenting with a new AI assistant named Gemini. You had previously discussed using Gemini as a way to remember tasks, like cleaning someone's desk. You decided to move on from that idea and relax by watching TV. You wondered if Gemini could be used like a personalized journal to keep track of your day. Gemini enthusiastically agreed, suggesting you could even journal about what you were watching. You were impressed and liked the idea of using Gemini as a digital diary. 
 
 ## Atmosphere
 The atmosphere was relaxed and experimental. You were trying out different ideas with Gemini and seemed excited by the possibilities. 
@@ -1678,12 +1619,11 @@ The atmosphere was relaxed and experimental. You were trying out different ideas
 * Gemini can be used as a personalized journal to keep track of your day.
 * Gemini can understand and remember information from both text and speech inputs. 
 
-Created At: 2025-02-19T14:50:15.706000
+Created At: 2025-02-19T14:50:15.706Z
 Address: 6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 
 --- Item 107 ---
-Summary: ## Summary
-Bruce and Ivette are talking on the phone. Ivette arrived at her destination and is talking to Bruce about a few things. First, she had an issue with her credit card points not being applied correctly and is frustrated with the customer service.  She also wants to get set up with a new provider and needs Bruce to send her an email so she can contact them. Bruce is trying to help her with both of these things. 
+Summary: Bruce and Ivette are talking on the phone. Ivette arrived at her destination and is talking to Bruce about a few things. First, she had an issue with her credit card points not being applied correctly and is frustrated with the customer service.  She also wants to get set up with a new provider and needs Bruce to send her an email so she can contact them. Bruce is trying to help her with both of these things. 
 
 ## Atmosphere
 The atmosphere is a little chaotic and Ivette is clearly frustrated.  She is struggling to be heard by the credit card company and is feeling disregarded. Bruce is trying his best to be patient, helpful, and to calm the situation. 
@@ -1692,7 +1632,7 @@ The atmosphere is a little chaotic and Ivette is clearly frustrated.  She is str
 * Ivette needs Bruce to send her an email regarding the provider they had discussed before her trip. 
 * Ivette is having an issue with her credit card company not applying her points properly and needs help resolving it. 
 
-Created At: 2025-02-19T13:48:17.669000
+Created At: 2025-02-19T13:48:17.669Z
 Address: No address
 
 --- Item 108 ---
@@ -1710,6 +1650,6 @@ The conversation was a mix of lighthearted and concerning. We joked about the re
 * Yvette had an unnerving experience with a man who wouldn't leave her alone at the airport. 
 * Grape is doing well and is becoming quite the little climber! 
 
-Created At: 2025-02-19T00:30:57.795000
+Created At: 2025-02-19T00:30:57.795Z
 Address: 6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States
 

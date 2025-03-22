@@ -70,32 +70,63 @@ def format_todo(todo):
     }
 
 async def fetch_all_pages(fetch_func, user_id):
+    """
+    Fetch all pages of data from a paginated API endpoint
+    
+    Args:
+        fetch_func: The API function to call (e.g., bee.get_conversations)
+        user_id: The user ID to fetch data for (typically "me")
+        
+    Returns:
+        A list of all items fetched across all pages
+    """
+    app.logger.info(f"Fetching all pages for {fetch_func.__name__} and user {user_id}")
     all_items = []
-    first_response = await fetch_func(user_id)
-
-    # Get total pages from first response
-    total_pages = first_response.get('totalPages', 1)
-
-    # Add items from first page
-    items_key = None
-    for key in ['conversations', 'facts', 'todos']:
-        if key in first_response:
-            items_key = key
-            break
-
-    if items_key:
-        all_items.extend(first_response[items_key])
-
-    # Fetch remaining pages
-    for page in range(2, total_pages + 1):
-        try:
-            response = await fetch_func(user_id, page=page)
-            if items_key in response and response[items_key]:
-                all_items.extend(response[items_key])
-        except Exception as e:
-            app.logger.error(f"Error fetching page {page}: {str(e)}")
-            break
-
+    
+    try:
+        # Get the first page
+        first_response = await fetch_func(user_id)
+        app.logger.info(f"First response type: {type(first_response)}")
+        
+        # Determine the response structure
+        if not isinstance(first_response, dict):
+            app.logger.warning(f"Unexpected response format: {type(first_response)}")
+            return first_response
+        
+        # Find the data key (conversations, facts, todos)
+        items_key = None
+        for key in ['conversations', 'facts', 'todos']:
+            if key in first_response:
+                items_key = key
+                break
+                
+        if not items_key:
+            app.logger.warning(f"Could not determine items key in: {first_response.keys()}")
+            return []
+            
+        # Get items from first page
+        if items_key in first_response and first_response[items_key]:
+            all_items.extend(first_response[items_key])
+            
+        # Get total pages
+        total_pages = first_response.get('totalPages', 1)
+        app.logger.info(f"Found {total_pages} total pages")
+        
+        # Fetch remaining pages
+        for page in range(2, total_pages + 1):
+            try:
+                app.logger.info(f"Fetching page {page} of {total_pages}")
+                response = await fetch_func(user_id, page=page)
+                if items_key in response and response[items_key]:
+                    all_items.extend(response[items_key])
+            except Exception as e:
+                app.logger.error(f"Error fetching page {page}: {str(e)}")
+                break
+    except Exception as e:
+        app.logger.error(f"Error in fetch_all_pages: {str(e)}")
+        app.logger.error(traceback.format_exc())
+        
+    app.logger.info(f"Fetched {len(all_items)} items in total")
     return all_items
 
 def save_to_file(data, data_type, original_data):
@@ -168,14 +199,26 @@ async def index():
     app.logger.info("Homepage accessed - automatically fetching data")
     try:
         # Fetch all data types from the API
-        conversations_data = await fetch_all_pages(bee.conversations, "user")
-        facts_data = await fetch_all_pages(bee.facts, "user")
-        todos_data = await fetch_all_pages(bee.todos, "user")
+        conversations_data = await fetch_all_pages(bee.get_conversations, "me")
+        facts_data = await fetch_all_pages(bee.get_facts, "me")
+        todos_data = await fetch_all_pages(bee.get_todos, "me")
         
         # Format the data for display
-        conversations_list = conversations_data.get('conversations', [])
-        facts_list = facts_data.get('facts', [])
-        todos_list = todos_data.get('todos', [])
+        # Handle both list and dictionary return types
+        if isinstance(conversations_data, dict):
+            conversations_list = conversations_data.get('conversations', [])
+        else:
+            conversations_list = conversations_data
+            
+        if isinstance(facts_data, dict):
+            facts_list = facts_data.get('facts', [])
+        else:
+            facts_list = facts_data
+            
+        if isinstance(todos_data, dict):
+            todos_list = todos_data.get('todos', [])
+        else:
+            todos_list = todos_data
         
         formatted_conversations = [format_conversation(conv) for conv in conversations_list]
         formatted_facts = [format_fact(fact) for fact in facts_list]

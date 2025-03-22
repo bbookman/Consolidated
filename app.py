@@ -131,46 +131,27 @@ async def fetch_all_pages(fetch_func, user_id):
 
 def save_to_file(data, data_type, original_data):
     """
-    Save data to files in data/text and data/json directories
+    Save data to JSON files in the data/json directory
     
     Args:
-        data: List of formatted data items
+        data: List of formatted data items (not used - kept for backward compatibility)
         data_type: Type of data (conversations, facts, todos)
         original_data: Raw data from API
     """
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-    app.logger.info(f"Saving {data_type} to file with timestamp {timestamp}")
+    app.logger.info(f"Saving {data_type} to JSON file with timestamp {timestamp}")
     
     try:
         # Get absolute path for data directory
         current_dir = os.getcwd()
         data_dir = os.path.join(current_dir, 'data')
-        text_dir = os.path.join(data_dir, 'text')
         json_dir = os.path.join(data_dir, 'json')
         
-        # Create main data directory and subfolders
+        # Create main data directory and JSON subfolder
         os.makedirs(data_dir, exist_ok=True)
-        os.makedirs(text_dir, exist_ok=True)
         os.makedirs(json_dir, exist_ok=True)
         
         app.logger.info(f"Created directories at {data_dir}")
-        
-        # Save formatted data as text
-        formatted_file = os.path.join(text_dir, f"{data_type}_{timestamp}.txt")
-        app.logger.info(f"Saving formatted data to {formatted_file}")
-        
-        with open(formatted_file, 'w') as f:
-            f.write(f"=== {data_type.upper()} ===\n")
-            f.write(f"Retrieved at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-            f.write(f"Total items: {len(data)}\n\n")
-            
-            for idx, item in enumerate(data, 1):
-                f.write(f"--- Item {idx} ---\n")
-                for key, value in item.items():
-                    f.write(f"{key}: {value}\n")
-                f.write("\n")
-                
-        app.logger.info(f"Successfully wrote text file to {formatted_file}")
         
         # Save raw JSON for reference
         json_file = os.path.join(json_dir, f"{data_type}_{timestamp}.json")
@@ -536,5 +517,68 @@ def get_db_todos():
         app.logger.error(f"Error getting todos from DB: {str(e)}")
         return {'error': str(e)}, 500
 
+def run_cli():
+    """
+    CLI entry point for the application. Fetches all data types and saves them to files and database.
+    """
+    print("Starting Bee AI Data Collector CLI")
+    try:
+        # Create event loop and run data fetching
+        loop = asyncio.get_event_loop()
+        
+        print("Fetching conversations...")
+        conversations = loop.run_until_complete(fetch_all_pages(bee.get_conversations, "me"))
+        if isinstance(conversations, dict):
+            conversations_list = conversations.get('conversations', [])
+        else:
+            conversations_list = conversations
+        print(f"Fetched {len(conversations_list)} conversations")
+        
+        print("Fetching facts...")
+        facts = loop.run_until_complete(fetch_all_pages(bee.get_facts, "me"))
+        if isinstance(facts, dict):
+            facts_list = facts.get('facts', [])
+        else:
+            facts_list = facts
+        print(f"Fetched {len(facts_list)} facts")
+        
+        print("Fetching todos...")
+        todos = loop.run_until_complete(fetch_all_pages(bee.get_todos, "me"))
+        if isinstance(todos, dict):
+            todos_list = todos.get('todos', [])
+        else:
+            todos_list = todos
+        print(f"Fetched {len(todos_list)} todos")
+        
+        # Save to files
+        print("Saving to JSON files...")
+        save_to_file(None, 'conversations', {'conversations': conversations_list})
+        save_to_file(None, 'facts', {'facts': facts_list})
+        save_to_file(None, 'todos', {'todos': todos_list})
+        
+        # Store in database
+        print("Storing in database...")
+        db_conversations_result = db.store_conversations(conversations_list)
+        db_facts_result = db.store_facts(facts_list)
+        db_todos_result = db.store_todos(todos_list)
+        
+        # Print database results
+        print(f"\nDatabase Results:")
+        print(f"Conversations: {db_conversations_result['processed']} processed, {db_conversations_result['added']} added, {db_conversations_result['skipped']} skipped")
+        print(f"Facts: {db_facts_result['processed']} processed, {db_facts_result['added']} added, {db_facts_result['skipped']} skipped")
+        print(f"Todos: {db_todos_result['processed']} processed, {db_todos_result['added']} added, {db_todos_result['skipped']} skipped")
+        
+        print("\nData collection complete!")
+        
+    except Exception as e:
+        print(f"Error in CLI data collection: {str(e)}")
+        print(traceback.format_exc())
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    # Check for command line arguments
+    if len(sys.argv) > 1 and sys.argv[1] == "--cli":
+        # Run in CLI mode
+        run_cli()
+    else:
+        # Run as web server
+        app.run(host='0.0.0.0', port=5000, debug=True)

@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, Integer, String, Text, Boolean, DateTime, ForeignKey, Float, UniqueConstraint
+from sqlalchemy import create_engine, Column, Integer, String, Text, Boolean, DateTime, ForeignKey, Float, UniqueConstraint, JSON
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 import os
@@ -57,6 +57,22 @@ class Bee_Todo(Base):
     
     def __repr__(self):
         return f"<Bee_Todo(id={self.id}, task={self.task[:30]}..., completed={self.completed})>"
+
+class Limitless_Lifelog(Base):
+    __tablename__ = 'limitless_lifelogs'
+    
+    id = Column(Integer, primary_key=True)
+    log_id = Column(String, unique=True)  # External ID from Limitless API
+    title = Column(Text, nullable=True)
+    description = Column(Text, nullable=True)
+    created_at = Column(DateTime)
+    updated_at = Column(DateTime, nullable=True)
+    log_type = Column(String, nullable=True)  # Type of lifelog (e.g., "note", "event", etc.)
+    tags = Column(Text, nullable=True)  # Store tags as JSON string
+    raw_data = Column(Text)  # Store the raw JSON for reference
+    
+    def __repr__(self):
+        return f"<Limitless_Lifelog(id={self.id}, title={self.title[:30] if self.title else 'None'}..., created_at={self.created_at})>"
 
 # Create all tables in the database
 Base.metadata.create_all(engine)

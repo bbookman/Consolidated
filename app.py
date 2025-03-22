@@ -9,9 +9,18 @@ import json
 from datetime import datetime
 from functools import wraps
 import database_handler as db
+from limitless_api import limitless, LimitlessAPI
 
 app = Flask(__name__)
 bee = Bee(os.environ.get('BEE_API_KEY'))
+
+# Initialize Limitless API if it wasn't initialized in the module
+if limitless is None and os.environ.get('LIMITLESS_API_KEY'):
+    try:
+        limitless = LimitlessAPI(os.environ.get('LIMITLESS_API_KEY'))
+        app.logger.info("Limitless API client initialized successfully")
+    except Exception as e:
+        app.logger.error(f"Failed to initialize Limitless API client: {str(e)}")
 
 def async_route(f):
     @wraps(f)
@@ -69,6 +78,29 @@ def format_todo(todo):
         "Created At": todo.get("created_at", "Unknown")
     }
 
+def format_lifelog(log):
+    # Handle None values
+    title = log.get("title")
+    if title is None:
+        title = "No title available"
+        
+    description = log.get("description")
+    if description is None:
+        description = "No description available"
+    
+    # Format tags if they exist
+    tags = log.get("tags", [])
+    tags_str = ", ".join(tags) if tags else "No tags"
+    
+    return {
+        "Title": title,
+        "Description": description,
+        "Type": log.get("type", "Unknown type"),
+        "Tags": tags_str,
+        "Created At": log.get("created_at", "Unknown"),
+        "Updated At": log.get("updated_at", "Unknown")
+    }
+
 async def fetch_all_pages(fetch_func, user_id):
     """
     Fetch all pages of data from a paginated API endpoint
@@ -93,15 +125,38 @@ async def fetch_all_pages(fetch_func, user_id):
             app.logger.warning(f"Unexpected response format: {type(first_response)}")
             return first_response
         
-        # Find the data key (conversations, facts, todos)
+        # Find the data key (conversations, facts, todos, lifelogs)
         items_key = None
-        for key in ['conversations', 'facts', 'todos']:
+        for key in ['conversations', 'facts', 'todos', 'lifelogs']:
             if key in first_response:
                 items_key = key
                 break
                 
         if not items_key:
             app.logger.warning(f"Could not determine items key in: {first_response.keys()}")
+            # Special case for Limitless API which might return data differently
+            if 'data' in first_response:
+                app.logger.info("Found 'data' key in response, using it for Limitless API")
+                all_items.extend(first_response['data'])
+                
+                # Handle pagination differently for Limitless API
+                if 'meta' in first_response and 'last_page' in first_response['meta']:
+                    total_pages = first_response['meta']['last_page']
+                    app.logger.info(f"Found {total_pages} total pages in Limitless API response")
+                    
+                    # Fetch remaining pages
+                    for page in range(2, total_pages + 1):
+                        try:
+                            app.logger.info(f"Fetching page {page} of {total_pages}")
+                            response = await fetch_func(page=page)
+                            if 'data' in response:
+                                all_items.extend(response['data'])
+                        except Exception as e:
+                            app.logger.error(f"Error fetching page {page}: {str(e)}")
+                            break
+                
+                return all_items
+            
             return []
             
         # Get items from first page
@@ -157,7 +212,8 @@ def save_to_file(data, data_type, original_data):
         key_map = {
             'conversations': 'conversations',
             'facts': 'facts',
-            'todos': 'todos'
+            'todos': 'todos',
+            'lifelogs': 'lifelogs'
         }
         data_key = key_map.get(data_type)
         
@@ -596,17 +652,44 @@ def run_cli():
             todos_list = todos
         print(f"Fetched {len(todos_list)} todos")
         
+        # Fetch lifelogs from Limitless API if available
+        lifelogs_list = []
+        if limitless:
+            print("Fetching lifelogs from Limitless API...")
+            try:
+                # Create a wrapper function that doesn't require user_id parameter
+                async def get_lifelogs_wrapper(dummy=None, page=1):
+                    return await limitless.get_lifelogs(page=page)
+                
+                lifelogs = loop.run_until_complete(fetch_all_pages(get_lifelogs_wrapper, "dummy"))
+                if isinstance(lifelogs, dict):
+                    lifelogs_list = lifelogs.get('lifelogs', [])
+                else:
+                    lifelogs_list = lifelogs
+                print(f"Fetched {len(lifelogs_list)} lifelogs")
+            except Exception as e:
+                print(f"Error fetching lifelogs: {str(e)}")
+                print(traceback.format_exc())
+        else:
+            print("Limitless API client not initialized - skipping lifelogs")
+        
         # Step 2: Store in database with deduplication
         print("Storing in database...")
         db_conversations_result = db.store_conversations(conversations_list)
         db_facts_result = db.store_facts(facts_list)
         db_todos_result = db.store_todos(todos_list)
         
+        # Store lifelogs if available
+        db_lifelogs_result = {"processed": 0, "added": 0, "skipped": 0}
+        if lifelogs_list:
+            db_lifelogs_result = db.store_lifelogs(lifelogs_list)
+        
         # Print database results
         print(f"\nDatabase Results:")
         print(f"Conversations: {db_conversations_result['processed']} processed, {db_conversations_result['added']} added, {db_conversations_result['skipped']} skipped")
         print(f"Facts: {db_facts_result['processed']} processed, {db_facts_result['added']} added, {db_facts_result['skipped']} skipped")
         print(f"Todos: {db_todos_result['processed']} processed, {db_todos_result['added']} added, {db_todos_result['skipped']} skipped")
+        print(f"Lifelogs: {db_lifelogs_result['processed']} processed, {db_lifelogs_result['added']} added, {db_lifelogs_result['skipped']} skipped")
         
         # Step 3: Retrieve from database and save to JSON files
         print("\nRetrieving from database and saving to JSON files...")
@@ -711,6 +794,44 @@ def run_cli():
         )
         if saved_todos:
             print("Successfully processed todos to JSON")
+        
+        # Get lifelogs from database if available
+        if limitless:
+            print("Processing lifelogs from database...")
+            db_lifelogs = db.get_lifelogs_from_db()
+            print(f"Retrieved {len(db_lifelogs)} lifelogs from database")
+            
+            # Format data for saving
+            formatted_lifelogs = []
+            lifelog_raw_data = []
+            
+            for lifelog in db_lifelogs:
+                # Convert from SQLAlchemy object to dictionary
+                formatted_lifelog = {
+                    "Title": lifelog.title if lifelog.title else "No title available",
+                    "Description": lifelog.description if lifelog.description else "No description available",
+                    "Type": lifelog.log_type if lifelog.log_type else "Unknown type",
+                    "Tags": lifelog.tags if lifelog.tags else "No tags",
+                    "Created At": lifelog.created_at.isoformat() if lifelog.created_at else "Unknown",
+                    "Updated At": lifelog.updated_at.isoformat() if lifelog.updated_at else "Unknown"
+                }
+                formatted_lifelogs.append(formatted_lifelog)
+                
+                # Get raw data if available
+                if lifelog.raw_data:
+                    try:
+                        lifelog_raw_data.append(json.loads(lifelog.raw_data))
+                    except:
+                        print(f"Warning: Could not parse raw_data for lifelog {lifelog.id}")
+            
+            # Save lifelogs to file
+            saved_lifelogs = save_to_file(
+                formatted_lifelogs, 
+                'lifelogs', 
+                {'lifelogs': lifelog_raw_data}
+            )
+            if saved_lifelogs:
+                print("Successfully processed lifelogs to JSON")
         
         print("\nData collection complete!")
         

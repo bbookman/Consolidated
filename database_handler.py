@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from models import Base, Bee_Conversation, Bee_Fact, Bee_Todo
+from models import Base, Bee_Conversation, Bee_Fact, Bee_Todo, Limitless_Lifelog
 import os
 import json
 from datetime import datetime
@@ -199,5 +199,67 @@ def get_todos_from_db():
     session = Session()
     try:
         return session.query(Bee_Todo).order_by(Bee_Todo.created_at.desc()).all()
+    finally:
+        session.close()
+
+def store_lifelogs(lifelogs):
+    """
+    Store lifelogs in the database with deduplication.
+    
+    Args:
+        lifelogs: List of lifelog dictionaries from Limitless API
+    
+    Returns:
+        Dict with counts of items processed, added, and skipped
+    """
+    session = Session()
+    try:
+        result = {
+            "processed": len(lifelogs),
+            "added": 0,
+            "skipped": 0
+        }
+        
+        for log in lifelogs:
+            # Check if this lifelog already exists in the database
+            log_id = str(log.get('id', ''))
+            existing = session.query(Limitless_Lifelog).filter_by(log_id=log_id).first()
+            
+            if existing:
+                result["skipped"] += 1
+                continue
+            
+            # Extract tags if they exist
+            tags_json = json.dumps(log.get('tags', [])) if log.get('tags') else None
+            
+            # Create new lifelog record
+            new_log = Limitless_Lifelog(
+                log_id=log_id,
+                title=log.get('title'),
+                description=log.get('description'),
+                created_at=parse_date(log.get('created_at')),
+                updated_at=parse_date(log.get('updated_at')),
+                log_type=log.get('type'),
+                tags=tags_json,
+                raw_data=json.dumps(log)
+            )
+            
+            session.add(new_log)
+            result["added"] += 1
+        
+        session.commit()
+        return result
+        
+    except Exception as e:
+        session.rollback()
+        raise e
+    finally:
+        session.close()
+
+def get_lifelogs_from_db():
+    """Retrieve all lifelogs from the database."""
+    session = Session()
+    try:
+        return session.query(Limitless_Lifelog).order_by(Limitless_Lifelog.created_at.desc()).all()
     finally:
         session.close()

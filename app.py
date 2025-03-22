@@ -21,12 +21,18 @@ def async_route(f):
 def format_conversation(conv):
     # Clean up the summary by removing duplicate headers
     summary = conv.get("summary", "No summary available")
-    if summary.startswith("## Summary\n"):
-        summary = summary[len("## Summary\n"):]
-    if summary.startswith("Summary: "):
-        summary = summary[len("Summary: "):]
-    if summary.startswith("Summary\n"):
-        summary = summary[len("Summary\n"):]
+    
+    # Handle None summary value
+    if summary is None:
+        summary = "No summary available"
+    # Normal processing if summary exists
+    else:
+        if summary.startswith("## Summary\n"):
+            summary = summary[len("## Summary\n"):]
+        if summary.startswith("Summary: "):
+            summary = summary[len("Summary: "):]
+        if summary.startswith("Summary\n"):
+            summary = summary[len("Summary\n"):]
     
     # Get address from primary_location if it exists
     address = "No address"
@@ -40,14 +46,24 @@ def format_conversation(conv):
     }
 
 def format_fact(fact):
+    # Handle None values
+    text = fact.get("text")
+    if text is None:
+        text = "No text available"
+    
     return {
-        "Text": fact.get("text", "No text available"),
+        "Text": text,
         "Created At": fact.get("created_at", "Unknown")
     }
 
 def format_todo(todo):
+    # Handle None values
+    task = todo.get("text")
+    if task is None:
+        task = "No task description"
+        
     return {
-        "Task": todo.get("text", "No task description"),
+        "Task": task,
         "Completed": "Yes" if todo.get("completed") else "No",
         "Created At": todo.get("created_at", "Unknown")
     }
@@ -151,8 +167,27 @@ async def get_conversations():
     try:
         page = int(request.args.get('page', 1))
 
+        # Debug the API key
+        api_key = os.environ.get('BEE_API_KEY')
+        if not api_key:
+            app.logger.error("BEE_API_KEY is not set in environment variables")
+            return {'error': 'API key is not configured'}, 500
+        
+        app.logger.info(f"Using API key: {api_key[:4]}...{api_key[-4:]} (length: {len(api_key)})")
+        
+        # Try to get conversations with direct debug
+        try:
+            app.logger.info("Attempting to fetch conversations directly")
+            conversations_response = await bee.get_conversations("me", page=page)
+            app.logger.info(f"Direct API response type: {type(conversations_response)}")
+            app.logger.info(f"Direct API response content: {conversations_response}")
+        except Exception as direct_err:
+            app.logger.error(f"Direct API call error: {str(direct_err)}")
+            return {'error': f'Direct API error: {str(direct_err)}'}, 500
+
         # Fetch all pages for saving
         all_conversations = await fetch_all_pages(bee.get_conversations, "me")
+        app.logger.info(f"All conversations count: {len(all_conversations)}")
         formatted_all_conversations = [format_conversation(conv) for conv in all_conversations]
 
         # Save complete dataset
@@ -174,6 +209,7 @@ async def get_conversations():
 
     except Exception as e:
         app.logger.error(f"Error in get_conversations: {str(e)}")
+        app.logger.error(f"Error details: {traceback.format_exc()}")
         return {'error': str(e)}, 500
 
 @app.route('/api/facts', methods=['GET'])

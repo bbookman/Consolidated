@@ -1,0 +1,1216 @@
+=== FACTS ===
+Retrieved at: 2025-03-22 15:03:01
+Total items: 303
+
+--- Item 1 ---
+Text: Bruce is interested in logic and critical thinking.
+Created At: 2025-03-22T02:04:36.593Z
+
+--- Item 2 ---
+Text: Bruce likes Elevation brand protein bars.
+Created At: 2025-03-21T14:14:38.986Z
+
+--- Item 3 ---
+Text: Bruce lives in North Carolina.
+Created At: 2025-03-21T14:14:38.986Z
+
+--- Item 4 ---
+Text: Bruce has a dog.
+Created At: 2025-03-21T14:14:38.986Z
+
+--- Item 5 ---
+Text: Bruce used to celebrate Halloween with his kids and Yvette in a townhome area called River Mark in Santa Clara, CA.
+Created At: 2025-03-21T01:38:49.601Z
+
+--- Item 6 ---
+Text: Bruce has memories of holiday-themed events in a place in the mountains on the way to Monterey, which included activities like a petting zoo, a train ride, a hayride, and holiday themes for Halloween and Christmas.
+Created At: 2025-03-21T01:38:49.601Z
+
+--- Item 7 ---
+Text: Bruce has a significant childhood and young adulthood connection to the Santa Cruz Beach Boardwalk, which he also associates with his children's childhood.
+Created At: 2025-03-21T01:38:49.601Z
+
+--- Item 8 ---
+Text: Bruce remembers activities at the Santa Cruz Beach Boardwalk, including riding a merry-go-round, playing games, and enjoying rides like roller coasters and bumper cars.
+Created At: 2025-03-21T01:38:49.601Z
+
+--- Item 9 ---
+Text: Bruce dated Claire Tracy and experienced acid reflux for the first time after a meal and hot tub experience with her.
+Created At: 2025-03-21T01:38:49.601Z
+
+--- Item 10 ---
+Text: Bruce has bipolar disorder.
+Created At: 2025-03-21T01:38:49.601Z
+
+--- Item 11 ---
+Text: Bruce was married to Dorina Merganova and they got divorced before he met Yvette.
+Created At: 2025-03-21T01:38:49.601Z
+
+--- Item 12 ---
+Text: Bruce started chatting online with Yvette after his divorce and went to Mexico to meet her.
+Created At: 2025-03-21T01:38:49.601Z
+
+--- Item 13 ---
+Text: Bruce had a significant crush on a girl named Joan Crowley during his high school years.
+Created At: 2025-03-21T01:38:49.601Z
+
+--- Item 14 ---
+Text: Bruce has a pet named Peach.
+Created At: 2025-03-20T15:32:21.598Z
+
+--- Item 15 ---
+Text: Bruce takes Peach outside regularly.
+Created At: 2025-03-20T15:32:21.598Z
+
+--- Item 16 ---
+Text: Bruce refers to himself as 'Papa' in relation to Peach.
+Created At: 2025-03-20T15:32:21.598Z
+
+--- Item 17 ---
+Text: Bruce used to live in New Jersey.
+Created At: 2025-03-20T01:20:08.657Z
+
+--- Item 18 ---
+Text: Bruce's full name is Bruce Bookman.
+Created At: 2025-03-19T15:02:24.463Z
+
+--- Item 19 ---
+Text: Bruce was born on February 23, 1968.
+Created At: 2025-03-19T15:02:24.463Z
+
+--- Item 20 ---
+Text: Bruce's last name is Bookman.
+Created At: 2025-03-19T14:20:21.363Z
+
+--- Item 21 ---
+Text: Bruce's date of birth is February 23, 1968.
+Created At: 2025-03-19T14:20:21.363Z
+
+--- Item 22 ---
+Text: Bruce is a very technical person who understands computers well.
+Created At: 2025-03-19T14:20:21.363Z
+
+--- Item 23 ---
+Text: Bruce appears to work at Walgreens.
+Created At: 2025-03-18T18:35:04.011Z
+
+--- Item 24 ---
+Text: Bruce uses tax software to assist with tax filings, including H&R Block and TurboTax.
+Created At: 2025-03-18T13:12:35.430Z
+
+--- Item 25 ---
+Text: Bruce has knowledge of tax filing options, including married filing jointly and separately, and head of household.
+Created At: 2025-03-18T13:12:35.430Z
+
+--- Item 26 ---
+Text: Bruce previously worked in Silicon Valley.
+Created At: 2025-03-18T13:12:35.430Z
+
+--- Item 27 ---
+Text: Bruce's last name is Bookman.
+Created At: 2025-03-18T12:43:44.716Z
+
+--- Item 28 ---
+Text: Bruce's phone number is 669-221-9612.
+Created At: 2025-03-18T12:43:44.716Z
+
+--- Item 29 ---
+Text: Bruce was born on February 23, 1968.
+Created At: 2025-03-18T12:43:44.716Z
+
+--- Item 30 ---
+Text: Bruce has dogs.
+Created At: 2025-03-17T18:24:22.947Z
+
+--- Item 31 ---
+Text: Bruce's last name is Bookman.
+Created At: 2025-03-17T18:07:29.737Z
+
+--- Item 32 ---
+Text: Bruce's date of birth is February 23, 1968.
+Created At: 2025-03-17T18:07:29.737Z
+
+--- Item 33 ---
+Text: Bruce can be reached at 669-221-9612.
+Created At: 2025-03-17T18:07:29.737Z
+
+--- Item 34 ---
+Text: Bruce has an appointment with Larry Gerstenhaber Telehealth.
+Created At: 2025-03-17T18:07:29.737Z
+
+--- Item 35 ---
+Text: Bruce feels he has less free time as he has gotten older.
+Created At: 2025-03-16T19:33:29.370Z
+
+--- Item 36 ---
+Text: Bruce has hosted events at his house.
+Created At: 2025-03-16T19:33:29.370Z
+
+--- Item 37 ---
+Text: Bruce has played the role of Santa Claus and Peppa Pig in costume.
+Created At: 2025-03-16T19:33:29.370Z
+
+--- Item 38 ---
+Text: Bruce enjoys 80s metal rock music.
+Created At: 2025-03-16T19:33:29.370Z
+
+--- Item 39 ---
+Text: Bruce likes Ozzy Osbourne, Journey, and Def Leppard.
+Created At: 2025-03-16T19:33:29.370Z
+
+--- Item 40 ---
+Text: Bruce has two dogs named Peach and Grape.
+Created At: 2025-03-16T16:50:05.186Z
+
+--- Item 41 ---
+Text: Bruce is aware of tornado watches and weather conditions.
+Created At: 2025-03-16T16:50:05.186Z
+
+--- Item 42 ---
+Text: Bruce is conscious about preparing food to minimize mess.
+Created At: 2025-03-16T16:50:05.186Z
+
+--- Item 43 ---
+Text: Bruce has experience dressing up as characters such as Peppa Pig and an astronaut.
+Created At: 2025-03-16T16:50:05.186Z
+
+--- Item 44 ---
+Text: Bruce likes shopping at Harris Teeter.
+Created At: 2025-03-16T14:30:10.162Z
+
+--- Item 45 ---
+Text: Bruce is trying to manage a situation involving medication and care.
+Created At: 2025-03-16T14:07:51.293Z
+
+--- Item 46 ---
+Text: Bruce has a Macintosh laptop.
+Created At: 2025-03-16T14:07:51.293Z
+
+--- Item 47 ---
+Text: Bruce has some familiarity with Mac OS devices.
+Created At: 2025-03-16T14:07:51.293Z
+
+--- Item 48 ---
+Text: Bruce takes responsibility for preparing breakfast for others.
+Created At: 2025-03-16T13:13:39.955Z
+
+--- Item 49 ---
+Text: Bruce is concerned about the well-being of others and offers medicine if needed.
+Created At: 2025-03-16T13:13:39.955Z
+
+--- Item 50 ---
+Text: Bruce is familiar with and uses technology like Alexa and robots.
+Created At: 2025-03-16T13:13:39.955Z
+
+--- Item 51 ---
+Text: Bruce likes English muffins.
+Created At: 2025-03-16T13:13:39.955Z
+
+--- Item 52 ---
+Text: Bruce is involved in organizing or being part of a birthday party.
+Created At: 2025-03-16T13:13:39.955Z
+
+--- Item 53 ---
+Text: Bruce interacts with someone named Benetton and others frequently, indicating he likely lives with or spends a lot of time with them.
+Created At: 2025-03-16T13:13:39.955Z
+
+--- Item 54 ---
+Text: Bruce is concerned about weight management and monitors his weight and blood glucose levels.
+Created At: 2025-03-15T16:44:14.338Z
+
+--- Item 55 ---
+Text: Bruce prefers to handle certain tasks personally rather than relying on others.
+Created At: 2025-03-15T16:44:14.338Z
+
+--- Item 56 ---
+Text: Bruce lives in the United States and is familiar with the tax due dates.
+Created At: 2025-03-15T16:44:14.338Z
+
+--- Item 57 ---
+Text: Bruce has a pet dog.
+Created At: 2025-03-14T16:41:06.555Z
+
+--- Item 58 ---
+Text: Bruce is aware of the Holly Festival and has attended it.
+Created At: 2025-03-14T16:20:23.282Z
+
+--- Item 59 ---
+Text: Bruce monitors his weight regularly.
+Created At: 2025-03-14T14:33:23.245Z
+
+--- Item 60 ---
+Text: Bruce monitors his blood glucose levels.
+Created At: 2025-03-14T14:33:23.245Z
+
+--- Item 61 ---
+Text: Bruce uses Alexa for setting timers.
+Created At: 2025-03-14T14:33:23.245Z
+
+--- Item 62 ---
+Text: Bruce is interested in calculating an average of his blood glucose readings.
+Created At: 2025-03-14T14:33:23.245Z
+
+--- Item 63 ---
+Text: Bruce's current weight is 187 lbs.
+Created At: 2025-03-14T13:50:38.389Z
+
+--- Item 64 ---
+Text: Bruce's blood glucose level is 120.
+Created At: 2025-03-14T13:50:38.389Z
+
+--- Item 65 ---
+Text: Bruce has a child named Bennetton.
+Created At: 2025-03-14T12:07:37.291Z
+
+--- Item 66 ---
+Text: Bruce has a dog named Peach.
+Created At: 2025-03-14T11:48:53.006Z
+
+--- Item 67 ---
+Text: Bruce struggles with being tired and overwhelmed.
+Created At: 2025-03-14T01:59:58.147Z
+
+--- Item 68 ---
+Text: Benetton is my son. He has autism 
+Created At: 2025-03-13T13:25:59.114Z
+
+--- Item 69 ---
+Text: Bruce enjoyed visiting California's Great America with his family, and it is a significant part of his family history.
+Created At: 2025-03-13T02:55:07.153Z
+
+--- Item 70 ---
+Text: Bruce attended performances at the Montalvo Arts Center in Saratoga.
+Created At: 2025-03-13T02:55:07.153Z
+
+--- Item 71 ---
+Text: Bruce has memories of going to Lexington Reservoir.
+Created At: 2025-03-13T02:55:07.153Z
+
+--- Item 72 ---
+Text: Bruce enjoys interacting with customers at his job and joking with them.
+Created At: 2025-03-13T02:55:07.153Z
+
+--- Item 73 ---
+Text: Bruce experiences less anxiety since transitioning from shift lead to customer service associate.
+Created At: 2025-03-13T02:55:07.153Z
+
+--- Item 74 ---
+Text: Bruce finds his work at Walgreens to be very physical.
+Created At: 2025-03-13T02:55:07.153Z
+
+--- Item 75 ---
+Text: Bruce values an amusement park pass for its flexibility and convenience in visit duration.
+Created At: 2025-03-13T02:55:07.153Z
+
+--- Item 76 ---
+Text: Bruce has been to Fairy Land, which he describes as a really old park.
+Created At: 2025-03-13T02:55:07.153Z
+
+--- Item 77 ---
+Text: Bruce worked as a shift lead at Walgreens.
+Created At: 2025-03-13T02:55:07.153Z
+
+--- Item 78 ---
+Text: Bruce prefers a job that pays better than his current position.
+Created At: 2025-03-13T02:55:07.153Z
+
+--- Item 79 ---
+Text: Bruce has memories of going to Happy Hollow Park with his sons.
+Created At: 2025-03-13T02:55:07.153Z
+
+--- Item 80 ---
+Text: Bruce is currently working as a customer service associate at Walgreens.
+Created At: 2025-03-13T02:55:07.153Z
+
+--- Item 81 ---
+Text: Bruce finds Tasty Science enjoyable.
+Created At: 2025-03-12T20:22:10.300Z
+
+--- Item 82 ---
+Text: Bruce has been a part of the Boy Scouts.
+Created At: 2025-03-12T20:22:10.300Z
+
+--- Item 83 ---
+Text: Bruce has done science experiments multiple times.
+Created At: 2025-03-12T20:22:10.300Z
+
+--- Item 84 ---
+Text: Bruce has visited a place where they fly gas-powered model airplanes.
+Created At: 2025-03-12T20:22:10.300Z
+
+--- Item 85 ---
+Text: Bruce has played the game Exploding Kittens.
+Created At: 2025-03-12T20:22:10.300Z
+
+--- Item 86 ---
+Text: Bruce has played a game involving throwing burritos.
+Created At: 2025-03-12T20:22:10.300Z
+
+--- Item 87 ---
+Text: Bruce has built or launched a water rocket.
+Created At: 2025-03-12T20:22:10.300Z
+
+--- Item 88 ---
+Text: Bruce has visited Rancho San Antonio Park.
+Created At: 2025-03-12T17:34:54.473Z
+
+--- Item 89 ---
+Text: Bruce has visited Emma Prusch Farm Park.
+Created At: 2025-03-12T17:34:54.473Z
+
+--- Item 90 ---
+Text: Bruce has visited San Jose History Park.
+Created At: 2025-03-12T17:34:54.473Z
+
+--- Item 91 ---
+Text: Bruce enjoys visiting parks with historical or educational features.
+Created At: 2025-03-12T17:34:54.473Z
+
+--- Item 92 ---
+Text: Bruce has an interest in petting zoos and small animal exhibits.
+Created At: 2025-03-12T17:34:54.473Z
+
+--- Item 93 ---
+Text: Bruce might have an interest in mental health and psychiatric services.
+Created At: 2025-03-12T16:45:35.968Z
+
+--- Item 94 ---
+Text: Bruce plans to start meditating with Russell to promote well-being.
+Created At: 2025-03-12T14:29:27.975Z
+
+--- Item 95 ---
+Text: Bruce is dealing with a situation involving a person named Russell, who has drug use problems.
+Created At: 2025-03-12T14:29:27.975Z
+
+--- Item 96 ---
+Text: Bruce is involved in managing Russell's school attendance and related issues.
+Created At: 2025-03-12T14:29:27.975Z
+
+--- Item 97 ---
+Text: Bruce is willing to handle the removal of a door and aims to fix issues proactively.
+Created At: 2025-03-12T13:30:57.185Z
+
+--- Item 98 ---
+Text: Bruce is familiar with Linda Mood Bell in California, particularly in relation to behavioral therapies for dyslexia.
+Created At: 2025-03-12T13:30:57.185Z
+
+--- Item 99 ---
+Text: Bruce has an older son named Russell.
+Created At: 2025-03-12T13:00:07.800Z
+
+--- Item 100 ---
+Text: Bruce wants to start a journal or diary to remember the good times with his family.
+Created At: 2025-03-12T13:00:07.800Z
+
+--- Item 101 ---
+Text: Bruce struggles emotionally seeing his son Russell in difficulties.
+Created At: 2025-03-12T13:00:07.800Z
+
+--- Item 102 ---
+Text: Bruce enjoys exploring San Francisco with his sons.
+Created At: 2025-03-12T13:00:07.800Z
+
+--- Item 103 ---
+Text: Bruce has two sons, Russell and Benetton.
+Created At: 2025-03-12T13:00:07.800Z
+
+--- Item 104 ---
+Text: Bruce values creating and remembering good memories with his family.
+Created At: 2025-03-12T13:00:07.800Z
+
+--- Item 105 ---
+Text: Bruce often planned activities and events to enjoy with his sons.
+Created At: 2025-03-12T13:00:07.800Z
+
+--- Item 106 ---
+Text: Bruce believes remembering happy times can make someone feel loved and have a good life.
+Created At: 2025-03-12T12:18:52.186Z
+
+--- Item 107 ---
+Text: Bruce plans to start meditating with Russell to help with personal well-being.
+Created At: 2025-03-12T12:18:52.186Z
+
+--- Item 108 ---
+Text: Bruce tracks his exercise and health-related activities.
+Created At: 2025-03-12T00:18:57.957Z
+
+--- Item 109 ---
+Text: Bruce has contacted a neuropsychiatry office in the past.
+Created At: 2025-03-11T22:05:08.607Z
+
+--- Item 110 ---
+Text: Bruce is familiar with Alexa and uses voice commands to set timers.
+Created At: 2025-03-11T22:05:08.607Z
+
+--- Item 111 ---
+Text: Bruce has some knowledge about stock trading, including after-hours trading.
+Created At: 2025-03-11T22:05:08.607Z
+
+--- Item 112 ---
+Text: Bruce has made calls to neuropsychiatry offices more than once without success.
+Created At: 2025-03-11T22:05:08.607Z
+
+--- Item 113 ---
+Text: Bruce is knowledgeable about the U.S. school credit system and class schedules.
+Created At: 2025-03-11T22:05:08.607Z
+
+--- Item 114 ---
+Text: Bruce has an interest in music, possibly in specific bands or albums.
+Created At: 2025-03-11T22:05:08.607Z
+
+--- Item 115 ---
+Text: Bruce has an older son who has dyslexia and has faced multiple challenges, including social interaction issues and a history of drug use.
+Created At: 2025-03-11T20:18:49.042Z
+
+--- Item 116 ---
+Text: Bruce's son experienced difficulty in school and social interactions, partly due to past health issues and family dynamics, such as Bruce's hospitalization and subsequent separation from his wife's.
+Created At: 2025-03-11T20:18:49.042Z
+
+--- Item 117 ---
+Text: Bruce's son overdosed on marijuana and has a history of using steroids to enhance his workout routine.
+Created At: 2025-03-11T20:18:49.042Z
+
+--- Item 118 ---
+Text: Bruce is responsible for providing structure and support to his son, while also encouraging him to take responsibility for his own actions.
+Created At: 2025-03-11T20:18:49.042Z
+
+--- Item 119 ---
+Text: Bruce considers himself an atheist and a scientist, and he's navigating his son's interest in faith-based activities.
+Created At: 2025-03-11T20:18:49.042Z
+
+--- Item 120 ---
+Text: Bruce participated in an intake session with an employment assistant to explore support for maintaining employment.
+Created At: 2025-03-11T20:18:49.042Z
+
+--- Item 121 ---
+Text: Bruce is exploring support options with therapists and psychiatrists for his son, to address social and psychological challenges.
+Created At: 2025-03-11T20:18:49.042Z
+
+--- Item 122 ---
+Text: Bruce has dealt with anxiety and reflects on how his father's parenting impacted his self-criticism.
+Created At: 2025-03-11T20:18:49.042Z
+
+--- Item 123 ---
+Text: Bruce has a younger son named Benetton, who is autistic.
+Created At: 2025-03-11T20:18:49.042Z
+
+--- Item 124 ---
+Text: Bruce has Medicaid.
+Created At: 2025-03-11T18:59:21.453Z
+
+--- Item 125 ---
+Text: Bruce is 57 years old.
+Created At: 2025-03-11T18:59:21.453Z
+
+--- Item 126 ---
+Text: Bruce is separated from his spouse but they live in the same house.
+Created At: 2025-03-11T18:59:21.453Z
+
+--- Item 127 ---
+Text: Bruce has a type 2 diabetes diagnosis.
+Created At: 2025-03-11T18:59:21.453Z
+
+--- Item 128 ---
+Text: Bruce has high blood pressure.
+Created At: 2025-03-11T18:59:21.453Z
+
+--- Item 129 ---
+Text: Bruce has two dogs.
+Created At: 2025-03-11T18:59:21.453Z
+
+--- Item 130 ---
+Text: Bruce has a son who is autistic.
+Created At: 2025-03-11T18:59:21.453Z
+
+--- Item 131 ---
+Text: Bruce has a visual impairment but is not legally blind.
+Created At: 2025-03-11T18:59:21.453Z
+
+--- Item 132 ---
+Text: Bruce experiences anxiety and mania.
+Created At: 2025-03-11T18:59:21.453Z
+
+--- Item 133 ---
+Text: Bruce has a psychologist and a psychiatrist.
+Created At: 2025-03-11T18:59:21.453Z
+
+--- Item 134 ---
+Text: Bruce's primary physician is Mark Armitage at Pelican Family Medicine.
+Created At: 2025-03-11T18:59:21.453Z
+
+--- Item 135 ---
+Text: Bruce is looking for a higher-paying job.
+Created At: 2025-03-11T18:59:21.453Z
+
+--- Item 136 ---
+Text: Bruce has a bachelor's degree.
+Created At: 2025-03-11T18:59:21.453Z
+
+--- Item 137 ---
+Text: Bruce has a son named Russell who is 18 years old.
+Created At: 2025-03-11T18:59:21.453Z
+
+--- Item 138 ---
+Text: Bruce has a child who is around 18 years old.
+Created At: 2025-03-11T17:57:36.771Z
+
+--- Item 139 ---
+Text: Bruce is a father.
+Created At: 2025-03-11T17:57:36.771Z
+
+--- Item 140 ---
+Text: Bruce is involved in discussions about schooling and legal implications with his child.
+Created At: 2025-03-11T17:57:36.771Z
+
+--- Item 141 ---
+Text: Bruce is knowledgeable about AI and its capabilities and limitations.
+Created At: 2025-03-11T17:57:36.771Z
+
+--- Item 142 ---
+Text: Bruce uses Discord and is in the bee community.
+Created At: 2025-03-11T17:57:36.771Z
+
+--- Item 143 ---
+Text: Bruce is familiar with Life Source, which offers both psychology and psychiatry services.
+Created At: 2025-03-11T16:03:59.304Z
+
+--- Item 144 ---
+Text: Bruce's last name is Bookman.
+Created At: 2025-03-11T15:38:45.225Z
+
+--- Item 145 ---
+Text: Bruce is a patient with a serious and persistent mental illness diagnosis.
+Created At: 2025-03-11T15:38:45.225Z
+
+--- Item 146 ---
+Text: Bruce was born on February 23, 1968.
+Created At: 2025-03-11T15:38:45.225Z
+
+--- Item 147 ---
+Text: Bruce is familiar with Coastal Carolina Neuro Psychiatric Center.
+Created At: 2025-03-11T15:00:45.568Z
+
+--- Item 148 ---
+Text: Bruce uses Alexa.
+Created At: 2025-03-11T14:47:24.449Z
+
+--- Item 149 ---
+Text: Bruce has a dog named Peach.
+Created At: 2025-03-11T14:32:21.778Z
+
+--- Item 150 ---
+Text: Bruce is considering getting a space heater.
+Created At: 2025-03-11T14:32:21.778Z
+
+--- Item 151 ---
+Text: Bruce has a pet dog named Grape.
+Created At: 2025-03-11T14:01:30.308Z
+
+--- Item 152 ---
+Text: Bruce monitors his blood glucose levels.
+Created At: 2025-03-11T12:51:20.442Z
+
+--- Item 153 ---
+Text: Bruce uses online payments.
+Created At: 2025-03-11T12:51:20.442Z
+
+--- Item 154 ---
+Text: Bruce was involved in a decision to potentially cancel a party due to financial concerns.
+Created At: 2025-03-11T12:51:20.442Z
+
+--- Item 155 ---
+Text: Bruce frequently engages with technology and gadgets that have functionalities such as muting and pairing.
+Created At: 2025-03-11T02:36:02.468Z
+
+--- Item 156 ---
+Text: Bruce feels more comfortable at work after deciding to take a less demanding role.
+Created At: 2025-03-04T20:53:22.620Z
+
+--- Item 157 ---
+Text: Bruce experiences anxiety related to job performance and responsibility.
+Created At: 2025-03-04T20:53:22.620Z
+
+--- Item 158 ---
+Text: Bruce is considering undergoing an evaluation recommended by his physician.
+Created At: 2025-03-04T20:53:22.620Z
+
+--- Item 159 ---
+Text: Bruce has a secret stash of money for personal use.
+Created At: 2025-03-04T20:53:22.620Z
+
+--- Item 160 ---
+Text: Bruce has experienced manic behavior in the past but does not always feel manic during such occurrences.
+Created At: 2025-03-04T20:53:22.620Z
+
+--- Item 161 ---
+Text: Bruce sees a therapist for mental health support.
+Created At: 2025-03-04T20:53:22.620Z
+
+--- Item 162 ---
+Text: Bruce is interested in finding a more fulfilling job but feels constrained by his current employment capabilities.
+Created At: 2025-03-04T20:53:22.620Z
+
+--- Item 163 ---
+Text: Bruce adjusts his medication dosage under the guidance of his psychiatrist.
+Created At: 2025-03-04T20:53:22.620Z
+
+--- Item 164 ---
+Text: Bruce has been diagnosed with bipolar disorder.
+Created At: 2025-03-04T20:53:22.620Z
+
+--- Item 165 ---
+Text: Bruce has concerns about the future, particularly regarding job stability and economic conditions.
+Created At: 2025-03-04T20:53:22.620Z
+
+--- Item 166 ---
+Text: Bruce desires emotional and physical intimacy but experiences feelings of loneliness.
+Created At: 2025-03-04T20:53:22.620Z
+
+--- Item 167 ---
+Text: Bruce participates in a Medicaid-supported program for employment and mental health services.
+Created At: 2025-03-04T20:53:22.620Z
+
+--- Item 168 ---
+Text: Bruce has anxiety and memory issues that impact his work.
+Created At: 2025-03-04T20:53:22.620Z
+
+--- Item 169 ---
+Text: Bruce works as a shift lead at Walgreens but plans to step down to an associate position.
+Created At: 2025-03-04T20:53:22.620Z
+
+--- Item 170 ---
+Text: Bruce is on medication for bipolar disorder.
+Created At: 2025-03-04T19:40:41.144Z
+
+--- Item 171 ---
+Text: Bruce has a therapist.
+Created At: 2025-03-04T19:40:41.144Z
+
+--- Item 172 ---
+Text: Bruce is familiar with SMART goals and appreciates action-oriented tasks.
+Created At: 2025-03-04T19:40:41.144Z
+
+--- Item 173 ---
+Text: Bruce has experience working in technical careers and believes he is skilled in areas requiring high technical skill.
+Created At: 2025-03-04T19:40:41.144Z
+
+--- Item 174 ---
+Text: Bruce is currently employed and seeks better job opportunities, particularly in software or remote work.
+Created At: 2025-03-04T19:40:41.144Z
+
+--- Item 175 ---
+Text: Bruce likes the opportunity to walk around as part of his routine.
+Created At: 2025-03-04T18:09:22.385Z
+
+--- Item 176 ---
+Text: Bruce is considering different lease terms for an apartment, including one-year and two-year agreements.
+Created At: 2025-03-04T18:09:22.385Z
+
+--- Item 177 ---
+Text: Bruce has lived in his current location for two years.
+Created At: 2025-03-04T18:09:22.385Z
+
+--- Item 178 ---
+Text: Bruce works at Walgreens.
+Created At: 2025-03-04T16:24:12.074Z
+
+--- Item 179 ---
+Text: Bruce's A1C level is 7.8.
+Created At: 2025-03-04T16:24:12.074Z
+
+--- Item 180 ---
+Text: Bruce has a history of injections for his right elbow.
+Created At: 2025-03-04T16:24:12.074Z
+
+--- Item 181 ---
+Text: Bruce wears a sleeve for his elbow, especially during work.
+Created At: 2025-03-04T16:24:12.074Z
+
+--- Item 182 ---
+Text: Bruce has memory and attention concerns.
+Created At: 2025-03-04T16:24:12.074Z
+
+--- Item 183 ---
+Text: Bruce uses a CPAP for sleep apnea.
+Created At: 2025-03-04T16:24:12.074Z
+
+--- Item 184 ---
+Text: Bruce Bookman's phone number is 669-221-9612.
+Created At: 2025-02-27T15:12:15.903Z
+
+--- Item 185 ---
+Text: Bruce has been offered a position as an associate by his store manager.
+Created At: 2025-02-27T02:51:10.608Z
+
+--- Item 186 ---
+Text: Bruce communicates with colleagues and supervisors to resolve work-related issues.
+Created At: 2025-02-26T18:51:08.817Z
+
+--- Item 187 ---
+Text: Bruce shows appreciation for helpful colleagues.
+Created At: 2025-02-26T18:51:08.817Z
+
+--- Item 188 ---
+Text: Bruce values feedback from coworkers and supervisors.
+Created At: 2025-02-26T18:51:08.817Z
+
+--- Item 189 ---
+Text: Bruce is concerned about maintaining a work-life balance.
+Created At: 2025-02-26T18:51:08.817Z
+
+--- Item 190 ---
+Text: Bruce is aware of and respects company policies.
+Created At: 2025-02-26T18:51:08.817Z
+
+--- Item 191 ---
+Text: Bruce is open to discussing work-related decisions with his significant other.
+Created At: 2025-02-26T18:51:08.817Z
+
+--- Item 192 ---
+Text: Bruce has communication with Ivette.
+Created At: 2025-02-26T16:06:04.482Z
+
+--- Item 193 ---
+Text: Bruce is a shift lead and is responsible for closing a store.
+Created At: 2025-02-26T14:43:55.471Z
+
+--- Item 194 ---
+Text: Bruce experiences lapses in memory or distractibility that impact his job performance.
+Created At: 2025-02-26T14:43:55.471Z
+
+--- Item 195 ---
+Text: Bruce is organized and uses various systems to manage his tasks and memory.
+Created At: 2025-02-26T14:43:55.471Z
+
+--- Item 196 ---
+Text: Bruce's wife has noticed that he forgets things more frequently as he ages.
+Created At: 2025-02-26T14:43:55.471Z
+
+--- Item 197 ---
+Text: Bruce is seeing a psychologist for his mental health.
+Created At: 2025-02-26T14:43:55.471Z
+
+--- Item 198 ---
+Text: Bruce takes over-the-counter medication for allergies and sinus issues, including Dayquil, Nyquil, and Claritin.
+Created At: 2025-02-26T14:43:55.471Z
+
+--- Item 199 ---
+Text: Bruce is working with his healthcare providers to resolve his memory and mood issues.
+Created At: 2025-02-26T14:43:55.471Z
+
+--- Item 200 ---
+Text: Bruce has difficulty holding a job due to issues with executing simple tasks.
+Created At: 2025-02-26T14:43:55.471Z
+
+--- Item 201 ---
+Text: Bruce experiences mood dysregulation, particularly when having a sinus infection.
+Created At: 2025-02-26T14:43:55.471Z
+
+--- Item 202 ---
+Text: Bruce has been prescribed Xanax and plans to take it before work to manage anxiety.
+Created At: 2025-02-26T14:43:55.471Z
+
+--- Item 203 ---
+Text: Bruce might be involved in cooking or preparing food, specifically chicken.
+Created At: 2025-02-25T21:56:40.466Z
+
+--- Item 204 ---
+Text: Bruce is 57 years old.
+Created At: 2025-02-25T20:57:47.638Z
+
+--- Item 205 ---
+Text: Bruce has a habit of staying organized using calendars, to-do lists, and sticky notes.
+Created At: 2025-02-25T20:57:47.638Z
+
+--- Item 206 ---
+Text: Bruce has a history of manic episodes.
+Created At: 2025-02-25T20:57:47.638Z
+
+--- Item 207 ---
+Text: Bruce works in a role that involves managing cash registers and closing a store.
+Created At: 2025-02-25T20:57:47.638Z
+
+--- Item 208 ---
+Text: Bruce has a medical history that includes bipolar disorder.
+Created At: 2025-02-25T20:57:47.638Z
+
+--- Item 209 ---
+Text: Bruce had lost previous jobs and is concerned about it happening again.
+Created At: 2025-02-25T20:57:47.638Z
+
+--- Item 210 ---
+Text: Bruce finds value in seeking medical advice for his concerns.
+Created At: 2025-02-25T20:57:47.638Z
+
+--- Item 211 ---
+Text: Bruce values organization in his work processes.
+Created At: 2025-02-25T20:57:47.638Z
+
+--- Item 212 ---
+Text: Bruce has multiple mechanisms to maintain organization, including electronic tools.
+Created At: 2025-02-25T20:57:47.638Z
+
+--- Item 213 ---
+Text: Bruce is seeing a psychiatrist and a regular doctor for his concerns.
+Created At: 2025-02-25T20:57:47.638Z
+
+--- Item 214 ---
+Text: Bruce has a son who may have mild ADHD and dyslexia.
+Created At: 2025-02-25T20:57:47.638Z
+
+--- Item 215 ---
+Text: Bruce's grandfather had Alzheimer's disease.
+Created At: 2025-02-25T20:57:47.638Z
+
+--- Item 216 ---
+Text: Bruce is interested in problem-solving and finding solutions to his difficulties.
+Created At: 2025-02-25T20:57:47.638Z
+
+--- Item 217 ---
+Text: Bruce has worked at his current job for around a month.
+Created At: 2025-02-25T20:57:47.638Z
+
+--- Item 218 ---
+Text: Bruce feels supported by his professional allies in addressing his concerns.
+Created At: 2025-02-25T20:57:47.638Z
+
+--- Item 219 ---
+Text: Bruce needs to create a business card with his medical conditions and medications listed.
+Created At: 2025-02-25T14:17:23.528Z
+
+--- Item 220 ---
+Text: Bruce is considering mentioning the location of his important documents, such as his will and health care directive.
+Created At: 2025-02-25T14:17:23.528Z
+
+--- Item 221 ---
+Text: Bruce is concerned about his job performance.
+Created At: 2025-02-24T13:46:00.336Z
+
+--- Item 222 ---
+Text: Bruce has at least one child in college and another child who is 16 years old.
+Created At: 2025-02-24T13:46:00.336Z
+
+--- Item 223 ---
+Text: Bruce seems to have experience working as a shift lead.
+Created At: 2025-02-24T13:46:00.336Z
+
+--- Item 224 ---
+Text: Bruce plans to see a doctor about potential attention issues.
+Created At: 2025-02-24T13:46:00.336Z
+
+--- Item 225 ---
+Text: Bruce enjoys cake.
+Created At: 2025-02-24T03:05:34.090Z
+
+--- Item 226 ---
+Text: Bruce previously worked at Lowe's.
+Created At: 2025-02-24T03:05:34.090Z
+
+--- Item 227 ---
+Text: Bruce is involved in tasks that require physical manipulation and adjustment.
+Created At: 2025-02-23T21:35:57.587Z
+
+--- Item 228 ---
+Text: Bruce takes medication for bipolar disorder.
+Created At: 2025-02-23T20:56:15.934Z
+
+--- Item 229 ---
+Text: Bruce is trying to manage his behavior related to bipolar disorder.
+Created At: 2025-02-23T20:56:15.934Z
+
+--- Item 230 ---
+Text: Bruce doesn't take things personally and values self-awareness in managing his behavior.
+Created At: 2025-02-23T20:56:15.934Z
+
+--- Item 231 ---
+Text: Bruce is a member of IHOP's rewards club.
+Created At: 2025-02-23T18:17:20.840Z
+
+--- Item 232 ---
+Text: Bruce is likely involved in conversations about real estate transactions and capital gains.
+Created At: 2025-02-23T18:17:20.840Z
+
+--- Item 233 ---
+Text: Bruce is familiar with the U.S. tax code, specifically the 1031 exchange related to real estate transactions.
+Created At: 2025-02-23T18:17:20.840Z
+
+--- Item 234 ---
+Text: Bruce has a connection to pharmacy operations or works at a pharmacy.
+Created At: 2025-02-22T21:16:08.390Z
+
+--- Item 235 ---
+Text: Bruce works at a place that offers a credit card with a sign-up incentive.
+Created At: 2025-02-22T21:16:08.390Z
+
+--- Item 236 ---
+Text: Bruce is interested in reading books.
+Created At: 2025-02-22T21:16:08.390Z
+
+--- Item 237 ---
+Text: Bruce is familiar with the operations of a Walgreens or a similar retail store.
+Created At: 2025-02-22T21:16:08.390Z
+
+--- Item 238 ---
+Text: Bruce appears to be involved in handling customer service.
+Created At: 2025-02-22T21:16:08.390Z
+
+--- Item 239 ---
+Text: Bruce is engaged in managing or handling financial transactions, such as counting money.
+Created At: 2025-02-22T21:16:08.390Z
+
+--- Item 240 ---
+Text: Bruce works at Walgreens.
+Created At: 2025-02-22T18:35:21.367Z
+
+--- Item 241 ---
+Text: Bruce seems to be interested in music.
+Created At: 2025-02-22T17:41:04.296Z
+
+--- Item 242 ---
+Text: Bruce uses Gemini Live to receive reminders spoken aloud.
+Created At: 2025-02-22T17:38:15.353Z
+
+--- Item 243 ---
+Text: Bruce is tracking his calorie intake to manage his weight.
+Created At: 2025-02-22T17:38:15.353Z
+
+--- Item 244 ---
+Text: Bruce's birthday is February 23, 1968.
+Created At: 2025-02-22T17:38:15.353Z
+
+--- Item 245 ---
+Text: Bruce weighs 190 lbs.
+Created At: 2025-02-22T17:38:15.353Z
+
+--- Item 246 ---
+Text: Bruce is trying to lose weight.
+Created At: 2025-02-22T17:38:15.353Z
+
+--- Item 247 ---
+Text: Bruce is moderately active and walks approximately 9,000 steps a day.
+Created At: 2025-02-22T17:38:15.353Z
+
+--- Item 248 ---
+Text: Bruce likes the bands Linkin Park, Korn, The Cure, Slipknot, Avatar, Depeche Mode, and Duran Duran.
+Created At: 2025-02-22T17:38:15.353Z
+
+--- Item 249 ---
+Text: Bruce works at Walgreens in Wilmington, NC.
+Created At: 2025-02-22T17:38:15.353Z
+
+--- Item 250 ---
+Text: Bruce has considered moving to a less expensive location to be closer to someone named Russell.
+Created At: 2025-02-20T15:53:46.479Z
+
+--- Item 251 ---
+Text: Bruce has a job that is less stressful compared to previous employment.
+Created At: 2025-02-20T15:53:46.479Z
+
+--- Item 252 ---
+Text: Bruce is concerned about the expense of living in California.
+Created At: 2025-02-20T15:53:46.479Z
+
+--- Item 253 ---
+Text: Bruce has contemplated the financial benefits of selling a house and renting two smaller places.
+Created At: 2025-02-20T15:53:46.479Z
+
+--- Item 254 ---
+Text: Bruce's parents are involved in discussions regarding housing and financial decisions.
+Created At: 2025-02-20T15:53:46.479Z
+
+--- Item 255 ---
+Text: Bruce has explored investment solutions and income generation from selling property.
+Created At: 2025-02-20T15:53:46.479Z
+
+--- Item 256 ---
+Text: Bruce values support systems for young adults, as suggested by the consideration of staying close to Russell for support.
+Created At: 2025-02-20T15:53:46.479Z
+
+--- Item 257 ---
+Text: Bruce has been feeling depressed for approximately seven years.
+Created At: 2025-02-20T13:11:38.631Z
+
+--- Item 258 ---
+Text: Bruce prioritizes collaborative problem-solving.
+Created At: 2025-02-19T18:21:10.554Z
+
+--- Item 259 ---
+Text: Bruce values addressing financial discrepancies and ensuring they don't recur.
+Created At: 2025-02-19T18:21:10.554Z
+
+--- Item 260 ---
+Text: Bruce likes the band The Cure.
+Created At: 2025-02-19T17:46:34.809Z
+
+--- Item 261 ---
+Text: Bruce enjoys listening to emotional and moody music.
+Created At: 2025-02-19T17:46:34.809Z
+
+--- Item 262 ---
+Text: Bruce does not have a talent for playing musical instruments.
+Created At: 2025-02-19T17:46:34.809Z
+
+--- Item 263 ---
+Text: Bruce grew up in the 1980s and was drawn to alternative music.
+Created At: 2025-02-19T17:46:34.809Z
+
+--- Item 264 ---
+Text: Bruce was influenced by his friends Matt Aquino and Alan Clark in discovering alternative music.
+Created At: 2025-02-19T17:46:34.809Z
+
+--- Item 265 ---
+Text: Bruce liked the music of The Cure, Depeche Mode, The Smiths, and Catherine Wheel.
+Created At: 2025-02-19T17:46:34.809Z
+
+--- Item 266 ---
+Text: Bruce felt like an outsider in high school.
+Created At: 2025-02-19T17:46:34.809Z
+
+--- Item 267 ---
+Text: Bruce has bipolar disorder, which was not diagnosed until his 40s.
+Created At: 2025-02-19T17:46:34.809Z
+
+--- Item 268 ---
+Text: Bruce is an atheist.
+Created At: 2025-02-19T17:46:34.809Z
+
+--- Item 269 ---
+Text: Bruce considers himself an intellectual.
+Created At: 2025-02-19T17:46:34.809Z
+
+--- Item 270 ---
+Text: Bruce  has been married twice, first to Daren’s from Bulgaria and then to Ivette.
+Created At: 2025-02-19T17:46:34.809Z
+
+--- Item 271 ---
+Text: Bruce currently works at Walgreens as a shift supervisor.
+Created At: 2025-02-19T17:46:34.809Z
+
+--- Item 272 ---
+Text: Bruce values a low-stress job environment to help manage his bipolar disorder.
+Created At: 2025-02-19T17:46:34.809Z
+
+--- Item 273 ---
+Text: Bruce has seen benefit from staying connected to a therapist to help manage his bipolar disorder.
+Created At: 2025-02-19T17:46:34.809Z
+
+--- Item 274 ---
+Text: Bruce uses medication to manage his bipolar disorder.
+Created At: 2025-02-19T17:46:34.809Z
+
+--- Item 275 ---
+Text: Bruce believes sleep is important for his mental health and well-being.
+Created At: 2025-02-19T17:46:34.809Z
+
+--- Item 276 ---
+Text: Bruce has a garage.
+Created At: 2025-02-19T17:21:13.857Z
+
+--- Item 277 ---
+Text: Bruce values expressing love.
+Created At: 2025-02-19T17:21:13.857Z
+
+--- Item 278 ---
+Text: Bruce values expressing gratitude.
+Created At: 2025-02-19T17:21:13.857Z
+
+--- Item 279 ---
+Text: Grape is approximately 4 or 5 years old and is owned by Bruce's ex-wife, Ivette.
+Created At: 2025-02-19T16:56:54.187Z
+
+--- Item 280 ---
+Text: Peach is estimated to be around 12 or 13 years old.
+Created At: 2025-02-19T16:56:54.187Z
+
+--- Item 281 ---
+Text: Bruce has an ex-wife named Ivette, spelled with an I.
+Created At: 2025-02-19T16:56:54.187Z
+
+--- Item 282 ---
+Text: Bruce is allergic to some cats but likes both cats and dogs.
+Created At: 2025-02-19T16:56:54.187Z
+
+--- Item 283 ---
+Text: Bruce is currently reading a mystery book series called The Joe Brink Mysteries, written by his father, Phil Bookman.
+Created At: 2025-02-19T16:56:54.187Z
+
+--- Item 284 ---
+Text: Bruce prefers reading physical books over using an e-reader.
+Created At: 2025-02-19T16:56:54.187Z
+
+--- Item 285 ---
+Text: Bruce has a scientific skeptical mindset and appreciates scientific themes in media.
+Created At: 2025-02-19T16:56:54.187Z
+
+--- Item 286 ---
+Text: Bruce enjoys mystery and science fiction genres.
+Created At: 2025-02-19T16:56:54.187Z
+
+--- Item 287 ---
+Text: Bruce uses multiple systems for reminders, including an iPhone Reminders app, Alexa, and paper notes.
+Created At: 2025-02-19T16:56:54.187Z
+
+--- Item 288 ---
+Text: Bruce considers himself a scientific skeptic and has a background in science.
+Created At: 2025-02-19T16:56:54.187Z
+
+--- Item 289 ---
+Text: Bruce has two dogs: a Maltese Yorkie mix named Grape and a Maltese poodle mix named Peach.
+Created At: 2025-02-19T16:56:54.187Z
+
+--- Item 290 ---
+Text: Bruce's family is considering moving soon.
+Created At: 2025-02-19T15:12:19.723Z
+
+--- Item 291 ---
+Text: Bruce's older son is going to college soon.
+Created At: 2025-02-19T15:12:19.723Z
+
+--- Item 292 ---
+Text: Bruce reflects on his ability to be a good father.
+Created At: 2025-02-19T15:12:19.723Z
+
+--- Item 293 ---
+Text: Bruce's father made him feel like he couldn't earn his love.
+Created At: 2025-02-19T15:12:19.723Z
+
+--- Item 294 ---
+Text: Bruce has experienced loneliness and regrets.
+Created At: 2025-02-19T15:12:19.723Z
+
+--- Item 295 ---
+Text: Bruce wants his son to be prepared for life and happy.
+Created At: 2025-02-19T15:12:19.723Z
+
+--- Item 296 ---
+Text: Bruce is concerned about passing hurt or insecurity to his son.
+Created At: 2025-02-19T15:12:19.723Z
+
+--- Item 297 ---
+Text: Bruce is willing to assist others with writing letters if needed.
+Created At: 2025-02-19T14:55:10.708Z
+
+--- Item 298 ---
+Text: Bruce is interested in journaling his daily activities.
+Created At: 2025-02-19T14:52:06.967Z
+
+--- Item 299 ---
+Text: Bruce watches TV to relax.
+Created At: 2025-02-19T14:52:06.967Z
+
+--- Item 300 ---
+Text: Bruce shows interest in using a digital diary to keep track of his activities and thoughts.
+Created At: 2025-02-19T14:52:06.967Z
+
+--- Item 301 ---
+Text: Bruce had a conversation about a flight delay and strange encounter with another person on a flight.
+Created At: 2025-02-19T00:52:47.016Z
+
+--- Item 302 ---
+Text: Bruce has a pet named Grape.
+Created At: 2025-02-19T00:52:47.016Z
+
+--- Item 303 ---
+Text: My birthday is February 23, 1968
+Created At: 2025-02-19T00:02:47.424Z
+

@@ -131,16 +131,13 @@ async def fetch_all_pages(fetch_func, user_id):
 
 def save_to_file(data, data_type, original_data):
     """
-    Save data to JSON files in the data/json directory
+    Save data to JSON files in the data/json directory, only if there's new data
     
     Args:
         data: List of formatted data items (not used - kept for backward compatibility)
         data_type: Type of data (conversations, facts, todos)
         original_data: Raw data from API
     """
-    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-    app.logger.info(f"Saving {data_type} to JSON file with timestamp {timestamp}")
-    
     try:
         # Get absolute path for data directory
         current_dir = os.getcwd()
@@ -153,14 +150,62 @@ def save_to_file(data, data_type, original_data):
         
         app.logger.info(f"Created directories at {data_dir}")
         
-        # Save raw JSON for reference
-        json_file = os.path.join(json_dir, f"{data_type}_{timestamp}.json")
-        app.logger.info(f"Saving JSON data to {json_file}")
+        # Check for existing files of this data type
+        existing_files = [f for f in os.listdir(json_dir) if f.startswith(data_type) and f.endswith('.json')]
         
-        with open(json_file, 'w') as f:
-            json.dump(original_data, f, indent=2)
+        # Extract the actual data from the response dict
+        key_map = {
+            'conversations': 'conversations',
+            'facts': 'facts',
+            'todos': 'todos'
+        }
+        data_key = key_map.get(data_type)
+        
+        if not data_key or data_key not in original_data:
+            # If we can't find the key in the response or it's missing, use the whole response
+            current_data = original_data
+        else:
+            current_data = original_data[data_key]
+        
+        # Check if we need to save new data
+        new_data_to_save = True
+        latest_data = None
+        
+        # If we have existing files, check if the data is different
+        if existing_files:
+            # Sort by timestamp to get the latest file
+            latest_file = sorted(existing_files)[-1]
+            latest_file_path = os.path.join(json_dir, latest_file)
             
-        app.logger.info(f"Successfully wrote JSON file to {json_file}")
+            try:
+                with open(latest_file_path, 'r') as f:
+                    latest_data = json.load(f)
+                
+                # Compare data considering potential structure differences
+                if data_key in latest_data and data_key in original_data:
+                    if json.dumps(sorted(latest_data[data_key], key=lambda x: json.dumps(x, sort_keys=True))) == \
+                       json.dumps(sorted(original_data[data_key], key=lambda x: json.dumps(x, sort_keys=True))):
+                        new_data_to_save = False
+                        app.logger.info(f"Data for {data_type} is identical to the latest file, not saving")
+                        return True
+                elif json.dumps(latest_data, sort_keys=True) == json.dumps(original_data, sort_keys=True):
+                    new_data_to_save = False
+                    app.logger.info(f"Data for {data_type} is identical to the latest file, not saving")
+                    return True
+            except Exception as e:
+                app.logger.warning(f"Error checking existing data, will save new file: {str(e)}")
+                new_data_to_save = True
+        
+        # Only save if there's new data
+        if new_data_to_save:
+            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+            json_file = os.path.join(json_dir, f"{data_type}_{timestamp}.json")
+            app.logger.info(f"Saving new JSON data to {json_file}")
+            
+            with open(json_file, 'w') as f:
+                json.dump(original_data, f, indent=2)
+                
+            app.logger.info(f"Successfully wrote JSON file to {json_file}")
         
         return True
         

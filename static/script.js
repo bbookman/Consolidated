@@ -3,6 +3,11 @@ const fetchConversationsButton = document.getElementById('fetch-conversations');
 const fetchFactsButton = document.getElementById('fetch-facts');
 const fetchTodosButton = document.getElementById('fetch-todos');
 
+// Database-related buttons
+const dbConversationsButton = document.getElementById('db-conversations');
+const dbFactsButton = document.getElementById('db-facts');
+const dbTodosButton = document.getElementById('db-todos');
+
 // Function to format date
 function formatDate(dateString) {
     const date = new Date(dateString);
@@ -79,7 +84,39 @@ async function fetchApiData(endpoint) {
     }
 }
 
-// Event listeners
+// Database functions
+async function fetchDbData(endpoint) {
+    try {
+        const response = await fetch(`/api/db/${endpoint}`);
+        const data = await response.json();
+
+        if (data.error) {
+            throw new Error(data.error);
+        }
+
+        // Display data as cards and show record count
+        displayDataAsCards(data, endpoint);
+        
+        // Add a status message showing record count
+        const cardsContainer = document.getElementById(`${endpoint}-cards`);
+        const countMessage = document.createElement('div');
+        countMessage.className = 'db-status';
+        countMessage.innerHTML = `<p>Retrieved ${data.count} records from database</p>`;
+        cardsContainer.prepend(countMessage);
+        
+    } catch (error) {
+        console.error(`Error fetching ${endpoint} from database:`, error);
+        document.getElementById(`${endpoint}-cards`).innerHTML = 
+            `<div class="error-card">Error fetching ${endpoint} from database: ${error.message}</div>`;
+    }
+}
+
+// Event listeners for API data
 fetchConversationsButton.addEventListener('click', () => fetchApiData('conversations'));
 fetchFactsButton.addEventListener('click', () => fetchApiData('facts'));
 fetchTodosButton.addEventListener('click', () => fetchApiData('todos'));
+
+// Event listeners for database data
+dbConversationsButton.addEventListener('click', () => fetchDbData('conversations'));
+dbFactsButton.addEventListener('click', () => fetchDbData('facts'));
+dbTodosButton.addEventListener('click', () => fetchDbData('todos'));

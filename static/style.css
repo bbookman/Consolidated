@@ -93,15 +93,45 @@ h3 {
 .api-buttons {
     margin-bottom: 20px;
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
+    flex-direction: column;
+}
+
+.api-buttons h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    width: 100%;
 }
 
 .api-buttons button {
     background-color: #2196F3;
 }
 
-.api-buttons button:hover {
+/* Bee API buttons */
+.api-buttons button#fetch-conversations,
+.api-buttons button#fetch-facts,
+.api-buttons button#fetch-todos {
+    background-color: #2196F3;
+}
+
+.api-buttons button#fetch-conversations:hover,
+.api-buttons button#fetch-facts:hover,
+.api-buttons button#fetch-todos:hover {
     background-color: #1976D2;
+}
+
+/* Database buttons */
+.api-buttons button#db-conversations,
+.api-buttons button#db-facts,
+.api-buttons button#db-todos {
+    background-color: #6200EA;
+}
+
+.api-buttons button#db-conversations:hover,
+.api-buttons button#db-facts:hover,
+.api-buttons button#db-todos:hover {
+    background-color: #4A148C;
 }
 
 .api-output {
@@ -206,4 +236,29 @@ h3 {
 
 #data-display {
     margin-bottom: 2rem;
+}
+
+/* Database status message */
+.db-status {
+    background-color: #E1F5FE;
+    border-left: 4px solid #0288D1;
+    padding: 8px 12px;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.db-status p {
+    margin: 0;
+    color: #01579B;
+    font-size: 0.9rem;
+}
+
+/* Error card */
+.error-card {
+    background-color: #FFEBEE;
+    border-left: 4px solid #D32F2F;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    color: #B71C1C;
 }

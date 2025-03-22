@@ -273,5 +273,74 @@ async def get_todos():
         app.logger.error(f"Error in get_todos: {str(e)}")
         return {'error': str(e)}, 500
 
+# Database-specific API endpoints
+@app.route('/api/db/conversations', methods=['GET'])
+def get_db_conversations():
+    try:
+        # Retrieve conversations from database
+        conversations = db.get_conversations_from_db()
+        
+        # Format for display
+        formatted_conversations = []
+        for conv in conversations:
+            # Convert from SQLAlchemy object to dictionary
+            formatted_conv = {
+                "Summary": conv.summary if conv.summary else "No summary available",
+                "Created At": conv.created_at.isoformat() if conv.created_at else "Unknown",
+                "Address": conv.address if conv.address else "No address"
+            }
+            formatted_conversations.append(formatted_conv)
+            
+        return {'conversations': formatted_conversations, 'count': len(formatted_conversations)}
+        
+    except Exception as e:
+        app.logger.error(f"Error getting conversations from DB: {str(e)}")
+        return {'error': str(e)}, 500
+
+@app.route('/api/db/facts', methods=['GET'])
+def get_db_facts():
+    try:
+        # Retrieve facts from database
+        facts = db.get_facts_from_db()
+        
+        # Format for display
+        formatted_facts = []
+        for fact in facts:
+            # Convert from SQLAlchemy object to dictionary
+            formatted_fact = {
+                "Text": fact.text,
+                "Created At": fact.created_at.isoformat() if fact.created_at else "Unknown"
+            }
+            formatted_facts.append(formatted_fact)
+            
+        return {'facts': formatted_facts, 'count': len(formatted_facts)}
+        
+    except Exception as e:
+        app.logger.error(f"Error getting facts from DB: {str(e)}")
+        return {'error': str(e)}, 500
+
+@app.route('/api/db/todos', methods=['GET'])
+def get_db_todos():
+    try:
+        # Retrieve todos from database
+        todos = db.get_todos_from_db()
+        
+        # Format for display
+        formatted_todos = []
+        for todo in todos:
+            # Convert from SQLAlchemy object to dictionary
+            formatted_todo = {
+                "Task": todo.task,
+                "Completed": "Yes" if todo.completed else "No",
+                "Created At": todo.created_at.isoformat() if todo.created_at else "Unknown"
+            }
+            formatted_todos.append(formatted_todo)
+            
+        return {'todos': formatted_todos, 'count': len(formatted_todos)}
+        
+    except Exception as e:
+        app.logger.error(f"Error getting todos from DB: {str(e)}")
+        return {'error': str(e)}, 500
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

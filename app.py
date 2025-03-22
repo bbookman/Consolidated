@@ -564,14 +564,15 @@ def get_db_todos():
 
 def run_cli():
     """
-    CLI entry point for the application. Fetches all data types and saves them to files and database.
+    CLI entry point for the application. Fetches data from API, stores in database,
+    and then saves database content to JSON files to avoid duplicates.
     """
     print("Starting Bee AI Data Collector CLI")
     try:
-        # Create event loop and run data fetching
+        # Step 1: Fetch data from API and store in database
         loop = asyncio.get_event_loop()
         
-        print("Fetching conversations...")
+        print("Fetching conversations from API...")
         conversations = loop.run_until_complete(fetch_all_pages(bee.get_conversations, "me"))
         if isinstance(conversations, dict):
             conversations_list = conversations.get('conversations', [])
@@ -579,7 +580,7 @@ def run_cli():
             conversations_list = conversations
         print(f"Fetched {len(conversations_list)} conversations")
         
-        print("Fetching facts...")
+        print("Fetching facts from API...")
         facts = loop.run_until_complete(fetch_all_pages(bee.get_facts, "me"))
         if isinstance(facts, dict):
             facts_list = facts.get('facts', [])
@@ -587,7 +588,7 @@ def run_cli():
             facts_list = facts
         print(f"Fetched {len(facts_list)} facts")
         
-        print("Fetching todos...")
+        print("Fetching todos from API...")
         todos = loop.run_until_complete(fetch_all_pages(bee.get_todos, "me"))
         if isinstance(todos, dict):
             todos_list = todos.get('todos', [])
@@ -595,13 +596,7 @@ def run_cli():
             todos_list = todos
         print(f"Fetched {len(todos_list)} todos")
         
-        # Save to files
-        print("Saving to JSON files...")
-        save_to_file(None, 'conversations', {'conversations': conversations_list})
-        save_to_file(None, 'facts', {'facts': facts_list})
-        save_to_file(None, 'todos', {'todos': todos_list})
-        
-        # Store in database
+        # Step 2: Store in database with deduplication
         print("Storing in database...")
         db_conversations_result = db.store_conversations(conversations_list)
         db_facts_result = db.store_facts(facts_list)
@@ -612,6 +607,110 @@ def run_cli():
         print(f"Conversations: {db_conversations_result['processed']} processed, {db_conversations_result['added']} added, {db_conversations_result['skipped']} skipped")
         print(f"Facts: {db_facts_result['processed']} processed, {db_facts_result['added']} added, {db_facts_result['skipped']} skipped")
         print(f"Todos: {db_todos_result['processed']} processed, {db_todos_result['added']} added, {db_todos_result['skipped']} skipped")
+        
+        # Step 3: Retrieve from database and save to JSON files
+        print("\nRetrieving from database and saving to JSON files...")
+        
+        # Get conversations from database
+        print("Processing conversations from database...")
+        db_conversations = db.get_conversations_from_db()
+        print(f"Retrieved {len(db_conversations)} conversations from database")
+        
+        # Format data for saving
+        formatted_conversations = []
+        conversation_raw_data = []
+        
+        for conv in db_conversations:
+            # Convert from SQLAlchemy object to dictionary
+            formatted_conv = {
+                "Summary": conv.summary if conv.summary else "No summary available",
+                "Created At": conv.created_at.isoformat() if conv.created_at else "Unknown",
+                "Address": conv.address if conv.address else "No address"
+            }
+            formatted_conversations.append(formatted_conv)
+            
+            # Get raw data if available
+            if conv.raw_data:
+                try:
+                    conversation_raw_data.append(json.loads(conv.raw_data))
+                except:
+                    print(f"Warning: Could not parse raw_data for conversation {conv.id}")
+        
+        # Save conversations to file
+        saved_conv = save_to_file(
+            formatted_conversations, 
+            'conversations', 
+            {'conversations': conversation_raw_data}
+        )
+        if saved_conv:
+            print("Successfully processed conversations to JSON")
+        
+        # Get facts from database
+        print("Processing facts from database...")
+        db_facts = db.get_facts_from_db()
+        print(f"Retrieved {len(db_facts)} facts from database")
+        
+        # Format data for saving
+        formatted_facts = []
+        fact_raw_data = []
+        
+        for fact in db_facts:
+            # Convert from SQLAlchemy object to dictionary
+            formatted_fact = {
+                "Text": fact.text,
+                "Created At": fact.created_at.isoformat() if fact.created_at else "Unknown"
+            }
+            formatted_facts.append(formatted_fact)
+            
+            # Get raw data if available
+            if fact.raw_data:
+                try:
+                    fact_raw_data.append(json.loads(fact.raw_data))
+                except:
+                    print(f"Warning: Could not parse raw_data for fact {fact.id}")
+        
+        # Save facts to file
+        saved_facts = save_to_file(
+            formatted_facts, 
+            'facts', 
+            {'facts': fact_raw_data}
+        )
+        if saved_facts:
+            print("Successfully processed facts to JSON")
+        
+        # Get todos from database
+        print("Processing todos from database...")
+        db_todos = db.get_todos_from_db()
+        print(f"Retrieved {len(db_todos)} todos from database")
+        
+        # Format data for saving
+        formatted_todos = []
+        todo_raw_data = []
+        
+        for todo in db_todos:
+            # Convert from SQLAlchemy object to dictionary
+            formatted_todo = {
+                "Task": todo.task,
+                "Completed": "Yes" if todo.completed else "No",
+                "Created At": todo.created_at.isoformat() if todo.created_at else "Unknown"
+            }
+            formatted_todos.append(formatted_todo)
+            
+            # Get raw data if available
+            if todo.raw_data:
+                try:
+                    todo_raw_data.append(json.loads(todo.raw_data))
+                except:
+                    print(f"Warning: Could not parse raw_data for todo {todo.id}")
+        
+        # Save todos to file
+        saved_todos = save_to_file(
+            formatted_todos, 
+            'todos', 
+            {'todos': todo_raw_data}
+        )
+        if saved_todos:
+            print("Successfully processed todos to JSON")
         
         print("\nData collection complete!")
         

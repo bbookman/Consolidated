@@ -158,8 +158,59 @@ def save_to_file(data, data_type, original_data):
         return False
 
 @app.route('/')
-def index():
-    return render_template('index.html')
+@async_route
+async def index():
+    """
+    Main route that automatically loads data when the page is loaded.
+    Fetches all conversations, facts, and todos from the Bee API
+    and saves them to the database and files.
+    """
+    app.logger.info("Homepage accessed - automatically fetching data")
+    try:
+        # Fetch all data types from the API
+        conversations_data = await fetch_all_pages(bee.conversations, "user")
+        facts_data = await fetch_all_pages(bee.facts, "user")
+        todos_data = await fetch_all_pages(bee.todos, "user")
+        
+        # Format the data for display
+        conversations_list = conversations_data.get('conversations', [])
+        facts_list = facts_data.get('facts', [])
+        todos_list = todos_data.get('todos', [])
+        
+        formatted_conversations = [format_conversation(conv) for conv in conversations_list]
+        formatted_facts = [format_fact(fact) for fact in facts_list]
+        formatted_todos = [format_todo(todo) for todo in todos_list]
+        
+        # Save to files
+        save_to_file(formatted_conversations, 'conversations', conversations_data)
+        save_to_file(formatted_facts, 'facts', facts_data)
+        save_to_file(formatted_todos, 'todos', todos_data)
+        
+        # Store in database with deduplication
+        db_conversations_result = db.store_conversations(conversations_list)
+        db_facts_result = db.store_facts(facts_list)
+        db_todos_result = db.store_todos(todos_list)
+        
+        # Prepare data for initial render
+        initial_data = {
+            'conversations': formatted_conversations,
+            'facts': formatted_facts,
+            'todos': formatted_todos,
+            'db_stats': {
+                'conversations': db_conversations_result,
+                'facts': db_facts_result,
+                'todos': db_todos_result
+            }
+        }
+        
+        # Pass data to template for initial render
+        return render_template('index.html', initial_data=json.dumps(initial_data), datetime=datetime)
+    except Exception as e:
+        app.logger.error(f"Error in automatic data fetching: {str(e)}")
+        # Return template without data in case of error
+        return render_template('index.html', initial_data=json.dumps({
+            'error': str(e)
+        }), datetime=datetime)
 
 @app.route('/execute', methods=['POST'])
 def execute_code():

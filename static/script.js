@@ -1,20 +1,12 @@
-// API-related buttons
-const fetchConversationsButton = document.getElementById('fetch-conversations');
-const fetchFactsButton = document.getElementById('fetch-facts');
-const fetchTodosButton = document.getElementById('fetch-todos');
-
-// Database-related buttons
-const dbConversationsButton = document.getElementById('db-conversations');
-const dbFactsButton = document.getElementById('db-facts');
-const dbTodosButton = document.getElementById('db-todos');
-
 // Function to format date
 function formatDate(dateString) {
-    const date = new Date(dateString);
-    return date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+    try {
+        const date = new Date(dateString);
+        return date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+    } catch (error) {
+        return dateString || 'Unknown date';
+    }
 }
-
-
 
 // Function to create a card element
 function createCard(item, type) {
@@ -34,6 +26,7 @@ function createCard(item, type) {
             content = `
                 <h4>Fact</h4>
                 <p>${item.Text}</p>
+                <div class="timestamp">Added: ${formatDate(item['Created At'])}</div>
             `;
             break;
         case 'todos':
@@ -42,6 +35,7 @@ function createCard(item, type) {
                 <div class="status ${item.Completed === 'Yes' ? 'completed' : 'pending'}">
                     ${item.Completed === 'Yes' ? 'Completed' : 'Pending'}
                 </div>
+                <div class="timestamp">Created: ${formatDate(item['Created At'])}</div>
             `;
             break;
     }
@@ -51,72 +45,124 @@ function createCard(item, type) {
 }
 
 // Function to display data as cards
-function displayDataAsCards(data, type) {
+function displayDataAsCards(items, type) {
     const cardsContainer = document.getElementById(`${type}-cards`);
+    if (!cardsContainer) {
+        console.error(`Container for ${type} not found`);
+        return;
+    }
+    
     cardsContainer.innerHTML = '';
 
-    const items = data[type] || [];
+    if (!items || items.length === 0) {
+        cardsContainer.innerHTML = `<div class="empty-state">No ${type} found</div>`;
+        return;
+    }
+
     items.forEach(item => {
         cardsContainer.appendChild(createCard(item, type));
     });
 
-    // Show/hide sections based on data
-    document.getElementById(`${type}-section`).style.display = 
-        items.length > 0 ? 'block' : 'none';
+    // Show section
+    document.getElementById(`${type}-section`).style.display = 'block';
 }
 
-// API functions
-async function fetchApiData(endpoint) {
-    try {
-        const response = await fetch(`/api/${endpoint}`);
-        const data = await response.json();
+// Display error message
+function displayError(message) {
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-card';
+    errorDiv.textContent = `Error: ${message}`;
+    
+    const dataDisplay = document.getElementById('data-display');
+    dataDisplay.innerHTML = '';
+    dataDisplay.appendChild(errorDiv);
+}
 
-        if (data.error) {
-            throw new Error(data.error);
-        }
-
-        // Display data as cards
-        displayDataAsCards(data, endpoint);
-    } catch (error) {
-        console.error(`Error fetching ${endpoint}:`, error);
-        document.getElementById(`${endpoint}-cards`).innerHTML = 
-            `<div class="error-card">Error fetching ${endpoint}: ${error.message}</div>`;
+// Display database stats
+function displayDatabaseStats(stats) {
+    const statsContainer = document.getElementById('db-stats-display');
+    if (!statsContainer) return;
+    
+    let statsHTML = '<div class="stats-cards">';
+    
+    // Conversations stats
+    if (stats.conversations) {
+        statsHTML += `
+            <div class="stats-card">
+                <h4>Conversations</h4>
+                <p>Total processed: ${stats.conversations.processed || 0}</p>
+                <p>Added to database: ${stats.conversations.added || 0}</p>
+                <p>Already existed: ${stats.conversations.skipped || 0}</p>
+            </div>
+        `;
     }
-}
-
-// Database functions
-async function fetchDbData(endpoint) {
-    try {
-        const response = await fetch(`/api/db/${endpoint}`);
-        const data = await response.json();
-
-        if (data.error) {
-            throw new Error(data.error);
-        }
-
-        // Display data as cards and show record count
-        displayDataAsCards(data, endpoint);
-        
-        // Add a status message showing record count
-        const cardsContainer = document.getElementById(`${endpoint}-cards`);
-        const countMessage = document.createElement('div');
-        countMessage.className = 'db-status';
-        countMessage.innerHTML = `<p>Retrieved ${data.count} records from database</p>`;
-        cardsContainer.prepend(countMessage);
-        
-    } catch (error) {
-        console.error(`Error fetching ${endpoint} from database:`, error);
-        document.getElementById(`${endpoint}-cards`).innerHTML = 
-            `<div class="error-card">Error fetching ${endpoint} from database: ${error.message}</div>`;
+    
+    // Facts stats
+    if (stats.facts) {
+        statsHTML += `
+            <div class="stats-card">
+                <h4>Facts</h4>
+                <p>Total processed: ${stats.facts.processed || 0}</p>
+                <p>Added to database: ${stats.facts.added || 0}</p>
+                <p>Already existed: ${stats.facts.skipped || 0}</p>
+            </div>
+        `;
     }
+    
+    // Todos stats
+    if (stats.todos) {
+        statsHTML += `
+            <div class="stats-card">
+                <h4>Todos</h4>
+                <p>Total processed: ${stats.todos.processed || 0}</p>
+                <p>Added to database: ${stats.todos.added || 0}</p>
+                <p>Already existed: ${stats.todos.skipped || 0}</p>
+            </div>
+        `;
+    }
+    
+    statsHTML += '</div>';
+    statsContainer.innerHTML = statsHTML;
 }
 
-// Event listeners for API data
-fetchConversationsButton.addEventListener('click', () => fetchApiData('conversations'));
-fetchFactsButton.addEventListener('click', () => fetchApiData('facts'));
-fetchTodosButton.addEventListener('click', () => fetchApiData('todos'));
-
-// Event listeners for database data
-dbConversationsButton.addEventListener('click', () => fetchDbData('conversations'));
-dbFactsButton.addEventListener('click', () => fetchDbData('facts'));
-dbTodosButton.addEventListener('click', () => fetchDbData('todos'));
+// When the DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Add event listener for refresh button
+    const refreshButton = document.getElementById('refresh-button');
+    if (refreshButton) {
+        refreshButton.addEventListener('click', function() {
+            window.location.reload();
+        });
+    }
+    
+    // Check if we have initial data from the server
+    if (typeof initialData !== 'undefined') {
+        console.log('Initial data loaded:', initialData);
+        
+        // Check if there's an error
+        if (initialData.error) {
+            displayError(initialData.error);
+            return;
+        }
+        
+        // Display the data
+        if (initialData.conversations) {
+            displayDataAsCards(initialData.conversations, 'conversations');
+        }
+        
+        if (initialData.facts) {
+            displayDataAsCards(initialData.facts, 'facts');
+        }
+        
+        if (initialData.todos) {
+            displayDataAsCards(initialData.todos, 'todos');
+        }
+        
+        // Display database stats
+        if (initialData.db_stats) {
+            displayDatabaseStats(initialData.db_stats);
+        }
+    } else {
+        console.warn('No initial data found.');
+    }
+});

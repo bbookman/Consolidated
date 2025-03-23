@@ -403,8 +403,13 @@ def main():
     # Generate consolidated summaries
     consolidated_summaries = generate_consolidated_summary(event_groups)
     
-    # Output consolidated summaries
-    output_file = f"consolidated_summaries_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+    # Ensure data/consolidated_summaries directory exists
+    consolidated_dir = os.path.join(os.getcwd(), "data", "consolidated_summaries")
+    os.makedirs(consolidated_dir, exist_ok=True)
+    
+    # Output consolidated summaries to the proper directory
+    timestamp = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
+    output_file = os.path.join(consolidated_dir, f"consolidated_{timestamp}.json")
     print(f"Saving consolidated summaries to: {output_file}")
     
     with open(output_file, 'w') as f:
@@ -413,7 +418,7 @@ def main():
         }, f, indent=2, default=str)
     
     # Also output a markdown version for better readability
-    md_output_file = f"consolidated_summaries_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.md"
+    md_output_file = os.path.join(consolidated_dir, f"consolidated_{timestamp}.md")
     
     with open(md_output_file, 'w') as f:
         f.write("# Consolidated Summaries\n\n")

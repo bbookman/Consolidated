@@ -29,13 +29,15 @@ class LimitlessAPI:
             "Accept": "application/json"
         }
         
-    async def get_lifelogs(self, page=1, limit=100, max_retries=3, retry_delay=2):
+    async def get_lifelogs(self, page=1, limit=100, date=None, timezone="America/Los_Angeles", max_retries=3, retry_delay=2):
         """
         Get lifelogs from the Limitless API with retry mechanism
         
         Args:
             page: Page number to retrieve
             limit: Number of items per page
+            date: Optional date string in format YYYY-MM-DD to filter results
+            timezone: Timezone to use for the date filter
             max_retries: Maximum number of retry attempts (default: 3)
             retry_delay: Seconds to wait between retries (default: 2)
             
@@ -47,6 +49,12 @@ class LimitlessAPI:
             "page": page,
             "limit": limit
         }
+        
+        # Add date parameter if provided
+        if date:
+            params["date"] = date
+            params["timezone"] = timezone
+            logger.info(f"Using date filter: {date} with timezone: {timezone}")
         
         # Initialize empty result
         result = {"lifelogs": [], "page": page, "perPage": limit, "totalItems": 0, "totalPages": 1}

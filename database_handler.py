@@ -359,3 +359,23 @@ def get_lifelogs_from_db():
         return session.query(Limitless_Lifelog).order_by(Limitless_Lifelog.created_at.desc()).all()
     finally:
         session.close()
+
+def get_latest_lifelog_date():
+    """
+    Retrieve the most recent lifelog date from the database.
+    Returns a string in format YYYY-MM-DD or None if no lifelogs exist.
+    """
+    session = Session()
+    try:
+        # Get the lifelog with the most recent created_at timestamp
+        latest_lifelog = session.query(Limitless_Lifelog).order_by(Limitless_Lifelog.created_at.desc()).first()
+        
+        if latest_lifelog and latest_lifelog.created_at:
+            # Format as YYYY-MM-DD
+            return latest_lifelog.created_at.strftime('%Y-%m-%d')
+        return None
+    except Exception as e:
+        logger.error(f"Error getting latest lifelog date: {str(e)}")
+        return None
+    finally:
+        session.close()

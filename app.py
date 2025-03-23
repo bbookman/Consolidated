@@ -336,9 +336,17 @@ async def run_cli_async():
         if limitless:
             print("Fetching lifelogs from Limitless API...")
             try:
+                # Get the latest lifelog date from the database to use as a filter
+                latest_date = database_handler.get_latest_lifelog_date()
+                if latest_date:
+                    print(f"Found latest lifelog date in database: {latest_date}")
+                    print(f"Fetching only lifelogs since {latest_date}...")
+                else:
+                    print("No existing lifelogs found in database, fetching all available lifelogs...")
+                
                 # Create a wrapper function that doesn't require user_id parameter
                 async def get_lifelogs_wrapper(dummy=None, page=1):
-                    return await limitless.get_lifelogs(page=page)
+                    return await limitless.get_lifelogs(page=page, date=latest_date)
                 
                 lifelogs = await fetch_all_pages(get_lifelogs_wrapper, "dummy")
                 print(f"Debug - lifelogs type: {type(lifelogs)}")

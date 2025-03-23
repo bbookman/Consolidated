@@ -198,6 +198,13 @@ def save_to_file(data, data_type, original_data):
         current_dir = os.getcwd()
         data_dir = os.path.join(current_dir, 'data')
         
+        # Ensure all directories exist
+        os.makedirs(data_dir, exist_ok=True)
+        
+        # Create consolidated_summaries directory
+        consolidated_dir = os.path.join(data_dir, 'consolidated_summaries')
+        os.makedirs(consolidated_dir, exist_ok=True)
+        
         # Determine which API subdirectory to use
         if data_type == 'lifelogs':
             api_subdir = 'limitless'

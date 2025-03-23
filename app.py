@@ -1,35 +1,61 @@
-from flask import Flask, render_template, request, jsonify
+#!/usr/bin/env python3
+"""
+Multi-API Data Collection CLI
+
+This script provides a command-line interface for collecting and storing data from 
+multiple APIs (Bee AI and Limitless) into a database and JSON files.
+"""
+
 import sys
-from io import StringIO
-import traceback
-import asyncio
 import os
-from beeai import Bee
 import json
+import traceback
+import logging
+import asyncio
 from datetime import datetime
-from functools import wraps
+from beeai import Bee
+import pytz
+
+from limitless_api import LimitlessAPI
 import database_handler as db
-from limitless_api import limitless, LimitlessAPI
 
-app = Flask(__name__)
-bee = Bee(os.environ.get('BEE_API_KEY'))
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(sys.stdout)
+    ]
+)
+logger = logging.getLogger(__name__)
 
-# Initialize Limitless API if it wasn't initialized in the module
-if limitless is None and os.environ.get('LIMITLESS_API_KEY'):
-    try:
-        limitless = LimitlessAPI(os.environ.get('LIMITLESS_API_KEY'))
-        app.logger.info("Limitless API client initialized successfully")
-    except Exception as e:
-        app.logger.error(f"Failed to initialize Limitless API client: {str(e)}")
+# Initialize API clients
+bee = None
+limitless = None
 
-def async_route(f):
-    @wraps(f)
-    def wrapped(*args, **kwargs):
-        return asyncio.run(f(*args, **kwargs))
-    return wrapped
+def initialize_apis():
+    """Initialize API clients with keys from environment variables"""
+    global bee, limitless
+    
+    # Initialize Bee API
+    bee_api_key = os.environ.get('BEE_API_KEY')
+    if bee_api_key:
+        bee = Bee(api_key=bee_api_key)
+        logger.info("Bee API client initialized successfully")
+    else:
+        logger.warning("BEE_API_KEY not found in environment variables")
+
+    # Initialize Limitless API
+    limitless_api_key = os.environ.get('LIMITLESS_API_KEY')
+    if limitless_api_key:
+        limitless = LimitlessAPI(api_key=limitless_api_key)
+        logger.info("Limitless API client initialized successfully")
+    else:
+        logger.warning("LIMITLESS_API_KEY not found in environment variables")
 
 def format_conversation(conv):
-    # Clean up the summary by removing duplicate headers
+    """Format a conversation object from the Bee API for display/storage"""
+    # Clean up the summary
     summary = conv.get("summary", "No summary available")
     
     # Handle None summary value
@@ -49,56 +75,97 @@ def format_conversation(conv):
     if conv.get("primary_location") and conv["primary_location"].get("address"):
         address = conv["primary_location"]["address"]
     
+    latitude = None
+    longitude = None
+    if conv.get("primary_location") and conv["primary_location"].get("latitude") and conv["primary_location"].get("longitude"):
+        latitude = conv["primary_location"]["latitude"]
+        longitude = conv["primary_location"]["longitude"]
+    
+    # Extract start and end times
+    start_time = None
+    end_time = None
+    created_at = None
+    
+    if conv.get("start_time"):
+        start_time = conv["start_time"]
+    if conv.get("end_time"):
+        end_time = conv["end_time"]
+    if conv.get("created_at"):
+        created_at = conv["created_at"]
+    
     return {
+        "Title": f"Conversation on {created_at[:10] if created_at else 'Unknown Date'}",
         "Summary": summary,
-        "Created At": conv.get("created_at", "Unknown"),
-        "Address": address
+        "Address": address,
+        "Start Time": start_time,
+        "End Time": end_time,
+        "Created At": created_at,
+        "Latitude": latitude,
+        "Longitude": longitude
     }
 
 def format_fact(fact):
-    # Handle None values
-    text = fact.get("text")
-    if text is None:
-        text = "No text available"
-    
+    """Format a fact object from the Bee API for display/storage"""
     return {
-        "Text": text,
-        "Created At": fact.get("created_at", "Unknown")
+        "Text": fact.get("text", "No text available"),
+        "Created At": fact.get("created_at", "Unknown date")
     }
 
 def format_todo(todo):
-    # Handle None values
-    task = todo.get("text")
-    if task is None:
-        task = "No task description"
-        
+    """Format a todo object from the Bee API for display/storage"""
     return {
-        "Task": task,
-        "Completed": "Yes" if todo.get("completed") else "No",
-        "Created At": todo.get("created_at", "Unknown")
+        "Task": todo.get("task", "No task description"),
+        "Completed": "Yes" if todo.get("completed", False) else "No",
+        "Created At": todo.get("created_at", "Unknown date")
     }
 
 def format_lifelog(log):
-    # Handle None values
-    title = log.get("title")
-    if title is None:
-        title = "No title available"
-        
-    description = log.get("description")
-    if description is None:
-        description = "No description available"
+    """Format a lifelog object from the Limitless API for display/storage"""
+    title = "No title available"
+    description = "No description available"
+    tags = "No tags"
+    log_type = "Unknown type"
+    created_at = "Unknown date"
+    updated_at = None
     
-    # Format tags if they exist
-    tags = log.get("tags", [])
-    tags_str = ", ".join(tags) if tags else "No tags"
+    # Extract title from contents if possible
+    contents = log.get("contents", [])
+    if contents and isinstance(contents, list):
+        for item in contents:
+            if isinstance(item, dict) and item.get("type") == "heading1" and item.get("content"):
+                title = item.get("content")
+                break
+    
+    # Use metadata or fallback to contents for description
+    if log.get("metadata") and log.get("metadata").get("description"):
+        description = log.get("metadata").get("description")
+    elif contents and len(contents) > 1:
+        for item in contents:
+            if isinstance(item, dict) and item.get("type") == "heading2" and item.get("content"):
+                description = item.get("content")
+                break
+    
+    # Get tags if available
+    if log.get("tags") and isinstance(log.get("tags"), list):
+        tags = ", ".join(log.get("tags"))
+    
+    # Get type if available
+    if log.get("type"):
+        log_type = log.get("type")
+    
+    # Get timestamps
+    if log.get("createdAt"):
+        created_at = log.get("createdAt")
+    if log.get("updatedAt"):
+        updated_at = log.get("updatedAt")
     
     return {
         "Title": title,
         "Description": description,
-        "Type": log.get("type", "Unknown type"),
-        "Tags": tags_str,
-        "Created At": log.get("created_at", "Unknown"),
-        "Updated At": log.get("updated_at", "Unknown")
+        "Tags": tags,
+        "Type": log_type,
+        "Created At": created_at,
+        "Updated At": updated_at
     }
 
 async def fetch_all_pages(fetch_func, user_id):
@@ -112,77 +179,58 @@ async def fetch_all_pages(fetch_func, user_id):
     Returns:
         A list of all items fetched across all pages
     """
-    app.logger.info(f"Fetching all pages for {fetch_func.__name__} and user {user_id}")
-    all_items = []
+    logger.info(f"Fetching all pages for {fetch_func.__name__} and user {user_id}")
     
     try:
-        # Get the first page
-        first_response = await fetch_func(user_id)
-        app.logger.info(f"First response type: {type(first_response)}")
+        # Get the first page to determine total pages
+        response = await fetch_func(user_id, page=1)
+        logger.info(f"First response type: {type(response)}")
         
-        # Determine the response structure
-        if not isinstance(first_response, dict):
-            app.logger.warning(f"Unexpected response format: {type(first_response)}")
-            return first_response
+        # Handle different response formats
+        all_items = []
         
-        # Find the data key (conversations, facts, todos, lifelogs)
-        items_key = None
-        for key in ['conversations', 'facts', 'todos', 'lifelogs']:
-            if key in first_response:
-                items_key = key
-                break
-                
-        if not items_key:
-            app.logger.warning(f"Could not determine items key in: {first_response.keys()}")
-            # Special case for Limitless API which might return data differently
-            if 'data' in first_response:
-                app.logger.info("Found 'data' key in response, using it for Limitless API")
-                all_items.extend(first_response['data'])
-                
-                # Handle pagination differently for Limitless API
-                if 'meta' in first_response and 'last_page' in first_response['meta']:
-                    total_pages = first_response['meta']['last_page']
-                    app.logger.info(f"Found {total_pages} total pages in Limitless API response")
-                    
-                    # Fetch remaining pages
-                    for page in range(2, total_pages + 1):
-                        try:
-                            app.logger.info(f"Fetching page {page} of {total_pages}")
-                            response = await fetch_func(page=page)
-                            if 'data' in response:
-                                all_items.extend(response['data'])
-                        except Exception as e:
-                            app.logger.error(f"Error fetching page {page}: {str(e)}")
-                            break
-                
-                return all_items
+        if isinstance(response, dict):
+            # Add items from first page
+            if 'data' in response and isinstance(response['data'], dict) and 'lifelogs' in response['data']:
+                # New API format with data.lifelogs structure
+                all_items.extend(response['data']['lifelogs'])
+                total_pages = response.get('meta', {}).get('pages', 1)
+            else:
+                # Standard API format
+                item_key = next((key for key in ['conversations', 'facts', 'todos', 'lifelogs'] if key in response), None)
+                if item_key:
+                    all_items.extend(response[item_key])
+                    total_pages = response.get('totalPages', 1)
+                else:
+                    # Unknown format, just return the response
+                    return response
             
-            return []
+            logger.info(f"Found {total_pages} total pages")
             
-        # Get items from first page
-        if items_key in first_response and first_response[items_key]:
-            all_items.extend(first_response[items_key])
-            
-        # Get total pages
-        total_pages = first_response.get('totalPages', 1)
-        app.logger.info(f"Found {total_pages} total pages")
+            # Fetch remaining pages
+            for page in range(2, total_pages + 1):
+                logger.info(f"Fetching page {page} of {total_pages}")
+                page_response = await fetch_func(user_id, page=page)
+                
+                # Add items from this page
+                if 'data' in page_response and isinstance(page_response['data'], dict) and 'lifelogs' in page_response['data']:
+                    all_items.extend(page_response['data']['lifelogs'])
+                else:
+                    item_key = next((key for key in ['conversations', 'facts', 'todos', 'lifelogs'] if key in page_response), None)
+                    if item_key:
+                        all_items.extend(page_response[item_key])
         
-        # Fetch remaining pages
-        for page in range(2, total_pages + 1):
-            try:
-                app.logger.info(f"Fetching page {page} of {total_pages}")
-                response = await fetch_func(user_id, page=page)
-                if items_key in response and response[items_key]:
-                    all_items.extend(response[items_key])
-            except Exception as e:
-                app.logger.error(f"Error fetching page {page}: {str(e)}")
-                break
+        elif isinstance(response, list):
+            # Direct list response
+            all_items = response
+        
+        logger.info(f"Fetched {len(all_items)} items in total")
+        return all_items
+        
     except Exception as e:
-        app.logger.error(f"Error in fetch_all_pages: {str(e)}")
-        app.logger.error(traceback.format_exc())
-        
-    app.logger.info(f"Fetched {len(all_items)} items in total")
-    return all_items
+        logger.error(f"Error fetching all pages: {str(e)}")
+        logger.error(traceback.format_exc())
+        return []
 
 def save_to_file(data, data_type, original_data):
     """
@@ -194,603 +242,67 @@ def save_to_file(data, data_type, original_data):
         original_data: Raw data from API
     """
     try:
-        # Get absolute path for data directory
-        current_dir = os.getcwd()
-        data_dir = os.path.join(current_dir, 'data')
+        # Determine which API the data is from
+        api_name = "bee"
+        if data_type == "lifelogs" or data_type.startswith("db_lifelogs"):
+            api_name = "limitless"
         
-        # Ensure all directories exist
+        # Create directories if they don't exist
+        data_dir = os.path.join("data", api_name)
         os.makedirs(data_dir, exist_ok=True)
         
+        # Generate filename with timestamp
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"{data_type}_{timestamp}.json"
+        filepath = os.path.join(data_dir, filename)
         
-        # Determine which API subdirectory to use
-        if data_type == 'lifelogs':
-            api_subdir = 'limitless'
-        else:
-            api_subdir = 'bee'
-            
-        # Create API-specific directory
-        api_dir = os.path.join(data_dir, api_subdir)
-        os.makedirs(api_dir, exist_ok=True)
+        logger.info(f"Using API directory: {os.path.abspath(data_dir)}")
         
-        app.logger.info(f"Using API directory: {api_dir}")
-        
-        # Check for existing files of this data type
-        existing_files = [f for f in os.listdir(api_dir) if f.startswith(data_type) and f.endswith('.json')]
-        
-        # Extract the actual data from the response dict
-        key_map = {
-            'conversations': 'conversations',
-            'facts': 'facts',
-            'todos': 'todos',
-            'lifelogs': 'lifelogs'
-        }
-        data_key = key_map.get(data_type)
-        
-        if not data_key or data_key not in original_data:
-            # If we can't find the key in the response or it's missing, use the whole response
-            current_data = original_data
-        else:
-            current_data = original_data[data_key]
-        
-        # Check if we need to save new data
-        new_data_to_save = True
-        latest_data = None
-        
-        # If we have existing files, check if the data is different
-        if existing_files:
-            # Sort by timestamp to get the latest file
-            latest_file = sorted(existing_files)[-1]
-            latest_file_path = os.path.join(api_dir, latest_file)
-            
-            try:
-                with open(latest_file_path, 'r') as f:
-                    latest_data = json.load(f)
-                
-                # Compare data considering potential structure differences
-                if data_key in latest_data and data_key in original_data:
-                    if json.dumps(sorted(latest_data[data_key], key=lambda x: json.dumps(x, sort_keys=True))) == \
-                       json.dumps(sorted(original_data[data_key], key=lambda x: json.dumps(x, sort_keys=True))):
-                        new_data_to_save = False
-                        app.logger.info(f"Data for {data_type} is identical to the latest file, not saving")
+        # Check if we should skip saving if the data is the same as the latest file
+        last_file = find_latest_file(data_dir, data_type)
+        if last_file:
+            with open(last_file, 'r') as f:
+                try:
+                    existing_data = json.load(f)
+                    if existing_data == original_data:
+                        logger.info(f"Data for {data_type} is identical to the latest file, not saving")
                         return True
-                elif json.dumps(latest_data, sort_keys=True) == json.dumps(original_data, sort_keys=True):
-                    new_data_to_save = False
-                    app.logger.info(f"Data for {data_type} is identical to the latest file, not saving")
-                    return True
-            except Exception as e:
-                app.logger.warning(f"Error checking existing data, will save new file: {str(e)}")
-                new_data_to_save = True
+                except json.JSONDecodeError:
+                    # If there's an error parsing the previous file, we'll save a new one
+                    pass
         
-        # Only save if there's new data
-        if new_data_to_save:
-            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-            json_file = os.path.join(api_dir, f"{data_type}_{timestamp}.json")
-            app.logger.info(f"Saving new JSON data to {json_file}")
+        # Save to file
+        with open(filepath, 'w') as f:
+            json.dump(original_data, f, indent=2)
             
-            with open(json_file, 'w') as f:
-                json.dump(original_data, f, indent=2)
-                
-            app.logger.info(f"Successfully wrote JSON file to {json_file}")
-        
+        logger.info(f"Saved {data_type} data to {filepath}")
         return True
         
     except Exception as e:
-        app.logger.error(f"Error saving data to file: {str(e)}")
-        app.logger.error(traceback.format_exc())
+        logger.error(f"Error saving {data_type} to file: {str(e)}")
         return False
 
-@app.route('/')
-@async_route
-async def index():
+def find_latest_file(directory, prefix):
+    """Find the most recent file with the given prefix in the directory"""
+    try:
+        files = [os.path.join(directory, f) for f in os.listdir(directory) 
+                if f.startswith(prefix) and f.endswith('.json')]
+        if not files:
+            return None
+        return max(files, key=os.path.getmtime)
+    except Exception as e:
+        logger.error(f"Error finding latest file: {str(e)}")
+        return None
+
+async def run_cli_async():
     """
-    Main route that automatically loads data when the page is loaded.
-    Fetches all conversations, facts, and todos from the Bee API
-    and saves them to the database and files.
-    """
-    app.logger.info("Homepage accessed - automatically fetching data")
-    try:
-        # Fetch all data types from the API
-        conversations_data = await fetch_all_pages(bee.get_conversations, "me")
-        facts_data = await fetch_all_pages(bee.get_facts, "me")
-        todos_data = await fetch_all_pages(bee.get_todos, "me")
-        
-        # Fetch Limitless API data if available
-        lifelogs_data = {}
-        if limitless:
-            try:
-                # Create a wrapper function that doesn't require user_id parameter
-                async def get_lifelogs_wrapper(dummy=None, page=1):
-                    return await limitless.get_lifelogs(page=page)
-                    
-                lifelogs_data = await fetch_all_pages(get_lifelogs_wrapper, "dummy")
-                app.logger.info(f"Successfully fetched lifelogs from Limitless API")
-            except Exception as e:
-                app.logger.error(f"Error fetching lifelogs: {str(e)}")
-        else:
-            app.logger.warning("Limitless API client not available, skipping lifelogs fetch")
-        
-        # Format the data for display
-        # Handle both list and dictionary return types
-        if isinstance(conversations_data, dict):
-            conversations_list = conversations_data.get('conversations', [])
-        else:
-            conversations_list = conversations_data
-            
-        if isinstance(facts_data, dict):
-            facts_list = facts_data.get('facts', [])
-        else:
-            facts_list = facts_data
-            
-        if isinstance(todos_data, dict):
-            todos_list = todos_data.get('todos', [])
-        else:
-            todos_list = todos_data
-            
-        if isinstance(lifelogs_data, dict):
-            lifelogs_list = lifelogs_data.get('lifelogs', [])
-        else:
-            lifelogs_list = lifelogs_data
-        
-        formatted_conversations = [format_conversation(conv) for conv in conversations_list]
-        formatted_facts = [format_fact(fact) for fact in facts_list]
-        formatted_todos = [format_todo(todo) for todo in todos_list]
-        formatted_lifelogs = [format_lifelog(log) for log in lifelogs_list]
-        
-        # Save to files
-        save_to_file(formatted_conversations, 'conversations', conversations_data)
-        save_to_file(formatted_facts, 'facts', facts_data)
-        save_to_file(formatted_todos, 'todos', todos_data)
-        save_to_file(formatted_lifelogs, 'lifelogs', {'lifelogs': lifelogs_list})
-        
-        # Store in database with deduplication
-        db_conversations_result = db.store_conversations(conversations_list)
-        db_facts_result = db.store_facts(facts_list)
-        db_todos_result = db.store_todos(todos_list)
-        db_lifelogs_result = db.store_lifelogs(lifelogs_list)
-        
-        # Prepare data for initial render
-        initial_data = {
-            'conversations': formatted_conversations,
-            'facts': formatted_facts,
-            'todos': formatted_todos,
-            'lifelogs': formatted_lifelogs,
-            'db_stats': {
-                'conversations': db_conversations_result,
-                'facts': db_facts_result,
-                'todos': db_todos_result,
-                'lifelogs': db_lifelogs_result
-            }
-        }
-        
-        # Pass data to template for initial render
-        return render_template('index.html', initial_data=json.dumps(initial_data), datetime=datetime)
-    except Exception as e:
-        app.logger.error(f"Error in automatic data fetching: {str(e)}")
-        # Return template without data in case of error
-        return render_template('index.html', initial_data=json.dumps({
-            'error': str(e)
-        }), datetime=datetime)
-
-@app.route('/execute', methods=['POST'])
-def execute_code():
-    code = request.json.get('code', '')
-
-    stdout = StringIO()
-    stderr = StringIO()
-    old_stdout = sys.stdout
-    old_stderr = sys.stderr
-
-    try:
-        sys.stdout = stdout
-        sys.stderr = stderr
-
-        exec(code, {})
-
-        output = stdout.getvalue()
-        error = stderr.getvalue()
-
-        return jsonify({
-            'success': True,
-            'output': output,
-            'error': error
-        })
-
-    except Exception as e:
-        error_msg = traceback.format_exc()
-        return jsonify({
-            'success': False,
-            'error': error_msg
-        })
-
-    finally:
-        sys.stdout = old_stdout
-        sys.stderr = old_stderr
-
-@app.route('/api/conversations', methods=['GET'])
-@async_route
-async def get_conversations():
-    try:
-        page = int(request.args.get('page', 1))
-
-        # Debug the API key
-        api_key = os.environ.get('BEE_API_KEY')
-        if not api_key:
-            app.logger.error("BEE_API_KEY is not set in environment variables")
-            return {'error': 'API key is not configured'}, 500
-        
-        app.logger.info(f"Using API key: {api_key[:4]}...{api_key[-4:]} (length: {len(api_key)})")
-        
-        # Try to get conversations with direct debug
-        try:
-            app.logger.info("Attempting to fetch conversations directly")
-            conversations_response = await bee.get_conversations("me", page=page)
-            app.logger.info(f"Direct API response type: {type(conversations_response)}")
-            app.logger.info(f"Direct API response content: {conversations_response}")
-        except Exception as direct_err:
-            app.logger.error(f"Direct API call error: {str(direct_err)}")
-            return {'error': f'Direct API error: {str(direct_err)}'}, 500
-
-        # Fetch all pages for saving
-        all_conversations = await fetch_all_pages(bee.get_conversations, "me")
-        app.logger.info(f"All conversations count: {len(all_conversations)}")
-        formatted_all_conversations = [format_conversation(conv) for conv in all_conversations]
-
-        # Save complete dataset to file
-        save_to_file(formatted_all_conversations, 'conversations', {'conversations': all_conversations})
-        
-        # Store conversations in database with deduplication
-        db_result = db.store_conversations(all_conversations)
-        app.logger.info(f"Database storage result: {db_result}")
-
-        # Get current page data for display
-        conversations = await bee.get_conversations("me", page=page)
-        formatted_conversations = [format_conversation(conv) for conv in conversations.get('conversations', [])]
-
-        paginated_data = {
-            'conversations': formatted_conversations,
-            'total': conversations.get('totalCount', 0),
-            'page': page,
-            'per_page': len(formatted_conversations),
-            'total_pages': conversations.get('totalPages', 1)
-        }
-
-        return paginated_data
-
-    except Exception as e:
-        app.logger.error(f"Error in get_conversations: {str(e)}")
-        app.logger.error(f"Error details: {traceback.format_exc()}")
-        return {'error': str(e)}, 500
-
-@app.route('/api/facts', methods=['GET'])
-@async_route
-async def get_facts():
-    try:
-        # Fetch all facts
-        all_facts = await fetch_all_pages(bee.get_facts, "me")
-        formatted_facts = [format_fact(fact) for fact in all_facts]
-
-        # Save complete dataset to file
-        save_to_file(formatted_facts, 'facts', {'facts': all_facts})
-        
-        # Store facts in database with deduplication
-        db_result = db.store_facts(all_facts)
-        app.logger.info(f"Database facts storage result: {db_result}")
-
-        return {'facts': formatted_facts}
-
-    except Exception as e:
-        app.logger.error(f"Error in get_facts: {str(e)}")
-        return {'error': str(e)}, 500
-
-@app.route('/api/todos', methods=['GET'])
-@async_route
-async def get_todos():
-    try:
-        page = int(request.args.get('page', 1))
-
-        # Fetch all pages for saving
-        all_todos = await fetch_all_pages(bee.get_todos, "me")
-        formatted_all_todos = [format_todo(todo) for todo in all_todos]
-
-        # Save complete dataset to file
-        save_to_file(formatted_all_todos, 'todos', {'todos': all_todos})
-        
-        # Store todos in database with deduplication
-        db_result = db.store_todos(all_todos)
-        app.logger.info(f"Database todos storage result: {db_result}")
-
-        # Get current page data for display
-        todos = await bee.get_todos("me", page=page)
-        formatted_todos = [format_todo(todo) for todo in todos.get('todos', [])]
-
-        paginated_data = {
-            'todos': formatted_todos,
-            'total': todos.get('totalCount', 0),
-            'page': page,
-            'per_page': len(formatted_todos),
-            'total_pages': todos.get('totalPages', 1)
-        }
-
-        return paginated_data
-
-    except Exception as e:
-        app.logger.error(f"Error in get_todos: {str(e)}")
-        return {'error': str(e)}, 500
-
-@app.route('/api/lifelogs', methods=['GET'])
-@async_route
-async def get_lifelogs():
-    try:
-        page = int(request.args.get('page', 1))
-        
-        if not limitless:
-            app.logger.error("Limitless API client is not initialized")
-            return {'error': 'Limitless API is not configured'}, 500
-
-        # Create a wrapper function that doesn't require user_id parameter
-        async def get_lifelogs_wrapper(dummy=None, page=1):
-            return await limitless.get_lifelogs(page=page)
-            
-        # Fetch all pages for saving
-        all_lifelogs = await fetch_all_pages(get_lifelogs_wrapper, "dummy")
-        
-        # Fix case where all_lifelogs is a list with a string like ['lifelogs']
-        if isinstance(all_lifelogs, list) and len(all_lifelogs) == 1 and isinstance(all_lifelogs[0], str) and all_lifelogs[0] == 'lifelogs':
-            app.logger.warning("Detected invalid lifelog list format, replacing with empty list")
-            all_lifelogs = []
-        
-        # Normal case where all_lifelogs is a dict with 'lifelogs' key
-        if isinstance(all_lifelogs, dict):
-            lifelogs_list = all_lifelogs.get('lifelogs', [])
-        # Fallback for direct list
-        else:
-            # Only use direct list if it contains dictionaries/objects, not strings
-            if isinstance(all_lifelogs, list) and (not all_lifelogs or isinstance(all_lifelogs[0], dict)):
-                lifelogs_list = all_lifelogs
-            else:
-                lifelogs_list = []
-                app.logger.warning("Unexpected lifelogs format, using empty list")
-        
-        formatted_all_lifelogs = [format_lifelog(log) for log in lifelogs_list]
-
-        # Save complete dataset to file
-        save_to_file(formatted_all_lifelogs, 'lifelogs', {'lifelogs': lifelogs_list})
-        
-        # Store lifelogs in database with deduplication
-        db_result = db.store_lifelogs(lifelogs_list)
-        app.logger.info(f"Database lifelogs storage result: {db_result}")
-
-        # Get current page data for display (for now, just use the full list since pagination may not be supported)
-        current_lifelogs = await limitless.get_lifelogs(page=page)
-        
-        # Handle different response formats
-        if isinstance(current_lifelogs, dict):
-            if 'data' in current_lifelogs and 'lifelogs' in current_lifelogs['data']:
-                # New API format
-                formatted_lifelogs = [format_lifelog(log) for log in current_lifelogs['data']['lifelogs']]
-                total_count = current_lifelogs.get('meta', {}).get('total', len(formatted_lifelogs))
-                total_pages = current_lifelogs.get('meta', {}).get('pages', 1)
-            else:
-                # Standard format
-                formatted_lifelogs = [format_lifelog(log) for log in current_lifelogs.get('lifelogs', [])]
-                total_count = current_lifelogs.get('totalCount', len(formatted_lifelogs))
-                total_pages = current_lifelogs.get('totalPages', 1)
-        else:
-            # Direct list format
-            formatted_lifelogs = [format_lifelog(log) for log in current_lifelogs]
-            total_count = len(formatted_lifelogs)
-            total_pages = 1
-
-        paginated_data = {
-            'lifelogs': formatted_lifelogs,
-            'total': total_count,
-            'page': page,
-            'per_page': len(formatted_lifelogs),
-            'total_pages': total_pages
-        }
-
-        return paginated_data
-
-    except Exception as e:
-        app.logger.error(f"Error in get_lifelogs: {str(e)}")
-        app.logger.error(f"Error details: {traceback.format_exc()}")
-        return {'error': str(e)}, 500
-
-# Database-specific API endpoints
-@app.route('/api/db/conversations', methods=['GET'])
-def get_db_conversations():
-    try:
-        # Retrieve conversations from database
-        conversations = db.get_conversations_from_db()
-        app.logger.info(f"Retrieved {len(conversations)} conversations from database")
-        
-        # Format for display
-        formatted_conversations = []
-        raw_data = []
-        
-        for conv in conversations:
-            # Convert from SQLAlchemy object to dictionary
-            formatted_conv = {
-                "Summary": conv.summary if conv.summary else "No summary available",
-                "Created At": conv.created_at.isoformat() if conv.created_at else "Unknown",
-                "Address": conv.address if conv.address else "No address"
-            }
-            formatted_conversations.append(formatted_conv)
-            
-            # Get raw data for file saving
-            if conv.raw_data:
-                try:
-                    raw_data.append(json.loads(conv.raw_data))
-                except:
-                    app.logger.warning(f"Could not parse raw_data for conversation {conv.id}")
-        
-        # Save database data to files
-        if formatted_conversations:
-            saved = save_to_file(
-                formatted_conversations, 
-                'db_conversations', 
-                {'conversations': raw_data}
-            )
-            if saved:
-                app.logger.info("Successfully saved database conversations to files")
-            else:
-                app.logger.warning("Failed to save database conversations to files")
-            
-        return {'conversations': formatted_conversations, 'count': len(formatted_conversations)}
-        
-    except Exception as e:
-        app.logger.error(f"Error getting conversations from DB: {str(e)}")
-        return {'error': str(e)}, 500
-
-@app.route('/api/db/facts', methods=['GET'])
-def get_db_facts():
-    try:
-        # Retrieve facts from database
-        facts = db.get_facts_from_db()
-        app.logger.info(f"Retrieved {len(facts)} facts from database")
-        
-        # Format for display
-        formatted_facts = []
-        raw_data = []
-        
-        for fact in facts:
-            # Convert from SQLAlchemy object to dictionary
-            formatted_fact = {
-                "Text": fact.text,
-                "Created At": fact.created_at.isoformat() if fact.created_at else "Unknown"
-            }
-            formatted_facts.append(formatted_fact)
-            
-            # Get raw data for file saving
-            if fact.raw_data:
-                try:
-                    raw_data.append(json.loads(fact.raw_data))
-                except:
-                    app.logger.warning(f"Could not parse raw_data for fact {fact.id}")
-        
-        # Save database data to files
-        if formatted_facts:
-            saved = save_to_file(
-                formatted_facts, 
-                'db_facts', 
-                {'facts': raw_data}
-            )
-            if saved:
-                app.logger.info("Successfully saved database facts to files")
-            else:
-                app.logger.warning("Failed to save database facts to files")
-            
-        return {'facts': formatted_facts, 'count': len(formatted_facts)}
-        
-    except Exception as e:
-        app.logger.error(f"Error getting facts from DB: {str(e)}")
-        return {'error': str(e)}, 500
-
-@app.route('/api/db/todos', methods=['GET'])
-def get_db_todos():
-    try:
-        # Retrieve todos from database
-        todos = db.get_todos_from_db()
-        app.logger.info(f"Retrieved {len(todos)} todos from database")
-        
-        # Format for display
-        formatted_todos = []
-        raw_data = []
-        
-        for todo in todos:
-            # Convert from SQLAlchemy object to dictionary
-            formatted_todo = {
-                "Task": todo.task,
-                "Completed": "Yes" if todo.completed else "No",
-                "Created At": todo.created_at.isoformat() if todo.created_at else "Unknown"
-            }
-            formatted_todos.append(formatted_todo)
-            
-            # Get raw data for file saving
-            if todo.raw_data:
-                try:
-                    raw_data.append(json.loads(todo.raw_data))
-                except:
-                    app.logger.warning(f"Could not parse raw_data for todo {todo.id}")
-        
-        # Save database data to files
-        if formatted_todos:
-            saved = save_to_file(
-                formatted_todos, 
-                'db_todos', 
-                {'todos': raw_data}
-            )
-            if saved:
-                app.logger.info("Successfully saved database todos to files")
-            else:
-                app.logger.warning("Failed to save database todos to files")
-            
-        return {'todos': formatted_todos, 'count': len(formatted_todos)}
-        
-    except Exception as e:
-        app.logger.error(f"Error getting todos from DB: {str(e)}")
-        return {'error': str(e)}, 500
-
-@app.route('/api/db/lifelogs', methods=['GET'])
-def get_db_lifelogs():
-    try:
-        # Retrieve lifelogs from database
-        lifelogs = db.get_lifelogs_from_db()
-        app.logger.info(f"Retrieved {len(lifelogs)} lifelogs from database")
-        
-        # Format for display
-        formatted_lifelogs = []
-        raw_data = []
-        
-        for log in lifelogs:
-            # Convert from SQLAlchemy object to dictionary
-            formatted_log = {
-                "Title": log.title if log.title else "No title available",
-                "Description": log.description if log.description else "No description available",
-                "Created At": log.created_at.isoformat() if log.created_at else "Unknown",
-                "Updated At": log.updated_at.isoformat() if log.updated_at else "Unknown",
-                "Type": log.log_type if log.log_type else "Unknown type",
-                "Tags": log.tags if log.tags else "No tags"
-            }
-            formatted_lifelogs.append(formatted_log)
-            
-            # Get raw data for file saving
-            if log.raw_data:
-                try:
-                    raw_data.append(json.loads(log.raw_data))
-                except:
-                    app.logger.warning(f"Could not parse raw_data for lifelog {log.id}")
-        
-        # Save database data to files
-        if formatted_lifelogs:
-            saved = save_to_file(
-                formatted_lifelogs, 
-                'db_lifelogs', 
-                {'lifelogs': raw_data}
-            )
-            if saved:
-                app.logger.info("Successfully saved database lifelogs to files")
-            else:
-                app.logger.warning("Failed to save database lifelogs to files")
-            
-        return {'lifelogs': formatted_lifelogs, 'count': len(formatted_lifelogs)}
-        
-    except Exception as e:
-        app.logger.error(f"Error getting lifelogs from DB: {str(e)}")
-        return {'error': str(e)}, 500
-
-def run_cli():
-    """
-    CLI entry point for the application. Fetches data from API, stores in database,
+    CLI entry point for the application (async version). Fetches data from API, stores in database,
     and then saves database content to JSON files to avoid duplicates.
     """
-    print("Starting Bee AI Data Collector CLI")
     try:
         # Step 1: Fetch data from API and store in database
-        loop = asyncio.get_event_loop()
-        
         print("Fetching conversations from API...")
-        conversations = loop.run_until_complete(fetch_all_pages(bee.get_conversations, "me"))
+        conversations = await fetch_all_pages(bee.get_conversations, "me")
         if isinstance(conversations, dict):
             conversations_list = conversations.get('conversations', [])
         else:
@@ -798,7 +310,7 @@ def run_cli():
         print(f"Fetched {len(conversations_list)} conversations")
         
         print("Fetching facts from API...")
-        facts = loop.run_until_complete(fetch_all_pages(bee.get_facts, "me"))
+        facts = await fetch_all_pages(bee.get_facts, "me")
         if isinstance(facts, dict):
             facts_list = facts.get('facts', [])
         else:
@@ -806,7 +318,7 @@ def run_cli():
         print(f"Fetched {len(facts_list)} facts")
         
         print("Fetching todos from API...")
-        todos = loop.run_until_complete(fetch_all_pages(bee.get_todos, "me"))
+        todos = await fetch_all_pages(bee.get_todos, "me")
         if isinstance(todos, dict):
             todos_list = todos.get('todos', [])
         else:
@@ -822,7 +334,7 @@ def run_cli():
                 async def get_lifelogs_wrapper(dummy=None, page=1):
                     return await limitless.get_lifelogs(page=page)
                 
-                lifelogs = loop.run_until_complete(fetch_all_pages(get_lifelogs_wrapper, "dummy"))
+                lifelogs = await fetch_all_pages(get_lifelogs_wrapper, "dummy")
                 print(f"Debug - lifelogs type: {type(lifelogs)}")
                 
                 # Fix case where lifelogs_list is a list with a string like ['lifelogs']
@@ -831,7 +343,12 @@ def run_cli():
                     lifelogs_list = []
                 # Normal processing for dictionary response with 'lifelogs' key
                 elif isinstance(lifelogs, dict):
-                    lifelogs_list = lifelogs.get('lifelogs', [])
+                    if 'data' in lifelogs and isinstance(lifelogs['data'], dict) and 'lifelogs' in lifelogs['data']:
+                        # New API format
+                        lifelogs_list = lifelogs['data']['lifelogs']
+                    else:
+                        # Standard format
+                        lifelogs_list = lifelogs.get('lifelogs', [])
                     print(f"Debug - lifelogs_list type: {type(lifelogs_list)}")
                     print(f"Debug - lifelogs_list content sample: {str(lifelogs_list)[:100]}")
                 # Fallback for direct list
@@ -1017,11 +534,15 @@ def run_cli():
         print(f"Error in CLI data collection: {str(e)}")
         print(traceback.format_exc())
 
+def run_cli():
+    """
+    CLI entry point for the application. Fetches data from API, stores in database,
+    and then saves database content to JSON files to avoid duplicates.
+    """
+    print("Starting Multi-API Data Collector CLI")
+    initialize_apis()
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(run_cli_async())
+
 if __name__ == '__main__':
-    # Check for command line arguments
-    if len(sys.argv) > 1 and sys.argv[1] == "--cli":
-        # Run in CLI mode
-        run_cli()
-    else:
-        # Run as web server
-        app.run(host='0.0.0.0', port=5000, debug=True)
+    run_cli()

@@ -473,39 +473,42 @@ async def run_cli_async():
         if saved_facts:
             print("Successfully processed facts to JSON")
         
-        # Get todos from database
-        print("Processing todos from database...")
-        db_todos = db.get_todos_from_db()
-        print(f"Retrieved {len(db_todos)} todos from database")
+        # Comment out todos processing 
+        print("Todos processing disabled...")
         
-        # Format data for saving
-        formatted_todos = []
-        todo_raw_data = []
-        
-        for todo in db_todos:
-            # Convert from SQLAlchemy object to dictionary
-            formatted_todo = {
-                "Task": todo.task,
-                "Completed": "Yes" if todo.completed else "No",
-                "Created At": todo.created_at.isoformat() if todo.created_at else "Unknown"
-            }
-            formatted_todos.append(formatted_todo)
-            
-            # Get raw data if available
-            if todo.raw_data:
-                try:
-                    todo_raw_data.append(json.loads(todo.raw_data))
-                except:
-                    print(f"Warning: Could not parse raw_data for todo {todo.id}")
-        
-        # Save todos to file
-        saved_todos = save_to_file(
-            formatted_todos, 
-            'todos', 
-            {'todos': todo_raw_data}
-        )
-        if saved_todos:
-            print("Successfully processed todos to JSON")
+        # # Get todos from database
+        # print("Processing todos from database...")
+        # db_todos = db.get_todos_from_db()
+        # print(f"Retrieved {len(db_todos)} todos from database")
+        # 
+        # # Format data for saving
+        # formatted_todos = []
+        # todo_raw_data = []
+        # 
+        # for todo in db_todos:
+        #     # Convert from SQLAlchemy object to dictionary
+        #     formatted_todo = {
+        #         "Task": todo.task,
+        #         "Completed": "Yes" if todo.completed else "No",
+        #         "Created At": todo.created_at.isoformat() if todo.created_at else "Unknown"
+        #     }
+        #     formatted_todos.append(formatted_todo)
+        #     
+        #     # Get raw data if available
+        #     if todo.raw_data:
+        #         try:
+        #             todo_raw_data.append(json.loads(todo.raw_data))
+        #         except:
+        #             print(f"Warning: Could not parse raw_data for todo {todo.id}")
+        # 
+        # # Save todos to file
+        # saved_todos = save_to_file(
+        #     formatted_todos, 
+        #     'todos', 
+        #     {'todos': todo_raw_data}
+        # )
+        # if saved_todos:
+        #     print("Successfully processed todos to JSON")
         
         # Get lifelogs from database if available
         if limitless:

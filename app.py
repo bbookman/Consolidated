@@ -19,6 +19,7 @@ import pytz
 from limitless_api import LimitlessAPI
 from openweather_api import OpenWeatherAPI
 import database_handler as db
+import config_loader
 
 # Configure logging
 logging.basicConfig(
@@ -614,13 +615,15 @@ async def run_cli_async():
             try:
                 # Get conversations with coordinates from database
                 conversations_with_coords = db.get_conversations_with_coordinates()
+                
+                # Initialize variables for weather data
+                weather_data_list = []
+                db_weather_results = {"processed": 0, "added": 0, "skipped": 0}
+                
                 if conversations_with_coords:
                     print(f"Found {len(conversations_with_coords)} locations with coordinates")
                     
                     # Process the first 5 locations to avoid API rate limits
-                    weather_data_list = []
-                    db_weather_results = {"processed": 0, "added": 0, "skipped": 0}
-                    
                     for i, conv in enumerate(conversations_with_coords[:5]):
                         print(f"Processing location {i+1}/{min(5, len(conversations_with_coords))}: ({conv.latitude}, {conv.longitude})")
                         
@@ -631,24 +634,46 @@ async def run_cli_async():
                             db_weather_results["processed"] += 1
                             if "added" in db_weather_results:
                                 db_weather_results["added"] += 1
-                            
-                    # Save weather data to file
-                    if weather_data_list:
-                        print(f"Retrieved {len(weather_data_list)} weather data points")
-                        
-                        # Save to file
-                        saved_weather = save_to_file(
-                            weather_data_list,
-                            'weather',
-                            {'weather': weather_data_list}
-                        )
-                        
-                        if saved_weather:
-                            print("Successfully processed weather data to JSON")
-                    else:
-                        print("No weather data to process")
                 else:
-                    print("No locations with coordinates found, skipping weather data processing")
+                    print("No locations with coordinates found in Bee conversations")
+                    
+                    # Get default location from config file
+                    default_location = config_loader.get_default_location()
+                    if default_location:
+                        lat, lon, name = default_location
+                        print(f"Using default location from config: {name} ({lat}, {lon})")
+                        
+                        # Fetch weather data for default location
+                        weather_config = config_loader.get_weather_config()
+                        units = weather_config.get("units", "metric")
+                        
+                        weather_data = await fetch_weather_for_location(lat, lon, units=units)
+                        if weather_data:
+                            weather_data_list.append(weather_data)
+                            db_weather_results["processed"] += 1
+                            if "added" in db_weather_results:
+                                db_weather_results["added"] += 1
+                            print(f"Successfully retrieved weather data for default location: {name}")
+                        else:
+                            print(f"Failed to retrieve weather data for default location: {name}")
+                    else:
+                        print("No default location configured in config.yml, skipping weather data processing")
+                
+                # Save weather data to file if we have any
+                if weather_data_list:
+                    print(f"Retrieved {len(weather_data_list)} weather data points")
+                    
+                    # Save to file
+                    saved_weather = save_to_file(
+                        weather_data_list,
+                        'weather',
+                        {'weather': weather_data_list}
+                    )
+                    
+                    if saved_weather:
+                        print("Successfully processed weather data to JSON")
+                else:
+                    print("No weather data to process")
             except Exception as e:
                 print(f"Error processing weather data: {str(e)}")
                 print(traceback.format_exc())

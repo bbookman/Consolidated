@@ -1,0 +1,18 @@
+# Comparison with Only Limitless Data for Time Period: 2025-03-22 12:20 to 12:35
+
+## Section 1: Original Bee Summary
+
+No Bee data available for this time period.
+
+## Section 2: Original Limitless Summary
+
+Summary: Conversation shifts to a child at a party, food, and Benetton's health
+
+## Section 3: Consolidated Summary
+
+Summary from Limitless:
+- Conversation shifts to a child at a party, food, and Benetton's health
+
+## Section 4: Consolidation Approach
+
+Only Limitless data is available for this time period. The consolidated summary contains only Limitless's top-level heading1 content. No Bee data was found with matching timestamps (within 5-minute tolerance). The summary represents a direct extraction of Limitless's high-level insights. Only top-level headings from the content are included. Detailed content and dialogue transcripts are excluded.

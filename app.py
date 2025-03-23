@@ -17,6 +17,7 @@ from beeai import Bee
 import pytz
 
 from limitless_api import LimitlessAPI
+from openweather_api import OpenWeatherAPI
 import database_handler as db
 
 # Configure logging
@@ -32,10 +33,11 @@ logger = logging.getLogger(__name__)
 # Initialize API clients
 bee = None
 limitless = None
+openweather = None
 
 def initialize_apis():
     """Initialize API clients with keys from environment variables"""
-    global bee, limitless
+    global bee, limitless, openweather
     
     # Initialize Bee API
     bee_api_key = os.environ.get('BEE_API_KEY')
@@ -52,6 +54,14 @@ def initialize_apis():
         logger.info("Limitless API client initialized successfully")
     else:
         logger.warning("LIMITLESS_API_KEY not found in environment variables")
+        
+    # Initialize OpenWeatherMap API
+    openweather_api_key = os.environ.get('OPENWEATHER_API_KEY')
+    if openweather_api_key:
+        openweather = OpenWeatherAPI(api_key=openweather_api_key)
+        logger.info("OpenWeatherMap API client initialized successfully")
+    else:
+        logger.warning("OPENWEATHER_API_KEY not found in environment variables")
 
 def format_conversation(conv):
     """Format a conversation object from the Bee API for display/storage"""
@@ -238,7 +248,7 @@ def save_to_file(data, data_type, original_data):
     
     Args:
         data: List of formatted data items (not used - kept for backward compatibility)
-        data_type: Type of data (conversations, facts, todos, lifelogs)
+        data_type: Type of data (conversations, facts, todos, lifelogs, weather)
         original_data: Raw data from API
     """
     # Check if there's any data to save
@@ -252,6 +262,8 @@ def save_to_file(data, data_type, original_data):
         api_name = "bee"
         if data_type == "lifelogs" or data_type.startswith("db_lifelogs"):
             api_name = "limitless"
+        elif data_type == "weather" or data_type.startswith("db_weather"):
+            api_name = "openweather"
         
         # Create directories if they don't exist (only if we have data to save)
         data_dir = os.path.join("data", api_name)
@@ -287,6 +299,54 @@ def save_to_file(data, data_type, original_data):
     except Exception as e:
         logger.error(f"Error saving {data_type} to file: {str(e)}")
         return False
+
+async def fetch_weather_for_location(latitude, longitude, units="metric"):
+    """
+    Fetch weather data for a given location and store it in the database.
+    
+    Args:
+        latitude: Latitude coordinate
+        longitude: Longitude coordinate
+        units: Units of measurement (metric, imperial, or standard)
+        
+    Returns:
+        Weather data dictionary if successful, None otherwise
+    """
+    if not openweather:
+        logger.warning("OpenWeatherMap API client not initialized - skipping weather fetch")
+        return None
+        
+    try:
+        # First check if we already have recent weather data for this location
+        existing_weather = db.get_latest_weather_data_for_location(latitude, longitude)
+        if existing_weather:
+            logger.info(f"Found recent weather data for location ({latitude}, {longitude})")
+            return json.loads(existing_weather.raw_data)
+            
+        # Fetch new weather data from OpenWeatherMap API
+        logger.info(f"Fetching weather data for location ({latitude}, {longitude})")
+        result = await openweather.get_current_weather(latitude, longitude, units=units)
+        
+        # Check if we got an error
+        if result.get("error"):
+            logger.error(f"Error fetching weather data: {result['error']}")
+            return None
+            
+        # Store weather data in database
+        weather_data = result.get("weather")
+        if weather_data:
+            logger.info(f"Storing weather data for location ({latitude}, {longitude})")
+            db_result = db.store_weather_data(weather_data)
+            logger.info(f"Weather data stored: {db_result['added']} added, {db_result['skipped']} skipped")
+            return weather_data
+        else:
+            logger.warning(f"No weather data returned for location ({latitude}, {longitude})")
+            return None
+            
+    except Exception as e:
+        logger.error(f"Error in fetch_weather_for_location: {str(e)}")
+        logger.error(traceback.format_exc())
+        return None
 
 def find_latest_file(directory, prefix):
     """Find the most recent file with the given prefix in the directory"""
@@ -547,6 +607,53 @@ async def run_cli_async():
             )
             if saved_lifelogs:
                 print("Successfully processed lifelogs to JSON")
+                
+        # Fetch weather data for locations with coordinates
+        if openweather:
+            print("\nProcessing weather data...")
+            try:
+                # Get conversations with coordinates from database
+                conversations_with_coords = db.get_conversations_with_coordinates()
+                if conversations_with_coords:
+                    print(f"Found {len(conversations_with_coords)} locations with coordinates")
+                    
+                    # Process the first 5 locations to avoid API rate limits
+                    weather_data_list = []
+                    db_weather_results = {"processed": 0, "added": 0, "skipped": 0}
+                    
+                    for i, conv in enumerate(conversations_with_coords[:5]):
+                        print(f"Processing location {i+1}/{min(5, len(conversations_with_coords))}: ({conv.latitude}, {conv.longitude})")
+                        
+                        # Fetch weather data for this location
+                        weather_data = await fetch_weather_for_location(conv.latitude, conv.longitude)
+                        if weather_data:
+                            weather_data_list.append(weather_data)
+                            db_weather_results["processed"] += 1
+                            if "added" in db_weather_results:
+                                db_weather_results["added"] += 1
+                            
+                    # Save weather data to file
+                    if weather_data_list:
+                        print(f"Retrieved {len(weather_data_list)} weather data points")
+                        
+                        # Save to file
+                        saved_weather = save_to_file(
+                            weather_data_list,
+                            'weather',
+                            {'weather': weather_data_list}
+                        )
+                        
+                        if saved_weather:
+                            print("Successfully processed weather data to JSON")
+                    else:
+                        print("No weather data to process")
+                else:
+                    print("No locations with coordinates found, skipping weather data processing")
+            except Exception as e:
+                print(f"Error processing weather data: {str(e)}")
+                print(traceback.format_exc())
+        else:
+            print("\nOpenWeatherMap API client not initialized - skipping weather data processing")
         
         print("\nData collection complete!")
         

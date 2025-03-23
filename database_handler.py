@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from models import Base, Bee_Conversation, Bee_Fact, Bee_Todo, Limitless_Lifelog
+from models import Base, Bee_Conversation, Bee_Fact, Bee_Todo, Limitless_Lifelog, Weather_Data
 import os
 import json
 import logging
@@ -377,5 +377,170 @@ def get_latest_lifelog_date():
     except Exception as e:
         logger.error(f"Error getting latest lifelog date: {str(e)}")
         return None
+    finally:
+        session.close()
+
+def store_weather_data(weather_data):
+    """
+    Store weather data in the database with deduplication.
+    
+    Args:
+        weather_data: Dictionary containing weather data from OpenWeatherMap API
+        
+    Returns:
+        Dict with counts of items processed, added, and skipped
+    """
+    session = Session()
+    try:
+        # Initialize result
+        result = {
+            "processed": 1,  # We always process 1 weather data point at a time
+            "added": 0,
+            "skipped": 0
+        }
+        
+        # Skip if we received empty or None data
+        if not weather_data or not isinstance(weather_data, dict):
+            logger.warning(f"Invalid weather data type: {type(weather_data)}")
+            result["skipped"] += 1
+            return result
+            
+        # Get required fields
+        try:
+            # Extract main coordinates
+            coord = weather_data.get('coord', {})
+            latitude = coord.get('lat')
+            longitude = coord.get('lon')
+            
+            # Skip if we don't have coordinates
+            if latitude is None or longitude is None:
+                logger.warning("Weather data missing coordinates, skipping")
+                result["skipped"] += 1
+                return result
+                
+            # Extract timestamp
+            dt = weather_data.get('dt')  # Unix timestamp
+            if dt:
+                timestamp = datetime.fromtimestamp(dt)
+            else:
+                # Use current time if no timestamp provided
+                timestamp = datetime.utcnow()
+                
+            # Check if weather data for this location and time already exists
+            existing = session.query(Weather_Data).filter_by(
+                latitude=latitude,
+                longitude=longitude,
+                timestamp=timestamp
+            ).first()
+            
+            if existing:
+                logger.info(f"Weather data for location ({latitude}, {longitude}) at {timestamp} already exists, skipping")
+                result["skipped"] += 1
+                return result
+                
+            # Extract weather data
+            main_data = weather_data.get('main', {})
+            wind_data = weather_data.get('wind', {})
+            clouds_data = weather_data.get('clouds', {})
+            weather_info = weather_data.get('weather', [{}])[0]  # First weather item
+            
+            # Create new weather data record
+            new_weather = Weather_Data(
+                weather_id=weather_info.get('id'),
+                location_name=weather_data.get('name'),
+                latitude=latitude,
+                longitude=longitude,
+                temperature=main_data.get('temp'),
+                feels_like=main_data.get('feels_like'),
+                humidity=main_data.get('humidity'),
+                pressure=main_data.get('pressure'),
+                wind_speed=wind_data.get('speed'),
+                wind_direction=wind_data.get('deg'),
+                clouds=clouds_data.get('all'),  # Cloudiness percentage
+                weather_main=weather_info.get('main'),
+                weather_description=weather_info.get('description'),
+                visibility=weather_data.get('visibility'),
+                timestamp=timestamp,
+                raw_data=json.dumps(weather_data),
+                units=weather_data.get('units', 'metric')  # Default to metric if not specified
+            )
+            
+            session.add(new_weather)
+            session.commit()
+            result["added"] += 1
+            logger.info(f"Added weather data for {new_weather.location_name} ({latitude}, {longitude}) at {timestamp}")
+            return result
+            
+        except Exception as e:
+            session.rollback()
+            logger.error(f"Error processing weather data: {str(e)}")
+            result["skipped"] += 1
+            return result
+            
+    except Exception as e:
+        session.rollback()
+        logger.error(f"Error in store_weather_data: {str(e)}")
+        return {
+            "processed": 1,
+            "added": 0,
+            "skipped": 1
+        }
+    finally:
+        session.close()
+
+def get_weather_data_from_db():
+    """Retrieve all weather data from the database."""
+    session = Session()
+    try:
+        return session.query(Weather_Data).order_by(Weather_Data.timestamp.desc()).all()
+    finally:
+        session.close()
+        
+def get_latest_weather_data_for_location(latitude, longitude, max_age_hours=24):
+    """
+    Retrieve the most recent weather data for a given location within max_age_hours.
+    
+    Args:
+        latitude: Latitude coordinate
+        longitude: Longitude coordinate
+        max_age_hours: Maximum age of weather data in hours
+        
+    Returns:
+        Weather_Data object or None if no matching data exists
+    """
+    session = Session()
+    try:
+        # Calculate the maximum age timestamp
+        from datetime import timedelta
+        max_age = datetime.utcnow() - timedelta(hours=max_age_hours)
+        
+        # Find weather data within 0.01 degree of the given coordinates (approx 1km)
+        # and not older than max_age_hours
+        return session.query(Weather_Data)\
+            .filter(Weather_Data.latitude.between(latitude - 0.01, latitude + 0.01))\
+            .filter(Weather_Data.longitude.between(longitude - 0.01, longitude + 0.01))\
+            .filter(Weather_Data.timestamp >= max_age)\
+            .order_by(Weather_Data.timestamp.desc())\
+            .first()
+    except Exception as e:
+        logger.error(f"Error getting latest weather data for location: {str(e)}")
+        return None
+    finally:
+        session.close()
+        
+def get_conversations_with_coordinates():
+    """
+    Retrieve all conversations from the database that have valid coordinates.
+    
+    Returns:
+        List of Bee_Conversation objects with latitude and longitude
+    """
+    session = Session()
+    try:
+        return session.query(Bee_Conversation)\
+            .filter(Bee_Conversation.latitude.isnot(None))\
+            .filter(Bee_Conversation.longitude.isnot(None))\
+            .order_by(Bee_Conversation.created_at.desc())\
+            .all()
     finally:
         session.close()

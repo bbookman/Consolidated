@@ -74,5 +74,34 @@ class Limitless_Lifelog(Base):
     def __repr__(self):
         return f"<Limitless_Lifelog(id={self.id}, title={self.title[:30] if self.title else 'None'}..., created_at={self.created_at})>"
 
+class Weather_Data(Base):
+    __tablename__ = 'weather_data'
+    
+    id = Column(Integer, primary_key=True)
+    weather_id = Column(Integer, nullable=True)  # Weather condition ID from OpenWeatherMap
+    location_name = Column(String, nullable=True)  # City/location name
+    latitude = Column(Float, nullable=False)
+    longitude = Column(Float, nullable=False)
+    temperature = Column(Float, nullable=True)  # Temperature in selected units
+    feels_like = Column(Float, nullable=True)  # "Feels like" temperature
+    humidity = Column(Integer, nullable=True)  # Humidity percentage
+    pressure = Column(Integer, nullable=True)  # Atmospheric pressure
+    wind_speed = Column(Float, nullable=True)  # Wind speed
+    wind_direction = Column(Integer, nullable=True)  # Wind direction in degrees
+    clouds = Column(Integer, nullable=True)  # Cloudiness percentage
+    weather_main = Column(String, nullable=True)  # Main weather condition (e.g., "Clear", "Rain")
+    weather_description = Column(String, nullable=True)  # Detailed weather description
+    visibility = Column(Integer, nullable=True)  # Visibility in meters
+    created_at = Column(DateTime, default=datetime.utcnow)  # When this record was created
+    timestamp = Column(DateTime)  # The timestamp of the weather data from API
+    raw_data = Column(Text)  # Store the raw JSON response for reference
+    units = Column(String, default="metric")  # The units used for this record (metric, imperial, standard)
+    
+    # Create a unique constraint on lat, lon, and timestamp to prevent duplicates
+    __table_args__ = (UniqueConstraint('latitude', 'longitude', 'timestamp', name='uq_weather_location_time'),)
+    
+    def __repr__(self):
+        return f"<Weather_Data(id={self.id}, location={self.location_name}, temp={self.temperature}, created_at={self.created_at})>"
+
 # Create all tables in the database
 Base.metadata.create_all(engine)

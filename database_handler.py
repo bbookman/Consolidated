@@ -281,13 +281,50 @@ def store_lifelogs(lifelogs):
                 else:
                     tags_json = None
                 
+                # Extract timestamps from contents
+                created_at = None
+                updated_at = None
+                
+                # Look for startTime and endTime in contents
+                if 'contents' in log_data and isinstance(log_data['contents'], list):
+                    # Find the earliest startTime and latest endTime
+                    for item in log_data['contents']:
+                        start_time = item.get('startTime')
+                        parsed_start = parse_date(start_time) if start_time else None
+                        
+                        if parsed_start:
+                            if created_at is None:
+                                created_at = parsed_start
+                            elif parsed_start < created_at:
+                                created_at = parsed_start
+                            
+                        end_time = item.get('endTime')
+                        parsed_end = parse_date(end_time) if end_time else None
+                        
+                        if parsed_end:
+                            if updated_at is None:
+                                updated_at = parsed_end
+                            elif parsed_end > updated_at:
+                                updated_at = parsed_end
+                
+                # Fallback to created_at/updated_at if they exist at top level
+                if created_at is None:
+                    created_at = parse_date(log_data.get('created_at'))
+                
+                if updated_at is None:
+                    updated_at = parse_date(log_data.get('updated_at'))
+                
+                # If we still don't have timestamps, log a warning
+                if created_at is None:
+                    logger.warning(f"No valid startTime or created_at found for lifelog {log_id}")
+                
                 # Create new lifelog record
                 new_log = Limitless_Lifelog(
                     log_id=log_id,
                     title=log_data.get('title'),
                     description=log_data.get('description'),
-                    created_at=parse_date(log_data.get('created_at')),
-                    updated_at=parse_date(log_data.get('updated_at')),
+                    created_at=created_at,
+                    updated_at=updated_at,
                     log_type=log_data.get('type'),
                     tags=tags_json,
                     raw_data=json.dumps(log_data)

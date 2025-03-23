@@ -1,0 +1,30 @@
+# Overlapping Events Summary
+
+Generated on: 2025-03-23 03:06:38
+Found 4 overlapping event pairs
+
+## Event Pair 1
+Time Period: 2025-03-22 12:54 to 13:28
+Bee Summary: ## Summary
+Today was a mixed bag. I had a frustrating moment with my dog, Peach, who wouldn't stop b...
+Limitless Summary: Conversation shifts to a child at a party, food, and Benetton's health...
+Report: overlapping_events_20250323_030638_1.txt
+
+## Event Pair 2
+Time Period: 2025-03-22 16:12 to 16:27
+Bee Summary: ...
+Limitless Summary: Trying to get Grape to come out of hiding...
+Report: overlapping_events_20250323_030638_2.txt
+
+## Event Pair 3
+Time Period: 2025-03-23 01:03 to 01:33
+Bee Summary: ...
+Limitless Summary: Discussing recent visitors and Ivette's work...
+Report: overlapping_events_20250323_030638_3.txt
+
+## Event Pair 4
+Time Period: 2025-03-23 01:03 to 01:18
+Bee Summary: ...
+Limitless Summary: Ivette calls me while driving home and we discuss my new job at Walgreens, my previous job at Lowe's...
+Report: overlapping_events_20250323_030638_4.txt
+

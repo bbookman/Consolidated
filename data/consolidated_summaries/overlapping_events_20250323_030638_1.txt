@@ -1,0 +1,25 @@
+# Comparison of Overlapping Events for Time Period: 2025-03-22 12:54 to 13:28
+
+## Section 1: Original Bee Summary
+
+* **Investment Strategy:** I need to research investment options that perform well when the stock market declines, such as bonds and treasury bills. I should contact Fidelity for advice.
+* **Peso Exchange Rate:** The current value of the dollar against the peso is high, which could present an opportunity.
+* **Peach's Bathroom Habits:** I need to keep an eye on Peach's water intake and potentially consult with a vet if her bathroom issues persist.
+* **Work Schedule:** My boss was very accommodating and adjusted my schedule for tomorrow.
+
+## Section 2: Original Limitless Summary
+
+Summary: Conversation shifts to a child at a party, food, and Benetton's health
+
+## Section 3: Consolidated Summary
+
+Key topics discussed:
+- Conversation shifts to a child at a party, food, and Benetton's health
+- Investment Strategy: I need to research investment options that perform well when the stock market declines, such as bonds and treasury bills. I should contact Fidelity for advice.
+- Peach's Bathroom Habits: I need to keep an eye on Peach's water intake and potentially consult with a vet if her bathroom issues persist.
+- Peso Exchange Rate: The current value of the dollar against the peso is high, which could present an opportunity.
+- Work Schedule: My boss was very accommodating and adjusted my schedule for tomorrow.
+
+## Section 4: Consolidation Approach
+
+This consolidated summary extracts only key information from both sources. From Bee data, we extract the 'Key Take Aways' bullet points. From Limitless data, we extract only the top-level heading1 content. Timestamps were aligned with a 5-minute tolerance to match related events. All detailed content, dialogue transcripts, and background information is excluded. The consolidated summary focuses exclusively on high-level insights. Topics are presented as a simple bulleted list for clarity and direct insight extraction.

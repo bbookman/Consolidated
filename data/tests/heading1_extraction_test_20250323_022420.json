@@ -1,0 +1,38 @@
+{
+  "input": {
+    "lifelogs": [
+      {
+        "id": "sample123",
+        "title": "Test Lifelog",
+        "startTime": "2025-03-23T10:00:00Z",
+        "endTime": "2025-03-23T10:30:00Z",
+        "contents": [
+          {
+            "type": "heading1",
+            "content": "This is a test summary from heading1"
+          },
+          {
+            "type": "paragraph",
+            "content": "This is regular paragraph content that should not be used as the main summary"
+          },
+          {
+            "type": "heading2",
+            "content": "Secondary heading that isn't the main summary"
+          }
+        ]
+      }
+    ]
+  },
+  "extracted": [
+    {
+      "title": "Test Lifelog",
+      "summary": "This is a test summary from heading1",
+      "all_content_types": [
+        "heading1",
+        "paragraph",
+        "heading2"
+      ]
+    }
+  ],
+  "test_result": "success"
+}

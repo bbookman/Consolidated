@@ -245,8 +245,28 @@ def generate_consolidated_summary(event_groups):
                 display_title = f"**Limitless Recording: {title}**" if title else "**Limitless Recording**"
                 integrated_summary_parts.append(f"{display_title}\n{content}")
         
-        # Generate a truly integrated summary when both sources are present
-        if len(sources) > 1:
+        # If only one source has data, use just that source directly 
+        # Otherwise, generate a truly integrated summary when both sources are present
+        if len(sources) == 1:
+            # Simplified format for single source
+            if "Bee" in sources:
+                integrated_summary = "**Key information (from Bee):**\n\n"
+                for item in bee_items:
+                    if 'summary' in item and item['summary']:
+                        integrated_summary += item['summary']
+            else:  # Limitless
+                integrated_summary = "**Key information (from Limitless):**\n\n"
+                for item in limitless_items:
+                    high_level_summary = item.get("summary", "")
+                    if high_level_summary:
+                        integrated_summary += f"{high_level_summary}\n\n"
+                    content = format_lifelog_content(item["content"])
+                    if content:
+                        integrated_summary += content
+                        
+            # Replace the integrated parts with the simple format
+            integrated_summary_parts = [integrated_summary]
+        elif len(sources) > 1:
             # Extract key topics and themes from both sources
             combined_topics = extract_combined_topics(bee_items, limitless_items)
             integrated_section = generate_integrated_insight(combined_topics, time_period)

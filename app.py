@@ -862,27 +862,7 @@ def run_cli():
             if saved_lifelogs:
                 print("Successfully processed lifelogs to JSON")
         
-        # 4. Analyze for overlapping events between Bee and Limitless data
-        if limitless:
-            print("\nAnalyzing data for overlapping events...")
-            try:
-                from find_overlapping_events import generate_reports_for_overlapping_events
-                timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-                print(f"Looking for events that overlap in time between Bee and Limitless data...")
-                
-                # Generate reports for overlapping events
-                overlapping_data = generate_reports_for_overlapping_events()
-                if overlapping_data and overlapping_data['count'] > 0:
-                    print(f"Found {overlapping_data['count']} overlapping events")
-                    print(f"Generated consolidated summaries in data/consolidated_summaries/")
-                    if 'index_file' in overlapping_data and overlapping_data['index_file']:
-                        print(f"Index file created at: {overlapping_data['index_file']}")
-                else:
-                    print("No overlapping events found during this run")
-            except Exception as e:
-                print(f"Error analyzing overlapping events: {str(e)}")
-        
-        print("\nData collection and analysis complete!")
+        print("\nData collection complete!")
         
     except Exception as e:
         print(f"Error in CLI data collection: {str(e)}")

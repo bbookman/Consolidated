@@ -1,6 +1,40 @@
 {
   "conversations": [
     {
+      "id": 646816,
+      "start_time": "2025-03-23T14:25:34.951Z",
+      "end_time": null,
+      "device_type": "Bee",
+      "summary": null,
+      "short_summary": null,
+      "state": "CAPTURING",
+      "created_at": "2025-03-23T14:25:34.951Z",
+      "updated_at": "2025-03-23T14:29:30.031Z",
+      "primary_location": {
+        "address": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12150757546727,
+        "longitude": -77.91254681098943,
+        "created_at": "2025-03-23T14:29:29.940Z"
+      }
+    },
+    {
+      "id": 645410,
+      "start_time": "2025-03-23T12:41:46.707Z",
+      "end_time": "2025-03-23T14:25:42.813Z",
+      "device_type": "Bee",
+      "summary": "Summary: You had breakfast and took your vitamins. You had a discussion about taxes and how to adjust your FSA.\nAtmosphere: You seem to be at home and having a busy morning.\nKey Take aways:\n- You took 3000 IU of Vitamin D, which is 300% of the recommended dose.\n- You had a discussion about taxes and how to adjust your FSA.\n- You set a timer for one hour. \n",
+      "short_summary": "Bruce discussed his blood glucose levels, vitamin D intake, household chores, and a complex tax situation involving FSA accounts and an overpayment to the IRS, seeking clarification and assistance from others.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-23T12:41:46.707Z",
+      "updated_at": "2025-03-23T14:25:42.814Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12136478580629,
+        "longitude": -77.91256456127303,
+        "created_at": "2025-03-23T12:51:57.940Z"
+      }
+    },
+    {
       "id": 636477,
       "start_time": "2025-03-23T01:03:53.680Z",
       "end_time": null,

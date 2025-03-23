@@ -38,6 +38,14 @@ function createCard(item, type) {
                 <div class="timestamp">Created: ${formatDate(item['Created At'])}</div>
             `;
             break;
+        case 'lifelogs':
+            content = `
+                <h4>${item.Title || 'Lifelog'}</h4>
+                <p>${item.Description || 'No description available'}</p>
+                <div class="tags">Tags: ${item.Tags || 'None'}</div>
+                <div class="timestamp">Created: ${formatDate(item['Created At'])}</div>
+            `;
+            break;
     }
 
     card.innerHTML = content;
@@ -85,6 +93,10 @@ function displayDatabaseStats(stats) {
     
     let statsHTML = '<div class="stats-cards">';
     
+    // Bee API stats (in first row)
+    statsHTML += '<div class="stats-row">';
+    statsHTML += '<h4>Bee API</h4>';
+    
     // Conversations stats
     if (stats.conversations) {
         statsHTML += `
@@ -120,8 +132,34 @@ function displayDatabaseStats(stats) {
             </div>
         `;
     }
+    statsHTML += '</div>'; // End of first row
     
-    statsHTML += '</div>';
+    // Limitless API stats (in second row)
+    statsHTML += '<div class="stats-row">';
+    statsHTML += '<h4>Limitless API</h4>';
+    
+    // Lifelogs stats
+    if (stats.lifelogs) {
+        statsHTML += `
+            <div class="stats-card">
+                <h4>Lifelogs</h4>
+                <p>Total processed: ${stats.lifelogs.processed || 0}</p>
+                <p>Added to database: ${stats.lifelogs.added || 0}</p>
+                <p>Already existed: ${stats.lifelogs.skipped || 0}</p>
+            </div>
+        `;
+    } else {
+        statsHTML += `
+            <div class="stats-card">
+                <h4>Lifelogs</h4>
+                <p>No data available</p>
+            </div>
+        `;
+    }
+    
+    statsHTML += '</div>'; // End of second row
+    statsHTML += '</div>'; // End of stats-cards
+    
     statsContainer.innerHTML = statsHTML;
 }
 
@@ -156,6 +194,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (initialData.todos) {
             displayDataAsCards(initialData.todos, 'todos');
+        }
+        
+        if (initialData.lifelogs) {
+            displayDataAsCards(initialData.lifelogs, 'lifelogs');
         }
         
         // Display database stats

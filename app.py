@@ -201,9 +201,6 @@ def save_to_file(data, data_type, original_data):
         # Ensure all directories exist
         os.makedirs(data_dir, exist_ok=True)
         
-        # Create consolidated_summaries directory
-        consolidated_dir = os.path.join(data_dir, 'consolidated_summaries')
-        os.makedirs(consolidated_dir, exist_ok=True)
         
         # Determine which API subdirectory to use
         if data_type == 'lifelogs':
@@ -297,6 +294,21 @@ async def index():
         facts_data = await fetch_all_pages(bee.get_facts, "me")
         todos_data = await fetch_all_pages(bee.get_todos, "me")
         
+        # Fetch Limitless API data if available
+        lifelogs_data = {}
+        if limitless:
+            try:
+                # Create a wrapper function that doesn't require user_id parameter
+                async def get_lifelogs_wrapper(dummy=None, page=1):
+                    return await limitless.get_lifelogs(page=page)
+                    
+                lifelogs_data = await fetch_all_pages(get_lifelogs_wrapper, "dummy")
+                app.logger.info(f"Successfully fetched lifelogs from Limitless API")
+            except Exception as e:
+                app.logger.error(f"Error fetching lifelogs: {str(e)}")
+        else:
+            app.logger.warning("Limitless API client not available, skipping lifelogs fetch")
+        
         # Format the data for display
         # Handle both list and dictionary return types
         if isinstance(conversations_data, dict):
@@ -313,30 +325,40 @@ async def index():
             todos_list = todos_data.get('todos', [])
         else:
             todos_list = todos_data
+            
+        if isinstance(lifelogs_data, dict):
+            lifelogs_list = lifelogs_data.get('lifelogs', [])
+        else:
+            lifelogs_list = lifelogs_data
         
         formatted_conversations = [format_conversation(conv) for conv in conversations_list]
         formatted_facts = [format_fact(fact) for fact in facts_list]
         formatted_todos = [format_todo(todo) for todo in todos_list]
+        formatted_lifelogs = [format_lifelog(log) for log in lifelogs_list]
         
         # Save to files
         save_to_file(formatted_conversations, 'conversations', conversations_data)
         save_to_file(formatted_facts, 'facts', facts_data)
         save_to_file(formatted_todos, 'todos', todos_data)
+        save_to_file(formatted_lifelogs, 'lifelogs', {'lifelogs': lifelogs_list})
         
         # Store in database with deduplication
         db_conversations_result = db.store_conversations(conversations_list)
         db_facts_result = db.store_facts(facts_list)
         db_todos_result = db.store_todos(todos_list)
+        db_lifelogs_result = db.store_lifelogs(lifelogs_list)
         
         # Prepare data for initial render
         initial_data = {
             'conversations': formatted_conversations,
             'facts': formatted_facts,
             'todos': formatted_todos,
+            'lifelogs': formatted_lifelogs,
             'db_stats': {
                 'conversations': db_conversations_result,
                 'facts': db_facts_result,
-                'todos': db_todos_result
+                'todos': db_todos_result,
+                'lifelogs': db_lifelogs_result
             }
         }
         
@@ -495,6 +517,85 @@ async def get_todos():
         app.logger.error(f"Error in get_todos: {str(e)}")
         return {'error': str(e)}, 500
 
+@app.route('/api/lifelogs', methods=['GET'])
+@async_route
+async def get_lifelogs():
+    try:
+        page = int(request.args.get('page', 1))
+        
+        if not limitless:
+            app.logger.error("Limitless API client is not initialized")
+            return {'error': 'Limitless API is not configured'}, 500
+
+        # Create a wrapper function that doesn't require user_id parameter
+        async def get_lifelogs_wrapper(dummy=None, page=1):
+            return await limitless.get_lifelogs(page=page)
+            
+        # Fetch all pages for saving
+        all_lifelogs = await fetch_all_pages(get_lifelogs_wrapper, "dummy")
+        
+        # Fix case where all_lifelogs is a list with a string like ['lifelogs']
+        if isinstance(all_lifelogs, list) and len(all_lifelogs) == 1 and isinstance(all_lifelogs[0], str) and all_lifelogs[0] == 'lifelogs':
+            app.logger.warning("Detected invalid lifelog list format, replacing with empty list")
+            all_lifelogs = []
+        
+        # Normal case where all_lifelogs is a dict with 'lifelogs' key
+        if isinstance(all_lifelogs, dict):
+            lifelogs_list = all_lifelogs.get('lifelogs', [])
+        # Fallback for direct list
+        else:
+            # Only use direct list if it contains dictionaries/objects, not strings
+            if isinstance(all_lifelogs, list) and (not all_lifelogs or isinstance(all_lifelogs[0], dict)):
+                lifelogs_list = all_lifelogs
+            else:
+                lifelogs_list = []
+                app.logger.warning("Unexpected lifelogs format, using empty list")
+        
+        formatted_all_lifelogs = [format_lifelog(log) for log in lifelogs_list]
+
+        # Save complete dataset to file
+        save_to_file(formatted_all_lifelogs, 'lifelogs', {'lifelogs': lifelogs_list})
+        
+        # Store lifelogs in database with deduplication
+        db_result = db.store_lifelogs(lifelogs_list)
+        app.logger.info(f"Database lifelogs storage result: {db_result}")
+
+        # Get current page data for display (for now, just use the full list since pagination may not be supported)
+        current_lifelogs = await limitless.get_lifelogs(page=page)
+        
+        # Handle different response formats
+        if isinstance(current_lifelogs, dict):
+            if 'data' in current_lifelogs and 'lifelogs' in current_lifelogs['data']:
+                # New API format
+                formatted_lifelogs = [format_lifelog(log) for log in current_lifelogs['data']['lifelogs']]
+                total_count = current_lifelogs.get('meta', {}).get('total', len(formatted_lifelogs))
+                total_pages = current_lifelogs.get('meta', {}).get('pages', 1)
+            else:
+                # Standard format
+                formatted_lifelogs = [format_lifelog(log) for log in current_lifelogs.get('lifelogs', [])]
+                total_count = current_lifelogs.get('totalCount', len(formatted_lifelogs))
+                total_pages = current_lifelogs.get('totalPages', 1)
+        else:
+            # Direct list format
+            formatted_lifelogs = [format_lifelog(log) for log in current_lifelogs]
+            total_count = len(formatted_lifelogs)
+            total_pages = 1
+
+        paginated_data = {
+            'lifelogs': formatted_lifelogs,
+            'total': total_count,
+            'page': page,
+            'per_page': len(formatted_lifelogs),
+            'total_pages': total_pages
+        }
+
+        return paginated_data
+
+    except Exception as e:
+        app.logger.error(f"Error in get_lifelogs: {str(e)}")
+        app.logger.error(f"Error details: {traceback.format_exc()}")
+        return {'error': str(e)}, 500
+
 # Database-specific API endpoints
 @app.route('/api/db/conversations', methods=['GET'])
 def get_db_conversations():
@@ -628,6 +729,54 @@ def get_db_todos():
         
     except Exception as e:
         app.logger.error(f"Error getting todos from DB: {str(e)}")
+        return {'error': str(e)}, 500
+
+@app.route('/api/db/lifelogs', methods=['GET'])
+def get_db_lifelogs():
+    try:
+        # Retrieve lifelogs from database
+        lifelogs = db.get_lifelogs_from_db()
+        app.logger.info(f"Retrieved {len(lifelogs)} lifelogs from database")
+        
+        # Format for display
+        formatted_lifelogs = []
+        raw_data = []
+        
+        for log in lifelogs:
+            # Convert from SQLAlchemy object to dictionary
+            formatted_log = {
+                "Title": log.title if log.title else "No title available",
+                "Description": log.description if log.description else "No description available",
+                "Created At": log.created_at.isoformat() if log.created_at else "Unknown",
+                "Updated At": log.updated_at.isoformat() if log.updated_at else "Unknown",
+                "Type": log.log_type if log.log_type else "Unknown type",
+                "Tags": log.tags if log.tags else "No tags"
+            }
+            formatted_lifelogs.append(formatted_log)
+            
+            # Get raw data for file saving
+            if log.raw_data:
+                try:
+                    raw_data.append(json.loads(log.raw_data))
+                except:
+                    app.logger.warning(f"Could not parse raw_data for lifelog {log.id}")
+        
+        # Save database data to files
+        if formatted_lifelogs:
+            saved = save_to_file(
+                formatted_lifelogs, 
+                'db_lifelogs', 
+                {'lifelogs': raw_data}
+            )
+            if saved:
+                app.logger.info("Successfully saved database lifelogs to files")
+            else:
+                app.logger.warning("Failed to save database lifelogs to files")
+            
+        return {'lifelogs': formatted_lifelogs, 'count': len(formatted_lifelogs)}
+        
+    except Exception as e:
+        app.logger.error(f"Error getting lifelogs from DB: {str(e)}")
         return {'error': str(e)}, 500
 
 def run_cli():

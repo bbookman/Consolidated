@@ -200,10 +200,26 @@ h3 {
 }
 
 .stats-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.stats-row {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 15px;
     margin-top: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 15px;
+}
+
+.stats-row h4 {
+    grid-column: 1 / -1;
+    margin: 0 0 10px 0;
+    color: #333;
+    font-weight: bold;
 }
 
 .stats-card {
@@ -277,6 +293,46 @@ h3 {
 
 .data-section {
     margin-bottom: 2rem;
+}
+
+.data-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.data-column {
+    flex: 1;
+    min-width: 0; /* Prevent flex item from overflowing */
+}
+
+.data-column-header {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.api-source {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    background-color: #e3f2fd;
+    color: #0277bd;
+}
+
+.api-source.bee {
+    background-color: #e3f2fd;
+    color: #0277bd;
+}
+
+.api-source.limitless {
+    background-color: #f3e5f5;
+    color: #7b1fa2;
 }
 
 .data-cards {

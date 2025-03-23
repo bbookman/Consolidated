@@ -241,13 +241,19 @@ def save_to_file(data, data_type, original_data):
         data_type: Type of data (conversations, facts, todos, lifelogs)
         original_data: Raw data from API
     """
+    # Check if there's any data to save
+    if not original_data or (isinstance(original_data, dict) and 
+                            all(not original_data.get(k) for k in original_data)):
+        logger.info(f"No data to save for {data_type}, skipping file creation")
+        return True
+        
     try:
         # Determine which API the data is from
         api_name = "bee"
         if data_type == "lifelogs" or data_type.startswith("db_lifelogs"):
             api_name = "limitless"
         
-        # Create directories if they don't exist
+        # Create directories if they don't exist (only if we have data to save)
         data_dir = os.path.join("data", api_name)
         os.makedirs(data_dir, exist_ok=True)
         
@@ -540,6 +546,18 @@ def run_cli():
     and then saves database content to JSON files to avoid duplicates.
     """
     print("Starting Multi-API Data Collector CLI")
+    
+    # Delete the data directory if it exists
+    data_dir = os.path.join("data")
+    if os.path.exists(data_dir):
+        print(f"Removing old data directory: {os.path.abspath(data_dir)}")
+        import shutil
+        try:
+            shutil.rmtree(data_dir)
+            print("Old data directory removed successfully")
+        except Exception as e:
+            print(f"Error removing data directory: {str(e)}")
+    
     initialize_apis()
     loop = asyncio.get_event_loop()
     loop.run_until_complete(run_cli_async())

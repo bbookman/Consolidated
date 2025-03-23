@@ -337,7 +337,7 @@ async def run_cli_async():
             print("Fetching lifelogs from Limitless API...")
             try:
                 # Get the latest lifelog date from the database to use as a filter
-                latest_date = database_handler.get_latest_lifelog_date()
+                latest_date = db.get_latest_lifelog_date()
                 if latest_date:
                     print(f"Found latest lifelog date in database: {latest_date}")
                     print(f"Fetching only lifelogs since {latest_date}...")

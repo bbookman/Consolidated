@@ -323,13 +323,16 @@ async def run_cli_async():
             facts_list = facts
         print(f"Fetched {len(facts_list)} facts")
         
-        print("Fetching todos from API...")
-        todos = await fetch_all_pages(bee.get_todos, "me")
-        if isinstance(todos, dict):
-            todos_list = todos.get('todos', [])
-        else:
-            todos_list = todos
-        print(f"Fetched {len(todos_list)} todos")
+        print("Todos fetching disabled...")
+        todos_list = []
+        # Comment out todos fetching to avoid API calls to /v1/{userId}/todos endpoint
+        # print("Fetching todos from API...")
+        # todos = await fetch_all_pages(bee.get_todos, "me")
+        # if isinstance(todos, dict):
+        #     todos_list = todos.get('todos', [])
+        # else:
+        #     todos_list = todos
+        # print(f"Fetched {len(todos_list)} todos")
         
         # Fetch lifelogs from Limitless API if available
         lifelogs_list = []

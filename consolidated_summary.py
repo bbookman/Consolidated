@@ -76,6 +76,7 @@ def extract_lifelog_content(lifelogs_data):
     - end_time: normalized timestamp
     - title: the lifelog title
     - content: extracted content items
+    - summary: high-level summary (from heading1)
     - source: "Limitless"
     """
     contents = []
@@ -85,7 +86,14 @@ def extract_lifelog_content(lifelogs_data):
         end_time = normalize_timestamp(log.get("endTime"))
         
         if start_time:  # Only include if we have a valid start time
-            # Extract content items, focusing on blockquote types which usually contain conversation text
+            # First, look for heading1 which contains the high-level summary
+            high_level_summary = ""
+            for item in log.get("contents", []):
+                if item.get("type") == "heading1":
+                    high_level_summary = item.get("content", "")
+                    break
+            
+            # Extract all content items for detailed view
             content_items = []
             for item in log.get("contents", []):
                 if item.get("type") in ["heading1", "heading2", "blockquote"]:
@@ -99,6 +107,7 @@ def extract_lifelog_content(lifelogs_data):
                 "start_time": start_time,
                 "end_time": end_time or start_time,  # Use start_time as fallback
                 "title": log.get("title", ""),
+                "summary": high_level_summary,  # Add high-level summary separately
                 "content": content_items,
                 "source": "Limitless"
             })
@@ -182,7 +191,8 @@ def generate_consolidated_summary(event_groups):
     
     Returns a list of summary entries, each containing:
     - time_period: formatted time range
-    - consolidated_summary: text combining both sources
+    - source_summaries: original summaries from each source
+    - consolidated_summary: an integrated summary combining both sources
     - sources: list of source types included
     """
     consolidated_summaries = []
@@ -201,29 +211,143 @@ def generate_consolidated_summary(event_groups):
         bee_items = [e for e in group if e["source"] == "Bee"]
         limitless_items = [e for e in group if e["source"] == "Limitless"]
         
-        # Build consolidated summary
-        summary_parts = []
+        # Build source-specific summaries
+        source_summaries = []
+        integrated_summary_parts = []
         sources = []
         
+        # Process Bee summaries
         if bee_items:
             sources.append("Bee")
             for item in bee_items:
-                summary_parts.append(f"**Bee Summary:**\n{item['summary']}")
+                source_summaries.append({
+                    "source": "Bee",
+                    "summary": item['summary']
+                })
+                integrated_summary_parts.append(f"**Bee Summary:**\n{item['summary']}")
         
+        # Process Limitless content
         if limitless_items:
             sources.append("Limitless")
             for item in limitless_items:
-                title = f"**Limitless Recording: {item['title']}**" if item.get("title") else "**Limitless Recording**"
+                # Format Limitless content
+                title = item.get("title", "")
+                high_level_summary = item.get("summary", "")
                 content = format_lifelog_content(item["content"])
-                summary_parts.append(f"{title}\n{content}")
+                
+                source_summaries.append({
+                    "source": "Limitless",
+                    "title": title,
+                    "summary": high_level_summary,
+                    "content_details": content
+                })
+                
+                display_title = f"**Limitless Recording: {title}**" if title else "**Limitless Recording**"
+                integrated_summary_parts.append(f"{display_title}\n{content}")
+        
+        # Generate a truly integrated summary when both sources are present
+        if len(sources) > 1:
+            # Extract key topics and themes from both sources
+            combined_topics = extract_combined_topics(bee_items, limitless_items)
+            integrated_section = generate_integrated_insight(combined_topics, time_period)
+            
+            # Add the integrated section at the beginning
+            if integrated_section:
+                integrated_summary_parts.insert(0, integrated_section)
         
         consolidated_summaries.append({
             "time_period": time_period,
-            "consolidated_summary": "\n\n---\n\n".join(summary_parts),
+            "source_summaries": source_summaries,
+            "consolidated_summary": "\n\n---\n\n".join(integrated_summary_parts),
             "sources": sources
         })
     
     return consolidated_summaries
+
+def extract_combined_topics(bee_items, limitless_items):
+    """
+    Extract key topics and themes from both Bee and Limitless items.
+    This is used to generate a truly integrated summary.
+    
+    Args:
+        bee_items: List of items from Bee API
+        limitless_items: List of items from Limitless API
+        
+    Returns:
+        Dictionary of combined topics
+    """
+    topics = {
+        "people": set(),
+        "main_themes": set(),
+        "activities": set(),
+        "locations": set()
+    }
+    
+    # Extract from Bee summaries
+    for item in bee_items:
+        summary = item.get("summary", "")
+        # Simple keyword extraction - in a real implementation,
+        # this would use NLP for more sophisticated extraction
+        for line in summary.split("\n"):
+            if "Key Take Aways" in line or "Key Takeaways" in line:
+                # Extract topics from key takeaways
+                for takeaway in summary.split("*")[1:]:  # Split by bullet points
+                    topics["main_themes"].add(takeaway.strip())
+    
+    # Extract from Limitless content
+    for item in limitless_items:
+        summary = item.get("summary", "")
+        topics["main_themes"].add(summary)
+        
+        # Extract speakers from content
+        for content_item in item.get("content", []):
+            speaker = content_item.get("speaker", "")
+            if speaker and speaker not in ["You", "Unknown Speaker"]:
+                topics["people"].add(speaker)
+    
+    return topics
+
+def generate_integrated_insight(topics, time_period):
+    """
+    Generate an integrated insight section that combines information from both sources.
+    
+    Args:
+        topics: Dictionary of combined topics extracted from both sources
+        time_period: The time period of the event
+        
+    Returns:
+        Formatted integrated insight text
+    """
+    if not topics["main_themes"]:
+        return ""
+    
+    # Create a coherent integrated summary
+    insight = "**Integrated Summary:**\n\n"
+    
+    # Add themes
+    if topics["main_themes"]:
+        themes = list(topics["main_themes"])
+        if len(themes) == 1:
+            insight += f"This event primarily focused on {themes[0]}.\n\n"
+        else:
+            insight += "This event covered multiple topics including:\n"
+            for theme in themes:
+                if theme.strip():
+                    insight += f"- {theme.strip()}\n"
+            insight += "\n"
+    
+    # Add people if present
+    if topics["people"]:
+        people = list(topics["people"])
+        if len(people) == 1:
+            insight += f"The conversation involved {people[0]}.\n"
+        elif len(people) > 1:
+            insight += f"The conversation involved multiple people including {', '.join(people[:-1])} and {people[-1]}.\n"
+    
+    # Add summary statement
+    insight += "\nThis summary combines data from both Bee AI and Limitless recordings captured during this time period.\n"
+    
+    return insight
 
 def main():
     """Main function to generate consolidated summaries."""

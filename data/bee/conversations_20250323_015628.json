@@ -1,6 +1,40 @@
 {
   "conversations": [
     {
+      "id": 636477,
+      "start_time": "2025-03-23T01:03:53.680Z",
+      "end_time": null,
+      "device_type": "Bee",
+      "summary": null,
+      "short_summary": "Bruce discusses his transition to a new job at Walgreens, the challenges of family responsibilities, and recent health issues while sharing updates about his family's activities and experiences.",
+      "state": "CAPTURING",
+      "created_at": "2025-03-23T01:03:53.680Z",
+      "updated_at": "2025-03-23T01:51:52.132Z",
+      "primary_location": {
+        "address": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+        "latitude": 34.12138298714742,
+        "longitude": -77.91258373080365,
+        "created_at": "2025-03-23T01:51:51.952Z"
+      }
+    },
+    {
+      "id": 632335,
+      "start_time": "2025-03-22T16:41:44.835Z",
+      "end_time": "2025-03-22T21:39:42.332Z",
+      "device_type": "Bee",
+      "summary": "## Bruce's Memory of a Journal Entry and a Day at Work\n\n**Summary:** Today, Bruce worked on a journal entry about his friend, Mike Rabel, reminiscing about their shared past from middle school through college and beyond. He also spent the day at Walgreens, learning how to perform various tasks in the photo lab and assisting customers at the register. \n\n**Atmosphere:** The atmosphere was generally positive and lighthearted, with Bruce engaging in friendly banter with his coworkers and customers. He was eager to learn new tasks and seemed to enjoy the challenges of his work. There were moments of frustration with technical difficulties and the occasional rude customer, but overall, the day was pleasant.\n\n**Key Takeaways:**\n\n* Bruce made progress on his journal entry about his friend Mike, recalling their shared experiences and reflecting on their changing relationship.\n* He learned how to process camera film, print photos, and create various photo products like floating frames and tile pics.\n* He gained experience using the register, processing returns, and assisting customers with their rewards accounts.\n* He realized that he enjoys helping customers and finds satisfaction in learning new things. \n* He needs to remember to change the paper roll when changing the ribbon in the photo printer. \n",
+      "short_summary": "Bruce documented his memories of his longtime friend Mike, reflecting on their evolving relationship and shared experiences from middle school through college, and also described his current coding projects using AI.\n",
+      "state": "COMPLETED",
+      "created_at": "2025-03-22T16:41:44.835Z",
+      "updated_at": "2025-03-22T21:39:42.333Z",
+      "primary_location": {
+        "address": "2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States",
+        "latitude": 34.28926553186645,
+        "longitude": -77.87209545061658,
+        "created_at": "2025-03-22T21:24:10.818Z"
+      }
+    },
+    {
       "id": 632032,
       "start_time": "2025-03-22T16:12:24.584Z",
       "end_time": null,

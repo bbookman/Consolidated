@@ -1,6 +1,150 @@
 {
   "facts": [
     {
+      "id": 717416,
+      "text": "Bruce is working with REST APIs that respond with JSON, requiring an understanding of APIs, JSON structure, and databases.",
+      "tags": [
+        "technology"
+      ],
+      "created_at": "2025-03-22T21:39:42.229Z",
+      "visibility": "private"
+    },
+    {
+      "id": 717413,
+      "text": "Bruce looks for values like atheism, logic, and liberalism in a partner.",
+      "tags": [
+        "politics"
+      ],
+      "created_at": "2025-03-22T21:39:42.229Z",
+      "visibility": "private"
+    },
+    {
+      "id": 717412,
+      "text": "Bruce identifies as being bipolar and has experienced depression.",
+      "tags": [
+        "health"
+      ],
+      "created_at": "2025-03-22T21:39:42.229Z",
+      "visibility": "private"
+    },
+    {
+      "id": 717411,
+      "text": "Bruce mentioned being very lonely and having difficulty meeting women and getting dates.",
+      "tags": [
+        "health"
+      ],
+      "created_at": "2025-03-22T21:39:42.229Z",
+      "visibility": "private"
+    },
+    {
+      "id": 717410,
+      "text": "Bruce worked at Wendy's together with Alan Clark.",
+      "tags": [
+        "food"
+      ],
+      "created_at": "2025-03-22T21:39:42.229Z",
+      "visibility": "private"
+    },
+    {
+      "id": 717409,
+      "text": "Bruce and Mike Rabel spent time together during lunch in middle school, often in Mr. Graves' classroom.",
+      "tags": [
+        "hobbies"
+      ],
+      "created_at": "2025-03-22T21:39:42.229Z",
+      "visibility": "private"
+    },
+    {
+      "id": 717408,
+      "text": "Bruce and Mike Rabel bonded in middle school because they both felt like outsiders.",
+      "tags": [
+        "hobbies"
+      ],
+      "created_at": "2025-03-22T21:39:42.229Z",
+      "visibility": "private"
+    },
+    {
+      "id": 717407,
+      "text": "Bruce met his friend Mike Rabel in middle school, specifically Castro Middle School, during 7th, 8th, and 9th grade.",
+      "tags": [
+        "hobbies"
+      ],
+      "created_at": "2025-03-22T21:39:42.229Z",
+      "visibility": "private"
+    },
+    {
+      "id": 717415,
+      "text": "Bruce is working on projects involving devices that capture audio and transcribe it to text.",
+      "tags": [
+        "technology"
+      ],
+      "created_at": "2025-03-22T21:39:42.229Z",
+      "visibility": "private"
+    },
+    {
+      "id": 717417,
+      "text": "Bruce experienced difficulty in his friendship with Mike Rabel because he felt Mike was not being genuine.",
+      "tags": [
+        "hobbies"
+      ],
+      "created_at": "2025-03-22T21:39:42.229Z",
+      "visibility": "private"
+    },
+    {
+      "id": 713166,
+      "text": "Bruce interacts with a virtual assistant named Alexa.",
+      "tags": [
+        "technology"
+      ],
+      "created_at": "2025-03-22T16:37:49.022Z",
+      "visibility": "private"
+    },
+    {
+      "id": 712877,
+      "text": "One of Bruce's dogs is named Peach.",
+      "tags": [
+        "hobbies"
+      ],
+      "created_at": "2025-03-22T16:12:38.465Z",
+      "visibility": "private"
+    },
+    {
+      "id": 712878,
+      "text": "One of Bruce's dogs is named Grape.",
+      "tags": [
+        "hobbies"
+      ],
+      "created_at": "2025-03-22T16:12:38.465Z",
+      "visibility": "private"
+    },
+    {
+      "id": 712879,
+      "text": "Bruce is working on building an app using AI.",
+      "tags": [
+        "technology"
+      ],
+      "created_at": "2025-03-22T16:12:38.465Z",
+      "visibility": "private"
+    },
+    {
+      "id": 712086,
+      "text": "Bruce finds the bonus room in his house a fantastic space, making him feel like he has his own apartment since he has the bedroom upstairs.",
+      "tags": [
+        "hobbies"
+      ],
+      "created_at": "2025-03-22T15:08:56.928Z",
+      "visibility": "private"
+    },
+    {
+      "id": 712083,
+      "text": "Bruce is familiar with investments in bonds and Treasury bills.",
+      "tags": [
+        "finance"
+      ],
+      "created_at": "2025-03-22T15:08:56.928Z",
+      "visibility": "private"
+    },
+    {
       "id": 706883,
       "text": "Bruce is interested in logic and critical thinking.",
       "tags": [
@@ -38,8 +182,18 @@
       "visibility": "private"
     },
     {
-      "id": 686745,
-      "text": "Bruce used to celebrate Halloween with his kids and Yvette in a townhome area called River Mark in Santa Clara, CA.",
+      "id": 686748,
+      "text": "Bruce remembers activities at the Santa Cruz Beach Boardwalk, including riding a merry-go-round, playing games, and enjoying rides like roller coasters and bumper cars.",
+      "tags": [
+        "entertainment",
+        "hobbies"
+      ],
+      "created_at": "2025-03-21T01:38:49.601Z",
+      "visibility": "private"
+    },
+    {
+      "id": 686747,
+      "text": "Bruce has a significant childhood and young adulthood connection to the Santa Cruz Beach Boardwalk, which he also associates with his children's childhood.",
       "tags": [
         "entertainment",
         "hobbies"
@@ -58,8 +212,8 @@
       "visibility": "private"
     },
     {
-      "id": 686747,
-      "text": "Bruce has a significant childhood and young adulthood connection to the Santa Cruz Beach Boardwalk, which he also associates with his children's childhood.",
+      "id": 686745,
+      "text": "Bruce used to celebrate Halloween with his kids and Yvette in a townhome area called River Mark in Santa Clara, CA.",
       "tags": [
         "entertainment",
         "hobbies"
@@ -68,39 +222,10 @@
       "visibility": "private"
     },
     {
-      "id": 686748,
-      "text": "Bruce remembers activities at the Santa Cruz Beach Boardwalk, including riding a merry-go-round, playing games, and enjoying rides like roller coasters and bumper cars.",
+      "id": 686754,
+      "text": "Bruce had a significant crush on a girl named Joan Crowley during his high school years.",
       "tags": [
-        "entertainment",
         "hobbies"
-      ],
-      "created_at": "2025-03-21T01:38:49.601Z",
-      "visibility": "private"
-    },
-    {
-      "id": 686749,
-      "text": "Bruce dated Claire Tracy and experienced acid reflux for the first time after a meal and hot tub experience with her.",
-      "tags": [
-        "health",
-        "food"
-      ],
-      "created_at": "2025-03-21T01:38:49.601Z",
-      "visibility": "private"
-    },
-    {
-      "id": 686750,
-      "text": "Bruce has bipolar disorder.",
-      "tags": [
-        "health"
-      ],
-      "created_at": "2025-03-21T01:38:49.601Z",
-      "visibility": "private"
-    },
-    {
-      "id": 686751,
-      "text": "Bruce was married to Dorina Merganova and they got divorced before he met Yvette.",
-      "tags": [
-        "entertainment"
       ],
       "created_at": "2025-03-21T01:38:49.601Z",
       "visibility": "private"
@@ -115,10 +240,29 @@
       "visibility": "private"
     },
     {
-      "id": 686754,
-      "text": "Bruce had a significant crush on a girl named Joan Crowley during his high school years.",
+      "id": 686751,
+      "text": "Bruce was married to Dorina Merganova and they got divorced before he met Yvette.",
       "tags": [
-        "hobbies"
+        "entertainment"
+      ],
+      "created_at": "2025-03-21T01:38:49.601Z",
+      "visibility": "private"
+    },
+    {
+      "id": 686750,
+      "text": "Bruce has bipolar disorder.",
+      "tags": [
+        "health"
+      ],
+      "created_at": "2025-03-21T01:38:49.601Z",
+      "visibility": "private"
+    },
+    {
+      "id": 686749,
+      "text": "Bruce dated Claire Tracy and experienced acid reflux for the first time after a meal and hot tub experience with her.",
+      "tags": [
+        "health",
+        "food"
       ],
       "created_at": "2025-03-21T01:38:49.601Z",
       "visibility": "private"
@@ -161,15 +305,6 @@
       "visibility": "private"
     },
     {
-      "id": 650643,
-      "text": "Bruce's full name is Bruce Bookman.",
-      "tags": [
-        "general"
-      ],
-      "created_at": "2025-03-19T15:02:24.463Z",
-      "visibility": "private"
-    },
-    {
       "id": 650644,
       "text": "Bruce was born on February 23, 1968.",
       "tags": [
@@ -179,12 +314,12 @@
       "visibility": "private"
     },
     {
-      "id": 649843,
-      "text": "Bruce's last name is Bookman.",
+      "id": 650643,
+      "text": "Bruce's full name is Bruce Bookman.",
       "tags": [
-        "hobbies"
+        "general"
       ],
-      "created_at": "2025-03-19T14:20:21.363Z",
+      "created_at": "2025-03-19T15:02:24.463Z",
       "visibility": "private"
     },
     {
@@ -206,6 +341,15 @@
       "visibility": "private"
     },
     {
+      "id": 649843,
+      "text": "Bruce's last name is Bookman.",
+      "tags": [
+        "hobbies"
+      ],
+      "created_at": "2025-03-19T14:20:21.363Z",
+      "visibility": "private"
+    },
+    {
       "id": 633591,
       "text": "Bruce appears to work at Walgreens.",
       "tags": [
@@ -215,19 +359,19 @@
       "visibility": "private"
     },
     {
-      "id": 627001,
-      "text": "Bruce uses tax software to assist with tax filings, including H&R Block and TurboTax.",
+      "id": 627002,
+      "text": "Bruce has knowledge of tax filing options, including married filing jointly and separately, and head of household.",
       "tags": [
-        "technology"
+        "politics"
       ],
       "created_at": "2025-03-18T13:12:35.430Z",
       "visibility": "private"
     },
     {
-      "id": 627002,
-      "text": "Bruce has knowledge of tax filing options, including married filing jointly and separately, and head of household.",
+      "id": 627001,
+      "text": "Bruce uses tax software to assist with tax filings, including H&R Block and TurboTax.",
       "tags": [
-        "politics"
+        "technology"
       ],
       "created_at": "2025-03-18T13:12:35.430Z",
       "visibility": "private"
@@ -260,15 +404,6 @@
       "visibility": "private"
     },
     {
-      "id": 611534,
-      "text": "Bruce can be reached at 669-221-9612.",
-      "tags": [
-        "general"
-      ],
-      "created_at": "2025-03-17T18:07:29.737Z",
-      "visibility": "private"
-    },
-    {
       "id": 611535,
       "text": "Bruce has an appointment with Larry Gerstenhaber Telehealth.",
       "tags": [
@@ -279,12 +414,12 @@
       "visibility": "private"
     },
     {
-      "id": 595325,
-      "text": "Bruce feels he has less free time as he has gotten older.",
+      "id": 611534,
+      "text": "Bruce can be reached at 669-221-9612.",
       "tags": [
-        "hobbies"
+        "general"
       ],
-      "created_at": "2025-03-16T19:33:29.370Z",
+      "created_at": "2025-03-17T18:07:29.737Z",
       "visibility": "private"
     },
     {
@@ -297,8 +432,17 @@
       "visibility": "private"
     },
     {
-      "id": 595329,
-      "text": "Bruce has played the role of Santa Claus and Peppa Pig in costume.",
+      "id": 595325,
+      "text": "Bruce feels he has less free time as he has gotten older.",
+      "tags": [
+        "hobbies"
+      ],
+      "created_at": "2025-03-16T19:33:29.370Z",
+      "visibility": "private"
+    },
+    {
+      "id": 595333,
+      "text": "Bruce likes Ozzy Osbourne, Journey, and Def Leppard.",
       "tags": [
         "entertainment",
         "hobbies"
@@ -317,8 +461,8 @@
       "visibility": "private"
     },
     {
-      "id": 595333,
-      "text": "Bruce likes Ozzy Osbourne, Journey, and Def Leppard.",
+      "id": 595329,
+      "text": "Bruce has played the role of Santa Claus and Peppa Pig in costume.",
       "tags": [
         "entertainment",
         "hobbies"
@@ -327,19 +471,19 @@
       "visibility": "private"
     },
     {
-      "id": 592965,
-      "text": "Bruce has two dogs named Peach and Grape.",
+      "id": 592966,
+      "text": "Bruce is aware of tornado watches and weather conditions.",
       "tags": [
-        "hobbies"
+        "health"
       ],
       "created_at": "2025-03-16T16:50:05.186Z",
       "visibility": "private"
     },
     {
-      "id": 592966,
-      "text": "Bruce is aware of tornado watches and weather conditions.",
+      "id": 592965,
+      "text": "Bruce has two dogs named Peach and Grape.",
       "tags": [
-        "health"
+        "hobbies"
       ],
       "created_at": "2025-03-16T16:50:05.186Z",
       "visibility": "private"
@@ -374,6 +518,15 @@
       "visibility": "private"
     },
     {
+      "id": 591401,
+      "text": "Bruce has some familiarity with Mac OS devices.",
+      "tags": [
+        "technology"
+      ],
+      "created_at": "2025-03-16T14:07:51.293Z",
+      "visibility": "private"
+    },
+    {
       "id": 591402,
       "text": "Bruce is trying to manage a situation involving medication and care.",
       "tags": [
@@ -392,37 +545,10 @@
       "visibility": "private"
     },
     {
-      "id": 591401,
-      "text": "Bruce has some familiarity with Mac OS devices.",
-      "tags": [
-        "technology"
-      ],
-      "created_at": "2025-03-16T14:07:51.293Z",
-      "visibility": "private"
-    },
-    {
-      "id": 591090,
-      "text": "Bruce takes responsibility for preparing breakfast for others.",
-      "tags": [
-        "food"
-      ],
-      "created_at": "2025-03-16T13:13:39.955Z",
-      "visibility": "private"
-    },
-    {
       "id": 591091,
       "text": "Bruce is concerned about the well-being of others and offers medicine if needed.",
       "tags": [
         "health"
-      ],
-      "created_at": "2025-03-16T13:13:39.955Z",
-      "visibility": "private"
-    },
-    {
-      "id": 591092,
-      "text": "Bruce is familiar with and uses technology like Alexa and robots.",
-      "tags": [
-        "technology"
       ],
       "created_at": "2025-03-16T13:13:39.955Z",
       "visibility": "private"
@@ -437,10 +563,10 @@
       "visibility": "private"
     },
     {
-      "id": 591095,
-      "text": "Bruce is involved in organizing or being part of a birthday party.",
+      "id": 591092,
+      "text": "Bruce is familiar with and uses technology like Alexa and robots.",
       "tags": [
-        "hobbies"
+        "technology"
       ],
       "created_at": "2025-03-16T13:13:39.955Z",
       "visibility": "private"
@@ -455,12 +581,21 @@
       "visibility": "private"
     },
     {
-      "id": 576992,
-      "text": "Bruce is concerned about weight management and monitors his weight and blood glucose levels.",
+      "id": 591095,
+      "text": "Bruce is involved in organizing or being part of a birthday party.",
       "tags": [
-        "health"
+        "hobbies"
       ],
-      "created_at": "2025-03-15T16:44:14.338Z",
+      "created_at": "2025-03-16T13:13:39.955Z",
+      "visibility": "private"
+    },
+    {
+      "id": 591090,
+      "text": "Bruce takes responsibility for preparing breakfast for others.",
+      "tags": [
+        "food"
+      ],
+      "created_at": "2025-03-16T13:13:39.955Z",
       "visibility": "private"
     },
     {
@@ -468,6 +603,15 @@
       "text": "Bruce prefers to handle certain tasks personally rather than relying on others.",
       "tags": [
         "hobbies"
+      ],
+      "created_at": "2025-03-15T16:44:14.338Z",
+      "visibility": "private"
+    },
+    {
+      "id": 576992,
+      "text": "Bruce is concerned about weight management and monitors his weight and blood glucose levels.",
+      "tags": [
+        "health"
       ],
       "created_at": "2025-03-15T16:44:14.338Z",
       "visibility": "private"
@@ -501,15 +645,6 @@
       "visibility": "private"
     },
     {
-      "id": 556395,
-      "text": "Bruce monitors his weight regularly.",
-      "tags": [
-        "health"
-      ],
-      "created_at": "2025-03-14T14:33:23.245Z",
-      "visibility": "private"
-    },
-    {
       "id": 556396,
       "text": "Bruce monitors his blood glucose levels.",
       "tags": [
@@ -537,8 +672,17 @@
       "visibility": "private"
     },
     {
-      "id": 555684,
-      "text": "Bruce's current weight is 187 lbs.",
+      "id": 556395,
+      "text": "Bruce monitors his weight regularly.",
+      "tags": [
+        "health"
+      ],
+      "created_at": "2025-03-14T14:33:23.245Z",
+      "visibility": "private"
+    },
+    {
+      "id": 555685,
+      "text": "Bruce's blood glucose level is 120.",
       "tags": [
         "health"
       ],
@@ -546,8 +690,8 @@
       "visibility": "private"
     },
     {
-      "id": 555685,
-      "text": "Bruce's blood glucose level is 120.",
+      "id": 555684,
+      "text": "Bruce's current weight is 187 lbs.",
       "tags": [
         "health"
       ],
@@ -591,10 +735,27 @@
       "visibility": "private"
     },
     {
-      "id": 535410,
-      "text": "Bruce enjoyed visiting California's Great America with his family, and it is a significant part of his family history.",
+      "id": 535414,
+      "text": "Bruce experiences less anxiety since transitioning from shift lead to customer service associate.",
       "tags": [
-        "entertainment",
+        "health"
+      ],
+      "created_at": "2025-03-13T02:55:07.153Z",
+      "visibility": "private"
+    },
+    {
+      "id": 535413,
+      "text": "Bruce enjoys interacting with customers at his job and joking with them.",
+      "tags": [
+        "hobbies"
+      ],
+      "created_at": "2025-03-13T02:55:07.153Z",
+      "visibility": "private"
+    },
+    {
+      "id": 535412,
+      "text": "Bruce has memories of going to Lexington Reservoir.",
+      "tags": [
         "hobbies"
       ],
       "created_at": "2025-03-13T02:55:07.153Z",
@@ -611,8 +772,18 @@
       "visibility": "private"
     },
     {
-      "id": 535412,
-      "text": "Bruce has memories of going to Lexington Reservoir.",
+      "id": 535410,
+      "text": "Bruce enjoyed visiting California's Great America with his family, and it is a significant part of his family history.",
+      "tags": [
+        "entertainment",
+        "hobbies"
+      ],
+      "created_at": "2025-03-13T02:55:07.153Z",
+      "visibility": "private"
+    },
+    {
+      "id": 535409,
+      "text": "Bruce has memories of going to Happy Hollow Park with his sons.",
       "tags": [
         "hobbies"
       ],
@@ -620,37 +791,28 @@
       "visibility": "private"
     },
     {
-      "id": 535413,
-      "text": "Bruce enjoys interacting with customers at his job and joking with them.",
+      "id": 535408,
+      "text": "Bruce prefers a job that pays better than his current position.",
       "tags": [
-        "hobbies"
+        "politics"
       ],
       "created_at": "2025-03-13T02:55:07.153Z",
       "visibility": "private"
     },
     {
-      "id": 535414,
-      "text": "Bruce experiences less anxiety since transitioning from shift lead to customer service associate.",
+      "id": 535407,
+      "text": "Bruce is currently working as a customer service associate at Walgreens.",
       "tags": [
-        "health"
+        "general"
       ],
       "created_at": "2025-03-13T02:55:07.153Z",
       "visibility": "private"
     },
     {
-      "id": 535415,
-      "text": "Bruce finds his work at Walgreens to be very physical.",
+      "id": 535406,
+      "text": "Bruce worked as a shift lead at Walgreens.",
       "tags": [
-        "health"
-      ],
-      "created_at": "2025-03-13T02:55:07.153Z",
-      "visibility": "private"
-    },
-    {
-      "id": 535416,
-      "text": "Bruce values an amusement park pass for its flexibility and convenience in visit duration.",
-      "tags": [
-        "entertainment"
+        "general"
       ],
       "created_at": "2025-03-13T02:55:07.153Z",
       "visibility": "private"
@@ -666,39 +828,32 @@
       "visibility": "private"
     },
     {
-      "id": 535406,
-      "text": "Bruce worked as a shift lead at Walgreens.",
+      "id": 535416,
+      "text": "Bruce values an amusement park pass for its flexibility and convenience in visit duration.",
       "tags": [
-        "general"
+        "entertainment"
       ],
       "created_at": "2025-03-13T02:55:07.153Z",
       "visibility": "private"
     },
     {
-      "id": 535408,
-      "text": "Bruce prefers a job that pays better than his current position.",
+      "id": 535415,
+      "text": "Bruce finds his work at Walgreens to be very physical.",
       "tags": [
-        "politics"
+        "health"
       ],
       "created_at": "2025-03-13T02:55:07.153Z",
       "visibility": "private"
     },
     {
-      "id": 535409,
-      "text": "Bruce has memories of going to Happy Hollow Park with his sons.",
+      "id": 527245,
+      "text": "Bruce has played a game involving throwing burritos.",
       "tags": [
-        "hobbies"
+        "sports",
+        "food",
+        "entertainment"
       ],
-      "created_at": "2025-03-13T02:55:07.153Z",
-      "visibility": "private"
-    },
-    {
-      "id": 535407,
-      "text": "Bruce is currently working as a customer service associate at Walgreens.",
-      "tags": [
-        "general"
-      ],
-      "created_at": "2025-03-13T02:55:07.153Z",
+      "created_at": "2025-03-12T20:22:10.300Z",
       "visibility": "private"
     },
     {
@@ -749,17 +904,6 @@
       "visibility": "private"
     },
     {
-      "id": 527245,
-      "text": "Bruce has played a game involving throwing burritos.",
-      "tags": [
-        "sports",
-        "food",
-        "entertainment"
-      ],
-      "created_at": "2025-03-12T20:22:10.300Z",
-      "visibility": "private"
-    },
-    {
       "id": 527248,
       "text": "Bruce has built or launched a water rocket.",
       "tags": [
@@ -778,17 +922,8 @@
       "visibility": "private"
     },
     {
-      "id": 523101,
-      "text": "Bruce has visited Emma Prusch Farm Park.",
-      "tags": [
-        "hobbies"
-      ],
-      "created_at": "2025-03-12T17:34:54.473Z",
-      "visibility": "private"
-    },
-    {
-      "id": 523102,
-      "text": "Bruce has visited San Jose History Park.",
+      "id": 523104,
+      "text": "Bruce has an interest in petting zoos and small animal exhibits.",
       "tags": [
         "hobbies"
       ],
@@ -805,8 +940,17 @@
       "visibility": "private"
     },
     {
-      "id": 523104,
-      "text": "Bruce has an interest in petting zoos and small animal exhibits.",
+      "id": 523102,
+      "text": "Bruce has visited San Jose History Park.",
+      "tags": [
+        "hobbies"
+      ],
+      "created_at": "2025-03-12T17:34:54.473Z",
+      "visibility": "private"
+    },
+    {
+      "id": 523101,
+      "text": "Bruce has visited Emma Prusch Farm Park.",
       "tags": [
         "hobbies"
       ],
@@ -823,11 +967,10 @@
       "visibility": "private"
     },
     {
-      "id": 518482,
-      "text": "Bruce plans to start meditating with Russell to promote well-being.",
+      "id": 518483,
+      "text": "Bruce is involved in managing Russell's school attendance and related issues.",
       "tags": [
-        "health",
-        "hobbies"
+        "education"
       ],
       "created_at": "2025-03-12T14:29:27.975Z",
       "visibility": "private"
@@ -842,21 +985,13 @@
       "visibility": "private"
     },
     {
-      "id": 518483,
-      "text": "Bruce is involved in managing Russell's school attendance and related issues.",
+      "id": 518482,
+      "text": "Bruce plans to start meditating with Russell to promote well-being.",
       "tags": [
-        "education"
-      ],
-      "created_at": "2025-03-12T14:29:27.975Z",
-      "visibility": "private"
-    },
-    {
-      "id": 517515,
-      "text": "Bruce is willing to handle the removal of a door and aims to fix issues proactively.",
-      "tags": [
+        "health",
         "hobbies"
       ],
-      "created_at": "2025-03-12T13:30:57.185Z",
+      "created_at": "2025-03-12T14:29:27.975Z",
       "visibility": "private"
     },
     {
@@ -869,44 +1004,17 @@
       "visibility": "private"
     },
     {
-      "id": 517158,
-      "text": "Bruce has an older son named Russell.",
-      "tags": [
-        "general"
-      ],
-      "created_at": "2025-03-12T13:00:07.800Z",
-      "visibility": "private"
-    },
-    {
-      "id": 517157,
-      "text": "Bruce wants to start a journal or diary to remember the good times with his family.",
+      "id": 517515,
+      "text": "Bruce is willing to handle the removal of a door and aims to fix issues proactively.",
       "tags": [
         "hobbies"
       ],
-      "created_at": "2025-03-12T13:00:07.800Z",
+      "created_at": "2025-03-12T13:30:57.185Z",
       "visibility": "private"
     },
     {
-      "id": 517159,
-      "text": "Bruce struggles emotionally seeing his son Russell in difficulties.",
-      "tags": [
-        "health"
-      ],
-      "created_at": "2025-03-12T13:00:07.800Z",
-      "visibility": "private"
-    },
-    {
-      "id": 517160,
-      "text": "Bruce enjoys exploring San Francisco with his sons.",
-      "tags": [
-        "hobbies"
-      ],
-      "created_at": "2025-03-12T13:00:07.800Z",
-      "visibility": "private"
-    },
-    {
-      "id": 517161,
-      "text": "Bruce has two sons, Russell and Benetton.",
+      "id": 517163,
+      "text": "Bruce often planned activities and events to enjoy with his sons.",
       "tags": [
         "hobbies"
       ],
@@ -923,8 +1031,17 @@
       "visibility": "private"
     },
     {
-      "id": 517163,
-      "text": "Bruce often planned activities and events to enjoy with his sons.",
+      "id": 517159,
+      "text": "Bruce struggles emotionally seeing his son Russell in difficulties.",
+      "tags": [
+        "health"
+      ],
+      "created_at": "2025-03-12T13:00:07.800Z",
+      "visibility": "private"
+    },
+    {
+      "id": 517157,
+      "text": "Bruce wants to start a journal or diary to remember the good times with his family.",
       "tags": [
         "hobbies"
       ],
@@ -932,12 +1049,30 @@
       "visibility": "private"
     },
     {
-      "id": 516733,
-      "text": "Bruce believes remembering happy times can make someone feel loved and have a good life.",
+      "id": 517158,
+      "text": "Bruce has an older son named Russell.",
       "tags": [
-        "health"
+        "general"
       ],
-      "created_at": "2025-03-12T12:18:52.186Z",
+      "created_at": "2025-03-12T13:00:07.800Z",
+      "visibility": "private"
+    },
+    {
+      "id": 517161,
+      "text": "Bruce has two sons, Russell and Benetton.",
+      "tags": [
+        "hobbies"
+      ],
+      "created_at": "2025-03-12T13:00:07.800Z",
+      "visibility": "private"
+    },
+    {
+      "id": 517160,
+      "text": "Bruce enjoys exploring San Francisco with his sons.",
+      "tags": [
+        "hobbies"
+      ],
+      "created_at": "2025-03-12T13:00:07.800Z",
       "visibility": "private"
     },
     {
@@ -951,6 +1086,15 @@
       "visibility": "private"
     },
     {
+      "id": 516733,
+      "text": "Bruce believes remembering happy times can make someone feel loved and have a good life.",
+      "tags": [
+        "health"
+      ],
+      "created_at": "2025-03-12T12:18:52.186Z",
+      "visibility": "private"
+    },
+    {
       "id": 509195,
       "text": "Bruce tracks his exercise and health-related activities.",
       "tags": [
@@ -958,6 +1102,15 @@
         "health"
       ],
       "created_at": "2025-03-12T00:18:57.957Z",
+      "visibility": "private"
+    },
+    {
+      "id": 506740,
+      "text": "Bruce has made calls to neuropsychiatry offices more than once without success.",
+      "tags": [
+        "health"
+      ],
+      "created_at": "2025-03-11T22:05:08.607Z",
       "visibility": "private"
     },
     {
@@ -988,15 +1141,6 @@
       "visibility": "private"
     },
     {
-      "id": 506740,
-      "text": "Bruce has made calls to neuropsychiatry offices more than once without success.",
-      "tags": [
-        "health"
-      ],
-      "created_at": "2025-03-11T22:05:08.607Z",
-      "visibility": "private"
-    },
-    {
       "id": 506744,
       "text": "Bruce is knowledgeable about the U.S. school credit system and class schedules.",
       "tags": [
@@ -1013,24 +1157,6 @@
         "hobbies"
       ],
       "created_at": "2025-03-11T22:05:08.607Z",
-      "visibility": "private"
-    },
-    {
-      "id": 504184,
-      "text": "Bruce has an older son who has dyslexia and has faced multiple challenges, including social interaction issues and a history of drug use.",
-      "tags": [
-        "health"
-      ],
-      "created_at": "2025-03-11T20:18:49.042Z",
-      "visibility": "private"
-    },
-    {
-      "id": 504185,
-      "text": "Bruce's son experienced difficulty in school and social interactions, partly due to past health issues and family dynamics, such as Bruce's hospitalization and subsequent separation from his wife's.",
-      "tags": [
-        "health"
-      ],
-      "created_at": "2025-03-11T20:18:49.042Z",
       "visibility": "private"
     },
     {
@@ -1098,67 +1224,21 @@
       "visibility": "private"
     },
     {
-      "id": 502398,
-      "text": "Bruce has Medicaid.",
-      "tags": [
-        "health",
-        "politics"
-      ],
-      "created_at": "2025-03-11T18:59:21.453Z",
-      "visibility": "private"
-    },
-    {
-      "id": 502405,
-      "text": "Bruce is 57 years old.",
-      "tags": [
-        "general"
-      ],
-      "created_at": "2025-03-11T18:59:21.453Z",
-      "visibility": "private"
-    },
-    {
-      "id": 502397,
-      "text": "Bruce is separated from his spouse but they live in the same house.",
+      "id": 504184,
+      "text": "Bruce has an older son who has dyslexia and has faced multiple challenges, including social interaction issues and a history of drug use.",
       "tags": [
         "health"
       ],
-      "created_at": "2025-03-11T18:59:21.453Z",
+      "created_at": "2025-03-11T20:18:49.042Z",
       "visibility": "private"
     },
     {
-      "id": 502403,
-      "text": "Bruce has a type 2 diabetes diagnosis.",
+      "id": 504185,
+      "text": "Bruce's son experienced difficulty in school and social interactions, partly due to past health issues and family dynamics, such as Bruce's hospitalization and subsequent separation from his wife's.",
       "tags": [
         "health"
       ],
-      "created_at": "2025-03-11T18:59:21.453Z",
-      "visibility": "private"
-    },
-    {
-      "id": 502404,
-      "text": "Bruce has high blood pressure.",
-      "tags": [
-        "health"
-      ],
-      "created_at": "2025-03-11T18:59:21.453Z",
-      "visibility": "private"
-    },
-    {
-      "id": 502406,
-      "text": "Bruce has two dogs.",
-      "tags": [
-        "hobbies"
-      ],
-      "created_at": "2025-03-11T18:59:21.453Z",
-      "visibility": "private"
-    },
-    {
-      "id": 502407,
-      "text": "Bruce has a son who is autistic.",
-      "tags": [
-        "health"
-      ],
-      "created_at": "2025-03-11T18:59:21.453Z",
+      "created_at": "2025-03-11T20:18:49.042Z",
       "visibility": "private"
     },
     {
@@ -1225,28 +1305,75 @@
       "visibility": "private"
     },
     {
-      "id": 500732,
-      "text": "Bruce has a child who is around 18 years old.",
+      "id": 502407,
+      "text": "Bruce has a son who is autistic.",
       "tags": [
-        "hobbies"
+        "health"
       ],
-      "created_at": "2025-03-11T17:57:36.771Z",
+      "created_at": "2025-03-11T18:59:21.453Z",
       "visibility": "private"
     },
     {
-      "id": 500731,
-      "text": "Bruce is a father.",
+      "id": 502406,
+      "text": "Bruce has two dogs.",
       "tags": [
         "hobbies"
       ],
-      "created_at": "2025-03-11T17:57:36.771Z",
+      "created_at": "2025-03-11T18:59:21.453Z",
       "visibility": "private"
     },
     {
-      "id": 500733,
-      "text": "Bruce is involved in discussions about schooling and legal implications with his child.",
+      "id": 502404,
+      "text": "Bruce has high blood pressure.",
       "tags": [
+        "health"
+      ],
+      "created_at": "2025-03-11T18:59:21.453Z",
+      "visibility": "private"
+    },
+    {
+      "id": 502403,
+      "text": "Bruce has a type 2 diabetes diagnosis.",
+      "tags": [
+        "health"
+      ],
+      "created_at": "2025-03-11T18:59:21.453Z",
+      "visibility": "private"
+    },
+    {
+      "id": 502397,
+      "text": "Bruce is separated from his spouse but they live in the same house.",
+      "tags": [
+        "health"
+      ],
+      "created_at": "2025-03-11T18:59:21.453Z",
+      "visibility": "private"
+    },
+    {
+      "id": 502405,
+      "text": "Bruce is 57 years old.",
+      "tags": [
+        "general"
+      ],
+      "created_at": "2025-03-11T18:59:21.453Z",
+      "visibility": "private"
+    },
+    {
+      "id": 502398,
+      "text": "Bruce has Medicaid.",
+      "tags": [
+        "health",
         "politics"
+      ],
+      "created_at": "2025-03-11T18:59:21.453Z",
+      "visibility": "private"
+    },
+    {
+      "id": 500734,
+      "text": "Bruce uses Discord and is in the bee community.",
+      "tags": [
+        "technology",
+        "hobbies"
       ],
       "created_at": "2025-03-11T17:57:36.771Z",
       "visibility": "private"
@@ -1261,10 +1388,27 @@
       "visibility": "private"
     },
     {
-      "id": 500734,
-      "text": "Bruce uses Discord and is in the bee community.",
+      "id": 500733,
+      "text": "Bruce is involved in discussions about schooling and legal implications with his child.",
       "tags": [
-        "technology",
+        "politics"
+      ],
+      "created_at": "2025-03-11T17:57:36.771Z",
+      "visibility": "private"
+    },
+    {
+      "id": 500731,
+      "text": "Bruce is a father.",
+      "tags": [
+        "hobbies"
+      ],
+      "created_at": "2025-03-11T17:57:36.771Z",
+      "visibility": "private"
+    },
+    {
+      "id": 500732,
+      "text": "Bruce has a child who is around 18 years old.",
+      "tags": [
         "hobbies"
       ],
       "created_at": "2025-03-11T17:57:36.771Z",
@@ -1353,6 +1497,15 @@
       "visibility": "private"
     },
     {
+      "id": 392618,
+      "text": "Bruce adjusts his medication dosage under the guidance of his psychiatrist.",
+      "tags": [
+        "health"
+      ],
+      "created_at": "2025-03-04T20:53:22.620Z",
+      "visibility": "private"
+    },
+    {
       "id": 392608,
       "text": "Bruce feels more comfortable at work after deciding to take a less demanding role.",
       "tags": [
@@ -1416,15 +1569,6 @@
       "visibility": "private"
     },
     {
-      "id": 392618,
-      "text": "Bruce adjusts his medication dosage under the guidance of his psychiatrist.",
-      "tags": [
-        "health"
-      ],
-      "created_at": "2025-03-04T20:53:22.620Z",
-      "visibility": "private"
-    },
-    {
       "id": 392619,
       "text": "Bruce has been diagnosed with bipolar disorder.",
       "tags": [
@@ -1480,10 +1624,10 @@
       "visibility": "private"
     },
     {
-      "id": 391549,
-      "text": "Bruce is on medication for bipolar disorder.",
+      "id": 391551,
+      "text": "Bruce is familiar with SMART goals and appreciates action-oriented tasks.",
       "tags": [
-        "health"
+        "hobbies"
       ],
       "created_at": "2025-03-04T19:40:41.144Z",
       "visibility": "private"
@@ -1498,19 +1642,10 @@
       "visibility": "private"
     },
     {
-      "id": 391551,
-      "text": "Bruce is familiar with SMART goals and appreciates action-oriented tasks.",
+      "id": 391549,
+      "text": "Bruce is on medication for bipolar disorder.",
       "tags": [
-        "hobbies"
-      ],
-      "created_at": "2025-03-04T19:40:41.144Z",
-      "visibility": "private"
-    },
-    {
-      "id": 391552,
-      "text": "Bruce has experience working in technical careers and believes he is skilled in areas requiring high technical skill.",
-      "tags": [
-        "technology"
+        "health"
       ],
       "created_at": "2025-03-04T19:40:41.144Z",
       "visibility": "private"
@@ -1518,6 +1653,15 @@
     {
       "id": 391554,
       "text": "Bruce is currently employed and seeks better job opportunities, particularly in software or remote work.",
+      "tags": [
+        "technology"
+      ],
+      "created_at": "2025-03-04T19:40:41.144Z",
+      "visibility": "private"
+    },
+    {
+      "id": 391552,
+      "text": "Bruce has experience working in technical careers and believes he is skilled in areas requiring high technical skill.",
       "tags": [
         "technology"
       ],
@@ -1535,6 +1679,15 @@
       "visibility": "private"
     },
     {
+      "id": 390319,
+      "text": "Bruce has lived in his current location for two years.",
+      "tags": [
+        "general"
+      ],
+      "created_at": "2025-03-04T18:09:22.385Z",
+      "visibility": "private"
+    },
+    {
       "id": 390322,
       "text": "Bruce is considering different lease terms for an apartment, including one-year and two-year agreements.",
       "tags": [
@@ -1544,12 +1697,23 @@
       "visibility": "private"
     },
     {
-      "id": 390319,
-      "text": "Bruce has lived in his current location for two years.",
+      "id": 388997,
+      "text": "Bruce uses a CPAP for sleep apnea.",
       "tags": [
-        "general"
+        "health",
+        "technology"
       ],
-      "created_at": "2025-03-04T18:09:22.385Z",
+      "created_at": "2025-03-04T16:24:12.074Z",
+      "visibility": "private"
+    },
+    {
+      "id": 388995,
+      "text": "Bruce wears a sleeve for his elbow, especially during work.",
+      "tags": [
+        "health",
+        "sports"
+      ],
+      "created_at": "2025-03-04T16:24:12.074Z",
       "visibility": "private"
     },
     {
@@ -1562,8 +1726,8 @@
       "visibility": "private"
     },
     {
-      "id": 388992,
-      "text": "Bruce's A1C level is 7.8.",
+      "id": 388996,
+      "text": "Bruce has memory and attention concerns.",
       "tags": [
         "health"
       ],
@@ -1580,30 +1744,10 @@
       "visibility": "private"
     },
     {
-      "id": 388995,
-      "text": "Bruce wears a sleeve for his elbow, especially during work.",
-      "tags": [
-        "health",
-        "sports"
-      ],
-      "created_at": "2025-03-04T16:24:12.074Z",
-      "visibility": "private"
-    },
-    {
-      "id": 388996,
-      "text": "Bruce has memory and attention concerns.",
+      "id": 388992,
+      "text": "Bruce's A1C level is 7.8.",
       "tags": [
         "health"
-      ],
-      "created_at": "2025-03-04T16:24:12.074Z",
-      "visibility": "private"
-    },
-    {
-      "id": 388997,
-      "text": "Bruce uses a CPAP for sleep apnea.",
-      "tags": [
-        "health",
-        "technology"
       ],
       "created_at": "2025-03-04T16:24:12.074Z",
       "visibility": "private"
@@ -1627,8 +1771,36 @@
       "visibility": "private"
     },
     {
-      "id": 343177,
-      "text": "Bruce communicates with colleagues and supervisors to resolve work-related issues.",
+      "id": 343182,
+      "text": "Bruce is open to discussing work-related decisions with his significant other.",
+      "tags": [
+        "hobbies"
+      ],
+      "created_at": "2025-02-26T18:51:08.817Z",
+      "visibility": "private"
+    },
+    {
+      "id": 343181,
+      "text": "Bruce is aware of and respects company policies.",
+      "tags": [
+        "general"
+      ],
+      "created_at": "2025-02-26T18:51:08.817Z",
+      "visibility": "private"
+    },
+    {
+      "id": 343180,
+      "text": "Bruce is concerned about maintaining a work-life balance.",
+      "tags": [
+        "health",
+        "hobbies"
+      ],
+      "created_at": "2025-02-26T18:51:08.817Z",
+      "visibility": "private"
+    },
+    {
+      "id": 343179,
+      "text": "Bruce values feedback from coworkers and supervisors.",
       "tags": [
         "hobbies"
       ],
@@ -1645,36 +1817,8 @@
       "visibility": "private"
     },
     {
-      "id": 343179,
-      "text": "Bruce values feedback from coworkers and supervisors.",
-      "tags": [
-        "hobbies"
-      ],
-      "created_at": "2025-02-26T18:51:08.817Z",
-      "visibility": "private"
-    },
-    {
-      "id": 343180,
-      "text": "Bruce is concerned about maintaining a work-life balance.",
-      "tags": [
-        "health",
-        "hobbies"
-      ],
-      "created_at": "2025-02-26T18:51:08.817Z",
-      "visibility": "private"
-    },
-    {
-      "id": 343181,
-      "text": "Bruce is aware of and respects company policies.",
-      "tags": [
-        "general"
-      ],
-      "created_at": "2025-02-26T18:51:08.817Z",
-      "visibility": "private"
-    },
-    {
-      "id": 343182,
-      "text": "Bruce is open to discussing work-related decisions with his significant other.",
+      "id": 343177,
+      "text": "Bruce communicates with colleagues and supervisors to resolve work-related issues.",
       "tags": [
         "hobbies"
       ],
@@ -1691,6 +1835,16 @@
       "visibility": "private"
     },
     {
+      "id": 341280,
+      "text": "Bruce is organized and uses various systems to manage his tasks and memory.",
+      "tags": [
+        "technology",
+        "hobbies"
+      ],
+      "created_at": "2025-02-26T14:43:55.471Z",
+      "visibility": "private"
+    },
+    {
       "id": 341278,
       "text": "Bruce is a shift lead and is responsible for closing a store.",
       "tags": [
@@ -1704,16 +1858,6 @@
       "text": "Bruce experiences lapses in memory or distractibility that impact his job performance.",
       "tags": [
         "health"
-      ],
-      "created_at": "2025-02-26T14:43:55.471Z",
-      "visibility": "private"
-    },
-    {
-      "id": 341280,
-      "text": "Bruce is organized and uses various systems to manage his tasks and memory.",
-      "tags": [
-        "technology",
-        "hobbies"
       ],
       "created_at": "2025-02-26T14:43:55.471Z",
       "visibility": "private"
@@ -1791,6 +1935,69 @@
       "visibility": "private"
     },
     {
+      "id": 336318,
+      "text": "Bruce has worked at his current job for around a month.",
+      "tags": [
+        "hobbies"
+      ],
+      "created_at": "2025-02-25T20:57:47.638Z",
+      "visibility": "private"
+    },
+    {
+      "id": 336311,
+      "text": "Bruce has multiple mechanisms to maintain organization, including electronic tools.",
+      "tags": [
+        "technology"
+      ],
+      "created_at": "2025-02-25T20:57:47.638Z",
+      "visibility": "private"
+    },
+    {
+      "id": 336312,
+      "text": "Bruce is seeing a psychiatrist and a regular doctor for his concerns.",
+      "tags": [
+        "health"
+      ],
+      "created_at": "2025-02-25T20:57:47.638Z",
+      "visibility": "private"
+    },
+    {
+      "id": 336314,
+      "text": "Bruce has a son who may have mild ADHD and dyslexia.",
+      "tags": [
+        "health"
+      ],
+      "created_at": "2025-02-25T20:57:47.638Z",
+      "visibility": "private"
+    },
+    {
+      "id": 336316,
+      "text": "Bruce's grandfather had Alzheimer's disease.",
+      "tags": [
+        "health"
+      ],
+      "created_at": "2025-02-25T20:57:47.638Z",
+      "visibility": "private"
+    },
+    {
+      "id": 336317,
+      "text": "Bruce is interested in problem-solving and finding solutions to his difficulties.",
+      "tags": [
+        "hobbies"
+      ],
+      "created_at": "2025-02-25T20:57:47.638Z",
+      "visibility": "private"
+    },
+    {
+      "id": 336319,
+      "text": "Bruce feels supported by his professional allies in addressing his concerns.",
+      "tags": [
+        "politics"
+      ],
+      "created_at": "2025-02-25T20:57:47.638Z",
+      "visibility": "private"
+    },
+    {
       "id": 336307,
       "text": "Bruce has a habit of staying organized using calendars, to-do lists, and sticky notes.",
       "tags": [
@@ -1855,78 +2062,6 @@
       "visibility": "private"
     },
     {
-      "id": 336311,
-      "text": "Bruce has multiple mechanisms to maintain organization, including electronic tools.",
-      "tags": [
-        "technology"
-      ],
-      "created_at": "2025-02-25T20:57:47.638Z",
-      "visibility": "private"
-    },
-    {
-      "id": 336312,
-      "text": "Bruce is seeing a psychiatrist and a regular doctor for his concerns.",
-      "tags": [
-        "health"
-      ],
-      "created_at": "2025-02-25T20:57:47.638Z",
-      "visibility": "private"
-    },
-    {
-      "id": 336314,
-      "text": "Bruce has a son who may have mild ADHD and dyslexia.",
-      "tags": [
-        "health"
-      ],
-      "created_at": "2025-02-25T20:57:47.638Z",
-      "visibility": "private"
-    },
-    {
-      "id": 336316,
-      "text": "Bruce's grandfather had Alzheimer's disease.",
-      "tags": [
-        "health"
-      ],
-      "created_at": "2025-02-25T20:57:47.638Z",
-      "visibility": "private"
-    },
-    {
-      "id": 336317,
-      "text": "Bruce is interested in problem-solving and finding solutions to his difficulties.",
-      "tags": [
-        "hobbies"
-      ],
-      "created_at": "2025-02-25T20:57:47.638Z",
-      "visibility": "private"
-    },
-    {
-      "id": 336318,
-      "text": "Bruce has worked at his current job for around a month.",
-      "tags": [
-        "hobbies"
-      ],
-      "created_at": "2025-02-25T20:57:47.638Z",
-      "visibility": "private"
-    },
-    {
-      "id": 336319,
-      "text": "Bruce feels supported by his professional allies in addressing his concerns.",
-      "tags": [
-        "politics"
-      ],
-      "created_at": "2025-02-25T20:57:47.638Z",
-      "visibility": "private"
-    },
-    {
-      "id": 332850,
-      "text": "Bruce needs to create a business card with his medical conditions and medications listed.",
-      "tags": [
-        "health"
-      ],
-      "created_at": "2025-02-25T14:17:23.528Z",
-      "visibility": "private"
-    },
-    {
       "id": 332851,
       "text": "Bruce is considering mentioning the location of his important documents, such as his will and health care directive.",
       "tags": [
@@ -1936,12 +2071,12 @@
       "visibility": "private"
     },
     {
-      "id": 324741,
-      "text": "Bruce is concerned about his job performance.",
+      "id": 332850,
+      "text": "Bruce needs to create a business card with his medical conditions and medications listed.",
       "tags": [
         "health"
       ],
-      "created_at": "2025-02-24T13:46:00.336Z",
+      "created_at": "2025-02-25T14:17:23.528Z",
       "visibility": "private"
     },
     {
@@ -1965,6 +2100,15 @@
     {
       "id": 324742,
       "text": "Bruce plans to see a doctor about potential attention issues.",
+      "tags": [
+        "health"
+      ],
+      "created_at": "2025-02-24T13:46:00.336Z",
+      "visibility": "private"
+    },
+    {
+      "id": 324741,
+      "text": "Bruce is concerned about his job performance.",
       "tags": [
         "health"
       ],
@@ -2027,19 +2171,19 @@
       "visibility": "private"
     },
     {
-      "id": 319849,
-      "text": "Bruce is a member of IHOP's rewards club.",
+      "id": 319850,
+      "text": "Bruce is likely involved in conversations about real estate transactions and capital gains.",
       "tags": [
-        "food"
+        "politics"
       ],
       "created_at": "2025-02-23T18:17:20.840Z",
       "visibility": "private"
     },
     {
-      "id": 319850,
-      "text": "Bruce is likely involved in conversations about real estate transactions and capital gains.",
+      "id": 319849,
+      "text": "Bruce is a member of IHOP's rewards club.",
       "tags": [
-        "politics"
+        "food"
       ],
       "created_at": "2025-02-23T18:17:20.840Z",
       "visibility": "private"
@@ -2055,44 +2199,8 @@
       "visibility": "private"
     },
     {
-      "id": 315662,
-      "text": "Bruce has a connection to pharmacy operations or works at a pharmacy.",
-      "tags": [
-        "health"
-      ],
-      "created_at": "2025-02-22T21:16:08.390Z",
-      "visibility": "private"
-    },
-    {
-      "id": 315663,
-      "text": "Bruce works at a place that offers a credit card with a sign-up incentive.",
-      "tags": [
-        "technology"
-      ],
-      "created_at": "2025-02-22T21:16:08.390Z",
-      "visibility": "private"
-    },
-    {
-      "id": 315664,
-      "text": "Bruce is interested in reading books.",
-      "tags": [
-        "hobbies"
-      ],
-      "created_at": "2025-02-22T21:16:08.390Z",
-      "visibility": "private"
-    },
-    {
       "id": 315667,
       "text": "Bruce is familiar with the operations of a Walgreens or a similar retail store.",
-      "tags": [
-        "hobbies"
-      ],
-      "created_at": "2025-02-22T21:16:08.390Z",
-      "visibility": "private"
-    },
-    {
-      "id": 315668,
-      "text": "Bruce appears to be involved in handling customer service.",
       "tags": [
         "hobbies"
       ],
@@ -2109,6 +2217,42 @@
       "visibility": "private"
     },
     {
+      "id": 315668,
+      "text": "Bruce appears to be involved in handling customer service.",
+      "tags": [
+        "hobbies"
+      ],
+      "created_at": "2025-02-22T21:16:08.390Z",
+      "visibility": "private"
+    },
+    {
+      "id": 315664,
+      "text": "Bruce is interested in reading books.",
+      "tags": [
+        "hobbies"
+      ],
+      "created_at": "2025-02-22T21:16:08.390Z",
+      "visibility": "private"
+    },
+    {
+      "id": 315663,
+      "text": "Bruce works at a place that offers a credit card with a sign-up incentive.",
+      "tags": [
+        "technology"
+      ],
+      "created_at": "2025-02-22T21:16:08.390Z",
+      "visibility": "private"
+    },
+    {
+      "id": 315662,
+      "text": "Bruce has a connection to pharmacy operations or works at a pharmacy.",
+      "tags": [
+        "health"
+      ],
+      "created_at": "2025-02-22T21:16:08.390Z",
+      "visibility": "private"
+    },
+    {
       "id": 314486,
       "text": "Bruce seems to be interested in music.",
       "tags": [
@@ -2116,6 +2260,15 @@
         "hobbies"
       ],
       "created_at": "2025-02-22T17:41:04.296Z",
+      "visibility": "private"
+    },
+    {
+      "id": 314463,
+      "text": "Bruce weighs 190 lbs.",
+      "tags": [
+        "general"
+      ],
+      "created_at": "2025-02-22T17:38:15.353Z",
       "visibility": "private"
     },
     {
@@ -2138,19 +2291,29 @@
       "visibility": "private"
     },
     {
-      "id": 314461,
-      "text": "Bruce's birthday is February 23, 1968.",
+      "id": 314466,
+      "text": "Bruce works at Walgreens in Wilmington, NC.",
       "tags": [
+        "general"
+      ],
+      "created_at": "2025-02-22T17:38:15.353Z",
+      "visibility": "private"
+    },
+    {
+      "id": 314465,
+      "text": "Bruce likes the bands Linkin Park, Korn, The Cure, Slipknot, Avatar, Depeche Mode, and Duran Duran.",
+      "tags": [
+        "entertainment",
         "hobbies"
       ],
       "created_at": "2025-02-22T17:38:15.353Z",
       "visibility": "private"
     },
     {
-      "id": 314463,
-      "text": "Bruce weighs 190 lbs.",
+      "id": 314461,
+      "text": "Bruce's birthday is February 23, 1968.",
       "tags": [
-        "general"
+        "hobbies"
       ],
       "created_at": "2025-02-22T17:38:15.353Z",
       "visibility": "private"
@@ -2176,22 +2339,12 @@
       "visibility": "private"
     },
     {
-      "id": 314465,
-      "text": "Bruce likes the bands Linkin Park, Korn, The Cure, Slipknot, Avatar, Depeche Mode, and Duran Duran.",
+      "id": 299461,
+      "text": "Bruce's parents are involved in discussions regarding housing and financial decisions.",
       "tags": [
-        "entertainment",
-        "hobbies"
+        "politics"
       ],
-      "created_at": "2025-02-22T17:38:15.353Z",
-      "visibility": "private"
-    },
-    {
-      "id": 314466,
-      "text": "Bruce works at Walgreens in Wilmington, NC.",
-      "tags": [
-        "general"
-      ],
-      "created_at": "2025-02-22T17:38:15.353Z",
+      "created_at": "2025-02-20T15:53:46.479Z",
       "visibility": "private"
     },
     {
@@ -2226,15 +2379,6 @@
       "text": "Bruce has contemplated the financial benefits of selling a house and renting two smaller places.",
       "tags": [
         "hobbies"
-      ],
-      "created_at": "2025-02-20T15:53:46.479Z",
-      "visibility": "private"
-    },
-    {
-      "id": 299461,
-      "text": "Bruce's parents are involved in discussions regarding housing and financial decisions.",
-      "tags": [
-        "politics"
       ],
       "created_at": "2025-02-20T15:53:46.479Z",
       "visibility": "private"
@@ -2282,6 +2426,33 @@
         "politics"
       ],
       "created_at": "2025-02-19T18:21:10.554Z",
+      "visibility": "private"
+    },
+    {
+      "id": 292583,
+      "text": "Bruce uses medication to manage his bipolar disorder.",
+      "tags": [
+        "health"
+      ],
+      "created_at": "2025-02-19T17:46:34.809Z",
+      "visibility": "private"
+    },
+    {
+      "id": 292584,
+      "text": "Bruce believes sleep is important for his mental health and well-being.",
+      "tags": [
+        "health"
+      ],
+      "created_at": "2025-02-19T17:46:34.809Z",
+      "visibility": "private"
+    },
+    {
+      "id": 292582,
+      "text": "Bruce has seen benefit from staying connected to a therapist to help manage his bipolar disorder.",
+      "tags": [
+        "health"
+      ],
+      "created_at": "2025-02-19T17:46:34.809Z",
       "visibility": "private"
     },
     {
@@ -2371,19 +2542,19 @@
       "visibility": "private"
     },
     {
-      "id": 292578,
-      "text": "Bruce considers himself an intellectual.",
+      "id": 292579,
+      "text": "Bruce  has been married twice, first to Daren\u2019s from Bulgaria and then to Ivette.",
       "tags": [
-        "hobbies"
+        "entertainment"
       ],
       "created_at": "2025-02-19T17:46:34.809Z",
       "visibility": "private"
     },
     {
-      "id": 292579,
-      "text": "Bruce  has been married twice, first to Daren\u2019s from Bulgaria and then to Ivette.",
+      "id": 292578,
+      "text": "Bruce considers himself an intellectual.",
       "tags": [
-        "entertainment"
+        "hobbies"
       ],
       "created_at": "2025-02-19T17:46:34.809Z",
       "visibility": "private"
@@ -2407,30 +2578,12 @@
       "visibility": "private"
     },
     {
-      "id": 292582,
-      "text": "Bruce has seen benefit from staying connected to a therapist to help manage his bipolar disorder.",
+      "id": 292331,
+      "text": "Bruce values expressing gratitude.",
       "tags": [
-        "health"
+        "hobbies"
       ],
-      "created_at": "2025-02-19T17:46:34.809Z",
-      "visibility": "private"
-    },
-    {
-      "id": 292583,
-      "text": "Bruce uses medication to manage his bipolar disorder.",
-      "tags": [
-        "health"
-      ],
-      "created_at": "2025-02-19T17:46:34.809Z",
-      "visibility": "private"
-    },
-    {
-      "id": 292584,
-      "text": "Bruce believes sleep is important for his mental health and well-being.",
-      "tags": [
-        "health"
-      ],
-      "created_at": "2025-02-19T17:46:34.809Z",
+      "created_at": "2025-02-19T17:21:13.857Z",
       "visibility": "private"
     },
     {
@@ -2449,33 +2602,6 @@
         "hobbies"
       ],
       "created_at": "2025-02-19T17:21:13.857Z",
-      "visibility": "private"
-    },
-    {
-      "id": 292331,
-      "text": "Bruce values expressing gratitude.",
-      "tags": [
-        "hobbies"
-      ],
-      "created_at": "2025-02-19T17:21:13.857Z",
-      "visibility": "private"
-    },
-    {
-      "id": 292155,
-      "text": "Grape is approximately 4 or 5 years old and is owned by Bruce's ex-wife, Ivette.",
-      "tags": [
-        "hobbies"
-      ],
-      "created_at": "2025-02-19T16:56:54.187Z",
-      "visibility": "private"
-    },
-    {
-      "id": 292156,
-      "text": "Peach is estimated to be around 12 or 13 years old.",
-      "tags": [
-        "entertainment"
-      ],
-      "created_at": "2025-02-19T16:56:54.187Z",
       "visibility": "private"
     },
     {
@@ -2508,6 +2634,44 @@
       "visibility": "private"
     },
     {
+      "id": 292154,
+      "text": "Bruce has two dogs: a Maltese Yorkie mix named Grape and a Maltese poodle mix named Peach.",
+      "tags": [
+        "hobbies"
+      ],
+      "created_at": "2025-02-19T16:56:54.187Z",
+      "visibility": "private"
+    },
+    {
+      "id": 292164,
+      "text": "Bruce considers himself a scientific skeptic and has a background in science.",
+      "tags": [
+        "hobbies"
+      ],
+      "created_at": "2025-02-19T16:56:54.187Z",
+      "visibility": "private"
+    },
+    {
+      "id": 292163,
+      "text": "Bruce uses multiple systems for reminders, including an iPhone Reminders app, Alexa, and paper notes.",
+      "tags": [
+        "technology",
+        "hobbies"
+      ],
+      "created_at": "2025-02-19T16:56:54.187Z",
+      "visibility": "private"
+    },
+    {
+      "id": 292162,
+      "text": "Bruce enjoys mystery and science fiction genres.",
+      "tags": [
+        "entertainment",
+        "hobbies"
+      ],
+      "created_at": "2025-02-19T16:56:54.187Z",
+      "visibility": "private"
+    },
+    {
       "id": 292160,
       "text": "Bruce prefers reading physical books over using an e-reader.",
       "tags": [
@@ -2529,28 +2693,8 @@
       "visibility": "private"
     },
     {
-      "id": 292162,
-      "text": "Bruce enjoys mystery and science fiction genres.",
-      "tags": [
-        "entertainment",
-        "hobbies"
-      ],
-      "created_at": "2025-02-19T16:56:54.187Z",
-      "visibility": "private"
-    },
-    {
-      "id": 292163,
-      "text": "Bruce uses multiple systems for reminders, including an iPhone Reminders app, Alexa, and paper notes.",
-      "tags": [
-        "technology",
-        "hobbies"
-      ],
-      "created_at": "2025-02-19T16:56:54.187Z",
-      "visibility": "private"
-    },
-    {
-      "id": 292164,
-      "text": "Bruce considers himself a scientific skeptic and has a background in science.",
+      "id": 292155,
+      "text": "Grape is approximately 4 or 5 years old and is owned by Bruce's ex-wife, Ivette.",
       "tags": [
         "hobbies"
       ],
@@ -2558,21 +2702,12 @@
       "visibility": "private"
     },
     {
-      "id": 292154,
-      "text": "Bruce has two dogs: a Maltese Yorkie mix named Grape and a Maltese poodle mix named Peach.",
+      "id": 292156,
+      "text": "Peach is estimated to be around 12 or 13 years old.",
       "tags": [
-        "hobbies"
+        "entertainment"
       ],
       "created_at": "2025-02-19T16:56:54.187Z",
-      "visibility": "private"
-    },
-    {
-      "id": 291421,
-      "text": "Bruce's family is considering moving soon.",
-      "tags": [
-        "hobbies"
-      ],
-      "created_at": "2025-02-19T15:12:19.723Z",
       "visibility": "private"
     },
     {
@@ -2586,18 +2721,8 @@
       "visibility": "private"
     },
     {
-      "id": 291423,
-      "text": "Bruce reflects on his ability to be a good father.",
-      "tags": [
-        "hobbies",
-        "health"
-      ],
-      "created_at": "2025-02-19T15:12:19.723Z",
-      "visibility": "private"
-    },
-    {
-      "id": 291425,
-      "text": "Bruce's father made him feel like he couldn't earn his love.",
+      "id": 291426,
+      "text": "Bruce is concerned about passing hurt or insecurity to his son.",
       "tags": [
         "health"
       ],
@@ -2614,6 +2739,25 @@
       "visibility": "private"
     },
     {
+      "id": 291425,
+      "text": "Bruce's father made him feel like he couldn't earn his love.",
+      "tags": [
+        "health"
+      ],
+      "created_at": "2025-02-19T15:12:19.723Z",
+      "visibility": "private"
+    },
+    {
+      "id": 291423,
+      "text": "Bruce reflects on his ability to be a good father.",
+      "tags": [
+        "hobbies",
+        "health"
+      ],
+      "created_at": "2025-02-19T15:12:19.723Z",
+      "visibility": "private"
+    },
+    {
       "id": 291424,
       "text": "Bruce wants his son to be prepared for life and happy.",
       "tags": [
@@ -2623,10 +2767,10 @@
       "visibility": "private"
     },
     {
-      "id": 291426,
-      "text": "Bruce is concerned about passing hurt or insecurity to his son.",
+      "id": 291421,
+      "text": "Bruce's family is considering moving soon.",
       "tags": [
-        "health"
+        "hobbies"
       ],
       "created_at": "2025-02-19T15:12:19.723Z",
       "visibility": "private"
@@ -2641,9 +2785,10 @@
       "visibility": "private"
     },
     {
-      "id": 291297,
-      "text": "Bruce is interested in journaling his daily activities.",
+      "id": 291299,
+      "text": "Bruce shows interest in using a digital diary to keep track of his activities and thoughts.",
       "tags": [
+        "technology",
         "hobbies"
       ],
       "created_at": "2025-02-19T14:52:06.967Z",
@@ -2660,22 +2805,12 @@
       "visibility": "private"
     },
     {
-      "id": 291299,
-      "text": "Bruce shows interest in using a digital diary to keep track of his activities and thoughts.",
+      "id": 291297,
+      "text": "Bruce is interested in journaling his daily activities.",
       "tags": [
-        "technology",
         "hobbies"
       ],
       "created_at": "2025-02-19T14:52:06.967Z",
-      "visibility": "private"
-    },
-    {
-      "id": 288598,
-      "text": "Bruce had a conversation about a flight delay and strange encounter with another person on a flight.",
-      "tags": [
-        "travel"
-      ],
-      "created_at": "2025-02-19T00:52:47.016Z",
       "visibility": "private"
     },
     {
@@ -2683,6 +2818,15 @@
       "text": "Bruce has a pet named Grape.",
       "tags": [
         "hobbies"
+      ],
+      "created_at": "2025-02-19T00:52:47.016Z",
+      "visibility": "private"
+    },
+    {
+      "id": 288598,
+      "text": "Bruce had a conversation about a flight delay and strange encounter with another person on a flight.",
+      "tags": [
+        "travel"
       ],
       "created_at": "2025-02-19T00:52:47.016Z",
       "visibility": "private"

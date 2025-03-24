@@ -3,8 +3,10 @@
 Multi-API Data Collection CLI
 
 This script provides a command-line interface for collecting and storing data from 
-multiple APIs (Bee AI, Limitless, OpenWeatherMap, Billboard) into a database and JSON files.
+multiple APIs (Bee AI, Limitless, OpenWeatherMap, Billboard) into a database.
 Also supports importing Netflix viewing history from CSV files.
+
+When debug mode is enabled, all data is also saved to JSON files in the /data directory.
 """
 
 import sys
@@ -15,6 +17,7 @@ import logging
 import asyncio
 from datetime import datetime
 import pytz
+import argparse
 from beeai import Bee
 
 from limitless_api import LimitlessAPI
@@ -33,6 +36,9 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
+
+# Global variables
+app_debug_mode = False  # Default to False, will be set by command line arguments
 
 # Initialize API clients
 bee = None
@@ -255,15 +261,23 @@ async def fetch_all_pages(fetch_func, user_id):
         logger.error(traceback.format_exc())
         return []
 
-def save_to_file(data, data_type, original_data):
+def save_to_file(data, data_type, original_data, debug_mode=False):
     """
-    Save data to JSON files in the appropriate API-specific directory
+    Save data to JSON files in the appropriate API-specific directory if debug mode is enabled
     
     Args:
         data: List of formatted data items (not used - kept for backward compatibility)
         data_type: Type of data (conversations, facts, todos, lifelogs, weather)
         original_data: Raw data from API
+        debug_mode: If True, save data to file; if False, skip file creation
     """
+    # Log debug mode status for debugging
+    print(f"DEBUG INFO - save_to_file called for {data_type} with debug_mode={debug_mode}")
+    
+    # Skip file creation if debug mode is disabled
+    if not debug_mode:
+        print(f"Debug mode disabled - skipping JSON file creation for {data_type}")
+        return True
     # Check if there's any data to save
     if not original_data or (isinstance(original_data, dict) and 
                             all(not original_data.get(k) for k in original_data)):
@@ -479,8 +493,10 @@ def find_latest_file(directory, prefix):
 async def run_cli_async():
     """
     CLI entry point for the application (async version). Fetches data from API, stores in database,
-    and then saves database content to JSON files to avoid duplicates.
+    and then saves database content to JSON files if debug mode is enabled.
     """
+    # Access the global debug mode flag
+    global app_debug_mode
     try:
         # Step 1: Fetch data from API and store in database
         print("Fetching conversations from API...")
@@ -607,14 +623,17 @@ async def run_cli_async():
                 except:
                     print(f"Warning: Could not parse raw_data for conversation {conv.id}")
         
-        # Save conversations to file
+        # Save conversations to file if debug mode is enabled
         saved_conv = save_to_file(
             formatted_conversations, 
             'conversations', 
-            {'conversations': conversation_raw_data}
+            {'conversations': conversation_raw_data},
+            app_debug_mode
         )
-        if saved_conv:
+        if saved_conv and app_debug_mode:
             print("Successfully processed conversations to JSON")
+        elif saved_conv:
+            print("Conversations processed (not saved to JSON due to debug mode disabled)")
         
         # Get facts from database
         print("Processing facts from database...")
@@ -640,14 +659,17 @@ async def run_cli_async():
                 except:
                     print(f"Warning: Could not parse raw_data for fact {fact.id}")
         
-        # Save facts to file
+        # Save facts to file if debug mode is enabled
         saved_facts = save_to_file(
             formatted_facts, 
             'facts', 
-            {'facts': fact_raw_data}
+            {'facts': fact_raw_data},
+            app_debug_mode
         )
-        if saved_facts:
+        if saved_facts and app_debug_mode:
             print("Successfully processed facts to JSON")
+        elif saved_facts:
+            print("Facts processed (not saved to JSON due to debug mode disabled)")
         
         # Comment out todos processing 
         print("Todos processing disabled...")
@@ -677,11 +699,12 @@ async def run_cli_async():
         #         except:
         #             print(f"Warning: Could not parse raw_data for todo {todo.id}")
         # 
-        # # Save todos to file
+        # # Save todos to file if debug mode is enabled
         # saved_todos = save_to_file(
         #     formatted_todos, 
         #     'todos', 
-        #     {'todos': todo_raw_data}
+        #     {'todos': todo_raw_data},
+        #     app_debug_mode
         # )
         # if saved_todos:
         #     print("Successfully processed todos to JSON")
@@ -715,14 +738,17 @@ async def run_cli_async():
                     except:
                         print(f"Warning: Could not parse raw_data for lifelog {lifelog.id}")
             
-            # Save lifelogs to file
+            # Save lifelogs to file if debug mode is enabled
             saved_lifelogs = save_to_file(
                 formatted_lifelogs, 
                 'lifelogs', 
-                {'lifelogs': lifelog_raw_data}
+                {'lifelogs': lifelog_raw_data},
+                app_debug_mode
             )
-            if saved_lifelogs:
+            if saved_lifelogs and app_debug_mode:
                 print("Successfully processed lifelogs to JSON")
+            elif saved_lifelogs:
+                print("Lifelogs processed (not saved to JSON due to debug mode disabled)")
                 
         # Fetch weather data for locations with coordinates
         if openweather:
@@ -778,15 +804,18 @@ async def run_cli_async():
                 if weather_data_list:
                     print(f"Retrieved {len(weather_data_list)} weather data points")
                     
-                    # Save to file
+                    # Save to file if debug mode is enabled
                     saved_weather = save_to_file(
                         weather_data_list,
                         'weather',
-                        {'weather': weather_data_list}
+                        {'weather': weather_data_list},
+                        app_debug_mode
                     )
                     
-                    if saved_weather:
+                    if saved_weather and app_debug_mode:
                         print("Successfully processed weather data to JSON")
+                    elif saved_weather:
+                        print("Weather data processed (not saved to JSON due to debug mode disabled)")
                 else:
                     print("No weather data to process")
             except Exception as e:
@@ -811,18 +840,21 @@ async def run_cli_async():
                     entries_count = len(hot100_chart.get("chart", {}).get("entries", []))
                     print(f"Retrieved Hot 100 chart for {chart_date} with {entries_count} entries")
                     
-                    # Create directory if needed
-                    if not os.path.exists(os.path.join("data", "billboard")):
+                    # Create directory if needed and debug mode is enabled
+                    if app_debug_mode and not os.path.exists(os.path.join("data", "billboard")):
                         os.makedirs(os.path.join("data", "billboard"), exist_ok=True)
                     
-                    # Save chart data to file
+                    # Save chart data to file if debug mode is enabled
                     saved_hot100 = save_to_file(
                         None, 
                         'billboard_hot100', 
-                        hot100_chart
+                        hot100_chart,
+                        app_debug_mode
                     )
-                    if saved_hot100:
+                    if saved_hot100 and app_debug_mode:
                         print("Successfully processed Hot 100 chart data to JSON")
+                    elif saved_hot100:
+                        print("Hot 100 chart data processed (not saved to JSON due to debug mode disabled)")
                 else:
                     print("No Hot 100 chart data available")
                     
@@ -840,27 +872,57 @@ async def run_cli_async():
         print(f"Error in CLI data collection: {str(e)}")
         print(traceback.format_exc())
 
-def run_cli():
+def parse_arguments():
+    """Parse command line arguments"""
+    parser = argparse.ArgumentParser(description="Multi-API Data Collection CLI")
+    parser.add_argument("--debug", 
+                      action="store_true", 
+                      default=False,
+                      help="Enable debug mode: save data to JSON files in /data directory")
+    return parser.parse_args()
+
+def run_cli(debug_mode=False):
     """
     CLI entry point for the application. Fetches data from API, stores in database,
-    and then saves database content to JSON files to avoid duplicates.
+    and then saves database content to JSON files if debug mode is enabled.
+    
+    Args:
+        debug_mode: If True, save data to JSON files; if False, skip file creation
     """
     print("Starting Multi-API Data Collector CLI")
     
-    # Delete the data directory if it exists
-    data_dir = os.path.join("data")
-    if os.path.exists(data_dir):
-        print(f"Removing old data directory: {os.path.abspath(data_dir)}")
-        import shutil
-        try:
-            shutil.rmtree(data_dir)
-            print("Old data directory removed successfully")
-        except Exception as e:
-            print(f"Error removing data directory: {str(e)}")
+    # Only delete data directory if debug mode is enabled
+    if debug_mode:
+        # Delete the data directory if it exists
+        data_dir = os.path.join("data")
+        if os.path.exists(data_dir):
+            print(f"Removing old data directory: {os.path.abspath(data_dir)}")
+            import shutil
+            try:
+                shutil.rmtree(data_dir)
+                print("Old data directory removed successfully")
+            except Exception as e:
+                print(f"Error removing data directory: {str(e)}")
+    else:
+        print("Debug mode disabled - skipping data directory operations")
+    
+    # Store debug_mode in a global variable
+    global app_debug_mode
+    app_debug_mode = debug_mode
     
     initialize_apis()
     loop = asyncio.get_event_loop()
     loop.run_until_complete(run_cli_async())
 
 if __name__ == '__main__':
-    run_cli()
+    # Parse command line arguments
+    args = parse_arguments()
+    
+    # Show debug mode status
+    debug_mode = args.debug
+    if debug_mode:
+        print("Debug mode ENABLED: Will save data to JSON files in /data directory")
+    else:
+        print("Debug mode DISABLED: Will not save data to JSON files")
+    
+    run_cli(debug_mode)

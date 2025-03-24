@@ -255,15 +255,196 @@ def save_netflix_history_to_json(output_dir='data/netflix'):
     finally:
         session.close()
 
-def enrich_netflix_title_data():
+def clean_title_for_search(title):
     """
-    Attempt to enrich Netflix title data using the Netflix API or other sources.
-    This is a placeholder function and would need to be implemented with actual API access.
+    Clean and normalize a Netflix title for better IMDB search results.
+    Removes episode indicators, special characters, and handles possessive forms.
+    
+    Args:
+        title: Original Netflix title
+    
+    Returns:
+        Cleaned title string optimized for IMDB search
     """
-    # This would be implemented when we have access to Netflix API or other data sources
-    # For now, just log a message
-    logger.info("Netflix title enrichment is not currently implemented")
-    return False
+    # First, remove quotes if they exist
+    if title.startswith('"') and title.endswith('"'):
+        title = title[1:-1]
+    
+    # Extract show name without episode info (split by colon)
+    base_title = title.split(':')[0] if ':' in title else title
+    
+    # Remove anything after "Episode" or "Season" keywords
+    episode_keywords = [" Episode ", " Season ", " Chapter ", " Part "]
+    for keyword in episode_keywords:
+        if keyword.lower() in base_title.lower():
+            base_title = base_title.split(keyword, 1)[0]
+    
+    # Also handle episode indicators with numbers like "- E01" or "S01E01"
+    base_title = re.sub(r'\s+-\s+[Ee]\d+.*$', '', base_title)  # Remove "- E01" pattern
+    base_title = re.sub(r'\s+[Ss]\d+[Ee]\d+.*$', '', base_title)  # Remove "S01E01" pattern
+    
+    # Handle special cases before removing all special characters
+    # Convert possessive form to regular form (Queen's → Queens)
+    base_title = base_title.replace("'s", "s")
+    
+    # Remove special characters, keeping only alphanumeric and spaces
+    cleaned = re.sub(r'[^\w\s]', '', base_title)
+    
+    # Remove extra spaces and trim
+    cleaned = re.sub(r'\s+', ' ', cleaned).strip()
+    
+    # Remove "Limited Series" and similar suffixes
+    suffixes_to_remove = ["Limited Series", "The Complete Series", "The Series"]
+    for suffix in suffixes_to_remove:
+        if cleaned.endswith(suffix):
+            cleaned = cleaned[:-(len(suffix))].strip()
+    
+    return cleaned
+
+async def enrich_netflix_title_data(limit=None):
+    """
+    Enrich Netflix title data using the IMDB API.
+    
+    Looks up each Netflix title in the IMDB database using the autocomplete search
+    and updates the Netflix_Title_Info table with IMDB data.
+    
+    Args:
+        limit: Optional maximum number of titles to process (default: None, process all)
+    
+    Returns:
+        Dictionary with counts of processed, enriched, and skipped items
+    """
+    from imdb_api import IMDBAPI
+    import asyncio
+    
+    # Initialize API client
+    api = IMDBAPI()
+    session = Session()
+    result = {"processed": 0, "enriched": 0, "skipped": 0}
+    
+    try:
+        # Query Netflix history items without enriched data
+        query = session.query(Netflix_History_Item.title).distinct()
+        
+        # Check which titles already have info
+        existing_info = session.query(Netflix_Title_Info.title).all()
+        existing_titles = [info[0] for info in existing_info]
+        
+        # Filter out titles that already have info
+        all_titles = [item[0] for item in query.all()]
+        titles_to_process = [title for title in all_titles if title not in existing_titles]
+        
+        # Apply limit if specified
+        if limit and limit > 0:
+            titles_to_process = titles_to_process[:limit]
+        
+        logger.info(f"Found {len(titles_to_process)} Netflix titles to enrich")
+        
+        # Process each title
+        for title in titles_to_process:
+            result["processed"] += 1
+            
+            try:
+                # Clean the title for better search results
+                search_term = clean_title_for_search(title)
+                logger.info(f"Searching IMDB for: {search_term} (from {title})")
+                
+                # Try autocomplete search first
+                search_success = False
+                search_result = None
+                
+                # Initial search with cleaned term
+                autocomplete_result = await api.autocomplete_search(search_term, max_results=5)
+                
+                if "results" in autocomplete_result and autocomplete_result["results"]:
+                    search_result = autocomplete_result["results"][0]  # Take the first/best match
+                    search_success = True
+                else:
+                    # Try variations if original search failed
+                    variations = []
+                    
+                    # Try without "The" prefix if it exists
+                    if search_term.startswith("The "):
+                        variations.append(search_term[4:])
+                    
+                    # Try with "The" prefix if it doesn't exist and isn't too long
+                    if not search_term.startswith("The ") and len(search_term.split()) <= 3:
+                        variations.append("The " + search_term)
+                        
+                    # Try with apostrophe for possessive nouns (Queens → Queen's)
+                    if "s " in search_term:
+                        variation = search_term.replace("s ", "'s ")
+                        variations.append(variation)
+                        
+                    # Try each variation
+                    for variation in variations:
+                        logger.info(f"Trying variation: {variation}")
+                        var_result = await api.autocomplete_search(variation, max_results=5)
+                        
+                        if "results" in var_result and var_result["results"]:
+                            search_result = var_result["results"][0]  # Take the first/best match
+                            search_success = True
+                            break
+                
+                if search_success and search_result:
+                    # Create new title info record
+                    imdb_id = search_result.get("id")
+                    primary_title = search_result.get("primaryTitle", "")
+                    content_type = "SERIES" if search_result.get("type") in ["tvSeries", "tvMiniSeries"] else "MOVIE"
+                    
+                    title_info = Netflix_Title_Info(
+                        title=title,
+                        content_type=content_type,
+                        imdb_id=imdb_id,
+                        raw_data=json.dumps(search_result)
+                    )
+                    
+                    # Add release year if available
+                    if "startYear" in search_result:
+                        try:
+                            title_info.release_year = int(search_result.get("startYear", 0))
+                        except (ValueError, TypeError):
+                            pass
+                    
+                    session.add(title_info)
+                    result["enriched"] += 1
+                    
+                    # Update all Netflix history items with this title
+                    history_items = session.query(Netflix_History_Item).filter(
+                        Netflix_History_Item.title == title
+                    ).all()
+                    
+                    for item in history_items:
+                        item.content_type = content_type
+                        if title_info.release_year:
+                            item.release_year = title_info.release_year
+                    
+                    # Commit after each successful enrichment to avoid losing progress
+                    session.commit()
+                    logger.info(f"Enriched: {title} → {primary_title} ({imdb_id})")
+                
+                else:
+                    logger.warning(f"No IMDB match found for: {title}")
+                    result["skipped"] += 1
+                
+                # Add a small delay to avoid rate limiting
+                await asyncio.sleep(0.5)
+                
+            except Exception as e:
+                logger.error(f"Error enriching title {title}: {str(e)}")
+                result["skipped"] += 1
+                session.rollback()
+        
+        logger.info(f"Title enrichment completed: {result['processed']} processed, "
+                  f"{result['enriched']} enriched, {result['skipped']} skipped")
+        
+    except Exception as e:
+        logger.error(f"Error during title enrichment process: {str(e)}")
+        session.rollback()
+    finally:
+        session.close()
+    
+    return result
 
 def main(csv_file_path):
     """Import Netflix viewing history from CSV and save to JSON."""

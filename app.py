@@ -879,6 +879,17 @@ def parse_arguments():
                       action="store_true", 
                       default=False,
                       help="Enable debug mode: save data to JSON files in /data directory")
+    parser.add_argument("--netflix-csv",
+                      type=str,
+                      help="Path to Netflix viewing history CSV file to import")
+    parser.add_argument("--enrich-netflix",
+                      action="store_true",
+                      default=False,
+                      help="Enrich Netflix data with IMDB information (limit 50 titles)")
+    parser.add_argument("--enrich-limit",
+                      type=int,
+                      default=50,
+                      help="Limit number of titles to enrich (default: 50)")
     return parser.parse_args()
 
 def run_cli(debug_mode=False):
@@ -914,6 +925,95 @@ def run_cli(debug_mode=False):
     loop = asyncio.get_event_loop()
     loop.run_until_complete(run_cli_async())
 
+async def process_netflix_operations(netflix_csv=None, enrich_netflix=False, enrich_limit=50, debug_mode=False):
+    """
+    Process Netflix-related operations: import CSV and/or enrich with IMDB data
+    
+    Args:
+        netflix_csv: Path to Netflix viewing history CSV file
+        enrich_netflix: Whether to enrich Netflix data with IMDB information
+        enrich_limit: Maximum number of titles to enrich
+        debug_mode: Whether debug mode is enabled
+    """
+    global app_debug_mode
+    app_debug_mode = debug_mode
+    # Import Netflix viewing history if CSV file is provided
+    if netflix_csv and os.path.exists(netflix_csv):
+        print(f"\nImporting Netflix viewing history from {netflix_csv}...")
+        import_result = netflix_importer.import_netflix_history(netflix_csv)
+        print(f"Import result: {import_result['processed']} processed, "
+              f"{import_result['added']} added, "
+              f"{import_result['skipped']} skipped")
+        
+        # Save to JSON if debug mode is enabled
+        if debug_mode:
+            print("Saving imported Netflix history to JSON...")
+            json_path = netflix_importer.save_netflix_history_to_json()
+            if json_path:
+                print(f"Saved Netflix history to {json_path}")
+    
+    # Enrich Netflix data with IMDB information if requested
+    if enrich_netflix:
+        print(f"\nEnriching Netflix data with IMDB information (limit: {enrich_limit} titles)...")
+        try:
+            from imdb_api import IMDBAPI
+            
+            # Verify IMDB API is configured
+            imdb_api = IMDBAPI()
+            if not imdb_api.api_key:
+                print("ERROR: IMDB API key not found. Skipping Netflix enrichment.")
+                print("Set the IMDB_API_KEY environment variable and try again.")
+                return
+            
+            enrich_result = await netflix_importer.enrich_netflix_title_data(limit=enrich_limit)
+            print(f"Enrichment result: {enrich_result['processed']} processed, "
+                  f"{enrich_result['enriched']} enriched, "
+                  f"{enrich_result['skipped']} skipped")
+            
+            # Save to JSON if debug mode is enabled
+            if debug_mode:
+                print("Saving enriched Netflix history to JSON...")
+                json_path = netflix_importer.save_netflix_history_to_json()
+                if json_path:
+                    print(f"Saved enriched Netflix history to {json_path}")
+            
+            # Show sample of enriched titles
+            import database_handler as db
+            from sqlalchemy import create_engine
+            from sqlalchemy.orm import sessionmaker, scoped_session
+            from models import Netflix_History_Item, Netflix_Title_Info
+            
+            # Create session for querying title info
+            DATABASE_URL = os.environ.get('DATABASE_URL')
+            engine = create_engine(DATABASE_URL)
+            Session = scoped_session(sessionmaker(bind=engine))
+            session = Session()
+            
+            try:
+                # Get history items
+                enriched_items = db.get_netflix_history_from_db(limit=10)
+                if enriched_items:
+                    print("\nSample of Netflix titles:")
+                    for i, item in enumerate(enriched_items, 1):
+                        print(f"{i}. {item.title}")
+                        if item.content_type:
+                            print(f"   Type: {item.content_type}, Year: {item.release_year or 'Unknown'}")
+                        if item.show_name:
+                            print(f"   Show: {item.show_name}")
+                        
+                        # Look up title info for IMDB ID
+                        title_info = session.query(Netflix_Title_Info).filter_by(title=item.title).first()
+                        if title_info and title_info.imdb_id:
+                            print(f"   IMDB ID: {title_info.imdb_id}")
+                        
+                        print()
+            finally:
+                session.close()
+        
+        except Exception as e:
+            print(f"Error enriching Netflix data: {str(e)}")
+            print(traceback.format_exc())
+
 if __name__ == '__main__':
     # Parse command line arguments
     args = parse_arguments()
@@ -925,4 +1025,23 @@ if __name__ == '__main__':
     else:
         print("Debug mode DISABLED: Will not save data to JSON files")
     
-    run_cli(debug_mode)
+    # Global app_debug_mode is set in run_cli function
+    
+    # Process Netflix operations if requested
+    if args.netflix_csv or args.enrich_netflix:
+        print("Netflix operations requested - skipping regular data collection")
+        
+        # Initialize APIs just in case we need them
+        initialize_apis()
+        
+        # Run Netflix operations
+        loop = asyncio.get_event_loop()
+        loop.run_until_complete(process_netflix_operations(
+            netflix_csv=args.netflix_csv,
+            enrich_netflix=args.enrich_netflix,
+            enrich_limit=args.enrich_limit,
+            debug_mode=debug_mode
+        ))
+    else:
+        # Run the regular data collection CLI
+        run_cli(debug_mode)

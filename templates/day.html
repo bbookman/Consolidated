@@ -299,8 +299,11 @@
     function formatMarkdown(text) {
         if (!text) return '';
         
+        // Remove standalone # characters on their own line
+        let formatted = text.replace(/^#\s*$/gm, '');
+        
         // Replace markdown headers with HTML headers
-        let formatted = text.replace(/## (.*?)(?:\n|$)/g, '<h4>$1</h4>');
+        formatted = formatted.replace(/## (.*?)(?:\n|$)/g, '<h4>$1</h4>');
         formatted = formatted.replace(/# (.*?)(?:\n|$)/g, '<h3>$1</h3>');
         
         // Replace bold markdown with HTML strong tags
@@ -383,6 +386,9 @@
     function generateConversationHTML(item) {
         // Format any markdown in the summary to HTML
         let formattedSummary = item.summary;
+        
+        // Remove standalone # characters on their own line
+        formattedSummary = formattedSummary.replace(/^#\s*$/gm, '');
         
         // Replace markdown headers with HTML headers
         formattedSummary = formattedSummary.replace(/## (.*?)(?:\n|$)/g, '<h4>$1</h4>');

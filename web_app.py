@@ -31,6 +31,15 @@ def index():
     """Home page showing the calendar view of all data."""
     return render_template('index.html')
 
+@app.route('/test')
+def test():
+    """Simple test endpoint to verify the application is running."""
+    return jsonify({
+        "status": "success",
+        "message": "Web application is running correctly.",
+        "timestamp": datetime.now().isoformat()
+    })
+
 @app.route('/api/journal_data')
 def journal_data():
     """API endpoint to get journal data for a specific date range."""

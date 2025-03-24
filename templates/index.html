@@ -22,7 +22,6 @@
             <div class="card-body">
                 <div class="mb-3">
                     <span class="day-marker marker-conversations"></span> Conversations
-                    <span class="day-marker marker-facts ms-3"></span> Facts
                     <span class="day-marker marker-lifelogs ms-3"></span> Lifelogs
                     <span class="day-marker marker-netflix ms-3"></span> Netflix
                 </div>
@@ -104,9 +103,7 @@
                                 if (arg.event.extendedProps.conversations > 0) {
                                     html += `<span class="day-marker marker-conversations" title="${arg.event.extendedProps.conversations} conversations"></span>`;
                                 }
-                                if (arg.event.extendedProps.facts > 0) {
-                                    html += `<span class="day-marker marker-facts" title="${arg.event.extendedProps.facts} facts"></span>`;
-                                }
+                                // Facts removed as requested
                                 if (arg.event.extendedProps.lifelogs > 0) {
                                     html += `<span class="day-marker marker-lifelogs" title="${arg.event.extendedProps.lifelogs} lifelogs"></span>`;
                                 }
@@ -184,14 +181,14 @@
                 </div>
         `;
         
-        // Count entries
-        const totalEntries = day.conversations.length + day.facts.length + day.lifelogs.length + day.netflix.length;
+        // Count entries (Facts excluded as requested)
+        const totalEntries = day.conversations.length + day.lifelogs.length + day.netflix.length;
         
         // Summary of entries
         html += `<div class="mb-3 small text-muted">
             ${totalEntries} entries:
             ${day.conversations.length > 0 ? `<span class="badge bg-warning text-dark">${day.conversations.length} conversations</span> ` : ''}
-            ${day.facts.length > 0 ? `<span class="badge bg-info">${day.facts.length} facts</span> ` : ''}
+            <!-- Facts removed as requested -->
             ${day.lifelogs.length > 0 ? `<span class="badge bg-success">${day.lifelogs.length} lifelogs</span> ` : ''}
             ${day.netflix.length > 0 ? `<span class="badge bg-danger">${day.netflix.length} netflix</span>` : ''}
         </div>`;
@@ -201,8 +198,8 @@
         const allEntries = [
             ...day.netflix.slice(0, 1).map(item => ({ type: 'netflix', data: item, time: item.time })),
             ...day.lifelogs.slice(0, 1).map(item => ({ type: 'lifelog', data: item, time: item.time })),
-            ...day.conversations.slice(0, 1).map(item => ({ type: 'conversation', data: item, time: item.time })),
-            ...day.facts.slice(0, 1).map(item => ({ type: 'fact', data: item, time: item.time }))
+            ...day.conversations.slice(0, 1).map(item => ({ type: 'conversation', data: item, time: item.time }))
+            // Facts removed as requested
         ].sort((a, b) => {
             // Sort by time (most recent first)
             const timeA = new Date(`${day.date}T${a.time}`);
@@ -218,9 +215,8 @@
                     html += generateLifelogHTML(entry.data);
                 } else if (entry.type === 'conversation') {
                     html += generateConversationHTML(entry.data);
-                } else if (entry.type === 'fact') {
-                    html += generateFactHTML(entry.data);
                 }
+                // Facts case removed as requested
             }
             
             if (totalEntries > maxPreviewEntries) {

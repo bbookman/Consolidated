@@ -299,8 +299,15 @@
     function formatMarkdown(text) {
         if (!text) return '';
         
-        // Remove standalone # characters on their own line
+        // Remove # characters that are not part of proper Markdown headers
+        // First, handle standalone # characters on their own line
         let formatted = text.replace(/^#\s*$/gm, '');
+        
+        // Remove # characters followed by another # (not a proper header)
+        formatted = formatted.replace(/^#\s*#/gm, '');
+        
+        // Remove # characters not followed by a space (not a proper header)
+        formatted = formatted.replace(/^#(?!\s)/gm, '');
         
         // Replace markdown headers with HTML headers
         formatted = formatted.replace(/## (.*?)(?:\n|$)/g, '<h4>$1</h4>');
@@ -387,8 +394,15 @@
         // Format any markdown in the summary to HTML
         let formattedSummary = item.summary;
         
-        // Remove standalone # characters on their own line
+        // Remove # characters that are not part of proper Markdown headers
+        // First, handle standalone # characters on their own line
         formattedSummary = formattedSummary.replace(/^#\s*$/gm, '');
+        
+        // Remove # characters followed by another # (not a proper header)
+        formattedSummary = formattedSummary.replace(/^#\s*#/gm, '');
+        
+        // Remove # characters not followed by a space (not a proper header)
+        formattedSummary = formattedSummary.replace(/^#(?!\s)/gm, '');
         
         // Replace markdown headers with HTML headers
         formattedSummary = formattedSummary.replace(/## (.*?)(?:\n|$)/g, '<h4>$1</h4>');

@@ -125,5 +125,59 @@ class Billboard_Chart_Item(Base):
     def __repr__(self):
         return f"<Billboard_Chart_Item(chart={self.chart_name}, date={self.chart_date}, rank={self.item_rank}, title={self.title[:30]}..., artist={self.artist[:30]}...)>"
 
+class Netflix_History_Item(Base):
+    __tablename__ = 'netflix_history_items'
+    
+    id = Column(Integer, primary_key=True)
+    title = Column(String, nullable=False)  # Title of show or movie
+    watch_date = Column(DateTime, nullable=False)  # When the content was watched
+    
+    # Parse show information
+    show_name = Column(String, nullable=True)  # Extracted series name if available
+    season = Column(String, nullable=True)  # Season information if available
+    episode_name = Column(String, nullable=True)  # Episode name if available
+    episode_number = Column(String, nullable=True)  # Episode number if available
+    
+    # Netflix API data (to be added later when/if API data is available)
+    content_type = Column(String, nullable=True)  # "MOVIE" or "SERIES"
+    genres = Column(Text, nullable=True)  # Genres as JSON array string
+    release_year = Column(Integer, nullable=True)  # Year of release
+    duration = Column(Integer, nullable=True)  # Duration in minutes
+    description = Column(Text, nullable=True)  # Content description
+    
+    # Metadata
+    imported_at = Column(DateTime, default=datetime.utcnow)  # When this record was imported
+    
+    # Create a unique constraint on title and watch date to prevent duplicates
+    __table_args__ = (UniqueConstraint('title', 'watch_date', name='uq_netflix_history_title_date'),)
+    
+    def __repr__(self):
+        return f"<Netflix_History_Item(id={self.id}, title={self.title[:30]}..., watch_date={self.watch_date.strftime('%Y-%m-%d') if self.watch_date else 'None'})>"
+
+class Netflix_Title_Info(Base):
+    """
+    Additional information about Netflix titles from the Netflix API or other sources.
+    This is a separate table to avoid duplicating data for multiple watches of the same title.
+    """
+    __tablename__ = 'netflix_title_info'
+    
+    id = Column(Integer, primary_key=True)
+    title = Column(String, nullable=False, unique=True)  # Title used as the join key
+    content_type = Column(String, nullable=True)  # "MOVIE" or "SERIES"
+    release_year = Column(Integer, nullable=True)  # Year of release
+    genres = Column(Text, nullable=True)  # Genres as JSON array string
+    duration = Column(Integer, nullable=True)  # Duration in minutes (for movies)
+    seasons = Column(Integer, nullable=True)  # Number of seasons (for series)
+    description = Column(Text, nullable=True)  # Content description
+    imdb_id = Column(String, nullable=True)  # IMDB ID if available
+    imdb_score = Column(Float, nullable=True)  # IMDB rating
+    tmdb_score = Column(Float, nullable=True)  # TMDB rating
+    poster_url = Column(String, nullable=True)  # URL to poster image
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)  # When this record was last updated
+    raw_data = Column(Text, nullable=True)  # Raw API response data
+    
+    def __repr__(self):
+        return f"<Netflix_Title_Info(id={self.id}, title={self.title[:30]}..., type={self.content_type})>"
+
 # Create all tables in the database
 Base.metadata.create_all(engine)

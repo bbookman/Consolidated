@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from models import Base, Bee_Conversation, Bee_Fact, Bee_Todo, Limitless_Lifelog, Weather_Data, Billboard_Chart_Item
+from models import Base, Bee_Conversation, Bee_Fact, Bee_Todo, Limitless_Lifelog, Weather_Data, Billboard_Chart_Item, Netflix_History_Item, Netflix_Title_Info
 import os
 import json
 import logging
@@ -736,3 +736,92 @@ def should_update_billboard_chart(chart_name, days_threshold=7):
         logger.error(f"Error parsing date in should_update_billboard_chart: {str(e)}")
         # If there's an error, be safe and return True
         return True, latest_date
+        
+def store_netflix_history(history_items):
+    """
+    Store Netflix viewing history items in the database with deduplication.
+    
+    Args:
+        history_items: List of Netflix viewing history dictionaries
+    
+    Returns:
+        Dict with counts of items processed, added, and skipped
+    """
+    session = Session()
+    result = {"processed": 0, "added": 0, "skipped": 0}
+    
+    try:
+        for item in history_items:
+            result["processed"] += 1
+            
+            # Check if this item already exists in database
+            existing = session.query(Netflix_History_Item).filter(
+                Netflix_History_Item.title == item.get('title'),
+                Netflix_History_Item.watch_date == item.get('watch_date')
+            ).first()
+            
+            if existing:
+                # Skip duplicate entries
+                logger.debug(f"Skipping duplicate Netflix history entry: {item.get('title')}")
+                result["skipped"] += 1
+                continue
+                
+            # Create new item
+            netflix_item = Netflix_History_Item(
+                title=item.get('title'),
+                watch_date=item.get('watch_date'),
+                show_name=item.get('show_name'),
+                season=item.get('season'),
+                episode_name=item.get('episode_name'),
+                episode_number=item.get('episode_number'),
+                content_type=item.get('content_type'),
+                genres=item.get('genres'),
+                release_year=item.get('release_year'),
+                duration=item.get('duration'),
+                description=item.get('description')
+            )
+            
+            session.add(netflix_item)
+            logger.info(f"Added Netflix history item: {item.get('title')}")
+            result["added"] += 1
+            
+        # Commit all changes
+        session.commit()
+        
+    except Exception as e:
+        session.rollback()
+        logger.error(f"Error storing Netflix history items: {str(e)}")
+    finally:
+        session.close()
+        
+    return result
+
+def get_netflix_history_from_db(limit=None, order_by_recent=True):
+    """
+    Retrieve Netflix viewing history from the database.
+    
+    Args:
+        limit: Optional maximum number of items to return (default: None, returns all)
+        order_by_recent: If True, orders by watch_date descending (newest first)
+        
+    Returns:
+        List of Netflix_History_Item objects
+    """
+    try:
+        session = Session()
+        query = session.query(Netflix_History_Item)
+        
+        # Order by watch date
+        if order_by_recent:
+            query = query.order_by(Netflix_History_Item.watch_date.desc())
+        else:
+            query = query.order_by(Netflix_History_Item.watch_date.asc())
+            
+        # Apply limit if specified
+        if limit:
+            query = query.limit(limit)
+            
+        return query.all()
+    except Exception as e:
+        logger.error(f"Error retrieving Netflix history from database: {str(e)}")
+        return []

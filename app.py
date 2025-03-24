@@ -3,7 +3,8 @@
 Multi-API Data Collection CLI
 
 This script provides a command-line interface for collecting and storing data from 
-multiple APIs (Bee AI and Limitless) into a database and JSON files.
+multiple APIs (Bee AI, Limitless, OpenWeatherMap, Billboard) into a database and JSON files.
+Also supports importing Netflix viewing history from CSV files.
 """
 
 import sys
@@ -13,11 +14,12 @@ import traceback
 import logging
 import asyncio
 from datetime import datetime
-from beeai import Bee
 import pytz
+from beeai import Bee
 
 from limitless_api import LimitlessAPI
 from openweather_api import OpenWeatherAPI
+import netflix_importer
 from billboard_api import BillboardAPI
 import database_handler as db
 import config_loader

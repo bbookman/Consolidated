@@ -284,23 +284,57 @@
         // Replace bold markdown with HTML strong tags
         formattedSummary = formattedSummary.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
         
-        // Process bullet points
-        if (formattedSummary.includes("Key Take Aways") || formattedSummary.includes("Key Takeaways")) {
-            // First, find sections with bullet points (lines starting with * )
-            const sections = formattedSummary.split(/\n(?=\w)/);
-            for (let i = 0; i < sections.length; i++) {
-                if (sections[i].includes("* ")) {
-                    // For each section with bullet points, wrap it in a ul
-                    let bulletSection = sections[i];
-                    // Replace each bullet point line with a list item
-                    bulletSection = bulletSection.replace(/^\* (.*?)$/gm, '<li>$1</li>');
-                    // Add ul tags around the list items
-                    bulletSection = bulletSection.replace(/(<li>.*?<\/li>)+/s, '<ul>$&</ul>');
-                    sections[i] = bulletSection;
+        // Process bullet points in all sections
+        // Split the content by lines
+        const lines = formattedSummary.split('\n');
+        let inBulletList = false;
+        let bulletItems = [];
+        let processedLines = [];
+        
+        for (let i = 0; i < lines.length; i++) {
+            const line = lines[i];
+            
+            // Check if this line starts with an asterisk bullet point
+            if (line.trim().match(/^\* (.+)$/)) {
+                // This is a bullet point
+                if (!inBulletList) {
+                    // Starting a new bullet list
+                    inBulletList = true;
+                    bulletItems = [];
                 }
+                
+                // Extract the bullet content (without the asterisk)
+                const bulletContent = line.trim().replace(/^\* /, '');
+                bulletItems.push(bulletContent);
+            } else {
+                // Not a bullet point
+                if (inBulletList) {
+                    // We were in a bullet list, but now we're not
+                    // Add the bullet list to processed lines
+                    processedLines.push('<ul>');
+                    bulletItems.forEach(item => {
+                        processedLines.push(`<li>${item}</li>`);
+                    });
+                    processedLines.push('</ul>');
+                    inBulletList = false;
+                }
+                
+                // Add the current line
+                processedLines.push(line);
             }
-            formattedSummary = sections.join('\n');
         }
+        
+        // If we ended with a bullet list, add it
+        if (inBulletList) {
+            processedLines.push('<ul>');
+            bulletItems.forEach(item => {
+                processedLines.push(`<li>${item}</li>`);
+            });
+            processedLines.push('</ul>');
+        }
+        
+        // Rejoin the processed lines
+        formattedSummary = processedLines.join('\n');
         
         // Replace other markdown lists with HTML lists
         formattedSummary = formattedSummary.replace(/- (.*?)(?:\n|$)/g, '<li>$1</li>');

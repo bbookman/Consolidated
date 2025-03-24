@@ -37,12 +37,13 @@ class IMDBAPI:
         else:
             logger.info("IMDB API client initialized with key.")
     
-    async def search_movies(self, genre=None, rows=25, sort_order="ASC", sort_field="id", max_retries=3, retry_delay=2):
+    async def search_movies(self, genre=None, title=None, rows=25, sort_order="ASC", sort_field="id", max_retries=3, retry_delay=2):
         """
         Search for movies in the IMDB database with retry mechanism
         
         Args:
             genre: Optional genre to filter by (e.g., "Drama", "Comedy", etc.)
+            title: Optional title to search for
             rows: Number of results to return (default: 25)
             sort_order: Sort order (ASC or DESC)
             sort_field: Field to sort by (e.g., "id", "title", etc.)
@@ -62,7 +63,6 @@ class IMDBAPI:
         
         # Build query parameters
         params = {
-            "type": "movie",
             "rows": rows,
             "sortOrder": sort_order,
             "sortField": sort_field
@@ -72,6 +72,10 @@ class IMDBAPI:
         if genre:
             params["genre"] = genre
             # Don't add 'genres' parameter as it causes issues with this API
+            
+        # Add title search if provided
+        if title:
+            params["title"] = title
         
         url = f"{self.base_url}/search"
         

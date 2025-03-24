@@ -1,0 +1,365 @@
+{% extends "base.html" %}
+
+{% block title %}Life Journal - {{ date }}{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Day: <span id="formatted-date">{{ date }}</span></h2>
+            <div>
+                <button id="prev-day" class="btn btn-outline-primary me-2">
+                    <i class="bi bi-chevron-left"></i> Previous Day
+                </button>
+                <button id="next-day" class="btn btn-outline-primary">
+                    Next Day <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col">
+        <div class="alert alert-info" id="no-data-alert" style="display:none;">
+            No journal entries found for this day.
+        </div>
+        
+        <div class="card mb-4" id="summary-card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Day Summary</h5>
+            </div>
+            <div class="card-body">
+                <div id="summary-content">
+                    <div class="loading-spinner" id="loading-summary">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="day-timeline">
+            <div class="loading-spinner" id="loading-timeline">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const date = '{{ date }}';
+        let currentDate = new Date(date);
+        
+        // Format date for display
+        const formattedDate = new Date(date).toLocaleDateString('en-US', { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        });
+        document.getElementById('formatted-date').textContent = formattedDate;
+        
+        // Previous day button
+        document.getElementById('prev-day').addEventListener('click', function() {
+            const prevDate = new Date(currentDate);
+            prevDate.setDate(prevDate.getDate() - 1);
+            window.location.href = `/day/${prevDate.toISOString().split('T')[0]}`;
+        });
+        
+        // Next day button
+        document.getElementById('next-day').addEventListener('click', function() {
+            const nextDate = new Date(currentDate);
+            nextDate.setDate(nextDate.getDate() + 1);
+            window.location.href = `/day/${nextDate.toISOString().split('T')[0]}`;
+        });
+        
+        // Fetch data for this day
+        fetchDayData(date);
+    });
+    
+    function fetchDayData(date) {
+        fetch(`/api/journal_data?start_date=${date}&end_date=${date}`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('loading-summary').style.display = 'none';
+                document.getElementById('loading-timeline').style.display = 'none';
+                
+                if (data.status === 'success' && data.days.length > 0) {
+                    const dayData = data.days[0];
+                    
+                    // Update summary
+                    updateSummary(dayData);
+                    
+                    // Generate timeline
+                    generateTimeline(dayData);
+                    
+                    // Show data sections
+                    document.getElementById('summary-card').style.display = 'block';
+                    document.getElementById('no-data-alert').style.display = 'none';
+                } else {
+                    // No data for this day
+                    document.getElementById('summary-card').style.display = 'none';
+                    document.getElementById('no-data-alert').style.display = 'block';
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching day data:', error);
+                document.getElementById('loading-summary').innerHTML = 
+                    '<div class="alert alert-danger">Failed to load data</div>';
+                document.getElementById('loading-timeline').innerHTML = 
+                    '<div class="alert alert-danger">Failed to load data</div>';
+            });
+    }
+    
+    function updateSummary(dayData) {
+        const totalEntries = 
+            dayData.conversations.length + 
+            dayData.facts.length + 
+            dayData.lifelogs.length + 
+            dayData.netflix.length;
+        
+        let summaryHtml = `
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Activity Summary</h5>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-2">
+                            <strong>Total Entries:</strong>
+                            <span>${totalEntries}</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>
+                                <span class="day-marker marker-conversations"></span> Conversations:
+                            </span>
+                            <span>${dayData.conversations.length}</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>
+                                <span class="day-marker marker-facts"></span> Facts:
+                            </span>
+                            <span>${dayData.facts.length}</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>
+                                <span class="day-marker marker-lifelogs"></span> Lifelogs:
+                            </span>
+                            <span>${dayData.lifelogs.length}</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>
+                                <span class="day-marker marker-netflix"></span> Netflix:
+                            </span>
+                            <span>${dayData.netflix.length}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h5>Highlights</h5>
+                    <div>
+        `;
+        
+        // Add some highlights from the day
+        let highlightsAdded = 0;
+        
+        // Add first Netflix item if available
+        if (dayData.netflix.length > 0) {
+            const netflix = dayData.netflix[0];
+            summaryHtml += `
+                <div class="mb-2">
+                    <span class="source-badge source-netflix">Netflix</span>
+                    Watched ${netflix.title}
+                </div>
+            `;
+            highlightsAdded++;
+        }
+        
+        // Add first Lifelog if available
+        if (dayData.lifelogs.length > 0) {
+            const lifelog = dayData.lifelogs[0];
+            summaryHtml += `
+                <div class="mb-2">
+                    <span class="source-badge source-limitless">Limitless</span>
+                    ${lifelog.title.substring(0, 50)}${lifelog.title.length > 50 ? '...' : ''}
+                </div>
+            `;
+            highlightsAdded++;
+        }
+        
+        // Add first conversation if available
+        if (dayData.conversations.length > 0) {
+            const conv = dayData.conversations[0];
+            summaryHtml += `
+                <div class="mb-2">
+                    <span class="source-badge source-bee">Bee</span>
+                    ${conv.summary.substring(0, 50)}${conv.summary.length > 50 ? '...' : ''}
+                </div>
+            `;
+            highlightsAdded++;
+        }
+        
+        // If no highlights were added, show a message
+        if (highlightsAdded === 0) {
+            summaryHtml += `<div class="text-muted">No highlights available</div>`;
+        }
+        
+        summaryHtml += `
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        document.getElementById('summary-content').innerHTML = summaryHtml;
+    }
+    
+    function generateTimeline(dayData) {
+        // Combine all entries and sort by time
+        const allEntries = [
+            ...dayData.conversations.map(item => ({ type: 'conversation', data: item, time: item.time })),
+            ...dayData.facts.map(item => ({ type: 'fact', data: item, time: item.time })),
+            ...dayData.lifelogs.map(item => ({ type: 'lifelog', data: item, time: item.time })),
+            ...dayData.netflix.map(item => ({ type: 'netflix', data: item, time: item.time }))
+        ].sort((a, b) => {
+            // Sort by time
+            const timeA = new Date(`${dayData.date}T${a.time}`);
+            const timeB = new Date(`${dayData.date}T${b.time}`);
+            return timeB - timeA;
+        });
+        
+        if (allEntries.length === 0) {
+            document.getElementById('day-timeline').innerHTML = 
+                '<div class="alert alert-info">No entries found for this day.</div>';
+            return;
+        }
+        
+        let timelineHtml = '';
+        
+        // Group entries by hour
+        const hourGroups = {};
+        
+        allEntries.forEach(entry => {
+            const hour = entry.time.split(':')[0];
+            if (!hourGroups[hour]) {
+                hourGroups[hour] = [];
+            }
+            hourGroups[hour].push(entry);
+        });
+        
+        // Create timeline entries for each hour (newest first)
+        const hours = Object.keys(hourGroups).sort((a, b) => b - a);
+        
+        hours.forEach(hour => {
+            const entries = hourGroups[hour];
+            const displayHour = parseInt(hour);
+            const amPm = displayHour < 12 ? 'AM' : 'PM';
+            const displayHour12 = displayHour % 12 || 12;
+            
+            timelineHtml += `
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <h5 class="mb-0">${displayHour12} ${amPm}</h5>
+                    </div>
+                    <div class="card-body">
+            `;
+            
+            entries.forEach(entry => {
+                if (entry.type === 'netflix') {
+                    timelineHtml += generateNetflixHTML(entry.data);
+                } else if (entry.type === 'lifelog') {
+                    timelineHtml += generateLifelogHTML(entry.data);
+                } else if (entry.type === 'conversation') {
+                    timelineHtml += generateConversationHTML(entry.data);
+                } else if (entry.type === 'fact') {
+                    timelineHtml += generateFactHTML(entry.data);
+                }
+            });
+            
+            timelineHtml += `
+                    </div>
+                </div>
+            `;
+        });
+        
+        document.getElementById('day-timeline').innerHTML = timelineHtml;
+    }
+    
+    function generateNetflixHTML(item) {
+        return `
+            <div class="journal-item netflix-item">
+                <div class="netflix-poster">
+                    ${item.poster_url 
+                        ? `<img src="${item.poster_url}" alt="${item.title}">` 
+                        : `<div class="w-100 h-100 d-flex justify-content-center align-items-center">
+                            <span>No Poster</span>
+                           </div>`
+                    }
+                </div>
+                <div class="netflix-details">
+                    <div class="item-header">
+                        <span class="time-badge">${item.time}</span>
+                        <span class="source-badge source-netflix">Netflix</span>
+                    </div>
+                    <h5 class="item-title">${item.title}</h5>
+                    <div>
+                        ${item.show_name ? `<div><strong>Show:</strong> ${item.show_name}</div>` : ''}
+                        ${item.season ? `<div><strong>Season:</strong> ${item.season}</div>` : ''}
+                        ${item.episode_name ? `<div><strong>Episode:</strong> ${item.episode_name}</div>` : ''}
+                        ${item.content_type ? `<div><strong>Type:</strong> ${item.content_type}</div>` : ''}
+                        ${item.release_year ? `<div><strong>Year:</strong> ${item.release_year}</div>` : ''}
+                        ${item.imdb_score ? `<div><strong>IMDB:</strong> ${item.imdb_score}/10</div>` : ''}
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    function generateLifelogHTML(item) {
+        return `
+            <div class="journal-item">
+                <div class="item-header">
+                    <span class="time-badge">${item.time}</span>
+                    <span class="source-badge source-limitless">Limitless</span>
+                </div>
+                <h5 class="item-title">${item.title}</h5>
+                ${item.description ? `<div>${item.description}</div>` : ''}
+                ${item.tags && item.tags.length > 0 ? `
+                    <div class="mt-2">
+                        ${item.tags.map(tag => `<span class="badge bg-secondary me-1">${tag}</span>`).join('')}
+                    </div>
+                ` : ''}
+            </div>
+        `;
+    }
+    
+    function generateConversationHTML(item) {
+        return `
+            <div class="journal-item">
+                <div class="item-header">
+                    <span class="time-badge">${item.time}</span>
+                    <span class="source-badge source-bee">Bee Conversation</span>
+                </div>
+                <h5 class="item-title">${item.summary}</h5>
+                ${item.location ? `<div><strong>Location:</strong> ${item.location}</div>` : ''}
+            </div>
+        `;
+    }
+    
+    function generateFactHTML(item) {
+        return `
+            <div class="journal-item">
+                <div class="item-header">
+                    <span class="time-badge">${item.time}</span>
+                    <span class="source-badge source-bee">Bee Fact</span>
+                </div>
+                <div>${item.text}</div>
+            </div>
+        `;
+    }
+</script>
+{% endblock %}

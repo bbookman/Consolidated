@@ -1,0 +1,323 @@
+{% extends "base.html" %}
+
+{% block title %}Life Journal - Calendar{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.8/main.min.css">
+{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <h2>Life Journal</h2>
+        <p>Your personal digital journal combining data from Bee, Limitless, and Netflix.</p>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Activity Calendar</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <span class="day-marker marker-conversations"></span> Conversations
+                    <span class="day-marker marker-facts ms-3"></span> Facts
+                    <span class="day-marker marker-lifelogs ms-3"></span> Lifelogs
+                    <span class="day-marker marker-netflix ms-3"></span> Netflix
+                </div>
+                <div id="calendar"></div>
+                <div id="loading-calendar" class="loading-spinner">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Recent Activity</h5>
+            </div>
+            <div class="card-body">
+                <div id="recent-activity">
+                    <div id="loading-activity" class="loading-spinner">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize FullCalendar
+        const calendarEl = document.getElementById('calendar');
+        const loadingCalendar = document.getElementById('loading-calendar');
+        
+        // Hide calendar until data is loaded
+        calendarEl.style.display = 'none';
+        
+        // Fetch date counts for the heatmap
+        fetch('/api/date_counts')
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    // Process data for calendar
+                    const events = data.date_counts.map(item => {
+                        return {
+                            title: `${item.total} entries`,
+                            start: item.date,
+                            display: 'background',
+                            backgroundColor: getHeatColor(item.total),
+                            extendedProps: {
+                                conversations: item.conversations,
+                                facts: item.facts,
+                                lifelogs: item.lifelogs,
+                                netflix: item.netflix,
+                                total: item.total
+                            }
+                        };
+                    });
+                    
+                    // Initialize calendar
+                    const calendar = new FullCalendar.Calendar(calendarEl, {
+                        initialView: 'dayGridMonth',
+                        events: events,
+                        eventContent: function(arg) {
+                            let html = '';
+                            
+                            if (arg.event.extendedProps.total > 0) {
+                                html += `<div class="entry-count">${arg.event.extendedProps.total} entries</div>`;
+                                
+                                html += '<div style="position: absolute; bottom: 5px; right: 5px;">';
+                                if (arg.event.extendedProps.conversations > 0) {
+                                    html += `<span class="day-marker marker-conversations" title="${arg.event.extendedProps.conversations} conversations"></span>`;
+                                }
+                                if (arg.event.extendedProps.facts > 0) {
+                                    html += `<span class="day-marker marker-facts" title="${arg.event.extendedProps.facts} facts"></span>`;
+                                }
+                                if (arg.event.extendedProps.lifelogs > 0) {
+                                    html += `<span class="day-marker marker-lifelogs" title="${arg.event.extendedProps.lifelogs} lifelogs"></span>`;
+                                }
+                                if (arg.event.extendedProps.netflix > 0) {
+                                    html += `<span class="day-marker marker-netflix" title="${arg.event.extendedProps.netflix} netflix"></span>`;
+                                }
+                                html += '</div>';
+                            }
+                            
+                            return { html: html };
+                        },
+                        dateClick: function(info) {
+                            window.location.href = `/day/${info.dateStr}`;
+                        }
+                    });
+                    
+                    // Show calendar and render it
+                    loadingCalendar.style.display = 'none';
+                    calendarEl.style.display = 'block';
+                    calendar.render();
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching date counts:', error);
+                loadingCalendar.innerHTML = '<div class="alert alert-danger">Failed to load calendar data</div>';
+            });
+            
+        // Load recent activity
+        const recentActivity = document.getElementById('recent-activity');
+        const loadingActivity = document.getElementById('loading-activity');
+        
+        // Get recent 7 days
+        const endDate = new Date();
+        const startDate = new Date();
+        startDate.setDate(startDate.getDate() - 7);
+        
+        const startDateStr = startDate.toISOString().split('T')[0];
+        const endDateStr = endDate.toISOString().split('T')[0];
+        
+        fetch(`/api/journal_data?start_date=${startDateStr}&end_date=${endDateStr}`)
+            .then(response => response.json())
+            .then(data => {
+                loadingActivity.style.display = 'none';
+                
+                if (data.status === 'success' && data.days.length > 0) {
+                    const daysHtml = data.days.map(day => {
+                        return generateDayHTML(day);
+                    }).join('');
+                    
+                    recentActivity.innerHTML = daysHtml;
+                } else {
+                    recentActivity.innerHTML = '<div class="alert alert-info">No recent activity found</div>';
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching journal data:', error);
+                loadingActivity.innerHTML = '<div class="alert alert-danger">Failed to load recent activity</div>';
+            });
+    });
+    
+    // Generate HTML for a day's journal entries
+    function generateDayHTML(day) {
+        const date = new Date(day.date);
+        const formattedDate = date.toLocaleDateString('en-US', { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        });
+        
+        let html = `
+            <div class="journal-day">
+                <div class="day-header">
+                    <h4><a href="/day/${day.date}" class="text-decoration-none">${formattedDate}</a></h4>
+                </div>
+        `;
+        
+        // Count entries
+        const totalEntries = day.conversations.length + day.facts.length + day.lifelogs.length + day.netflix.length;
+        
+        // Summary of entries
+        html += `<div class="mb-3 small text-muted">
+            ${totalEntries} entries:
+            ${day.conversations.length > 0 ? `<span class="badge bg-warning text-dark">${day.conversations.length} conversations</span> ` : ''}
+            ${day.facts.length > 0 ? `<span class="badge bg-info">${day.facts.length} facts</span> ` : ''}
+            ${day.lifelogs.length > 0 ? `<span class="badge bg-success">${day.lifelogs.length} lifelogs</span> ` : ''}
+            ${day.netflix.length > 0 ? `<span class="badge bg-danger">${day.netflix.length} netflix</span>` : ''}
+        </div>`;
+            
+        // Show first couple of entries as preview
+        const maxPreviewEntries = 3;
+        const allEntries = [
+            ...day.netflix.slice(0, 1).map(item => ({ type: 'netflix', data: item, time: item.time })),
+            ...day.lifelogs.slice(0, 1).map(item => ({ type: 'lifelog', data: item, time: item.time })),
+            ...day.conversations.slice(0, 1).map(item => ({ type: 'conversation', data: item, time: item.time })),
+            ...day.facts.slice(0, 1).map(item => ({ type: 'fact', data: item, time: item.time }))
+        ].sort((a, b) => {
+            // Sort by time (most recent first)
+            const timeA = new Date(`${day.date}T${a.time}`);
+            const timeB = new Date(`${day.date}T${b.time}`);
+            return timeB - timeA;
+        }).slice(0, maxPreviewEntries);
+        
+        if (allEntries.length > 0) {
+            for (const entry of allEntries) {
+                if (entry.type === 'netflix') {
+                    html += generateNetflixHTML(entry.data);
+                } else if (entry.type === 'lifelog') {
+                    html += generateLifelogHTML(entry.data);
+                } else if (entry.type === 'conversation') {
+                    html += generateConversationHTML(entry.data);
+                } else if (entry.type === 'fact') {
+                    html += generateFactHTML(entry.data);
+                }
+            }
+            
+            if (totalEntries > maxPreviewEntries) {
+                html += `<div class="text-center mt-3">
+                    <a href="/day/${day.date}" class="btn btn-sm btn-outline-primary">View all ${totalEntries} entries</a>
+                </div>`;
+            }
+        } else {
+            html += '<div class="alert alert-light">No entries for this day</div>';
+        }
+        
+        html += '</div>';
+        return html;
+    }
+    
+    function generateNetflixHTML(item) {
+        return `
+            <div class="journal-item netflix-item">
+                <div class="netflix-poster">
+                    ${item.poster_url 
+                        ? `<img src="${item.poster_url}" alt="${item.title}">` 
+                        : `<div class="w-100 h-100 d-flex justify-content-center align-items-center">
+                            <span>No Poster</span>
+                           </div>`
+                    }
+                </div>
+                <div class="netflix-details">
+                    <div class="item-header">
+                        <span class="time-badge">${item.time}</span>
+                        <span class="source-badge source-netflix">Netflix</span>
+                    </div>
+                    <h5 class="item-title">${item.title}</h5>
+                    <div>
+                        ${item.show_name ? `<div><strong>Show:</strong> ${item.show_name}</div>` : ''}
+                        ${item.season ? `<div><strong>Season:</strong> ${item.season}</div>` : ''}
+                        ${item.episode_name ? `<div><strong>Episode:</strong> ${item.episode_name}</div>` : ''}
+                        ${item.content_type ? `<div><strong>Type:</strong> ${item.content_type}</div>` : ''}
+                        ${item.release_year ? `<div><strong>Year:</strong> ${item.release_year}</div>` : ''}
+                        ${item.imdb_score ? `<div><strong>IMDB:</strong> ${item.imdb_score}/10</div>` : ''}
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    function generateLifelogHTML(item) {
+        return `
+            <div class="journal-item">
+                <div class="item-header">
+                    <span class="time-badge">${item.time}</span>
+                    <span class="source-badge source-limitless">Limitless</span>
+                </div>
+                <h5 class="item-title">${item.title}</h5>
+                ${item.description ? `<div>${item.description}</div>` : ''}
+                ${item.tags && item.tags.length > 0 ? `
+                    <div class="mt-2">
+                        ${item.tags.map(tag => `<span class="badge bg-secondary me-1">${tag}</span>`).join('')}
+                    </div>
+                ` : ''}
+            </div>
+        `;
+    }
+    
+    function generateConversationHTML(item) {
+        return `
+            <div class="journal-item">
+                <div class="item-header">
+                    <span class="time-badge">${item.time}</span>
+                    <span class="source-badge source-bee">Bee Conversation</span>
+                </div>
+                <h5 class="item-title">${item.summary}</h5>
+                ${item.location ? `<div><strong>Location:</strong> ${item.location}</div>` : ''}
+            </div>
+        `;
+    }
+    
+    function generateFactHTML(item) {
+        return `
+            <div class="journal-item">
+                <div class="item-header">
+                    <span class="time-badge">${item.time}</span>
+                    <span class="source-badge source-bee">Bee Fact</span>
+                </div>
+                <div>${item.text}</div>
+            </div>
+        `;
+    }
+    
+    function getHeatColor(count) {
+        // Return color based on entry count for heatmap
+        if (count === 0) return '#ffffff';
+        if (count < 3) return '#e6f2ff';
+        if (count < 5) return '#b3d9ff';
+        if (count < 10) return '#80bfff';
+        if (count < 20) return '#4da6ff';
+        return '#0080ff';
+    }
+</script>
+{% endblock %}

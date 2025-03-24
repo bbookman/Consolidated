@@ -299,13 +299,38 @@
     }
     
     function generateConversationHTML(item) {
+        // Format any markdown in the summary to HTML
+        let formattedSummary = item.summary;
+        
+        // Replace markdown headers with HTML headers
+        formattedSummary = formattedSummary.replace(/## (.*?)(?:\n|$)/g, '<h4>$1</h4>');
+        formattedSummary = formattedSummary.replace(/# (.*?)(?:\n|$)/g, '<h3>$1</h3>');
+        
+        // Replace bold markdown with HTML strong tags
+        formattedSummary = formattedSummary.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        
+        // Replace italic markdown with HTML em tags
+        formattedSummary = formattedSummary.replace(/\*(.*?)\*/g, '<em>$1</em>');
+        
+        // Replace markdown lists with HTML lists
+        formattedSummary = formattedSummary.replace(/- (.*?)(?:\n|$)/g, '<li>$1</li>');
+        
+        // Add paragraph breaks
+        formattedSummary = formattedSummary.replace(/\n\n/g, '</p><p>');
+        
+        // Wrap in paragraph tag if not already wrapped
+        if (!formattedSummary.startsWith('<')) {
+            formattedSummary = '<p>' + formattedSummary + '</p>';
+        }
+        
         return `
             <div class="journal-item">
                 <div class="item-header">
                     <span class="time-badge">${item.time}</span>
                     <span class="source-badge source-bee">Bee Conversation</span>
                 </div>
-                <h5 class="item-title">${item.summary}</h5>
+                <h5 class="item-title">Conversation</h5>
+                <div class="conversation-content">${formattedSummary}</div>
                 ${item.location ? `<div><strong>Location:</strong> ${item.location}</div>` : ''}
             </div>
         `;

@@ -274,13 +274,43 @@
     }
     
     function generateConversationHTML(item) {
+        // Format any markdown in the summary to HTML
+        let formattedSummary = item.summary;
+        
+        // Replace markdown headers with HTML headers
+        formattedSummary = formattedSummary.replace(/## (.*?)(?:\n|$)/g, '<h4>$1</h4>');
+        formattedSummary = formattedSummary.replace(/# (.*?)(?:\n|$)/g, '<h3>$1</h3>');
+        
+        // Replace bold markdown with HTML strong tags
+        formattedSummary = formattedSummary.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        
+        // Replace italic markdown with HTML em tags
+        formattedSummary = formattedSummary.replace(/\*(.*?)\*/g, '<em>$1</em>');
+        
+        // Replace markdown lists with HTML lists
+        formattedSummary = formattedSummary.replace(/- (.*?)(?:\n|$)/g, '<li>$1</li>');
+        
+        // Limit the summary to the first 100 characters for the preview
+        let shortSummary = formattedSummary;
+        if (formattedSummary.length > 100) {
+            // Try to find the first heading or strong tag and use that
+            const headingMatch = formattedSummary.match(/<h[3-4]>(.*?)<\/h[3-4]>/);
+            if (headingMatch) {
+                shortSummary = headingMatch[0];
+            } else {
+                // Otherwise just truncate
+                shortSummary = formattedSummary.substring(0, 100) + '...';
+            }
+        }
+        
         return `
             <div class="journal-item">
                 <div class="item-header">
                     <span class="time-badge">${item.time}</span>
                     <span class="source-badge source-bee">Bee Conversation</span>
                 </div>
-                <h5 class="item-title">${item.summary}</h5>
+                <h5 class="item-title">Conversation</h5>
+                <div class="conversation-content">${shortSummary}</div>
                 ${item.location ? `<div><strong>Location:</strong> ${item.location}</div>` : ''}
             </div>
         `;

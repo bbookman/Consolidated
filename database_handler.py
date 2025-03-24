@@ -698,3 +698,41 @@ def get_latest_chart_date(chart_name):
         return None
     finally:
         session.close()
+
+def should_update_billboard_chart(chart_name, days_threshold=7):
+    """
+    Check if the billboard chart data is older than the specified threshold 
+    and should be updated.
+    
+    Args:
+        chart_name: Name of the chart (e.g., 'hot-100')
+        days_threshold: Number of days after which to update the chart data (default: 7)
+        
+    Returns:
+        Tuple of (should_update, latest_date)
+        - should_update: True if chart should be updated, False otherwise
+        - latest_date: The latest chart date or None if no data exists
+    """
+    latest_date = get_latest_chart_date(chart_name)
+    
+    # If we don't have any data, we should update
+    if not latest_date:
+        return True, None
+        
+    # Parse the latest date
+    try:
+        latest_date_obj = datetime.strptime(latest_date, '%Y-%m-%d')
+        current_date = datetime.utcnow()
+        
+        # Calculate the difference in days
+        delta = current_date - latest_date_obj
+        
+        # If it's been more than days_threshold days, we should update
+        if delta.days >= days_threshold:
+            return True, latest_date
+        else:
+            return False, latest_date
+    except Exception as e:
+        logger.error(f"Error parsing date in should_update_billboard_chart: {str(e)}")
+        # If there's an error, be safe and return True
+        return True, latest_date

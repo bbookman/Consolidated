@@ -361,13 +361,16 @@ async def fetch_weather_for_location(latitude, longitude, units="metric"):
         logger.error(traceback.format_exc())
         return None
 
-async def fetch_billboard_chart(chart_name="hot-100", date=None):
+async def fetch_billboard_chart(chart_name="hot-100", date=None, force_update=False):
     """
     Fetch Billboard chart data and store it in the database.
+    Only fetches new data if it's been a week or more since the last update,
+    unless force_update is set to True.
     
     Args:
         chart_name: Name of the chart to retrieve (hot-100, billboard-200, etc.)
         date: Optional date string in format YYYY-MM-DD for historical chart
+        force_update: If True, force fetch new data regardless of age
         
     Returns:
         Chart data dictionary if successful, None otherwise
@@ -377,31 +380,64 @@ async def fetch_billboard_chart(chart_name="hot-100", date=None):
         return None
         
     try:
-        # Check if we already have the chart data for this date
-        if not date:
-            # Default to latest chart
-            latest_chart_date = db.get_latest_chart_date(chart_name)
-            if latest_chart_date:
-                # If we already have the latest chart, use the saved data
-                logger.info(f"Using existing chart data for {chart_name} from {latest_chart_date}")
-                chart_items = db.get_billboard_chart_items_from_db(chart_name=chart_name, chart_date=latest_chart_date)
-                if chart_items:
-                    # Convert DB objects to dictionary for return
-                    entries = []
-                    for item in chart_items:
-                        entry_data = json.loads(item.raw_data)
-                        entries.append(entry_data)
-                        
-                    return {
-                        "chart": {
-                            "name": chart_name,
-                            "date": latest_chart_date,
-                            "entries": entries
-                        },
-                        "timestamp": datetime.utcnow().isoformat()
-                    }
+        # If a specific date is requested, fetch that date directly
+        if date:
+            logger.info(f"Specific date requested: {date}, fetching that chart")
+            return await fetch_specific_chart(chart_name, date)
+        
+        # Check if we already have the chart data and if it needs updating
+        should_update, latest_chart_date = db.should_update_billboard_chart(chart_name)
+        
+        if latest_chart_date and not should_update and not force_update:
+            # If we already have recent data (less than a week old), use the saved data
+            logger.info(f"Using existing chart data for {chart_name} from {latest_chart_date} (less than 7 days old)")
+            chart_items = db.get_billboard_chart_items_from_db(chart_name=chart_name, chart_date=latest_chart_date)
+            if chart_items:
+                # Convert DB objects to dictionary for return
+                entries = []
+                for item in chart_items:
+                    entry_data = json.loads(item.raw_data)
+                    entries.append(entry_data)
+                    
+                return {
+                    "chart": {
+                        "name": chart_name,
+                        "date": latest_chart_date,
+                        "entries": entries
+                    },
+                    "timestamp": datetime.utcnow().isoformat()
+                }
+        
+        # If we need to update (more than a week old or no data) or force_update is True
+        if should_update or force_update:
+            if force_update:
+                logger.info(f"Force update requested for {chart_name} chart")
+            else:
+                if latest_chart_date:
+                    logger.info(f"Chart data for {chart_name} from {latest_chart_date} is more than 7 days old, fetching new data")
+                else:
+                    logger.info(f"No existing chart data for {chart_name}, fetching new data")
+                    
+            # Fetch new chart data from Billboard API
+            return await fetch_specific_chart(chart_name, None)  # None means latest chart
             
-        # Fetch new chart data from Billboard API
+    except Exception as e:
+        logger.error(f"Error in fetch_billboard_chart: {str(e)}")
+        logger.error(traceback.format_exc())
+        return None
+
+async def fetch_specific_chart(chart_name, date=None):
+    """
+    Helper function to fetch specific chart data from Billboard API.
+    
+    Args:
+        chart_name: Name of the chart to retrieve
+        date: Optional date string in format YYYY-MM-DD
+        
+    Returns:
+        Chart data dictionary if successful, None otherwise
+    """
+    try:
         logger.info(f"Fetching {chart_name} chart data{' for date '+date if date else ''}")
         result = await billboard.get_chart(chart_name, date)
         
@@ -422,7 +458,7 @@ async def fetch_billboard_chart(chart_name="hot-100", date=None):
             return None
             
     except Exception as e:
-        logger.error(f"Error in fetch_billboard_chart: {str(e)}")
+        logger.error(f"Error in fetch_specific_chart: {str(e)}")
         logger.error(traceback.format_exc())
         return None
 
@@ -763,6 +799,9 @@ async def run_cli_async():
             try:
                 # Fetch Hot 100 chart
                 print("Fetching Billboard Hot 100 chart...")
+                # Use force_update=True to test the forced update functionality
+                # hot100_chart = await fetch_billboard_chart("hot-100", force_update=True)
+                # Use normal mode - respects the 7-day update frequency
                 hot100_chart = await fetch_billboard_chart("hot-100")
                 
                 if hot100_chart and hot100_chart.get("chart"):

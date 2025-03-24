@@ -2,7 +2,7 @@
 IMDB API Client
 
 This module provides a client for interacting with the IMDB API via RapidAPI to retrieve
-movie and TV show data based on search criteria.
+movie and TV show data based on search criteria and autocomplete title search.
 """
 
 import os
@@ -100,12 +100,79 @@ class IMDBAPI:
                     return {"error": f"Failed to fetch IMDB data after {max_retries+1} attempts", "details": str(e)}
         
         return {"error": "Failed to fetch IMDB data (unknown error)"}
+    
+    async def autocomplete_search(self, query, max_results=10, max_retries=3, retry_delay=2):
+        """
+        Search for titles using the IMDB autocomplete API
+        
+        Args:
+            query: The search string to autocomplete
+            max_results: Maximum number of results to return (default: 10)
+            max_retries: Maximum number of retry attempts (default: 3)
+            retry_delay: Seconds to wait between retries (default: 2)
+            
+        Returns:
+            Dictionary containing autocomplete search results or error message
+        """
+        if not self.api_key:
+            return {"error": "No API key provided. Set IMDB_API_KEY environment variable."}
+        
+        headers = {
+            "x-rapidapi-host": self.api_host,
+            "x-rapidapi-key": self.api_key
+        }
+        
+        # Build query parameters
+        params = {
+            "originalTitleAutocomplete": query
+        }
+        
+        url = f"{self.base_url}/search"
+        
+        for attempt in range(max_retries):
+            try:
+                logger.info(f"Fetching IMDB autocomplete data (attempt {attempt+1}/{max_retries+1}): {url} with params {params}")
+                
+                async with aiohttp.ClientSession() as session:
+                    async with session.get(url, headers=headers, params=params) as response:
+                        if response.status == 200:
+                            data = await response.json()
+                            logger.info(f"Successfully retrieved IMDB autocomplete data")
+                            
+                            # Limit the number of results if specified
+                            if "results" in data and max_results:
+                                data["results"] = data["results"][:max_results]
+                                
+                            return data
+                        else:
+                            error_text = await response.text()
+                            logger.error(f"Error fetching IMDB autocomplete data: HTTP {response.status}, {error_text}")
+                            return {"error": f"API error: {response.status}", "details": error_text}
+            
+            except Exception as e:
+                logger.error(f"Exception while fetching IMDB autocomplete data: {str(e)}")
+                if attempt < max_retries:
+                    logger.info(f"Retrying in {retry_delay} seconds...")
+                    await asyncio.sleep(retry_delay)
+                else:
+                    logger.error("Max retries exceeded")
+                    return {"error": f"Failed to fetch IMDB autocomplete data after {max_retries+1} attempts", "details": str(e)}
+        
+        return {"error": "Failed to fetch IMDB autocomplete data (unknown error)"}
 
 async def main():
     """Simple test function to verify the IMDB API client"""
     api = IMDBAPI()
+    
+    # Test regular search
+    print("Testing regular movie search...")
     results = await api.search_movies(genre="Drama")
     print(json.dumps(results, indent=2))
+    
+    # Test autocomplete search
+    print("\nTesting autocomplete search...")
+    auto_results = await api.autocomplete_search("Incept")
+    print(json.dumps(auto_results, indent=2))
 
 if __name__ == "__main__":
     asyncio.run(main())

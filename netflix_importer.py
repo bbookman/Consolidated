@@ -133,18 +133,62 @@ def parse_title(title):
     # Not in quotes - might be a movie or simple format
     return result
 
-def import_netflix_history(csv_file_path):
+def extract_series_name(title):
+    """
+    Extract the base series name from a title with episode information.
+    
+    Args:
+        title: Original Netflix title with episode information
+        
+    Returns:
+        Base series name without episode/season information
+    """
+    # Remove episode indicators
+    base_title = title
+    
+    # Try to extract series name before episode indicators
+    episode_keywords = [" Episode ", " Season ", " Chapter ", " Part "]
+    for keyword in episode_keywords:
+        if keyword.lower() in base_title.lower():
+            base_title = base_title.split(keyword, 1)[0]
+            break
+    
+    # Also handle format like "Series_Name: Season X: Episode Y"
+    if ":" in base_title:
+        base_title = base_title.split(":", 1)[0]
+    
+    # Handle "Limited Series" indicator
+    if "Limited Series" in base_title:
+        base_title = base_title.replace("Limited Series", "").strip()
+    
+    return base_title.strip()
+
+def is_series_episode(title):
+    """
+    Check if a title appears to be an episode of a TV series.
+    
+    Args:
+        title: The title to check
+        
+    Returns:
+        True if it appears to be a series episode, False otherwise
+    """
+    episode_indicators = ["Episode ", "Season ", "Chapter ", " Part ", "Limited Series"]
+    return any(indicator in title for indicator in episode_indicators)
+
+def import_netflix_history(csv_file_path, deduplicate_series=True):
     """
     Import Netflix viewing history from a CSV file into the database.
     
     Args:
         csv_file_path: Path to the Netflix viewing history CSV file
+        deduplicate_series: If True, only keep one episode per series
         
     Returns:
         Dictionary with counts of processed, added, and skipped items
     """
     session = Session()
-    result = {"processed": 0, "added": 0, "skipped": 0}
+    result = {"processed": 0, "added": 0, "skipped": 0, "deduplicated": 0}
     
     try:
         # Check if file exists
@@ -152,7 +196,12 @@ def import_netflix_history(csv_file_path):
             logger.error(f"File not found: {csv_file_path}")
             return result
         
-        # Read CSV file
+        # Dictionary to track series episodes for deduplication
+        # Key: series_name, Value: list of (title, watch_date) tuples
+        series_episodes = {}
+        
+        # Read CSV file and gather data
+        all_entries = []
         with open(csv_file_path, 'r', encoding='utf-8') as file:
             reader = csv.DictReader(file)
             
@@ -172,40 +221,86 @@ def import_netflix_history(csv_file_path):
                     watch_date = parse_date(date_str)
                     parsed_title = parse_title(title)
                     
-                    # Check if this entry already exists
+                    # Clean title by removing special characters
+                    cleaned_title = clean_special_characters(title)
+                    
+                    # Check if this entry already exists in the database
                     existing = session.query(Netflix_History_Item).filter(
-                        Netflix_History_Item.title == title,
+                        Netflix_History_Item.title == cleaned_title,
                         Netflix_History_Item.watch_date == watch_date
                     ).first()
                     
                     if existing:
-                        logger.debug(f"Skipping duplicate entry: {title} on {date_str}")
+                        logger.debug(f"Skipping duplicate entry: {cleaned_title} on {date_str}")
                         result["skipped"] += 1
                         continue
                     
-                    # Clean title by removing special characters
-                    cleaned_title = clean_special_characters(title)
+                    # Store entry for processing
+                    all_entries.append({
+                        'original_title': title,
+                        'cleaned_title': cleaned_title,
+                        'watch_date': watch_date,
+                        'parsed_title': parsed_title
+                    })
                     
-                    # Create new history item with cleaned title
-                    history_item = Netflix_History_Item(
-                        title=cleaned_title,
-                        watch_date=watch_date,
-                        show_name=parsed_title['show_name'],
-                        season=parsed_title['season'],
-                        episode_name=parsed_title['episode_name'],
-                        episode_number=parsed_title['episode_number']
-                    )
-                    
-                    session.add(history_item)
-                    result["added"] += 1
+                    # If this is a series episode and deduplication is enabled, group by series name
+                    if deduplicate_series and is_series_episode(cleaned_title):
+                        series_name = extract_series_name(cleaned_title)
+                        if series_name not in series_episodes:
+                            series_episodes[series_name] = []
+                        
+                        series_episodes[series_name].append({
+                            'original_title': title,
+                            'cleaned_title': cleaned_title,
+                            'watch_date': watch_date,
+                            'parsed_title': parsed_title
+                        })
                     
                 except Exception as e:
                     logger.error(f"Error processing row: {row} - Error: {str(e)}")
                     result["skipped"] += 1
+        
+        # Process entries with deduplication
+        entries_to_add = []
+        if deduplicate_series:
+            # Process non-series entries first
+            for entry in all_entries:
+                if not is_series_episode(entry['cleaned_title']):
+                    entries_to_add.append(entry)
             
-            # Commit changes
-            session.commit()
-            logger.info(f"Import completed: {result['processed']} processed, {result['added']} added, {result['skipped']} skipped")
+            # For each series, only keep the first episode (by watch date)
+            for series_name, episodes in series_episodes.items():
+                if episodes:
+                    # Sort by watch date (oldest first)
+                    episodes.sort(key=lambda x: x['watch_date'])
+                    # Keep only the first episode of each series
+                    entries_to_add.append(episodes[0])
+                    # Count skipped episodes
+                    result["deduplicated"] += len(episodes) - 1
+                    logger.info(f"Keeping 1 episode out of {len(episodes)} for series '{series_name}'")
+        else:
+            # No deduplication, add all entries
+            entries_to_add = all_entries
+        
+        # Add the final entries to the database
+        for entry in entries_to_add:
+            # Create new history item
+            history_item = Netflix_History_Item(
+                title=entry['cleaned_title'],
+                watch_date=entry['watch_date'],
+                show_name=entry['parsed_title']['show_name'],
+                season=entry['parsed_title']['season'],
+                episode_name=entry['parsed_title']['episode_name'],
+                episode_number=entry['parsed_title']['episode_number']
+            )
+            
+            session.add(history_item)
+            result["added"] += 1
+        
+        # Commit changes
+        session.commit()
+        logger.info(f"Import completed: {result['processed']} processed, {result['added']} added, " +
+                   f"{result['skipped']} skipped, {result['deduplicated']} deduplicated")
             
     except Exception as e:
         logger.error(f"Error importing Netflix history: {str(e)}")

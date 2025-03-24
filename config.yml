@@ -3,10 +3,10 @@
 # Default location to use when no coordinates are available from Bee API
 default_location:
   name: "San Francisco"  # Human-readable name of the location
-  latitude: 37.7749      # Latitude coordinate
-  longitude: -122.4194   # Longitude coordinate
+  latitude: 34.225727      # Latitude coordinate
+  longitude: -77.944710   # Longitude coordinate
 
 # Weather settings
 weather:
-  units: "metric"        # Units for weather data: metric, imperial, or standard
+  units: "imperial"        # Units for weather data: metric, imperial, or standard
   max_age_hours: 24      # Maximum age of weather data before fetching new data

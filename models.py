@@ -103,5 +103,27 @@ class Weather_Data(Base):
     def __repr__(self):
         return f"<Weather_Data(id={self.id}, location={self.location_name}, temp={self.temperature}, created_at={self.created_at})>"
 
+class Billboard_Chart_Item(Base):
+    __tablename__ = 'billboard_chart_items'
+    
+    id = Column(Integer, primary_key=True)
+    chart_name = Column(String, nullable=False)  # Name of chart (e.g., "hot-100", "billboard-200")
+    item_rank = Column(Integer, nullable=False)  # Position in the chart
+    title = Column(String, nullable=False)  # Song or album title
+    artist = Column(String, nullable=False)  # Artist name
+    image_url = Column(String, nullable=True)  # URL to cover image
+    last_week_rank = Column(Integer, nullable=True)  # Position last week
+    peak_position = Column(Integer, nullable=True)  # Peak position on chart
+    weeks_on_chart = Column(Integer, nullable=True)  # Number of weeks on chart
+    chart_date = Column(String, nullable=False)  # Date of this chart in format YYYY-MM-DD
+    retrieved_at = Column(DateTime, default=datetime.utcnow)  # When this data was retrieved
+    raw_data = Column(Text)  # Store the raw JSON for the entry
+    
+    # Create a unique constraint on chart name, date and rank to prevent duplicates
+    __table_args__ = (UniqueConstraint('chart_name', 'chart_date', 'item_rank', name='uq_billboard_chart_item'),)
+    
+    def __repr__(self):
+        return f"<Billboard_Chart_Item(chart={self.chart_name}, date={self.chart_date}, rank={self.item_rank}, title={self.title[:30]}..., artist={self.artist[:30]}...)>"
+
 # Create all tables in the database
 Base.metadata.create_all(engine)

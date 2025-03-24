@@ -1,0 +1,229 @@
+{
+  "weather": [
+    {
+      "coord": {
+        "lon": -77.9129,
+        "lat": 34.1215
+      },
+      "weather": [
+        {
+          "id": 800,
+          "main": "Clear",
+          "description": "clear sky",
+          "icon": "01d"
+        }
+      ],
+      "base": "stations",
+      "main": {
+        "temp": 18.8,
+        "feels_like": 18.22,
+        "temp_min": 18.8,
+        "temp_max": 18.8,
+        "pressure": 1021,
+        "humidity": 57,
+        "sea_level": 1021,
+        "grnd_level": 1021
+      },
+      "visibility": 10000,
+      "wind": {
+        "speed": 0.89,
+        "deg": 86
+      },
+      "clouds": {
+        "all": 0
+      },
+      "dt": 1742745572,
+      "sys": {
+        "type": 2,
+        "id": 2001708,
+        "country": "US",
+        "sunrise": 1742728252,
+        "sunset": 1742772318
+      },
+      "timezone": -14400,
+      "id": 7230311,
+      "name": "Charter Oaks Mobile Home Park",
+      "cod": 200
+    },
+    {
+      "coord": {
+        "lon": -77.9129,
+        "lat": 34.1215
+      },
+      "weather": [
+        {
+          "id": 800,
+          "main": "Clear",
+          "description": "clear sky",
+          "icon": "01d"
+        }
+      ],
+      "base": "stations",
+      "main": {
+        "temp": 18.8,
+        "feels_like": 18.22,
+        "temp_min": 18.8,
+        "temp_max": 18.8,
+        "pressure": 1021,
+        "humidity": 57,
+        "sea_level": 1021,
+        "grnd_level": 1021
+      },
+      "visibility": 10000,
+      "wind": {
+        "speed": 0.89,
+        "deg": 86
+      },
+      "clouds": {
+        "all": 0
+      },
+      "dt": 1742745572,
+      "sys": {
+        "type": 2,
+        "id": 2001708,
+        "country": "US",
+        "sunrise": 1742728252,
+        "sunset": 1742772318
+      },
+      "timezone": -14400,
+      "id": 7230311,
+      "name": "Charter Oaks Mobile Home Park",
+      "cod": 200
+    },
+    {
+      "coord": {
+        "lon": -77.9129,
+        "lat": 34.1215
+      },
+      "weather": [
+        {
+          "id": 800,
+          "main": "Clear",
+          "description": "clear sky",
+          "icon": "01d"
+        }
+      ],
+      "base": "stations",
+      "main": {
+        "temp": 18.8,
+        "feels_like": 18.22,
+        "temp_min": 18.8,
+        "temp_max": 18.8,
+        "pressure": 1021,
+        "humidity": 57,
+        "sea_level": 1021,
+        "grnd_level": 1021
+      },
+      "visibility": 10000,
+      "wind": {
+        "speed": 0.89,
+        "deg": 86
+      },
+      "clouds": {
+        "all": 0
+      },
+      "dt": 1742745572,
+      "sys": {
+        "type": 2,
+        "id": 2001708,
+        "country": "US",
+        "sunrise": 1742728252,
+        "sunset": 1742772318
+      },
+      "timezone": -14400,
+      "id": 7230311,
+      "name": "Charter Oaks Mobile Home Park",
+      "cod": 200
+    },
+    {
+      "coord": {
+        "lon": -77.9129,
+        "lat": 34.1215
+      },
+      "weather": [
+        {
+          "id": 800,
+          "main": "Clear",
+          "description": "clear sky",
+          "icon": "01d"
+        }
+      ],
+      "base": "stations",
+      "main": {
+        "temp": 18.8,
+        "feels_like": 18.22,
+        "temp_min": 18.8,
+        "temp_max": 18.8,
+        "pressure": 1021,
+        "humidity": 57,
+        "sea_level": 1021,
+        "grnd_level": 1021
+      },
+      "visibility": 10000,
+      "wind": {
+        "speed": 0.89,
+        "deg": 86
+      },
+      "clouds": {
+        "all": 0
+      },
+      "dt": 1742745572,
+      "sys": {
+        "type": 2,
+        "id": 2001708,
+        "country": "US",
+        "sunrise": 1742728252,
+        "sunset": 1742772318
+      },
+      "timezone": -14400,
+      "id": 7230311,
+      "name": "Charter Oaks Mobile Home Park",
+      "cod": 200
+    },
+    {
+      "coord": {
+        "lon": -77.9129,
+        "lat": 34.1215
+      },
+      "weather": [
+        {
+          "id": 800,
+          "main": "Clear",
+          "description": "clear sky",
+          "icon": "01d"
+        }
+      ],
+      "base": "stations",
+      "main": {
+        "temp": 18.8,
+        "feels_like": 18.22,
+        "temp_min": 18.8,
+        "temp_max": 18.8,
+        "pressure": 1021,
+        "humidity": 57,
+        "sea_level": 1021,
+        "grnd_level": 1021
+      },
+      "visibility": 10000,
+      "wind": {
+        "speed": 0.89,
+        "deg": 86
+      },
+      "clouds": {
+        "all": 0
+      },
+      "dt": 1742745572,
+      "sys": {
+        "type": 2,
+        "id": 2001708,
+        "country": "US",
+        "sunrise": 1742728252,
+        "sunset": 1742772318
+      },
+      "timezone": -14400,
+      "id": 7230311,
+      "name": "Charter Oaks Mobile Home Park",
+      "cod": 200
+    }
+  ]
+}

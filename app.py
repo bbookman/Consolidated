@@ -18,6 +18,7 @@ import pytz
 
 from limitless_api import LimitlessAPI
 from openweather_api import OpenWeatherAPI
+from billboard_api import BillboardAPI
 import database_handler as db
 import config_loader
 
@@ -35,10 +36,11 @@ logger = logging.getLogger(__name__)
 bee = None
 limitless = None
 openweather = None
+billboard = None
 
 def initialize_apis():
     """Initialize API clients with keys from environment variables"""
-    global bee, limitless, openweather
+    global bee, limitless, openweather, billboard
     
     # Initialize Bee API
     bee_api_key = os.environ.get('BEE_API_KEY')
@@ -63,6 +65,14 @@ def initialize_apis():
         logger.info("OpenWeatherMap API client initialized successfully")
     else:
         logger.warning("OPENWEATHER_API_KEY not found in environment variables")
+        
+    # Initialize Billboard Charts API
+    billboard_api_key = os.environ.get('BILLBOARD_API_KEY')
+    if billboard_api_key:
+        billboard = BillboardAPI(api_key=billboard_api_key)
+        logger.info("Billboard Charts API client initialized successfully")
+    else:
+        logger.warning("BILLBOARD_API_KEY not found in environment variables")
 
 def format_conversation(conv):
     """Format a conversation object from the Bee API for display/storage"""
@@ -265,6 +275,8 @@ def save_to_file(data, data_type, original_data):
             api_name = "limitless"
         elif data_type == "weather" or data_type.startswith("db_weather"):
             api_name = "openweather"
+        elif data_type.startswith("billboard_"):
+            api_name = "billboard"
         
         # Create directories if they don't exist (only if we have data to save)
         data_dir = os.path.join("data", api_name)
@@ -346,6 +358,71 @@ async def fetch_weather_for_location(latitude, longitude, units="metric"):
             
     except Exception as e:
         logger.error(f"Error in fetch_weather_for_location: {str(e)}")
+        logger.error(traceback.format_exc())
+        return None
+
+async def fetch_billboard_chart(chart_name="hot-100", date=None):
+    """
+    Fetch Billboard chart data and store it in the database.
+    
+    Args:
+        chart_name: Name of the chart to retrieve (hot-100, billboard-200, etc.)
+        date: Optional date string in format YYYY-MM-DD for historical chart
+        
+    Returns:
+        Chart data dictionary if successful, None otherwise
+    """
+    if not billboard:
+        logger.warning("Billboard API client not initialized - skipping chart fetch")
+        return None
+        
+    try:
+        # Check if we already have the chart data for this date
+        if not date:
+            # Default to latest chart
+            latest_chart_date = db.get_latest_chart_date(chart_name)
+            if latest_chart_date:
+                # If we already have the latest chart, use the saved data
+                logger.info(f"Using existing chart data for {chart_name} from {latest_chart_date}")
+                chart_items = db.get_billboard_chart_items_from_db(chart_name=chart_name, chart_date=latest_chart_date)
+                if chart_items:
+                    # Convert DB objects to dictionary for return
+                    entries = []
+                    for item in chart_items:
+                        entry_data = json.loads(item.raw_data)
+                        entries.append(entry_data)
+                        
+                    return {
+                        "chart": {
+                            "name": chart_name,
+                            "date": latest_chart_date,
+                            "entries": entries
+                        },
+                        "timestamp": datetime.utcnow().isoformat()
+                    }
+            
+        # Fetch new chart data from Billboard API
+        logger.info(f"Fetching {chart_name} chart data{' for date '+date if date else ''}")
+        result = await billboard.get_chart(chart_name, date)
+        
+        # Check if we got an error
+        if result.get("error"):
+            logger.error(f"Error fetching chart data: {result['error']}")
+            return None
+            
+        # Store chart data in database
+        chart_data = result.get("chart")
+        if chart_data:
+            logger.info(f"Storing chart data for {chart_name}")
+            db_result = db.store_billboard_chart_items(result, chart_name)
+            logger.info(f"Chart data stored: {db_result['added']} added, {db_result['skipped']} skipped")
+            return result
+        else:
+            logger.warning(f"No chart data returned for {chart_name}")
+            return None
+            
+    except Exception as e:
+        logger.error(f"Error in fetch_billboard_chart: {str(e)}")
         logger.error(traceback.format_exc())
         return None
 
@@ -679,6 +756,60 @@ async def run_cli_async():
                 print(traceback.format_exc())
         else:
             print("\nOpenWeatherMap API client not initialized - skipping weather data processing")
+        
+        # Process Billboard chart data if available
+        if billboard:
+            print("\nProcessing Billboard chart data...")
+            try:
+                # Fetch Hot 100 chart
+                print("Fetching Billboard Hot 100 chart...")
+                hot100_chart = await fetch_billboard_chart("hot-100")
+                
+                if hot100_chart and hot100_chart.get("chart"):
+                    chart_date = hot100_chart.get("chart", {}).get("date", "Unknown")
+                    entries_count = len(hot100_chart.get("chart", {}).get("entries", []))
+                    print(f"Retrieved Hot 100 chart for {chart_date} with {entries_count} entries")
+                    
+                    # Create directory if needed
+                    if not os.path.exists(os.path.join("data", "billboard")):
+                        os.makedirs(os.path.join("data", "billboard"), exist_ok=True)
+                    
+                    # Save chart data to file
+                    saved_hot100 = save_to_file(
+                        None, 
+                        'billboard_hot100', 
+                        hot100_chart
+                    )
+                    if saved_hot100:
+                        print("Successfully processed Hot 100 chart data to JSON")
+                else:
+                    print("No Hot 100 chart data available")
+                    
+                # Fetch Billboard 200 chart
+                print("Fetching Billboard 200 chart...")
+                billboard200_chart = await fetch_billboard_chart("billboard-200")
+                
+                if billboard200_chart and billboard200_chart.get("chart"):
+                    chart_date = billboard200_chart.get("chart", {}).get("date", "Unknown")
+                    entries_count = len(billboard200_chart.get("chart", {}).get("entries", []))
+                    print(f"Retrieved Billboard 200 chart for {chart_date} with {entries_count} entries")
+                    
+                    # Save chart data to file
+                    saved_billboard200 = save_to_file(
+                        None, 
+                        'billboard_200', 
+                        billboard200_chart
+                    )
+                    if saved_billboard200:
+                        print("Successfully processed Billboard 200 chart data to JSON")
+                else:
+                    print("No Billboard 200 chart data available")
+                    
+            except Exception as e:
+                print(f"Error processing Billboard chart data: {str(e)}")
+                print(traceback.format_exc())
+        else:
+            print("\nBillboard API client not initialized - skipping chart data")
         
         print("\nData collection complete!")
         

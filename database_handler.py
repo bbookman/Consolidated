@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from models import Base, Bee_Conversation, Bee_Fact, Bee_Todo, Limitless_Lifelog, Weather_Data
+from models import Base, Bee_Conversation, Bee_Fact, Bee_Todo, Limitless_Lifelog, Weather_Data, Billboard_Chart_Item
 import os
 import json
 import logging
@@ -542,5 +542,159 @@ def get_conversations_with_coordinates():
             .filter(Bee_Conversation.longitude.isnot(None))\
             .order_by(Bee_Conversation.created_at.desc())\
             .all()
+    finally:
+        session.close()
+
+def store_billboard_chart_items(chart_data, chart_name):
+    """
+    Store Billboard chart data in the database with deduplication.
+    
+    Args:
+        chart_data: Dictionary containing chart data from Billboard Charts API
+        chart_name: Name of the chart (e.g., 'hot-100', 'billboard-200')
+        
+    Returns:
+        Dict with counts of items processed, added, and skipped
+    """
+    session = Session()
+    try:
+        # Initialize result
+        result = {
+            "processed": 0,
+            "added": 0,
+            "skipped": 0
+        }
+        
+        # Skip if we received empty or None data
+        if not chart_data or not isinstance(chart_data, dict):
+            logger.warning(f"Invalid chart data type: {type(chart_data)}")
+            return result
+        
+        # Extract chart entries
+        entries = chart_data.get('chart', {}).get('entries', [])
+        if not entries:
+            logger.warning("No chart entries found in data")
+            return result
+            
+        # Get current date as string for chart_date if not in data
+        chart_date = chart_data.get('chart', {}).get('date')
+        if not chart_date:
+            chart_date = datetime.utcnow().strftime('%Y-%m-%d')
+            
+        # Update processed count
+        result["processed"] = len(entries)
+        
+        for entry in entries:
+            # Skip if entry is not a dictionary
+            if not isinstance(entry, dict):
+                logger.warning(f"Skipping non-dictionary chart entry: {type(entry)}")
+                result["skipped"] += 1
+                continue
+                
+            # Get rank (required)
+            rank = entry.get('rank')
+            if rank is None:
+                logger.warning("Chart entry missing rank, skipping")
+                result["skipped"] += 1
+                continue
+                
+            # Check if this chart entry already exists
+            existing = session.query(Billboard_Chart_Item).filter_by(
+                chart_name=chart_name,
+                chart_date=chart_date,
+                item_rank=rank
+            ).first()
+            
+            if existing:
+                logger.info(f"Chart entry for {chart_name} on {chart_date} at rank {rank} already exists, skipping")
+                result["skipped"] += 1
+                continue
+                
+            # Get required fields
+            title = entry.get('title', '')
+            artist = entry.get('artist', '')
+            
+            # Create new chart entry record
+            new_chart_item = Billboard_Chart_Item(
+                chart_name=chart_name,
+                item_rank=rank,
+                title=title,
+                artist=artist,
+                image_url=entry.get('image'),
+                last_week_rank=entry.get('last_week'),
+                peak_position=entry.get('peak_position'),
+                weeks_on_chart=entry.get('weeks_on_chart'),
+                chart_date=chart_date,
+                raw_data=json.dumps(entry)
+            )
+            
+            session.add(new_chart_item)
+            result["added"] += 1
+            logger.info(f"Added chart entry: {chart_name}, rank {rank}, {artist} - {title}")
+            
+        session.commit()
+        return result
+        
+    except Exception as e:
+        session.rollback()
+        logger.error(f"Error in store_billboard_chart_items: {str(e)}")
+        # Return current result with whatever was processed before the error
+        return result
+    finally:
+        session.close()
+
+def get_billboard_chart_items_from_db(chart_name=None, chart_date=None, limit=100):
+    """
+    Retrieve Billboard chart items from the database with optional filtering.
+    
+    Args:
+        chart_name: Optional name of chart to filter by (e.g., 'hot-100')
+        chart_date: Optional date string to filter by (format: YYYY-MM-DD)
+        limit: Maximum number of items to return (default: 100)
+        
+    Returns:
+        List of Billboard_Chart_Item objects
+    """
+    session = Session()
+    try:
+        query = session.query(Billboard_Chart_Item)
+        
+        # Apply filters if provided
+        if chart_name:
+            query = query.filter(Billboard_Chart_Item.chart_name == chart_name)
+            
+        if chart_date:
+            query = query.filter(Billboard_Chart_Item.chart_date == chart_date)
+            
+        # Order by chart name, date, and rank
+        query = query.order_by(
+            Billboard_Chart_Item.chart_name,
+            Billboard_Chart_Item.chart_date.desc(),
+            Billboard_Chart_Item.item_rank
+        ).limit(limit)
+        
+        return query.all()
+    finally:
+        session.close()
+
+def get_latest_chart_date(chart_name):
+    """
+    Get the most recent date for which we have data for a specific chart.
+    
+    Args:
+        chart_name: Name of the chart (e.g., 'hot-100', 'billboard-200')
+        
+    Returns:
+        String date in format YYYY-MM-DD or None if no data exists
+    """
+    session = Session()
+    try:
+        latest = session.query(Billboard_Chart_Item).filter(
+            Billboard_Chart_Item.chart_name == chart_name
+        ).order_by(Billboard_Chart_Item.chart_date.desc()).first()
+        
+        if latest:
+            return latest.chart_date
+        return None
     finally:
         session.close()

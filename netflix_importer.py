@@ -28,6 +28,34 @@ if not DATABASE_URL:
 engine = create_engine(DATABASE_URL)
 Session = scoped_session(sessionmaker(bind=engine))
 
+def clean_special_characters(title):
+    """
+    Remove special characters from a title.
+    
+    Args:
+        title: Original title string
+        
+    Returns:
+        Cleaned title string
+    """
+    if not title:
+        return title
+        
+    # Remove quotes if they exist
+    if title.startswith('"') and title.endswith('"'):
+        title = title[1:-1]
+        
+    # Replace colons and other special characters with spaces
+    cleaned = re.sub(r'[:\-_]', ' ', title)
+    
+    # Replace multiple spaces with a single space
+    cleaned = re.sub(r'\s+', ' ', cleaned)
+    
+    # Trim leading/trailing whitespace
+    cleaned = cleaned.strip()
+    
+    return cleaned
+
 def parse_date(date_str):
     """Parse date string from Netflix CSV to datetime object."""
     try:
@@ -155,9 +183,12 @@ def import_netflix_history(csv_file_path):
                         result["skipped"] += 1
                         continue
                     
-                    # Create new history item
+                    # Clean title by removing special characters
+                    cleaned_title = clean_special_characters(title)
+                    
+                    # Create new history item with cleaned title
                     history_item = Netflix_History_Item(
-                        title=title,
+                        title=cleaned_title,
                         watch_date=watch_date,
                         show_name=parsed_title['show_name'],
                         season=parsed_title['season'],
@@ -259,6 +290,7 @@ def clean_title_for_search(title):
     """
     Clean and normalize a Netflix title for better IMDB search results.
     Removes episode indicators, special characters, and handles possessive forms.
+    Special handling for popular TV series to improve match rate.
     
     Args:
         title: Original Netflix title
@@ -270,6 +302,25 @@ def clean_title_for_search(title):
     if title.startswith('"') and title.endswith('"'):
         title = title[1:-1]
     
+    # Check for popular TV series with exact matching
+    popular_shows = {
+        "Game of Thrones": ["Game of Thrones", "GoT"],
+        "Stranger Things": ["Stranger Things"],
+        "The Crown": ["The Crown"],
+        "Breaking Bad": ["Breaking Bad"],
+        "The Witcher": ["The Witcher"],
+        "Money Heist": ["Money Heist", "La Casa de Papel"],
+        "Bridgerton": ["Bridgerton"],
+        "The Queen's Gambit": ["The Queens Gambit", "Queens Gambit"]
+    }
+    
+    # Check if the title starts with any of the popular show names
+    for show_name, search_terms in popular_shows.items():
+        for term in search_terms:
+            if title.startswith(term):
+                return show_name
+    
+    # Standard cleaning for other titles
     # Extract show name without episode info (split by colon)
     base_title = title.split(':')[0] if ':' in title else title
     

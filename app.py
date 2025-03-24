@@ -785,25 +785,7 @@ async def run_cli_async():
                 else:
                     print("No Hot 100 chart data available")
                     
-                # Fetch Billboard 200 chart
-                print("Fetching Billboard 200 chart...")
-                billboard200_chart = await fetch_billboard_chart("billboard-200")
-                
-                if billboard200_chart and billboard200_chart.get("chart"):
-                    chart_date = billboard200_chart.get("chart", {}).get("date", "Unknown")
-                    entries_count = len(billboard200_chart.get("chart", {}).get("entries", []))
-                    print(f"Retrieved Billboard 200 chart for {chart_date} with {entries_count} entries")
-                    
-                    # Save chart data to file
-                    saved_billboard200 = save_to_file(
-                        None, 
-                        'billboard_200', 
-                        billboard200_chart
-                    )
-                    if saved_billboard200:
-                        print("Successfully processed Billboard 200 chart data to JSON")
-                else:
-                    print("No Billboard 200 chart data available")
+                # Note: Billboard 200 chart endpoint is not available from this API provider
                     
             except Exception as e:
                 print(f"Error processing Billboard chart data: {str(e)}")

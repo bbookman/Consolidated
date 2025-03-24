@@ -3,6 +3,1540 @@
     {
       "contents": [
         {
+          "content": "Discussion of daily step count and setting an alarm",
+          "type": "heading1"
+        },
+        {
+          "content": "Review of daily steps in Walkfi.",
+          "type": "heading2"
+        },
+        {
+          "content": "Open Walkfi.",
+          "endOffsetMs": 3000,
+          "endTime": "2025-03-23T18:40:27-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 0,
+          "startTime": "2025-03-23T18:40:24-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "I walked 7,651 steps today.",
+          "endOffsetMs": 14000,
+          "endTime": "2025-03-23T18:40:38-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 10000,
+          "startTime": "2025-03-23T18:40:34-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "I walked 700, I'm sorry, I walked 7,651 steps today.",
+          "endOffsetMs": 27000,
+          "endTime": "2025-03-23T18:40:51-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 19000,
+          "startTime": "2025-03-23T18:40:43-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Setting a 7 a.m. alarm.",
+          "type": "heading2"
+        },
+        {
+          "content": "Alexa, set an alarm for 7 a.m.",
+          "endOffsetMs": 75000,
+          "endTime": "2025-03-23T18:41:39-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 73000,
+          "startTime": "2025-03-23T18:41:37-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "7 a.m.",
+          "endOffsetMs": 79000,
+          "endTime": "2025-03-23T18:41:43-07:00",
+          "speakerName": "Alexa",
+          "startOffsetMs": 77000,
+          "startTime": "2025-03-23T18:41:41-07:00",
+          "type": "blockquote"
+        }
+      ],
+      "id": "9UZBgMOaLcXcEeDqzzVv",
+      "markdown": "# Discussion of daily step count and setting an alarm\n\n## Review of daily steps in Walkfi.\n\n- 3 (3/23/25 6:40 PM): Open Walkfi.\n\n- 3 (3/23/25 6:40 PM): I walked 7,651 steps today.\n\n- 3 (3/23/25 6:40 PM): I walked 700, I'm sorry, I walked 7,651 steps today.\n\n## Setting a 7 a.m. alarm.\n\n- 3 (3/23/25 6:41 PM): Alexa, set an alarm for 7 a.m.\n\n- 4 (3/23/25 6:41 PM): 7 a.m.",
+      "title": "Discussion of daily step count and setting an alarm",
+      "startTime": "2025-03-23T18:40:24-07:00",
+      "endTime": "2025-03-23T18:41:43-07:00"
+    },
+    {
+      "contents": [
+        {
+          "content": "Unrelated musings and inquiries, including checking the day of the week and discussing bathroom and flower arrangements",
+          "type": "heading1"
+        },
+        {
+          "content": "Unspecified inquiry and uncertainty.",
+          "type": "heading2"
+        },
+        {
+          "content": "I have to find out what the is.",
+          "endOffsetMs": 2000,
+          "endTime": "2025-03-23T18:26:52-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 0,
+          "startTime": "2025-03-23T18:26:50-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "I'm not sure.",
+          "endOffsetMs": 4000,
+          "endTime": "2025-03-23T18:26:54-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 3000,
+          "startTime": "2025-03-23T18:26:53-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Checking the day of the week and suggesting a potential schedule switch.",
+          "type": "heading2"
+        },
+        {
+          "content": "Today is Sunday.",
+          "endOffsetMs": 11000,
+          "endTime": "2025-03-23T18:27:01-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 10000,
+          "startTime": "2025-03-23T18:27:00-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "So I should ask him if he wants to switch.",
+          "endOffsetMs": 14000,
+          "endTime": "2025-03-23T18:27:04-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 12000,
+          "startTime": "2025-03-23T18:27:02-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Discussing bathroom and flower arrangements.",
+          "type": "heading2"
+        },
+        {
+          "content": "the bathroom for the pretty.",
+          "endOffsetMs": 201000,
+          "endTime": "2025-03-23T18:30:11-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 198000,
+          "startTime": "2025-03-23T18:30:08-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "You want to put the flowers?",
+          "endOffsetMs": 204000,
+          "endTime": "2025-03-23T18:30:14-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 201000,
+          "startTime": "2025-03-23T18:30:11-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Discussion of Ivette's family relationships and journaling plans.",
+          "type": "heading2"
+        },
+        {
+          "content": "So if yeah, if that happens to be on the phone with her mother right now, which kind of surprises me, I need a reminder to talk about Ivette's relationship with her mother, her relationship with her whole family.",
+          "endOffsetMs": 425871,
+          "endTime": "2025-03-23T18:33:56-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 405871,
+          "startTime": "2025-03-23T18:33:36-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "I should probably journal and describe the people that I remember and know from her family and um her relationship with her father and some of the history of her and her family.",
+          "endOffsetMs": 502871,
+          "endTime": "2025-03-23T18:35:13-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 425871,
+          "startTime": "2025-03-23T18:33:56-07:00",
+          "type": "blockquote"
+        }
+      ],
+      "id": "hp6W3xK4tIYPT0PhWwaJ",
+      "markdown": "# Unrelated musings and inquiries, including checking the day of the week and discussing bathroom and flower arrangements\n\n## Unspecified inquiry and uncertainty.\n\n- 1 (3/23/25 6:26 PM): I have to find out what the is.\n\n- 1 (3/23/25 6:26 PM): I'm not sure.\n\n## Checking the day of the week and suggesting a potential schedule switch.\n\n- 1 (3/23/25 6:27 PM): Today is Sunday.\n\n- 1 (3/23/25 6:27 PM): So I should ask him if he wants to switch.\n\n## Discussing bathroom and flower arrangements.\n\n- 1 (3/23/25 6:30 PM): the bathroom for the pretty.\n\n- 1 (3/23/25 6:30 PM): You want to put the flowers?\n\n## Discussion of Ivette's family relationships and journaling plans.\n\n- 2 (3/23/25 6:33 PM): So if yeah, if that happens to be on the phone with her mother right now, which kind of surprises me, I need a reminder to talk about Ivette's relationship with her mother, her relationship with her whole family.\n\n- 2 (3/23/25 6:33 PM): I should probably journal and describe the people that I remember and know from her family and um her relationship with her father and some of the history of her and her family.",
+      "title": "Unrelated musings and inquiries, including checking the day of the week and discussing bathroom and flower arrangements",
+      "startTime": "2025-03-23T18:26:50-07:00",
+      "endTime": "2025-03-23T18:35:13-07:00"
+    },
+    {
+      "contents": [
+        {
+          "content": "Recounting memories of Eve, from high school infatuation to present-day reflections on her personality, career, family, and relationship with Myron",
+          "type": "heading1"
+        },
+        {
+          "content": "Early interest and interactions with Eve in high school.",
+          "type": "heading2"
+        },
+        {
+          "content": "Shortly after meeting her, I was pretty much infatuated with her.",
+          "endOffsetMs": 5000,
+          "endTime": "2025-03-23T18:15:58-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 0,
+          "startTime": "2025-03-23T18:15:53-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "She was a nerdy girl, kind of cute, pretty silly, friendly, bubbly, bouncy.",
+          "endOffsetMs": 17000,
+          "endTime": "2025-03-23T18:16:10-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 6000,
+          "startTime": "2025-03-23T18:15:59-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um,",
+          "endOffsetMs": 19000,
+          "endTime": "2025-03-23T18:16:12-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 18000,
+          "startTime": "2025-03-23T18:16:11-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "So I was interested in her when I was in high school.",
+          "endOffsetMs": 44000,
+          "endTime": "2025-03-23T18:16:37-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 40000,
+          "startTime": "2025-03-23T18:16:33-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "And I remember something really so silly.",
+          "endOffsetMs": 48000,
+          "endTime": "2025-03-23T18:16:41-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 45000,
+          "startTime": "2025-03-23T18:16:38-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "I I find it incredible, but this shows how young and stupid high school kids can be, how immature.",
+          "endOffsetMs": 59000,
+          "endTime": "2025-03-23T18:16:52-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 49000,
+          "startTime": "2025-03-23T18:16:42-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "So, she was dating this guy named David Easter.",
+          "endOffsetMs": 66000,
+          "endTime": "2025-03-23T18:16:59-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 61000,
+          "startTime": "2025-03-23T18:16:54-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "The infamous \"fight\" with Dave Easter.",
+          "type": "heading2"
+        },
+        {
+          "content": "And speaking of rigid and Hazel, so I don't know if he was Aspergers as well, but he was certainly odd and rigid.",
+          "endOffsetMs": 77000,
+          "endTime": "2025-03-23T18:17:10-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 68000,
+          "startTime": "2025-03-23T18:17:01-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "But okay, so at at high school, she was dating Dave Easter, but I was also interested in her.",
+          "endOffsetMs": 95000,
+          "endTime": "2025-03-23T18:17:28-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 88000,
+          "startTime": "2025-03-23T18:17:21-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "And I guess she was kind I mean, she would hang out with me and maybe I'd put my arm around her or something.",
+          "endOffsetMs": 101000,
+          "endTime": "2025-03-23T18:17:34-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 96000,
+          "startTime": "2025-03-23T18:17:29-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "I don't know if we ever went on a date, but I mean, I made it clear that I was interested in her, I think.",
+          "endOffsetMs": 109000,
+          "endTime": "2025-03-23T18:17:42-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 102000,
+          "startTime": "2025-03-23T18:17:35-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "So Dave and I eventually decided to have a fight for her.",
+          "endOffsetMs": 118000,
+          "endTime": "2025-03-23T18:17:51-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 111000,
+          "startTime": "2025-03-23T18:17:44-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "And it was some sort of thing where we threw stuff at each other.",
+          "endOffsetMs": 126000,
+          "endTime": "2025-03-23T18:17:59-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 119000,
+          "startTime": "2025-03-23T18:17:52-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "It had something to do with throwing.",
+          "endOffsetMs": 129000,
+          "endTime": "2025-03-23T18:18:02-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 127000,
+          "startTime": "2025-03-23T18:18:00-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "And what I remember is there were like these little pods from a bush.",
+          "endOffsetMs": 138000,
+          "endTime": "2025-03-23T18:18:11-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 129000,
+          "startTime": "2025-03-23T18:18:02-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "And something about throwing them.",
+          "endOffsetMs": 141000,
+          "endTime": "2025-03-23T18:18:14-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 139000,
+          "startTime": "2025-03-23T18:18:12-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "I have no idea and I really don't even remember who won, but she ended up staying with uh Dave Easter and uh we never dated.",
+          "endOffsetMs": 152000,
+          "endTime": "2025-03-23T18:18:25-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 141000,
+          "startTime": "2025-03-23T18:18:14-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "So that happened.",
+          "endOffsetMs": 157000,
+          "endTime": "2025-03-23T18:18:30-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 154000,
+          "startTime": "2025-03-23T18:18:27-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Eve's dating history and the complex relationships that led to her marriage with Myron.",
+          "type": "heading2"
+        },
+        {
+          "content": "However, eventually, she ended up with Myron Meyer because quite later, I think, or maybe at the end of her kind of towards the end of high school, um she got together with Myron.",
+          "endOffsetMs": 175000,
+          "endTime": "2025-03-23T18:18:48-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 158000,
+          "startTime": "2025-03-23T18:18:31-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um, no, no, no, no.",
+          "endOffsetMs": 177000,
+          "endTime": "2025-03-23T18:18:50-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 175000,
+          "startTime": "2025-03-23T18:18:48-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Oh, oh, no, no, no, no.",
+          "endOffsetMs": 179000,
+          "endTime": "2025-03-23T18:18:52-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 177000,
+          "startTime": "2025-03-23T18:18:50-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "I'm not I'm not.",
+          "endOffsetMs": 180000,
+          "endTime": "2025-03-23T18:18:53-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 179000,
+          "startTime": "2025-03-23T18:18:52-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "No, oh my god, this is so complicated.",
+          "endOffsetMs": 182000,
+          "endTime": "2025-03-23T18:18:55-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 180000,
+          "startTime": "2025-03-23T18:18:53-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "All right, so Eve in her college days, let's say she was a little promiscuous.",
+          "endOffsetMs": 193000,
+          "endTime": "2025-03-23T18:19:06-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 183000,
+          "startTime": "2025-03-23T18:18:56-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "She was dating another friend of mine.",
+          "endOffsetMs": 197000,
+          "endTime": "2025-03-23T18:19:10-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 195000,
+          "startTime": "2025-03-23T18:19:08-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Oh, well, she went to UC Davis.",
+          "endOffsetMs": 200000,
+          "endTime": "2025-03-23T18:19:13-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 198000,
+          "startTime": "2025-03-23T18:19:11-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "When she was in UC Davis, I think she was dating somebody, but I don't know if I ever met that person.",
+          "endOffsetMs": 206000,
+          "endTime": "2025-03-23T18:19:19-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 201000,
+          "startTime": "2025-03-23T18:19:14-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um, but anyway, sometime in college, um she had broken up with David Easter and she started dating my friend Matt Aquino.",
+          "endOffsetMs": 222000,
+          "endTime": "2025-03-23T18:19:35-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 209000,
+          "startTime": "2025-03-23T18:19:22-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "And they were dating for quite some time.",
+          "endOffsetMs": 227000,
+          "endTime": "2025-03-23T18:19:40-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 223000,
+          "startTime": "2025-03-23T18:19:36-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "And then somehow they broke up and she started dating his brother Tony Aquino.",
+          "endOffsetMs": 237000,
+          "endTime": "2025-03-23T18:19:50-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 228000,
+          "startTime": "2025-03-23T18:19:41-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "That's how weird and fucked up this is.",
+          "endOffsetMs": 241000,
+          "endTime": "2025-03-23T18:19:54-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 238000,
+          "startTime": "2025-03-23T18:19:51-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "But, you know, life is life.",
+          "endOffsetMs": 243000,
+          "endTime": "2025-03-23T18:19:56-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 241000,
+          "startTime": "2025-03-23T18:19:54-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "And he she dated Tony Aquino for a while.",
+          "endOffsetMs": 248000,
+          "endTime": "2025-03-23T18:20:01-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 244000,
+          "startTime": "2025-03-23T18:19:57-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "And I think it was really not even that much about dating as it was about like, I don't know, just sex.",
+          "endOffsetMs": 256000,
+          "endTime": "2025-03-23T18:20:09-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 250000,
+          "startTime": "2025-03-23T18:20:03-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um, I don't know how long that lasted, but anyway, then she met Myron.",
+          "endOffsetMs": 262000,
+          "endTime": "2025-03-23T18:20:15-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 257000,
+          "startTime": "2025-03-23T18:20:10-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Uh, oh, no.",
+          "endOffsetMs": 265000,
+          "endTime": "2025-03-23T18:20:18-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 263000,
+          "startTime": "2025-03-23T18:20:16-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Myron, oh my god, Myron at the time was dating Lydia.",
+          "endOffsetMs": 272000,
+          "endTime": "2025-03-23T18:20:25-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 266000,
+          "startTime": "2025-03-23T18:20:19-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um, who who eventually married my friend Neil.",
+          "endOffsetMs": 276000,
+          "endTime": "2025-03-23T18:20:29-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 273000,
+          "startTime": "2025-03-23T18:20:26-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "So Myron was dating Lydia.",
+          "endOffsetMs": 279000,
+          "endTime": "2025-03-23T18:20:32-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 277000,
+          "startTime": "2025-03-23T18:20:30-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Eve was dating Matt Aquino, but I guess at some point Matt Aquino and Eve split.",
+          "endOffsetMs": 290000,
+          "endTime": "2025-03-23T18:20:43-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 280000,
+          "startTime": "2025-03-23T18:20:33-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Myron and Lydia split, and then Myron and Eve got together and Myron and Eve eventually got married.",
+          "endOffsetMs": 302000,
+          "endTime": "2025-03-23T18:20:55-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 290000,
+          "startTime": "2025-03-23T18:20:43-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "And then because Lydia had split from Myron, she and Neil eventually got married.",
+          "endOffsetMs": 312000,
+          "endTime": "2025-03-23T18:21:05-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 302000,
+          "startTime": "2025-03-23T18:20:55-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "So that's kind of a complex thing there.",
+          "endOffsetMs": 318000,
+          "endTime": "2025-03-23T18:21:11-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 313000,
+          "startTime": "2025-03-23T18:21:06-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "But let's go back to I was describing Eve.",
+          "endOffsetMs": 326000,
+          "endTime": "2025-03-23T18:21:19-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 319000,
+          "startTime": "2025-03-23T18:21:12-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Eve's personality, career, and family life in the present day.",
+          "type": "heading2"
+        },
+        {
+          "content": "See, one of the things about Eve is she is more on the liberal spectrum.",
+          "endOffsetMs": 332000,
+          "endTime": "2025-03-23T18:21:25-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 327000,
+          "startTime": "2025-03-23T18:21:20-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "And so I think that's also been an influence on Myron.",
+          "endOffsetMs": 336000,
+          "endTime": "2025-03-23T18:21:29-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 332000,
+          "startTime": "2025-03-23T18:21:25-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um, she I don't remember she worked kind of in technology.",
+          "endOffsetMs": 346000,
+          "endTime": "2025-03-23T18:21:39-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 338000,
+          "startTime": "2025-03-23T18:21:31-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "God, I really don't remember what she did.",
+          "endOffsetMs": 349000,
+          "endTime": "2025-03-23T18:21:42-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 346000,
+          "startTime": "2025-03-23T18:21:39-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um, I really have no idea what her job was.",
+          "endOffsetMs": 356000,
+          "endTime": "2025-03-23T18:21:49-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 351000,
+          "startTime": "2025-03-23T18:21:44-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Oh my god.",
+          "endOffsetMs": 360000,
+          "endTime": "2025-03-23T18:21:53-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 359000,
+          "startTime": "2025-03-23T18:21:52-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "I think it was technology of some kind.",
+          "endOffsetMs": 363000,
+          "endTime": "2025-03-23T18:21:56-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 361000,
+          "startTime": "2025-03-23T18:21:54-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "And anyhow, holy shit, I don't remember at all.",
+          "endOffsetMs": 371000,
+          "endTime": "2025-03-23T18:22:04-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 368000,
+          "startTime": "2025-03-23T18:22:01-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Now, present day, um she's again, she's just a really nice woman, she's an incredible woman.",
+          "endOffsetMs": 382000,
+          "endTime": "2025-03-23T18:22:15-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 374000,
+          "startTime": "2025-03-23T18:22:07-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um, Myron and Eve, they have two adult children.",
+          "endOffsetMs": 387000,
+          "endTime": "2025-03-23T18:22:20-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 383000,
+          "startTime": "2025-03-23T18:22:16-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um, so I definitely can bond with them over children, um, who are, you know, in that realm of an age.",
+          "endOffsetMs": 397000,
+          "endTime": "2025-03-23T18:22:30-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 388000,
+          "startTime": "2025-03-23T18:22:21-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um, and she's very caring, very kind, um, smart.",
+          "endOffsetMs": 408000,
+          "endTime": "2025-03-23T18:22:41-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 399000,
+          "startTime": "2025-03-23T18:22:32-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um, and again, she kind of agrees with my politics, so I appreciate that.",
+          "endOffsetMs": 415000,
+          "endTime": "2025-03-23T18:22:48-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 409000,
+          "startTime": "2025-03-23T18:22:42-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "And um, so when I talk to I talk to both of them, both Myron and Eve, when I talk to them, um, over the phone, Eve tends to be again sort of the main talker.",
+          "endOffsetMs": 436000,
+          "endTime": "2025-03-23T18:23:09-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 416000,
+          "startTime": "2025-03-23T18:22:49-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "So when I call, I'll call her phone.",
+          "endOffsetMs": 439000,
+          "endTime": "2025-03-23T18:23:12-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 437000,
+          "startTime": "2025-03-23T18:23:10-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "So sometimes I only talk to Eve, although once I did only talk to Myron.",
+          "endOffsetMs": 447000,
+          "endTime": "2025-03-23T18:23:20-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 440000,
+          "startTime": "2025-03-23T18:23:13-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um, so yeah, but they're a good couple, they're good people.",
+          "endOffsetMs": 451000,
+          "endTime": "2025-03-23T18:23:24-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 448000,
+          "startTime": "2025-03-23T18:23:21-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um, I like them a lot.",
+          "endOffsetMs": 454000,
+          "endTime": "2025-03-23T18:23:27-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 452000,
+          "startTime": "2025-03-23T18:23:25-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "And I think that that's my um my journal entry.",
+          "endOffsetMs": 463614,
+          "endTime": "2025-03-23T18:23:37-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 458000,
+          "startTime": "2025-03-23T18:23:31-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "like them a lot.",
+          "endOffsetMs": 454612,
+          "endTime": "2025-03-23T18:23:28-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 453612,
+          "startTime": "2025-03-23T18:23:27-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "And I think that that's my um my journal entries for now.",
+          "endOffsetMs": 464612,
+          "endTime": "2025-03-23T18:23:38-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 457612,
+          "startTime": "2025-03-23T18:23:31-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Recalling the romantic entanglements between Eve, Myron, Lydia, and Neil, including Eve's dating history with David, Matt, and Tony Aquino.",
+          "type": "heading2"
+        },
+        {
+          "content": "I'll try to explain the love triangle thing one more time because it's kind of complicated.",
+          "endOffsetMs": 471612,
+          "endTime": "2025-03-23T18:23:45-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 464612,
+          "startTime": "2025-03-23T18:23:38-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "So, at one point, Eve, Tracy, her maiden name is Tracy, but Eve was dating David Easter and that was in high school.",
+          "endOffsetMs": 486612,
+          "endTime": "2025-03-23T18:24:00-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 472612,
+          "startTime": "2025-03-23T18:23:46-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "And then at some point they broke up and she was dating Matt Aquino, who was a different friend of mine.",
+          "endOffsetMs": 499612,
+          "endTime": "2025-03-23T18:24:13-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 486612,
+          "startTime": "2025-03-23T18:24:00-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Then at some point they broke up and she dated Tony Aquino, which was Matt Aquino's brother.",
+          "endOffsetMs": 511612,
+          "endTime": "2025-03-23T18:24:25-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 500612,
+          "startTime": "2025-03-23T18:24:14-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Then at some point they broke up and eventually um she became Myron's girlfriend and then later they got married.",
+          "endOffsetMs": 527612,
+          "endTime": "2025-03-23T18:24:41-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 513612,
+          "startTime": "2025-03-23T18:24:27-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "However, also in this mix, Myron was dating a woman named Lydia.",
+          "endOffsetMs": 534612,
+          "endTime": "2025-03-23T18:24:48-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 528612,
+          "startTime": "2025-03-23T18:24:42-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Her last name is Dong, Lydia Dong.",
+          "endOffsetMs": 538612,
+          "endTime": "2025-03-23T18:24:52-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 534612,
+          "startTime": "2025-03-23T18:24:48-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "And she was again, Myron was dating Lydia.",
+          "endOffsetMs": 542612,
+          "endTime": "2025-03-23T18:24:56-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 538612,
+          "startTime": "2025-03-23T18:24:52-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "They had broken up at some point, obviously before Myron and Eve got together.",
+          "endOffsetMs": 548612,
+          "endTime": "2025-03-23T18:25:02-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 543612,
+          "startTime": "2025-03-23T18:24:57-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "And um oh gosh.",
+          "endOffsetMs": 557612,
+          "endTime": "2025-03-23T18:25:11-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 549612,
+          "startTime": "2025-03-23T18:25:03-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um yes, Lydia was dating Myron.",
+          "endOffsetMs": 565612,
+          "endTime": "2025-03-23T18:25:19-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 563612,
+          "startTime": "2025-03-23T18:25:17-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Myron and Lydia broke up and then Lydia started dating my other friend Neil and eventually they got married.",
+          "endOffsetMs": 576612,
+          "endTime": "2025-03-23T18:25:30-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 566612,
+          "startTime": "2025-03-23T18:25:20-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Present-day status of Eve and Myron's marriage, Neil and Lydia's divorce, and the speaker's certainty of Eve and Myron's lifelong commitment.",
+          "type": "heading2"
+        },
+        {
+          "content": "And fast forward to today and Neil and Lydia are getting a divorce.",
+          "endOffsetMs": 586612,
+          "endTime": "2025-03-23T18:25:40-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 580612,
+          "startTime": "2025-03-23T18:25:34-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Myron and Eve are definitely not.",
+          "endOffsetMs": 592612,
+          "endTime": "2025-03-23T18:25:46-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 590612,
+          "startTime": "2025-03-23T18:25:44-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "I know that they'll be together for the rest of their lives.",
+          "endOffsetMs": 596612,
+          "endTime": "2025-03-23T18:25:50-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 592612,
+          "startTime": "2025-03-23T18:25:46-07:00",
+          "type": "blockquote"
+        }
+      ],
+      "id": "TZWILA2FQlYjDezyb4Ld",
+      "markdown": "# Recounting memories of Eve, from high school infatuation to present-day reflections on her personality, career, family, and relationship with Myron\n\n## Early interest and interactions with Eve in high school.\n\n- 3 (3/23/25 6:15 PM): Shortly after meeting her, I was pretty much infatuated with her.\n\n- 3 (3/23/25 6:15 PM): She was a nerdy girl, kind of cute, pretty silly, friendly, bubbly, bouncy.\n\n- 3 (3/23/25 6:16 PM): Um,\n\n- 3 (3/23/25 6:16 PM): So I was interested in her when I was in high school.\n\n- 3 (3/23/25 6:16 PM): And I remember something really so silly.\n\n- 3 (3/23/25 6:16 PM): I I find it incredible, but this shows how young and stupid high school kids can be, how immature.\n\n- 3 (3/23/25 6:16 PM): So, she was dating this guy named David Easter.\n\n## The infamous \"fight\" with Dave Easter.\n\n- 3 (3/23/25 6:17 PM): And speaking of rigid and Hazel, so I don't know if he was Aspergers as well, but he was certainly odd and rigid.\n\n- 3 (3/23/25 6:17 PM): But okay, so at at high school, she was dating Dave Easter, but I was also interested in her.\n\n- 3 (3/23/25 6:17 PM): And I guess she was kind I mean, she would hang out with me and maybe I'd put my arm around her or something.\n\n- 3 (3/23/25 6:17 PM): I don't know if we ever went on a date, but I mean, I made it clear that I was interested in her, I think.\n\n- 3 (3/23/25 6:17 PM): So Dave and I eventually decided to have a fight for her.\n\n- 3 (3/23/25 6:17 PM): And it was some sort of thing where we threw stuff at each other.\n\n- 3 (3/23/25 6:18 PM): It had something to do with throwing.\n\n- 3 (3/23/25 6:18 PM): And what I remember is there were like these little pods from a bush.\n\n- 3 (3/23/25 6:18 PM): And something about throwing them.\n\n- 3 (3/23/25 6:18 PM): I have no idea and I really don't even remember who won, but she ended up staying with uh Dave Easter and uh we never dated.\n\n- 3 (3/23/25 6:18 PM): So that happened.\n\n## Eve's dating history and the complex relationships that led to her marriage with Myron.\n\n- 3 (3/23/25 6:18 PM): However, eventually, she ended up with Myron Meyer because quite later, I think, or maybe at the end of her kind of towards the end of high school, um she got together with Myron.\n\n- 3 (3/23/25 6:18 PM): Um, no, no, no, no.\n\n- 3 (3/23/25 6:18 PM): Oh, oh, no, no, no, no.\n\n- 3 (3/23/25 6:18 PM): I'm not I'm not.\n\n- 3 (3/23/25 6:18 PM): No, oh my god, this is so complicated.\n\n- 3 (3/23/25 6:18 PM): All right, so Eve in her college days, let's say she was a little promiscuous.\n\n- 3 (3/23/25 6:19 PM): She was dating another friend of mine.\n\n- 3 (3/23/25 6:19 PM): Oh, well, she went to UC Davis.\n\n- 3 (3/23/25 6:19 PM): When she was in UC Davis, I think she was dating somebody, but I don't know if I ever met that person.\n\n- 3 (3/23/25 6:19 PM): Um, but anyway, sometime in college, um she had broken up with David Easter and she started dating my friend Matt Aquino.\n\n- 3 (3/23/25 6:19 PM): And they were dating for quite some time.\n\n- 3 (3/23/25 6:19 PM): And then somehow they broke up and she started dating his brother Tony Aquino.\n\n- 3 (3/23/25 6:19 PM): That's how weird and fucked up this is.\n\n- 3 (3/23/25 6:19 PM): But, you know, life is life.\n\n- 3 (3/23/25 6:19 PM): And he she dated Tony Aquino for a while.\n\n- 3 (3/23/25 6:20 PM): And I think it was really not even that much about dating as it was about like, I don't know, just sex.\n\n- 3 (3/23/25 6:20 PM): Um, I don't know how long that lasted, but anyway, then she met Myron.\n\n- 3 (3/23/25 6:20 PM): Uh, oh, no.\n\n- 3 (3/23/25 6:20 PM): Myron, oh my god, Myron at the time was dating Lydia.\n\n- 3 (3/23/25 6:20 PM): Um, who who eventually married my friend Neil.\n\n- 3 (3/23/25 6:20 PM): So Myron was dating Lydia.\n\n- 3 (3/23/25 6:20 PM): Eve was dating Matt Aquino, but I guess at some point Matt Aquino and Eve split.\n\n- 3 (3/23/25 6:20 PM): Myron and Lydia split, and then Myron and Eve got together and Myron and Eve eventually got married.\n\n- 3 (3/23/25 6:20 PM): And then because Lydia had split from Myron, she and Neil eventually got married.\n\n- 3 (3/23/25 6:21 PM): So that's kind of a complex thing there.\n\n- 3 (3/23/25 6:21 PM): But let's go back to I was describing Eve.\n\n## Eve's personality, career, and family life in the present day.\n\n- 3 (3/23/25 6:21 PM): See, one of the things about Eve is she is more on the liberal spectrum.\n\n- 3 (3/23/25 6:21 PM): And so I think that's also been an influence on Myron.\n\n- 3 (3/23/25 6:21 PM): Um, she I don't remember she worked kind of in technology.\n\n- 3 (3/23/25 6:21 PM): God, I really don't remember what she did.\n\n- 3 (3/23/25 6:21 PM): Um, I really have no idea what her job was.\n\n- 3 (3/23/25 6:21 PM): Oh my god.\n\n- 3 (3/23/25 6:21 PM): I think it was technology of some kind.\n\n- 3 (3/23/25 6:22 PM): And anyhow, holy shit, I don't remember at all.\n\n- 3 (3/23/25 6:22 PM): Now, present day, um she's again, she's just a really nice woman, she's an incredible woman.\n\n- 3 (3/23/25 6:22 PM): Um, Myron and Eve, they have two adult children.\n\n- 3 (3/23/25 6:22 PM): Um, so I definitely can bond with them over children, um, who are, you know, in that realm of an age.\n\n- 3 (3/23/25 6:22 PM): Um, and she's very caring, very kind, um, smart.\n\n- 3 (3/23/25 6:22 PM): Um, and again, she kind of agrees with my politics, so I appreciate that.\n\n- 3 (3/23/25 6:22 PM): And um, so when I talk to I talk to both of them, both Myron and Eve, when I talk to them, um, over the phone, Eve tends to be again sort of the main talker.\n\n- 3 (3/23/25 6:23 PM): So when I call, I'll call her phone.\n\n- 3 (3/23/25 6:23 PM): So sometimes I only talk to Eve, although once I did only talk to Myron.\n\n- 3 (3/23/25 6:23 PM): Um, so yeah, but they're a good couple, they're good people.\n\n- 3 (3/23/25 6:23 PM): Um, I like them a lot.\n\n- 3 (3/23/25 6:23 PM): And I think that that's my um my journal entry.\n\n- 1 (3/23/25 6:23 PM): like them a lot.\n\n- 1 (3/23/25 6:23 PM): And I think that that's my um my journal entries for now.\n\n## Recalling the romantic entanglements between Eve, Myron, Lydia, and Neil, including Eve's dating history with David, Matt, and Tony Aquino.\n\n- 1 (3/23/25 6:23 PM): I'll try to explain the love triangle thing one more time because it's kind of complicated.\n\n- 1 (3/23/25 6:23 PM): So, at one point, Eve, Tracy, her maiden name is Tracy, but Eve was dating David Easter and that was in high school.\n\n- 1 (3/23/25 6:24 PM): And then at some point they broke up and she was dating Matt Aquino, who was a different friend of mine.\n\n- 1 (3/23/25 6:24 PM): Then at some point they broke up and she dated Tony Aquino, which was Matt Aquino's brother.\n\n- 1 (3/23/25 6:24 PM): Then at some point they broke up and eventually um she became Myron's girlfriend and then later they got married.\n\n- 1 (3/23/25 6:24 PM): However, also in this mix, Myron was dating a woman named Lydia.\n\n- 1 (3/23/25 6:24 PM): Her last name is Dong, Lydia Dong.\n\n- 1 (3/23/25 6:24 PM): And she was again, Myron was dating Lydia.\n\n- 1 (3/23/25 6:24 PM): They had broken up at some point, obviously before Myron and Eve got together.\n\n- 1 (3/23/25 6:25 PM): And um oh gosh.\n\n- 1 (3/23/25 6:25 PM): Um yes, Lydia was dating Myron.\n\n- 1 (3/23/25 6:25 PM): Myron and Lydia broke up and then Lydia started dating my other friend Neil and eventually they got married.\n\n## Present-day status of Eve and Myron's marriage, Neil and Lydia's divorce, and the speaker's certainty of Eve and Myron's lifelong commitment.\n\n- 1 (3/23/25 6:25 PM): And fast forward to today and Neil and Lydia are getting a divorce.\n\n- 1 (3/23/25 6:25 PM): Myron and Eve are definitely not.\n\n- 1 (3/23/25 6:25 PM): I know that they'll be together for the rest of their lives.",
+      "title": "Recounting memories of Eve, from high school infatuation to present-day reflections on her personality, career, family, and relationship with Myron",
+      "startTime": "2025-03-23T18:15:53-07:00",
+      "endTime": "2025-03-23T18:25:50-07:00"
+    },
+    {
+      "contents": [
+        {
+          "content": "Introduction of Myron Meyer, another friend from high school",
+          "type": "heading1"
+        },
+        {
+          "content": "Introduction of Myron",
+          "type": "heading2"
+        },
+        {
+          "content": "And now I'll talk about Myron Meyer.",
+          "endOffsetMs": 3000,
+          "endTime": "2025-03-23T18:09:37-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 0,
+          "startTime": "2025-03-23T18:09:34-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um, so Myron Meyer, again, he was a friend we had starting around high school.",
+          "endOffsetMs": 11370,
+          "endTime": "2025-03-23T18:09:45-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 4000,
+          "startTime": "2025-03-23T18:09:38-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Speaker discusses their friendship with Myron Meyer, including their time living together, Myron's career in software, and his shift in political views.",
+          "type": "heading2"
+        },
+        {
+          "content": "about Myron Meyer. Um so Myron Meyer, again, he was a friend we had starting around high school. I keep saying we, I really mean me, a friend that I had when I was in high school. But I had a friendship group. So when I say we, I really mean the group of friends. And again, I kind of felt like he was more of an ancillary friend. Um I did spend a decent amount of time with him, but I sort of had a what I'll call a core friend group and a what I felt was an ancillary friend group. Um and I don't know why because now it's my ancillary friends who are close and my core friends who are not close at all. Um so Myron, um yeah, he did the same things in high school. We would do things together, go over to his house. Um I eventually when I had graduated college and started high school teaching, um he had already owned a home and the reason that had happened was that he had started a software company. Um he's in software, he was a software engineer. And that software company had had good success. So he was able to um start his own software company, have success and purchase a house. And he didn't, he wasn't married or anything. So he had an extra room in his house and I decided to rent that room from him. So I lived with him and I'm thinking it was for at least a year. It might have been more. Um but at least a year I lived with Myron. And you know, that was fine. We got along pretty darn well. He's easy to get along with. He's very low maintenance. Um he kind of minds his own business. Um oh, and I'll I forgot. I'll mention that Neil Lieb also was in the tech industry. Um he was more in IT. Uh he was more of a like a network administrator, uh an IT administrator. He did a lot of stuff with networking and databases. Um he worked for a while. God, I wish I could remember the name of the company. It was a big Veritos. The name of the company was Veritos. And that has something to do with data. I have no idea what happened to that company. They still exist. I I don't know why I have a vague feeling they got bought by McAfee, but I could be wrong. Anyhow, so yeah, Neil was in IT. Myron, um was a software engineer. Um he had always worked and he had started a small software company and they did sort of enterprise software in the real estate space. Um and what about Myron? So Myron also is interesting. Um when he was growing up, uh he was he was a conservative um and held conservative beliefs. Um but through his marriage, which I'll talk about a little later, I think he's or and especially over time he has kind of softened up a bit and I think he sees um some of the good qualities of a more uh liberal uh bent. And um oh, I was remembering that he had a brother. Um his brother was older. And I feel like his brother may have been Aspergers or something. He was very, very rigid and odd and he actually died of cancer. He died of cancer maybe also around 10 years ago or something, maybe 20 years. It's been. Um but anyway, so Myron's a really good guy. I also talk to Myron maybe about once a month. Uh he's still working. He works at a big company, a software company. He's looking to retire, hopefully in five to 10 years. Um and he's just an all around good person. He cares about me and I care about him. I wouldn't say we open up to each other deeply. Um but I feel comfortable talking to him about almost anything. So that's Myron Meyer. His last name is M E I E R. It's spelled M E I E R, Myron Meyer. He is married to Eve Meyer. And Eve when she was in high school was Eve Tracy. And she was also a friend of mine from high school. And shortly after meeting her, I was pretty much infatuated with her. She was a nerdy girl. Kind of like",
+          "endOffsetMs": 30351,
+          "endTime": "2025-03-23T18:10:04-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 1351,
+          "startTime": "2025-03-23T18:09:35-07:00",
+          "type": "blockquote"
+        }
+      ],
+      "id": "JA4DeiXmVsUF28obq7e7",
+      "markdown": "# Introduction of Myron Meyer, another friend from high school\n\n## Introduction of Myron\n\n- 1 (3/23/25 6:09 PM): And now I'll talk about Myron Meyer.\n\n- 1 (3/23/25 6:09 PM): Um, so Myron Meyer, again, he was a friend we had starting around high school.\n\n## Speaker discusses their friendship with Myron Meyer, including their time living together, Myron's career in software, and his shift in political views.\n\n- 2 (3/23/25 6:09 PM): about Myron Meyer. Um so Myron Meyer, again, he was a friend we had starting around high school. I keep saying we, I really mean me, a friend that I had when I was in high school. But I had a friendship group. So when I say we, I really mean the group of friends. And again, I kind of felt like he was more of an ancillary friend. Um I did spend a decent amount of time with him, but I sort of had a what I'll call a core friend group and a what I felt was an ancillary friend group. Um and I don't know why because now it's my ancillary friends who are close and my core friends who are not close at all. Um so Myron, um yeah, he did the same things in high school. We would do things together, go over to his house. Um I eventually when I had graduated college and started high school teaching, um he had already owned a home and the reason that had happened was that he had started a software company. Um he's in software, he was a software engineer. And that software company had had good success. So he was able to um start his own software company, have success and purchase a house. And he didn't, he wasn't married or anything. So he had an extra room in his house and I decided to rent that room from him. So I lived with him and I'm thinking it was for at least a year. It might have been more. Um but at least a year I lived with Myron. And you know, that was fine. We got along pretty darn well. He's easy to get along with. He's very low maintenance. Um he kind of minds his own business. Um oh, and I'll I forgot. I'll mention that Neil Lieb also was in the tech industry. Um he was more in IT. Uh he was more of a like a network administrator, uh an IT administrator. He did a lot of stuff with networking and databases. Um he worked for a while. God, I wish I could remember the name of the company. It was a big Veritos. The name of the company was Veritos. And that has something to do with data. I have no idea what happened to that company. They still exist. I I don't know why I have a vague feeling they got bought by McAfee, but I could be wrong. Anyhow, so yeah, Neil was in IT. Myron, um was a software engineer. Um he had always worked and he had started a small software company and they did sort of enterprise software in the real estate space. Um and what about Myron? So Myron also is interesting. Um when he was growing up, uh he was he was a conservative um and held conservative beliefs. Um but through his marriage, which I'll talk about a little later, I think he's or and especially over time he has kind of softened up a bit and I think he sees um some of the good qualities of a more uh liberal uh bent. And um oh, I was remembering that he had a brother. Um his brother was older. And I feel like his brother may have been Aspergers or something. He was very, very rigid and odd and he actually died of cancer. He died of cancer maybe also around 10 years ago or something, maybe 20 years. It's been. Um but anyway, so Myron's a really good guy. I also talk to Myron maybe about once a month. Uh he's still working. He works at a big company, a software company. He's looking to retire, hopefully in five to 10 years. Um and he's just an all around good person. He cares about me and I care about him. I wouldn't say we open up to each other deeply. Um but I feel comfortable talking to him about almost anything. So that's Myron Meyer. His last name is M E I E R. It's spelled M E I E R, Myron Meyer. He is married to Eve Meyer. And Eve when she was in high school was Eve Tracy. And she was also a friend of mine from high school. And shortly after meeting her, I was pretty much infatuated with her. She was a nerdy girl. Kind of like",
+      "title": "Introduction of Myron Meyer, another friend from high school",
+      "startTime": "2025-03-23T18:09:34-07:00",
+      "endTime": "2025-03-23T18:10:04-07:00"
+    },
+    {
+      "contents": [
+        {
+          "content": "Description of Neil Lieb, a friend since high school, and their evolving relationship",
+          "type": "heading1"
+        },
+        {
+          "content": "Early friendship and background",
+          "type": "heading2"
+        },
+        {
+          "content": "All right, I'm going to now describe another friend as part of sort of my journaling efforts.",
+          "endOffsetMs": 10000,
+          "endTime": "2025-03-23T18:04:09-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 0,
+          "startTime": "2025-03-23T18:03:59-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "I've talked about Mike Rebel.",
+          "endOffsetMs": 15000,
+          "endTime": "2025-03-23T18:04:14-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 10000,
+          "startTime": "2025-03-23T18:04:09-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Oh, and I also not just my friend, I talked about my brother, Matt Bookman.",
+          "endOffsetMs": 20000,
+          "endTime": "2025-03-23T18:04:19-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 15000,
+          "startTime": "2025-03-23T18:04:14-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um, who else have I talked about?",
+          "endOffsetMs": 25000,
+          "endTime": "2025-03-23T18:04:24-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 21000,
+          "startTime": "2025-03-23T18:04:20-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Maybe that's all.",
+          "endOffsetMs": 27000,
+          "endTime": "2025-03-23T18:04:26-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 26000,
+          "startTime": "2025-03-23T18:04:25-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Okay.",
+          "endOffsetMs": 29000,
+          "endTime": "2025-03-23T18:04:28-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 28000,
+          "startTime": "2025-03-23T18:04:27-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "So, I'll talk about Neil Lieb.",
+          "endOffsetMs": 34000,
+          "endTime": "2025-03-23T18:04:33-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 30000,
+          "startTime": "2025-03-23T18:04:29-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "It's spelled N E I L L I E B, Neil Lieb.",
+          "endOffsetMs": 41000,
+          "endTime": "2025-03-23T18:04:40-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 36000,
+          "startTime": "2025-03-23T18:04:35-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "And Neil and I have been friends since the start of high school.",
+          "endOffsetMs": 52000,
+          "endTime": "2025-03-23T18:04:51-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 42000,
+          "startTime": "2025-03-23T18:04:41-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "And he was a member of our kind of friend group.",
+          "endOffsetMs": 61000,
+          "endTime": "2025-03-23T18:05:00-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 54000,
+          "startTime": "2025-03-23T18:04:53-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "And for most of the time, I kind of thought of him in somewhat of an ancillary friend, not like a primary friend, um, but someone who, you know, I could definitely hang around with and was a nice guy.",
+          "endOffsetMs": 84000,
+          "endTime": "2025-03-23T18:05:23-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 64000,
+          "startTime": "2025-03-23T18:05:03-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um, oh, I think he was mostly Myron's friend, and I'll talk about Myron later.",
+          "endOffsetMs": 91000,
+          "endTime": "2025-03-23T18:05:30-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 85000,
+          "startTime": "2025-03-23T18:05:24-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "He kind of, if I remember correctly, that's how we all kind of knew him.",
+          "endOffsetMs": 96000,
+          "endTime": "2025-03-23T18:05:35-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 91000,
+          "startTime": "2025-03-23T18:05:30-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "He lived close to Myron, maybe.",
+          "endOffsetMs": 99000,
+          "endTime": "2025-03-23T18:05:38-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 96000,
+          "startTime": "2025-03-23T18:05:35-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Neil's family and political views",
+          "type": "heading2"
+        },
+        {
+          "content": "Um, so, Neil, um, so a few things about Neil.",
+          "endOffsetMs": 109000,
+          "endTime": "2025-03-23T18:05:48-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 100000,
+          "startTime": "2025-03-23T18:05:39-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "So I am a liberal, a Democrat and a liberal, and Neil is conservative.",
+          "endOffsetMs": 120000,
+          "endTime": "2025-03-23T18:05:59-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 109000,
+          "startTime": "2025-03-23T18:05:48-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um, oh, and I also remember going to his house sometimes, Neil's house.",
+          "endOffsetMs": 126000,
+          "endTime": "2025-03-23T18:06:05-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 121000,
+          "startTime": "2025-03-23T18:06:00-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "So yes, I think he did live close to Myron.",
+          "endOffsetMs": 130000,
+          "endTime": "2025-03-23T18:06:09-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 126000,
+          "startTime": "2025-03-23T18:06:05-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "And I remember his parents were quite old, um, and like not very mobile.",
+          "endOffsetMs": 138000,
+          "endTime": "2025-03-23T18:06:17-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 130000,
+          "startTime": "2025-03-23T18:06:09-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "In fact, I think his father was like on oxygen or something, or maybe it was his mother.",
+          "endOffsetMs": 143000,
+          "endTime": "2025-03-23T18:06:22-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 138000,
+          "startTime": "2025-03-23T18:06:17-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um, anyhow, um, yeah, so Neil has a more conservative bent and I have a more liberal bent.",
+          "endOffsetMs": 155000,
+          "endTime": "2025-03-23T18:06:34-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 144000,
+          "startTime": "2025-03-23T18:06:23-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um, and don't really remember a whole lot about Neil in high school.",
+          "endOffsetMs": 168000,
+          "endTime": "2025-03-23T18:06:47-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 159000,
+          "startTime": "2025-03-23T18:06:38-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Reconnecting and strengthening the bond",
+          "type": "heading2"
+        },
+        {
+          "content": "And even in college, I mean, I would would see him every once in a while, but he was again sort of an add-on friend.",
+          "endOffsetMs": 179000,
+          "endTime": "2025-03-23T18:06:58-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 168000,
+          "startTime": "2025-03-23T18:06:47-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um, then much later, um, I would say starting maybe 10 years ago.",
+          "endOffsetMs": 189000,
+          "endTime": "2025-03-23T18:07:08-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 180000,
+          "startTime": "2025-03-23T18:06:59-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "So right now it's uh 2025.",
+          "endOffsetMs": 196000,
+          "endTime": "2025-03-23T18:07:15-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 190000,
+          "startTime": "2025-03-23T18:07:09-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "So maybe starting around 2020, um, we started hanging out more.",
+          "endOffsetMs": 201000,
+          "endTime": "2025-03-23T18:07:20-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 196000,
+          "startTime": "2025-03-23T18:07:15-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Uh, and we would go have lunch together.",
+          "endOffsetMs": 206000,
+          "endTime": "2025-03-23T18:07:25-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 202000,
+          "startTime": "2025-03-23T18:07:21-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Uh, and we really started bonding.",
+          "endOffsetMs": 209000,
+          "endTime": "2025-03-23T18:07:28-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 207000,
+          "startTime": "2025-03-23T18:07:26-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um, and I'm really happy that, you know, he and I built a stronger bond and it's persisted now.",
+          "endOffsetMs": 218000,
+          "endTime": "2025-03-23T18:07:37-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 210000,
+          "startTime": "2025-03-23T18:07:29-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Recent conversations and personal connection",
+          "type": "heading2"
+        },
+        {
+          "content": "Um, so Neil, he's just a good guy.",
+          "endOffsetMs": 225000,
+          "endTime": "2025-03-23T18:07:44-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 219000,
+          "startTime": "2025-03-23T18:07:38-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um, the last time I spoke to him was really, really, um, quite a pleasure.",
+          "endOffsetMs": 233000,
+          "endTime": "2025-03-23T18:07:52-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 225000,
+          "startTime": "2025-03-23T18:07:44-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "He really opened up to me a lot about things that he was going through personally.",
+          "endOffsetMs": 239000,
+          "endTime": "2025-03-23T18:07:58-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 233000,
+          "startTime": "2025-03-23T18:07:52-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um, he talked about his perhaps divorce from his wife Lydia.",
+          "endOffsetMs": 246000,
+          "endTime": "2025-03-23T18:08:05-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 240000,
+          "startTime": "2025-03-23T18:07:59-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "And he talked about having a new girlfriend and not living with his wife anymore and why he would be considering moving.",
+          "endOffsetMs": 258000,
+          "endTime": "2025-03-23T18:08:17-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 247000,
+          "startTime": "2025-03-23T18:08:06-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um, also, at the current time, he has a business.",
+          "endOffsetMs": 265000,
+          "endTime": "2025-03-23T18:08:24-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 259000,
+          "startTime": "2025-03-23T18:08:18-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "It's an eBay business.",
+          "endOffsetMs": 267000,
+          "endTime": "2025-03-23T18:08:26-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 265000,
+          "startTime": "2025-03-23T18:08:24-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "So he buys certain products, um, for a low price, and then he sells them on eBay for a price that makes a profit.",
+          "endOffsetMs": 277000,
+          "endTime": "2025-03-23T18:08:36-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 267000,
+          "startTime": "2025-03-23T18:08:26-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "I mean, he's been doing that, I think for maybe 10 years.",
+          "endOffsetMs": 282000,
+          "endTime": "2025-03-23T18:08:41-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 278000,
+          "startTime": "2025-03-23T18:08:37-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Neil's eBay business",
+          "type": "heading2"
+        },
+        {
+          "content": "Uh, it's been quite a while, and he does okay.",
+          "endOffsetMs": 286000,
+          "endTime": "2025-03-23T18:08:45-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 283000,
+          "startTime": "2025-03-23T18:08:42-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "It's not a huge success, but it's it's not nothing.",
+          "endOffsetMs": 290000,
+          "endTime": "2025-03-23T18:08:49-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 286000,
+          "startTime": "2025-03-23T18:08:45-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um, so yeah, Neil and I now, um, have a decently close relationship, uh, and very recently we've been able to really cross a bridge and talk about deep and personal things.",
+          "endOffsetMs": 310000,
+          "endTime": "2025-03-23T18:09:09-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 295000,
+          "startTime": "2025-03-23T18:08:54-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Current relationship status",
+          "type": "heading2"
+        },
+        {
+          "content": "Um, and so I talk to him maybe once a month or so.",
+          "endOffsetMs": 315000,
+          "endTime": "2025-03-23T18:09:14-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 311000,
+          "startTime": "2025-03-23T18:09:10-07:00",
+          "type": "blockquote"
+        },
+        {
+          "content": "Um, and yeah, he's a really good guy and I like his friendship.",
+          "endOffsetMs": 322000,
+          "endTime": "2025-03-23T18:09:21-07:00",
+          "speakerIdentifier": "user",
+          "speakerName": "You",
+          "startOffsetMs": 316000,
+          "startTime": "2025-03-23T18:09:15-07:00",
+          "type": "blockquote"
+        }
+      ],
+      "id": "LMOlXBrRJUPQCKmP46jb",
+      "markdown": "# Description of Neil Lieb, a friend since high school, and their evolving relationship\n\n## Early friendship and background\n\n- 1 (3/23/25 6:03 PM): All right, I'm going to now describe another friend as part of sort of my journaling efforts.\n\n- 1 (3/23/25 6:04 PM): I've talked about Mike Rebel.\n\n- 1 (3/23/25 6:04 PM): Oh, and I also not just my friend, I talked about my brother, Matt Bookman.\n\n- 1 (3/23/25 6:04 PM): Um, who else have I talked about?\n\n- 1 (3/23/25 6:04 PM): Maybe that's all.\n\n- 1 (3/23/25 6:04 PM): Okay.\n\n- 1 (3/23/25 6:04 PM): So, I'll talk about Neil Lieb.\n\n- 1 (3/23/25 6:04 PM): It's spelled N E I L L I E B, Neil Lieb.\n\n- 1 (3/23/25 6:04 PM): And Neil and I have been friends since the start of high school.\n\n- 1 (3/23/25 6:04 PM): And he was a member of our kind of friend group.\n\n- 1 (3/23/25 6:05 PM): And for most of the time, I kind of thought of him in somewhat of an ancillary friend, not like a primary friend, um, but someone who, you know, I could definitely hang around with and was a nice guy.\n\n- 1 (3/23/25 6:05 PM): Um, oh, I think he was mostly Myron's friend, and I'll talk about Myron later.\n\n- 1 (3/23/25 6:05 PM): He kind of, if I remember correctly, that's how we all kind of knew him.\n\n- 1 (3/23/25 6:05 PM): He lived close to Myron, maybe.\n\n## Neil's family and political views\n\n- 1 (3/23/25 6:05 PM): Um, so, Neil, um, so a few things about Neil.\n\n- 1 (3/23/25 6:05 PM): So I am a liberal, a Democrat and a liberal, and Neil is conservative.\n\n- 1 (3/23/25 6:06 PM): Um, oh, and I also remember going to his house sometimes, Neil's house.\n\n- 1 (3/23/25 6:06 PM): So yes, I think he did live close to Myron.\n\n- 1 (3/23/25 6:06 PM): And I remember his parents were quite old, um, and like not very mobile.\n\n- 1 (3/23/25 6:06 PM): In fact, I think his father was like on oxygen or something, or maybe it was his mother.\n\n- 1 (3/23/25 6:06 PM): Um, anyhow, um, yeah, so Neil has a more conservative bent and I have a more liberal bent.\n\n- 1 (3/23/25 6:06 PM): Um, and don't really remember a whole lot about Neil in high school.\n\n## Reconnecting and strengthening the bond\n\n- 1 (3/23/25 6:06 PM): And even in college, I mean, I would would see him every once in a while, but he was again sort of an add-on friend.\n\n- 1 (3/23/25 6:06 PM): Um, then much later, um, I would say starting maybe 10 years ago.\n\n- 1 (3/23/25 6:07 PM): So right now it's uh 2025.\n\n- 1 (3/23/25 6:07 PM): So maybe starting around 2020, um, we started hanging out more.\n\n- 1 (3/23/25 6:07 PM): Uh, and we would go have lunch together.\n\n- 1 (3/23/25 6:07 PM): Uh, and we really started bonding.\n\n- 1 (3/23/25 6:07 PM): Um, and I'm really happy that, you know, he and I built a stronger bond and it's persisted now.\n\n## Recent conversations and personal connection\n\n- 1 (3/23/25 6:07 PM): Um, so Neil, he's just a good guy.\n\n- 1 (3/23/25 6:07 PM): Um, the last time I spoke to him was really, really, um, quite a pleasure.\n\n- 1 (3/23/25 6:07 PM): He really opened up to me a lot about things that he was going through personally.\n\n- 1 (3/23/25 6:07 PM): Um, he talked about his perhaps divorce from his wife Lydia.\n\n- 1 (3/23/25 6:08 PM): And he talked about having a new girlfriend and not living with his wife anymore and why he would be considering moving.\n\n- 1 (3/23/25 6:08 PM): Um, also, at the current time, he has a business.\n\n- 1 (3/23/25 6:08 PM): It's an eBay business.\n\n- 1 (3/23/25 6:08 PM): So he buys certain products, um, for a low price, and then he sells them on eBay for a price that makes a profit.\n\n- 1 (3/23/25 6:08 PM): I mean, he's been doing that, I think for maybe 10 years.\n\n## Neil's eBay business\n\n- 1 (3/23/25 6:08 PM): Uh, it's been quite a while, and he does okay.\n\n- 1 (3/23/25 6:08 PM): It's not a huge success, but it's it's not nothing.\n\n- 1 (3/23/25 6:08 PM): Um, so yeah, Neil and I now, um, have a decently close relationship, uh, and very recently we've been able to really cross a bridge and talk about deep and personal things.\n\n## Current relationship status\n\n- 1 (3/23/25 6:09 PM): Um, and so I talk to him maybe once a month or so.\n\n- 1 (3/23/25 6:09 PM): Um, and yeah, he's a really good guy and I like his friendship.",
+      "title": "Description of Neil Lieb, a friend since high school, and their evolving relationship",
+      "startTime": "2025-03-23T18:03:59-07:00",
+      "endTime": "2025-03-23T18:09:21-07:00"
+    },
+    {
+      "contents": [
+        {
           "content": "Discussion about the reasons behind placing objects in certain locations",
           "type": "heading1"
         },

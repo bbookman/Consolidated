@@ -178,14 +178,4 @@ class BillboardAPI:
         """
         return await self.get_chart("hot-100", date)
         
-    async def get_billboard_200(self, date=None):
-        """
-        Get Billboard 200 chart data
-        
-        Args:
-            date: Optional date string in format YYYY-MM-DD
-            
-        Returns:
-            Dictionary containing Billboard 200 chart data
-        """
-        return await self.get_chart("billboard-200", date)
+# Note: Billboard 200 chart endpoint is not available from this API provider

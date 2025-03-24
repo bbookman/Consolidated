@@ -284,11 +284,35 @@
         // Replace bold markdown with HTML strong tags
         formattedSummary = formattedSummary.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
         
-        // Replace italic markdown with HTML em tags
-        formattedSummary = formattedSummary.replace(/\*(.*?)\*/g, '<em>$1</em>');
+        // Process bullet points
+        if (formattedSummary.includes("Key Take Aways") || formattedSummary.includes("Key Takeaways")) {
+            // First, find sections with bullet points (lines starting with * )
+            const sections = formattedSummary.split(/\n(?=\w)/);
+            for (let i = 0; i < sections.length; i++) {
+                if (sections[i].includes("* ")) {
+                    // For each section with bullet points, wrap it in a ul
+                    let bulletSection = sections[i];
+                    // Replace each bullet point line with a list item
+                    bulletSection = bulletSection.replace(/^\* (.*?)$/gm, '<li>$1</li>');
+                    // Add ul tags around the list items
+                    bulletSection = bulletSection.replace(/(<li>.*?<\/li>)+/s, '<ul>$&</ul>');
+                    sections[i] = bulletSection;
+                }
+            }
+            formattedSummary = sections.join('\n');
+        }
         
-        // Replace markdown lists with HTML lists
+        // Replace other markdown lists with HTML lists
         formattedSummary = formattedSummary.replace(/- (.*?)(?:\n|$)/g, '<li>$1</li>');
+        formattedSummary = formattedSummary.replace(/^\* (.*?)$/gm, '<li>$1</li>');
+        
+        // Wrap consecutive list items in ul tags if not already wrapped
+        if (formattedSummary.includes('<li>') && !formattedSummary.includes('<ul>')) {
+            formattedSummary = formattedSummary.replace(/(<li>.*?<\/li>)+/gs, '<ul>$&</ul>');
+        }
+        
+        // Replace any remaining italic markdown (after bullet points are processed)
+        formattedSummary = formattedSummary.replace(/(?<!\*)\*([^\*]+)\*(?!\*)/g, '<em>$1</em>');
         
         // Limit the summary to the first 100 characters for the preview
         let shortSummary = formattedSummary;

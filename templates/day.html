@@ -119,9 +119,9 @@
     }
     
     function updateSummary(dayData) {
+        // Facts excluded as requested
         const totalEntries = 
             dayData.conversations.length + 
-            dayData.facts.length + 
             dayData.lifelogs.length + 
             dayData.netflix.length;
         
@@ -140,12 +140,7 @@
                             </span>
                             <span>${dayData.conversations.length}</span>
                         </div>
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>
-                                <span class="day-marker marker-facts"></span> Facts:
-                            </span>
-                            <span>${dayData.facts.length}</span>
-                        </div>
+                        <!-- Facts removed as requested -->
                         <div class="d-flex justify-content-between mb-2">
                             <span>
                                 <span class="day-marker marker-lifelogs"></span> Lifelogs:
@@ -219,10 +214,10 @@
     }
     
     function generateTimeline(dayData) {
-        // Combine all entries and sort by time
+        // Combine all entries and sort by time (Facts excluded as requested)
         const allEntries = [
             ...dayData.conversations.map(item => ({ type: 'conversation', data: item, time: item.time })),
-            ...dayData.facts.map(item => ({ type: 'fact', data: item, time: item.time })),
+            // Facts removed as requested
             ...dayData.lifelogs.map(item => ({ type: 'lifelog', data: item, time: item.time })),
             ...dayData.netflix.map(item => ({ type: 'netflix', data: item, time: item.time }))
         ].sort((a, b) => {
@@ -275,9 +270,8 @@
                     timelineHtml += generateLifelogHTML(entry.data);
                 } else if (entry.type === 'conversation') {
                     timelineHtml += generateConversationHTML(entry.data);
-                } else if (entry.type === 'fact') {
-                    timelineHtml += generateFactHTML(entry.data);
                 }
+                // Facts case removed as requested
             });
             
             timelineHtml += `
@@ -350,16 +344,6 @@
         `;
     }
     
-    function generateFactHTML(item) {
-        return `
-            <div class="journal-item">
-                <div class="item-header">
-                    <span class="time-badge">${item.time}</span>
-                    <span class="source-badge source-bee">Bee Fact</span>
-                </div>
-                <div>${item.text}</div>
-            </div>
-        `;
-    }
+    // Facts function removed as requested
 </script>
 {% endblock %}

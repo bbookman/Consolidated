@@ -274,91 +274,12 @@
     }
     
     function generateConversationHTML(item) {
-        // Format any markdown in the summary to HTML
-        let formattedSummary = item.summary;
+        // We're now just using the summary text directly without markdown conversion
         
-        // Replace markdown headers with HTML headers
-        formattedSummary = formattedSummary.replace(/## (.*?)(?:\n|$)/g, '<h4>$1</h4>');
-        formattedSummary = formattedSummary.replace(/# (.*?)(?:\n|$)/g, '<h3>$1</h3>');
-        
-        // Replace bold markdown with HTML strong tags
-        formattedSummary = formattedSummary.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-        
-        // Process bullet points in all sections
-        // Split the content by lines
-        const lines = formattedSummary.split('\n');
-        let inBulletList = false;
-        let bulletItems = [];
-        let processedLines = [];
-        
-        for (let i = 0; i < lines.length; i++) {
-            const line = lines[i];
-            
-            // Check if this line starts with an asterisk bullet point
-            if (line.trim().match(/^\* (.+)$/)) {
-                // This is a bullet point
-                if (!inBulletList) {
-                    // Starting a new bullet list
-                    inBulletList = true;
-                    bulletItems = [];
-                }
-                
-                // Extract the bullet content (without the asterisk)
-                const bulletContent = line.trim().replace(/^\* /, '');
-                bulletItems.push(bulletContent);
-            } else {
-                // Not a bullet point
-                if (inBulletList) {
-                    // We were in a bullet list, but now we're not
-                    // Add the bullet list to processed lines
-                    processedLines.push('<ul>');
-                    bulletItems.forEach(item => {
-                        processedLines.push(`<li>${item}</li>`);
-                    });
-                    processedLines.push('</ul>');
-                    inBulletList = false;
-                }
-                
-                // Add the current line
-                processedLines.push(line);
-            }
-        }
-        
-        // If we ended with a bullet list, add it
-        if (inBulletList) {
-            processedLines.push('<ul>');
-            bulletItems.forEach(item => {
-                processedLines.push(`<li>${item}</li>`);
-            });
-            processedLines.push('</ul>');
-        }
-        
-        // Rejoin the processed lines
-        formattedSummary = processedLines.join('\n');
-        
-        // Replace other markdown lists with HTML lists
-        formattedSummary = formattedSummary.replace(/- (.*?)(?:\n|$)/g, '<li>$1</li>');
-        formattedSummary = formattedSummary.replace(/^\* (.*?)$/gm, '<li>$1</li>');
-        
-        // Wrap consecutive list items in ul tags if not already wrapped
-        if (formattedSummary.includes('<li>') && !formattedSummary.includes('<ul>')) {
-            formattedSummary = formattedSummary.replace(/(<li>.*?<\/li>)+/gs, '<ul>$&</ul>');
-        }
-        
-        // Replace any remaining italic markdown (after bullet points are processed)
-        formattedSummary = formattedSummary.replace(/(?<!\*)\*([^\*]+)\*(?!\*)/g, '<em>$1</em>');
-        
-        // Limit the summary to the first 100 characters for the preview
-        let shortSummary = formattedSummary;
-        if (formattedSummary.length > 100) {
-            // Try to find the first heading or strong tag and use that
-            const headingMatch = formattedSummary.match(/<h[3-4]>(.*?)<\/h[3-4]>/);
-            if (headingMatch) {
-                shortSummary = headingMatch[0];
-            } else {
-                // Otherwise just truncate
-                shortSummary = formattedSummary.substring(0, 100) + '...';
-            }
+        // Limit the summary to the first 100 characters for the preview if needed
+        let shortSummary = item.summary;
+        if (shortSummary.length > 100) {
+            shortSummary = shortSummary.substring(0, 100) + '...';
         }
         
         return `
@@ -369,7 +290,6 @@
                 </div>
                 <h5 class="item-title">Summary</h5>
                 <div class="summary-text">${item.summary}</div>
-                <div class="conversation-content">${shortSummary}</div>
                 ${item.location ? `<div><strong>Location:</strong> ${item.location}</div>` : ''}
             </div>
         `;

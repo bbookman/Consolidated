@@ -879,17 +879,25 @@ def parse_arguments():
                       action="store_true", 
                       default=False,
                       help="Enable debug mode: save data to JSON files in /data directory")
-    parser.add_argument("--netflix-csv",
+    
+    # Netflix-related options
+    netflix_group = parser.add_argument_group('Netflix operations')
+    netflix_group.add_argument("--netflix-csv",
                       type=str,
                       help="Path to Netflix viewing history CSV file to import")
-    parser.add_argument("--enrich-netflix",
+    netflix_group.add_argument("--enrich-netflix",
                       action="store_true",
                       default=False,
                       help="Enrich Netflix data with IMDB information (limit 50 titles)")
-    parser.add_argument("--enrich-limit",
+    netflix_group.add_argument("--enrich-limit",
                       type=int,
                       default=50,
                       help="Limit number of titles to enrich (default: 50)")
+    netflix_group.add_argument("--deduplicate-netflix",
+                      action="store_true",
+                      default=False,
+                      help="Remove duplicate Netflix series entries from the database")
+    
     return parser.parse_args()
 
 def run_cli(debug_mode=False):
@@ -943,7 +951,9 @@ async def process_netflix_operations(netflix_csv=None, enrich_netflix=False, enr
         import_result = netflix_importer.import_netflix_history(netflix_csv)
         print(f"Import result: {import_result['processed']} processed, "
               f"{import_result['added']} added, "
-              f"{import_result['skipped']} skipped")
+              f"{import_result['skipped']} skipped, "
+              f"{import_result['deduplicated']} deduplicated within import, "
+              f"{import_result.get('cross_deduplicated', 0)} deduplicated across imports")
         
         # Save to JSON if debug mode is enabled
         if debug_mode:
@@ -1028,20 +1038,38 @@ if __name__ == '__main__':
     # Global app_debug_mode is set in run_cli function
     
     # Process Netflix operations if requested
-    if args.netflix_csv or args.enrich_netflix:
+    if args.netflix_csv or args.enrich_netflix or args.deduplicate_netflix:
         print("Netflix operations requested - skipping regular data collection")
         
         # Initialize APIs just in case we need them
         initialize_apis()
         
-        # Run Netflix operations
-        loop = asyncio.get_event_loop()
-        loop.run_until_complete(process_netflix_operations(
-            netflix_csv=args.netflix_csv,
-            enrich_netflix=args.enrich_netflix,
-            enrich_limit=args.enrich_limit,
-            debug_mode=debug_mode
-        ))
+        # Handle Netflix deduplication separately
+        if args.deduplicate_netflix:
+            print("\nRemoving duplicate Netflix series entries from the database...")
+            try:
+                from remove_duplicate_netflix_series import remove_duplicate_netflix_series
+                result = remove_duplicate_netflix_series()
+                if "error" in result:
+                    print(f"Error: {result['error']}")
+                else:
+                    print(f"\nResults:")
+                    print(f"- Found {result['total_series']} unique series with {result['total_entries']} total entries")
+                    print(f"- Kept {result['entries_kept']} entries (one per series)")
+                    print(f"- Removed {result['entries_removed']} duplicate entries")
+            except Exception as e:
+                print(f"Error deduplicating Netflix series: {str(e)}")
+                print(traceback.format_exc())
+        
+        # Run other Netflix operations
+        if args.netflix_csv or args.enrich_netflix:
+            loop = asyncio.get_event_loop()
+            loop.run_until_complete(process_netflix_operations(
+                netflix_csv=args.netflix_csv,
+                enrich_netflix=args.enrich_netflix,
+                enrich_limit=args.enrich_limit,
+                debug_mode=debug_mode
+            ))
     else:
         # Run the regular data collection CLI
         run_cli(debug_mode)

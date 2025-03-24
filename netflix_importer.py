@@ -188,7 +188,7 @@ def import_netflix_history(csv_file_path, deduplicate_series=True):
         Dictionary with counts of processed, added, and skipped items
     """
     session = Session()
-    result = {"processed": 0, "added": 0, "skipped": 0, "deduplicated": 0}
+    result = {"processed": 0, "added": 0, "skipped": 0, "deduplicated": 0, "cross_deduplicated": 0}
     
     try:
         # Check if file exists
@@ -200,6 +200,16 @@ def import_netflix_history(csv_file_path, deduplicate_series=True):
         # Key: series_name, Value: list of (title, watch_date) tuples
         series_episodes = {}
         
+        # Track series that are already in the database
+        existing_series = set()
+        if deduplicate_series:
+            # Query the database for all existing series
+            all_history = session.query(Netflix_History_Item).all()
+            for item in all_history:
+                if item.show_name and is_series_episode(item.title):
+                    existing_series.add(item.show_name)
+            logger.info(f"Found {len(existing_series)} existing series in the database")
+            
         # Read CSV file and gather data
         all_entries = []
         with open(csv_file_path, 'r', encoding='utf-8') as file:
@@ -234,6 +244,16 @@ def import_netflix_history(csv_file_path, deduplicate_series=True):
                         logger.debug(f"Skipping duplicate entry: {cleaned_title} on {date_str}")
                         result["skipped"] += 1
                         continue
+                    
+                    # Check for cross-import deduplication:
+                    # If this is a series episode, and we already have an episode from this series
+                    # in the database, skip it
+                    if deduplicate_series and is_series_episode(cleaned_title):
+                        series_name = extract_series_name(cleaned_title)
+                        if series_name in existing_series:
+                            logger.info(f"Skipping {cleaned_title} - Series '{series_name}' already in database")
+                            result["cross_deduplicated"] += 1
+                            continue
                     
                     # Store entry for processing
                     all_entries.append({

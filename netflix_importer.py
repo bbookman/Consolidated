@@ -330,19 +330,25 @@ def import_netflix_history(csv_file_path, deduplicate_series=True):
     
     return result
 
-def save_netflix_history_to_json(output_dir='data/netflix'):
+def save_netflix_history_to_json(output_dir='data/netflix', debug_mode=False):
     """
     Retrieve Netflix viewing history from the database and save to JSON file.
     
     Args:
         output_dir: Directory to save JSON file
+        debug_mode: If True, save data to file; if False, skip file creation
         
     Returns:
         Path to JSON file if successful, None otherwise
     """
+    # Skip file creation if debug mode is disabled
+    if not debug_mode:
+        logger.info("Debug mode disabled - skipping Netflix JSON file creation")
+        return None
+        
     session = Session()
     try:
-        # Create directory if it doesn't exist
+        # Create directory if it doesn't exist (only in debug mode)
         os.makedirs(output_dir, exist_ok=True)
         
         # Query all history items
@@ -612,26 +618,37 @@ async def enrich_netflix_title_data(limit=None):
     
     return result
 
-def main(csv_file_path):
-    """Import Netflix viewing history from CSV and save to JSON."""
+def main(csv_file_path, debug_mode=False):
+    """
+    Import Netflix viewing history from CSV and save to JSON.
+    
+    Args:
+        csv_file_path: Path to the Netflix viewing history CSV file
+        debug_mode: If True, save data to JSON file; if False, skip file creation
+    """
     # Import data from CSV
     import_result = import_netflix_history(csv_file_path)
     print(f"Import result: {import_result['processed']} processed, {import_result['added']} added, {import_result['skipped']} skipped")
     
-    # Save to JSON
-    json_path = save_netflix_history_to_json()
-    if json_path:
-        print(f"Netflix history saved to {json_path}")
+    # Save to JSON only if debug mode is enabled
+    if debug_mode:
+        json_path = save_netflix_history_to_json(debug_mode=debug_mode)
+        if json_path:
+            print(f"Netflix history saved to {json_path}")
+        else:
+            print("Failed to save Netflix history to JSON")
     else:
-        print("Failed to save Netflix history to JSON")
+        print("Debug mode disabled - skipping JSON file creation for Netflix history")
     
     return import_result
 
 if __name__ == '__main__':
     import sys
-    if len(sys.argv) < 2:
-        print("Usage: python netflix_importer.py <netflix_csv_file>")
-        sys.exit(1)
+    import argparse
     
-    csv_file = sys.argv[1]
-    main(csv_file)
+    parser = argparse.ArgumentParser(description='Import Netflix viewing history from CSV file.')
+    parser.add_argument('csv_file', help='Path to Netflix viewing history CSV file')
+    parser.add_argument('--debug', action='store_true', help='Enable debug mode to save JSON files')
+    args = parser.parse_args()
+    
+    main(args.csv_file, debug_mode=args.debug)

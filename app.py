@@ -278,6 +278,7 @@ def save_to_file(data, data_type, original_data, debug_mode=False):
     if not debug_mode:
         print(f"Debug mode disabled - skipping JSON file creation for {data_type}")
         return True
+        
     # Check if there's any data to save
     if not original_data or (isinstance(original_data, dict) and 
                             all(not original_data.get(k) for k in original_data)):
@@ -293,37 +294,46 @@ def save_to_file(data, data_type, original_data, debug_mode=False):
             api_name = "openweather"
         elif data_type.startswith("billboard_"):
             api_name = "billboard"
-        
-        # Create directories if they don't exist (only if we have data to save)
-        data_dir = os.path.join("data", api_name)
-        os.makedirs(data_dir, exist_ok=True)
-        
-        # Generate filename with timestamp
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = f"{data_type}_{timestamp}.json"
-        filepath = os.path.join(data_dir, filename)
-        
-        logger.info(f"Using API directory: {os.path.abspath(data_dir)}")
-        
-        # Check if we should skip saving if the data is the same as the latest file
-        last_file = find_latest_file(data_dir, data_type)
-        if last_file:
-            with open(last_file, 'r') as f:
-                try:
-                    existing_data = json.load(f)
-                    if existing_data == original_data:
-                        logger.info(f"Data for {data_type} is identical to the latest file, not saving")
-                        return True
-                except json.JSONDecodeError:
-                    # If there's an error parsing the previous file, we'll save a new one
-                    pass
-        
-        # Save to file
-        with open(filepath, 'w') as f:
-            json.dump(original_data, f, indent=2)
+        elif data_type.startswith("netflix_"):
+            api_name = "netflix"
+        elif data_type.startswith("imdb_"):
+            api_name = "imdb"
             
-        logger.info(f"Saved {data_type} data to {filepath}")
-        return True
+        # Create data directory only in debug mode
+        # Double-check debug_mode to ensure we never create directories without it
+        if debug_mode:
+            data_dir = os.path.join("data", api_name)
+            os.makedirs(data_dir, exist_ok=True)
+            
+            # Generate filename with timestamp
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            filename = f"{data_type}_{timestamp}.json"
+            filepath = os.path.join(data_dir, filename)
+            
+            logger.info(f"Using API directory: {os.path.abspath(data_dir)}")
+            
+            # Check if we should skip saving if the data is the same as the latest file
+            last_file = find_latest_file(data_dir, data_type)
+            if last_file:
+                with open(last_file, 'r') as f:
+                    try:
+                        existing_data = json.load(f)
+                        if existing_data == original_data:
+                            logger.info(f"Data for {data_type} is identical to the latest file, not saving")
+                            return True
+                    except json.JSONDecodeError:
+                        # If there's an error parsing the previous file, we'll save a new one
+                        pass
+            
+            # Save to file
+            with open(filepath, 'w') as f:
+                json.dump(original_data, f, indent=2)
+                
+            logger.info(f"Saved {data_type} data to {filepath}")
+            return True
+        else:
+            logger.warning(f"Attempted to create JSON file without debug mode enabled")
+            return False
         
     except Exception as e:
         logger.error(f"Error saving {data_type} to file: {str(e)}")
@@ -958,9 +968,11 @@ async def process_netflix_operations(netflix_csv=None, enrich_netflix=False, enr
         # Save to JSON if debug mode is enabled
         if debug_mode:
             print("Saving imported Netflix history to JSON...")
-            json_path = netflix_importer.save_netflix_history_to_json()
+            json_path = netflix_importer.save_netflix_history_to_json(debug_mode=debug_mode)
             if json_path:
                 print(f"Saved Netflix history to {json_path}")
+        else:
+            print("Debug mode disabled - skipping JSON file creation for Netflix history")
     
     # Enrich Netflix data with IMDB information if requested
     if enrich_netflix:
@@ -983,9 +995,11 @@ async def process_netflix_operations(netflix_csv=None, enrich_netflix=False, enr
             # Save to JSON if debug mode is enabled
             if debug_mode:
                 print("Saving enriched Netflix history to JSON...")
-                json_path = netflix_importer.save_netflix_history_to_json()
+                json_path = netflix_importer.save_netflix_history_to_json(debug_mode=debug_mode)
                 if json_path:
                     print(f"Saved enriched Netflix history to {json_path}")
+            else:
+                print("Debug mode disabled - skipping JSON file creation for enriched Netflix history")
             
             # Show sample of enriched titles
             import database_handler as db

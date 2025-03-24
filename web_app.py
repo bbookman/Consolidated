@@ -76,13 +76,8 @@ def journal_data():
             )
         ).order_by(models.Bee_Conversation.created_at.desc()).all()
         
-        # Get Bee facts
-        bee_facts = session.query(models.Bee_Fact).filter(
-            and_(
-                models.Bee_Fact.created_at >= start_date_obj,
-                models.Bee_Fact.created_at < end_date_obj + timedelta(days=1)
-            )
-        ).order_by(models.Bee_Fact.created_at.desc()).all()
+        # Facts removed as requested
+        bee_facts = []  # Empty list to maintain compatibility with existing code
         
         # Get Limitless lifelogs
         lifelogs = session.query(models.Limitless_Lifelog).filter(
@@ -254,23 +249,7 @@ def date_counts():
             date_data[date_key]['conversations'] = count
             date_data[date_key]['total'] += count
         
-        # Query Bee facts counts by date
-        fact_counts = session.query(
-            func.date(models.Bee_Fact.created_at).label('date'),
-            func.count().label('count')
-        ).filter(
-            and_(
-                models.Bee_Fact.created_at >= start_date,
-                models.Bee_Fact.created_at <= end_date
-            )
-        ).group_by(func.date(models.Bee_Fact.created_at)).all()
-        
-        for date_str, count in fact_counts:
-            date_key = date_str.strftime('%Y-%m-%d')
-            if date_key not in date_data:
-                date_data[date_key] = {'conversations': 0, 'facts': 0, 'lifelogs': 0, 'netflix': 0, 'total': 0}
-            date_data[date_key]['facts'] = count
-            date_data[date_key]['total'] += count
+        # Facts queries removed as requested
         
         # Query Limitless lifelogs counts by date
         lifelog_counts = session.query(

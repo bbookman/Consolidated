@@ -119,43 +119,10 @@
     }
     
     function updateSummary(dayData) {
-        // Facts excluded as requested
-        const totalEntries = 
-            dayData.conversations.length + 
-            dayData.lifelogs.length + 
-            dayData.netflix.length;
-        
+        // Total Entries and Activity Summary removed as requested
         let summaryHtml = `
             <div class="row">
-                <div class="col-md-6">
-                    <h5>Activity Summary</h5>
-                    <div class="mb-3">
-                        <div class="d-flex justify-content-between mb-2">
-                            <strong>Total Entries:</strong>
-                            <span>${totalEntries}</span>
-                        </div>
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>
-                                <span class="day-marker marker-conversations"></span> Conversations:
-                            </span>
-                            <span>${dayData.conversations.length}</span>
-                        </div>
-                        <!-- Facts removed as requested -->
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>
-                                <span class="day-marker marker-lifelogs"></span> Lifelogs:
-                            </span>
-                            <span>${dayData.lifelogs.length}</span>
-                        </div>
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>
-                                <span class="day-marker marker-netflix"></span> Netflix:
-                            </span>
-                            <span>${dayData.netflix.length}</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
+                <div class="col-12">
                     <h5>Highlights</h5>
                     <div>
         `;

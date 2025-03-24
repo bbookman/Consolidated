@@ -75,7 +75,7 @@
                     // Process data for calendar
                     const events = data.date_counts.map(item => {
                         return {
-                            title: `${item.total} entries`,
+                            title: ``, // Empty title - no total entries display
                             start: item.date,
                             display: 'background',
                             backgroundColor: getHeatColor(item.total),
@@ -97,7 +97,7 @@
                             let html = '';
                             
                             if (arg.event.extendedProps.total > 0) {
-                                html += `<div class="entry-count">${arg.event.extendedProps.total} entries</div>`;
+                                // Entry count removed as requested
                                 
                                 html += '<div style="position: absolute; bottom: 5px; right: 5px;">';
                                 if (arg.event.extendedProps.conversations > 0) {
@@ -184,14 +184,7 @@
         // Count entries (Facts excluded as requested)
         const totalEntries = day.conversations.length + day.lifelogs.length + day.netflix.length;
         
-        // Summary of entries
-        html += `<div class="mb-3 small text-muted">
-            ${totalEntries} entries:
-            ${day.conversations.length > 0 ? `<span class="badge bg-warning text-dark">${day.conversations.length} conversations</span> ` : ''}
-            <!-- Facts removed as requested -->
-            ${day.lifelogs.length > 0 ? `<span class="badge bg-success">${day.lifelogs.length} lifelogs</span> ` : ''}
-            ${day.netflix.length > 0 ? `<span class="badge bg-danger">${day.netflix.length} netflix</span>` : ''}
-        </div>`;
+        // Total entries summary removed as requested
             
         // Show first couple of entries as preview
         const maxPreviewEntries = 3;
@@ -221,7 +214,7 @@
             
             if (totalEntries > maxPreviewEntries) {
                 html += `<div class="text-center mt-3">
-                    <a href="/day/${day.date}" class="btn btn-sm btn-outline-primary">View all ${totalEntries} entries</a>
+                    <a href="/day/${day.date}" class="btn btn-sm btn-outline-primary">View full day</a>
                 </div>`;
             }
         } else {

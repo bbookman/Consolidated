@@ -203,6 +203,22 @@
             z-index: 10;
             padding: 2px 5px;
         }
+        
+        /* Styling for multiple conversations per hour */
+        .conversation-container {
+            position: relative;
+        }
+        
+        .conversation-time {
+            margin-bottom: 10px;
+            color: #666;
+        }
+        
+        .conversation-container + .conversation-container {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed #ddd;
+        }
     </style>
     {% block head %}{% endblock %}
 </head>

@@ -543,7 +543,7 @@
                 ${item.atmosphere && item.atmosphere.trim() ? `
                 <div class="conversation-section mb-3">
                     <h4>Atmosphere</h4>
-                    <div class="atmosphere-text"><p>${item.atmosphere}</p></div>
+                    <div class="atmosphere-text">${formatMarkdown(item.atmosphere)}</div>
                 </div>` : ''}
                 
                 ${item.key_takeaways && item.key_takeaways.trim() ? `

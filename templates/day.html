@@ -355,13 +355,15 @@
                     <div class="atmosphere-text">${formatMarkdown(item.atmosphere)}</div>
                 </div>` : ''}
                 
-                ${item.key_takeaways && ((typeof item.key_takeaways === 'string' && item.key_takeaways.trim().length > 0) || (Array.isArray(item.key_takeaways) && item.key_takeaways.length > 0)) ? `
+                ${item.key_takeaways ? `
                 <div class="conversation-section mb-3">
                     <h4>Key Takeaways</h4>
                     <div class="key-takeaways-text">
                         ${Array.isArray(item.key_takeaways) 
-                            ? '<ul>' + item.key_takeaways.map(point => `<li>${point}</li>`).join('') + '</ul>'
-                            : formatMarkdown(item.key_takeaways)
+                            ? '<ul>' + item.key_takeaways.map(point => `<li>${point}</li>`).join('') + '</ul>' 
+                            : typeof item.key_takeaways === 'string' && item.key_takeaways.trim().length > 0
+                                ? formatMarkdown(item.key_takeaways)
+                                : '<p>No key takeaways available</p>'
                         }
                     </div>
                 </div>` : ''}

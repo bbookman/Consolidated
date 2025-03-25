@@ -130,14 +130,27 @@ def journal_data():
             atmosphere = conv.atmosphere or ""
             
             # Handle key_takeaways as JSON or convert to string as needed
-            key_takeaways = ""
+            key_takeaways = None
             if conv.key_takeaways:
                 if isinstance(conv.key_takeaways, list):
                     # It's already a JSON list, we'll handle the formatting in the frontend
                     key_takeaways = conv.key_takeaways
                 elif isinstance(conv.key_takeaways, str):
-                    # Legacy format, convert lines to a list
-                    key_takeaways = [line.strip() for line in conv.key_takeaways.split('\n') if line.strip()]
+                    try:
+                        # Try to parse as JSON string first
+                        import json
+                        parsed = json.loads(conv.key_takeaways)
+                        if isinstance(parsed, list):
+                            key_takeaways = parsed
+                        else:
+                            # If it's JSON but not a list, convert to string
+                            key_takeaways = str(parsed)
+                    except json.JSONDecodeError:
+                        # Not valid JSON, treat as regular string or convert lines to a list
+                        if '\n' in conv.key_takeaways:
+                            key_takeaways = [line.strip() for line in conv.key_takeaways.split('\n') if line.strip()]
+                        else:
+                            key_takeaways = conv.key_takeaways
             
             days_data[day_key]['conversations'].append({
                 'id': conv.id,

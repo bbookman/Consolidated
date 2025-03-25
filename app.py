@@ -454,13 +454,15 @@ async def fetch_weather_for_location(latitude, longitude, units="metric"):
 async def fetch_billboard_chart(chart_name="hot-100", date=None, force_update=False):
     """
     Fetch Billboard chart data and store it in the database.
-    Only fetches new data if it's been a week or more since the last update,
-    unless force_update is set to True.
+    Only fetches new data if one of these conditions is met:
+    1. No data exists in the database
+    2. Data exists but is older than 7 days (and force_update is not set to False)
+    3. force_update is explicitly set to True
     
     Args:
         chart_name: Name of the chart to retrieve (hot-100, billboard-200, etc.)
         date: Optional date string in format YYYY-MM-DD for historical chart
-        force_update: If True, force fetch new data regardless of age
+        force_update: If True, force fetch new data; if False, never update even if data is old
         
     Returns:
         Chart data dictionary if successful, None otherwise
@@ -473,14 +475,38 @@ async def fetch_billboard_chart(chart_name="hot-100", date=None, force_update=Fa
         # If a specific date is requested, fetch that date directly
         if date:
             logger.info(f"Specific date requested: {date}, fetching that chart")
-            return await fetch_specific_chart(chart_name, date)
+            # First check if we already have data for this date
+            chart_items = db.get_billboard_chart_items_from_db(chart_name=chart_name, chart_date=date)
+            if chart_items and not force_update:
+                logger.info(f"Using existing chart data for {chart_name} from {date}")
+                # Convert DB objects to dictionary for return
+                entries = []
+                for item in chart_items:
+                    entry_data = json.loads(item.raw_data)
+                    entries.append(entry_data)
+                    
+                return {
+                    "chart": {
+                        "name": chart_name,
+                        "date": date,
+                        "entries": entries
+                    },
+                    "timestamp": datetime.utcnow().isoformat()
+                }
+            else:
+                # If we don't have data for this date or force_update is True, fetch it
+                return await fetch_specific_chart(chart_name, date)
         
         # Check if we already have the chart data and if it needs updating
         should_update, latest_chart_date = db.should_update_billboard_chart(chart_name)
         
-        if latest_chart_date and not should_update and not force_update:
-            # If we already have recent data (less than a week old), use the saved data
-            logger.info(f"Using existing chart data for {chart_name} from {latest_chart_date} (less than 7 days old)")
+        # If force_update is explicitly False, never update regardless of age
+        if force_update is False:
+            should_update = False
+        
+        if latest_chart_date and not should_update and force_update is not True:
+            # If we already have data and shouldn't update, use the saved data
+            logger.info(f"Using existing chart data for {chart_name} from {latest_chart_date}")
             chart_items = db.get_billboard_chart_items_from_db(chart_name=chart_name, chart_date=latest_chart_date)
             if chart_items:
                 # Convert DB objects to dictionary for return
@@ -499,8 +525,8 @@ async def fetch_billboard_chart(chart_name="hot-100", date=None, force_update=Fa
                 }
         
         # If we need to update (more than a week old or no data) or force_update is True
-        if should_update or force_update:
-            if force_update:
+        if should_update or force_update is True:
+            if force_update is True:
                 logger.info(f"Force update requested for {chart_name} chart")
             else:
                 if latest_chart_date:
@@ -903,11 +929,49 @@ async def run_cli_async():
             print("\nProcessing Billboard chart data...")
             try:
                 # Fetch Hot 100 chart
-                print("Fetching Billboard Hot 100 chart...")
-                # Use force_update=True to test the forced update functionality
-                # hot100_chart = await fetch_billboard_chart("hot-100", force_update=True)
-                # Use normal mode - respects the 7-day update frequency
-                hot100_chart = await fetch_billboard_chart("hot-100")
+                print("Checking for Billboard Hot 100 chart data...")
+                
+                # Check if we already have weather, netflix, bee, or lifelog data for recent days
+                has_existing_data = False
+                has_weather_data = False
+                
+                # If we have weather data for these locations, we don't need to fetch new billboard data
+                db_weather_data = db.get_weather_data_from_db()
+                if db_weather_data and len(db_weather_data) > 0:
+                    print(f"Found {len(db_weather_data)} weather data records, using existing billboard data if available")
+                    has_existing_data = True
+                    has_weather_data = True
+                
+                # Check for conversations
+                db_conversations = db.get_conversations_from_db()
+                if db_conversations and len(db_conversations) > 0:
+                    print(f"Found {len(db_conversations)} conversation records, using existing billboard data if available")
+                    has_existing_data = True
+                
+                # Check for lifelogs
+                db_lifelogs = db.get_lifelogs_from_db()
+                if db_lifelogs and len(db_lifelogs) > 0:
+                    print(f"Found {len(db_lifelogs)} lifelog records, using existing billboard data if available")
+                    has_existing_data = True
+                
+                # Check for Netflix history
+                db_netflix = db.get_netflix_history_from_db()
+                if db_netflix and len(db_netflix) > 0:
+                    print(f"Found {len(db_netflix)} Netflix history records, using existing billboard data if available")
+                    has_existing_data = True
+                
+                # Use force_update=False to prefer existing data if we have other data types
+                if has_existing_data:
+                    if has_weather_data:
+                        print("Weather data exists, skipping Billboard API call if data exists")
+                        hot100_chart = await fetch_billboard_chart("hot-100", force_update=False)
+                    else:
+                        print("Other data types exist, using existing Billboard data if available")
+                        hot100_chart = await fetch_billboard_chart("hot-100", force_update=False)
+                else:
+                    # No data exists, use normal mode which will check based on date
+                    print("No existing data found, checking if Billboard data needs updating")
+                    hot100_chart = await fetch_billboard_chart("hot-100")
                 
                 if hot100_chart and hot100_chart.get("chart"):
                     chart_date = hot100_chart.get("chart", {}).get("date", "Unknown")

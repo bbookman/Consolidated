@@ -517,8 +517,8 @@
             formattedSummary = formattedSummary.replace(/(<li>.*?<\/li>)+/gs, '<ul>$&</ul>');
         }
         
-        // Replace any remaining italic markdown (after bullet points are processed)
-        formattedSummary = formattedSummary.replace(/(?<!\*)\*([^\*]+)\*(?!\*)/g, '<em>$1</em>');
+        // Remove any remaining single asterisks (don't convert to italic)
+        formattedSummary = formattedSummary.replace(/(?<!\*)\*([^\*]+)\*(?!\*)/g, '$1');
         
         // Add paragraph breaks
         formattedSummary = formattedSummary.replace(/\n\n/g, '</p><p>');

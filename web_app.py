@@ -104,9 +104,18 @@ def journal_data():
         
         # Load related subsummaries for each lifelog
         for log in lifelogs:
-            log.subsummaries = session.query(models.Limitless_Lifelog_SubSummary).filter(
+            # Get subsummaries with their transcript lines
+            subsummaries = session.query(models.Limitless_Lifelog_SubSummary).filter(
                 models.Limitless_Lifelog_SubSummary.lifelog_id == log.log_id
             ).order_by(models.Limitless_Lifelog_SubSummary.position).all()
+            
+            # For each subsummary, load related transcript lines
+            for subsummary in subsummaries:
+                subsummary.transcript_lines = session.query(models.Limitless_Transcript_Line).filter(
+                    models.Limitless_Transcript_Line.subsummary_id == subsummary.id
+                ).order_by(models.Limitless_Transcript_Line.position).all()
+            
+            log.subsummaries = subsummaries
         
         # Get Netflix viewing history
         netflix_history = session.query(models.Netflix_History_Item).filter(
@@ -199,14 +208,34 @@ def journal_data():
                     'netflix': []
                 }
             
-            # Get subsummaries for this lifelog if available
+            # Get subsummaries with transcript lines for this lifelog if available
             subsummaries = []
             if hasattr(log, 'subsummaries') and log.subsummaries:
+                # Process each subsummary and its transcript lines
+                for sub in log.subsummaries:
+                    # Format transcript lines for this subsummary
+                    transcript_lines = []
+                    if hasattr(sub, 'transcript_lines') and sub.transcript_lines:
+                        transcript_lines = [
+                            {
+                                'speaker': line.speaker,
+                                'text': line.text,
+                                'start_time': line.start_time,
+                                'end_time': line.end_time,
+                                'position': line.position
+                            }
+                            for line in sub.transcript_lines
+                        ]
+                    
+                    # Add subsummary with its transcript lines
+                    subsummaries.append({
+                        'position': sub.position,
+                        'content': sub.content,
+                        'transcript_lines': transcript_lines
+                    })
+                
                 # Sort by position to ensure correct order
-                subsummaries = sorted(
-                    [{'position': sub.position, 'content': sub.content} for sub in log.subsummaries],
-                    key=lambda x: x['position']
-                )
+                subsummaries = sorted(subsummaries, key=lambda x: x['position'])
             
             days_data[day_key]['lifelogs'].append({
                 'id': log.id,

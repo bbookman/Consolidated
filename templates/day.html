@@ -316,8 +316,18 @@
                         <div class="lifelog-subsummaries mb-3">
                             <div class="subsummaries-container">
                                 ${item.subsummaries.map((sub) => `
-                                    <div class="subsummary-item mb-2">
+                                    <div class="subsummary-item mb-3">
                                         <h6>${sub.content}</h6>
+                                        ${sub.transcript_lines && sub.transcript_lines.length > 0 ? `
+                                            <div class="transcript-container mt-2">
+                                                ${sub.transcript_lines.map((line) => `
+                                                    <div class="transcript-line">
+                                                        ${line.speaker ? `<strong class="transcript-speaker">${line.speaker}:</strong> ` : ''}
+                                                        <span class="transcript-text">${line.text}</span>
+                                                    </div>
+                                                `).join('')}
+                                            </div>
+                                        ` : ''}
                                     </div>
                                 `).join('')}
                             </div>

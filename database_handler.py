@@ -66,7 +66,8 @@ def store_conversations(conversations):
                 conversation_id=conv_id,
                 summary=conv.get('Summary'),  # Use the extracted summary without heading
                 atmosphere=conv.get('Atmosphere'),  # Store the atmosphere content separately
-                created_at=parse_date(conv.get('created_at')),
+                key_takeaways=conv.get('Key Takeaways'),  # Store key takeaways if they exist
+                created_at=parse_date(conv.get('Created At')),
                 address=address,
                 latitude=latitude,
                 longitude=longitude,

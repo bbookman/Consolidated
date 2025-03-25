@@ -85,12 +85,13 @@ def initialize_apis():
 
 def format_conversation(conv):
     """Format a conversation object from the Bee API for display/storage"""
-    # Extract summary and atmosphere sections from the summary text
+    # Extract summary, atmosphere, and key takeaways sections from the summary text
     full_text = conv.get("summary", "")
     
-    # Initialize summary and atmosphere
+    # Initialize summary, atmosphere, and key takeaways
     summary_text = ""
     atmosphere_text = ""
+    key_takeaways_text = ""
     
     # Handle None summary value
     if full_text is None:
@@ -104,6 +105,22 @@ def format_conversation(conv):
             r'### Atmosphere:',
             r'\*\*Atmosphere\*\*:?',
             r'Atmosphere:'
+        ]
+        
+        # Define patterns for Key Takeaways
+        key_takeaways_patterns = [
+            r'## Key Take[aA]ways\s*\n',
+            r'### Key Take[aA]ways\s*\n',
+            r'## Key Take[aA]ways:',
+            r'### Key Take[aA]ways:',
+            r'\*\*Key Take[aA]ways\*\*:?',
+            r'Key Take[aA]ways:',
+            r'## Key Takeaways\s*\n',
+            r'### Key Takeaways\s*\n',
+            r'## Key Takeaways:',
+            r'### Key Takeaways:',
+            r'\*\*Key Takeaways\*\*:?',
+            r'Key Takeaways:'
         ]
         
         # First, extract Summary section
@@ -127,15 +144,15 @@ def format_conversation(conv):
         # Extract text after summary header
         if summary_match:
             start_idx = summary_match.end()
-            # Find where atmosphere section starts (if it exists)
-            atmosphere_start_idx = len(full_text)
-            for pattern in atmosphere_patterns:
+            # Find where next section starts (if it exists)
+            next_section_start = len(full_text)
+            for pattern in atmosphere_patterns + key_takeaways_patterns:
                 match = re.search(pattern, full_text)
                 if match and match.start() > start_idx:
-                    atmosphere_start_idx = min(atmosphere_start_idx, match.start())
+                    next_section_start = min(next_section_start, match.start())
             
             # Extract summary text
-            summary_text = full_text[start_idx:atmosphere_start_idx].strip()
+            summary_text = full_text[start_idx:next_section_start].strip()
         else:
             # No summary header found, use the whole text
             summary_text = full_text.strip()
@@ -153,14 +170,35 @@ def format_conversation(conv):
             start_idx = atmosphere_match.end()
             # Find where next section starts (if any)
             next_section_start = len(full_text)
-            next_section_patterns = [r'## ', r'### ']
-            for pattern in next_section_patterns:
+            for pattern in key_takeaways_patterns + [r'## ', r'### ']:
                 match = re.search(pattern, full_text[start_idx:])
                 if match:
                     next_section_start = min(next_section_start, start_idx + match.start())
             
             # Extract atmosphere text
             atmosphere_text = full_text[start_idx:next_section_start].strip()
+            
+        # Try to extract Key Takeaways section
+        key_takeaways_match = None
+        for pattern in key_takeaways_patterns:
+            match = re.search(pattern, full_text)
+            if match:
+                key_takeaways_match = match
+                break
+                
+        # Extract text after key takeaways header
+        if key_takeaways_match:
+            start_idx = key_takeaways_match.end()
+            # Find where next section starts (if any)
+            next_section_start = len(full_text)
+            next_section_patterns = [r'## ', r'### ']
+            for pattern in next_section_patterns:
+                match = re.search(pattern, full_text[start_idx:])
+                if match:
+                    next_section_start = min(next_section_start, start_idx + match.start())
+            
+            # Extract key takeaways text
+            key_takeaways_text = full_text[start_idx:next_section_start].strip()
     
     # Get address from primary_location if it exists
     address = "No address"

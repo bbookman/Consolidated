@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, func
 from sqlalchemy.orm import sessionmaker
 from models import Base, Bee_Conversation, Bee_Fact, Bee_Todo, Limitless_Lifelog, Weather_Data, Billboard_Chart_Item, Netflix_History_Item, Netflix_Title_Info
 import os

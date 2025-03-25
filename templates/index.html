@@ -92,7 +92,7 @@
                         eventContent: function(arg) {
                             if (arg.event.title) {
                                 return {
-                                    html: `<div class="emoji-container">${arg.event.title}</div>`
+                                    html: `<div style="position: absolute; bottom: 2px; right: 2px; font-size: 12px;">${arg.event.title}</div>`
                                 };
                             }
                             return arg.event.title;

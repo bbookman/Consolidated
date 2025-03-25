@@ -115,6 +115,24 @@
                         events: allEvents,
                         dateClick: function(info) {
                             window.location.href = `/day/${info.dateStr}`;
+                        },
+                        dayCellDidMount: function(info) {
+                            // Add emoji indicators to the day cell
+                            const dateStr = info.date.toISOString().split('T')[0];
+                            const eventData = emojiEvents.find(e => e.start === dateStr);
+                            
+                            if (eventData && eventData.title) {
+                                // Find the day number element
+                                const dayNumberEl = info.el.querySelector('.fc-daygrid-day-top');
+                                
+                                if (dayNumberEl) {
+                                    // Add the emoji indicators next to the day number
+                                    const emojiSpan = document.createElement('span');
+                                    emojiSpan.className = 'day-emoji-indicators';
+                                    emojiSpan.textContent = ' ' + eventData.title;
+                                    dayNumberEl.appendChild(emojiSpan);
+                                }
+                            }
                         }
                     });
                     

@@ -397,8 +397,8 @@
             formatted = formatted.replace(/(<li>.*?<\/li>)+/gs, '<ul>$&</ul>');
         }
         
-        // Replace any remaining italic markdown (after bullet points are processed)
-        formatted = formatted.replace(/(?<!\*)\*([^\*]+)\*(?!\*)/g, '<em>$1</em>');
+        // Remove any remaining single asterisks (don't convert to italic)
+        formatted = formatted.replace(/(?<!\*)\*([^\*]+)\*(?!\*)/g, '$1');
         
         // Add paragraph breaks
         formatted = formatted.replace(/\n\n/g, '</p><p>');

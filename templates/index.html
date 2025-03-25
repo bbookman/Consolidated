@@ -60,22 +60,12 @@
                 if (data.status === 'success') {
                     // Process data for calendar
                     const events = data.date_counts.map(item => {
-                        // Create events with emojis in the bottom right
-                        let emojis = '';
-                        
-                        if (item.netflix > 0) {
-                            emojis += '🍿';
-                        }
-                        if (item.lifelogs > 0) {
-                            emojis += '∞';
-                        }
-                        if (item.conversations > 0) {
-                            emojis += '🐝';
-                        }
-                        
+                        // Only create events for days with data
                         return {
-                            title: emojis,
+                            title: '', // No title
                             start: item.date,
+                            backgroundColor: item.total > 0 ? '#e8f7ff' : 'transparent', // Light blue background for days with data
+                            display: 'background',
                             extendedProps: {
                                 conversations: item.conversations,
                                 lifelogs: item.lifelogs,
@@ -89,20 +79,6 @@
                     const calendar = new FullCalendar.Calendar(calendarEl, {
                         initialView: 'dayGridMonth',
                         events: events,
-                        eventDidMount: function(info) {
-                            // If event has a title (emojis), position them at the bottom right
-                            if (info.event.title) {
-                                const customEl = document.createElement('div');
-                                customEl.innerHTML = info.event.title;
-                                customEl.style.position = 'absolute';
-                                customEl.style.bottom = '2px';
-                                customEl.style.right = '2px';
-                                customEl.style.fontSize = '12px';
-                                
-                                // Add to the cell
-                                info.el.appendChild(customEl);
-                            }
-                        },
                         dateClick: function(info) {
                             window.location.href = `/day/${info.dateStr}`;
                         }

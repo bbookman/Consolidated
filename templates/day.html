@@ -420,6 +420,14 @@
         // 2. Convert bold "Summary" without colon to proper heading
         formattedSummary = formattedSummary.replace(/^\*\*Summary\*\*\s*$/gim, '# Summary');
         
+        // Handle "Atmosphere" text consistently across all entries
+        // 1. Convert "Atmosphere:" or "Atmosphere :" to proper heading
+        formattedSummary = formattedSummary.replace(/^\s*(Atmosphere):?\s*$/gim, '# Atmosphere');
+        formattedSummary = formattedSummary.replace(/^\*\*Atmosphere:?\*\*\s*$/gim, '# Atmosphere');
+
+        // 2. Convert bold "Atmosphere" without colon to proper heading
+        formattedSummary = formattedSummary.replace(/^\*\*Atmosphere\*\*\s*$/gim, '# Atmosphere');
+        
         // Replace markdown headers with HTML headers
         formattedSummary = formattedSummary.replace(/## (.*?)(?:\n|$)/g, '<h4>$1</h4>');
         formattedSummary = formattedSummary.replace(/# (.*?)(?:\n|$)/g, '<h3>$1</h3>');

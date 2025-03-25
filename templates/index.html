@@ -87,14 +87,14 @@
                                 
                                 html += '<div style="position: absolute; bottom: 5px; right: 5px;">';
                                 if (arg.event.extendedProps.conversations > 0) {
-                                    html += `<span class="day-marker marker-conversations" title="${arg.event.extendedProps.conversations} conversations"></span>`;
+                                    html += `<span class="day-marker marker-conversations" title="${arg.event.extendedProps.conversations} conversations">🐝</span>`;
                                 }
                                 // Facts removed as requested
                                 if (arg.event.extendedProps.lifelogs > 0) {
-                                    html += `<span class="day-marker marker-lifelogs" title="${arg.event.extendedProps.lifelogs} lifelogs"></span>`;
+                                    html += `<span class="day-marker marker-lifelogs" title="${arg.event.extendedProps.lifelogs} lifelogs">∞</span>`;
                                 }
                                 if (arg.event.extendedProps.netflix > 0) {
-                                    html += `<span class="day-marker marker-netflix" title="${arg.event.extendedProps.netflix} netflix"></span>`;
+                                    html += `<span class="day-marker marker-netflix" title="${arg.event.extendedProps.netflix} netflix">🍿</span>`;
                                 }
                                 html += '</div>';
                             }

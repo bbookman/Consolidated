@@ -854,51 +854,76 @@ async def run_cli_async():
         if openweather:
             print("\nProcessing weather data...")
             try:
-                # Get conversations with coordinates from database
-                conversations_with_coords = db.get_conversations_with_coordinates()
-                
-                # Initialize variables for weather data
-                weather_data_list = []
-                db_weather_results = {"processed": 0, "added": 0, "skipped": 0}
-                
-                if conversations_with_coords:
-                    print(f"Found {len(conversations_with_coords)} locations with coordinates")
+                # Step 1: Get all unique dates that have Bee, Netflix, or Limitless data
+                data_dates = db.get_dates_with_data()
+                if data_dates:
+                    print(f"Found {len(data_dates)} unique dates with data")
                     
-                    # Process the first 5 locations to avoid API rate limits
-                    for i, conv in enumerate(conversations_with_coords[:5]):
-                        print(f"Processing location {i+1}/{min(5, len(conversations_with_coords))}: ({conv.latitude}, {conv.longitude})")
-                        
-                        # Fetch weather data for this location
-                        weather_data = await fetch_weather_for_location(conv.latitude, conv.longitude)
-                        if weather_data:
-                            weather_data_list.append(weather_data)
-                            db_weather_results["processed"] += 1
-                            if "added" in db_weather_results:
-                                db_weather_results["added"] += 1
-                else:
-                    print("No locations with coordinates found in Bee conversations")
+                    # Step 2: Check which dates need weather data (don't have it already)
+                    dates_needing_weather = []
+                    for date_str in data_dates:
+                        if not db.check_weather_data_exists_for_date(date_str):
+                            dates_needing_weather.append(date_str)
                     
-                    # Get default location from config file
-                    default_location = config_loader.get_default_location()
-                    if default_location:
-                        lat, lon, name = default_location
-                        print(f"Using default location from config: {name} ({lat}, {lon})")
+                    if dates_needing_weather:
+                        print(f"Found {len(dates_needing_weather)} dates that need weather data: {', '.join(dates_needing_weather[:5])}{' and more...' if len(dates_needing_weather) > 5 else ''}")
                         
-                        # Fetch weather data for default location
-                        weather_config = config_loader.get_weather_config()
-                        units = weather_config.get("units", "metric")
+                        # Get locations with coordinates from Bee conversations
+                        conversations_with_coords = db.get_conversations_with_coordinates()
+                                
+                        # Initialize variables for weather data
+                        weather_data_list = []
+                        db_weather_results = {"processed": 0, "added": 0, "skipped": 0}
                         
-                        weather_data = await fetch_weather_for_location(lat, lon, units=units)
-                        if weather_data:
-                            weather_data_list.append(weather_data)
-                            db_weather_results["processed"] += 1
-                            if "added" in db_weather_results:
-                                db_weather_results["added"] += 1
-                            print(f"Successfully retrieved weather data for default location: {name}")
+                        if conversations_with_coords:
+                            print(f"Found {len(conversations_with_coords)} locations with coordinates")
+                            
+                            # Process the first 5 locations to avoid API rate limits
+                            for i, conv in enumerate(conversations_with_coords[:5]):
+                                print(f"Processing location {i+1}/{min(5, len(conversations_with_coords))}: ({conv.latitude}, {conv.longitude})")
+                                
+                                # Fetch new weather data for this location
+                                print(f"Fetching new weather data for location ({conv.latitude}, {conv.longitude})")
+                                weather_data = await fetch_weather_for_location(conv.latitude, conv.longitude)
+                                if weather_data:
+                                    weather_data_list.append(weather_data)
+                                    db_weather_results["processed"] += 1
+                                    db_weather_results["added"] += 1
                         else:
-                            print(f"Failed to retrieve weather data for default location: {name}")
+                            print("No locations with coordinates found in Bee conversations")
+                            
+                            # Get default location from config file
+                            default_location = config_loader.get_default_location()
+                            if default_location:
+                                lat, lon, name = default_location
+                                print(f"Using default location from config: {name} ({lat}, {lon})")
+                                
+                                # Fetch weather data for default location
+                                weather_config = config_loader.get_weather_config()
+                                units = weather_config.get("units", "metric")
+                                
+                                print(f"Fetching new weather data for default location: {name}")
+                                weather_data = await fetch_weather_for_location(lat, lon, units=units)
+                                if weather_data:
+                                    weather_data_list.append(weather_data)
+                                    db_weather_results["processed"] += 1
+                                    db_weather_results["added"] += 1
+                                    print(f"Successfully retrieved weather data for default location: {name}")
+                                else:
+                                    print(f"Failed to retrieve weather data for default location: {name}")
+                            else:
+                                print("No default location configured in config.yml, skipping weather data processing")
                     else:
-                        print("No default location configured in config.yml, skipping weather data processing")
+                        print("All dates already have weather data, skipping weather API calls")
+                        
+                        # Still retrieve existing weather data for JSON export if debug mode is enabled
+                        if app_debug_mode:
+                            print("Debug mode enabled - retrieving existing weather data for JSON export")
+                            existing_weather = db.get_weather_data_from_db()
+                            weather_data_list = [json.loads(w.raw_data) for w in existing_weather[:5]]  # Limit to 5 for performance
+                            db_weather_results = {"processed": len(weather_data_list), "added": 0, "skipped": 0}
+                else:
+                    print("No dates with data found, skipping weather data processing")
                 
                 # Save weather data to file if we have any
                 if weather_data_list:

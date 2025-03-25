@@ -27,7 +27,8 @@ def convert_key_takeaways_to_json():
     This function:
     1. Retrieves all bee_conversations with key_takeaways data
     2. Splits the text content by line breaks into a list
-    3. Converts the list to JSON and updates the record
+    3. Updates the database to use JSON format
+    4. Updates each record with JSON array data
     """
     try:
         # Get database URL from environment variables
@@ -41,23 +42,41 @@ def convert_key_takeaways_to_json():
         Session = sessionmaker(bind=engine)
         session = Session()
         
-        # First modify the column to accept JSON
-        logger.info("Modifying key_takeaways column to JSONB type...")
-        session.execute(text("ALTER TABLE bee_conversations ALTER COLUMN key_takeaways TYPE JSONB USING COALESCE(key_takeaways::JSONB, 'null'::JSONB)"))
-        session.commit()
-        
-        # Get all conversations with key_takeaways
+        # Get all conversations with key_takeaways before changing column type
         logger.info("Retrieving conversations with key_takeaways data...")
         conversations = session.query(Bee_Conversation).filter(Bee_Conversation.key_takeaways.isnot(None)).all()
         
-        count = 0
+        # Store the text data temporarily
+        logger.info(f"Found {len(conversations)} conversations with key_takeaways")
+        temp_data = {}
         for conv in conversations:
             if isinstance(conv.key_takeaways, str) and conv.key_takeaways.strip():
                 # Split by line breaks and filter out empty lines
                 takeaways_list = [line.strip() for line in conv.key_takeaways.split('\n') if line.strip()]
-                
-                # Update with the JSON array
-                conv.key_takeaways = takeaways_list
+                temp_data[conv.id] = takeaways_list
+        
+        # Now modify the column to JSON/JSONB type by first setting to NULL
+        logger.info(f"Temporarily setting key_takeaways to NULL for {len(temp_data)} records...")
+        session.execute(text("UPDATE bee_conversations SET key_takeaways = NULL WHERE key_takeaways IS NOT NULL"))
+        session.commit()
+        
+        # Change column type to JSONB
+        logger.info("Altering key_takeaways column to JSONB type...")
+        session.execute(text("ALTER TABLE bee_conversations ALTER COLUMN key_takeaways TYPE JSONB USING NULL"))
+        session.commit()
+        
+        # Now update each record with its JSON data
+        logger.info(f"Updating {len(temp_data)} records with JSON array data...")
+        count = 0
+        for conv_id, takeaways_list in temp_data.items():
+            if takeaways_list:
+                # Convert Python list to JSON string
+                json_data = json.dumps(takeaways_list)
+                # Update the record using a different approach with parameter binding
+                session.execute(
+                    text("UPDATE bee_conversations SET key_takeaways = cast(:json_data AS jsonb) WHERE id = :conv_id"),
+                    {"json_data": json_data, "conv_id": conv_id}
+                )
                 count += 1
         
         # Commit changes

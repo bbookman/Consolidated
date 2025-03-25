@@ -128,7 +128,16 @@ def journal_data():
             # Extract summary, atmosphere, and key takeaways
             summary = conv.summary or ""
             atmosphere = conv.atmosphere or ""
-            key_takeaways = conv.key_takeaways or ""
+            
+            # Handle key_takeaways as JSON or convert to string as needed
+            key_takeaways = ""
+            if conv.key_takeaways:
+                if isinstance(conv.key_takeaways, list):
+                    # It's already a JSON list, we'll handle the formatting in the frontend
+                    key_takeaways = conv.key_takeaways
+                elif isinstance(conv.key_takeaways, str):
+                    # Legacy format, convert lines to a list
+                    key_takeaways = [line.strip() for line in conv.key_takeaways.split('\n') if line.strip()]
             
             days_data[day_key]['conversations'].append({
                 'id': conv.id,

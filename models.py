@@ -73,8 +73,28 @@ class Limitless_Lifelog(Base):
     tags = Column(Text, nullable=True)  # Store tags as JSON string
     raw_data = Column(Text)  # Store the raw JSON for reference
     
+    # Relationship to sub-summaries
+    subsummaries = relationship("Limitless_Lifelog_SubSummary", back_populates="lifelog", cascade="all, delete-orphan")
+    
     def __repr__(self):
         return f"<Limitless_Lifelog(id={self.id}, title={self.title[:30] if self.title else 'None'}..., created_at={self.created_at})>"
+        
+class Limitless_Lifelog_SubSummary(Base):
+    __tablename__ = 'limitless_lifelog_subsummaries'
+    
+    id = Column(Integer, primary_key=True)
+    lifelog_id = Column(String, ForeignKey('limitless_lifelogs.log_id'))  # Reference to parent lifelog
+    content = Column(Text, nullable=False)  # The heading2 content
+    position = Column(Integer, nullable=True)  # Position in the sequence of subsummaries
+    created_at = Column(DateTime, default=datetime.utcnow)
+    
+    # Relationship to parent lifelog
+    lifelog = relationship("Limitless_Lifelog", foreign_keys=[lifelog_id], back_populates="subsummaries")
+    
+    __table_args__ = (UniqueConstraint('lifelog_id', 'position', name='uq_lifelog_subsummary_position'),)
+    
+    def __repr__(self):
+        return f"<Limitless_Lifelog_SubSummary(id={self.id}, lifelog_id='{self.lifelog_id}', content='{self.content[:30]}...')>"
 
 class Weather_Data(Base):
     __tablename__ = 'weather_data'

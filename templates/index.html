@@ -76,12 +76,21 @@
                         };
                     });
                     
-                    // Create bee emoji events for days with conversations
-                    const beeEvents = data.date_counts
-                        .filter(item => item.conversations > 0)
+                    // Create emoji events for days with data
+                    const emojiEvents = data.date_counts
+                        .filter(item => item.conversations > 0 || item.netflix > 0) // Filter days with bee or netflix
                         .map(item => {
+                            // Create combined emoji string based on data types
+                            let emojiString = '';
+                            if (item.conversations > 0) {
+                                emojiString += '🐝';
+                            }
+                            if (item.netflix > 0) {
+                                emojiString += '🍿';
+                            }
+                            
                             return {
-                                title: '🐝', // Bee emoji for conversation data
+                                title: emojiString, // Combined emoji string
                                 start: item.date,
                                 allDay: true,
                                 classNames: ['bee-indicator'],
@@ -89,13 +98,13 @@
                                 borderColor: 'transparent',
                                 display: 'block',
                                 extendedProps: {
-                                    type: 'bee'
+                                    type: 'emoji-indicator'
                                 }
                             };
                         });
                     
                     // Combine all events
-                    const allEvents = [...backgroundEvents, ...beeEvents];
+                    const allEvents = [...backgroundEvents, ...emojiEvents];
                     
                     // Initialize calendar
                     const calendar = new FullCalendar.Calendar(calendarEl, {

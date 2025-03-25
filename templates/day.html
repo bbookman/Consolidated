@@ -546,7 +546,7 @@
                     <div class="atmosphere-text">${formatMarkdown(item.atmosphere)}</div>
                 </div>` : ''}
                 
-                ${item.key_takeaways && (typeof item.key_takeaways === 'string' ? item.key_takeaways.trim() : item.key_takeaways.length > 0) ? `
+                ${item.key_takeaways && ((typeof item.key_takeaways === 'string' && item.key_takeaways.trim().length > 0) || (Array.isArray(item.key_takeaways) && item.key_takeaways.length > 0)) ? `
                 <div class="conversation-section mb-3">
                     <h4>Key Takeaways</h4>
                     <div class="key-takeaways-text">

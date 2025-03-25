@@ -314,11 +314,10 @@
                     
                     ${item.subsummaries && item.subsummaries.length > 0 ? `
                         <div class="lifelog-subsummaries mb-3">
-                            <h5 class="subsummaries-heading">Discussion Topics</h5>
                             <div class="subsummaries-container">
-                                ${item.subsummaries.map((sub, index) => `
+                                ${item.subsummaries.map((sub) => `
                                     <div class="subsummary-item mb-2">
-                                        <strong>${index + 1}. ${sub.content}</strong>
+                                        <h6>${sub.content}</h6>
                                     </div>
                                 `).join('')}
                             </div>

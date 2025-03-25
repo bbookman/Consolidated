@@ -36,28 +36,41 @@ def clean_markdown(text):
     if not isinstance(text, str):
         return text
         
-    # Remove section headings that should be in separate fields
-    text = re.sub(r'(?i)Atmosphere:.*?(\n\n|$)', '', text, flags=re.DOTALL)
-    text = re.sub(r'(?i)Key Take ?Aways:.*?(\n\n|$)', '', text, flags=re.DOTALL)
-    text = re.sub(r'(?i)Key Takeaways:.*?(\n\n|$)', '', text, flags=re.DOTALL)
+    # Remove any duplicate "Summary:" or "Atmosphere:" headings that might exist within the text
+    text = re.sub(r'(?i)^Summary:.*?(\n\n|$)', '', text, flags=re.MULTILINE | re.DOTALL)
+    text = re.sub(r'(?i)Atmosphere:.*?(\n\n|$)', '', text, flags=re.MULTILINE | re.DOTALL)
+    text = re.sub(r'(?i)Key Take ?Aways:.*?(\n\n|$)', '', text, flags=re.MULTILINE | re.DOTALL)
+    text = re.sub(r'(?i)Key Takeaways:.*?(\n\n|$)', '', text, flags=re.MULTILINE | re.DOTALL)
+    
+    # Remove section heading variations more thoroughly
+    text = re.sub(r'(?i)^#+\s*Summary:?.*?\n', '', text, flags=re.MULTILINE)
+    text = re.sub(r'(?i)^#+\s*Atmosphere:?.*?\n', '', text, flags=re.MULTILINE)
+    text = re.sub(r'(?i)^#+\s*Key Take ?Aways:?.*?\n', '', text, flags=re.MULTILINE)
+    text = re.sub(r'(?i)^#+\s*Key Takeaways:?.*?\n', '', text, flags=re.MULTILINE)
     
     # Remove Markdown headers (e.g., ## Header)
     text = re.sub(r'^#+\s+', '', text, flags=re.MULTILINE)
     
+    # Enhanced Markdown cleanup - Run multiple times to catch nested formatting
     # Remove bold formatting (e.g., **bold**)
-    text = re.sub(r'\*\*(.*?)\*\*', r'\1', text)
+    for _ in range(3):  # Run multiple passes to catch nested formatting
+        text = re.sub(r'\*\*(.*?)\*\*', r'\1', text)
     
     # Remove italic formatting (e.g., *italic*)
-    text = re.sub(r'(?<!\*)\*([^\*]+)\*(?!\*)', r'\1', text)
+    for _ in range(3):
+        text = re.sub(r'\*([^\*\n]+)\*', r'\1', text)
     
-    # Remove bullet points
+    # Remove remaining single asterisks that might be part of incomplete formatting
+    text = re.sub(r'(?<!\*)\*(?!\*)', '', text)
+    
+    # Remove bullet points with different symbols and spacing patterns
     text = re.sub(r'^\s*[\*\-•]\s+', '', text, flags=re.MULTILINE)
     
     # Remove Markdown links [text](url) -> text
     text = re.sub(r'\[(.*?)\]\(.*?\)', r'\1', text)
     
-    # Remove code blocks
-    text = re.sub(r'```.*?```', '', text, flags=re.DOTALL)
+    # Remove code blocks with any language specifier
+    text = re.sub(r'```[\w]*\n.*?```', '', text, flags=re.DOTALL)
     
     # Remove inline code
     text = re.sub(r'`(.*?)`', r'\1', text)
@@ -67,6 +80,12 @@ def clean_markdown(text):
     
     # Remove horizontal rules
     text = re.sub(r'^\s*[-_*]{3,}\s*$', '', text, flags=re.MULTILINE)
+    
+    # Remove HTML tags that might be present
+    text = re.sub(r'<[^>]+>', '', text)
+    
+    # Fix common markdown artifacts
+    text = text.replace('**', '').replace('__', '')
     
     # Remove extra whitespace
     text = re.sub(r'\n{3,}', '\n\n', text)

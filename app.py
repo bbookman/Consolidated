@@ -96,6 +96,24 @@ def clean_markdown(text):
     if not text:
         return text
     
+    # Handle different types
+    if isinstance(text, list):
+        return [clean_markdown(item) for item in text]
+    if not isinstance(text, str):
+        return text
+    
+    # Remove any duplicate "Summary:" or "Atmosphere:" headings that might exist within the text
+    text = re.sub(r'(?i)^Summary:.*?(\n\n|$)', '', text, flags=re.MULTILINE | re.DOTALL)
+    text = re.sub(r'(?i)Atmosphere:.*?(\n\n|$)', '', text, flags=re.MULTILINE | re.DOTALL)
+    text = re.sub(r'(?i)Key Take ?Aways:.*?(\n\n|$)', '', text, flags=re.MULTILINE | re.DOTALL)
+    text = re.sub(r'(?i)Key Takeaways:.*?(\n\n|$)', '', text, flags=re.MULTILINE | re.DOTALL)
+    
+    # Remove section heading variations more thoroughly
+    text = re.sub(r'(?i)^#+\s*Summary:?.*?\n', '', text, flags=re.MULTILINE)
+    text = re.sub(r'(?i)^#+\s*Atmosphere:?.*?\n', '', text, flags=re.MULTILINE)
+    text = re.sub(r'(?i)^#+\s*Key Take ?Aways:?.*?\n', '', text, flags=re.MULTILINE)
+    text = re.sub(r'(?i)^#+\s*Key Takeaways:?.*?\n', '', text, flags=re.MULTILINE)
+    
     # Remove Markdown headers (e.g., ## Header)
     text = re.sub(r'^#+\s+', '', text, flags=re.MULTILINE)
     

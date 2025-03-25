@@ -520,8 +520,20 @@
                 <div class="item-header">
                     <span class="source-badge source-bee">Bee Conversation</span>
                 </div>
-                <div class="summary-text">${formatMarkdown(item.summary)}</div>
-                ${item.location ? `<div><strong>Location:</strong> ${item.location}</div>` : ''}
+                
+                ${item.summary && item.summary.trim() ? `
+                <div class="conversation-section mb-3">
+                    <h4>Summary</h4>
+                    <div class="summary-text">${formatMarkdown(item.summary)}</div>
+                </div>` : ''}
+                
+                ${item.atmosphere && item.atmosphere.trim() ? `
+                <div class="conversation-section mb-3">
+                    <h4>Atmosphere</h4>
+                    <div class="atmosphere-text">${formatMarkdown(item.atmosphere)}</div>
+                </div>` : ''}
+                
+                ${item.location ? `<div class="mt-2"><strong>Location:</strong> ${item.location}</div>` : ''}
             </div>
         `;
     }

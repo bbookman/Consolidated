@@ -20,7 +20,8 @@ class Bee_Conversation(Base):
     
     id = Column(Integer, primary_key=True)
     conversation_id = Column(String, unique=True)  # External ID from Bee API
-    summary = Column(Text, nullable=True)
+    summary = Column(Text, nullable=True)  # Only the summary content, without heading
+    atmosphere = Column(Text, nullable=True)  # Only the atmosphere content, without heading
     created_at = Column(DateTime)
     address = Column(Text, nullable=True)
     latitude = Column(Float, nullable=True)

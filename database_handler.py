@@ -64,7 +64,8 @@ def store_conversations(conversations):
             # Create new conversation record
             new_conv = Bee_Conversation(
                 conversation_id=conv_id,
-                summary=conv.get('summary'),
+                summary=conv.get('Summary'),  # Use the extracted summary without heading
+                atmosphere=conv.get('Atmosphere'),  # Store the atmosphere content separately
                 created_at=parse_date(conv.get('created_at')),
                 address=address,
                 latitude=latitude,

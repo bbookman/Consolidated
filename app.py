@@ -15,6 +15,7 @@ import json
 import traceback
 import logging
 import asyncio
+import re
 from datetime import datetime
 import pytz
 import argparse
@@ -84,20 +85,82 @@ def initialize_apis():
 
 def format_conversation(conv):
     """Format a conversation object from the Bee API for display/storage"""
-    # Clean up the summary
-    summary = conv.get("summary", "No summary available")
+    # Extract summary and atmosphere sections from the summary text
+    full_text = conv.get("summary", "")
+    
+    # Initialize summary and atmosphere
+    summary_text = ""
+    atmosphere_text = ""
     
     # Handle None summary value
-    if summary is None:
-        summary = "No summary available"
-    # Normal processing if summary exists
+    if full_text is None:
+        summary_text = "No summary available"
     else:
-        if summary.startswith("## Summary\n"):
-            summary = summary[len("## Summary\n"):]
-        if summary.startswith("Summary: "):
-            summary = summary[len("Summary: "):]
-        if summary.startswith("Summary\n"):
-            summary = summary[len("Summary\n"):]
+        # Split the text into sections based on different possible headers
+        atmosphere_patterns = [
+            r'## Atmosphere\s*\n',
+            r'### Atmosphere\s*\n', 
+            r'## Atmosphere:',
+            r'### Atmosphere:',
+            r'\*\*Atmosphere\*\*:?',
+            r'Atmosphere:'
+        ]
+        
+        # First, extract Summary section
+        summary_patterns = [
+            r'## Summary\s*\n',
+            r'### Summary\s*\n',
+            r'## Summary:',
+            r'### Summary:',
+            r'\*\*Summary\*\*:?',
+            r'Summary:'
+        ]
+        
+        # Try to extract Summary section
+        summary_match = None
+        for pattern in summary_patterns:
+            match = re.search(pattern, full_text)
+            if match:
+                summary_match = match
+                break
+        
+        # Extract text after summary header
+        if summary_match:
+            start_idx = summary_match.end()
+            # Find where atmosphere section starts (if it exists)
+            atmosphere_start_idx = len(full_text)
+            for pattern in atmosphere_patterns:
+                match = re.search(pattern, full_text)
+                if match and match.start() > start_idx:
+                    atmosphere_start_idx = min(atmosphere_start_idx, match.start())
+            
+            # Extract summary text
+            summary_text = full_text[start_idx:atmosphere_start_idx].strip()
+        else:
+            # No summary header found, use the whole text
+            summary_text = full_text.strip()
+        
+        # Try to extract Atmosphere section
+        atmosphere_match = None
+        for pattern in atmosphere_patterns:
+            match = re.search(pattern, full_text)
+            if match:
+                atmosphere_match = match
+                break
+        
+        # Extract text after atmosphere header
+        if atmosphere_match:
+            start_idx = atmosphere_match.end()
+            # Find where next section starts (if any)
+            next_section_start = len(full_text)
+            next_section_patterns = [r'## ', r'### ']
+            for pattern in next_section_patterns:
+                match = re.search(pattern, full_text[start_idx:])
+                if match:
+                    next_section_start = min(next_section_start, start_idx + match.start())
+            
+            # Extract atmosphere text
+            atmosphere_text = full_text[start_idx:next_section_start].strip()
     
     # Get address from primary_location if it exists
     address = "No address"
@@ -124,7 +187,8 @@ def format_conversation(conv):
     
     return {
         "Title": f"Conversation on {created_at[:10] if created_at else 'Unknown Date'}",
-        "Summary": summary,
+        "Summary": summary_text,
+        "Atmosphere": atmosphere_text,
         "Address": address,
         "Start Time": start_time,
         "End Time": end_time,

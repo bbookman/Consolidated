@@ -125,12 +125,14 @@ def journal_data():
                     'netflix': []
                 }
             
-            # Extract summary from raw_data if available
-            summary = conv.summary or "Conversation"
+            # Extract summary and atmosphere
+            summary = conv.summary or ""
+            atmosphere = conv.atmosphere or ""
             
             days_data[day_key]['conversations'].append({
                 'id': conv.id,
                 'summary': summary,
+                'atmosphere': atmosphere,
                 'time': conv.created_at.strftime('%H:%M'),
                 'location': conv.address if conv.address else None,
                 'latitude': conv.latitude,

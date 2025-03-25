@@ -180,7 +180,13 @@
                     // Add each conversation's content without repeating the header
                     typeEntries.forEach((entry, index) => {
                         const item = entry.data;
-                        let exactTime = item.time;
+                        // Convert 24-hour time format to 12-hour format
+                        const timeArr = item.time.split(':');
+                        const hour = parseInt(timeArr[0]);
+                        const minute = timeArr[1];
+                        const ampm = hour >= 12 ? 'PM' : 'AM';
+                        const hour12 = hour % 12 || 12; // Convert 0 to 12
+                        const exactTime = `${hour12}:${minute} ${ampm}`;
                         
                         timelineHtml += `
                             <div class="conversation-container ${index > 0 ? 'mt-4 pt-3 border-top' : ''}">

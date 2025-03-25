@@ -317,6 +317,19 @@
         // 2. Convert bold "Summary" without colon to proper heading
         formatted = formatted.replace(/^\*\*Summary\*\*\s*$/gim, '# Summary');
         
+        // Handle "Atmosphere" text consistently across all entries
+        formatted = formatted.replace(/^\s*(Atmosphere):?\s*$/gim, '# Atmosphere');
+        formatted = formatted.replace(/^\*\*Atmosphere:?\*\*\s*$/gim, '# Atmosphere');
+        formatted = formatted.replace(/^\*\*Atmosphere\*\*\s*$/gim, '# Atmosphere');
+        
+        // Handle "Key Takeaways" text consistently across all entries
+        formatted = formatted.replace(/^\s*(Key Take ?Aways):?\s*$/gim, '# Key Takeaways');
+        formatted = formatted.replace(/^\*\*Key Take ?Aways:?\*\*\s*$/gim, '# Key Takeaways');
+        formatted = formatted.replace(/^\*\*Key Take ?Aways\*\*\s*$/gim, '# Key Takeaways');
+        formatted = formatted.replace(/^\s*(Key Takeaways):?\s*$/gim, '# Key Takeaways');
+        formatted = formatted.replace(/^\*\*Key Takeaways:?\*\*\s*$/gim, '# Key Takeaways');
+        formatted = formatted.replace(/^\*\*Key Takeaways\*\*\s*$/gim, '# Key Takeaways');
+        
         // Replace markdown headers with HTML headers
         formatted = formatted.replace(/## (.*?)(?:\n|$)/g, '<h4>$1</h4>');
         formatted = formatted.replace(/# (.*?)(?:\n|$)/g, '<h3>$1</h3>');

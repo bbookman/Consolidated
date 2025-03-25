@@ -20,8 +20,23 @@ app = Flask(__name__)
 
 # Get database connection
 DATABASE_URL = os.environ.get('DATABASE_URL')
-engine = create_engine(DATABASE_URL)
+engine = create_engine(DATABASE_URL, pool_pre_ping=True, pool_recycle=3600)
 Session = sessionmaker(bind=engine)
+
+# Function to get a database session with connection check
+def get_db_session():
+    """Get a database session with connection verification"""
+    session = Session()
+    try:
+        # Test the connection with a simple query
+        session.execute("SELECT 1")
+        return session
+    except Exception as e:
+        # Close the session if connection failed
+        session.close()
+        # Try to create a new session
+        new_session = Session()
+        return new_session
 
 # Ensure templates directory exists
 os.makedirs('templates', exist_ok=True)
@@ -61,8 +76,8 @@ def journal_data():
     except ValueError:
         return jsonify({"error": "Invalid date format. Use YYYY-MM-DD"}), 400
     
-    # Query data from all sources
-    session = Session()
+    # Query data from all sources with connection retry
+    session = get_db_session()
     try:
         # Format dates for query
         start_date_str = start_date_obj.strftime('%Y-%m-%d')
@@ -216,7 +231,7 @@ def journal_data():
 @app.route('/api/date_counts')
 def date_counts():
     """Get counts of entries by date for calendar visualization."""
-    session = Session()
+    session = get_db_session()
     try:
         # Default to last 365 days
         end_date = datetime.now()

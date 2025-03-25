@@ -143,7 +143,7 @@
             const netflix = dayData.netflix[0];
             summaryHtml += `
                 <div class="mb-2">
-                    <span class="source-badge source-netflix">Netflix</span>
+                    <span class="source-badge source-netflix">🍿 Netflix</span>
                     Watched ${netflix.title}
                 </div>
             `;
@@ -155,7 +155,7 @@
             const lifelog = dayData.lifelogs[0];
             summaryHtml += `
                 <div class="mb-2">
-                    <span class="source-badge source-limitless">Limitless</span>
+                    <span class="source-badge source-limitless">∞ Limitless</span>
                     ${lifelog.title.substring(0, 50)}${lifelog.title.length > 50 ? '...' : ''}
                 </div>
             `;
@@ -167,7 +167,7 @@
             const conv = dayData.conversations[0];
             summaryHtml += `
                 <div class="mb-2">
-                    <span class="source-badge source-bee">Bee</span>
+                    <span class="source-badge source-bee">🐝 Bee</span>
                     ${conv.summary.substring(0, 50)}${conv.summary.length > 50 ? '...' : ''}
                 </div>
             `;
@@ -271,7 +271,7 @@
                 </div>
                 <div class="netflix-details">
                     <div class="item-header">
-                        <span class="source-badge source-netflix">Netflix</span>
+                        <span class="source-badge source-netflix">🍿 Netflix</span>
                     </div>
                     <h5 class="item-title">${item.title}</h5>
                     <div>
@@ -291,7 +291,7 @@
         return `
             <div class="journal-item">
                 <div class="item-header">
-                    <span class="source-badge source-limitless">Limitless</span>
+                    <span class="source-badge source-limitless">∞ Limitless</span>
                 </div>
                 <h5 class="item-title">${item.title}</h5>
                 ${item.description ? `<div>${item.description}</div>` : ''}
@@ -539,7 +539,7 @@
         return `
             <div class="journal-item">
                 <div class="item-header">
-                    <span class="source-badge source-bee">Bee Conversation</span>
+                    <span class="source-badge source-bee">🐝 Bee Conversation</span>
                 </div>
                 
                 ${item.summary && item.summary.trim() ? `

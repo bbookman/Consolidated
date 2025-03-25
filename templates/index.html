@@ -78,7 +78,7 @@
                     
                     // Create emoji events for days with data
                     const emojiEvents = data.date_counts
-                        .filter(item => item.conversations > 0 || item.netflix > 0) // Filter days with bee or netflix
+                        .filter(item => item.conversations > 0 || item.netflix > 0 || item.lifelogs > 0) // Filter days with bee, netflix, or lifelogs
                         .map(item => {
                             // Create combined emoji string based on data types
                             let emojiString = '';
@@ -87,6 +87,9 @@
                             }
                             if (item.netflix > 0) {
                                 emojiString += '🍿';
+                            }
+                            if (item.lifelogs > 0) {
+                                emojiString += '∞';
                             }
                             
                             return {

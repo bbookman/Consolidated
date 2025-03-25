@@ -83,6 +83,52 @@ def initialize_apis():
     else:
         logger.warning("BILLBOARD_API_KEY not found in environment variables")
 
+def clean_markdown(text):
+    """
+    Remove Markdown formatting from text.
+    
+    Args:
+        text: String containing Markdown formatting
+        
+    Returns:
+        String with Markdown formatting removed
+    """
+    if not text:
+        return text
+    
+    # Remove Markdown headers (e.g., ## Header)
+    text = re.sub(r'^#+\s+', '', text, flags=re.MULTILINE)
+    
+    # Remove bold formatting (e.g., **bold**)
+    text = re.sub(r'\*\*(.*?)\*\*', r'\1', text)
+    
+    # Remove italic formatting (e.g., *italic*)
+    text = re.sub(r'(?<!\*)\*([^\*]+)\*(?!\*)', r'\1', text)
+    
+    # Remove bullet points
+    text = re.sub(r'^\s*[\*\-•]\s+', '', text, flags=re.MULTILINE)
+    
+    # Remove Markdown links [text](url) -> text
+    text = re.sub(r'\[(.*?)\]\(.*?\)', r'\1', text)
+    
+    # Remove code blocks
+    text = re.sub(r'```.*?```', '', text, flags=re.DOTALL)
+    
+    # Remove inline code
+    text = re.sub(r'`(.*?)`', r'\1', text)
+    
+    # Remove blockquotes
+    text = re.sub(r'^>\s+', '', text, flags=re.MULTILINE)
+    
+    # Remove horizontal rules
+    text = re.sub(r'^\s*[-_*]{3,}\s*$', '', text, flags=re.MULTILINE)
+    
+    # Remove extra whitespace
+    text = re.sub(r'\n{3,}', '\n\n', text)
+    text = text.strip()
+    
+    return text
+
 def format_conversation(conv):
     """Format a conversation object from the Bee API for display/storage"""
     # Extract summary, atmosphere, and key takeaways sections from the summary text
@@ -233,7 +279,11 @@ def format_conversation(conv):
             # Remove bullet points or dashes if they exist
             cleaned_item = re.sub(r'^[\*\-•]+\s*', '', item.strip())
             if cleaned_item:  # Only add non-empty items
-                key_takeaways_list.append(cleaned_item)
+                key_takeaways_list.append(clean_markdown(cleaned_item))
+    
+    # Clean Markdown from summary and atmosphere text
+    summary_text = clean_markdown(summary_text)
+    atmosphere_text = clean_markdown(atmosphere_text)
     
     return {
         "Title": f"Conversation on {created_at[:10] if created_at else 'Unknown Date'}",

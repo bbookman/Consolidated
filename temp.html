@@ -1,0 +1,575 @@
+{% extends "base.html" %}
+
+{% block title %}Life Journal - {{ date }}{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2><span id="formatted-date">{{ date }}</span></h2>
+            <div>
+                <button id="prev-day" class="btn btn-outline-primary me-2">
+                    <i class="bi bi-chevron-left"></i> Previous Day
+                </button>
+                <button id="next-day" class="btn btn-outline-primary">
+                    Next Day <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col">
+        <div class="alert alert-info" id="no-data-alert" style="display:none;">
+            No journal entries found for this day.
+        </div>
+        
+        <div class="card mb-4" id="summary-card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Day Summary</h5>
+            </div>
+            <div class="card-body">
+                <div id="summary-content">
+                    <div class="loading-spinner" id="loading-summary">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="day-timeline">
+            <div class="loading-spinner" id="loading-timeline">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const date = '{{ date }}';
+        
+        // Fix for timezone issues - parse the date correctly by explicitly setting UTC time
+        // This ensures the date displayed matches the URL date regardless of timezone
+        const [year, month, day] = date.split('-').map(Number);
+        let currentDate = new Date(Date.UTC(year, month - 1, day));
+        
+        // Format date for display - make sure we use UTC methods to avoid timezone shifts
+        const formattedDate = new Intl.DateTimeFormat('en-US', { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric',
+            timeZone: 'UTC'  // Use UTC to ensure consistency with the URL date
+        }).format(currentDate);
+        
+        document.getElementById('formatted-date').textContent = formattedDate;
+        
+        // Previous day button
+        document.getElementById('prev-day').addEventListener('click', function() {
+            // Use UTC methods to ensure consistent date calculations
+            const prevDate = new Date(currentDate);
+            prevDate.setUTCDate(prevDate.getUTCDate() - 1);
+            window.location.href = `/day/${prevDate.toISOString().split('T')[0]}`;
+        });
+        
+        // Next day button
+        document.getElementById('next-day').addEventListener('click', function() {
+            // Use UTC methods to ensure consistent date calculations
+            const nextDate = new Date(currentDate);
+            nextDate.setUTCDate(nextDate.getUTCDate() + 1);
+            window.location.href = `/day/${nextDate.toISOString().split('T')[0]}`;
+        });
+        
+        // Fetch data for this day
+        fetchDayData(date);
+    });
+    
+    function fetchDayData(date) {
+        fetch(`/api/journal_data?start_date=${date}&end_date=${date}`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('loading-summary').style.display = 'none';
+                document.getElementById('loading-timeline').style.display = 'none';
+                
+                if (data.status === 'success' && data.days.length > 0) {
+                    const dayData = data.days[0];
+                    
+                    // Update summary
+                    updateSummary(dayData);
+                    
+                    // Generate timeline
+                    generateTimeline(dayData);
+                    
+                    // Show data sections
+                    document.getElementById('summary-card').style.display = 'block';
+                    document.getElementById('no-data-alert').style.display = 'none';
+                } else {
+                    // No data for this day
+                    document.getElementById('summary-card').style.display = 'none';
+                    document.getElementById('no-data-alert').style.display = 'block';
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching day data:', error);
+                document.getElementById('loading-summary').innerHTML = 
+                    '<div class="alert alert-danger">Failed to load data</div>';
+                document.getElementById('loading-timeline').innerHTML = 
+                    '<div class="alert alert-danger">Failed to load data</div>';
+            });
+    }
+    
+    function updateSummary(dayData) {
+        // Total Entries and Activity Summary removed as requested
+        let summaryHtml = `
+            <div class="row">
+                <div class="col-12">
+                    <h5>Highlights</h5>
+                    <div>
+        `;
+        
+        // Add some highlights from the day
+        let highlightsAdded = 0;
+        
+        // Add first Netflix item if available
+        if (dayData.netflix.length > 0) {
+            const netflix = dayData.netflix[0];
+            summaryHtml += `
+                <div class="mb-2">
+                    <span class="source-badge source-netflix">🍿 Netflix</span>
+                    Watched ${netflix.title}
+                </div>
+            `;
+            highlightsAdded++;
+        }
+        
+        // Add first Lifelog if available
+        if (dayData.lifelogs.length > 0) {
+            const lifelog = dayData.lifelogs[0];
+            summaryHtml += `
+                <div class="mb-2">
+                    <span class="source-badge source-limitless">∞ Limitless</span>
+                    ${lifelog.title.substring(0, 50)}${lifelog.title.length > 50 ? '...' : ''}
+                </div>
+            `;
+            highlightsAdded++;
+        }
+        
+        // Add first conversation if available
+        if (dayData.conversations.length > 0) {
+            const conv = dayData.conversations[0];
+            summaryHtml += `
+                <div class="mb-2">
+                    <span class="source-badge source-bee">🐝 Bee</span>
+                    ${conv.summary.substring(0, 50)}${conv.summary.length > 50 ? '...' : ''}
+                </div>
+            `;
+            highlightsAdded++;
+        }
+        
+        // If no highlights were added, show a message
+        if (highlightsAdded === 0) {
+            summaryHtml += `<div class="text-muted">No highlights available</div>`;
+        }
+        
+        summaryHtml += `
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        document.getElementById('summary-content').innerHTML = summaryHtml;
+    }
+    
+    function generateTimeline(dayData) {
+        // Combine all entries and sort by time (Facts excluded as requested)
+        const allEntries = [
+            ...dayData.conversations.map(item => ({ type: 'conversation', data: item, time: item.time })),
+            // Facts removed as requested
+            ...dayData.lifelogs.map(item => ({ type: 'lifelog', data: item, time: item.time })),
+            ...dayData.netflix.map(item => ({ type: 'netflix', data: item, time: item.time }))
+        ].sort((a, b) => {
+            // Sort by time
+            const timeA = new Date(`${dayData.date}T${a.time}`);
+            const timeB = new Date(`${dayData.date}T${b.time}`);
+            return timeB - timeA;
+        });
+        
+        if (allEntries.length === 0) {
+            document.getElementById('day-timeline').innerHTML = 
+                '<div class="alert alert-info">No entries found for this day.</div>';
+            return;
+        }
+        
+        let timelineHtml = '';
+        
+        // Group entries by hour
+        const hourGroups = {};
+        
+        allEntries.forEach(entry => {
+            const hour = entry.time.split(':')[0];
+            if (!hourGroups[hour]) {
+                hourGroups[hour] = [];
+            }
+            hourGroups[hour].push(entry);
+        });
+        
+        // Create timeline entries for each hour (newest first)
+        const hours = Object.keys(hourGroups).sort((a, b) => b - a);
+        
+        hours.forEach(hour => {
+            const entries = hourGroups[hour];
+            const displayHour = parseInt(hour);
+            const amPm = displayHour < 12 ? 'AM' : 'PM';
+            const displayHour12 = displayHour % 12 || 12;
+            
+            timelineHtml += `
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <h5 class="mb-0">${displayHour12} ${amPm}</h5>
+                    </div>
+                    <div class="card-body">
+            `;
+            
+            entries.forEach(entry => {
+                if (entry.type === 'netflix') {
+                    timelineHtml += generateNetflixHTML(entry.data);
+                } else if (entry.type === 'lifelog') {
+                    timelineHtml += generateLifelogHTML(entry.data);
+                } else if (entry.type === 'conversation') {
+                    timelineHtml += generateConversationHTML(entry.data);
+                }
+                // Facts case removed as requested
+            });
+            
+            timelineHtml += `
+                    </div>
+                </div>
+            `;
+        });
+        
+        document.getElementById('day-timeline').innerHTML = timelineHtml;
+    }
+    
+    function generateNetflixHTML(item) {
+        return `
+            <div class="journal-item netflix-item">
+                <div class="netflix-poster">
+                    ${item.poster_url 
+                        ? `<img src="${item.poster_url}" alt="${item.title}">` 
+                        : `<div class="w-100 h-100 d-flex justify-content-center align-items-center">
+                            <span>No Poster</span>
+                           </div>`
+                    }
+                </div>
+                <div class="netflix-details">
+                    <div class="item-header">
+                        <span class="source-badge source-netflix">🍿 Netflix</span>
+                    </div>
+                    <h5 class="item-title">${item.title}</h5>
+                    <div>
+                        ${item.show_name ? `<div><strong>Show:</strong> ${item.show_name}</div>` : ''}
+                        ${item.season ? `<div><strong>Season:</strong> ${item.season}</div>` : ''}
+                        ${item.episode_name ? `<div><strong>Episode:</strong> ${item.episode_name}</div>` : ''}
+                        ${item.content_type ? `<div><strong>Type:</strong> ${item.content_type}</div>` : ''}
+                        ${item.release_year ? `<div><strong>Year:</strong> ${item.release_year}</div>` : ''}
+                        ${item.imdb_score ? `<div><strong>IMDB:</strong> ${item.imdb_score}/10</div>` : ''}
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    function generateLifelogHTML(item) {
+        return `
+            <div class="journal-item">
+                <div class="item-header">
+                    <span class="source-badge source-limitless">∞ Limitless</span>
+                </div>
+                <h5 class="item-title">${item.title}</h5>
+                ${item.description ? `<div>${item.description}</div>` : ''}
+                ${item.tags && item.tags.length > 0 ? `
+                    <div class="mt-2">
+                        ${item.tags.map(tag => `<span class="badge bg-secondary me-1">${tag}</span>`).join('')}
+                    </div>
+                ` : ''}
+            </div>
+        `;
+    }
+    
+    function formatMarkdown(text) {
+        if (!text) return '';
+        
+        // Remove # characters that are not part of proper Markdown headers
+        // First, handle standalone # characters on their own line
+        let formatted = text.replace(/^#\s*$/gm, '');
+        
+        // Remove # characters followed by another # (not a proper header)
+        formatted = formatted.replace(/^#\s*#/gm, '');
+        
+        // Remove # characters not followed by a space (not a proper header)
+        formatted = formatted.replace(/^#(?!\s)/gm, '');
+        
+        // Handle "Summary" text consistently across all entries
+        // 1. Convert "Summary:" or "Summary :" to proper heading
+        formatted = formatted.replace(/^\s*(Summary):?\s*$/gim, '# Summary');
+        formatted = formatted.replace(/^\*\*Summary:?\*\*\s*$/gim, '# Summary');
+
+        // 2. Convert bold "Summary" without colon to proper heading
+        formatted = formatted.replace(/^\*\*Summary\*\*\s*$/gim, '# Summary');
+        
+        // Handle "Atmosphere" text consistently across all entries
+        formatted = formatted.replace(/^\s*(Atmosphere):?\s*$/gim, '# Atmosphere');
+        formatted = formatted.replace(/^\*\*Atmosphere:?\*\*\s*$/gim, '# Atmosphere');
+        formatted = formatted.replace(/^\*\*Atmosphere\*\*\s*$/gim, '# Atmosphere');
+        
+        // Handle "Key Takeaways" text consistently across all entries
+        formatted = formatted.replace(/^\s*(Key Take ?Aways):?\s*$/gim, '# Key Takeaways');
+        formatted = formatted.replace(/^\*\*Key Take ?Aways:?\*\*\s*$/gim, '# Key Takeaways');
+        formatted = formatted.replace(/^\*\*Key Take ?Aways\*\*\s*$/gim, '# Key Takeaways');
+        formatted = formatted.replace(/^\s*(Key Takeaways):?\s*$/gim, '# Key Takeaways');
+        formatted = formatted.replace(/^\*\*Key Takeaways:?\*\*\s*$/gim, '# Key Takeaways');
+        formatted = formatted.replace(/^\*\*Key Takeaways\*\*\s*$/gim, '# Key Takeaways');
+        
+        // Replace markdown headers with HTML headers
+        formatted = formatted.replace(/## (.*?)(?:\n|$)/g, '<h4>$1</h4>');
+        formatted = formatted.replace(/# (.*?)(?:\n|$)/g, '<h3>$1</h3>');
+        
+        // Replace bold markdown with HTML strong tags
+        formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        
+        // Process bullet points
+        // Split the content by lines
+        const lines = formatted.split('\n');
+        let inBulletList = false;
+        let bulletItems = [];
+        let processedLines = [];
+        
+        for (let i = 0; i < lines.length; i++) {
+            const line = lines[i];
+            
+            // Check if this line starts with an asterisk bullet point
+            if (line.trim().match(/^\* (.+)$/)) {
+                // This is a bullet point
+                if (!inBulletList) {
+                    // Starting a new bullet list
+                    inBulletList = true;
+                    bulletItems = [];
+                }
+                
+                // Extract the bullet content (without the asterisk)
+                const bulletContent = line.trim().replace(/^\* /, '');
+                bulletItems.push(bulletContent);
+            } else {
+                // Not a bullet point
+                if (inBulletList) {
+                    // We were in a bullet list, but now we're not
+                    // Add the bullet list to processed lines
+                    processedLines.push('<ul>');
+                    bulletItems.forEach(item => {
+                        processedLines.push(`<li>${item}</li>`);
+                    });
+                    processedLines.push('</ul>');
+                    inBulletList = false;
+                }
+                
+                // Add the current line
+                processedLines.push(line);
+            }
+        }
+        
+        // If we ended with a bullet list, add it
+        if (inBulletList) {
+            processedLines.push('<ul>');
+            bulletItems.forEach(item => {
+                processedLines.push(`<li>${item}</li>`);
+            });
+            processedLines.push('</ul>');
+        }
+        
+        // Rejoin the processed lines
+        formatted = processedLines.join('\n');
+        
+        // Replace other markdown lists with HTML lists
+        formatted = formatted.replace(/- (.*?)(?:\n|$)/g, '<li>$1</li>');
+        
+        // Wrap consecutive list items in ul tags if not already wrapped
+        if (formatted.includes('<li>') && !formatted.includes('<ul>')) {
+            formatted = formatted.replace(/(<li>.*?<\/li>)+/gs, '<ul>$&</ul>');
+        }
+        
+        // Remove any remaining single asterisks (don't convert to italic)
+        formatted = formatted.replace(/(?<!\*)\*([^\*]+)\*(?!\*)/g, '$1');
+        
+        // Add paragraph breaks
+        formatted = formatted.replace(/\n\n/g, '</p><p>');
+        
+        // Wrap in paragraph tag if not already wrapped
+        if (!formatted.startsWith('<')) {
+            formatted = '<p>' + formatted + '</p>';
+        }
+        
+        return formatted;
+    }
+    
+    function generateConversationHTML(item) {
+        // Format any markdown in the summary to HTML
+        let formattedSummary = item.summary;
+        
+        // Remove # characters that are not part of proper Markdown headers
+        // First, handle standalone # characters on their own line
+        formattedSummary = formattedSummary.replace(/^#\s*$/gm, '');
+        
+        // Remove # characters followed by another # (not a proper header)
+        formattedSummary = formattedSummary.replace(/^#\s*#/gm, '');
+        
+        // Remove # characters not followed by a space (not a proper header)
+        formattedSummary = formattedSummary.replace(/^#(?!\s)/gm, '');
+        
+        // Handle "Summary" text consistently across all entries
+        // 1. Convert all heading variations to the same format
+        formattedSummary = formattedSummary.replace(/^\s*#{1,3}\s*Summary:?\s*$/gim, '# Summary');
+        formattedSummary = formattedSummary.replace(/^\s*(Summary):?\s*$/gim, '# Summary');
+        formattedSummary = formattedSummary.replace(/^\*\*Summary:?\*\*\s*$/gim, '# Summary');
+
+        // 2. Convert bold "Summary" without colon to proper heading
+        formattedSummary = formattedSummary.replace(/^\*\*Summary\*\*\s*$/gim, '# Summary');
+        
+        // 3. Handle Summary in a section/subsection heading
+        formattedSummary = formattedSummary.replace(/^(#{1,3})\s*Summary\s*$/gim, '# Summary');
+        
+        // Handle "Atmosphere" text consistently across all entries
+        // 1. Convert all heading variations to the same format
+        formattedSummary = formattedSummary.replace(/^\s*#{1,3}\s*Atmosphere:?\s*$/gim, '# Atmosphere');
+        formattedSummary = formattedSummary.replace(/^\s*(Atmosphere):?\s*$/gim, '# Atmosphere');
+        formattedSummary = formattedSummary.replace(/^\*\*Atmosphere:?\*\*\s*$/gim, '# Atmosphere');
+
+        // 2. Convert bold "Atmosphere" without colon to proper heading
+        formattedSummary = formattedSummary.replace(/^\*\*Atmosphere\*\*\s*$/gim, '# Atmosphere');
+        
+        // 3. Handle Atmosphere in a section/subsection heading
+        formattedSummary = formattedSummary.replace(/^(#{1,3})\s*Atmosphere\s*$/gim, '# Atmosphere');
+        
+        // Replace markdown headers with HTML headers
+        formattedSummary = formattedSummary.replace(/## (.*?)(?:\n|$)/g, '<h4>$1</h4>');
+        formattedSummary = formattedSummary.replace(/# (.*?)(?:\n|$)/g, '<h3>$1</h3>');
+        
+        // Replace bold markdown with HTML strong tags
+        formattedSummary = formattedSummary.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        
+        // Process bullet points in all sections
+        // Split the content by lines
+        const lines = formattedSummary.split('\n');
+        let inBulletList = false;
+        let bulletItems = [];
+        let processedLines = [];
+        
+        for (let i = 0; i < lines.length; i++) {
+            const line = lines[i];
+            
+            // Check if this line starts with an asterisk bullet point
+            if (line.trim().match(/^\* (.+)$/)) {
+                // This is a bullet point
+                if (!inBulletList) {
+                    // Starting a new bullet list
+                    inBulletList = true;
+                    bulletItems = [];
+                }
+                
+                // Extract the bullet content (without the asterisk)
+                const bulletContent = line.trim().replace(/^\* /, '');
+                bulletItems.push(bulletContent);
+            } else {
+                // Not a bullet point
+                if (inBulletList) {
+                    // We were in a bullet list, but now we're not
+                    // Add the bullet list to processed lines
+                    processedLines.push('<ul>');
+                    bulletItems.forEach(item => {
+                        processedLines.push(`<li>${item}</li>`);
+                    });
+                    processedLines.push('</ul>');
+                    inBulletList = false;
+                }
+                
+                // Add the current line
+                processedLines.push(line);
+            }
+        }
+        
+        // If we ended with a bullet list, add it
+        if (inBulletList) {
+            processedLines.push('<ul>');
+            bulletItems.forEach(item => {
+                processedLines.push(`<li>${item}</li>`);
+            });
+            processedLines.push('</ul>');
+        }
+        
+        // Rejoin the processed lines
+        formattedSummary = processedLines.join('\n');
+        
+        // Replace other markdown lists with HTML lists
+        formattedSummary = formattedSummary.replace(/- (.*?)(?:\n|$)/g, '<li>$1</li>');
+        formattedSummary = formattedSummary.replace(/^\* (.*?)$/gm, '<li>$1</li>');
+        
+        // Wrap consecutive list items in ul tags if not already wrapped
+        if (formattedSummary.includes('<li>') && !formattedSummary.includes('<ul>')) {
+            formattedSummary = formattedSummary.replace(/(<li>.*?<\/li>)+/gs, '<ul>$&</ul>');
+        }
+        
+        // Remove any remaining single asterisks (don't convert to italic)
+        formattedSummary = formattedSummary.replace(/(?<!\*)\*([^\*]+)\*(?!\*)/g, '$1');
+        
+        // Add paragraph breaks
+        formattedSummary = formattedSummary.replace(/\n\n/g, '</p><p>');
+        
+        // Wrap in paragraph tag if not already wrapped
+        if (!formattedSummary.startsWith('<')) {
+            formattedSummary = '<p>' + formattedSummary + '</p>';
+        }
+        
+        return `
+            <div class="journal-item">
+                <div class="item-header">
+                    <span class="source-badge source-bee">🐝 Bee Conversation</span>
+                </div>
+                
+                ${item.summary && item.summary.trim() ? `
+                <div class="conversation-section mb-3">
+                    <h4>Summary</h4>
+                    <div class="summary-text">${formatMarkdown(item.summary)}</div>
+                </div>` : ''}
+                
+                ${item.atmosphere && item.atmosphere.trim() ? `
+                <div class="conversation-section mb-3">
+                    <h4>Atmosphere</h4>
+                    <div class="atmosphere-text">${formatMarkdown(item.atmosphere)}</div>
+                </div>` : ''}
+                
+                ${item.key_takeaways && ((typeof item.key_takeaways === 'string' && item.key_takeaways.trim().length > 0) || (Array.isArray(item.key_takeaways) && item.key_takeaways.length > 0)) ? `
+                <div class="conversation-section mb-3">
+                    <h4>Key Takeaways</h4>
+                    <div class="key-takeaways-text">
+                        ${Array.isArray(item.key_takeaways) 
+                            ? '<ul>' + item.key_takeaways.map(point => `<li>${point}</li>`).join('') + '</ul>'
+                            : formatMarkdown(item.key_takeaways)
+                        }
+                    </div>
+                </div>` : ''}
+                
+                ${item.location ? `<div class="mt-2"><strong>Location:</strong> ${item.location}</div>` : ''}
+            </div>
+        `;
+    }
+    
+    // Facts function removed as requested
+</script>
+{% endblock %}

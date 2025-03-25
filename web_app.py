@@ -110,6 +110,14 @@ def journal_data():
             )
         ).order_by(models.Netflix_History_Item.watch_date.desc()).all()
         
+        # Get weather data
+        weather_data = session.query(models.Weather_Data).filter(
+            and_(
+                models.Weather_Data.timestamp >= start_date_obj,
+                models.Weather_Data.timestamp < end_date_obj + timedelta(days=1)
+            )
+        ).order_by(models.Weather_Data.timestamp.desc()).all()
+        
         # Process data into a format suitable for the journal
         days_data = {}
         
@@ -122,7 +130,8 @@ def journal_data():
                     'conversations': [],
                     'facts': [],
                     'lifelogs': [],
-                    'netflix': []
+                    'netflix': [],
+                    'weather': None
                 }
             
             # Extract summary, atmosphere, and key takeaways
@@ -159,7 +168,8 @@ def journal_data():
                     'conversations': [],
                     'facts': [],
                     'lifelogs': [],
-                    'netflix': []
+                    'netflix': [],
+                    'weather': None
                 }
             
             days_data[day_key]['facts'].append({
@@ -177,7 +187,8 @@ def journal_data():
                     'conversations': [],
                     'facts': [],
                     'lifelogs': [],
-                    'netflix': []
+                    'netflix': [],
+                    'weather': None
                 }
             
             days_data[day_key]['lifelogs'].append({
@@ -198,7 +209,8 @@ def journal_data():
                     'conversations': [],
                     'facts': [],
                     'lifelogs': [],
-                    'netflix': []
+                    'netflix': [],
+                    'weather': None
                 }
             
             # Get enriched data if available
@@ -221,6 +233,37 @@ def journal_data():
             }
             
             days_data[day_key]['netflix'].append(watch_entry)
+        
+        # Process weather data
+        for weather in weather_data:
+            day_key = weather.timestamp.strftime('%Y-%m-%d')
+            if day_key not in days_data:
+                days_data[day_key] = {
+                    'date': day_key,
+                    'conversations': [],
+                    'facts': [],
+                    'lifelogs': [],
+                    'netflix': [],
+                    'weather': None
+                }
+            
+            # Add weather data if it doesn't exist yet or update it with the latest
+            if days_data[day_key]['weather'] is None:
+                days_data[day_key]['weather'] = {
+                    'id': weather.id,
+                    'weather_main': weather.weather_main,
+                    'weather_description': weather.weather_description,
+                    'temperature': weather.temperature,
+                    'feels_like': weather.feels_like,
+                    'humidity': weather.humidity,
+                    'wind_speed': weather.wind_speed,
+                    'timestamp': weather.timestamp.strftime('%H:%M')
+                }
+
+        # Make sure all days have the weather field, even if null
+        for day_key in days_data:
+            if 'weather' not in days_data[day_key]:
+                days_data[day_key]['weather'] = None
         
         # Convert to list and sort by date
         days_list = [days_data[day] for day in sorted(days_data.keys(), reverse=True)]

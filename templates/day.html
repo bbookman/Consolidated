@@ -2,7 +2,33 @@
 
 {% block title %}Life Journal - {{ date }}{% endblock %}
 
+{% block head %}
+<style>
+.weather-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.25;
+    z-index: -1;
+}
+
+/* Make content more visible on top of background */
+.container {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+</style>
+{% endblock %}
+
 {% block content %}
+<div id="weather-background" class="weather-background"></div>
 <div class="row mb-4">
     <div class="col">
         <div class="d-flex justify-content-between align-items-center">
@@ -106,6 +132,11 @@
     
 
     function generateTimeline(dayData) {
+        // Set the weather background if weather data is available
+        if (dayData.weather) {
+            setWeatherBackground(dayData.weather.weather_main);
+        }
+        
         // Combine all entries and sort by time (Facts excluded as requested)
         const allEntries = [
             ...dayData.conversations.map(item => ({ type: 'conversation', data: item, time: item.time })),

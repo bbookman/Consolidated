@@ -166,13 +166,22 @@
                 
                 // For conversation type, combine all conversations into a single card
                 if (type === 'conversation' && typeEntries.length > 0) {
+                    const cardId = `conv-card-${hour}-${Date.now()}`; // Unique ID for this card
                     timelineHtml += `
-                        <div class="journal-item">
+                        <div class="journal-item" id="${cardId}">
                             <div class="item-header">
-                                <span class="source-badge source-bee">🐝 Bee Conversation${typeEntries.length > 1 ? 's' : ''}</span>
-                                <span class="text-muted">(${typeEntries.length} conversation${typeEntries.length > 1 ? 's' : ''})</span>
+                                <div>
+                                    <span class="source-badge source-bee">🐝 Bee Conversation${typeEntries.length > 1 ? 's' : ''}</span>
+                                    <span class="text-muted">(${typeEntries.length} conversation${typeEntries.length > 1 ? 's' : ''})</span>
+                                </div>
+                                <button class="toggle-button" onclick="toggleContent('${cardId}')">
+                                    <i class="bi bi-chevron-up"></i>
+                                </button>
                             </div>
                     `;
+                    
+                    // Add a container for the togglable content
+                    timelineHtml += `<div class="toggle-content">`;
                     
                     // Add each conversation's content without repeating the header
                     typeEntries.forEach((entry, index) => {
@@ -258,8 +267,9 @@
     }
     
     function generateNetflixHTML(item) {
+        const cardId = `netflix-card-${Date.now()}-${Math.random().toString(36).substr(2, 5)}`;
         return `
-            <div class="journal-item netflix-item">
+            <div class="journal-item netflix-item" id="${cardId}">
                 <div class="netflix-poster">
                     ${item.poster_url 
                         ? `<img src="${item.poster_url}" alt="${item.title}">` 
@@ -271,9 +281,12 @@
                 <div class="netflix-details">
                     <div class="item-header">
                         <span class="source-badge source-netflix">🍿 Netflix</span>
+                        <button class="toggle-button" onclick="toggleContent('${cardId}')">
+                            <i class="bi bi-chevron-up"></i>
+                        </button>
                     </div>
                     <h5 class="item-title">${item.title}</h5>
-                    <div>
+                    <div class="toggle-content">
                         ${item.show_name ? `<div><strong>Show:</strong> ${item.show_name}</div>` : ''}
                         ${item.season ? `<div><strong>Season:</strong> ${item.season}</div>` : ''}
                         ${item.episode_name ? `<div><strong>Episode:</strong> ${item.episode_name}</div>` : ''}
@@ -287,18 +300,24 @@
     }
     
     function generateLifelogHTML(item) {
+        const cardId = `lifelog-card-${Date.now()}-${Math.random().toString(36).substr(2, 5)}`;
         return `
-            <div class="journal-item">
+            <div class="journal-item" id="${cardId}">
                 <div class="item-header">
                     <span class="source-badge source-limitless">🕰️ Limitless</span>
+                    <button class="toggle-button" onclick="toggleContent('${cardId}')">
+                        <i class="bi bi-chevron-up"></i>
+                    </button>
                 </div>
                 <h5 class="item-title">${item.title}</h5>
-                ${item.description ? `<div>${item.description}</div>` : ''}
-                ${item.tags && item.tags.length > 0 ? `
-                    <div class="mt-2">
-                        ${item.tags.map(tag => `<span class="badge bg-secondary me-1">${tag}</span>`).join('')}
-                    </div>
-                ` : ''}
+                <div class="toggle-content">
+                    ${item.description ? `<div>${item.description}</div>` : ''}
+                    ${item.tags && item.tags.length > 0 ? `
+                        <div class="mt-2">
+                            ${item.tags.map(tag => `<span class="badge bg-secondary me-1">${tag}</span>`).join('')}
+                        </div>
+                    ` : ''}
+                </div>
             </div>
         `;
     }
@@ -454,5 +473,22 @@
     }
     
     // Facts function removed as requested
+    
+    // Function to toggle the visibility of card content
+    function toggleContent(cardId) {
+        const cardElement = document.getElementById(cardId);
+        const contentElement = cardElement.querySelector('.toggle-content');
+        const buttonElement = cardElement.querySelector('.toggle-button');
+        
+        if (contentElement.classList.contains('collapsed')) {
+            // Expand content
+            contentElement.classList.remove('collapsed');
+            buttonElement.classList.remove('collapsed');
+        } else {
+            // Collapse content
+            contentElement.classList.add('collapsed');
+            buttonElement.classList.add('collapsed');
+        }
+    }
 </script>
 {% endblock %}

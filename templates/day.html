@@ -2,33 +2,7 @@
 
 {% block title %}Life Journal - {{ date }}{% endblock %}
 
-{% block head %}
-<style>
-.weather-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0.25;
-    z-index: -1;
-}
-
-/* Make content more visible on top of background */
-.container {
-    background-color: rgba(255, 255, 255, 0.85);
-    border-radius: 10px;
-    padding: 20px;
-    margin-top: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-</style>
-{% endblock %}
-
 {% block content %}
-<div id="weather-background" class="weather-background"></div>
 <div class="row mb-4">
     <div class="col">
         <div class="d-flex justify-content-between align-items-center">
@@ -132,11 +106,6 @@
     
 
     function generateTimeline(dayData) {
-        // Set the weather background if weather data is available
-        if (dayData.weather) {
-            setWeatherBackground(dayData.weather.weather_main);
-        }
-        
         // Combine all entries and sort by time (Facts excluded as requested)
         const allEntries = [
             ...dayData.conversations.map(item => ({ type: 'conversation', data: item, time: item.time })),
@@ -519,60 +488,5 @@
     }
     
     // Facts function removed as requested
-    
-    function setWeatherBackground(weatherMain) {
-        const backgroundElement = document.getElementById('weather-background');
-        if (!backgroundElement) return;
-        
-        // Default image if weather condition doesn't match any known conditions
-        let backgroundImage = '/images/weather/Clear.jpg';
-        
-        // Map weather_main values to corresponding image files
-        switch (weatherMain) {
-            case 'Clear':
-                backgroundImage = '/images/weather/Clear.jpg';
-                break;
-            case 'Clouds':
-                backgroundImage = '/images/weather/Clouds.jpg';
-                break;
-            case 'Drizzle':
-                backgroundImage = '/images/weather/Drizzle.jpg';
-                break;
-            case 'Rain':
-                backgroundImage = '/images/weather/rain.jpg';
-                break;
-            case 'Thunderstorm':
-                backgroundImage = '/images/weather/Thunderstorm.jpg';
-                break;
-            case 'Snow':
-                backgroundImage = '/images/weather/Snow.jpg';
-                break;
-            case 'Mist':
-                backgroundImage = '/images/weather/Mist.jpg';
-                break;
-            case 'Smoke':
-                backgroundImage = '/images/weather/smoke.jpg';
-                break;
-            case 'Haze':
-                backgroundImage = '/images/weather/Haze.jpg';
-                break;
-            case 'Dust':
-                backgroundImage = '/images/weather/Dust.jpg';
-                break;
-            case 'Fog':
-                backgroundImage = '/images/weather/Fog.jpg';
-                break;
-            case 'Tornado':
-                backgroundImage = '/images/weather/Tornado.jpg';
-                break;
-            default:
-                // Use Clear as the fallback
-                backgroundImage = '/images/weather/Clear.jpg';
-        }
-        
-        // Set the background image
-        backgroundElement.style.backgroundImage = `url('${backgroundImage}')`;
-        console.log(`Set weather background to ${backgroundImage} based on weather: ${weatherMain}`);
-    }
 </script>
 {% endblock %}

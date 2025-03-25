@@ -59,69 +59,43 @@
             .then(data => {
                 if (data.status === 'success') {
                     // Process data for calendar
-                    // Create different events for each date based on data type
-                    let allEvents = [];
-                    
-                    data.date_counts.forEach(item => {
-                        // Base event for the date
-                        allEvents.push({
-                            title: '',
+                    const events = data.date_counts.map(item => {
+                        // Create events with emojis in the top right
+                        let emojis = '';
+                        
+                        if (item.conversations > 0) {
+                            emojis += '🐝';
+                        }
+                        if (item.lifelogs > 0) {
+                            emojis += '∞';
+                        }
+                        if (item.netflix > 0) {
+                            emojis += '🍿';
+                        }
+                        
+                        return {
+                            title: emojis,
                             start: item.date,
-                            display: 'background',
-                            backgroundColor: '#f8f9fa', // Light gray background for all dates
                             extendedProps: {
-                                type: 'base',
+                                conversations: item.conversations,
+                                lifelogs: item.lifelogs,
+                                netflix: item.netflix,
                                 total: item.total
                             }
-                        });
-                        
-                        // Add data type specific events
-                        if (item.conversations > 0) {
-                            allEvents.push({
-                                title: '🐝',
-                                start: item.date,
-                                extendedProps: {
-                                    type: 'conversation',
-                                    count: item.conversations
-                                },
-                                classNames: ['data-marker', 'bee-marker']
-                            });
-                        }
-                        
-                        if (item.lifelogs > 0) {
-                            allEvents.push({
-                                title: '∞',
-                                start: item.date,
-                                extendedProps: {
-                                    type: 'lifelog',
-                                    count: item.lifelogs
-                                },
-                                classNames: ['data-marker', 'limitless-marker']
-                            });
-                        }
-                        
-                        if (item.netflix > 0) {
-                            allEvents.push({
-                                title: '🍿',
-                                start: item.date,
-                                extendedProps: {
-                                    type: 'netflix',
-                                    count: item.netflix
-                                },
-                                classNames: ['data-marker', 'netflix-marker']
-                            });
-                        }
+                        };
                     });
                     
                     // Initialize calendar
                     const calendar = new FullCalendar.Calendar(calendarEl, {
                         initialView: 'dayGridMonth',
-                        events: allEvents,
-                        eventClick: function(info) {
-                            // Only navigate if clicking on a day, not on a marker
-                            if (info.event.extendedProps.type === 'base') {
-                                window.location.href = `/day/${info.event.startStr}`;
+                        events: events,
+                        eventContent: function(arg) {
+                            if (arg.event.title) {
+                                return {
+                                    html: `<div class="emoji-container">${arg.event.title}</div>`
+                                };
                             }
+                            return arg.event.title;
                         },
                         dateClick: function(info) {
                             window.location.href = `/day/${info.dateStr}`;

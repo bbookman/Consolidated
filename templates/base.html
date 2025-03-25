@@ -185,23 +185,17 @@
             align-items: center;
             height: 200px;
         }
-        .data-marker {
-            font-size: 16px;
-            text-align: center;
+        .emoji-container {
+            position: absolute;
+            right: 2px;
+            top: 2px;
+            font-size: 10px;
+            line-height: 1;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
         }
-        .bee-marker {
-            background-color: #e6f7ff;
-            border-left: 4px solid #1890ff;
-        }
-        .limitless-marker {
-            background-color: #f6ffed;
-            border-left: 4px solid #52c41a;
-        }
-        .netflix-marker {
-            background-color: #fff2e8;
-            border-left: 4px solid #fa541c;
-        }
-        /* New styling for data type markers */
+        /* Simple emoji container in top right */
     </style>
     {% block head %}{% endblock %}
 </head>

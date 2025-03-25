@@ -1,0 +1,248 @@
+{
+  "date_range": {
+    "end": "2025-03-22",
+    "start": "2025-03-22"
+  },
+  "days": [
+    {
+      "conversations": [
+        {
+          "atmosphere": "The atmosphere was generally positive and lighthearted, with Bruce engaging in friendly banter with his coworkers and customers. He was eager to learn new tasks and seemed to enjoy the challenges of his work. There were moments of frustration with technical difficulties and the occasional rude customer, but overall, the day was pleasant.",
+          "id": 111,
+          "key_takeaways": "",
+          "latitude": 34.28926553186645,
+          "location": "2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States",
+          "longitude": -77.87209545061658,
+          "summary": "Today, Bruce worked on a journal entry about his friend, Mike Rabel, reminiscing about their shared past from middle school through college and beyond. He also spent the day at Walgreens, learning how to perform various tasks in the photo lab and assisting customers at the register.",
+          "time": "16:41"
+        },
+        {
+          "atmosphere": "",
+          "id": 109,
+          "key_takeaways": "",
+          "latitude": null,
+          "location": null,
+          "longitude": null,
+          "summary": "",
+          "time": "16:12"
+        },
+        {
+          "atmosphere": "",
+          "id": 1,
+          "key_takeaways": [
+            "First important point about this conversation",
+            "Second observation from the discussion",
+            "Final conclusion reached"
+          ],
+          "latitude": 34.121450727235086,
+          "location": "6023 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+          "longitude": -77.91260624247737,
+          "summary": "",
+          "time": "15:08"
+        },
+        {
+          "atmosphere": "Overall, the atmosphere was a bit chaotic and stressful. There were multiple conversations happening at once, and I was juggling a lot of different tasks.",
+          "id": 2,
+          "key_takeaways": [
+            "Identified critical issue in project",
+            "Discussed potential solutions",
+            "Agreed on next steps",
+            "Set timeline for implementation"
+          ],
+          "latitude": 34.121367087671324,
+          "location": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+          "longitude": -77.91256407067813,
+          "summary": "Today was a mixed bag. I had a frustrating moment with my dog, Peach, who wouldn't stop bugging me to go out even though I had just taken her. I think she might be drinking too much water because her poop looked a little hard.  On a positive note, my boss was really nice and changed my schedule for tomorrow so I could go in at my usual time.",
+          "time": "12:54"
+        },
+        {
+          "atmosphere": "The atmosphere seems potentially tense. Bruce is unwell and the other person's question about \"looking for a benefit\" could be interpreted as skeptical or challenging.",
+          "id": 3,
+          "key_takeaways": [
+            "Reviewed recent performance metrics",
+            "Notable improvement in customer satisfaction",
+            "Areas needing attention: response time",
+            "Action item: schedule follow-up meeting"
+          ],
+          "latitude": 34.1212604321941,
+          "location": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+          "longitude": -77.91256445813143,
+          "summary": "Bruce was feeling unwell but expressed feelings of happiness to someone they addressed as \"sweetie.\" The other person asked if Bruce was \"looking for a benefit.\"",
+          "time": "12:33"
+        },
+        {
+          "atmosphere": "It seems like a normal day for Bruce. He's keeping track of his health numbers and is also looking after someone named Benetton.",
+          "id": 4,
+          "key_takeaways": "",
+          "latitude": 34.121259300907326,
+          "location": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+          "longitude": -77.91255491305127,
+          "summary": "Bruce had a blood glucose reading of 125 and weighed 188 lbs.  He then needed to use the bathroom, so he let someone named Benetton know he was going to move their belongings.  It seems like Benetton may have left their things near the bathroom.",
+          "time": "12:20"
+        },
+        {
+          "atmosphere": "The conversation seems casual and relaxed, like a chat between family or close friends. There's a bit of background noise and chatter.",
+          "id": 5,
+          "key_takeaways": "",
+          "latitude": 34.12126848249273,
+          "location": "6027 Willow Glen Dr, Wilmington, NC, New Hanover County, 28412, United States",
+          "longitude": -77.91258336586303,
+          "summary": "You had a conversation with Ivette about her work. She told you she was asked to work another day next week, Wednesday at 5:00 am. She's thinking of working Mondays during the summer because they don't have enough staff. You also discussed the Mandela effect and how you want to analyze transcripts for fallacies, biases, and logic.",
+          "time": "01:26"
+        },
+        {
+          "atmosphere": "Bruce seemed to be experiencing a mild memory lapse but ultimately recalled the information he was looking for.",
+          "id": 6,
+          "key_takeaways": "",
+          "latitude": 34.289404567791806,
+          "location": "2401 N College Rd, Wilmington, NC, New Hanover County, 28405, United States",
+          "longitude": -77.8722974690807,
+          "summary": "Bruce was trying to recall the name of a farm he takes his kids to. He thought it was called \"Lemus Lemus Farm\", then \"LEMOS Lemos Farm\", before settling on \"Limos Farm\". The farm is located in the mountains on the way to Monterey.",
+          "time": "00:52"
+        }
+      ],
+      "date": "2025-03-22",
+      "facts": [],
+      "lifelogs": [
+        {
+          "description": null,
+          "id": 16,
+          "log_type": null,
+          "tags": [],
+          "time": "21:16",
+          "title": "Ivette and I discussed the process of applying a screen protector, purchasing pineapples, using a self-checkout kiosk, and handling cash tips"
+        },
+        {
+          "description": null,
+          "id": 17,
+          "log_type": null,
+          "tags": [],
+          "time": "21:01",
+          "title": "Discussing double bagging groceries and how to assemble a floating frame"
+        },
+        {
+          "description": null,
+          "id": 18,
+          "log_type": null,
+          "tags": [],
+          "time": "20:52",
+          "title": "Processing transactions for various customers and discussing the Walgreens rewards program and credit card"
+        },
+        {
+          "description": null,
+          "id": 19,
+          "log_type": null,
+          "tags": [],
+          "time": "20:51",
+          "title": "Processing customer transactions and discussing rewards programs"
+        },
+        {
+          "description": null,
+          "id": 20,
+          "log_type": null,
+          "tags": [],
+          "time": "20:40",
+          "title": "Troubleshooting iPhone issues and using Siri for assistance"
+        },
+        {
+          "description": null,
+          "id": 21,
+          "log_type": null,
+          "tags": [],
+          "time": "20:36",
+          "title": "Assisting customers with purchases and rewards"
+        },
+        {
+          "description": null,
+          "id": 11,
+          "log_type": null,
+          "tags": [],
+          "time": "16:15",
+          "title": "Trying to get Grape to come out of hiding"
+        },
+        {
+          "description": null,
+          "id": 1,
+          "log_type": null,
+          "tags": [],
+          "time": "15:46",
+          "title": "Reciting numbers, setting a timer, and ending with a goodbye"
+        },
+        {
+          "description": null,
+          "id": 2,
+          "log_type": null,
+          "tags": [],
+          "time": "15:39",
+          "title": "Discussing app development with Russell and then dealing with a timer and charger issue"
+        },
+        {
+          "description": null,
+          "id": 3,
+          "log_type": null,
+          "tags": [],
+          "time": "15:30",
+          "title": "Encouraging my dog to go potty, praising her, and then discussing feeding the dogs and my upcoming lunch"
+        },
+        {
+          "description": null,
+          "id": 4,
+          "log_type": null,
+          "tags": [],
+          "time": "14:59",
+          "title": "Set a timer and tell Grape to sit down"
+        },
+        {
+          "description": null,
+          "id": 5,
+          "log_type": null,
+          "tags": [],
+          "time": "14:39",
+          "title": "Discussion about spelling and a command to Peach"
+        },
+        {
+          "description": null,
+          "id": 6,
+          "log_type": null,
+          "tags": [],
+          "time": "14:17",
+          "title": "Frustrated attempts to scan a QR code, followed by soothing a pet"
+        },
+        {
+          "description": null,
+          "id": 7,
+          "log_type": null,
+          "tags": [],
+          "time": "14:10",
+          "title": "Requesting Siri to retrieve a specific conversation about taking my dog Peach to the bathroom"
+        },
+        {
+          "description": null,
+          "id": 8,
+          "log_type": null,
+          "tags": [],
+          "time": "13:47",
+          "title": "Recalling details of a house in Wilmington while managing Peach, presumably a pet"
+        },
+        {
+          "description": null,
+          "id": 9,
+          "log_type": null,
+          "tags": [],
+          "time": "13:28",
+          "title": "Discussing a child's behavior, summer plans, and community college"
+        },
+        {
+          "description": null,
+          "id": 10,
+          "log_type": null,
+          "tags": [],
+          "time": "13:11",
+          "title": "Conversation shifts to a child at a party, food, and Benetton's health"
+        }
+      ],
+      "netflix": []
+    }
+  ],
+  "status": "success"
+}

@@ -397,8 +397,10 @@
             formatted = formatted.replace(/(<li>.*?<\/li>)+/gs, '<ul>$&</ul>');
         }
         
-        // Remove any remaining single asterisks (don't convert to italic)
-        formatted = formatted.replace(/(?<!\*)\*([^\*]+)\*(?!\*)/g, '$1');
+        // Remove any Markdown italic formatting (don't convert to HTML italics)
+        formatted = formatted.replace(/(?:^|\s)_([^_]+)_(?:$|\s)/g, ' $1 '); // underscores with spaces/boundaries
+        formatted = formatted.replace(/(?:^|\s)\*([^*]+)\*(?:$|\s)/g, ' $1 '); // asterisks with spaces/boundaries
+        formatted = formatted.replace(/(?<!\*)\*([^\*]+)\*(?!\*)/g, '$1'); // catch remaining asterisk cases
         
         // Add paragraph breaks
         formatted = formatted.replace(/\n\n/g, '</p><p>');
@@ -517,8 +519,10 @@
             formattedSummary = formattedSummary.replace(/(<li>.*?<\/li>)+/gs, '<ul>$&</ul>');
         }
         
-        // Remove any remaining single asterisks (don't convert to italic)
-        formattedSummary = formattedSummary.replace(/(?<!\*)\*([^\*]+)\*(?!\*)/g, '$1');
+        // Remove any Markdown italic formatting (don't convert to HTML italics)
+        formattedSummary = formattedSummary.replace(/(?:^|\s)_([^_]+)_(?:$|\s)/g, ' $1 '); // underscores with spaces/boundaries
+        formattedSummary = formattedSummary.replace(/(?:^|\s)\*([^*]+)\*(?:$|\s)/g, ' $1 '); // asterisks with spaces/boundaries
+        formattedSummary = formattedSummary.replace(/(?<!\*)\*([^\*]+)\*(?!\*)/g, '$1'); // catch remaining asterisk cases
         
         // Add paragraph breaks
         formattedSummary = formattedSummary.replace(/\n\n/g, '</p><p>');

@@ -85,7 +85,7 @@
                             if (arg.event.extendedProps.total > 0) {
                                 // Entry count removed as requested
                                 
-                                html += '<div style="position: absolute; bottom: 5px; right: 5px;">';
+                                html += '<div style="position: absolute; bottom: 2px; right: 2px; display: flex; justify-content: flex-end; flex-wrap: wrap;">';
                                 if (arg.event.extendedProps.conversations > 0) {
                                     html += `<span class="day-marker marker-conversations" title="${arg.event.extendedProps.conversations} conversations">🐝</span>`;
                                 }
@@ -503,13 +503,13 @@
     }
     
     function getHeatColor(count) {
-        // Return color based on entry count for heatmap
+        // Return color based on entry count for heatmap with transparency
         if (count === 0) return '#ffffff';
-        if (count < 3) return '#e6f2ff';
-        if (count < 5) return '#b3d9ff';
-        if (count < 10) return '#80bfff';
-        if (count < 20) return '#4da6ff';
-        return '#0080ff';
+        if (count < 3) return 'rgba(230, 242, 255, 0.5)';  // Light blue with 50% transparency
+        if (count < 5) return 'rgba(179, 217, 255, 0.5)';  // Medium blue with 50% transparency
+        if (count < 10) return 'rgba(128, 191, 255, 0.5)'; // Darker blue with 50% transparency
+        if (count < 20) return 'rgba(77, 166, 255, 0.5)';  // Even darker blue with 50% transparency
+        return 'rgba(0, 128, 255, 0.5)';                  // Darkest blue with 50% transparency
     }
 </script>
 {% endblock %}

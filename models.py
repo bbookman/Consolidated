@@ -91,10 +91,33 @@ class Limitless_Lifelog_SubSummary(Base):
     # Relationship to parent lifelog
     lifelog = relationship("Limitless_Lifelog", foreign_keys=[lifelog_id], back_populates="subsummaries")
     
+    # Relationship to transcript lines
+    transcript_lines = relationship("Limitless_Transcript_Line", back_populates="subsummary", cascade="all, delete-orphan")
+    
     __table_args__ = (UniqueConstraint('lifelog_id', 'position', name='uq_lifelog_subsummary_position'),)
     
     def __repr__(self):
         return f"<Limitless_Lifelog_SubSummary(id={self.id}, lifelog_id='{self.lifelog_id}', content='{self.content[:30]}...')>"
+
+class Limitless_Transcript_Line(Base):
+    __tablename__ = 'limitless_transcript_lines'
+    
+    id = Column(Integer, primary_key=True)
+    subsummary_id = Column(Integer, ForeignKey('limitless_lifelog_subsummaries.id'))  # Reference to parent subsummary
+    speaker = Column(String, nullable=True)  # Speaker name if available
+    text = Column(Text, nullable=False)  # The actual transcript text
+    start_time = Column(String, nullable=True)  # Start time of this line in the original recording
+    end_time = Column(String, nullable=True)  # End time of this line in the original recording
+    position = Column(Integer, nullable=True)  # Position in the sequence of transcript lines
+    created_at = Column(DateTime, default=datetime.utcnow)
+    
+    # Relationship to parent subsummary
+    subsummary = relationship("Limitless_Lifelog_SubSummary", foreign_keys=[subsummary_id], back_populates="transcript_lines")
+    
+    __table_args__ = (UniqueConstraint('subsummary_id', 'position', name='uq_transcript_line_position'),)
+    
+    def __repr__(self):
+        return f"<Limitless_Transcript_Line(id={self.id}, subsummary_id={self.subsummary_id}, speaker='{self.speaker if self.speaker else 'Unknown'}', text='{self.text[:30]}...')>"
 
 class Weather_Data(Base):
     __tablename__ = 'weather_data'

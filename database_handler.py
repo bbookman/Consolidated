@@ -545,6 +545,84 @@ def get_conversations_with_coordinates():
             .all()
     finally:
         session.close()
+        
+def check_weather_data_exists_for_date(date_str):
+    """
+    Check if weather data exists for a specific date.
+    
+    Args:
+        date_str: Date string in format YYYY-MM-DD
+        
+    Returns:
+        True if weather data exists for this date, False otherwise
+    """
+    session = Session()
+    try:
+        # Parse the date string
+        from datetime import datetime
+        
+        # Create datetime objects for the start and end of the day
+        start_date = datetime.strptime(date_str, '%Y-%m-%d')
+        end_date = datetime.strptime(date_str + ' 23:59:59', '%Y-%m-%d %H:%M:%S')
+        
+        # Check if any weather data exists within this date range
+        count = session.query(Weather_Data)\
+            .filter(Weather_Data.timestamp >= start_date)\
+            .filter(Weather_Data.timestamp <= end_date)\
+            .count()
+        
+        return count > 0
+    except Exception as e:
+        logger.error(f"Error checking weather data for date {date_str}: {str(e)}")
+        return False
+    finally:
+        session.close()
+        
+def get_dates_with_data():
+    """
+    Get a list of unique dates that have Bee, Netflix, or Limitless data.
+    
+    Returns:
+        A list of date strings in format YYYY-MM-DD
+    """
+    session = Session()
+    try:
+        unique_dates = set()
+        
+        # Get Bee conversation dates
+        bee_dates = session.query(
+            func.date_trunc('day', Bee_Conversation.created_at).label('date_day')
+        ).distinct().all()
+        
+        for date_tuple in bee_dates:
+            if date_tuple[0]:
+                unique_dates.add(date_tuple[0].strftime('%Y-%m-%d'))
+        
+        # Get Netflix history dates
+        netflix_dates = session.query(
+            func.date_trunc('day', Netflix_History_Item.watch_date).label('date_day')
+        ).distinct().all()
+        
+        for date_tuple in netflix_dates:
+            if date_tuple[0]:
+                unique_dates.add(date_tuple[0].strftime('%Y-%m-%d'))
+        
+        # Get Limitless lifelog dates
+        lifelog_dates = session.query(
+            func.date_trunc('day', Limitless_Lifelog.created_at).label('date_day')
+        ).distinct().all()
+        
+        for date_tuple in lifelog_dates:
+            if date_tuple[0]:
+                unique_dates.add(date_tuple[0].strftime('%Y-%m-%d'))
+        
+        # Convert to sorted list
+        return sorted(list(unique_dates))
+    except Exception as e:
+        logger.error(f"Error getting dates with data: {str(e)}")
+        return []
+    finally:
+        session.close()
 
 def store_billboard_chart_items(chart_data, chart_name):
     """

@@ -413,20 +413,28 @@
         formattedSummary = formattedSummary.replace(/^#(?!\s)/gm, '');
         
         // Handle "Summary" text consistently across all entries
-        // 1. Convert "Summary:" or "Summary :" to proper heading
+        // 1. Convert all heading variations to the same format
+        formattedSummary = formattedSummary.replace(/^\s*#{1,3}\s*Summary:?\s*$/gim, '# Summary');
         formattedSummary = formattedSummary.replace(/^\s*(Summary):?\s*$/gim, '# Summary');
         formattedSummary = formattedSummary.replace(/^\*\*Summary:?\*\*\s*$/gim, '# Summary');
 
         // 2. Convert bold "Summary" without colon to proper heading
         formattedSummary = formattedSummary.replace(/^\*\*Summary\*\*\s*$/gim, '# Summary');
         
+        // 3. Handle Summary in a section/subsection heading
+        formattedSummary = formattedSummary.replace(/^(#{1,3})\s*Summary\s*$/gim, '# Summary');
+        
         // Handle "Atmosphere" text consistently across all entries
-        // 1. Convert "Atmosphere:" or "Atmosphere :" to proper heading
+        // 1. Convert all heading variations to the same format
+        formattedSummary = formattedSummary.replace(/^\s*#{1,3}\s*Atmosphere:?\s*$/gim, '# Atmosphere');
         formattedSummary = formattedSummary.replace(/^\s*(Atmosphere):?\s*$/gim, '# Atmosphere');
         formattedSummary = formattedSummary.replace(/^\*\*Atmosphere:?\*\*\s*$/gim, '# Atmosphere');
 
         // 2. Convert bold "Atmosphere" without colon to proper heading
         formattedSummary = formattedSummary.replace(/^\*\*Atmosphere\*\*\s*$/gim, '# Atmosphere');
+        
+        // 3. Handle Atmosphere in a section/subsection heading
+        formattedSummary = formattedSummary.replace(/^(#{1,3})\s*Atmosphere\s*$/gim, '# Atmosphere');
         
         // Replace markdown headers with HTML headers
         formattedSummary = formattedSummary.replace(/## (.*?)(?:\n|$)/g, '<h4>$1</h4>');

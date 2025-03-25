@@ -357,5 +357,12 @@ if __name__ == '__main__':
     # Create templates directory if needed
     os.makedirs('templates', exist_ok=True)
     
-    # Run the Flask app
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    # Log the startup information
+    print("Starting web server...")
+    print("Binding to all network interfaces (0.0.0.0) on port 5000")
+    print("This will make the server accessible from the public internet")
+    
+    # Ensure the Replit workflow connection can access the server
+    # by explicitly binding to all interfaces
+    # Enable threading to handle multiple connections simultaneously
+    app.run(host='0.0.0.0', port=5000, debug=True, threaded=True)

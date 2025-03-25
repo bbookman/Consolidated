@@ -59,10 +59,11 @@
             .then(data => {
                 if (data.status === 'success') {
                     // Process data for calendar
-                    const events = data.date_counts.map(item => {
-                        // Only create events for days with data
+                    // Create two types of events: background color and emoji indicators
+                    const backgroundEvents = data.date_counts.map(item => {
+                        // Create background events for all days with data
                         return {
-                            title: '', // No title
+                            title: '',
                             start: item.date,
                             backgroundColor: item.total > 0 ? '#e8f7ff' : 'transparent', // Light blue background for days with data
                             display: 'background',
@@ -75,10 +76,28 @@
                         };
                     });
                     
+                    // Create bee emoji events for days with conversations
+                    const beeEvents = data.date_counts
+                        .filter(item => item.conversations > 0)
+                        .map(item => {
+                            return {
+                                title: '🐝', // Bee emoji for conversation data
+                                start: item.date,
+                                allDay: true,
+                                classNames: ['bee-indicator'],
+                                extendedProps: {
+                                    type: 'bee'
+                                }
+                            };
+                        });
+                    
+                    // Combine all events
+                    const allEvents = [...backgroundEvents, ...beeEvents];
+                    
                     // Initialize calendar
                     const calendar = new FullCalendar.Calendar(calendarEl, {
                         initialView: 'dayGridMonth',
-                        events: events,
+                        events: allEvents,
                         dateClick: function(info) {
                             window.location.href = `/day/${info.dateStr}`;
                         }

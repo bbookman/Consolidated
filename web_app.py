@@ -94,13 +94,19 @@ def journal_data():
         # Facts removed as requested
         bee_facts = []  # Empty list to maintain compatibility with existing code
         
-        # Get Limitless lifelogs
+        # Get Limitless lifelogs with their subsummaries
         lifelogs = session.query(models.Limitless_Lifelog).filter(
             and_(
                 models.Limitless_Lifelog.created_at >= start_date_obj,
                 models.Limitless_Lifelog.created_at < end_date_obj + timedelta(days=1)
             )
         ).order_by(models.Limitless_Lifelog.created_at.desc()).all()
+        
+        # Load related subsummaries for each lifelog
+        for log in lifelogs:
+            log.subsummaries = session.query(models.Limitless_Lifelog_SubSummary).filter(
+                models.Limitless_Lifelog_SubSummary.lifelog_id == log.log_id
+            ).order_by(models.Limitless_Lifelog_SubSummary.position).all()
         
         # Get Netflix viewing history
         netflix_history = session.query(models.Netflix_History_Item).filter(
@@ -193,13 +199,23 @@ def journal_data():
                     'netflix': []
                 }
             
+            # Get subsummaries for this lifelog if available
+            subsummaries = []
+            if hasattr(log, 'subsummaries') and log.subsummaries:
+                # Sort by position to ensure correct order
+                subsummaries = sorted(
+                    [{'position': sub.position, 'content': sub.content} for sub in log.subsummaries],
+                    key=lambda x: x['position']
+                )
+            
             days_data[day_key]['lifelogs'].append({
                 'id': log.id,
                 'title': log.title or "Untitled",
                 'description': log.description,
                 'time': log.created_at.strftime('%H:%M'),
                 'log_type': log.log_type,
-                'tags': json.loads(log.tags) if log.tags else []
+                'tags': json.loads(log.tags) if log.tags else [],
+                'subsummaries': subsummaries
             })
         
         # Process Netflix viewing history

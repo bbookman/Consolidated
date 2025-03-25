@@ -310,7 +310,21 @@
                 </div>
                 <h5 class="item-title">${item.title}</h5>
                 <div class="toggle-content">
-                    ${item.description ? `<div>${item.description}</div>` : ''}
+                    ${item.description ? `<div class="mb-3">${item.description}</div>` : ''}
+                    
+                    ${item.subsummaries && item.subsummaries.length > 0 ? `
+                        <div class="lifelog-subsummaries mb-3">
+                            <h5 class="subsummaries-heading">Discussion Topics</h5>
+                            <div class="subsummaries-container">
+                                ${item.subsummaries.map((sub, index) => `
+                                    <div class="subsummary-item mb-2">
+                                        <strong>${index + 1}. ${sub.content}</strong>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    ` : ''}
+                    
                     ${item.tags && item.tags.length > 0 ? `
                         <div class="mt-2">
                             ${item.tags.map(tag => `<span class="badge bg-secondary me-1">${tag}</span>`).join('')}

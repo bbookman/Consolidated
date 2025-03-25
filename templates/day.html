@@ -82,97 +82,29 @@
         fetch(`/api/journal_data?start_date=${date}&end_date=${date}`)
             .then(response => response.json())
             .then(data => {
-                document.getElementById('loading-summary').style.display = 'none';
                 document.getElementById('loading-timeline').style.display = 'none';
                 
                 if (data.status === 'success' && data.days.length > 0) {
                     const dayData = data.days[0];
                     
-                    // Update summary
-                    updateSummary(dayData);
-                    
                     // Generate timeline
                     generateTimeline(dayData);
                     
                     // Show data sections
-                    document.getElementById('summary-card').style.display = 'block';
                     document.getElementById('no-data-alert').style.display = 'none';
                 } else {
                     // No data for this day
-                    document.getElementById('summary-card').style.display = 'none';
                     document.getElementById('no-data-alert').style.display = 'block';
                 }
             })
             .catch(error => {
                 console.error('Error fetching day data:', error);
-                document.getElementById('loading-summary').innerHTML = 
-                    '<div class="alert alert-danger">Failed to load data</div>';
                 document.getElementById('loading-timeline').innerHTML = 
                     '<div class="alert alert-danger">Failed to load data</div>';
             });
     }
     
-    function updateSummary(dayData) {
-        // Total Entries and Activity Summary removed as requested
-        let summaryHtml = `
-            <div class="row">
-                <div class="col-12">
-                    <div>
-        `;
-        
-        // Add some highlights from the day
-        let highlightsAdded = 0;
-        
-        // Add first Netflix item if available
-        if (dayData.netflix.length > 0) {
-            const netflix = dayData.netflix[0];
-            summaryHtml += `
-                <div class="mb-2">
-                    <span class="source-badge source-netflix">🍿 Netflix</span>
-                    Watched ${netflix.title}
-                </div>
-            `;
-            highlightsAdded++;
-        }
-        
-        // Add first Lifelog if available
-        if (dayData.lifelogs.length > 0) {
-            const lifelog = dayData.lifelogs[0];
-            summaryHtml += `
-                <div class="mb-2">
-                    <span class="source-badge source-limitless">🕰️ Limitless</span>
-                    ${lifelog.title.substring(0, 50)}${lifelog.title.length > 50 ? '...' : ''}
-                </div>
-            `;
-            highlightsAdded++;
-        }
-        
-        // Add first conversation if available
-        if (dayData.conversations.length > 0) {
-            const conv = dayData.conversations[0];
-            summaryHtml += `
-                <div class="mb-2">
-                    <span class="source-badge source-bee">🐝 Bee</span>
-                    ${conv.summary.substring(0, 50)}${conv.summary.length > 50 ? '...' : ''}
-                </div>
-            `;
-            highlightsAdded++;
-        }
-        
-        // If no highlights were added, show a message
-        if (highlightsAdded === 0) {
-            summaryHtml += `<div class="text-muted">No highlights available</div>`;
-        }
-        
-        summaryHtml += `
-                    </div>
-                </div>
-            </div>
-        `;
-        
-        document.getElementById('summary-content').innerHTML = summaryHtml;
-    }
-    
+
     function generateTimeline(dayData) {
         // Combine all entries and sort by time (Facts excluded as requested)
         const allEntries = [

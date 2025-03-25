@@ -55,28 +55,36 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const date = '{{ date }}';
-        let currentDate = new Date(date);
         
-        // Format date for display
-        const formattedDate = new Date(date).toLocaleDateString('en-US', { 
+        // Fix for timezone issues - parse the date correctly by explicitly setting UTC time
+        // This ensures the date displayed matches the URL date regardless of timezone
+        const [year, month, day] = date.split('-').map(Number);
+        let currentDate = new Date(Date.UTC(year, month - 1, day));
+        
+        // Format date for display - make sure we use UTC methods to avoid timezone shifts
+        const formattedDate = new Intl.DateTimeFormat('en-US', { 
             weekday: 'long', 
             year: 'numeric', 
             month: 'long', 
-            day: 'numeric' 
-        });
+            day: 'numeric',
+            timeZone: 'UTC'  // Use UTC to ensure consistency with the URL date
+        }).format(currentDate);
+        
         document.getElementById('formatted-date').textContent = formattedDate;
         
         // Previous day button
         document.getElementById('prev-day').addEventListener('click', function() {
+            // Use UTC methods to ensure consistent date calculations
             const prevDate = new Date(currentDate);
-            prevDate.setDate(prevDate.getDate() - 1);
+            prevDate.setUTCDate(prevDate.getUTCDate() - 1);
             window.location.href = `/day/${prevDate.toISOString().split('T')[0]}`;
         });
         
         // Next day button
         document.getElementById('next-day').addEventListener('click', function() {
+            // Use UTC methods to ensure consistent date calculations
             const nextDate = new Date(currentDate);
-            nextDate.setDate(nextDate.getDate() + 1);
+            nextDate.setUTCDate(nextDate.getUTCDate() + 1);
             window.location.href = `/day/${nextDate.toISOString().split('T')[0]}`;
         });
         

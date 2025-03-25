@@ -223,10 +223,23 @@ def format_conversation(conv):
     if conv.get("created_at"):
         created_at = conv["created_at"]
     
+    # Convert key takeaways text to list if it exists
+    key_takeaways_list = None
+    if key_takeaways_text:
+        # Split by newlines and handle bullet points
+        key_takeaways_items = key_takeaways_text.strip().split('\n')
+        key_takeaways_list = []
+        for item in key_takeaways_items:
+            # Remove bullet points or dashes if they exist
+            cleaned_item = re.sub(r'^[\*\-•]+\s*', '', item.strip())
+            if cleaned_item:  # Only add non-empty items
+                key_takeaways_list.append(cleaned_item)
+    
     return {
         "Title": f"Conversation on {created_at[:10] if created_at else 'Unknown Date'}",
         "Summary": summary_text,
         "Atmosphere": atmosphere_text,
+        "Key Takeaways": key_takeaways_list,
         "Address": address,
         "Start Time": start_time,
         "End Time": end_time,

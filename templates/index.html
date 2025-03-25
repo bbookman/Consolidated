@@ -89,13 +89,19 @@
                     const calendar = new FullCalendar.Calendar(calendarEl, {
                         initialView: 'dayGridMonth',
                         events: events,
-                        eventContent: function(arg) {
-                            if (arg.event.title) {
-                                return {
-                                    html: `<div style="position: absolute; bottom: 2px; right: 2px; font-size: 12px;">${arg.event.title}</div>`
-                                };
+                        eventDidMount: function(info) {
+                            // If event has a title (emojis), position them at the bottom right
+                            if (info.event.title) {
+                                const customEl = document.createElement('div');
+                                customEl.innerHTML = info.event.title;
+                                customEl.style.position = 'absolute';
+                                customEl.style.bottom = '2px';
+                                customEl.style.right = '2px';
+                                customEl.style.fontSize = '12px';
+                                
+                                // Add to the cell
+                                info.el.appendChild(customEl);
                             }
-                            return arg.event.title;
                         },
                         dateClick: function(info) {
                             window.location.href = `/day/${info.dateStr}`;

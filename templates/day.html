@@ -309,6 +309,14 @@
         // Remove # characters not followed by a space (not a proper header)
         formatted = formatted.replace(/^#(?!\s)/gm, '');
         
+        // Handle "Summary" text consistently across all entries
+        // 1. Convert "Summary:" or "Summary :" to proper heading
+        formatted = formatted.replace(/^\s*(Summary):?\s*$/gim, '# Summary');
+        formatted = formatted.replace(/^\*\*Summary:?\*\*\s*$/gim, '# Summary');
+
+        // 2. Convert bold "Summary" without colon to proper heading
+        formatted = formatted.replace(/^\*\*Summary\*\*\s*$/gim, '# Summary');
+        
         // Replace markdown headers with HTML headers
         formatted = formatted.replace(/## (.*?)(?:\n|$)/g, '<h4>$1</h4>');
         formatted = formatted.replace(/# (.*?)(?:\n|$)/g, '<h3>$1</h3>');
@@ -403,6 +411,14 @@
         
         // Remove # characters not followed by a space (not a proper header)
         formattedSummary = formattedSummary.replace(/^#(?!\s)/gm, '');
+        
+        // Handle "Summary" text consistently across all entries
+        // 1. Convert "Summary:" or "Summary :" to proper heading
+        formattedSummary = formattedSummary.replace(/^\s*(Summary):?\s*$/gim, '# Summary');
+        formattedSummary = formattedSummary.replace(/^\*\*Summary:?\*\*\s*$/gim, '# Summary');
+
+        // 2. Convert bold "Summary" without colon to proper heading
+        formattedSummary = formattedSummary.replace(/^\*\*Summary\*\*\s*$/gim, '# Summary');
         
         // Replace markdown headers with HTML headers
         formattedSummary = formattedSummary.replace(/## (.*?)(?:\n|$)/g, '<h4>$1</h4>');

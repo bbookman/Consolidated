@@ -43,6 +43,12 @@ def clean_markdown(text):
     # Replace bold (**text**) with just the text
     text = re.sub(r'\*\*(.*?)\*\*', r'\1', text)
     
+    # Remove single asterisks at the beginning of a line or paragraph
+    text = re.sub(r'(?:^|\n)\s*\*\s*', '\n', text)
+    
+    # Remove single asterisks at the end of a line or paragraph
+    text = re.sub(r'\s*\*(?:$|\n)', '\n', text)
+    
     # Replace italic (*text*) with just the text
     text = re.sub(r'(?<!\*)\*([^\*]+)\*(?!\*)', r'\1', text)
     
@@ -52,6 +58,9 @@ def clean_markdown(text):
     
     # Remove any stray markdown characters
     text = re.sub(r'^\s*#\s*$', '', text, flags=re.MULTILINE)
+    
+    # Remove solitary asterisks
+    text = re.sub(r'^\s*\*\s*$', '', text, flags=re.MULTILINE)
     
     # Trim extra whitespace
     text = re.sub(r'\n\n+', '\n\n', text)

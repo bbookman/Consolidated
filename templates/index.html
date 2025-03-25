@@ -59,64 +59,69 @@
             .then(data => {
                 if (data.status === 'success') {
                     // Process data for calendar
-                    const events = data.date_counts.map(item => {
-                        // Only create background events if there's data
-                        if (item.total > 0) {
-                            return {
-                                title: ``, // Empty title - no total entries display
+                    // Create different events for each date based on data type
+                    let allEvents = [];
+                    
+                    data.date_counts.forEach(item => {
+                        // Base event for the date
+                        allEvents.push({
+                            title: '',
+                            start: item.date,
+                            display: 'background',
+                            backgroundColor: '#f8f9fa', // Light gray background for all dates
+                            extendedProps: {
+                                type: 'base',
+                                total: item.total
+                            }
+                        });
+                        
+                        // Add data type specific events
+                        if (item.conversations > 0) {
+                            allEvents.push({
+                                title: '🐝',
                                 start: item.date,
-                                display: 'background',
-                                backgroundColor: 'transparent', // No background color at all
                                 extendedProps: {
-                                    conversations: item.conversations,
-                                    facts: item.facts,
-                                    lifelogs: item.lifelogs,
-                                    netflix: item.netflix,
-                                    total: item.total
-                                }
-                            };
-                        } else {
-                            return {
-                                title: ``,
+                                    type: 'conversation',
+                                    count: item.conversations
+                                },
+                                classNames: ['data-marker', 'bee-marker']
+                            });
+                        }
+                        
+                        if (item.lifelogs > 0) {
+                            allEvents.push({
+                                title: '∞',
                                 start: item.date,
-                                display: 'background',
-                                backgroundColor: 'transparent',
                                 extendedProps: {
-                                    conversations: 0,
-                                    facts: 0,
-                                    lifelogs: 0,
-                                    netflix: 0,
-                                    total: 0
-                                }
-                            };
+                                    type: 'lifelog',
+                                    count: item.lifelogs
+                                },
+                                classNames: ['data-marker', 'limitless-marker']
+                            });
+                        }
+                        
+                        if (item.netflix > 0) {
+                            allEvents.push({
+                                title: '🍿',
+                                start: item.date,
+                                extendedProps: {
+                                    type: 'netflix',
+                                    count: item.netflix
+                                },
+                                classNames: ['data-marker', 'netflix-marker']
+                            });
                         }
                     });
                     
                     // Initialize calendar
                     const calendar = new FullCalendar.Calendar(calendarEl, {
                         initialView: 'dayGridMonth',
-                        events: events,
-                        eventContent: function(arg) {
-                            let html = '';
-                            
-                            if (arg.event.extendedProps.total > 0) {
-                                // Entry count removed as requested
-                                
-                                html += '<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; justify-content: center; flex-wrap: wrap;">';
-                                if (arg.event.extendedProps.conversations > 0) {
-                                    html += `<span class="day-marker marker-conversations" title="${arg.event.extendedProps.conversations} conversations">🐝</span>`;
-                                }
-                                // Facts removed as requested
-                                if (arg.event.extendedProps.lifelogs > 0) {
-                                    html += `<span class="day-marker marker-lifelogs" title="${arg.event.extendedProps.lifelogs} lifelogs">∞</span>`;
-                                }
-                                if (arg.event.extendedProps.netflix > 0) {
-                                    html += `<span class="day-marker marker-netflix" title="${arg.event.extendedProps.netflix} netflix">🍿</span>`;
-                                }
-                                html += '</div>';
+                        events: allEvents,
+                        eventClick: function(info) {
+                            // Only navigate if clicking on a day, not on a marker
+                            if (info.event.extendedProps.type === 'base') {
+                                window.location.href = `/day/${info.event.startStr}`;
                             }
-                            
-                            return { html: html };
                         },
                         dateClick: function(info) {
                             window.location.href = `/day/${info.dateStr}`;

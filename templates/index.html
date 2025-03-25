@@ -60,17 +60,17 @@
                 if (data.status === 'success') {
                     // Process data for calendar
                     const events = data.date_counts.map(item => {
-                        // Create events with emojis in the top right
+                        // Create events with emojis in the bottom right
                         let emojis = '';
                         
-                        if (item.conversations > 0) {
-                            emojis += '🐝';
+                        if (item.netflix > 0) {
+                            emojis += '🍿';
                         }
                         if (item.lifelogs > 0) {
                             emojis += '∞';
                         }
-                        if (item.netflix > 0) {
-                            emojis += '🍿';
+                        if (item.conversations > 0) {
+                            emojis += '🐝';
                         }
                         
                         return {

@@ -106,8 +106,9 @@
                             };
                         });
                     
-                    // Combine all events
-                    const allEvents = [...backgroundEvents, ...emojiEvents];
+                    // Only use background events for calendar - emoji indicators will be added separately 
+                    // to prevent duplication
+                    const allEvents = [...backgroundEvents];
                     
                     // Initialize calendar
                     const calendar = new FullCalendar.Calendar(calendarEl, {
